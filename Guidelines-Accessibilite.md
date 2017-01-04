@@ -5,9 +5,11 @@ _Bonnes pratiques accessibilité en production_
 ## Généralités
 
 * Ne pas fixer de hauteur sur les éléments afin que le contenu reste lisible lorsque le texte est zoomé.
-* Respecter la hiérarchie des titres `<hX>`
-* Ne pas supprimer l’*outline* autour des éléments cliquables (pas de `outline: none`)
-* Utiliser les éléments HTML pour leur fonction/sémantique et non pas pour leur forme
+* Respecter la hiérarchie des titres `<hX>`.
+* Ne pas supprimer l’*outline* autour des éléments cliquables (pas de `outline: none`).
+* Utiliser les éléments HTML pour leur fonction/sémantique et non pas pour leur forme.
+  * Utiliser les éléments pouvant recevoir le focus (`<a>`, `<input type="button">`) lorsqu'ils sont cliquables/interactifs.
+* Exploiter WAI ARIA https://www.w3.org/WAI/intro/aria lorsque c'est pertinent pour aider le navigateur.
 
 ## Structure générale
 
@@ -300,19 +302,25 @@ Sous-titres avec webVTT
 
 ## Javascript
 
-**TODO**
+### ARIA live
 
-Ajax et ARIA live
+Utiliser l'attribut `aria-live` sur les informations provenant de chargements AJAX ou dévoilées par JavaScript dynamiquement (ex : non présentes naturellement dans le flux de la page comme des alertes).
 
-### Composants JS
+```
+<div role="alert" aria-live="assertive" aria-atomic="true">
+  <p>Message envoyé avec succès / Article ajouté au panier</p>
+</div>
+```
 
-De type swiper, slider, slideshow, accordéon, pagination, onglets
+On pourra moduler avec `aria-relevant` (`additions`, `removals`, `text`, `all`) selon qu'on ajoute le contenu au conteneur ou que c'est lui-même qui se voit inséré dans le corps de la page.
 
-Navigation au clavier
+### Autres composants
 
-ARIA
+Pour tous les composants de page agissant sur le contenu, de type swiper, slider, slideshow, accordéon, pagination, onglets, menu déroulant, on privilégiera les scripts "accessibles", y compris ceux utilisant ARIA. Le but étant, entre autres, de ne pas gêner la navigation au clavier et de permettre la lecture de la page avec une synthèse vocale.
 
-**TODO**
+La bibliothèque de plugins jQuery Pepin est un départ pour cela https://github.com/alsacreations/pepin
+
+Pour les menus déroulants et mega menus, Accessible Mega Menu a fait ses preuves https://adobe-accessibility.github.io/Accessible-Mega-Menu/
 
 ## Ressources
 
