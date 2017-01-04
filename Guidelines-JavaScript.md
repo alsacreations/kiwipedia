@@ -39,8 +39,8 @@ De préférence, encapsuler les ensembles de variables utilisés par un même sc
 
 ```
 var maConfig = {
-  slider_width:800,
-  slider_height:600
+  slider_width: 800,
+  slider_height: 600
 }
 ```
 
@@ -49,8 +49,8 @@ Ou :
 ```
 var maConfig = {
   slider : {
-    width:800,
-    height:600
+    width: 800,
+    height: 600
   }
 }
 ```
@@ -71,9 +71,9 @@ Sinon, en suivant le principe précédent
 
 ```
 var maConfig = {
-  config : {
-    slider:800,
-    slider_height:600
+  config: {
+    slider: 800,
+    slider: 600
   }
 }maConfig.fonctionSpecifique = function() {  return true;}
 ```
