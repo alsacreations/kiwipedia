@@ -21,9 +21,6 @@ Conventions générales :
 
 * [http://www.phptherightway.com/](http://www.phptherightway.com/)
 * [http://www.php-fig.org/psr/](http://www.php-fig.org/psr/) (de 1 à ?, en anglais a priori)
-* [http://www.php-fig.org/psr/psr-0/fr/](http://www.php-fig.org/psr/psr-0/fr/) : Autoloading Standard
-* [http://www.php-fig.org/psr/psr-1/fr/](http://www.php-fig.org/psr/psr-1/fr/) : Basic Coding Standard
-* [http://www.php-fig.org/psr/psr-2/fr/](http://www.php-fig.org/psr/psr-2/fr/) : Coding Style Guide
 
 Les balises fermantes `?>` doivent être omises en fin de fichier pour éviter la production d’espaces indésirables entre différents scripts. Dans la mesure du possible, un commentaire peut être ajouté signifiant la fin du fichier, afin de déterminer si celui-ci n’a pas été tronqué.
 
