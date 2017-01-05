@@ -71,9 +71,9 @@ Sinon, en suivant le principe précédent
 
 ```
 var maConfig = {
-  config: {
-    slider: 800,
-    slider: 600
+  slider: {
+    width: 800,
+    height: 600
   }
 }maConfig.fonctionSpecifique = function() {  return true;}
 ```
