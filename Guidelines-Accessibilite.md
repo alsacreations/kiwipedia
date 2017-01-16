@@ -21,7 +21,7 @@ Utiliser des `<ul><li>` (liste non ordonnée) pour structurer les menus de navig
 
 ### Éléments sémantiques HTML5
 
-#### Zone d’en-tête principale :
+#### Zone d’en-tête principale
 
 ```
 <header role="banner">
@@ -31,7 +31,7 @@ Utiliser des `<ul><li>` (liste non ordonnée) pour structurer les menus de navig
 
 La balise `<header>` peut être utilisée plusieurs fois dans la page mais l’attribut `role="banner"` ne doit être utilisé qu’une seule fois.
 
-#### Pied de page :
+#### Pied de page
 
 ```
 <footer role="contentinfo">
@@ -41,7 +41,7 @@ La balise `<header>` peut être utilisée plusieurs fois dans la page mais l’a
 
 La balise `<footer>` peut être utilisée plusieurs fois dans la page mais l’attribut `role="contentinfo"` ne doit être utilisé qu’une seule fois.
 
-#### Zone de contenu principal :
+#### Zone de contenu principal
 
 ```
 <main role="main">
@@ -51,7 +51,7 @@ La balise `<footer>` peut être utilisée plusieurs fois dans la page mais l’a
 
 La balise `<main>` ne peut être utilisée qu’une seule fois dans la page ainsi que l’attribut `role="main"`.
 
-#### Système de navigation principale :
+#### Système de navigation principale
 
 ```
 <nav role="navigation">
@@ -132,6 +132,14 @@ Utiliser plutôt la classe `.visually-hidden`, présente dans [KNACSS](http://kn
 </button>
 ```
 
+## ARIA
+
+WAI-ARIA est une technologie permettant de donner des indications d'accessibilité supplémentaires par rapport aux comportements natifs déjà prévus par les navigateurs pour les éléments HTML de base. Elle passe par les attributs `role` (landmarks, regions, widgets divers) et `aria-*` (propriétés). ARIA est particulièrement recommandé pour les composants complexes pilotés par JavaScript (ex : menus déroulants, sliders, onglets, modales...).
+
+* [Matrice des rôles ARIA](http://whatsock.com/training/matrices/)
+
+La bibliothèque de plugins jQuery Pepin utilise ARIA pour la plupart des composants https://github.com/alsacreations/pepin
+
 ## Liens d’évitement
 
 **TODO**
@@ -198,7 +206,7 @@ Signaler lorsqu’un lien s’ouvre dans une nouvelle fenêtre :
 <a href="URL" target="_blank" aria-label="Lire l’article (nouvelle fenêtre)">Lire l’article</a>
 ```
 
-#### 2e méthode :
+#### 2e méthode
 
 ```
 <a href="URL" target="_blank" title="Lire l’article (nouvelle fenêtre)">Lire l’article</a>
@@ -206,7 +214,7 @@ Signaler lorsqu’un lien s’ouvre dans une nouvelle fenêtre :
 
 ## Images
 
-Chaque image doit avoir un attribut `alt`.
+Chaque image doit avoir un attribut `alt`. Les images décoratives (qui n'apportent rien au contenu) doivent avoir un attribut alt vide `<img ... alt="">`.
 
 Documentation : [https://www.w3.org/WAI/tutorials/images/](https://www.w3.org/WAI/tutorials/images/)
 
@@ -260,11 +268,11 @@ Meilleure technique relevée par Atalan : [http://blog.atalan.fr/svg-liens-et-le
 
 ## Formulaires
 
+Utiliser l'élément `<fieldset>` pour regrouper les champs ayant trait à la même thématique (ex : coordonnées du visiteur lors d'une commande en ligne.
+
+Toujours associer un `<label>` à un élément de formulaire `<input>` ou `<textarea>` pour définir son intitulé. Ne pas utiliser l'attribut `placeholder` comme seule indication.
+
 **TODO**
-
-Fieldset
-
-Label/input
 
 ## Navigation
 
@@ -273,6 +281,12 @@ Label/input
 **TODO**
 
 ### Tabindex
+
+Les éléments pouvant recevoir le focus autres que nativement `<a>`, `<input>` ou `<button>` pourront être équipés de `tabindex="0"`.
+
+Les éléments ne devant pas recevoir de focus doivent comporter l'attribut `tabindex="-1"`.
+
+S'il y a lieu, changer l'ordre de tabulation avec des attributs `tabindex` positifs pour réfléter l'ordre logique et/ou l'ordre visuel des éléments.
 
 **TODO**
 
