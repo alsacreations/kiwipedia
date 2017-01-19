@@ -15,6 +15,8 @@ Pour assurer une cohérence inter-projets, utiliser la convention [EditorConfig]
 
 ![faites simple](images/php01.png)
 
+Source : https://xkcd.com/1319/ (Automation)
+
 ## PHP
 
 Conventions générales :
