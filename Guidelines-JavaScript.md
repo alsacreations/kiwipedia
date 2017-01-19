@@ -85,7 +85,7 @@ De préférence :
 
 * Nommer les fonctions/plugins d’après les classes HTML avec lesquelles elles vont interagir.
 * Les préfixer par un code relatif au nom du projet.
-* Placer les accolades sur la première ligne de bloc et non sur la suivante pour éviter ?? due à l’insertion implicite de `;` pour terminer les lignes.
+* Placer les accolades sur la première ligne de bloc et non sur la suivante pour éviter (entre autres) les erreurs de minification dues à l’insertion implicite de `;` pour terminer les lignes.
 
 ```
 if (quelquechose) {
