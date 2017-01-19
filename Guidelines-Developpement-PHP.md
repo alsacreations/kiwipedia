@@ -38,8 +38,8 @@ echo "Hello!";
 <?php
 echo "Hello!";
 
-/* Fin de monfichier.php */
-/* Emplacement: ./chemin/vers/monfichier.php */
+// Fin de monfichier.php
+// Emplacement: ./chemin/vers/monfichier.php
 ```
 
 ### Variables, constantes et classes
