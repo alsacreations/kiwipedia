@@ -75,14 +75,17 @@ var maConfig = {
     width: 800,
     height: 600
   }
-}maConfig.fonctionSpecifique = function() {  return true;}
+}
+maConfig.fonctionSpecifique = function() {
+  return true;
+}
 ```
 
 De préférence :
 
 * Nommer les fonctions/plugins d’après les classes HTML avec lesquelles elles vont interagir.
 * Les préfixer par un code relatif au nom du projet.
-* Placer les accolades sur la première ligne de bloc et non sur la suivante pour éviter due à l’insertion implicite de `;` pour terminer les lignes.
+* Placer les accolades sur la première ligne de bloc et non sur la suivante pour éviter ?? due à l’insertion implicite de `;` pour terminer les lignes.
 
 ```
 if (quelquechose) {
@@ -184,7 +187,8 @@ var $el = $('#el');
 ```
 jQuery(document).ready(function($) {
 
-  // à l’intérieur, usage de $ comme d’habitude...});
+  // à l’intérieur, usage de $ comme d’habitude...
+});
 ```
 
 ### Plugin boilerplate
