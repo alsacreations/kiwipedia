@@ -146,20 +146,21 @@ LIMIT 5, 100");
 
 Quelques critères essentiels sont à observer (parmi d’autres, la liste est non exhaustive) :
 
+* Suivre les recommandations de l'OWASP pour éviter les failles XSS (Cross Site Scripting)  https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet
 * Utiliser les fonctions d’échappement pour valider les données utlisateur, avant traitement ou insertion dans la base de données.
-    * [mysql_real_escape_string](http://php.net/manual/fr/function.mysql-real-escape-string.php) pour les chaînes passées à la base MySQL
-    * [preg_quote](http://php.net/manual/fr/function.preg-quote.php) pour les expressions régulières
-    * Utiliser les fonctions de PDO quand c’est possible pour [échapper](http://www.php.net/manual/fr/pdostatement.bindparam.php) ou [préparer une requête](http://www.php.net/manual/fr/pdo.prepare.php)
+    * MySQL : [mysql_real_escape_string](http://php.net/manual/fr/function.mysql-real-escape-string.php) pour les chaînes de texte.
+    * [preg_quote](http://php.net/manual/fr/function.preg-quote.php) pour les expressions régulières.
+    * MySQL : Utiliser les fonctions de PDO quand c’est possible pour [échapper](http://www.php.net/manual/fr/pdostatement.bindparam.php) ou [préparer une requête](http://www.php.net/manual/fr/pdo.prepare.php).
 * Vérifier toutes les variables trouvées dans `$_REQUEST`, `$_POST`, `$_GET` et `$_COOKIE` avant usage.
-* Désactiver la directive de configuration `magic_quotes` (par défaut).
-* Exploiter au minimum les fichiers et les chemins d’accès au filesystem, ainsi que les fonctions d’exécution de code (`eval`, `system`, `exec`, etc).
-* Utiliser un framework tel que CodeIgniter qui sécurise par défaut quantité d’actions.
+* Vérifier précautionneusement les fichiers envoyés en upload s'il y a lieu (types MIME, extensions, noms, etc).
+* Eviter de manipuler des fichiers et des chemins d’accès au filesystem, ainsi que des fonctions d’exécution de code (`eval`, `system`, `exec`, etc).
+* Utiliser un framework PHP tel que CodeIgniter qui sécurise par défaut quantité d’actions.
 
 ## MySQL
 
 ### Nommage
 
-Les noms des tables doivent être explicites. Les noms des champs associés doivent être préfixés par le nom de la table pour faciliter la lecture de requêtes avec jointures.
+Les noms des tables doivent être explicites. Les noms des champs associés doivent être préfixés par le nom de la table pour faciliter la lecture et l'écriture de requêtes avec jointures, s'ils ne sont pas assortis du nom de table.
 
 ```
 Table users :
@@ -215,23 +216,25 @@ user_status
 </table>
 
 
-### Index
+### Index et performance
 
 Afin d’améliorer la performance :
 
-* Des index doivent être placés sur les champs servant dans les requêtes SELECT.
+* Des index doivent être placés sur les champs servant dans les requêtes SELECT (au moins celles-là).
+* Examiner la performance de ces requêtes et l'usage des index avec l'instruction EXPLAIN https://dev.mysql.com/doc/refman/5.7/en/execution-plan-information.html
 * Dans le cas de jointures, les champs mis en relation (d’une table à l’autre) doivent être de même type (par exemple `INT` avec `INT` et non `INT` avec `MEDIUMINT`).
+* Faire attention au type de table utilisé (MyISAM vs InnoDB).
 
 ## Serveur et performance
 
 Afin d’améliorer la réactivité de chargement et l’évaluation des performances par les moteurs de recherche, des bonnes pratiques sont à considérer :
 
-* Configurer la mise en cache des fichiers (notamment JS, CSS, images)
-* Configurer la compression des fichiers (textes, JS, CSS, HTML) et leur minification
+* Configurer la mise en cache des fichiers (notamment JS, CSS, images) avec les en-têtes HTTP Expires ou Cache-Control.
+* Configurer la compression des fichiers (textes, JS, CSS, HTML) et leur minification (gzip, deflate et autres algorithmes).
 
 ### Outils de diagnostic
 
-* L’onglet Network/Réseau des outils de développement navigateur
+* L’onglet Network/Réseau et Timeline des outils de développement navigateur
 * [PageSpeed](https://developers.google.com/speed/pagespeed/insights_extensions)
 * [YSlow](https://addons.mozilla.org/fr/firefox/addon/yslow/)
 
