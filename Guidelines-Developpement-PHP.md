@@ -1,9 +1,5 @@
 # Guidelines PHP / MySQL
 
-## Performance
-
-* [https://css-tricks.com/performance-tools/](https://css-tricks.com/performance-tools/)
-
 ## Généralités
 
 * L’encodage des fichiers et des bases de données doit se faire en UTF-8 (sans BOM).
@@ -12,6 +8,14 @@ Pour assurer une cohérence inter-projets, utiliser la convention [EditorConfig]
 * La numérotation des versions suit [Semantic Versioning](http://semver.org/)
 
 ## Garder à l’esprit
+
+* DRY : Don't Repeat Yourself : Utiliser au maximum des fonctions (même très simples) pour stocker le code exécuté à différents endroits
+* KISS : Keep it simple, stupid : Penser simple
+* Modulaire : Quand on développe une feature : pouvoir la désactiver (= option)
+* Commenter son code
+* Vérifier s’il n’y a pas déjà un code existant qui fait déjà le travail
+* Ne pas modifier le noyau des cms/extensions pour supporter les mises à jour
+* Toujours penser à la sécurité !
 
 ![faites simple](images/php01.png)
 
@@ -128,20 +132,6 @@ En cas de gestion des erreurs avec des try/catch, toujours mettre en derniers le
 function kaki($val1, $val2 = FALSE)
 ```
 
-### Requêtes SQL
-
-Tous les mots clés doivent être rédigés en majuscules, et les requêtes longues peuvent être décomposées en plusieurs lignes avec un retour avant chaque mot clé.
-
-```
-$query = $this->db->query("
-
-SELECT foo, bar, foofoo, foobar AS raboof, foobaz
-FROM table
-WHERE foo != 'oof'
-ORDER BY foofoo
-LIMIT 5, 100");
-```
-
 ### Sécurité
 
 Quelques critères essentiels sont à observer (parmi d’autres, la liste est non exhaustive) :
@@ -159,6 +149,20 @@ Quelques critères essentiels sont à observer (parmi d’autres, la liste est n
 ### Données
 
 * Tester et valider les expressions régulières (regexp) avec https://regex101.com/ (entre autres).
+
+## Composer
+
+Utilisation de https://getcomposer.org/ pour la gestion des dépendances PHP.
+
+Fichier de configuration : `composer.json`
+
+Initialiser de manière interactive le projet `composer init`
+
+Installer un paquet et le sauvegarde dans le fichier de configuration `composer require [nom du paquet]`
+
+Désinstalle la dépendance `composer remove [nom du paquet]`
+
+Met à jour les dépendances `composer update`
 
 ## MySQL
 
@@ -219,7 +223,6 @@ user_status
   </tr>
 </table>
 
-
 ### Index et performance
 
 Afin d’améliorer la performance :
@@ -228,6 +231,19 @@ Afin d’améliorer la performance :
 * Examiner la performance de ces requêtes et l'usage des index avec l'instruction EXPLAIN https://dev.mysql.com/doc/refman/5.7/en/execution-plan-information.html
 * Dans le cas de jointures, les champs mis en relation (d’une table à l’autre) doivent être de même type (par exemple `INT` avec `INT` et non `INT` avec `MEDIUMINT`).
 * Faire attention au type de table utilisé (MyISAM vs InnoDB).
+
+### Requêtes SQL
+
+Tous les mots clés doivent être rédigés en majuscules, et les requêtes longues peuvent être décomposées en plusieurs lignes avec un retour avant chaque mot clé.
+
+```
+$query = $this->db->query("
+SELECT foo, bar, foofoo, foobar AS raboof, foobaz
+FROM table
+WHERE foo != 'oof'
+ORDER BY foofoo
+LIMIT 5, 100");
+```
 
 ## Serveur et performance
 
@@ -244,6 +260,7 @@ Afin d’améliorer la réactivité de chargement et l’évaluation des perform
 
 ### Références
 
+* [https://css-tricks.com/performance-tools/](https://css-tricks.com/performance-tools/)
 * [Web Performance best practices](https://developers.google.com/speed/docs/best-practices/rules_intro) (Google)
 * [Exceptional Performance](http://developer.yahoo.com/performance/) (Yahoo)
 
