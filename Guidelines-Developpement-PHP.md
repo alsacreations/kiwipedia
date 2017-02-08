@@ -156,6 +156,10 @@ Quelques critères essentiels sont à observer (parmi d’autres, la liste est n
 * Eviter de manipuler des fichiers et des chemins d’accès au filesystem, ainsi que des fonctions d’exécution de code (`eval`, `system`, `exec`, etc).
 * Utiliser un framework PHP tel que CodeIgniter qui sécurise par défaut quantité d’actions.
 
+### Données
+
+* Tester et valider les expressions régulières (regexp) avec https://regex101.com/ (entre autres).
+
 ## MySQL
 
 ### Nommage
