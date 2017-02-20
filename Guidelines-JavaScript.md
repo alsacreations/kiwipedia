@@ -170,7 +170,7 @@ indent_size = 2
 charset = utf-8
 ```
 
-## Bonnes pratiques jQuery
+## Bonnes pratiques jQuery/JavaScript pour l'intégration
 
 ### Généralités
 
@@ -180,29 +180,30 @@ charset = utf-8
 var $el = $('#el');
 ```
 
-* Encapsuler les développements jQuery tant que possible dans des plugins, ce n’est pas compliqué, idéalement avec le *boilerplate*.
-
 * Démarrer avec cette syntaxe pour document ready :
 
 ```
 jQuery(document).ready(function($) {
-
   // à l’intérieur, usage de $ comme d’habitude...
 });
 ```
 
-### Plugin boilerplate
+### Convention de nommage
 
-Modèle relativement simple de plugin-type, avec options par défaut, remplacées/complétées par les paramètres `data-*` en HTML, méthodes privées et publiques. Voir aussi sur le dépôt Github [https://github.com/alsacreations/pepin/blob/master/plugin.js](https://github.com/alsacreations/pepin/blob/master/plugin.js)
-
-* Simplifier au maximum le code en découpant par actions simples.
-* Utiliser au maximum le document "statique" HTML, dont les attributs `data-*`, les classes, ou l’ordre des éléments pour construire un script autour, plutôt que de se reposer uniquement sur JS ou des variables. Placer les attributs `data-*` sur les éléments pour lesquels ils seront utiles, notamment le conteneur du plugin
+* Exploiter au maximum le document "statique" HTML, dont les attributs `data-*`, les classes, ou l’ordre des éléments pour construire un script autour, plutôt que de se reposer uniquement sur JavaScript ou des variables indépendantes de la structure HTML.
+* Placer les attributs `data-*` sur les éléments pour lesquels ils seront utiles, notamment le conteneur du plugin/composant.
 * Différencier classes qui vont permettre de styler l’élément (dans les fichiers CSS) et classes qui vont permettre d’activer un comportement spécifique JS sur l’élément (fichiers JS) en les préfixant par `js-`.
 
 ```
 <div class="slideshow js-slideshow" data-timing="2000" ...>
    <figure class="slideshow-item">
 ```
+
+#### Classes suggérées
+
+* `.is-active` pour un élément qui est tout le temps visible mais qui peut avoir un état actif/inactif (ex : élément de menu ou de sous-menu au focus/survol).
+* `.is-selected` pour un élément qui est tout le temps visible mais qui peut avoir un état sélectionné/désélectionné (ex : bouton/bloc radio/checkbox).
+* `.is-opened` pour un élément qui peut avoir deux états affiché ou masqué (ex : menu déroulant, panel d'accordéon). Inverse possible : `.is-closed`.
 
 * Utiliser les classes CSS du projet pour cacher/masquer des éléments, lancer des transitions, ou changer leur état
 
@@ -217,9 +218,33 @@ $('element').hide();
 ```
 
 * De même pour les animations/transitions, il est souvent préférable de passer par l’ajout/suppression de classes CSS.
+
+#### Interactions et événements
+
 * Se reposer sur les éléments pouvant recevoir le focus (`<a>`, `<button>`, `<input>`) pour l’ajout d’événements `onclick`, etc.
-* Ne pas hésiter à utiliser des plugins éprouvés (toujours tester s’ils peuvent être multiples sur une même page).
-* Penser à prévoir les cas de figure où le code peut être appelé plusieurs fois dans une même page, ou plusieurs fois par erreur sur un même élément (par exemple avec la gestion on/off des événements, les attributs `data-*` pour savoir s’il a déjà été appliqués, etc).
-* Penser à prévoir les cas de figure où :
-  * le fichier peut être rechargé dans la même page
-  * le code doit pouvoir être rappelé sur le même élément sans provoquer de bugs notamment au niveau des styles modifiés, des événements ajoutés (penser à off/on)
+* Toujours écrire les gestionnaires d'événement avec `.on()` pour les retrouver plus facilement dans le code plutôt qu'avec les alias.
+* Penser à prévoir les cas de figure où le code peut être appelé plusieurs fois dans une même page, ou plusieurs fois par erreur sur un même élément (par exemple avec la gestion `.off()` et `.on()` des événements, les attributs `data-*` pour savoir s’il a déjà été appliqué, etc).
+  
+### ARIA et accessibilité
+
+Exploiter les [propriétés/états](https://www.w3.org/TR/wai-aria/states_and_properties) ARIA pour les composants dynamiques :
+
+* Ajouter/supprimer l'attribut `aria-hidden="true"` pour les éléments qui ne doivent pas être visibles ni rendus vocalement. Celui-ci peut être décorélé de `.visually-hidden`.
+* Utiliser les attributs `aria-selected`, `aria-checked`, `aria-expanded`, `aria-controls` le cas échéant.
+* Utiliser `aria-live` pour les zones de contenu se mettant à jour en JavaScript et devant être signalées.
+
+Exploiter les [rôles](https://www.w3.org/TR/wai-aria/roles) pour les composants complexes (ex : onglets avec `tab`, `tabpanel`, `tablist`... accordéons et sliders divers).
+
+Vérifier que la navigation au clavier par tabulations suit un cheminement logique et n'est pas capturée par un élément sans possibilité d'en sortir. Ajouter en JavaScript `tabindex="-1"` sur les éléments ne devant plus recevoir le focus (ex : items de formulaire dans un parent masqué par `.visually-hidden`).
+
+## Plugin boilerplate
+
+Encapsuler les développements jQuery tant que possible dans des plugins, idéalement avec le *boilerplate* : un modèle relativement simple de plugin-type, avec options par défaut, remplacées/complétées par les paramètres `data-*` en HTML, méthodes privées et publiques.
+
+Voir aussi sur le dépôt Github [https://github.com/alsacreations/pepin](https://github.com/alsacreations/pepin)
+
+À l'intérieur du plugin :
+* Se servir des paramètres par défaut et de la possibilité de les remplacer lors de l'appel par des options passées en objet au plugin et/ou par la valeur des attributs `data-*`.
+* Simplifier au maximum le code en découpant par actions simples.
+
+Ne pas hésiter à utiliser des plugins éprouvés mais toujours tester s’ils peuvent être multiples sur une même page.
