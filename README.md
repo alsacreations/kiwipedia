@@ -2,6 +2,8 @@
 
 _Nos bonnes pratiques et recommandations internes à l'agence web [Alsacréations](http://www.alsacreations.fr)_
 
+Voir aussi les [Snippets](https://github.com/alsacreations/snippets)
+
 Cette présente charte a pour objectif :
 
 * d'uniformiser et d’harmoniser les processus
