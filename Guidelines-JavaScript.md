@@ -152,6 +152,7 @@ Configuration par défaut du fichier `.jshintrc` placé à la racine de chaque p
 ```
 {
   "browser": true,
+  "devel": true,
   "jquery" : true,
 }
 ```
