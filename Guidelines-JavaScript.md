@@ -24,7 +24,9 @@ Pour assurer une cohérence inter-projets, utiliser la convention [EditorConfig]
 * Ne jamais laisser un appel à `console.log()` ou `eval()` dans le code en production.
 * Ne pas déclarer de fonctions/variables dans le scope global qui pourraient amener à des conflits avec d’autres scripts. Si besoin, utiliser une [IIFE](https://en.wikipedia.org/wiki/Immediately-invoked_function_expression).
 
-En bonus, suivre les recommandations de [http://chimera.labs.oreilly.com/books/1234000000262/apa.html](http://chimera.labs.oreilly.com/books/1234000000262/apa.html)
+En bonus, suivre les recommandations de 
+* [http://chimera.labs.oreilly.com/books/1234000000262/apa.html](http://chimera.labs.oreilly.com/books/1234000000262/apa.html)
+* [https://github.com/ryanmcdermott/clean-code-javascript/blob/master/README.md](https://github.com/ryanmcdermott/clean-code-javascript/blob/master/README.md)
 
 ## Déclaration et variables
 
