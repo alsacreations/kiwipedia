@@ -51,6 +51,17 @@ selecteur {
 
 Les déclarations au sein d’une règle CSS sont ordonnées de façon à faire apparaître les propriétés importantes en tête de liste.
 
+Voici dans quel ordre nous déclarons nos propriétés :
+
+1. Contenu généré : les propriétés afférentes au contenu créé via :after et :before (`content`, `counter`, `quotes`).
+2. Propriété display : tout ce qui affecte le rendu par défaut de l’élément (`none`, `block`, `inline`, `inline-block`, `flex`, `grid`, &hellip;).
+3. Positionnement : tout ce qui détermine la position de l’élément (`position`, `float`, `top`, `right`, `bottom`, `left`, `vertical-align`, `z-index`, `clear`).
+4. Modèle de boîte : tout ce qui influe sur les dimensions de l’élément (`width`, `height`, `min-width`, `min-height`, `max-width`, `max-height`, `margin`, `padding`, `border`, `overflow`).
+4. Transformations et transitions : propriétés et valeurs CSS 3 (`transform`, `transition`, `animation`).
+5. Typographie : tout ce qui détermine les caractéristiques de la police de caractères (`font`, `text-align`, `text-decoration`, `letter-spacing`, `text-indent`, `line-height`, `text-transform`, `white-space`, `word-wrap`).
+Décoration : les propriétés purement ornementales (`background`, `color`, `list-style`, `outline`).
+
+
 Exemple :
 
 ```
