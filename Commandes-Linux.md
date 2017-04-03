@@ -43,11 +43,108 @@ ___
 * `/var/log/syslog`                Logs système
 * `/var/log/mail.log`              Logs mail/postfix
 * `/var/log/apache2/`              Logs Apache
-* `/var/log/ispconfig/httpd/`      Logs Apache individuels
 * `/var/www/`                      Hébergement http
 * `/var/vmail/`                    Hébergement mails
 * `/var/lib/mysql/`                MySQL
 * `/var/log/ispconfig/`            Logs ISPConfig
+* `/var/log/ispconfig/httpd/`      Logs Apache individuels
+
+___
+
+## Maintenance et mises à jour avec apt
+
+Voir aussi https://debian-handbook.info/browse/fr-FR/stable/sect.apt-get.html
+
+Met à jour les paquets disponibles
+`apt-get update`
+
+Met à jour la distribution avec les paquets trouvés
+`apt-get upgrade`
+
+Met à jour le serveur et l'indique à rkhunter pour éviter les warnings
+`apt-get update && apt-get upgrade && rkhunter --propupd`
+
+Met à jour (supprime/ajoute/met à jour) avec apt
+`apt full-upgrade`
+
+Indications de support des paquets dans le temps
+`ubuntu-support-status`
+
+Met à jour toute la distrib d'une version à l'autre (warning!)
+`apt-get dist-upgrade`
+
+Informations
+`apt-cache show <paquet>`
+
+Installer un paquet
+`apt-get install <paquet>`
+
+Simulation d'installation
+`apt-get install <paquet> -s`
+
+Désinstaller un paquet
+`apt-get remove <paquet>`
+
+Désinstallation complète (avec conf)
+`apt-get remove <paquet> --purge`
+
+Recherche dans les paquets disponibles
+`apt-cache search <paquet>`
+
+Dépendances
+`apt-cache depends <paquet>`
+
+Versions disponibles
+`apt-cache madison <paquet>`
+
+Versions et possibilités
+`apt-cache policy <paquet>`
+
+Vider le cache
+`apt-get clean`
+
+Informations...
+`aptitude show <paquet>`
+
+Liste des paquets installés
+`dpkg -l`
+
+Liste des fichiers d'un paquet
+`dpkg -L`
+
+Connaître le paquet qui a installé un soft/config
+`dpkg -S /sbin/ifconfig`
+
+Reconfigurer un paquet déjà installé
+`dpkg-reconfigure apache`
+
+Reconfigurer le niveau de question
+`dpkg-reconfigure debconf`
+
+`dpkg --get-selections`
+`dpkg --set-selections`
+
+___
+
+### Autres commandes utiles
+
+Dernières commandes
+`history`
+
+Date du jour
+`date`
+
+Calendrier
+`cal`
+
+Rafraîchir une commande toutes les X secondes à l'écran (ex : cat)
+`watch <commande>`
+
+Uptime du serveur et charge
+`uptime`
+
+Dernières connexions
+`last`
 
 ___
 
@@ -95,7 +192,7 @@ Redéfinir les groupes d'un user
 Attribuer un groupe à un chemin (fichier, répertoire)
 `chgrp <group> <path>`
 
-### Samba
+### Samba (partage de fichiers)
 
 Ajouter un user samba (il faut avoir déjà créé un user linux)
 `smbpasswd -a <login>`
@@ -106,7 +203,9 @@ Supprimer
 Utilisateurs autorisés : dans `/etc/samba/smb.conf`
 `valid users  <login1> <login2> @group1`
 
-### Clés
+___
+
+## Clés
 
 Connaître la clé publique à partir d’une clé privée générée (dsa, rsa, etc) pour l’ajouter à authorized_keys
 `ssh-keygen -y`
@@ -122,29 +221,6 @@ Lister les types de clés
 `for keyfile in ~/.ssh/my*; do ssh-keygen -l -f "${keyfile}"; done | uniq`
 
 ___
-
-### Autres commandes
-
-Dernières commandes
-`history`
-
-Date
-`date`
-
-Calendrier
-`cal`
-
-Rafraîchir une commande toutes les X secondes à l'écran (ex : cat)
-`watch <commande>`
-
-Uptime du serveur et charge
-`uptime`
-
-Dernières connexions
-`last`
-
-Derniers reboots
-`last reboot`
 
 ## Monitoring
 
@@ -247,7 +323,7 @@ Récupérer <id_optionnel>
 
 ___
 
-## Disque dur
+## Fichiers
 
 Lister les fichiers
 `ls`
@@ -299,6 +375,10 @@ Déplacer/renommer un fichier ou un répertoire
 
 Copier un fichier ou un répertoire
 `cp <file1> <file2>`
+
+___
+
+## Disque dur
 
 Triple benchmark rapide disque
 `for i in 1 2 3; do hdparm -tT /dev/hda; done`
@@ -572,13 +652,13 @@ Trouver les fichiers php contenant mysql_pconnect
 Supprimer les fichiers vides
 `find -size 0 -print -exec rm {} \;`
 
-Supprimer les fichiers mac os
+Supprimer les fichiers pollution macOS
 `find -name "._.DS_Store" -print -delete`
 
 Trouver tous les error.log et les classer par taille
 `find . -name "error.log" -exec ls -sh {} \; | sort -h`
 
-Que les fichiers
+Que les fichiers (pas les dossiers)
 `find -type f`
 
 ### Remplacer dans des fichiers
@@ -627,6 +707,11 @@ Page de manuel
 
 Afficher le contenu d'un fichier
 `cat <file>`
+
+Compter le nombre de lignes
+```
+wc -l <file>
+```
 
 Afficher le contenu inversé
 `rev <file>`
@@ -756,14 +841,26 @@ endif
 ```
 ___
 
+## Scripts utiles
+
+Date
+`echo $(date +%Y-%m-%d)`
+
+Envoyer un mail
+`echo "Arf" | mail -s "Sujet" destinataire@example.org`
+
+Split un fichier PDF en plusieurs autres
+`pdfseparate -f 1 -l 10 doc.pdf tmp/doc-%d.pdf`
+
+Wget : télécharger un fichier par HTTP ou FTP
+`wget http://www.perdu.com/`
+
+Wget récursif, sans accepter les fichiers en gzip (sinon ça ne marche pas)
+`wget --header="accept-encoding: none" --recursive http://www.azerty0.ironie.org/`
+
 Convertir un fichier en utf8
 ```
 iconv -f latin1 -t utf8 update.sql >update-utf8.sql
-```
-
-Compter le nombre de lignes
-```
-wc -l <file>
 ```
 
 Compter le nombre de lignes de plein de fichiers dans une arbo web
@@ -821,27 +918,16 @@ do
 done
 ```
 
-___
-
-Wget : télécharger un fichier par HTTP ou FTP
-`wget http://www.perdu.com/`
-
-Wget récursif, sans accepter les fichiers en gzip (sinon ça ne marche pas)
-`wget --header="accept-encoding: none" --recursive http://www.azerty0.ironie.org/`
-
-___
-
-## Shellscript
-
-Date
-`echo $(date +%Y-%m-%d)`
-Date
-
-Envoyer un mail
-`echo "Arf" | mail -s "Sujet" destinataire@example.org`
-
-Split un fichier PDF en plusieurs autres
-`pdfseparate -f 1 -l 10 doc.pdf tmp/doc-%d.pdf`
+Script pour bannir rapidement une adresse IP en ligne de commande
+```
+#!/bin/bash
+if [[ -z "$1" ]]; then
+        echo "Veuillez indiquer une adresse IP"
+else
+        echo "Ban de l'IP $1"
+        iptables -A INPUT -p tcp --source "$1" -j DROP
+fi
+```
 
 ___
 
@@ -876,80 +962,6 @@ Changer droits sur certains fichiers
       U   G   O
 764 = rwx rw- r--
 ```
-
-___
-
-## Apt-get
-
-Met à jour les paquets disponibles
-`apt-get update`
-
-Met à jour la distribution avec les paquets trouvés
-`apt-get upgrade`
-
-Met à jour le serveur et l'indique à rkhunter pour éviter les warnings
-`apt-get update && apt-get upgrade && rkhunter --propupd`
-
-Indications de support dans le temps des paquets
-`ubuntu-support-status`                                              #
-
-Met à jour toute la distrib d'une version à l'autre (warning!)
-`apt-get dist-upgrade`
-
-Informations
-`apt-cache show <paquet>`
-
-Installer un paquet
-`apt-get install <paquet>`
-
-Simulation d'installation
-`apt-get install <paquet> -s`
-
-Désinstaller un paquet
-`apt-get remove <paquet>`
-
-Désinstallation complète (avec conf)
-`apt-get remove <paquet> --purge`
-
-Recherche dans les paquets disponibles
-`apt-cache search <paquet>`
-
-Dépendances
-`apt-cache depends <paquet>`
-
-Versions disponibles
-`apt-cache madison <paquet>`
-
-Versions et possibilités
-`apt-cache policy <paquet>`
-
-Vider le cache
-`apt-get clean`
-
-Informations...
-`aptitude show <paquet>`
-
-Liste des paquets installés
-`dpkg -l`
-
-Liste des fichiers d'un paquet
-`dpkg -L`
-
-Connaître le paquet qui a installé un soft/config
-`dpkg -S /sbin/ifconfig`
-
-Reconfigurer un paquet déjà installé
-`dpkg-reconfigure apache`
-
-Reconfigurer le niveau de question
-`dpkg-reconfigure debconf`
-
-`dpkg --get-selections`
-`dpkg --set-selections`
-
-### Alternatives
-
-`update-alternatives --config editor`
 
 ___
 
@@ -1130,6 +1142,12 @@ Restaurer un backup d'apprentissage
 
 ___
 
+### Alternatives
+
+`update-alternatives --config editor`
+
+___
+
 ## Services version init.d
 
 Démarrer un service
@@ -1165,25 +1183,12 @@ Supprimer un fichier
 
 ___
 
-## Script pour bannir rapidement une adresse IP en ligne de commande
-
-```
-#!/bin/bash
-if [[ -z "$1" ]]; then
-        echo "Veuillez indiquer une adresse IP"
-else
-        echo "Ban de l'IP $1"
-        iptables -A INPUT -p tcp --source "$1" -j DROP
-fi
-```
-
-___
-
 ## Sécurité Linux
 
 1. Vérifier que les utilisateurs inutiles sont retirés ou n’ont pas de mot de passe (passwd -d <user>)
-2. Utiliser des clés SSH et le groupe sudo/sudoers
-3. Chmod sur les dossiers home et .ssh (dont authorized_keys, etc)
-4. Firewall
-5. Fermer les services inutiles
-6. Vérifier les groupes
+2. Vérifier les groupes
+3. Utiliser des clés SSH et le groupe sudo/sudoers
+4. Chmod approprié sur les dossiers home et .ssh (dont authorized_keys, etc)
+5. Firewall
+6. Fermer les services et ports inutiles
+7. Suivre les mises à jour de sécurité
