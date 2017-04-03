@@ -226,7 +226,9 @@ RAM (non cachée) utilisée par chaque process Apache2 (colonne RSS en Ko)
 `ps -ylC apache2 --sort:rss`
 
 PHP Poids moyen d'un child (ou autre processus, remplacer php5-fpm dans ce cas)
-`ps --no-headers -o "rss,cmd" -C php5-fpm | awk '{ sum+=$1 } END { printf ("%d%s\n", sum/NR/1024,"M") }'`
+```
+ps --no-headers -o "rss,cmd" -C php5-fpm | awk '{ sum+=$1 } END { printf ("%d%s\n", sum/NR/1024,"M") }'
+```
 
 ___
 
@@ -662,7 +664,7 @@ Détarer la suite...
 `tar -xvf backup_incr1.tar --listed-incremental=backup.incremental-list.txt`
 
 Extraire un tar.gz
-`tar -xvzf <file.tar.gz>
+`tar -xvzf <file.tar.gz>`
 
 Créer un tar.gz
 `tar -cvzf test.tar.gz <path>`
@@ -755,35 +757,55 @@ endif
 ___
 
 Convertir un fichier en utf8
-`iconv -f latin1 -t utf8 update.sql >update-utf8.sql`
+```
+iconv -f latin1 -t utf8 update.sql >update-utf8.sql
+```
 
 Compter le nombre de lignes
-`wc -l <file>`
+```
+wc -l <file>
+```
 
 Compter le nombre de lignes de plein de fichiers dans une arbo web
-`find . -name "*.php" -o -name "*.less" -o -name "*.css" -o -name "*.js" -o -name "*.html" | xargs wc -l`
+```
+find . -name "*.php" -o -name "*.less" -o -name "*.css" -o -name "*.js" -o -name "*.html" | xargs wc -l
+```
 
 Supprimer fichiers vides
-`for file in * .*; do [ -f "$file" ] && [ 0 -eq "$(wc -c "$file" | cut -d" " -f1)" ] && rm -f "$file"; done`
+```
+for file in * .*; do [ -f "$file" ] && [ 0 -eq "$(wc -c "$file" | cut -d" " -f1)" ] && rm -f "$file"; done
+```
 
 Trouver les 404 et leur compte dans un log
-`grep " 404" access.log | awk '{print $7}' | sort | uniq -c`
+```
+grep " 404" access.log | awk '{print $7}' | sort | uniq -c
+```
 
 Lister récursivement tous les fichiers contenant une chaîne sans l'afficher
-`grep -lR "quelquechose" *`
+```
+grep -lR "quelquechose" *
+```
 
 Trouver les robots en excluant ceux connus (-E expression régulière, -i case insensitive, -v inverse)
 (on exclut aussi les requêtes sur robots.txt et la font roboto)
-`grep "bot" other_vhosts_access.log | grep -Eiv "Googlebot|Yahoo|Slurp|WorldSearch|Exabot|facebot|ia_archiver|alexa|msnbot|bingbot|Sogou|Baidu|Yandex|DuckDuckBot|archive\.org_bot|Semrush|orangebot|AhrefsBot|MJ12bot|Twitterbot|robot\.dlweb|dotbot|rogerbot|SEOkicks|AdsBot|spbot|XoviBot|Cliqzbot|SearchmetricsBot|flamingosearch|SeznamBot|smtbot|MojeekBot|robots\.txt|roboto|Slackbot"`
+```
+grep "bot" other_vhosts_access.log | grep -Eiv "Googlebot|Yahoo|Slurp|WorldSearch|Exabot|facebot|ia_archiver|alexa|msnbot|bingbot|Sogou|Baidu|Yandex|DuckDuckBot|archive\.org_bot|Semrush|orangebot|AhrefsBot|MJ12bot|Twitterbot|robot\.dlweb|dotbot|rogerbot|SEOkicks|AdsBot|spbot|XoviBot|Cliqzbot|SearchmetricsBot|flamingosearch|SeznamBot|smtbot|MojeekBot|robots\.txt|roboto|Slackbot"
+```
 
 Nombre de requêtes par domaines
-`awk '{print $1}' /var/log/apache2/other_vhosts_access.log | sort | uniq -c`
+```
+awk '{print $1}' /var/log/apache2/other_vhosts_access.log | sort | uniq -c
+```
 
 Supprimer fichiers de plus de 90 jours dans le répertoire courant
-`find . -mtime +90 -exec rm {} \;`
+```
+find . -mtime +90 -exec rm {} \;
+```
 
-Supprimer fichiers de plus de 90 jours dans le répertoire courant, en excluant *.html
-`find . ! -name "*.html" -mtime +90 -exec rm {} \;`
+Supprimer fichiers de plus de 90 jours dans le répertoire courant, en excluant x.html
+```
+find . ! -name "*.html" -mtime +90 -exec rm {} \;
+```
 
 Effacer fichiers contenant XYZ
 
