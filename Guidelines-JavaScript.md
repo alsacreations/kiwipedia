@@ -25,8 +25,11 @@ Pour assurer une cohérence inter-projets, utiliser la convention [EditorConfig]
 * Ne pas déclarer de fonctions/variables dans le scope global qui pourraient amener à des conflits avec d’autres scripts. Si besoin, utiliser une [IIFE](https://en.wikipedia.org/wiki/Immediately-invoked_function_expression).
 
 En bonus, suivre les recommandations de 
-* [http://chimera.labs.oreilly.com/books/1234000000262/apa.html](http://chimera.labs.oreilly.com/books/1234000000262/apa.html)
-* [https://github.com/ryanmcdermott/clean-code-javascript/blob/master/README.md](https://github.com/ryanmcdermott/clean-code-javascript/blob/master/README.md)
+* [https://github.com/airbnb/javascript](Airbnb JavaScript Style Guide)
+* [http://jstherightway.org/](JavaScript The Right Way)
+* [https://github.com/rwaldron/idiomatic.js/tree/master/translations/fr_FR](Principe d'écriture d'un code Javascript cohérent et idiomatique)
+* [http://chimera.labs.oreilly.com/books/1234000000262/apa.html](Programming JavaScript Applications)
+* [https://github.com/ryanmcdermott/clean-code-javascript/blob/master/README.md](clean-code-javascript)
 
 ## Déclaration et variables
 
