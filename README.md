@@ -20,6 +20,7 @@ Cette présente charte a pour objectif :
 * [**Guidelines JavaScript / jQuery**](Guidelines-JavaScript.md)
 * [**Guidelines Développement PHP / MySql**](Guidelines-Developpement-PHP.md)
 * [**Commandes Linux**](Commandes-Linux.md)
+* [**Checklist**](Checklist.md)
 * Guidelines WordPress _(TODO)_
 
 **NOTE : Aucun de ces documents n'est figé, ils sont en constante amélioration et évolution.**
