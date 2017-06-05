@@ -239,10 +239,10 @@ Selon la complexité du projet, il peut être utile de préfixer les classes par
 **Exemple de Namespace (préfixe par "fonction") :**
 
 ```
-.o-container, .o-mod, -o-grid-container {
+.o-container, .o-mod, .o-grid-container {
   /* objects : éléments génériques multitâches */
 }
-.c-button, .c-nav, -c-lightbox {
+.c-button, .c-nav, .c-lightbox {
   /* components : éléments concrets */
 }
 .is-opened, .is-hidden, .has-* {
@@ -256,7 +256,7 @@ Selon la complexité du projet, il peut être utile de préfixer les classes par
 **Autre exemple de Namespace (préfixe par nom du framework) :**
 
 ```
-.kn-container, .kn-mod, -kn-grid {
+.kn-container, .kn-mod, .kn-grid {
   ...
 }
 ```
