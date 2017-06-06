@@ -58,6 +58,7 @@ ___
 
 |Critère|Priorité|
 | ------------- | ------------- |
+| Des liens d'évitement sont opérationnels | ** |
 | Le contraste contenu / fond est suffisant | ** |
 | La langue des contenus est précisée (attribut lang) | * |
 | Des tailles de polices fluides sont employées, le contenu est lisible avec un zoom texte à 200% | * |
@@ -73,6 +74,7 @@ ___
 | ------------- | ------------- |
 | Le nom de domaine est fonctionnel | *** |
 | Le projet est versionné (idéalement Git) | *** |
+| La documentation est à jour | *** |
 | Les permissions des fichiers en production sont correctes | ** |
 
 ## Qualité
@@ -92,4 +94,5 @@ ___
 
 |Critère|Priorité|
 | ------------- | ------------- |
-| Une nomenclature constante et internationale est adoptée, l'indentation des fichiers est conventionné | ** |
+| Une nomenclature constante et internationale est adoptée | ** |
+| L'indentation des fichiers est conventionnée (.editorconfig) | *** |
