@@ -142,7 +142,7 @@ La bibliothèque de plugins jQuery Pepin utilise ARIA pour la plupart des compos
 
 ## Liens d’évitement
 
-**TODO**
+Voir [Guidelines HTML](Guidelines-HTML.md)
 
 ## Titres de page
 

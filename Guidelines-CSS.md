@@ -18,6 +18,7 @@ Pour assurer une cohérence inter-projets, utiliser la convention [EditorConfig]
 ## Patterns visuels (OOCSS)
 
 Repérer systématiquement les « objets CSS », c'est-à-dire des « patterns visuels » qui se répètent, afin de définir ainsi des classes réutilisables, des styles de base et des variantes.
+* Privilégier au maximum l'usage de classes plutôt que d'écrire des sélecteurs basés sur le type des éléments ou leur `id` [CSS with only class names](http://www.drinchev.com/blog/css-with-only-class-names/)
 * Séparer la structure de l’apparence (une règle CSS ne doit pas comporter à la fois `padding` et `background` par exemple)
 * Séparer le conteneur du contenu (un composant ne doit jamais être ciblé par un sélecteur qui tient compte de son parent)
 * Utiliser au maximum le pattern objet "media" : [http://codepen.io/raphaelgoetter/pen/KMWWwj?editors=1100](http://codepen.io/raphaelgoetter/pen/KMWWwj?editors=1100)

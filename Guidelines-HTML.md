@@ -64,7 +64,7 @@ Documentation : [http://www.alsacreations.com/article/lire/1490-comprendre-le-vi
 
 Dans le cas de modifications à opérer pour les anciennes versions d'Internet Explorer, et si le document CSS se doit d'être validé par l'outil de validation du W3C, un nom de classe spécifique à l’élément `<html>` sera appliqué via un commentaire conditionnel et sans nécessiter d’appel vers une feuille de styles supplémentaire.
 
-**_Note : par défaut, nous ne tenons plus compte des versions Internet Explorer inférieures à IE10, donc nous n’employons plus de classes conditionnelles._**
+**_Note : par défaut, nous ne tenons plus compte des versions Internet Explorer strictement inférieures à IE11, donc nous n’employons plus de classes conditionnelles._**
 
 ```
 <!--[if lte IE 7]> <html class="ie67 ie678" lang="fr"> <![endif]-->
@@ -75,7 +75,7 @@ Dans le cas de modifications à opérer pour les anciennes versions d'Internet E
 
 ## HTML5shim / shiv
 
-**_Note :_ par défaut, nous ne tenons plus compte des versions Internet Explorer inférieures à IE10, donc nous n’employons plus HTML5shim._**
+**_Note :_ par défaut, nous ne tenons plus compte des versions Internet Explorer strictement inférieures à IE11, donc nous n’employons plus HTML5shim._**
 
 Pour IE6, IE7 et IE8, il est nécessaire de déclarer les éléments HTML5 dans le DOM en JavaScript pour pouvoir les styler. [HTML5shiv](http://code.google.com/p/html5shiv/) est dédié à cet usage et affecte déjà des styles par défaut. À systématiquement placer dans la section `<head>`.
 
@@ -132,9 +132,9 @@ La structure globale préconisée est celle-ci :
 * `<body>` : corps de page et du site web
 * `<div id="wrapper">` : sous-conteneur optionnel. Par exemple si body ne suffit pas
 * `<div class="inner">` : sous-conteneur optionnel. Par exemple pour centrer plusieurs blocs de la même manière
-* `<main id="main" role="main">` : conteneur général du contenu
-* `<header id="header" role="banner">` : entête global
-* `<footer id="footer" role="contentinfo">` : pied de page global
+* `<main id="main" role="main">` : conteneur général du contenu principal, typiquement ce qui n'est pas dans header et footer
+* `<header id="header" role="banner">` : entête global, comportant souvent la navigation et des éléments qui se retrouvent en commun sur (quasiment) toutes les pages
+* `<footer id="footer" role="contentinfo">` : pied de page global comportant des éléments qui se retrouvent en commun sur (quasiment) toutes les pages
 * `<aside class="aside" role="complementary">` : barre latérale globale. Note : `<aside>` doit pouvoir être extrait de la page sans poser de problème, en clair ne pas y placer la navigation par exemple.
 * `<nav id="navigation" role="navigation">` : navigation principale
 * `<form id="search" role="search">` : recherche principale
