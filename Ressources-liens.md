@@ -3,6 +3,7 @@
 ## Autres ressources :
 * https://gist.github.com/nathansmith/1023581
 * https://github.com/sdmg15/Best-websites-a-programmer-should-visit/blob/master/README.md
+* https://github.com/dypsilon/frontend-dev-bookmarks
 
 ## Documentations générales rapides
 * http://cssvalues.com/ dictionnaire des propriétés et valeurs
@@ -11,13 +12,17 @@
 * http://wwwhere.io/
 * http://html5index.org/
 * https://platform.html5.org/
-* https://github.com/dypsilon/frontend-dev-bookmarks
 * https://material.io/devices/ Google device metrics (pas que Google)
 
+## Compatibilité navigateur
+* http://caniuse.com/ (tableaux de support)
+* http://console.maban.co.uk/ (consoles)
+* http://browserhacks.com/ Hacks par navigateur
+
 ## HTML
-* https://schnaps.it/ Templates HTML5 avec KNACSS
 * https://html.spec.whatwg.org/multipage/ Spécification HTML WhatWG
 * https://w3c.github.io/html/ Spécification HTML5 W3C
+* https://schnaps.it/ Templates HTML5 avec KNACSS
 
 ### Microdata et sémantique
 * http://schema.org/
@@ -26,9 +31,10 @@
 * http://www.opensearch.org/Home Opensearch
 
 ## CSS
+
 ### Grids
-* http://learncssgrid.com/
-* https://alialaa.github.io/css-grid-cheat-sheet/
+* http://learncssgrid.com/ Apprendre CSS Grid Layout
+* https://alialaa.github.io/css-grid-cheat-sheet/ Cheatsheet CSS Grid
 * https://www.mozilla.org/en-US/developer/css-grid/
 
 ### Flexbox
@@ -48,31 +54,17 @@
    * http://git.aaronlumsden.com/progression/
    * http://ryanfunduk.com/jquery-tourbus/
    * http://usablica.github.io/intro.js/
-* http://browserhacks.com/ Hacks par navigateur
 
 ### Sass
 * http://www.sassmeister.com/
 
 ### Frameworks CSS
-* https://knacss.com/
-* http://twitter.github.io/bootstrap/ (by Twitter)
-* http://purecss.io/ (by Yahoo)
-* http://topcoat.io/ (by Adobe)
-* http://designmodo.github.io/Flat-UI/
+* https://knacss.com/ KNACSS !
+* http://twitter.github.io/bootstrap/ Bootstrap (Twitter)
+* http://purecss.io/ Pure (Yahoo)
+* http://topcoat.io/ Topcoat (Adobe)
+* http://designmodo.github.io/Flat-UI/ Flat UI
 * http://usablica.github.io/front-end-frameworks/compare.html Comparatif
-
-## PHP
-* http://www.phpliveregex.com/ Tester les regexp en live
-* https://regex101.com/ Tester les regexp en live
-* http://www.sitepoint.com/horizontal-scaling-php-apps/
-* https://phpbestpractices.org/ Best pratices PHP
-
-## Git
-* https://www.atlassian.com/git/tutorials/setting-up-a-repository Guide général sur Git
-* http://www.git-tower.com/learn/videos
-* http://articles.nissone.com/2014/11/gitpourlanulle/
-* http://www.git-attitude.fr/2014/05/04/bien-utiliser-git-merge-et-rebase/
-* https://github.com/blog/2019-how-to-undo-almost-anything-with-git
 
 ## Node.js / npm
 * https://nodejs.org/en/
@@ -86,66 +78,18 @@ Gulp
 * https://webdesignledger.com/understanding-the-bower-package-manager/ Introduction à Bower
 * https://webpack.js.org/ Webpack
 
-## Images bitmap (PNG / JPEG)
-* https://tinypng.com/ préserve la transparence et applique une compression (avec perte)
-* https://compressor.io/compress
+## PHP
+* http://www.phpliveregex.com/ Tester les regexp en live
+* https://regex101.com/ Tester les regexp en live
+* http://www.sitepoint.com/horizontal-scaling-php-apps/
+* https://phpbestpractices.org/ Best pratices PHP
 
-## SVG
-Dessiner online
-* https://www.gravit.io/
-* https://www.figma.com/
-* https://vectr.com/
-
-### Guides
-* https://svgontheweb.com/ guide ultime SVG sur le web
-* http://svgpocketguide.com/book/ Pocket guide to writing SVG
-* http://lynn.ru/examples/svg/en.html + http://css-tricks.com/svg-fallbacks/ + http://css-tricks.com/scale-svg/ Intégration dans HTML
-* http://svgjs.com/ Animations via JavaScript
-* http://thenewcode.com/1094/Using-JavaScript-in-SVG Include du code JavaScript dans SVG
-* http://sarasoueidan.com/blog/svg-tips-for-designers/ Guide de production SVG pour Illustrator & co
-* https://css-tricks.com/understanding-and-manually-improving-svg-optimization/
-* https://inkscape.org/en/ éditeur SVG open-source
-* http://maxwellito.github.io/vivus/ Animation filaire
-* https://design.tutsplus.com/tutorials/svg-files-from-illustrator-to-the-web--vector-20899 SVG Files: From Illustrator to the Web
-* http://snapsvg.io/ (animation SVG via JS)
-* http://www.svgjs.com/ (génération/animation en JS)
-* http://petercollingridge.appspot.com/svg-optimiser
-* https://github.com/svg/svgo Optimisation
-* https://jakearchibald.github.io/svgomg/ Optimisation en ligne
-* http://www.svgeneration.com/ Génération de motifs
-* http://css-tricks.com/animating-svg-css/ (animation via CSS)
-* http://gionkunz.github.io/chartist-js/index.html (graphiques animés et rwd)
-* http://sarasoueidan.com/blog/svg-coordinate-systems/ Système de coordonnées, viewbox, viewport, preserveAspectRatio
-* http://sarasoueidan.com/demos/interactive-svg-coordinate-system/index.html Cheatsheet Coordonnées
-* https://la-cascade.io/comprendre-svg-viewbox-et-viewport/
-* https://css-tricks.com/scale-svg/
-* https://css-tricks.com/using-svg/
-* http://sozi.baierouge.fr/pages/10-about.html Présentations animées avec zoom/dézoom
-* http://www.smashingmagazine.com/2015/05/26/why-the-svg-filter-is-awesome/ Filtres SVG
-* http://www.w3.org/TR/SVG/propidx.html Propriétés manipulables en CSS
-Accessibilité des SVG
-* http://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-2-svg-images-vectorielles/
-* http://la-cascade.ghost.io/rendre-svg-accessible/ SVG accessible
-* https://css-tricks.com/accessible-svgs/
-* https://www.paciellogroup.com/blog/2013/12/using-aria-enhance-svg-accessibility/
-* https://www.sitepoint.com/tips-accessible-svg/
-
-## Cartes géographiques
-* https://developers.google.com/maps/?hl=fr Google Maps
-* https://mapbuildr.com/buildr - constructeur de cartes pour Google Maps
-* https://www.openstreetmap.org/
-* http://openlayers.org/  API libre surcouche au choix de GMaps, Bing, OpenStreetMap, etc
-* http://mapbox.com/
-* http://simplemaps.com/ (cartes mondiales Canvas/SVG)
-* https://developers.google.com/maps/documentation/javascript/?hl=fr Google Maps API JavaScript
-* http://gmaps-samples-v3.googlecode.com/svn/trunk/styledmaps/wizard/index.html
-UX
-* https://uxtools.co/ comparaison des outils
-* http://goodui.org/
-* http://www.nickkolenda.com/user-experience/
-UI snippets
-* http://tympanus.net/codrops/category/blueprints/
-* http://tympanus.net/Development/AnimatedCheckboxes/ Checkboxes/radio en SVG animé
+## Git
+* https://www.atlassian.com/git/tutorials/setting-up-a-repository Guide général sur Git
+* http://www.git-tower.com/learn/videos
+* http://articles.nissone.com/2014/11/gitpourlanulle/
+* http://www.git-attitude.fr/2014/05/04/bien-utiliser-git-merge-et-rebase/
+* https://github.com/blog/2019-how-to-undo-almost-anything-with-git
 
 ## Accessibilité
 * https://github.com/UKHomeOffice/posters/tree/master/accessibility/posters_fr Posters recommandations UK Home Office en français
@@ -235,20 +179,6 @@ UI snippets
 * http://www.johanramon.fr/google-maps-accessibilite Google Maps
 * http://dev.openlayers.org/releases/OpenLayers-2.13.1/examples/accessible.html Open Layers
 
-## Référencement / SEO
-* https://goralewicz.com/blog/javascript-seo-experiment/ Référencement et JavaScript
-* http://backlinko.com/google-ranking-factors La liste des facteurs de référencement
-* http://www.sitepoint.com/one-hour-seo-audit/ Audit SEO en 1 heure
-
-## Réseaux sociaux
-* http://sharingbuttons.io/ Boutons de partage sans js
-* http://kurtnoble.com/labs/rrssb/index.html Ridiculously Responsive Social Sharing Buttons
-
-## Canvas
-* https://visitmix.com/labs/ai2canvas/ Ai to Canvas
-* http://www.professorcloud.com/svg-to-canvas/ SVG to Canvas
-* http://padolsey.github.io/sonic-creator/#default Loaders en Canvas
-
 ## Animations
 * http://anime-js.com/
 * http://mojs.io/
@@ -308,8 +238,8 @@ UI snippets
 * http://draggabilly.desandro.com/ Drag&Drop IE8+, multi-touch
 * https://github.com/ryanve/verge (Get viewport dimensions, detect elements in the viewport http://verge.airve.com)
 * http://eightmedia.github.io/hammer.js/ - gestion du touch avancé (multitouch, rotate, double tap, swipe, etc.)
-* http://handjs.codeplex.com/  - polyfill pour les pointer events
-* http://joaopereirawd.github.io/animatedModal.js/ - Modales animées
+* http://handjs.codeplex.com/ Polyfill pour les pointer events
+* http://joaopereirawd.github.io/animatedModal.js/ Modales animées
 * http://callmecavs.github.io/layzr.js/ Lazy loading d’images
 * http://webdesignledger.com/belazy-js-lazy-loading Lazy loading 1KB
 * http://callmecavs.com/bricks.js/ Masonry performant
@@ -335,6 +265,67 @@ UI snippets
 * http://code.octopuscreative.com/fancyselect/ (des selects au design amélioré)
 * http://parsleyjs.org/ (validation d’un formulaire + message d’erreur, fonctionne même sur une partie d’un formulaire, par étape, etc.)
 * https://github.com/bfintal/Counter-Up counter qui s’incrémente
+
+## Images bitmap (PNG / JPEG)
+* https://tinypng.com/ préserve la transparence et applique une compression (avec perte)
+* https://compressor.io/compress
+
+## SVG
+Dessiner online
+* https://www.gravit.io/
+* https://www.figma.com/
+* https://vectr.com/
+
+### Guides
+* https://svgontheweb.com/ guide ultime SVG sur le web
+* http://svgpocketguide.com/book/ Pocket guide to writing SVG
+* http://lynn.ru/examples/svg/en.html + http://css-tricks.com/svg-fallbacks/ + http://css-tricks.com/scale-svg/ Intégration dans HTML
+* http://svgjs.com/ Animations via JavaScript
+* http://thenewcode.com/1094/Using-JavaScript-in-SVG Include du code JavaScript dans SVG
+* http://sarasoueidan.com/blog/svg-tips-for-designers/ Guide de production SVG pour Illustrator & co
+* https://css-tricks.com/understanding-and-manually-improving-svg-optimization/
+* https://inkscape.org/en/ éditeur SVG open-source
+* http://maxwellito.github.io/vivus/ Animation filaire
+* https://design.tutsplus.com/tutorials/svg-files-from-illustrator-to-the-web--vector-20899 SVG Files: From Illustrator to the Web
+* http://snapsvg.io/ (animation SVG via JS)
+* http://www.svgjs.com/ (génération/animation en JS)
+* http://petercollingridge.appspot.com/svg-optimiser
+* https://github.com/svg/svgo Optimisation
+* https://jakearchibald.github.io/svgomg/ Optimisation en ligne
+* http://www.svgeneration.com/ Génération de motifs
+* http://css-tricks.com/animating-svg-css/ (animation via CSS)
+* http://gionkunz.github.io/chartist-js/index.html (graphiques animés et rwd)
+* http://sarasoueidan.com/blog/svg-coordinate-systems/ Système de coordonnées, viewbox, viewport, preserveAspectRatio
+* http://sarasoueidan.com/demos/interactive-svg-coordinate-system/index.html Cheatsheet Coordonnées
+* https://la-cascade.io/comprendre-svg-viewbox-et-viewport/
+* https://css-tricks.com/scale-svg/
+* https://css-tricks.com/using-svg/
+* http://sozi.baierouge.fr/pages/10-about.html Présentations animées avec zoom/dézoom
+* http://www.smashingmagazine.com/2015/05/26/why-the-svg-filter-is-awesome/ Filtres SVG
+* http://www.w3.org/TR/SVG/propidx.html Propriétés manipulables en CSS
+Accessibilité des SVG
+* http://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-2-svg-images-vectorielles/
+* http://la-cascade.ghost.io/rendre-svg-accessible/ SVG accessible
+* https://css-tricks.com/accessible-svgs/
+* https://www.paciellogroup.com/blog/2013/12/using-aria-enhance-svg-accessibility/
+* https://www.sitepoint.com/tips-accessible-svg/
+
+## Cartes géographiques
+* https://developers.google.com/maps/?hl=fr Google Maps
+* https://mapbuildr.com/buildr - constructeur de cartes pour Google Maps
+* https://www.openstreetmap.org/
+* http://openlayers.org/  API libre surcouche au choix de GMaps, Bing, OpenStreetMap, etc
+* http://mapbox.com/
+* http://simplemaps.com/ (cartes mondiales Canvas/SVG)
+* https://developers.google.com/maps/documentation/javascript/?hl=fr Google Maps API JavaScript
+* http://gmaps-samples-v3.googlecode.com/svn/trunk/styledmaps/wizard/index.html
+UX
+* https://uxtools.co/ comparaison des outils
+* http://goodui.org/
+* http://www.nickkolenda.com/user-experience/
+UI snippets
+* http://tympanus.net/codrops/category/blueprints/
+* http://tympanus.net/Development/AnimatedCheckboxes/ Checkboxes/radio en SVG animé
 
 ## Audio
 * https://github.com/goldfire/howler.js
@@ -423,14 +414,28 @@ UI snippets
 * https://vimeo.com/groups/freehd/
 * http://www.coverr.co/
 
+## Référencement / SEO
+* https://goralewicz.com/blog/javascript-seo-experiment/ Référencement et JavaScript
+* http://backlinko.com/google-ranking-factors La liste des facteurs de référencement
+* http://www.sitepoint.com/one-hour-seo-audit/ Audit SEO en 1 heure
+
+## Réseaux sociaux
+* http://sharingbuttons.io/ Boutons de partage sans js
+* http://kurtnoble.com/labs/rrssb/index.html Ridiculously Responsive Social Sharing Buttons
+
 ## WebRTC, MediaCapture
 * https://appr.tc/ Démo de chat vidéo en peer to peer avec HTML5
 
 ## Vidéo
 * https://rishabhp.github.io/bideo.js/ Vidéo en fond de page full-viewport
-* http://www.mirovideoconverter.com/ convertit vers les formats les plus courants
+* http://www.mirovideoconverter.com/ Convertit vers les formats les plus courants
 * http://plyr.io/
-* http://www.videojs.com/
+* http://www.videojs.com/ Lecteur configurable
+
+## Canvas
+* https://visitmix.com/labs/ai2canvas/ Ai to Canvas
+* http://www.professorcloud.com/svg-to-canvas/ SVG to Canvas
+* http://padolsey.github.io/sonic-creator/#default Loaders en Canvas
 
 ## Mobiles
 * https://developer.android.com/about/dashboards/index.html Android Platform Versions
@@ -440,13 +445,6 @@ UI snippets
 * http://www.danielchitu.com/mobiledesignkit.html Kit maquettes mobiles
 * http://www.html5rocks.com/en/mobile/fullscreen/ Techniques fullscreen
 * https://github.com/ftlabs/fastclick Désactiver le délai de 300ms au clic
-
-## Compatibilité navigateur
-* http://console.maban.co.uk/ (consoles)
-* http://caniuse.com/ (tableaux de support)
-* http://mobilehtml5.org/
-* http://msdn.microsoft.com/en-us/library/ie/hh673549(v=vs.85).aspx (IE10)
-* http://msdn.microsoft.com/library/ie/hh673549.aspx (Guide développeur IE10 FR)
 
 ## Performance
 * https://pageweight.imgix.com/ Diagnostiquer le poids des images
@@ -477,19 +475,6 @@ UI snippets
 * https://www.ssllabs.com/ssltest/ pour check
 * https://securitychecklist.org/
 * https://wiki.mozilla.org/Security/Server_Side_TLS la référence pour configurer
-
-## Machines virtuelles
-* https://www.virtualbox.org/ VirtualBox (Oracle)
-* https://css-tricks.com/an-introduction-to-vagrant/ Vagrant
-App mobiles/hybrides
-* https://ionicframework.com/
-* https://electron.atom.io/
-* http://www.appgyver.com/ (steroids.js)
-* https://developer.amazon.com/sdk/webapps.html Amazon Web Apps
-* https://github.com/phonegap/phonegap/wiki
-* http://mobile.tutsplus.com/tutorials/phonegap/creating-an-android-hello-world-application-with-phonegap/
-* http://mobile.tutsplus.com/tutorials/phonegap/phonegap-development/
-* http://www.sitepoint.com/how-to-create-html5-apps-on-windows-phone-with-phonegap/
 
 ## Prototypage
 Maquettes / story-boards / wireframes / mockups / zoning
@@ -548,7 +533,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 * http://lab.ejci.net/favico.js/ (badges en JS sur la favicon)
 * https://github.com/audreyr/favicon-cheat-sheet
 
-## RWD
+## RWD Responsive Web Design
 * http://wickynilliams.github.com/enquire.js/ (matchMedia, etc)
 * http://codyhouse.co/gem/mega-dropdown Responsive Mega Menu
 * http://mobile.smashingmagazine.com/2013/07/08/choosing-a-responsive-image-solution/ Images
@@ -574,6 +559,20 @@ Maquettes / story-boards / wireframes / mockups / zoning
 * http://zurb.com/ink/ Templates responsive
 * http://www.sitepoint.com/first-email-newsletter/
 * Voir aussi ressources CampaignMonitor et Mailchimp
+
+## Machines virtuelles
+* https://www.virtualbox.org/ VirtualBox (Oracle)
+* https://css-tricks.com/an-introduction-to-vagrant/ Vagrant
+
+## App mobiles/hybrides
+* https://ionicframework.com/
+* https://electron.atom.io/
+* http://www.appgyver.com/ (steroids.js)
+* https://developer.amazon.com/sdk/webapps.html Amazon Web Apps
+* https://github.com/phonegap/phonegap/wiki
+* http://mobile.tutsplus.com/tutorials/phonegap/creating-an-android-hello-world-application-with-phonegap/
+* http://mobile.tutsplus.com/tutorials/phonegap/phonegap-development/
+* http://www.sitepoint.com/how-to-create-html5-apps-on-windows-phone-with-phonegap/
 
 ## Hardware
 * http://blog.codinghorror.com/is-your-computer-stable/ Tests de stabilité hardware
