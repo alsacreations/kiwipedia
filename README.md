@@ -21,6 +21,7 @@ Cette présente charte a pour objectif :
 * [**Guidelines Développement PHP / MySql**](Guidelines-Developpement-PHP.md)
 * [**Commandes Linux**](Commandes-Linux.md)
 * [**Checklist**](Checklist.md)
+* [**Ressources et liens utiles**](Ressources-liens.md)
 * Guidelines WordPress _(TODO)_
 
 **NOTE : Aucun de ces documents n'est figé, ils sont en constante amélioration et évolution.**
