@@ -220,10 +220,10 @@ Gulp
    * http://exploringjs.com/es2016-es2017/
    * http://exploringjs.com/es6/index.html
    * http://speakingjs.com/es5/index.html
-* Jargon http://jargon.js.org/
-* Explication de this http://rainsoft.io/gentle-explanation-of-this-in-javascript/
-* Randomness http://thenewcode.com/82/Recipes-for-Randomness-in-JavaScript
-* Responsive https://www.lullabot.com/blog/article/importing-css-breakpoints-javascript (importer les breakpoints css en js)
+* http://jargon.js.org/ Jargon
+* http://rainsoft.io/gentle-explanation-of-this-in-javascript/ Explication de this
+* http://thenewcode.com/82/Recipes-for-Randomness-in-JavaScript Randomness
+* https://www.lullabot.com/blog/article/importing-css-breakpoints-javascript Responsive (importer les breakpoints css en js)
 * http://superherojs.com/
 * http://jsbeautifier.org/
 * http://www.jslint.com/ et http://jslinterrors.com/
@@ -383,7 +383,7 @@ UI snippets
 * https://stock.tookapic.com/photos?filter=free
 * http://images.superfamous.com/
 * http://freenaturestock.com/
-* http://jaymantri.com/
+* http://jaymantri.com/ (CC0)
 * http://nos.twnsnd.co/
 * https://pixabay.com/en/editors_choice/
 * https://realgraphy.org/
@@ -433,6 +433,12 @@ UI snippets
 * http://www.videojs.com/ Lecteur configurable
 
 ## Canvas
+Frameworks
+* https://threejs.org/ 2D et 3D
+* http://paperjs.org/
+* http://www.createjs.com/easeljs
+* http://fabricjs.com/
+Outils
 * https://visitmix.com/labs/ai2canvas/ Ai to Canvas
 * http://www.professorcloud.com/svg-to-canvas/ SVG to Canvas
 * http://padolsey.github.io/sonic-creator/#default Loaders en Canvas
