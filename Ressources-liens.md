@@ -205,6 +205,7 @@ Gulp
 
 ## JavaScript
 * https://tc39.github.io/ecma262/ Spec ECMAScript
+* https://auth0.com/blog/a-brief-history-of-javascript/ Une brève histoire de JavaScript
 * Bonnes pratiques et style guides
    * https://github.com/rwldrn/idiomatic.js/tree/master/translations/fr_FR
    * http://jstherightway.org/
