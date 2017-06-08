@@ -24,7 +24,7 @@ Pour assurer une cohérence inter-projets, utiliser la convention [EditorConfig]
 * Ne jamais laisser un appel à `console.log()` ou `eval()` dans le code en production.
 * Ne pas déclarer de fonctions/variables dans le scope global qui pourraient amener à des conflits avec d’autres scripts. Si besoin, utiliser une [IIFE](https://en.wikipedia.org/wiki/Immediately-invoked_function_expression).
 
-En bonus, suivre les recommandations de 
+En bonus, suivre les recommandations de
 * [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
 * [JavaScript The Right Way](http://jstherightway.org/)
 * [Principe d'écriture d'un code Javascript cohérent et idiomatique](https://github.com/rwaldron/idiomatic.js/tree/master/translations/fr_FR)
@@ -125,6 +125,8 @@ Pour les brefs commentaires, le double slash `//` sur une seule ligne est privil
 ```
 // Une ligne de commentaire
 ```
+
+Les commentaires plus conséquents, en introduction de fichier ou de description de fonctions doivent se faire avec des blocs `/** */`. Si le commentaire ne doit pas être supprimé à la minification, la syntaxe `/*! */` le permet.
 
 ## Closures
 
