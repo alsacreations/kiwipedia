@@ -21,6 +21,7 @@ ___
 | Un reset CSS est appliqué | * |
 | Internet Explorer est géré en mode de compatibilité standard | * |
 | Les balises HTML sont utilisées de manière sémantique | ** |
+| Les balises HTML5 de sections et types pour les formulaires sont exploitées | *** |
 | Le média print est pris en compte pour les contenus imprimables | * |
 
 ## Webdesign
@@ -43,6 +44,7 @@ ___
 | Les contenus statiques sont stockés sur un domaine sans cookies | * |
 | Les fichiers sont compressés côté serveur (deflate, gzip) | * |
 | Les performances front-end du site ont été vérifiées | * |
+| Le nombre de web fonts est limité | * |
 
 ## Référencement
 
@@ -53,6 +55,7 @@ ___
 | Le site est enregistré sur Google Search Console (compte Google requis) | * |
 | Le fichier robots.txt est présent | ** |
 | Un sitemap XML est généré | * |
+| Des microdonnées/microformats sont utilisés (Schema.org, JSON-LD) | * |
 
 ## Accessibilité
 
@@ -60,6 +63,7 @@ ___
 | ------------- | ------------- |
 | Des liens d'évitement sont opérationnels | ** |
 | Le contraste contenu / fond est suffisant | ** |
+| Les contenus visuels ont des alternatives texte | ** |
 | La langue des contenus est précisée (attribut lang) | * |
 | Des tailles de polices fluides sont employées, le contenu est lisible avec un zoom texte à 200% | * |
 | La hiérarchie des titres est correcte | ** |
@@ -82,13 +86,12 @@ ___
 |Critère|Priorité|
 | ------------- | ------------- |
 | Les liens internes sont valides | ** |
-| Le site fait appel à des technologies open-source et  interopérables | ** |
-| La disponibilité du site est monitorée (selon l’hébergement  choisi) | ** |
-| Le protocole HTTPS est utilisé avec un certificat valide | *** |
-| Les en-têtes HTTP relatives à la sécurité sont configurées | ** |
+| Le site fait appel à des technologies open-source et interopérables | ** |
+| La disponibilité du site est monitorée (selon l’hébergement choisi) | ** |
 | Une icône favicon est présente à la racine du site | ** |
 | La qualité du code HTML, CSS et JavaScript est vérifiée à l’aide d’outils automatiques (linters) | ** |
-| Les pages sont testées sur les navigateurs bureau et mobiles  principaux | ** |
+| Les pages sont testées sur les navigateurs bureau et mobiles principaux | ** |
+| L'orthographe et la grammaire sont vérifiées | * |
 
 ## Développement
 
@@ -96,3 +99,12 @@ ___
 | ------------- | ------------- |
 | Une nomenclature constante et internationale est adoptée | ** |
 | L'indentation des fichiers est conventionnée (.editorconfig) | *** |
+
+## Sécurité
+
+|Critère|Priorité|
+| ------------- | ------------- |
+| Toutes les entrées utilisateur (formulaires, paramètres GET, etc) sont filtrées et validées côté serveur | *** |
+| Les en-têtes HTTP relatives à la sécurité (CSP, CSRF, X-XSS, etc) sont configurées | ** |
+| Le protocole HTTPS est utilisé avec un certificat valide | *** |
+

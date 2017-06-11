@@ -419,6 +419,7 @@ UI snippets
 * https://goralewicz.com/blog/javascript-seo-experiment/ Référencement et JavaScript
 * http://backlinko.com/google-ranking-factors La liste des facteurs de référencement
 * http://www.sitepoint.com/one-hour-seo-audit/ Audit SEO en 1 heure
+* https://www.screamingfrog.co.uk/seo-spider/ Outil de crawl et diagnostic SEO
 
 ## Réseaux sociaux
 * http://sharingbuttons.io/ Boutons de partage sans js
