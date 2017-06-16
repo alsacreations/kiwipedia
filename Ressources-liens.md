@@ -573,6 +573,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 ## e-Mailing
 * https://litmus.com/ (screenshots de mails multi-clients)
 * http://www.inboxinspector.com/ (pareil mais gratuit)
+* https://topol.io/ Outil de conception en ligne (gratuit)
 * https://www.inkbrush.com/ Intégration à partir de maquettes + découpage + responsive + envoi !
 * https://htmlemail.io/ Responsive HTML Email Templates
 * https://targeted.io/ (pareil)
@@ -580,7 +581,8 @@ Maquettes / story-boards / wireframes / mockups / zoning
 * http://premailer.dialect.ca/ Preformate un mail pour optimiser sa compatibilité (utilise API Campaign Monitor)
 * http://zurb.com/ink/ Templates responsive
 * http://www.sitepoint.com/first-email-newsletter/
-* Voir aussi ressources CampaignMonitor et Mailchimp
+* https://templates.mailchimp.com/resources/ Ressources Mailchimp
+* https://www.campaignmonitor.com/resources/ Ressources Campaign Monitor
 
 ## Machines virtuelles
 * https://www.virtualbox.org/ VirtualBox (Oracle)
