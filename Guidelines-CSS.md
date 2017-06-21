@@ -611,31 +611,7 @@ Documentation : [https://csstriggers.com/](https://csstriggers.com/)
 
 N’imposez pas de chargements aux anciens navigateurs (IE8). Privilégiez `.woff2`.
 
-**Non :**
-
-```
-@font-face {
-  font-family: kiwi;
-  src: url("/fonts/kiwi.eot?#iefix") format("embedded opentype");
-  src: url("/fonts/kiwi.eot?#iefix") format("embedded opentype"),
-  url("/fonts/kiwi.woff2") format("woff2"),
-  url("/fonts/kiwi.woff") format("woff"),
-  url("/fonts/kiwi.ttf") format("truetype"),
-  url("/fonts/kiwi.svg#svgFontName") format("svg");
-}
-```
-
-**Oui :**
-
-```
-@font-face {
-  font-family: 'kiwi';
-  src: url('kiwi.woff2') format('woff2'),
-  url('kiwi.woff') format('woff');
-}
-```
-
-Documentation : [https://twitter.com/kaelig/status/609362210759012353](https://twitter.com/kaelig/status/609362210759012353)
+Pour le détail, voir la partie ["medias / polices"](#polices)
 
 ## Sass et outils d’automatisation
 
@@ -834,7 +810,9 @@ Voici un exemple de chargement de police conseillé (IE9 minimum) :
 ```
 
 **BONUS :** utiliser la directive `<link rel="preload">` pour charger les fontes de manière asynchrone.
+
 Compatibilité : http://caniuse.com/#feat=link-rel-preload
+
 Ressource : https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf
 
 ### Contenus de remplissage
