@@ -692,16 +692,17 @@ Documentation : [http://sass-lang.com/](http://sass-lang.com/)
 
 Pour éviter les intervalles qui se chevauchent, ou des Media Queries trop variés, la convention pour définir la valeur d’un Breakpoint est systématiquement :
 
-* **(min-width: ($breakpoint + 1))**** **
-* **(max-width: $breakpoint)**
+* **(min-width: $breakpoint)**** **
+* **(max-width: ($breakpoint - 1))**
 
 Exemple avec les variables de Breakpoints suivantes :
 
 ```
-$tiny-screen: 543px;
-$small-screen: 767px;
-$medium-screen: 991px;
-$large-screen: 1199px;
+$tiny: 480px;
+$small: 576px;
+$medium: 768px;
+$large: 992px;
+$extra-large: 1200px;
 ```
 
 **Non :**
@@ -709,8 +710,8 @@ $large-screen: 1199px;
 ```
 @media (min-width: 767px) {...}
 @media (max-width: 768px) {...}
-@media (min-width: $small-screen) {...}
-@media (min-width: $small-screen) and (max-width: $large-screen) {...}
+@media (min-width: $small - 1) {...}
+@media (min-width: $small) and (max-width: $large) {...}
 ```
 
 **Oui :**
@@ -718,8 +719,8 @@ $large-screen: 1199px;
 ```
 @media (min-width: 768px) {...}
 @media (max-width: 767px) {...}
-@media (min-width: $small-screen + 1) {...}
-@media (min-width: $small-screen + 1) and (max-width: $large-screen) {...}
+@media (min-width: $small) {...}
+@media (min-width: $small) and (max-width: ($large - 1)) {...}
 ```
 
 ### Préfixes navigateurs
