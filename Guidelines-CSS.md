@@ -757,7 +757,7 @@ Documentation : [https://autoprefixer.github.io/](https://autoprefixer.github.io
 
 ### Nestings (imbrications)
 
-Éviter tant que possible les imbrications en Sass.
+Éviter tant que possible les imbrications de plus d'un niveau en Sass.
 
 **Non :**
 
@@ -832,6 +832,10 @@ Voici un exemple de chargement de police conseillé (IE9 minimum) :
   font-style: normal;
 }
 ```
+
+**BONUS :** utiliser la directive `<link rel="preload">` pour charger les fontes de manière asynchrone.
+Compatibilité : http://caniuse.com/#feat=link-rel-preload
+Ressource : https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf
 
 ### Contenus de remplissage
 
