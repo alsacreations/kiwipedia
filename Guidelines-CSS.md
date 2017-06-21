@@ -681,7 +681,7 @@ $large: 992px;
 $extra-large: 1200px;
 ```
 
-**Non :**
+**Non :** 
 
 ```
 @media (min-width: 767px) {...}
