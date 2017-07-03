@@ -939,6 +939,8 @@ Changer propriétaire d'un fichier
 Changer droits d'un fichier
 `chmod 0<rwx> <file>`
 
+Voir https://chmodcommand.com/ Chmod Calculator
+
 Changer droits sur les sous répertoires
 `find <path> -type d -print0 | xargs -0 chmod <permissions>`
 

@@ -46,14 +46,13 @@
 * http://howtocenterincss.com/ How to center in CSS, comment centrer en CSS
 * http://refresh-sf.com/yui/ Minification (respecte la syntaxe, les media queries, les virgules entre multiples propriétés...)
 * https://quirksmode.org/css/selectors/mobile.html Compatibilité sélecteurs CSS sur mobiles
-* Tooltips/infobulles
+* Tooltips/infobulles/tours
    * http://codepen.io/mildrenben/pen/rVBrpK
    * http://kushagragour.in/lab/hint/ CSS tooltip library
    * http://cssarrowplease.com/
    * http://github.hubspot.com/shepherd/docs/welcome/
    * http://git.aaronlumsden.com/progression/
-   * http://ryanfunduk.com/jquery-tourbus/
-   * http://usablica.github.io/intro.js/
+   * http://introjs.com/
 
 ### Sass
 * http://www.sassmeister.com/
