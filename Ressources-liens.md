@@ -30,6 +30,9 @@
 * http://ogp.me/ Opengraph
 * http://www.opensearch.org/Home Opensearch
 
+### HTML5, API, composants
+* https://521dimensions.com/open-source/amplitudejs Player audio
+
 ## CSS
 
 ### Grids
@@ -43,9 +46,11 @@
 
 ### Divers
 * https://css-tricks.com/
+* http://freefrontend.com/ Collections de démos et ressources
 * http://howtocenterincss.com/ How to center in CSS, comment centrer en CSS
 * http://refresh-sf.com/yui/ Minification (respecte la syntaxe, les media queries, les virgules entre multiples propriétés...)
 * https://quirksmode.org/css/selectors/mobile.html Compatibilité sélecteurs CSS sur mobiles
+<<<<<<< HEAD
 * Tooltips/infobulles/tours
    * http://codepen.io/mildrenben/pen/rVBrpK
    * http://kushagragour.in/lab/hint/ CSS tooltip library
@@ -53,6 +58,16 @@
    * http://github.hubspot.com/shepherd/docs/welcome/
    * http://git.aaronlumsden.com/progression/
    * http://introjs.com/
+=======
+* Tooltips/infobulles
+  * http://codepen.io/mildrenben/pen/rVBrpK
+  * http://kushagragour.in/lab/hint/ CSS tooltip library
+  * http://cssarrowplease.com/
+  * http://github.hubspot.com/shepherd/docs/welcome/
+  * http://git.aaronlumsden.com/progression/
+  * http://ryanfunduk.com/jquery-tourbus/
+  * http://usablica.github.io/intro.js/
+>>>>>>> origin/master
 
 ### Sass
 * http://www.sassmeister.com/
@@ -73,7 +88,7 @@ Gulp
 * http://alistapart.com/blog/post/getting-started-with-gulp
 * http://www.sitepoint.com/introduction-gulp-js/
 * http://justinjohnson.org/javascript/getting-started-with-gulp-and-browserify/
-   * https://github.com/BrowserSync/gulp-browser-sync
+  * https://github.com/BrowserSync/gulp-browser-sync
 * https://webdesignledger.com/understanding-the-bower-package-manager/ Introduction à Bower
 * https://webpack.js.org/ Webpack
 
@@ -114,10 +129,8 @@ Gulp
 * http://khan.github.io/tota11y/?r=1
 
 ### Player vidéo / audio
-* http://www.accessibilityoz.com.au/products/ozplayer/ Player html5
-* http://e-standards.flexiblelearning.net.au/video/accessible-player-viewer.htm Autre player html5
-* http://youdescribe.ski.org/rel/ Audio desc avec Youtube
-* http://vimeo.com/help/faq/managing-your-videos/captions-and-subtitles Sous-titre Vimeo
+* http://www.accessibilityoz.com/ozplayer/ Player html5 accessible
+* https://youdescribe.org/ Audio desc avec Youtube
 
 ### Divers
 * http://accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html Référentiel AccessiWeb HTML5/ARIA
@@ -188,10 +201,10 @@ Gulp
 * Création de Courbes de bézier pour transition-timing-function: cubic-bezier(); (par exemple)
 * Textillate Animations textes en jQuery/CSS3
 * Animations CSS :
-   * http://h5bp.github.io/Effeckt.css/dist/
-   * http://daneden.me/animate/
-   * http://www.justinaguilar.com/animations/
-   * http://leaverou.github.io/animatable/
+  * http://h5bp.github.io/Effeckt.css/dist/
+  * http://daneden.me/animate/
+  * http://www.justinaguilar.com/animations/
+  * http://leaverou.github.io/animatable/
 * http://tobiasahlin.com/spinkit/ Loaders animés (spin)
 * http://connoratherton.com/loaders Loaders CSS
 
@@ -205,49 +218,63 @@ Gulp
 ## JavaScript
 * https://tc39.github.io/ecma262/ Spec ECMAScript
 * https://auth0.com/blog/a-brief-history-of-javascript/ Une brève histoire de JavaScript
-* Bonnes pratiques et style guides
-   * https://github.com/rwldrn/idiomatic.js/tree/master/translations/fr_FR
-   * http://jstherightway.org/
-   * https://github.com/airbnb/javascript
-* Libs
-   * http://jquery.com/
-   * https://angularjs.org/
-   * https://facebook.github.io/react/
-   * https://lodash.com/
-* https://github.com/developit/unfetch Polyfill pour fetch() en 500 octets
-* ECMAScript
-   * https://leanpub.com/setting-up-es6/read
-   * http://exploringjs.com/es2016-es2017/
-   * http://exploringjs.com/es6/index.html
-   * http://speakingjs.com/es5/index.html
+* https://github.com/naomihauret/js-stack-from-scratch/ JavaScript Stack from Scratch (traduction fr)
 * http://jargon.js.org/ Jargon
-* http://rainsoft.io/gentle-explanation-of-this-in-javascript/ Explication de this
-* http://thenewcode.com/82/Recipes-for-Randomness-in-JavaScript Randomness
-* https://www.lullabot.com/blog/article/importing-css-breakpoints-javascript Responsive (importer les breakpoints css en js)
-* http://superherojs.com/
-* http://jsbeautifier.org/
-* http://www.jslint.com/ et http://jslinterrors.com/
-* https://github.com/dbushell/Pikaday (datepicker, aussi en plugin jQuery)
-* http://robertwhurst.github.io/KeyboardJS/ (gestion clavier)
-* http://parall.ax/products/jspdf (Générer PDF côté client)
-* http://wicky.nillia.ms/headroom.js/ (header disparaissant animé)
-* http://inorganik.github.io/countUp.js/ (défilement de compteur/chiffres)
-* http://youmightnotneedjquery.com/ (extraits de code JS pour remplacer jQuery)
-* http://github.hubspot.com/vex/docs/welcome/ (popups modales efficaces)
-* http://accessibility.oit.ncsu.edu/training/aria/modal-window/ modale accessible #a11y
-* http://draggabilly.desandro.com/ Drag&Drop IE8+, multi-touch
-* https://github.com/ryanve/verge (Get viewport dimensions, detect elements in the viewport http://verge.airve.com)
-* http://eightmedia.github.io/hammer.js/ - gestion du touch avancé (multitouch, rotate, double tap, swipe, etc.)
-* http://handjs.codeplex.com/ Polyfill pour les pointer events
-* http://joaopereirawd.github.io/animatedModal.js/ Modales animées
-* http://callmecavs.github.io/layzr.js/ Lazy loading d’images
-* http://webdesignledger.com/belazy-js-lazy-loading Lazy loading 1KB
-* http://callmecavs.com/bricks.js/ Masonry performant
-* http://www.resumablejs.com/ (uploads resumables grâce à HTML5 File API)
-* http://mozilla.github.io/localForage/ (framework pour mieux utiliser localStorage avec plus de techniques et de types de données)
-* https://github.com/jwagner/smartcrop.js Smartcrop intelligent pour les images
+
+* Bonnes pratiques et style guides
+  * https://github.com/rwldrn/idiomatic.js/tree/master/translations/fr_FR
+  * http://jstherightway.org/
+  * https://github.com/airbnb/javascript
+  * http://superherojs.com/
+
+* ECMAScript
+  * https://leanpub.com/setting-up-es6/read
+  * http://exploringjs.com/es2016-es2017/
+  * http://exploringjs.com/es6/index.html
+  * http://speakingjs.com/es5/index.html
+
+* Libs et frameworks
+  * http://jquery.com/
+  * https://angularjs.org/
+  * https://facebook.github.io/react/
+  * https://lodash.com/
+  * https://github.com/developit/unfetch Polyfill pour fetch() en 500 octets
+
+* Outils d'écriture de code
+  * http://jsbeautifier.org/
+  * http://www.jslint.com/ et http://jslinterrors.com/
+
+* Scripts divers
+  * http://editor.ory.am/ Editeur wysiwyg
+  * http://rainsoft.io/gentle-explanation-of-this-in-javascript/ Explication de this
+  * http://thenewcode.com/82/Recipes-for-Randomness-in-JavaScript Randomness
+  * https://www.lullabot.com/blog/article/importing-css-breakpoints-javascript Responsive (importer les breakpoints css en js)
+  * https://github.com/dbushell/Pikaday (datepicker, aussi en plugin jQuery)
+  * http://robertwhurst.github.io/KeyboardJS/ (gestion clavier)
+  * http://parall.ax/products/jspdf (Générer PDF côté client)
+  * http://wicky.nillia.ms/headroom.js/ (header disparaissant animé)
+  * http://inorganik.github.io/countUp.js/ (défilement de compteur/chiffres)
+  * http://youmightnotneedjquery.com/ (extraits de code JS pour remplacer jQuery)
+  * http://github.hubspot.com/vex/docs/welcome/ (popups modales efficaces)
+  * http://accessibility.oit.ncsu.edu/training/aria/modal-window/ modale accessible #a11y
+  * http://draggabilly.desandro.com/ Drag&Drop IE8+, multi-touch
+  * https://github.com/ryanve/verge (Get viewport dimensions, detect elements in the viewport http://verge.airve.com)
+  * http://eightmedia.github.io/hammer.js/ - gestion du touch avancé (multitouch, rotate, double tap, swipe, etc.)
+  * http://handjs.codeplex.com/ Polyfill pour les pointer events
+  * http://joaopereirawd.github.io/animatedModal.js/ Modales animées
+  * http://callmecavs.github.io/layzr.js/ Lazy loading d’images
+  * http://webdesignledger.com/belazy-js-lazy-loading Lazy loading 1KB
+  * http://callmecavs.com/bricks.js/ Masonry performant
+  * http://www.resumablejs.com/ (uploads resumables grâce à HTML5 File API)
+  * http://mozilla.github.io/localForage/ (framework pour mieux utiliser localStorage avec plus de techniques et de types de données)
+  * https://github.com/jwagner/smartcrop.js Smartcrop intelligent pour les images
+
+### React
+* https://css-tricks.com/productive-in-react/
+* http://reactfordesigners.com/labs/reactjs-introduction-for-people-who-know-just-enough-jquery-to-get-by/
 
 ### jQuery
+
 * http://www.opentip.org/ (tooltips)
 * http://qtip2.com/download (tooltips)
 * http://antenna.io/demo/jquery-bar-rating/examples/ (ratings)
@@ -337,10 +364,7 @@ UI snippets
 * http://www.scriptiny.com/2009/12/slideshow-script/ autre petit slideshow très léger et en JS
 * kenwheeler.github.io/slick/
 
-## React
-* https://css-tricks.com/productive-in-react/
-* http://reactfordesigners.com/labs/reactjs-introduction-for-people-who-know-just-enough-jquery-to-get-by/
-@font-face et polices, typographie
+## @font-face et polices, typographie
 * http://type-scale.com/
 * http://stateofwebtype.com/
 * https://prowebtype.com/ E-book (gratuit) Professionnal web typography (très bon, à lire)
@@ -501,7 +525,6 @@ Maquettes / story-boards / wireframes / mockups / zoning
 * http://www.spurapp.com/
 
 ## Documents / Office
-* http://www.slidescarnival.com/ Modèles de Google Slides gratuits
 
 ## Explication et relation client
 * https://small.chat/ Intégrer Slack en chat sur le site
@@ -509,8 +532,10 @@ Maquettes / story-boards / wireframes / mockups / zoning
 * http://warpspire.com/posts/url-design/ URL design (~cool uri)
 * https://medium.com/@ImpalaWebstudio/pourquoi-nous-ne-livrons-pas-de-maquettes-au-moment-du-devis-36a242479a71 Maquettes gratuites
 * http://kitdesurvie.metiers-graphiques.fr/articles/comment-gerer-un-impaye Comment gérer un impayé
+* http://www.slidescarnival.com/ Modèles de Google Slides gratuits
 
-## Inspiration
+## Design inspiration
+* https://interfaces.pro/
 * http://www.webcreme.com/
 * http://www.cssmania.com/
 * http://cssremix.com/
@@ -545,10 +570,10 @@ Maquettes / story-boards / wireframes / mockups / zoning
 * http://codyhouse.co/gem/mega-dropdown Responsive Mega Menu
 * http://mobile.smashingmagazine.com/2013/07/08/choosing-a-responsive-image-solution/ Images
 * http://gionkunz.github.io/chartist-js/index.html Graphiques
-* Tableau responsive :
-   * http://css-tricks.com/responsive-data-table-roundup/
-   * http://elvery.net/demo/responsive-tables/
-   * http://jquerymobile.com/branches/tables/docs/tables/
+* Tableau responsive
+  * http://css-tricks.com/responsive-data-table-roundup/
+  * http://elvery.net/demo/responsive-tables/
+  * http://jquerymobile.com/branches/tables/docs/tables/
 
 ## Retina et HD
 * http://net.tutsplus.com/tutorials/html-css-techniques/the-right-way-to-retinafy-your-websites/
@@ -558,6 +583,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 ## e-Mailing
 * https://litmus.com/ (screenshots de mails multi-clients)
 * http://www.inboxinspector.com/ (pareil mais gratuit)
+* https://topol.io/ Outil de conception en ligne (gratuit)
 * https://www.inkbrush.com/ Intégration à partir de maquettes + découpage + responsive + envoi !
 * https://htmlemail.io/ Responsive HTML Email Templates
 * https://targeted.io/ (pareil)
@@ -565,7 +591,8 @@ Maquettes / story-boards / wireframes / mockups / zoning
 * http://premailer.dialect.ca/ Preformate un mail pour optimiser sa compatibilité (utilise API Campaign Monitor)
 * http://zurb.com/ink/ Templates responsive
 * http://www.sitepoint.com/first-email-newsletter/
-* Voir aussi ressources CampaignMonitor et Mailchimp
+* https://templates.mailchimp.com/resources/ Ressources Mailchimp
+* https://www.campaignmonitor.com/resources/ Ressources Campaign Monitor
 
 ## Machines virtuelles
 * https://www.virtualbox.org/ VirtualBox (Oracle)

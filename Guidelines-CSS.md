@@ -611,31 +611,7 @@ Documentation : [https://csstriggers.com/](https://csstriggers.com/)
 
 N’imposez pas de chargements aux anciens navigateurs (IE8). Privilégiez `.woff2`.
 
-**Non :**
-
-```
-@font-face {
-  font-family: kiwi;
-  src: url("/fonts/kiwi.eot?#iefix") format("embedded opentype");
-  src: url("/fonts/kiwi.eot?#iefix") format("embedded opentype"),
-  url("/fonts/kiwi.woff2") format("woff2"),
-  url("/fonts/kiwi.woff") format("woff"),
-  url("/fonts/kiwi.ttf") format("truetype"),
-  url("/fonts/kiwi.svg#svgFontName") format("svg");
-}
-```
-
-**Oui :**
-
-```
-@font-face {
-  font-family: 'kiwi';
-  src: url('kiwi.woff2') format('woff2'),
-  url('kiwi.woff') format('woff');
-}
-```
-
-Documentation : [https://twitter.com/kaelig/status/609362210759012353](https://twitter.com/kaelig/status/609362210759012353)
+Pour le détail, voir la partie ["medias / polices"](#polices)
 
 ## Sass et outils d’automatisation
 
@@ -692,25 +668,26 @@ Documentation : [http://sass-lang.com/](http://sass-lang.com/)
 
 Pour éviter les intervalles qui se chevauchent, ou des Media Queries trop variés, la convention pour définir la valeur d’un Breakpoint est systématiquement :
 
-* **(min-width: ($breakpoint + 1))**** **
-* **(max-width: $breakpoint)**
+* **(min-width: $breakpoint)**** **
+* **(max-width: ($breakpoint - 1))**
 
 Exemple avec les variables de Breakpoints suivantes :
 
 ```
-$tiny-screen: 543px;
-$small-screen: 767px;
-$medium-screen: 991px;
-$large-screen: 1199px;
+$tiny: 480px;
+$small: 576px;
+$medium: 768px;
+$large: 992px;
+$extra-large: 1200px;
 ```
 
-**Non :**
+**Non :** 
 
 ```
 @media (min-width: 767px) {...}
 @media (max-width: 768px) {...}
-@media (min-width: $small-screen) {...}
-@media (min-width: $small-screen) and (max-width: $large-screen) {...}
+@media (min-width: $small - 1) {...}
+@media (min-width: $small) and (max-width: $large) {...}
 ```
 
 **Oui :**
@@ -718,8 +695,8 @@ $large-screen: 1199px;
 ```
 @media (min-width: 768px) {...}
 @media (max-width: 767px) {...}
-@media (min-width: $small-screen + 1) {...}
-@media (min-width: $small-screen + 1) and (max-width: $large-screen) {...}
+@media (min-width: $small) {...}
+@media (min-width: $small) and (max-width: ($large - 1)) {...}
 ```
 
 ### Préfixes navigateurs
@@ -756,7 +733,7 @@ Documentation : [https://autoprefixer.github.io/](https://autoprefixer.github.io
 
 ### Nestings (imbrications)
 
-Éviter tant que possible les imbrications en Sass.
+Éviter tant que possible les imbrications de plus d'un niveau en Sass.
 
 **Non :**
 
@@ -831,6 +808,12 @@ Voici un exemple de chargement de police conseillé (IE9 minimum) :
   font-style: normal;
 }
 ```
+
+**BONUS :** utiliser la directive `<link rel="preload">` pour charger les fontes de manière asynchrone.
+
+Compatibilité : http://caniuse.com/#feat=link-rel-preload
+
+Ressource : https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf
 
 ### Contenus de remplissage
 

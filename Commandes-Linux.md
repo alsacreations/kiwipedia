@@ -858,6 +858,9 @@ Wget : télécharger un fichier par HTTP ou FTP
 Wget récursif, sans accepter les fichiers en gzip (sinon ça ne marche pas)
 `wget --header="accept-encoding: none" --recursive http://www.azerty0.ironie.org/`
 
+Wget miroir d'un site, récursif, adaptant les liens et extensions, téléchargeant les ressources internes, ignorant robots.txt
+`wget --mirror --convert-links --adjust-extension --page-requisites --no-parent -e robots=off http://www.azerty0.ironie.org/`
+
 Convertir un fichier en utf8
 ```
 iconv -f latin1 -t utf8 update.sql >update-utf8.sql
