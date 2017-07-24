@@ -549,6 +549,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 ## Design/ergo
 * http://www.logodesignlove.com/brand-identity-style-guides (guides de styles)
 * http://www.ui-transitions.com/ Transitions
+* https://blogs.adobe.com/creativecloud/designing-more-efficient-forms-structure-inputs-labels-and-actions/ Bonnes pratiques pour formulaires
 
 ## Logos
 * https://www.logopony.com/ génération de logos automatique
