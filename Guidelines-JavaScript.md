@@ -234,6 +234,7 @@ $('element').hide();
 * Se reposer sur les éléments pouvant recevoir le focus (`<a>`, `<button>`, `<input>`) pour l’ajout d’événements `onclick`, etc.
 * Toujours écrire les gestionnaires d'événement avec `.on()` pour les retrouver plus facilement dans le code plutôt qu'avec les alias.
 * Penser à prévoir les cas de figure où le code peut être appelé plusieurs fois dans une même page, ou plusieurs fois par erreur sur un même élément (par exemple avec la gestion `.off()` et `.on()` des événements, les attributs `data-*` pour savoir s’il a déjà été appliqué, etc).
+* Suivre le principe des _Optimistic Updates_ : les opérations du visiteur prennent effet immédiatment pour ne pas attendre, et son corrigées une fois le résultat réel de l'opération retournée par le serveur.
 
 ### ARIA et accessibilité
 

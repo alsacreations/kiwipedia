@@ -542,9 +542,13 @@ Maquettes / story-boards / wireframes / mockups / zoning
 * http://www.misipile.com/
 * http://unmatchedstyle.com/
 
-## Photoshop, graphisme & grilles
+## Outils design, graphisme
 * http://www.psdvalidator.com/ valide les PSD selon l’étiquette
-* https://projectparfait.adobe.com/ découpage CSS/PNG en ligne, extraction de codes
+* https://assets.adobe.com/link/b8ecd6b6-94ac-468c-9cfa-b2c666c81a6c?section=extract Adobe Assets : découpage CSS/PNG en ligne, extraction de codes
+* https://www.figma.com/ Figma
+* https://www.sketchapp.com/ Sketch
+* https://designer.io/ Gravit designer
+* https://www.photopea.com/ Ouvre/édite/sauve PSD, Gimp, Sketch en ligne
 
 ## Design/ergo
 * http://www.logodesignlove.com/brand-identity-style-guides (guides de styles)
