@@ -26,9 +26,15 @@
 
 ### Microdata et sémantique
 * http://schema.org/
-* https://dev.twitter.com/cards/overview Twitter Cards
-* http://ogp.me/ Opengraph
 * http://www.opensearch.org/Home Opensearch
+
+#### Open Graph
+
+* http://ogp.me/ Opengraph
+* https://dev.twitter.com/cards/overview Twitter Cards
+* http://opengraphcheck.com/ Outil de vérification Open Graph
+* http://iframely.com/debug Comment les autres sites/apps voient le vôtre
+* https://developers.facebook.com/tools/debug Outil de test Open Graph de Facebook
 
 ### HTML5, API, composants
 * https://521dimensions.com/open-source/amplitudejs Player audio
