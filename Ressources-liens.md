@@ -33,6 +33,7 @@
 * http://ogp.me/ Opengraph
 * https://dev.twitter.com/cards/overview Twitter Cards
 * http://opengraphcheck.com/ Outil de vérification Open Graph
+* https://cards-dev.twitter.com/validator Validateur Twitter Open Graph
 * http://iframely.com/debug Comment les autres sites/apps voient le vôtre
 * https://developers.facebook.com/tools/debug Outil de test Open Graph de Facebook
 
