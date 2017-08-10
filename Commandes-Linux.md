@@ -563,6 +563,9 @@ Ping
 Ethernet top
 `iftop`
 
+Connaître la vitesse de connexion du lien Ethernet (adapter le nom de l'interface avec celui trouvé dans ifconfig)
+`ethtool eth0 | grep -i speed`
+
 Capture de paquets réseau selon protocole/port
 `tcpdump -i eth0 'tcp port 80'`
 
