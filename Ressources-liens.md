@@ -57,7 +57,6 @@
 * http://howtocenterincss.com/ How to center in CSS, comment centrer en CSS
 * http://refresh-sf.com/yui/ Minification (respecte la syntaxe, les media queries, les virgules entre multiples propriétés...)
 * https://quirksmode.org/css/selectors/mobile.html Compatibilité sélecteurs CSS sur mobiles
-<<<<<<< HEAD
 * Tooltips/infobulles/tours
    * http://codepen.io/mildrenben/pen/rVBrpK
    * http://kushagragour.in/lab/hint/ CSS tooltip library
@@ -65,16 +64,6 @@
    * http://github.hubspot.com/shepherd/docs/welcome/
    * http://git.aaronlumsden.com/progression/
    * http://introjs.com/
-=======
-* Tooltips/infobulles
-  * http://codepen.io/mildrenben/pen/rVBrpK
-  * http://kushagragour.in/lab/hint/ CSS tooltip library
-  * http://cssarrowplease.com/
-  * http://github.hubspot.com/shepherd/docs/welcome/
-  * http://git.aaronlumsden.com/progression/
-  * http://ryanfunduk.com/jquery-tourbus/
-  * http://usablica.github.io/intro.js/
->>>>>>> origin/master
 
 ### Sass
 * http://www.sassmeister.com/
@@ -113,6 +102,7 @@ Gulp
 * https://github.com/blog/2019-how-to-undo-almost-anything-with-git
 
 ## Accessibilité
+* https://bitsofco.de/the-accessibility-cheatsheet/ Cheatsheet résumée
 * https://github.com/UKHomeOffice/posters/tree/master/accessibility/posters_fr Posters recommandations UK Home Office en français
 * http://a11y-style-guide.com/style-guide/
 * https://cehfisher.github.io/a11y-style-guide/style-guide/ Styleguide A11y
