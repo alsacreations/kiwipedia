@@ -22,6 +22,7 @@ Cette présente charte a pour objectif :
 * [**Commandes Linux**](Commandes-Linux.md)
 * [**Checklist**](Checklist.md)
 * [**Ressources et liens utiles**](Ressources-liens.md)
+* [**Pense-Bête Flexbox (PDF)**](flexbox-cheatsheet.pdf)
 * Guidelines WordPress _(TODO)_
 
 **NOTE : Aucun de ces documents n'est figé, ils sont en constante amélioration et évolution.**
