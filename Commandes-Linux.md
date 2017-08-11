@@ -563,6 +563,9 @@ Ping
 Ethernet top
 `iftop`
 
+Connaître la vitesse de connexion du lien Ethernet (adapter le nom de l'interface avec celui trouvé dans ifconfig)
+`ethtool eth0 | grep -i speed`
+
 Capture de paquets réseau selon protocole/port
 `tcpdump -i eth0 'tcp port 80'`
 
@@ -841,7 +844,7 @@ endif
 ```
 ___
 
-## Scripts utiles
+## Scripts utiles et shell
 
 Date
 `echo $(date +%Y-%m-%d)`
@@ -856,10 +859,14 @@ Wget : télécharger un fichier par HTTP ou FTP
 `wget http://www.perdu.com/`
 
 Wget récursif, sans accepter les fichiers en gzip (sinon ça ne marche pas)
-`wget --header="accept-encoding: none" --recursive http://www.azerty0.ironie.org/`
+```
+wget --header="accept-encoding: none" --recursive http://www.azerty0.ironie.org/
+```
 
 Wget miroir d'un site, récursif, adaptant les liens et extensions, téléchargeant les ressources internes, ignorant robots.txt
-`wget --mirror --convert-links --adjust-extension --page-requisites --no-parent -e robots=off http://www.azerty0.ironie.org/`
+```
+wget --mirror --convert-links --adjust-extension --page-requisites --no-parent -e robots=off http://www.azerty0.ironie.org/
+```
 
 Convertir un fichier en utf8
 ```
@@ -941,6 +948,8 @@ Changer propriétaire d'un fichier
 
 Changer droits d'un fichier
 `chmod 0<rwx> <file>`
+
+Voir https://chmodcommand.com/ Chmod Calculator
 
 Changer droits sur les sous répertoires
 `find <path> -type d -print0 | xargs -0 chmod <permissions>`
@@ -1073,10 +1082,12 @@ Réactualiser la db
 `pure-pw mkdb`
 
 Divers
-`pure-pw passwd ftpwww`
-`pure-pw userdel ftpwww`
-`pure-pw show ftpwww`
-`pure-pw list`
+```
+pure-pw passwd ftpwww
+pure-pw userdel ftpwww
+pure-pw show ftpwww
+pure-pw list
+```
 
 ### Rkhunter
 

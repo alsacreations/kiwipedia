@@ -26,9 +26,16 @@
 
 ### Microdata et sémantique
 * http://schema.org/
-* https://dev.twitter.com/cards/overview Twitter Cards
-* http://ogp.me/ Opengraph
 * http://www.opensearch.org/Home Opensearch
+
+#### Open Graph
+
+* http://ogp.me/ Opengraph
+* https://dev.twitter.com/cards/overview Twitter Cards
+* http://opengraphcheck.com/ Outil de vérification Open Graph
+* https://cards-dev.twitter.com/validator Validateur Twitter Open Graph
+* http://iframely.com/debug Comment les autres sites/apps voient le vôtre
+* https://developers.facebook.com/tools/debug Outil de test Open Graph de Facebook
 
 ### HTML5, API, composants
 * https://521dimensions.com/open-source/amplitudejs Player audio
@@ -50,14 +57,13 @@
 * http://howtocenterincss.com/ How to center in CSS, comment centrer en CSS
 * http://refresh-sf.com/yui/ Minification (respecte la syntaxe, les media queries, les virgules entre multiples propriétés...)
 * https://quirksmode.org/css/selectors/mobile.html Compatibilité sélecteurs CSS sur mobiles
-* Tooltips/infobulles
-  * http://codepen.io/mildrenben/pen/rVBrpK
-  * http://kushagragour.in/lab/hint/ CSS tooltip library
-  * http://cssarrowplease.com/
-  * http://github.hubspot.com/shepherd/docs/welcome/
-  * http://git.aaronlumsden.com/progression/
-  * http://ryanfunduk.com/jquery-tourbus/
-  * http://usablica.github.io/intro.js/
+* Tooltips/infobulles/tours
+   * http://codepen.io/mildrenben/pen/rVBrpK
+   * http://kushagragour.in/lab/hint/ CSS tooltip library
+   * http://cssarrowplease.com/
+   * http://github.hubspot.com/shepherd/docs/welcome/
+   * http://git.aaronlumsden.com/progression/
+   * http://introjs.com/
 
 ### Sass
 * http://www.sassmeister.com/
@@ -96,6 +102,7 @@ Gulp
 * https://github.com/blog/2019-how-to-undo-almost-anything-with-git
 
 ## Accessibilité
+* https://bitsofco.de/the-accessibility-cheatsheet/ Cheatsheet résumée
 * https://github.com/UKHomeOffice/posters/tree/master/accessibility/posters_fr Posters recommandations UK Home Office en français
 * http://a11y-style-guide.com/style-guide/
 * https://cehfisher.github.io/a11y-style-guide/style-guide/ Styleguide A11y
@@ -532,13 +539,18 @@ Maquettes / story-boards / wireframes / mockups / zoning
 * http://www.misipile.com/
 * http://unmatchedstyle.com/
 
-## Photoshop, graphisme & grilles
+## Outils design, graphisme
 * http://www.psdvalidator.com/ valide les PSD selon l’étiquette
-* https://projectparfait.adobe.com/ découpage CSS/PNG en ligne, extraction de codes
+* https://assets.adobe.com/link/b8ecd6b6-94ac-468c-9cfa-b2c666c81a6c?section=extract Adobe Assets : découpage CSS/PNG en ligne, extraction de codes
+* https://www.figma.com/ Figma
+* https://www.sketchapp.com/ Sketch
+* https://designer.io/ Gravit designer
+* https://www.photopea.com/ Ouvre/édite/sauve PSD, Gimp, Sketch en ligne
 
 ## Design/ergo
 * http://www.logodesignlove.com/brand-identity-style-guides (guides de styles)
 * http://www.ui-transitions.com/ Transitions
+* https://blogs.adobe.com/creativecloud/designing-more-efficient-forms-structure-inputs-labels-and-actions/ Bonnes pratiques pour formulaires
 
 ## Logos
 * https://www.logopony.com/ génération de logos automatique
