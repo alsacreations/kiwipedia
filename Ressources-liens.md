@@ -386,6 +386,7 @@ UI snippets
 
 ## Images libres (ou pas)
 * http://www.fotolia.com/
+* https://www.stockio.com/
 * http://www.stickpng.com/ (PNG transparents)
 * https://visualhunt.com/ (cc)
 * http://photl.com/
