@@ -500,6 +500,7 @@ Outils
 ### Sécurité
 * https://letsencrypt.org/ Let’s Encrypt pour certificats HTTPS gratuits
 * https://blog.appcanary.com/2017/http-security-headers.html Tout sur les en-têtes HTTP de sécurité
+* https://movingtohttps.com/ Migrer vers HTTPS, techniques et outils
 * https://securityheaders.io/ pour check
 * https://www.ssllabs.com/ssltest/ pour check
 * https://securitychecklist.org/
