@@ -1,6 +1,6 @@
 # Ressources et liens utiles
 
-## Autres ressources :
+## Autres ressources
 * https://gist.github.com/nathansmith/1023581
 * https://github.com/sdmg15/Best-websites-a-programmer-should-visit/blob/master/README.md
 * https://github.com/dypsilon/frontend-dev-bookmarks
