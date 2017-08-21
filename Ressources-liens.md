@@ -395,6 +395,7 @@ UI snippets
 * https://www.pexels.com/
 * http://www.freepik.com (vectoriel libre de droits / commercial avec mention)
 * https://www.vexels.com/ (vectoriel gratuit avec mention)
+* https://www.vecteezy.com/
 * http://www.photaki.com/
 * http://picography.co/
 * https://unsplash.com/
