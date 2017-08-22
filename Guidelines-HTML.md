@@ -216,7 +216,7 @@ Les liens entre site web et les différents réseaux sociaux sont de plus en plu
 
 Elle permet une présentation améliorée d’un site web sur le réseau Twitter et lien ce site web à un compte Twitter via son URL mentionnée dans un Tweet. Exemple :
 
-## ![twitter card](images/html01.png)
+![twitter card](images/html01.png)
 
 Exemple d’une carte de type *summary*
 
@@ -225,7 +225,11 @@ Le code correspondant pourrait ressembler à cela :
 ```
 <meta name="twitter:card" content="summary">
 <meta name="twitter:url" content="http://alsacreations.com/{content_url}">
-<meta name="twitter:image" content="/default_square_icon.png"><meta name="twitter:title" content="{page_title} – Alsacréations"><meta name="twitter:description" content="Alsacréations, blog d'actualité dans le monde des technologies web (HTML5, CSS 3, JavaScript, etc.)"><meta name="twitter:site" content="@alsacreations"><meta name="twitter:creator" content="@diou">
+<meta name="twitter:image" content="/default_square_icon.png">
+<meta name="twitter:title" content="{page_title} – Alsacréations">
+<meta name="twitter:description" content="Alsacréations, blog d'actualité dans le monde des technologies web (HTML5, CSS 3, JavaScript, etc.)">
+<meta name="twitter:site" content="@alsacreations">
+<meta name="twitter:creator" content="@diou">
 ```
 
 * **Twitter:card** : "summary", “player” ou “photo” sont des valeurs possibles
@@ -253,7 +257,11 @@ Parmi les valeurs de og: les plus utilisées on retrouve :
 
 ```
 <meta property="og:title" content="Alsacréations, agence Web exotique">
-<meta property="og:url" content="http://alsacreations.fr"><meta property="og:locale" content="fr_FR"><meta property="og:site_name" content="Alsacréations.fr"><meta property="og:description" content="Alsacréations est une agence Web exotique proposant à ses clients des solutions originales et professionnelles."><meta property="og:image" content="/default_square_icon.png">
+<meta property="og:url" content="http://alsacreations.fr">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Alsacréations.fr">
+<meta property="og:description" content="Alsacréations est une agence Web exotique proposant à ses clients des solutions originales et professionnelles.">
+<meta property="og:image" content="/default_square_icon.png">
 <meta property="og:type" content="website">
 ```
 
