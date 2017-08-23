@@ -255,14 +255,12 @@ Afin d’améliorer la réactivité de chargement et l’évaluation des perform
 ### Outils de diagnostic
 
 * L’onglet Network/Réseau et Timeline des outils de développement navigateur
-* [PageSpeed](https://developers.google.com/speed/pagespeed/insights_extensions)
-* [YSlow](https://addons.mozilla.org/fr/firefox/addon/yslow/)
+* [PageSpeed](https://developers.google.com/speed/pagespeed/insights/)
 
 ### Références
 
 * [https://css-tricks.com/performance-tools/](https://css-tricks.com/performance-tools/)
-* [Web Performance best practices](https://developers.google.com/speed/docs/best-practices/rules_intro) (Google)
-* [Exceptional Performance](http://developer.yahoo.com/performance/) (Yahoo)
+* [Web Performance best practices](https://developers.google.com/speed/docs/insights/rules) (Google)
 
 ## Sitemap
 
