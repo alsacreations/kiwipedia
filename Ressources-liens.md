@@ -126,6 +126,7 @@ Gulp
 * http://khan.github.io/tota11y/?r=1
 
 ### Player vidéo / audio
+* https://github.com/jonathantneal/media-player Player media accessible
 * http://www.accessibilityoz.com/ozplayer/ Player html5 accessible
 * https://youdescribe.org/ Audio desc avec Youtube
 
