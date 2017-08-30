@@ -89,7 +89,8 @@ Exemple :
 
 ```
 <a href="URL" class="btn">
-  <i class="icon-kiwi" aria-hidden="true"></i> KiwiParty</a>
+  <i class="icon-kiwi" aria-hidden="true"></i> KiwiParty
+</a>
 ```
 
 ### Contenu lu mais masqué à l’écran
@@ -100,7 +101,14 @@ Utiliser plutôt la classe `.visually-hidden`, présente dans [KNACSS](http://kn
 
 ```
 .visually-hidden {
-  position: absolute !important;  border: 0 !important;  height: 1px !important;  width: 1px !important;  padding: 0 !important;  overflow: hidden !important;  clip: rect(0, 0, 0, 0) !important;}
+  position: absolute !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+}
 ```
 
 **Exemple :**
@@ -173,7 +181,8 @@ Ne pas faire :
   background-image: url("facebook.png");
 }
 ```
-→ dans ce cas là, le lecteur d’écran retranscrit l’intégralité de l’URL.
+
+→ dans ce cas là, le lecteur d’écran retranscrit l’intégralité de l’URL.
 
 Même en ajoutant un attribut `title="Retrouvez-nous sur Facebook"` sur le lien, celui-ci reste considéré comme vide.
 De plus, il n’est pas sûr à 100% que l’attribut `title` soit correctement restitué par le lecteur d’écran (tout dépend de la configuration de l’utilisateur).
@@ -194,7 +203,8 @@ De plus, il n’est pas sûr à 100% que l’attribut `title` soit correctement 
   background-image: url("facebook.png");
 }
 ```
-→ dans ce cas là, le lecteur d’écran retranscrit bien _"Retrouvez-nous sur Facebook"_.
+
+→ dans ce cas là, le lecteur d’écran retranscrit bien _"Retrouvez-nous sur Facebook"_.
 
 ### Ouverture dans une nouvelle fenêtre
 
@@ -228,7 +238,8 @@ Exemple d’une image **cliquable** :
 
 ```
 <a href="www.knacss.com">
-   <img src="knacss.png" alt="Knacss"></a>
+   <img src="knacss.png" alt="Knacss">
+</a>
 ```
 
 Exemple d’une image **porteuse d’information** :
@@ -263,7 +274,9 @@ Meilleure technique relevée par Atalan : [http://blog.atalan.fr/svg-liens-et-le
 
 ```
 <a href="…">
-  <span class="visually-hidden">Le titre du lien</span>  <svg role="img" aria-hidden="true">…</svg></a>
+  <span class="visually-hidden">Le titre du lien</span>
+  <svg aria-hidden="true">…</svg>
+</a>
 ```
 
 ## Formulaires
