@@ -218,6 +218,7 @@ Gulp
 * https://auth0.com/blog/a-brief-history-of-javascript/ Une brève histoire de JavaScript
 * https://github.com/naomihauret/js-stack-from-scratch/ JavaScript Stack from Scratch (traduction fr)
 * http://jargon.js.org/ Jargon
+* http://fr.eloquentjavascript.net/
 
 * Bonnes pratiques et style guides
   * https://github.com/rwldrn/idiomatic.js/tree/master/translations/fr_FR
