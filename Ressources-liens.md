@@ -244,6 +244,7 @@ Gulp
   * http://www.jslint.com/ et http://jslinterrors.com/
 
 * Scripts divers
+  * https://plainjs.com/ Sélection de scripts et plugins sans framework (Vanilla)
   * http://editor.ory.am/ Editeur wysiwyg
   * http://rainsoft.io/gentle-explanation-of-this-in-javascript/ Explication de this
   * http://thenewcode.com/82/Recipes-for-Randomness-in-JavaScript Randomness
