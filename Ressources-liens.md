@@ -482,7 +482,6 @@ Outils
 * https://github.com/ftlabs/fastclick Désactiver le délai de 300ms au clic
 
 ## Performance
-* https://pageweight.imgix.com/ Diagnostiquer le poids des images
 * http://www.perf.rocks/ Plein de ressources
 * http://loads.in/
 * https://gtmetrix.com/
@@ -490,6 +489,11 @@ Outils
 * https://tools.pingdom.com/
 * https://browserdiet.com/
 * http://codepen.io/bradfrost/pen/EPQVBp/ Performance budget builder
+
+## Images
+* https://pageweight.imgix.com/ Diagnostiquer le poids des images
+* https://imageoptim.com/fr Optimiser le poids des images
+* https://images.guide/ Guide d'optimisation
 
 ## Serveur
 * http://net.tutsplus.com/tutorials/apache-2-basic-configuration-on-unix-like-systems/ Configuration Apache de base sous Linux (NetTuts)
