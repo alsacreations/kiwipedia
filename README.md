@@ -19,7 +19,7 @@ Cette présente charte a pour objectif :
 * [**Guidelines CSS**](Guidelines-CSS.md)
 * [**Guidelines JavaScript / jQuery**](Guidelines-JavaScript.md)
 * [**Guidelines Développement PHP / MySql**](Guidelines-Developpement-PHP.md)
-* [**Commandes Linux**](Commandes-Linux.md)
+* [**Commandes Linux**](Commandes-Linux.md) (Cheatsheet)
 * [**Checklist**](Checklist.md)
 * [**Ressources et liens utiles**](Ressources-liens.md)
 * [**Pense-Bête Flexbox (PDF)**](flexbox-cheatsheet.pdf)
