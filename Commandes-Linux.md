@@ -9,6 +9,8 @@ Utiles pour un serveur de développement ou un serveur web/mail/ftp, notamment s
 * MiniVim https://github.com/sd65/MiniVim
 * Commandline challenge https://cmdchallenge.com/
 
+Rechercher rapidement dans les précédentes commandes : `Ctrl+R`
+
 ___
 
 ## Root
