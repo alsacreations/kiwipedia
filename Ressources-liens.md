@@ -598,6 +598,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 * https://litmus.com/ (screenshots de mails multi-clients)
 * http://www.inboxinspector.com/ (pareil mais gratuit)
 * https://topol.io/ Outil de conception en ligne (gratuit)
+* https://mjml.io/getting-started-onboard + https://mjml.io/try-it-live Syntaxe simplifiée générant du HTML compatible + éditeur en ligne
 * https://www.inkbrush.com/ Intégration à partir de maquettes + découpage + responsive + envoi !
 * https://htmlemail.io/ Responsive HTML Email Templates
 * https://targeted.io/ (pareil)
