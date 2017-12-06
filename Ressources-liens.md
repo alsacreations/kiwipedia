@@ -52,6 +52,9 @@
 * http://www.vincent-valentin.name/articles/le-petit-flexbox-illustre Flexbox
 * http://www.flexboxpatterns.com/ Patterns flexbox
 
+### Typographie
+* https://font-display.glitch.me/ Explication de font-display
+
 ### Divers
 * https://css-tricks.com/
 * http://freefrontend.com/ Collections de démos et ressources
