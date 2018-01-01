@@ -395,15 +395,14 @@ UI snippets
 * http://www.fotolia.com/
 * https://www.stockio.com/
 * http://www.stickpng.com/ (PNG transparents)
-* https://visualhunt.com/ (cc)
+* https://visualhunt.com/ (CC)
 * http://photl.com/
 * https://stocksnap.io/ (CC0)
 * http://www.compfight.com/
 * https://www.pexels.com/
 * http://www.freepik.com (vectoriel libre de droits / commercial avec mention)
 * https://www.vexels.com/ (vectoriel gratuit avec mention)
-* https://www.vecteezy.com/
-* http://www.photaki.com/
+* https://www.vecteezy.com/ (vectoriel)
 * http://picography.co/
 * https://unsplash.com/
 * http://cupcake.nilssonlee.se/
