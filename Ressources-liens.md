@@ -392,7 +392,6 @@ UI snippets
 * https://github.com/paulirish/browser-logos Logos de navigateurs
 
 ## Images libres (ou pas)
-* http://www.fotolia.com/
 * https://www.stockio.com/
 * http://www.stickpng.com/ (PNG transparents)
 * https://visualhunt.com/ (CC)
@@ -417,7 +416,6 @@ UI snippets
 * https://pixabay.com/en/editors_choice/
 * https://realgraphy.org/
 * https://lookingglassfreephotos.tumblr.com/
-* http://minimography.com/
 * http://freestocks.org/
 * http://photos.polarfox.com/
 * http://photocollections.io/
