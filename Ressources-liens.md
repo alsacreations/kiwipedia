@@ -398,6 +398,7 @@ UI snippets
 * https://stocksnap.io/ (CC0)
 * http://www.compfight.com/
 * https://www.pexels.com/
+* http://thestocks.im/ (meta-moteur)
 * http://www.freepik.com (vectoriel libre de droits / commercial avec mention)
 * https://www.vexels.com/ (vectoriel gratuit avec mention)
 * https://www.vecteezy.com/ (vectoriel)
