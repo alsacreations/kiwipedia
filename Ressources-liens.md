@@ -396,7 +396,6 @@ UI snippets
 * https://www.stockio.com/
 * http://www.stickpng.com/ (PNG transparents)
 * https://visualhunt.com/ (CC)
-* http://photl.com/
 * https://stocksnap.io/ (CC0)
 * http://www.compfight.com/
 * https://www.pexels.com/
