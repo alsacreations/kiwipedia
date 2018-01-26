@@ -1,4 +1,4 @@
-<<<<<<< Updated upstream
+
 # Ressources et liens utiles
 
 ## Autres ressources
@@ -424,7 +424,6 @@ UI snippets
 * http://foodshot.co/
 * http://www.photocrops.com/browse/
 * http://realisticshots.com/
-* http://fancycrave.com/
 * https://bossfight.co/
 
 ### Placeholders
@@ -1259,4 +1258,3 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 ## Divers
 * https://matt.sh/howto-c How to C in 2016
->>>>>>> Stashed changes
