@@ -226,6 +226,7 @@ Gulp
 * http://fr.eloquentjavascript.net/
 
 * Bonnes pratiques et style guides
+  * https://molily.de/robust-javascript/ Robust JavaScript
   * https://github.com/rwldrn/idiomatic.js/tree/master/translations/fr_FR
   * http://jstherightway.org/
   * https://github.com/airbnb/javascript
