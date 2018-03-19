@@ -63,6 +63,7 @@
 * http://refresh-sf.com/yui/ Minification (respecte la syntaxe, les media queries, les virgules entre multiples propriétés...)
 * https://quirksmode.org/css/selectors/mobile.html Compatibilité sélecteurs CSS sur mobiles
 * Tooltips/infobulles/tours
+   * https://atomiks.github.io/tippyjs/
    * http://codepen.io/mildrenben/pen/rVBrpK
    * http://kushagragour.in/lab/hint/ CSS tooltip library
    * http://cssarrowplease.com/
