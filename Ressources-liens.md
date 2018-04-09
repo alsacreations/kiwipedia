@@ -597,6 +597,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 * http://dev.opera.com/articles/responsive-images/ Responsive images use cases sippets
 
 ## e-Mailing
+* https://explore.reallygoodemails.com/new-to-email-coding-heres-where-to-start-2494422f0bd4 Résumé des pratiques
 * https://litmus.com/ (screenshots de mails multi-clients)
 * http://www.inboxinspector.com/ (pareil mais gratuit)
 * https://topol.io/ Outil de conception en ligne (gratuit)
