@@ -737,6 +737,9 @@ Monitorer un fichier (lignes ajoutées) / Ctrl+C pour quitter
 
 ### Compression
 
+Lister les contenus d'un fichier zip
+`unzip -l <fichier.zip>`
+
 Compression du dossier www dans www.zip
 `gzip -rc www >www.zip`
 
