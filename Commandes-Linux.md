@@ -584,6 +584,9 @@ Supprimer la règle
 Lister les règles actives
 `iptables -L -v`
 
+Lister la configuration
+`iptables -S`
+
 Effacer la règle n°4 en input (1ere ligne = 1)
 `iptables -D INPUT 4`
 
