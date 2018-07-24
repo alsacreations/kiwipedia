@@ -582,7 +582,7 @@ Supprimer la règle
 `iptables -D INPUT -s <adresse_ip> -j DROP`
 
 Lister les règles actives
-`iptables -L -v`
+`iptables -L -v --line-numbers`
 
 Lister la configuration
 `iptables -S`
