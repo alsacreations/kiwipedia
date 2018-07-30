@@ -460,6 +460,9 @@ Marquer comme défectueux avant de remove
 Remove
 `mdadm --remove /dev/md0 /dev/sdb`
 
+Forcer un remove de disque déjà en fail (F) mais devenu indisponible en device
+`mdadm -r /dev/md0 failed`
+
 Remettre à zéro les superblocs Raid (erreur négligeable si aucun reste de raid précédent)
 `mdadm --zero-superblock /dev/sdb1`
 
