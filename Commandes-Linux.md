@@ -470,7 +470,7 @@ Voir aussi http://www.ducea.com/2009/03/08/mdadm-cheat-sheet/
 
 ### Smart
 
-Vérifier santé Smart disque (surveiller valeurs de Reallocated_Sector_Ct et Current_Pending_Sector)
+Vérifier santé Smart disque (surveiller valeurs de Reallocated_Sector_Ct et Current_Pending_Sector) - permet aussi d'identifier le disque physique sur la machine avec ses Device Model et Serial Number marqués sur le matériel.
 `smartctl -a /dev/sdb` et `smartctl -H /dev/sdb`
 
 Lancer un test Smart sur un disque
