@@ -408,6 +408,9 @@ Partitionner (p = afficher, d = supprimer, n = new)
 Liste tous les UUID
 `blkid`
 
+Liste les devices de bloc
+`lsblk`
+
 Espace disque libre
 `df -h`
 
