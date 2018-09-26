@@ -97,6 +97,7 @@ Gulp
 ## PHP
 * http://www.phpliveregex.com/ Tester les regexp en live
 * https://regex101.com/ Tester les regexp en live
+* https://extendsclass.com/regex-tester.html Tester les regexp en live
 * http://www.sitepoint.com/horizontal-scaling-php-apps/
 * https://phpbestpractices.org/ Best pratices PHP
 
