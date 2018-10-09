@@ -671,6 +671,9 @@ Trouver tous les error.log et les classer par taille
 Que les fichiers (pas les dossiers)
 `find -type f`
 
+Arborescence à 2 niveaux
+`tree -L 2`
+
 ### Remplacer dans des fichiers
 
 Dans fichiers html remplacer DATA par DATA2
