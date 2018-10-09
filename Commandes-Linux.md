@@ -893,9 +893,14 @@ Supprimer fichiers vides
 for file in * .*; do [ -f "$file" ] && [ 0 -eq "$(wc -c "$file" | cut -d" " -f1)" ] && rm -f "$file"; done
 ```
 
-Trouver les 404 et leur compte dans un log
+Trouver les 404 et leur total dans un log Apache
 ```
 grep " 404" access.log | awk '{print $7}' | sort | uniq -c
+```
+
+Trouver les adresses IP uniques et le nombre de requêtes dans un log Apache (ajouter `| wc -l` pour le total)
+```
+cat access.log | awk '{ print $1 }' | sort | uniq -c | sort -n
 ```
 
 Lister récursivement tous les fichiers contenant une chaîne sans l'afficher
