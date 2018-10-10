@@ -469,8 +469,8 @@ Forcer un remove de disque déjà en fail (F) mais devenu indisponible en device
 Remettre à zéro les superblocs Raid (erreur négligeable si aucun reste de raid précédent)
 `mdadm --zero-superblock /dev/sdb1`
 
-Ajouter une partition sdb1 au raid md1
-`mdadm --manage /dev/md1 --add /dev/sdb1`
+Ajouter une partition sdb1 au raid md0
+`mdadm --manage /dev/md0 --add /dev/sdb1`
 
 Voir aussi http://www.ducea.com/2009/03/08/mdadm-cheat-sheet/
 
