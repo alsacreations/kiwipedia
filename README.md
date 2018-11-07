@@ -21,7 +21,7 @@ Cette présente charte a pour objectif :
 ### Ressources et pense-bêtes
 
 * [**Pense-Bête Flexbox (PDF)**](https://github.com/alsacreations/guidelines/blob/master/flexbox-cheatsheet.pdf)
-* * [**Pense-Bête Grid Layout (PDF)**](https://github.com/alsacreations/guidelines/blob/master/grid-cheatsheet.pdf)
+* [**Pense-Bête Grid Layout (PDF)**](https://github.com/alsacreations/guidelines/blob/master/grid-cheatsheet.pdf)
 * [**Commandes Linux**](Commandes-Linux.md) (Cheatsheet)
 * [**Checklist**](Checklist.md)
 * [**Ressources et liens utiles**](Ressources-liens.md)
