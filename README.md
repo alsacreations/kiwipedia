@@ -2,8 +2,6 @@
 
 _Nos bonnes pratiques et recommandations internes à l'agence web [Alsacréations](http://www.alsacreations.fr)_
 
-Voir aussi les [Snippets](https://github.com/alsacreations/snippets)
-
 Cette présente charte a pour objectif :
 
 * d'uniformiser et d’harmoniser les processus
@@ -13,16 +11,23 @@ Cette présente charte a pour objectif :
 
 ## Liste des documents
 
-* [**Guidelines Workflow**](Guidelines-Workflow.md)
-* [**Guidelines Accessibilité**](Guidelines-Accessibilite.md)
 * [**Guidelines HTML**](Guidelines-HTML.md)
 * [**Guidelines CSS**](Guidelines-CSS.md)
 * [**Guidelines JavaScript / jQuery**](Guidelines-JavaScript.md)
+* [**Guidelines Accessibilité**](Guidelines-Accessibilite.md)
+* [**Guidelines Workflow**](Guidelines-Workflow.md)
 * [**Guidelines Développement PHP / MySql**](Guidelines-Developpement-PHP.md)
+
+### Ressources et pense-bêtes
+
+* [**Pense-Bête Flexbox (PDF)**](https://github.com/alsacreations/guidelines/blob/master/flexbox-cheatsheet.pdf)
+* * [**Pense-Bête Grid Layout (PDF)**](https://github.com/alsacreations/guidelines/blob/master/grid-cheatsheet.pdf)
 * [**Commandes Linux**](Commandes-Linux.md) (Cheatsheet)
 * [**Checklist**](Checklist.md)
 * [**Ressources et liens utiles**](Ressources-liens.md)
-* [**Pense-Bête Flexbox (PDF)**](flexbox-cheatsheet.pdf)
+
+### TODO
+
 * [**Guidelines WordPress**](Guidelines-WordPress.md) (Draft)
 
 **NOTE : Aucun de ces documents n'est figé, ils sont en constante amélioration et évolution.**
