@@ -390,14 +390,17 @@ Démonter un volume
 Démonter un volume (forcer)
 `umount -fl /dev/sda1`
 
-Monter un volume
+Monter un volume (déjà listé dans fstab)
 `mount /dev/sda1`
+
+Monter un volume à la demande
+`mount -t ext4 /dev/sda1 /mnt/path`
 
 Infos de montages
 `cat /proc/mounts`
 
 Qui utilise la ressource ?
-`fuser -v /media/Backup2To/`
+`fuser -v /media/path/`
 
 Liste de toutes les partitions
 `fdisk -l`
