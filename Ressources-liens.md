@@ -253,7 +253,7 @@ Gulp
 
 * Scripts divers
   * https://plainjs.com/ Sélection de scripts et plugins sans framework (Vanilla)
-  * http://editor.ory.am/ Editeur wysiwyg
+  * https://docs.slatejs.org Editeurs wysiwyg
   * http://rainsoft.io/gentle-explanation-of-this-in-javascript/ Explication de this
   * http://thenewcode.com/82/Recipes-for-Randomness-in-JavaScript Randomness
   * https://www.lullabot.com/blog/article/importing-css-breakpoints-javascript Responsive (importer les breakpoints css en js)
@@ -265,7 +265,7 @@ Gulp
   * http://youmightnotneedjquery.com/ (extraits de code JS pour remplacer jQuery)
   * http://github.hubspot.com/vex/docs/welcome/ (popups modales efficaces)
   * http://accessibility.oit.ncsu.edu/training/aria/modal-window/ modale accessible #a11y
-  * http://draggabilly.desandro.com/ Drag&Drop IE8+, multi-touch
+  * http://draggabilly.desandro.com/ Drag&Drop multi-touch
   * https://github.com/ryanve/verge (Get viewport dimensions, detect elements in the viewport http://verge.airve.com)
   * http://eightmedia.github.io/hammer.js/ - gestion du touch avancé (multitouch, rotate, double tap, swipe, etc.)
   * http://handjs.codeplex.com/ Polyfill pour les pointer events
