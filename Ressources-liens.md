@@ -32,6 +32,7 @@
 #### Open Graph
 
 * http://ogp.me/ Opengraph
+* https://metatags.io Génération des meta tags
 * https://dev.twitter.com/cards/overview Twitter Cards
 * http://opengraphcheck.com/ Outil de vérification Open Graph
 * https://cards-dev.twitter.com/validator Validateur Twitter Open Graph
