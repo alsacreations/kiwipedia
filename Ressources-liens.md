@@ -569,6 +569,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 * https://www.mobile-patterns.com Mobile patterns
 
 ## Logos
+* https://logomaster.ai/ créateur de logo en ligne
 * https://www.logopony.com/ génération de logos automatique
 * http://www.logofi.com/
 * http://www.logogala.com/
