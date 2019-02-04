@@ -872,7 +872,14 @@ Split un fichier PDF en plusieurs autres
 `pdfseparate -f 1 -l 10 doc.pdf tmp/doc-%d.pdf`
 
 Wget : télécharger un fichier par HTTP ou FTP
-`wget http://www.perdu.com/`
+```
+wget http://www.perdu.com/
+```
+
+Wget : aspirer une page en particulier et toutes ses dépendances
+```
+wget -E -H -k -K -p http://www.perdu.com/
+```
 
 Wget récursif, sans accepter les fichiers en gzip (sinon ça ne marche pas)
 ```
