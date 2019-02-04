@@ -860,18 +860,9 @@ endif
 ```
 ___
 
-## Scripts utiles et shell
+## Wget : télécharger/cloner un fichier/un site par HTTP ou FTP
 
-Date
-`echo $(date +%Y-%m-%d)`
-
-Envoyer un mail
-`echo "Arf" | mail -s "Sujet" destinataire@example.org`
-
-Split un fichier PDF en plusieurs autres
-`pdfseparate -f 1 -l 10 doc.pdf tmp/doc-%d.pdf`
-
-Wget : télécharger un fichier par HTTP ou FTP
+Commande de base récupérant la page d'index
 ```
 wget http://www.perdu.com/
 ```
@@ -890,6 +881,17 @@ Wget miroir d'un site, récursif, adaptant les liens et extensions, télécharge
 ```
 wget --mirror --convert-links --adjust-extension --page-requisites --no-parent -e robots=off http://www.azerty0.ironie.org/
 ```
+
+## Scripts utiles et shell
+
+Date
+`echo $(date +%Y-%m-%d)`
+
+Envoyer un mail
+`echo "Arf" | mail -s "Sujet" destinataire@example.org`
+
+Split un fichier PDF en plusieurs autres
+`pdfseparate -f 1 -l 10 doc.pdf tmp/doc-%d.pdf`
 
 Convertir un fichier en utf8
 ```
