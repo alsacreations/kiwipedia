@@ -111,13 +111,33 @@ Gulp
 * https://github.com/blog/2019-how-to-undo-almost-anything-with-git
 
 ## Accessibilité
+* http://www.html5accessibility.com/
+* https://www.accede-web.com/notices/ Notices AccedeWeb
 * https://bitsofco.de/the-accessibility-cheatsheet/ Cheatsheet résumée
 * https://github.com/UKHomeOffice/posters/tree/master/accessibility/posters_fr Posters recommandations UK Home Office en français
 * http://a11y-style-guide.com/style-guide/
 * https://cehfisher.github.io/a11y-style-guide/style-guide/ Styleguide A11y
 * https://uxdesign.cc/designing-accessible-products-e8aa79b55ebc
 * https://ibma.github.io/Va11yS/ Va11yS: Verified Accessibility Code Samples (IBM)
-* http://ljwatson.github.io/decks/2017/lws/index.html Making SVG accessible (Paciello)
+* http://www.d.umn.edu/itss/training/online/webdesign/accessibility.html Grande liste en vrac
+* https://www.accessify.com/tools-and-wizards/ Pas mal d’outils
+
+### ARIA
+* https://w3c.github.io/aria/ La spécification
+* https://w3c.github.io/aria-practices/
+* https://w3c.github.io/using-aria/
+* https://www.w3.org/TR/html-aria/ ARIA in HTML
+* https://www.w3.org/TR/html-aria/ Rôles et états implicites des éléments HTML, et propriétés ARIA applicables selon les rôles
+* https://w3c.github.io/aria-in-html/
+* https://bitsofco.de/rules-for-using-aria-in-html/
+* http://www.oaa-accessibility.org/ Exemples d’usage d’ARIA notamment avec JavaScript/AJAX
+* http://heydonworks.com/practical_aria_examples/ Quelques exemples
+* https://www.powermapper.com/tests/screen-readers/aria/ Support WAI-ARIA screen readers
+* https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA Très bonne ressource ARIA
+* http://oaa-accessibility.org/ Plein d’exemples ARIA
+* http://blog.paciellogroup.com/2013/12/using-aria-enhance-svg-accessibility/ SVG et ARIA
+* https://blog.atalan.fr/support-des-attributs-aria-par-les-lecteurs-decran/ Caniuse de l’accessibilité
+* http://accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html Référentiel AccessiWeb HTML5/ARIA
 
 ### Couleurs
 * https://color.adobe.com/create/color-wheel/
@@ -139,29 +159,9 @@ Gulp
 * http://www.accessibilityoz.com/ozplayer/ Player html5 accessible
 * https://youdescribe.org/ Audio desc avec Youtube
 
-### Divers
-* http://accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html Référentiel AccessiWeb HTML5/ARIA
-* http://www.html5accessibility.com/
-* http://blog.atalan.fr/support-des-attributs-aria-par-les-lecteurs-decran/ Caniuse de l’accessibilité
-* http://accede-web.com/fr/notices/ Notices AccedeWeb
-* http://www.d.umn.edu/itss/training/online/webdesign/accessibility.html
-* http://www.accessify.com/tools-and-wizards/ Pas mal d’outils
-* http://www.smashingmagazine.com/2015/04/27/its-alive-apps-that-feed-back-accessibly/ Utiliser aria-live
-
 ### SVG
 * http://www.sitepoint.com/tips-accessible-svg/ Rendre SVG accessible
-
-### ARIA
-* https://www.w3.org/TR/html-aria/ Rôles et états implicites des éléments HTML, et propriétés ARIA applicables selon les rôles
-* https://w3c.github.io/aria-in-html/
-* https://bitsofco.de/rules-for-using-aria-in-html/
-* http://www.oaa-accessibility.org/ Exemples d’usage d’ARIA notamment avec JavaScript/AJAX
-* http://heydonworks.com/practical_aria_examples/ Quelques exemples
-* https://www.powermapper.com/tests/screen-readers/aria/ Support WAI-ARIA screen readers
-* https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA Très bonne ressource ARIA
-* http://oaa-accessibility.org/ Plein d’exemples ARIA
-* http://blog.paciellogroup.com/2013/12/using-aria-enhance-svg-accessibility/ SVG et ARIA
-* http://hanyelemary.com/?p=889 Pagination avec ARIA
+* http://ljwatson.github.io/decks/2017/lws/index.html Making SVG accessible (Paciello)
 
 ### JavaScript et composants
 * https://github.com/alphagov/accessible-typeahead Typeahead accessible
