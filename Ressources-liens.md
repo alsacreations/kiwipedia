@@ -488,10 +488,10 @@ Outils
 
 ## Performance
 * http://www.perf.rocks/ Plein de ressources
-* http://loads.in/
+* https://csswizardry.com/2019/03/cache-control-for-civilians/ Maîtriser Cache-control
 * https://web.dev/measure
 * https://gtmetrix.com/
-* http://www.webpagetest.org/
+* https://www.webpagetest.org/
 * https://tools.pingdom.com/
 * https://browserdiet.com/
 * http://codepen.io/bradfrost/pen/EPQVBp/ Performance budget builder
