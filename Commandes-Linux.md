@@ -378,8 +378,14 @@ ___
 
 ## Disque dur
 
-Triple benchmark rapide disque
-`for i in 1 2 3; do hdparm -tT /dev/hda; done`
+Liste les devices de bloc (disques durs) et leurs points de montage
+`lsblk`
+
+Espace disque libre
+`df -h`
+
+Liste de toutes les partitions
+`fdisk -l`
 
 Statistiques I/O disques durs
 `cat /proc/diskstats`
@@ -402,23 +408,17 @@ Infos de montages
 Qui utilise la ressource ?
 `fuser -v /media/path/`
 
-Liste de toutes les partitions
-`fdisk -l`
-
 Partitionner (p = afficher, d = supprimer, n = new)
 `fdisk /dev/XXXX`
+
+Espace disque occupé dans les sous-dossiers classés par taille
+`du -hs * | sort -h`
 
 Liste tous les UUID
 `blkid`
 
-Liste les devices de bloc
-`lsblk`
-
-Espace disque libre
-`df -h`
-
-Espace disque dossiers classés par taille
-`du -hs * | sort -h`
+Triple benchmark rapide disque
+`for i in 1 2 3; do hdparm -tT /dev/hda; done`
 
 ### Partitions, structure
 
