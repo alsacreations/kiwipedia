@@ -431,13 +431,13 @@ UI snippets
 * http://realisticshots.com/
 * https://bossfight.co/
 
-### Placeholders
+### Placeholders (images de remplissage)
 * http://www.diverseui.com/ Personnes diverses
 * https://tinyfac.es/ Avatars
 * http://uifaces.com/
-* http://placekitten.com/
-* http://placezombies.com/
-* http://lists.design/ Listes de texte de remplissage
+* https://picsum.photos/ Photos
+* http://placekitten.com/ Chats
+* https://www.populate.design/ Texte
 
 ## Vidéos libres/gratuites
 * https://videos.pexels.com/
