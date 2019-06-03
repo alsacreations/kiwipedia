@@ -276,3 +276,15 @@ Afin de pouvoir utiliser ces meta spécifiques, un namespace xmlns doit être cr
 #### OpenSearch
 
 Si le projet comporte un moteur de recherche efficace et pertinent, il peut être doté d’[OpenSearch](http://www.opensearch.org/).
+
+## Performance
+
+On veillera à respecter des critères communs de performance :
+
+* Limiter le nombre de ressources différentes exploitées (images, feuilles de styles, scripts, fonts)
+* Limiter le nombre de requêtes HTTP
+* Minifier les ressources texte (CSS, JavaScript, JSON...)
+* Différer les requêtes moins importantes (lazy loading) (en JavaScript ou avec l'attribut natif `loading`)
+* Établir [https://bitsofco.de/your-first-performance-budget-with-lighthouse/](un budget de performance pour Lighthouse)
+
+Voir aussi : https://github.com/thedaviddias/Front-End-Performance-Checklist
