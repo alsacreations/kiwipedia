@@ -245,6 +245,7 @@ Gulp
 
 * Libs et frameworks
   * http://jquery.com/
+  * https://vuejs.org/
   * https://angularjs.org/
   * https://facebook.github.io/react/
   * https://lodash.com/
@@ -279,6 +280,14 @@ Gulp
   * http://www.resumablejs.com/ (uploads resumables grâce à HTML5 File API)
   * http://mozilla.github.io/localForage/ (framework pour mieux utiliser localStorage avec plus de techniques et de types de données)
   * https://github.com/jwagner/smartcrop.js Smartcrop intelligent pour les images
+
+### Vue
+
+* Le repo [awesome-vue](https://github.com/vuejs/awesome-vue) sur Github avec plein de ressources
+* Plein d'exemples : [vuejsexamples.com](https://vuejsexamples.com/)
+* Pour faire du drag &amp; drop : [Vue.Draggable](https://github.com/SortableJS/Vue.Draggable)
+* Accessibilité avec Vue [vue-a11y.com](https://vue-a11y.com/)
+* Plugin eslint pour vérifier certaines règles d'accessibilité : [eslint-plugin-vue-a11y](https://www.npmjs.com/package/eslint-plugin-vue-a11y)
 
 ### React
 * https://css-tricks.com/productive-in-react/
