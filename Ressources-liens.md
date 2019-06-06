@@ -1067,12 +1067,9 @@ UI snippets
 * http://minimography.com/
 * http://freestocks.org/
 * http://photos.polarfox.com/
-* http://photocollections.io/
-* http://foodshot.co/
 * http://www.photocrops.com/browse/
 * http://realisticshots.com/
 * http://fancycrave.com/
-* https://bossfight.co/
 
 ### Placeholders
 * http://www.diverseui.com/ Personnes diverses
