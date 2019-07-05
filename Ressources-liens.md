@@ -1,6 +1,11 @@
 
 # Ressources et liens utiles
 
+## Outils pratiques
+
+* https://recordscreen.io/
+* https://appear.in/
+
 ## Autres ressources
 * https://gist.github.com/nathansmith/1023581
 * https://github.com/sdmg15/Best-websites-a-programmer-should-visit/blob/master/README.md
