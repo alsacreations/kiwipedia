@@ -607,6 +607,9 @@ Effacer la règle n°1 de fail2ban
 Bloquer adresses IP x.x.x.*
 `iptables -A INPUT -s x.x.x.0/24 -j DROP`
 
+Bloquer des requêtes HTTP sur un domaine
+`iptables -I INPUT -p tcp --dport 80 -m string --string "Host: www.example.org" --algo bm -j DROP`
+
 Examiner le statut des bans fail2ban
 `fail2ban-client status <ssh|pure-ftpd|dovecot|...>`
 
