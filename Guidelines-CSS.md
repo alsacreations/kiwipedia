@@ -2,6 +2,9 @@
 
 _Bonnes pratiques CSS (et SCSS)  en production_
 
+Ces conventions CSS rassemblent les bonnes pratiques appliquées par l'agence web Alsacreations.fr. <br>
+Elles ont pour but d'évoluer dans le temps et de s'adapter à chaque nouveau projet.
+
 
 ## Généralités
 
@@ -14,6 +17,23 @@ Pour assurer une cohérence inter-projets, utiliser la convention [EditorConfig]
 * Utiliser toujours le même type de guillemets. De préférence des doubles guillemets, exemple : `content: ""`;
 * Utiliser toujours des guillemets pour les valeurs dans les sélecteurs, exemple : `input[type="checkbox"]`
 * Éviter de spécifier les unités pour les valeurs nulles ainsi que pour les hauteurs de lignes, exemple : `margin: 0; line-height: 1.5`. La seule exception étant `flex-basis` pour des raisons de compatibilité IE11.
+
+## Compatibilité navigateurs
+
+L'ensemble des recommandations de ce document est prévu pour être compatible avec les navigateurs suivants (fichier `.browserslistrc` de l'outil [KNACSS](https://www.knacss.com/)) :
+
+```
+> 1%
+last 2 versions
+IE >= 11
+Edge >= 16
+Chrome >= 60
+Firefox >= 50
+Firefox ESR
+Safari >= 10
+ios_saf >= 10
+Android >= 6
+```
 
 ## Faciliter la réutilisation de code
 
@@ -174,7 +194,7 @@ body {
 
 ```
 html {
-  font-size: 62.5%;
+  font-size: 62.5%; /* "base 10" au départ */
 }
 body {
   font-size: 1.4rem;
@@ -187,8 +207,12 @@ body {
 
 Opter pour le modèle de boîte CSS3 (`box-sizing: border-box`) en début de la feuille de style.
 
+Cela permet de connaître la taille de tous les éléments sans avoir à faire le calcul de `taille+padding+border`.
+
 ```
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 ```
@@ -232,6 +256,8 @@ Documentation : [https://github.com/bendc/frontend-guidelines#flow](https://gith
 ### Choix de positionnement
 
 Positionner les éléments en choisissant de préférence parmi ces méthodes, dans l’ordre :
+
+- Gabarit global : `display: grid` 
 
 1. `display: block` | `inline;`
 2. `display: flex` | `inline-flex;`
