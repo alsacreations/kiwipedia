@@ -41,7 +41,7 @@ Un espace sépare le sélecteur du bloc avant la première accolade `{`.
 
 ```
 selecteur {
-  color: pink;
+  color: hotpink;
   background: tomato;
 }
 ```
@@ -52,7 +52,7 @@ Les déclarations au sein d’une règle CSS sont ordonnées de façon à faire 
 
 Voici dans quel ordre nous déclarons nos propriétés :
 
-1. Contenu généré : les propriétés afférentes au contenu créé via :after et :before (`content`, `counter`, `quotes`).
+1. Contenu généré : les propriétés afférentes au contenu créé via `::after` et `::before` (`content`, `counter`, `quotes`).
 2. Propriété display : tout ce qui affecte le rendu par défaut de l’élément (`none`, `block`, `inline`, `inline-block`, `flex`, `grid`, &hellip;).
 3. Positionnement : tout ce qui détermine la position de l’élément (`position`, `float`, `top`, `right`, `bottom`, `left`, `vertical-align`, `z-index`, `clear`).
 4. Modèle de boîte : tout ce qui influe sur les dimensions de l’élément (`width`, `height`, `min-width`, `min-height`, `max-width`, `max-height`, `margin`, `padding`, `border`, `overflow`).
@@ -79,7 +79,7 @@ selecteur {
 }
 ```
 
-**_Note : l’outil "CSScomb" permet de réordonner automatiquement les déclarations CSS. Il peut être utilisé sous forme de plugin (Atom, Brackets, Sublime text) ou intégré à un Workflow sous forme de tâche Gulp ou Grunt : [http://csscomb.com/](http://csscomb.com/)_**
+**_Note : l’outil "Stylelint" permet de réordonner automatiquement les déclarations CSS. Il devrait être intégré à notre Workflow sous forme de tâche Gulp : [https://www.npmjs.com/package/stylelint-order](https://www.npmjs.com/package/stylelint-order)_**
 
 ## Préfixes navigateurs
 
