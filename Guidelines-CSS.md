@@ -13,26 +13,24 @@ Pour assurer une cohérence inter-projets, utiliser la convention [EditorConfig]
 * Privilégier tant que possible les syntaxes via propriétés raccourcies : `margin`, `padding`, `font`, `border`, `background`, `border-radius`
 * Utiliser toujours le même type de guillemets. De préférence des doubles guillemets, exemple : `content: ""`;
 * Utiliser toujours des guillemets pour les valeurs dans les sélecteurs, exemple : `input[type="checkbox"]`
-* Éviter de spécifier les unités pour les valeurs nulles ainsi que pour les hauteurs de lignes, exemple : `margin: 0; line-height: 1.5`.
+* Éviter de spécifier les unités pour les valeurs nulles ainsi que pour les hauteurs de lignes, exemple : `margin: 0; line-height: 1.5`. La seule exception étant `flex-basis` pour des raisons de compatibilité IE11.
 
-## Patterns visuels (OOCSS)
+## Faciliter la réutilisation de code
 
-Repérer systématiquement les « objets CSS », c'est-à-dire des « patterns visuels » qui se répètent, afin de définir ainsi des classes réutilisables, des styles de base et des variantes.
+Repérer systématiquement les « objets CSS » (OOCSS), c'est-à-dire des « patterns visuels » qui se répètent, afin de définir ainsi des classes réutilisables, des styles de base et des variantes.
 * Privilégier au maximum l'usage de classes plutôt que d'écrire des sélecteurs basés sur le type des éléments ou leur `id` [CSS with only class names](http://www.drinchev.com/blog/css-with-only-class-names/)
-* Séparer la structure de l’apparence (une règle CSS ne doit pas comporter à la fois `padding` et `background` par exemple)
-* Séparer le conteneur du contenu (un composant ne doit jamais être ciblé par un sélecteur qui tient compte de son parent)
-* Utiliser au maximum le pattern objet "media" : [http://codepen.io/raphaelgoetter/pen/KMWWwj?editors=1100](http://codepen.io/raphaelgoetter/pen/KMWWwj?editors=1100)
-* Utiliser au maximum le pattern objet "autogrid" : [http://codepen.io/raphaelgoetter/pen/KMgBJd?editors=1100](http://codepen.io/raphaelgoetter/pen/KMgBJd?editors=1100)
+* Séparer la structure de l’apparence (une règle CSS ne devrait pas comporter à la fois `padding` et `background` par exemple)
+* Séparer le conteneur du contenu (un composant ne devrait jamais être ciblé par un sélecteur qui tient compte de son parent)
 
 Documentation : [http://www.nicoespeon.com/fr/2013/05/plongee-au-coeur-de-oocss/](http://www.nicoespeon.com/fr/2013/05/plongee-au-coeur-de-oocss/)
 
-## Reset
+## Fichier CSS de base ("Reset")
 
 Un "reset" CSS permettant d’harmoniser les styles par défaut des navigateurs est systématiquement appliqué en début de projet.
 
-Normalize.css est recommandé. Il s’agit d’un célèbre reset CSS employé par Twitter, Github, Bootstrap, Guardian, KNACSS, etc.
+Normalize, Sanitize et Reboot sont des fichiers de base courants. Nous privilégions le fichier de base de KNACSS qui est un récapitulatif de ces ressources.
 
-Documentation : [http://necolas.github.io/normalize.css/](http://necolas.github.io/normalize.css/)
+Documentation : [fichier reset de KNACSS](https://github.com/alsacreations/KNACSS/blob/v8/sass/base/_reset.scss)
 
 ## Syntaxe
 
@@ -58,8 +56,8 @@ Voici dans quel ordre nous déclarons nos propriétés :
 2. Propriété display : tout ce qui affecte le rendu par défaut de l’élément (`none`, `block`, `inline`, `inline-block`, `flex`, `grid`, &hellip;).
 3. Positionnement : tout ce qui détermine la position de l’élément (`position`, `float`, `top`, `right`, `bottom`, `left`, `vertical-align`, `z-index`, `clear`).
 4. Modèle de boîte : tout ce qui influe sur les dimensions de l’élément (`width`, `height`, `min-width`, `min-height`, `max-width`, `max-height`, `margin`, `padding`, `border`, `overflow`).
-4. Transformations et transitions : propriétés et valeurs CSS 3 (`transform`, `transition`, `animation`).
-5. Typographie : tout ce qui détermine les caractéristiques de la police de caractères (`font`, `text-align`, `text-decoration`, `letter-spacing`, `text-indent`, `line-height`, `text-transform`, `white-space`, `word-wrap`).
+5. Transformations et transitions : propriétés et valeurs CSS 3 (`transform`, `transition`, `animation`).
+6. Typographie : tout ce qui détermine les caractéristiques de la police de caractères (`font`, `text-align`, `text-decoration`, `letter-spacing`, `text-indent`, `line-height`, `text-transform`, `white-space`, `word-wrap`).
 Décoration : les propriétés purement ornementales (`background`, `color`, `list-style`, `outline`).
 
 
