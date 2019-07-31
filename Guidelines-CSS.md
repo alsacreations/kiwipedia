@@ -638,7 +638,7 @@ propriété `will-change` et/ou le hack de `translateZ()`.) Source : [https://tz
 
 ```
 div {
-  margin-left: 100px;
+  margin-left: 10rem;
   transition: .5s;
 }
 ```
@@ -647,8 +647,9 @@ div {
 
 ```
 div {
-  transform: translateX(100px);
+  transform: translateX(10rem);
   transition: transform .5s;
+  will-change: transform;
 }
 ```
 
@@ -656,9 +657,9 @@ div {
 
 ```
 div {
-  margin-left: 100px;
-  will-change: margin-left;
+  margin-left: 10rem;
   transition: margin-left .5s;
+  will-change: margin-left;
 }
 ```
 
@@ -674,7 +675,7 @@ Pour le détail, voir la partie ["medias / polices"](#polices)
 
 ### Répétitions
 
-Utiliser des pré-processeurs (Sass, LESS, Stylus) pour éviter les répétitions de code.
+Utiliser des pré-processeurs (Sass, LESS) pour éviter les répétitions de code.
 
 Concerne principalement :
 
@@ -866,7 +867,7 @@ Voici un exemple de chargement de police conseillé (IE9 minimum) :
 }
 ```
 
-**BONUS :** utiliser la directive `<link rel="preload">` pour charger les fontes de manière asynchrone.
+**BONUS :** Il est vivement conseillé d'utiliser la directive `<link rel="preload">` pour charger les fontes de manière asynchrone.
 
 Compatibilité : http://caniuse.com/#feat=link-rel-preload
 
