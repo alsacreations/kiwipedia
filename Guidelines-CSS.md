@@ -48,7 +48,7 @@ Documentation : [http://www.nicoespeon.com/fr/2013/05/plongee-au-coeur-de-oocss/
 
 Un "reset" CSS permettant d’harmoniser les styles par défaut des navigateurs est systématiquement appliqué en début de projet.
 
-Normalize, Sanitize et Reboot sont des fichiers de base courants. Nous privilégions le fichier de base de KNACSS qui est un récapitulatif de ces ressources.
+Normalize, Sanitize et Reboot sont des fichiers de base courants. **Nous privilégions le fichier de base de KNACSS** qui est un récapitulatif de ces ressources.
 
 Documentation : [fichier reset de KNACSS](https://github.com/alsacreations/KNACSS/blob/v8/sass/base/_reset.scss)
 
@@ -152,7 +152,7 @@ De manière générale :
 Le nom d'un sélecteur CSS doit être "sémantique" dans le sens où il sera compris et maintenu par des collègues de travail (des êtres humains en général).
 
 Se rapprocher d'une convention de nommage telle que
-[BEM](https://en.bem.info/) facilite ce choix dans le cas de gros projets ou de longue haleine: opter pour des nommages `__` pour les éléments, ou `--` pour les variantes est une convention de plus en plus courante.
+[BEM](https://en.bem.info/) facilite ce choix dans le cas de projets d'envergure ou de longue haleine : opter pour des nommages `__` pour les éléments, ou `--` pour les variantes est une convention de plus en plus courante.
 
 Grâce au préprocesseur Sass, il est possible de bénéficier du sélecteur de parent `&` pour éviter les imbrications et favoriser ce nommage :
 
@@ -255,15 +255,14 @@ Documentation : [https://github.com/bendc/frontend-guidelines#flow](https://gith
 
 ### Choix de positionnement
 
-Positionner les éléments en choisissant de préférence parmi ces méthodes, dans l’ordre :
+Positionner les éléments en choisissant de préférence parmi ces méthodes selon l'objectif souhaité :
 
-- Gabarit global : `display: grid` 
-
-1. `display: block` | `inline;`
-2. `display: flex` | `inline-flex;`
-3. `display: inline-block` | `table-cell;`
-4. `float: left` | `right;`
-5. `position: relative` | `absolute` | `sticky` | `fixed;`
+- Gabarit global de page : **Grid Layout** en priorité (prévoir une dégradation pour IE11);
+- Composants (modales, galeries, paginations) : **Flexbox** en priorité, mais Grid Layout est une sérieuse option également;
+- Placements d'éléments divers :  `display: block` | `inline;`;
+- Déplacements d'éléments : `transform: translate()`;
+- Superposition d'éléments : Grid Layout, Flexbox, `position: absolute` | `sticky` | `fixed`;
+- Enrobage d'éléments (images), ou cas très particuliers : `float: left` | `right`.
 
 ## Compréhension et lecture
 
