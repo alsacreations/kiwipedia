@@ -626,6 +626,8 @@ div {
 
 Documentation : [https://github.com/bendc/frontend-guidelines#units](https://github.com/bendc/frontend-guidelines#units)
 
+**Note :** La seule exception à cette règle concerne la propriété `flex-basis`.  L'unité doit toujours être renseignée même si la valeur est de `0`. Ex. ne jamais écrire `flex: 1` mais `flex: 1 1 0%`.
+
 ### Animations gourmandes
 
 * Toujours préciser quelle(s) propriété(s) doit être animée dans transition ou animation
