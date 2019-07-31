@@ -113,7 +113,7 @@ Usage de mots-clés informatifs au sein de commentaires importants sont appréci
 * `@TESTED` → navigateurs / environnements testés
 * `@TOPROD` → note à l’intention de la version de production
 
-## Choix global des sélecteurs CSS
+## Choix des sélecteurs CSS
 
 Le choix des sélecteurs CSS doit se faire en priorité pour leur pertinence et leur maintenabilité.
 
@@ -121,10 +121,42 @@ Ainsi, il est indiqué de pouvoir cibler n’importe quel élément indépendamm
 
 De manière générale :
 
-* **Il est préférable de cibler les éléments à l’aide de leur classe HTML** qui pourrait être utilisée dans n’importe quel contexte, par exemple `.title-primary`,
+* **Il est préférable de cibler les éléments à l’aide de leur classe** qui pourrait être utilisée dans n’importe quel contexte, par exemple `.title-primary`,
 * **Les sélecteurs  #id doivent être évités en CSS** car trop spécifiques dans le calcul du poids. Si un id doit être ciblé, préférer un sélecteur d’attribut, par exemple `[id=header]`,
 * **Les sélecteurs en cascade ou hyper-structurel doivent être évités** de manière générale (ex: `ul.header li .info` ou `h1 + p + p`),
+* **Un sélecteur parfait est une classe unique,** par exemple `.title-primary` (pas d'imbrication, pas de sélecteurs multiples),
 * La règle `!important` doit être éradiquée si possible du fait de son poids extrêmement important (certaines parties des styles peuvent toutefois exceptionnellement employer à juste titre `!important`).
+
+## Nommage des sélecteurs CSS
+
+Le nom d'un sélecteur CSS doit être "sémantique" dans le sens où il sera compris et maintenu par des collègues de travail (des êtres humains en général).
+
+Se rapprocher d'une convention de nommage telle que
+[BEM](https://en.bem.info/) facilite ce choix dans le cas de gros projets ou de longue haleine: opter pour des nommages `__` pour les éléments, ou `--` pour les variantes est une convention de plus en plus courante.
+
+Grâce au préprocesseur Sass, il est possible de bénéficier du sélecteur de parent `&` pour éviter les imbrications et favoriser ce nommage :
+
+```css
+.block {
+  &__element {
+    ...
+  }
+  &--modifier {
+    ...
+  }
+}
+```
+
+Sera compilé en :
+
+```css
+.block__element {
+  ...
+}
+.block--modifier {
+  ...
+}
+```
 
 ## Taille des polices
 
