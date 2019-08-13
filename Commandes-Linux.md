@@ -939,6 +939,12 @@ Nombre de requêtes par domaines
 awk '{print $1}' /var/log/apache2/other_vhosts_access.log | sort | uniq -c
 ```
 
+Supprimer des fichiers contenant une certaine chaîne de texte
+
+```
+find . -type f -exec grep -q "blablablabla" {} \; -exec echo rm {} \;
+```
+
 Supprimer fichiers de plus de 90 jours dans le répertoire courant
 ```
 find . -mtime +90 -exec rm {} \;
