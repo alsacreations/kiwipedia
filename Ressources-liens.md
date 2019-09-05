@@ -44,8 +44,9 @@
 * http://iframely.com/debug Comment les autres sites/apps voient le vôtre
 * https://developers.facebook.com/tools/debug Outil de test Open Graph de Facebook
 
-### HTML5, API, composants
-* https://521dimensions.com/open-source/amplitudejs Player audio
+### Progressive Web Apps (PWA)
+
+* https://app-manifest.firebaseapp.com/ Générateur de web manifest
 
 ## CSS
 
@@ -116,6 +117,14 @@ Gulp
 * http://www.git-attitude.fr/2014/05/04/bien-utiliser-git-merge-et-rebase/
 * https://github.com/blog/2019-how-to-undo-almost-anything-with-git
 
+### Clients git
+
+* Git-fork https://git-fork.com/
+* Sourcetree https://www.sourcetreeapp.com/
+* GitKraken https://www.gitkraken.com/
+* Git-tower https://www.git-tower.com/
+* Smartgit https://www.syntevo.com/smartgit/
+
 ## Accessibilité
 * http://www.html5accessibility.com/
 * https://www.accede-web.com/notices/ Notices AccedeWeb
@@ -164,6 +173,7 @@ Gulp
 * https://github.com/jonathantneal/media-player Player media accessible
 * http://www.accessibilityoz.com/ozplayer/ Player html5 accessible
 * https://youdescribe.org/ Audio desc avec Youtube
+* https://521dimensions.com/open-source/amplitudejs
 
 ### SVG
 * http://www.sitepoint.com/tips-accessible-svg/ Rendre SVG accessible
@@ -249,10 +259,10 @@ Gulp
   * http://speakingjs.com/es5/index.html
 
 * Libs et frameworks
-  * http://jquery.com/
   * https://vuejs.org/
-  * https://angularjs.org/
   * https://facebook.github.io/react/
+  * http://jquery.com/
+  * https://angularjs.org/
   * https://lodash.com/
   * https://github.com/developit/unfetch Polyfill pour fetch() en 500 octets
 
@@ -345,11 +355,11 @@ Dessiner online
 * https://github.com/svg/svgo Optimisation
 * https://jakearchibald.github.io/svgomg/ Optimisation en ligne
 * http://www.svgeneration.com/ Génération de motifs
-* http://css-tricks.com/animating-svg-css/ (animation via CSS)
 * http://gionkunz.github.io/chartist-js/index.html (graphiques animés et rwd)
 * http://sarasoueidan.com/blog/svg-coordinate-systems/ Système de coordonnées, viewbox, viewport, preserveAspectRatio
 * http://sarasoueidan.com/demos/interactive-svg-coordinate-system/index.html Cheatsheet Coordonnées
 * https://la-cascade.io/comprendre-svg-viewbox-et-viewport/
+* http://css-tricks.com/animating-svg-css/ (animation via CSS)
 * https://css-tricks.com/scale-svg/
 * https://css-tricks.com/using-svg/
 * http://sozi.baierouge.fr/pages/10-about.html Présentations animées avec zoom/dézoom
@@ -750,7 +760,7 @@ Gulp
 
 ## Git
 * https://www.atlassian.com/git/tutorials/setting-up-a-repository Guide général sur Git
-* http://www.git-tower.com/learn/videos
+* https://www.git-tower.com/learn/git/videos/
 * http://articles.nissone.com/2014/11/gitpourlanulle/
 * http://www.git-attitude.fr/2014/05/04/bien-utiliser-git-merge-et-rebase/
 * https://github.com/blog/2019-how-to-undo-almost-anything-with-git
