@@ -423,8 +423,9 @@ UI snippets
 * https://github.com/paulirish/browser-logos Logos de navigateurs
 
 ## Images libres (ou pas)
+* https://www.stickpng.com/ (PNG transparents)
+* https://www.pinpng.com (PNG transparents)
 * https://www.stockio.com/
-* http://www.stickpng.com/ (PNG transparents)
 * https://visualhunt.com/ (CC)
 * https://stocksnap.io/ (CC0)
 * http://www.compfight.com/
