@@ -10,6 +10,7 @@
 * https://gist.github.com/nathansmith/1023581
 * https://github.com/sdmg15/Best-websites-a-programmer-should-visit/blob/master/README.md
 * https://github.com/dypsilon/frontend-dev-bookmarks
+* 99% des commandes Git en un script https://bitbucket.org/BitPusher16/dotfiles/raw/49a01d929dcaebcca68bbb1859b4ac1aea93b073/refs/git/git_examples.sh
 
 ## Documentations générales rapides
 * http://cssvalues.com/ dictionnaire des propriétés et valeurs
