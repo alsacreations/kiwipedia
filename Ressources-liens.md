@@ -613,6 +613,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 * https://github.com/audreyr/favicon-cheat-sheet
 
 ## RWD Responsive Web Design
+* https://www.screensizemap.com/ dimensions de la plupart des écrans
 * http://wickynilliams.github.com/enquire.js/ (matchMedia, etc)
 * http://codyhouse.co/gem/mega-dropdown Responsive Mega Menu
 * http://mobile.smashingmagazine.com/2013/07/08/choosing-a-responsive-image-solution/ Images
