@@ -458,7 +458,7 @@ Administration RAID : vue des détails pour un array spécifique
 `mdadm --detail /dev/md0`
 
 Si tout va bien, "State : clean", "Active Devices : 2", "Working Devices : 2"
-Qui utilise quoi ? `cat /proc/mounts`
+Qui utilise quoi ? `cat /proc/mounts` (voir aussi `lsblk`)
 
 Marquer comme défectueux avant de remove
 `mdadm --set-faulty /dev/md0 /dev/sdb`
