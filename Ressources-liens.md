@@ -425,6 +425,7 @@ UI snippets
 
 ## Images libres (ou pas)
 * https://www.stickpng.com/ (PNG transparents)
+* https://pngdb.com/ (PNG transparents)
 * https://www.pinpng.com (PNG transparents)
 * https://www.stockio.com/
 * https://visualhunt.com/ (CC)
