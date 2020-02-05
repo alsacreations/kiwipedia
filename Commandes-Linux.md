@@ -385,7 +385,7 @@ Espace disque libre
 `df -h`
 
 Liste de toutes les partitions
-`fdisk -l`
+`fdisk -l` ou `parted -l`
 
 Statistiques I/O disques durs
 `cat /proc/diskstats`
