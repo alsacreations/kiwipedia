@@ -319,6 +319,7 @@ Liste des screens
 Récupérer <id_optionnel>
 `screen -r`
 
+Se détacher du screen courant : combinaison de touches Ctrl + A + D
 ___
 
 ## Fichiers
