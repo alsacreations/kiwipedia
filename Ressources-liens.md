@@ -94,7 +94,8 @@
 
 ## Node.js / npm
 * https://nodejs.org/en/
-Gulp
+
+### Gulp
 * http://quenchjs.com/ Générateur de gulpfile
 * http://www.smashingmagazine.com/2014/06/11/building-with-gulp/
 * http://alistapart.com/blog/post/getting-started-with-gulp
@@ -240,11 +241,13 @@ Gulp
 * http://pressurejs.com/
 
 ## JavaScript
+
 * https://tc39.github.io/ecma262/ Spec ECMAScript
 * https://auth0.com/blog/a-brief-history-of-javascript/ Une brève histoire de JavaScript
 * https://github.com/naomihauret/js-stack-from-scratch/ JavaScript Stack from Scratch (traduction fr)
 * http://jargon.js.org/ Jargon
 * http://fr.eloquentjavascript.net/
+* https://basarat.gitbook.io/typescript/ TypeScript Deep Dive
 
 * Bonnes pratiques et style guides
   * https://molily.de/robust-javascript/ Robust JavaScript
@@ -306,6 +309,7 @@ Gulp
 * Plugin eslint pour vérifier certaines règles d'accessibilité : [eslint-plugin-vue-a11y](https://www.npmjs.com/package/eslint-plugin-vue-a11y)
 
 ### React
+
 * https://css-tricks.com/productive-in-react/
 * http://reactfordesigners.com/labs/reactjs-introduction-for-people-who-know-just-enough-jquery-to-get-by/
 
