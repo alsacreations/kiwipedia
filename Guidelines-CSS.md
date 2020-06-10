@@ -126,7 +126,12 @@ En dernier ressort, employer la ressource [Browserhacks](http://browserhacks.com
 
 Usage de mots-clés informatifs au sein de commentaires importants sont appréciés, sous la forme :
 
-* `@TODO` → point à finir / corriger avant de livrer
+* `TODO:` → point à finir / corriger avant de livrer
+
+Cette syntaxe est préconisée car correspond au réglage par défaut de l'extension VSCode TODO Highlight <https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight>
+
+D'autres mots-clés peuvent être utiles selon les projets (ne pas en abuser) :
+
 * `@BUGFIX` → explication d’une correction de bug
 * `@NOTE` → note importante à partager
 * `@AUTHOR` → auteur du document

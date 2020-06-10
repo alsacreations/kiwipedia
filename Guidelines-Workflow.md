@@ -30,10 +30,10 @@ _**Note :** Yarn est un excellent gestionnaire de dépendances également._
 
 Voici la liste des éditeurs de code communément adoptés :
 
+* Visual Studio Code (conseillé)
 * Atom.io
 * Sublime Text (2 ou 3)
 * Brackets.io
-* Visual Studio Code
 
 #### Automatisation de tâches
 
