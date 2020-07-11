@@ -33,6 +33,7 @@
 
 ### Microdata et sémantique
 * http://schema.org/
+* Outil de test des résultats enrichis https://search.google.com/test/rich-results
 * http://www.opensearch.org/Home Opensearch
 
 #### Open Graph
