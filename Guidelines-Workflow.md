@@ -30,14 +30,18 @@ _**Note :** Yarn est un excellent gestionnaire de dépendances également._
 
 Voici la liste des éditeurs de code communément adoptés :
 
-* Visual Studio Code (conseillé)
-* Atom.io
-* Sublime Text (2 ou 3)
-* Brackets.io
+* Visual Studio Code (conseillé) <https://code.visualstudio.com/>
+* Atom <https://atom.io/>
+
+#### Extensions
+
+Dans Visual Studio Code un fichier `.vscode/extensions.json` liste les extensions recommandées du projet (voir <https://twitter.com/j_niewczas/status/1284157199741157376>)
 
 #### Automatisation de tâches
 
-**Gulp** est utilisé pour automatiser les tâches courantes :
+Pour les projets d'application exploitant un framework tel que Vue.js, **webpack** est inclus dans le projet.
+
+Pour les projets d'intégration statique **Gulp** est utilisé pour automatiser les tâches courantes :
 
 * minification des fichiers js (gulp-uglify)
 * minification des fichiers css (gulp-csso)
