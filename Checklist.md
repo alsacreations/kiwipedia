@@ -5,7 +5,7 @@ Liste de bonnes pratiques et points à prendre en compte avant/durant/après l'�
 
 Voir aussi comme autres références :
 * Les check-lists Opquast http://checklists.opquast.com/fr/
-* La checklist Pidila pour les sites publics et gouvernementaux http://pidila.gitlab.io/charte-pidila/
+* La checklist Pidila pour les sites publics et gouvernementaux https://pidila.gitlab.io/checklist-pidila/
 
 Les priorités indiquées sont purement indicatives à et moduler selon chaque projet. Tout critère pouvant être déterminant ou sensible à chaque phase, il est difficile de pondérer efficacement une telle liste.
 
