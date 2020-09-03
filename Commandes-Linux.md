@@ -671,6 +671,9 @@ Trouver les fichiers php contenant mysql_pconnect
 Supprimer les fichiers vides
 `find -size 0 -print -exec rm {} \;`
 
+Supprimer les fichiers contenant une chaîne
+`grep -l "blablablabla" * | xargs rm`
+
 Supprimer les fichiers pollution macOS
 `find -name "._.DS_Store" -print -delete`
 
