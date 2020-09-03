@@ -467,7 +467,7 @@ UI snippets
 ### Placeholders (images de remplissage)
 * http://www.diverseui.com/ Personnes diverses
 * https://tinyfac.es/ Avatars
-* http://uifaces.com/
+* https://uifaces.co/ Visages de remplissage
 * https://picsum.photos/ Photos
 * http://placekitten.com/ Chats
 * https://www.populate.design/ Texte
