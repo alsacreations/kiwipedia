@@ -1,6 +1,6 @@
 # Guidelines : Accessibilité
 
-_Bonnes pratiques accessibilité en production_
+Bonnes pratiques accessibilité en production.
 
 ## Généralités
 
@@ -9,7 +9,7 @@ _Bonnes pratiques accessibilité en production_
 * Ne pas supprimer l’*outline* autour des éléments cliquables (pas de `outline: none`).
 * Utiliser les éléments HTML pour leur fonction/sémantique et non pas pour leur forme.
   * Utiliser les éléments pouvant recevoir le focus (`<a>`, `<input type="button">`) lorsqu'ils sont cliquables/interactifs.
-* Exploiter WAI ARIA https://www.w3.org/WAI/intro/aria lorsque c'est pertinent pour aider le navigateur.
+* Exploiter WAI ARIA <https://www.w3.org/WAI/intro/aria> lorsque c'est pertinent pour aider le navigateur.
 
 ## Structure générale
 
@@ -17,13 +17,13 @@ _Bonnes pratiques accessibilité en production_
 
 #### Menu de navigation
 
-Utiliser des `<ul><li>` (liste non ordonnée) pour structurer les menus de navigation dans un élément `<nav role="navigation”>`.
+Utiliser des combinaisons `<ul><li>` (liste non ordonnée) pour structurer les menus de navigation dans un élément `<nav role="navigation”>`.
 
 ### Éléments sémantiques HTML5
 
 #### Zone d’en-tête principale
 
-```
+```html
 <header role="banner">
   […]
 </header>
@@ -33,7 +33,7 @@ La balise `<header>` peut être utilisée plusieurs fois dans la page mais l’a
 
 #### Pied de page
 
-```
+```html
 <footer role="contentinfo">
   […]
 </footer>
@@ -43,7 +43,7 @@ La balise `<footer>` peut être utilisée plusieurs fois dans la page mais l’a
 
 #### Zone de contenu principal
 
-```
+```html
 <main role="main">
   […]
 </main>
@@ -53,7 +53,7 @@ La balise `<main>` ne peut être utilisée qu’une seule fois dans la page ains
 
 #### Système de navigation principale
 
-```
+```html
 <nav role="navigation">
   […]
 </nav>
@@ -87,7 +87,7 @@ Pour éviter cela, il est préférable d’insérer l’attribut `aria-hidden=tr
 
 Exemple :
 
-```
+```html
 <a href="URL" class="btn">
   <i class="icon-kiwi" aria-hidden="true"></i> KiwiParty
 </a>
@@ -99,7 +99,7 @@ Ne **jamais** utiliser `display: none` ou `visibility: hidden` pour masquer visu
 
 Utiliser plutôt la classe `.visually-hidden`, présente dans [KNACSS](http://knacss.com/). Cette astuce CSS permet de cacher visuellement du contenu texte mais tout en restant accessible aux lecteurs d’écrans.
 
-```
+```css
 .visually-hidden {
   position: absolute !important;
   border: 0 !important;
@@ -118,14 +118,14 @@ Utiliser plutôt la classe `.visually-hidden`, présente dans [KNACSS](http://kn
 
  Ne pas faire :
 
-```
+```html
 <button class="btn-icon swiper-button-prev">
   <i class="icon-arrow" aria-hidden="true"></i>
   <span>Éléments précédents</span>
 </button>
 ```
 
-```
+```css
 .swiper-button-prev span {
   display: none;
 }
@@ -133,7 +133,7 @@ Utiliser plutôt la classe `.visually-hidden`, présente dans [KNACSS](http://kn
 
  À faire :
 
-```
+```html
 <button class="btn-icon swiper-button-prev">
   <i class="icon-arrow" aria-hidden="true"></i>
   <span class="visually-hidden">Éléments précédents</span>
@@ -146,9 +146,11 @@ WAI-ARIA est une technologie permettant de donner des indications d'accessibilit
 
 * [Matrice des rôles ARIA](http://whatsock.com/training/matrices/)
 
-La bibliothèque de plugins jQuery Pepin utilise ARIA pour la plupart des composants https://github.com/alsacreations/pepin
+La bibliothèque de plugins jQuery Pepin utilise ARIA pour la plupart des composants <https://github.com/alsacreations/pepin>
 
 ## Liens d’évitement
+
+* Prévoir des liens d'évitement en haut de document pour accéder rapidement au contenu, à la navigation à la recherche, etc.
 
 Voir [Guidelines HTML](Guidelines-HTML.md)
 
@@ -169,11 +171,11 @@ Tous les liens doivent avoir un **intitulé**, un lien "vide" n’est pas access
 
 Ne pas faire :
 
-```
+```html
 <a href="URL" class="link-facebook"></a>
 ```
 
-```
+```css
 .link-facebook {
   display: block;
   height: 2rem;
@@ -189,13 +191,13 @@ De plus, il n’est pas sûr à 100% que l’attribut `title` soit correctement 
 
 À faire :
 
-```
+```html
 <a href="URL" class="link-facebook">
   <span class="visually-hidden">Retrouvez-nous sur Facebook</span>
 </a>
 ```
 
-```
+```css
 .link-facebook {
   display: block;
   height: 2rem;
@@ -210,15 +212,15 @@ De plus, il n’est pas sûr à 100% que l’attribut `title` soit correctement 
 
 Signaler lorsqu’un lien s’ouvre dans une nouvelle fenêtre :
 
-#### 1re méthode :
+#### Première méthode
 
-```
+```html
 <a href="URL" target="_blank" aria-label="Lire l’article (nouvelle fenêtre)">Lire l’article</a>
 ```
 
-#### 2e méthode
+#### Deuxième méthode
 
-```
+```html
 <a href="URL" target="_blank" title="Lire l’article (nouvelle fenêtre)">Lire l’article</a>
 ```
 
@@ -236,7 +238,7 @@ Exemple d’une image **cliquable** :
 
 ![KNACSS](images/accessibilite03.png)
 
-```
+```html
 <a href="www.knacss.com">
    <img src="knacss.png" alt="Knacss">
 </a>
@@ -246,7 +248,7 @@ Exemple d’une image **porteuse d’information** :
 
 ![4,9 milliards € sont consacrés à la modernisation - 10 millions € - 700km](images/accessibilite04.png)
 
-```
+```html
 <img src="banner.png" alt="4,9 milliards € sont consacrés à la modernisation […] - 10 millions € […] - 700km">
 ```
 
@@ -260,7 +262,7 @@ Exemple d’une image de **décoration** :
 
 ![image alt text](images/accessibilite05.png)
 
-```
+```html
 <img src="kiwiparty.png" alt="">
 ```
 
@@ -272,7 +274,7 @@ Utiliser de préférence un `<span>` invisible pour l’alternative textuelle, l
 
 Meilleure technique relevée par Atalan : [http://blog.atalan.fr/svg-liens-et-lecteurs-decran/](http://blog.atalan.fr/svg-liens-et-lecteurs-decran/)
 
-```
+```html
 <a href="…">
   <span class="visually-hidden">Le titre du lien</span>
   <svg aria-hidden="true">…</svg>
@@ -281,17 +283,27 @@ Meilleure technique relevée par Atalan : [http://blog.atalan.fr/svg-liens-et-le
 
 ## Formulaires
 
-Utiliser l'élément `<fieldset>` pour regrouper les champs ayant trait à la même thématique (ex : coordonnées du visiteur lors d'une commande en ligne.
+Utiliser l'élément `<fieldset>` associé à `<legend>` pour regrouper les champs ayant trait à la même thématique (ex : coordonnées du visiteur lors d'une commande en ligne.
 
 Toujours associer un `<label>` à un élément de formulaire `<input>` ou `<textarea>` pour définir son intitulé. Ne pas utiliser l'attribut `placeholder` comme seule indication.
 
-**TODO**
+Ne pas enlever les styles au focus pour toujours savoir quel est le champ actif.
+
+Indiquer de manière claire les champs obligatoires.
+
+Compléter si besoin par `aria-required="true"` et `aria-labelledby` par exemple
+
+```html
+<label for="numero-m">Numéro de membre *</label>
+<input type="text" id="numero-m" aria-describedby="hint">
+<p id="hint">Numéro composé de 4 chiffres.</p>
+```
 
 ## Navigation
 
 ### Navigation cohérente
 
-**TODO**
+Faciliter la navigation avec un menu, une recherche ou un plan du site, exploitables au clavier.
 
 ### Tabindex
 
@@ -301,31 +313,23 @@ Les éléments ne devant pas recevoir de focus doivent comporter l'attribut `tab
 
 S'il y a lieu, changer l'ordre de tabulation avec des attributs `tabindex` positifs pour réfléter l'ordre logique et/ou l'ordre visuel des éléments.
 
-**TODO**
-
 ## Tableaux
 
-**TODO**
+N'utiliser les tableaux que pour la présentation de données, et non pour la structure du document ou du design.
 
 ## Médias
 
-**TODO**
+Utiliser un lecteur audio/vidéo accessible, par exemple les éléments HTML5 natifs.
 
-Player accessibles
-
-Sous-titres avec webVTT
+Fournir une piste de sous-titres avec le format webVTT et l'élément `<track>`.
 
 ## Design
 
-**TODO**
+Respecter les taux de contrastes minimum entre le texte et le fond.
 
-* Contrastes
-    * Techniques et principes généraux (lisibilité du texte sur fond, par exemple)
-    * Outils pour évaluer/mesurer ça
-* Couleurs
-    * Daltonisme
-* Tailles de polices
-    * Minimums ?
+Ne pas indiquer une information uniquement par la couleur.
+
+Respecter une taille minimum de police pour la lisibilité.
 
 ## Javascript
 
@@ -333,7 +337,7 @@ Sous-titres avec webVTT
 
 Utiliser l'attribut `aria-live` sur les informations provenant de chargements AJAX ou dévoilées par JavaScript dynamiquement (ex : non présentes naturellement dans le flux de la page comme des alertes).
 
-```
+```html
 <div role="alert" aria-live="assertive" aria-atomic="true">
   <p>Message envoyé avec succès / Article ajouté au panier</p>
 </div>
@@ -345,9 +349,9 @@ On pourra moduler avec `aria-relevant` (`additions`, `removals`, `text`, `all`) 
 
 Pour tous les composants de page agissant sur le contenu, de type swiper, slider, slideshow, accordéon, pagination, onglets, menu déroulant, on privilégiera les scripts "accessibles", y compris ceux utilisant ARIA. Le but étant, entre autres, de ne pas gêner la navigation au clavier et de permettre la lecture de la page avec une synthèse vocale.
 
-La bibliothèque de plugins jQuery Pepin est un départ pour cela https://github.com/alsacreations/pepin
+La bibliothèque de plugins jQuery Pepin est un départ pour cela <https://github.com/alsacreations/pepin>
 
-Pour les menus déroulants et mega menus, Accessible Mega Menu a fait ses preuves https://adobe-accessibility.github.io/Accessible-Mega-Menu/
+Pour les menus déroulants et mega menus, Accessible Mega Menu a fait ses preuves <https://adobe-accessibility.github.io/Accessible-Mega-Menu/>
 
 ## Ressources
 
@@ -360,14 +364,8 @@ Pour les menus déroulants et mega menus, Accessible Mega Menu a fait ses preuve
 
 ## Outils
 
-### NVDA
+### Synthèses vocales
 
-TODO
-
-### VoiceOver
-
-Sous Mac OS X. Fonctionne bien avec Safari.
-
-Lancement : cmd + fn + F5
-
-Navigation avec les flèches et d’autres raccourcis
+* NVDA
+* VoiceOver (natif sur macOS, iOS) (activation : cmd + fn + F5), voir [https://www.apple.com/voiceover/info/guide/_1131.html](raccourcis clavier)
+* Jaws
