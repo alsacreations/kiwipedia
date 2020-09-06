@@ -574,6 +574,8 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 ## Documents / Office
 
+* Brainstorming / mindmap https://kinopio.club
+
 ## Explication et relation client
 * https://small.chat/ Intégrer Slack en chat sur le site
 * http://liquidapsive.com/ (différence adaptative/responsive/static/liquid)
@@ -651,23 +653,18 @@ Maquettes / story-boards / wireframes / mockups / zoning
 * https://www.campaignmonitor.com/resources/ Ressources Campaign Monitor
 
 ## Machines virtuelles
+* https://www.docker.com/
 * https://www.virtualbox.org/ VirtualBox (Oracle)
 * https://css-tricks.com/an-introduction-to-vagrant/ Vagrant
 
 ## App mobiles/hybrides
-* https://ionicframework.com/
 * https://electron.atom.io/
+* https://ionicframework.com/
 * http://www.appgyver.com/ (steroids.js)
 * https://developer.amazon.com/sdk/webapps.html Amazon Web Apps
-* https://github.com/phonegap/phonegap/wiki
-* http://mobile.tutsplus.com/tutorials/phonegap/creating-an-android-hello-world-application-with-phonegap/
-* http://mobile.tutsplus.com/tutorials/phonegap/phonegap-development/
-* http://www.sitepoint.com/how-to-create-html5-apps-on-windows-phone-with-phonegap/
 
 ## Hardware
 * http://blog.codinghorror.com/is-your-computer-stable/ Tests de stabilité hardware
 
 ## Divers
 * https://matt.sh/howto-c How to C in 2016
-
-
