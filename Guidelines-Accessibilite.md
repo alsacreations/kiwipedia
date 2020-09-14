@@ -364,6 +364,10 @@ Pour les menus déroulants et mega menus, Accessible Mega Menu a fait ses preuve
 
 ## Outils
 
+### Devtools
+
+* Accessibilité dans les devtools de Chrome [https://www.smashingmagazine.com/2020/08/accessibility-chrome-devtools/](https://www.smashingmagazine.com/2020/08/accessibility-chrome-devtools/)
+
 ### Synthèses vocales
 
 * NVDA
