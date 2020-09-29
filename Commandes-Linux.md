@@ -382,6 +382,12 @@ ___
 Liste les devices de bloc (disques durs) et leurs points de montage
 `lsblk`
 
+Liste tous les UUID
+`blkid`
+
+Liste tous les disques par ID matériel
+`ls -al /dev/disk/by-id`
+
 Espace disque libre
 `df -h`
 
@@ -414,9 +420,6 @@ Partitionner (p = afficher, d = supprimer, n = new)
 
 Espace disque occupé dans les sous-dossiers classés par taille
 `du -hs * | sort -h`
-
-Liste tous les UUID
-`blkid`
 
 Triple benchmark rapide disque
 `for i in 1 2 3; do hdparm -tT /dev/hda; done`
