@@ -683,6 +683,9 @@ Supprimer les fichiers pollution macOS
 Trouver tous les error.log et les classer par taille
 `find . -name "error.log" -exec ls -sh {} \; | sort -h`
 
+Supprimer tous les dossiers node_modules à partir du répertoire courant
+`find . -name "node_modules" -type d -prune -exec rm -rf '{}' +`
+
 Que les fichiers (pas les dossiers)
 `find -type f`
 
