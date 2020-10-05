@@ -465,6 +465,7 @@ UI snippets
 * https://bossfight.co/
 
 ### Placeholders (images de remplissage)
+* https://picsum.photos/images
 * http://www.diverseui.com/ Personnes diverses
 * https://tinyfac.es/ Avatars
 * https://uifaces.co/ Visages de remplissage
