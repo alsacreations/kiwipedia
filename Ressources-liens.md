@@ -87,14 +87,13 @@
 
 ### Frameworks CSS
 * https://knacss.com/ KNACSS !
-* http://twitter.github.io/bootstrap/ Bootstrap (Twitter)
+* https://tailwindcss.com/ Tailwind
+* http://twitter.github.io/bootstrap/ Bootstrap (par Twitter)
 * http://purecss.io/ Pure (Yahoo)
-* http://topcoat.io/ Topcoat (Adobe)
 * http://designmodo.github.io/Flat-UI/ Flat UI
-* http://usablica.github.io/front-end-frameworks/compare.html Comparatif
 
 ## Node.js / npm
-* https://nodejs.org/en/
+* https://nodejs.org/fr/
 
 ### Gulp
 * http://quenchjs.com/ Générateur de gulpfile
@@ -203,19 +202,8 @@
 * http://filamentgroup.com/lab/bulletproof_icon_fonts/ L’accessibilité des font-icon
 * http://www.nczonline.net/blog/2013/04/01/making-accessible-icon-buttons/ Boutons accessibles
 * http://www.traduction.cc/traduction/Creer-des-tableaux-de-donnees-accessibles-1.html Créer des tableaux accessibles
-* https://www.paypal-engineering.com/2014/01/28/bootstrap-accessibility-plugin-making-the-popular-web-development-framework-better/ Modules accessibles pour Bootstrap
-* https://www.paypal-engineering.com/2014/01/15/a-sweet-toggle-switch/ Toggle switch
-* http://www.creativejuiz.fr/blog/tutoriels/personnaliser-aspect-boutons-radio-checkbox-css Radio / checkbox customisé
-* http://www.filamentgroup.com/examples/customInput/ Radio / checkbox customisé (2)
 * http://www.last-child.com/legend-aria-describedby/ Fieldset, aria et radiogroup
 * http://accessiblehtmlheadings.com/  Section & heading
-
-### Mobile
-* http://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile_access.shtml Mobile accessibility guidelines
-
-### Cartographie
-* http://www.johanramon.fr/google-maps-accessibilite Google Maps
-* http://dev.openlayers.org/releases/OpenLayers-2.13.1/examples/accessible.html Open Layers
 
 ## Animations
 * http://anime-js.com/
