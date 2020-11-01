@@ -128,6 +128,7 @@
 * Smartgit https://www.syntevo.com/smartgit/
 
 ## Accessibilité
+
 * http://www.html5accessibility.com/
 * https://www.accede-web.com/notices/ Notices AccedeWeb
 * https://bitsofco.de/the-accessibility-cheatsheet/ Cheatsheet résumée
@@ -138,6 +139,10 @@
 * https://ibma.github.io/Va11yS/ Va11yS: Verified Accessibility Code Samples (IBM)
 * http://www.d.umn.edu/itss/training/online/webdesign/accessibility.html Grande liste en vrac
 * https://www.accessify.com/tools-and-wizards/ Pas mal d’outils
+
+### Intégration HTML/CSS
+
+* https://matthiasott.com/notes/focus-visible-is-here Gestion du focus avec :focus et :focus-visible
 
 ### ARIA
 * https://w3c.github.io/aria/ La spécification
