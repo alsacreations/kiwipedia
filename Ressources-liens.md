@@ -475,10 +475,6 @@ UI snippets
 * http://www.sitepoint.com/one-hour-seo-audit/ Audit SEO en 1 heure
 * https://www.screamingfrog.co.uk/seo-spider/ Outil de crawl et diagnostic SEO
 
-## Réseaux sociaux
-* http://sharingbuttons.io/ Boutons de partage sans js
-* http://kurtnoble.com/labs/rrssb/index.html Ridiculously Responsive Social Sharing Buttons
-
 ## WebRTC, MediaCapture
 * https://appr.tc/ Démo de chat vidéo en peer to peer avec HTML5
 
@@ -567,7 +563,6 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 ## Explication et relation client
 * https://small.chat/ Intégrer Slack en chat sur le site
-* http://liquidapsive.com/ (différence adaptative/responsive/static/liquid)
 * http://warpspire.com/posts/url-design/ URL design (~cool uri)
 * https://medium.com/@ImpalaWebstudio/pourquoi-nous-ne-livrons-pas-de-maquettes-au-moment-du-devis-36a242479a71 Maquettes gratuites
 * http://kitdesurvie.metiers-graphiques.fr/articles/comment-gerer-un-impaye Comment gérer un impayé
@@ -612,14 +607,13 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 ## RWD Responsive Web Design
 * https://www.screensizemap.com/ dimensions de la plupart des écrans
-* http://wickynilliams.github.com/enquire.js/ (matchMedia, etc)
-* http://codyhouse.co/gem/mega-dropdown Responsive Mega Menu
-* http://mobile.smashingmagazine.com/2013/07/08/choosing-a-responsive-image-solution/ Images
-* http://gionkunz.github.io/chartist-js/index.html Graphiques
+* https://ishadeed.com/article/responsive-design-height/ design responsive en vertical
+* https://gionkunz.github.io/chartist-js/ Graphiques
 * Tableau responsive
   * http://css-tricks.com/responsive-data-table-roundup/
   * http://elvery.net/demo/responsive-tables/
   * http://jquerymobile.com/branches/tables/docs/tables/
+* http://codyhouse.co/gem/mega-dropdown Responsive Mega Menu
 
 ## Retina et HD
 * http://net.tutsplus.com/tutorials/html-css-techniques/the-right-way-to-retinafy-your-websites/
