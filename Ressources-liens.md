@@ -103,14 +103,16 @@
 * https://nodejs.org/fr/
 
 ### Gulp
+
 * http://quenchjs.com/ Générateur de gulpfile
 * http://www.smashingmagazine.com/2014/06/11/building-with-gulp/
 * http://alistapart.com/blog/post/getting-started-with-gulp
 * http://www.sitepoint.com/introduction-gulp-js/
-* http://justinjohnson.org/javascript/getting-started-with-gulp-and-browserify/
-  * https://github.com/BrowserSync/gulp-browser-sync
-* https://webdesignledger.com/understanding-the-bower-package-manager/ Introduction à Bower
+
+### Webpack
+
 * https://webpack.js.org/ Webpack
+* https://www.taniarascia.com/how-to-use-webpack/ Comment utiliser webpack
 
 ## PHP
 * http://www.phpliveregex.com/ Tester les regexp en live
