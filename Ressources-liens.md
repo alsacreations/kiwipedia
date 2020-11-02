@@ -145,6 +145,10 @@
 * https://uxdesign.cc/designing-accessible-products-e8aa79b55ebc
 * https://ibma.github.io/Va11yS/ Va11yS: Verified Accessibility Code Samples (IBM)
 * http://www.d.umn.edu/itss/training/online/webdesign/accessibility.html Grande liste en vrac
+
+### Outils de test/évaluations
+
+* https://blog.sapegin.me/all/accessibility-testing/
 * https://www.accessify.com/tools-and-wizards/ Pas mal d’outils
 
 ### Intégration HTML/CSS
