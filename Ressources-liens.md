@@ -53,6 +53,7 @@
 ## CSS
 
 ### Grids
+
 * http://learncssgrid.com/ Apprendre CSS Grid Layout
 * https://cssgrid-generator.netlify.com/ Générateur CSS Grid
 * https://mozilladevelopers.github.io/playground/
@@ -60,10 +61,16 @@
 * https://www.mozilla.org/en-US/developer/css-grid/
 
 ### Flexbox
+
 * http://www.vincent-valentin.name/articles/le-petit-flexbox-illustre Flexbox
 * http://www.flexboxpatterns.com/ Patterns flexbox
 
+### Variables
+
+* https://ishadeed.com/article/css-vars-101/
+
 ### Typographie
+
 * https://font-display.glitch.me/ Explication de font-display
 
 ### Divers
