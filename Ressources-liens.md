@@ -50,6 +50,10 @@
 
 * https://app-manifest.firebaseapp.com/ Générateur de web manifest
 
+## Audit qualité, performance, accessibilité
+
+* https://web.dev/measure/ (lighthouse)
+
 ## CSS
 
 ### Grids
