@@ -82,3 +82,20 @@ Exemple :
 
 - `editor.minimap.renderCharacters = false`, et la minimap devient plus belle
 - `explorer.openEditors.visible = false`, car on voit déjà les fichiers ouverts dans les onglets
+
+## Créer un snippet personnalisé (ex. “schnapsit”)
+
+1. Dans le menu : `Code -> Preferences -> User Snippets` (ou `Fichier -> Préférences -> Extraits Utilisateur`)
+2. Choisir l’option `"New Global Snippets File"` (sauf s’il y a déjà un fichier de snippets global)
+3. Donner un nom au fichier, par exemple `"schnapsum"`
+4. Récupérer le code source (cliquer sur “raw”) de ce Gist : <https://gist.github.com/raphaelgoetter/152a21e85c5310bcb5eec132983fce27>
+5. Le coller dans le fichier (remplacer tout le code déjà existant par le Gist)
+6. Enregistrer
+
+Usage :
+
+- aller dans n’importe quel fichier,
+- taper “sch” ou “schnaps” puis Tabulation
+- 3 choix sont proposés : version courte, moyenne ou longue
+- valider le choix avec Entrée
+- Enjoy!
