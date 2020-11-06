@@ -46,6 +46,8 @@ Prettier est un formateur de syntaxe permettant d'assurer une consistance dans l
 
 Prettier applique les consignes d'Editorconfig et peut être lui-même configuré via un fichier `.prettierrc` à la racine du projet. À la différence d'Editorconfig, Prettier ne modifie pas les réglages natifs de l'IDE, il ne fait qu'appliquer les règles lors de son application (activer, si souhaité, `"editor.formatOnSave": true` dans les settings de Visual Studio Code).
 
+Prettier, intégré dans un Workflow, peut également empêcher la validation de code ou le commit dans Git.
+
 Exemple recommandé de fichier `.prettierrc` :
 
 ```json
@@ -70,9 +72,17 @@ Exemple recommandé de fichier `.prettierrc` :
 
 #### [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
+ESLint est un analyseur de code pour identifier les problématiques trouvés dans le code JavaScript (Vue, React, etc.) et les résoudre automatiquement.
+
+#### [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
+
+Stylelint est un linter CSS (SCSS, LESS) apportant une configuration plus fine que les linters natifs de VS Code.
+
+Au sein d'un Workflow, Stylelint permet d'appliquer des fonctionnalités avancées telles que la correction de l'ordre d'affichage des propriétés CSS (plugin `stylelint-order`).
+
 #### [Markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
 
-(Linter pour Markdown)
+Markdownlint est un linter pour langage Markdown et prend en compte toutes les règles à appliquer sur les fichiers `.md` notamment les fichiers `readme.md`.
 
 ### Extensions indispensables (tous projets)
 
@@ -87,7 +97,6 @@ Exemple recommandé de fichier `.prettierrc` :
   - [Gitlens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
   - [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
 - Qualité / Linting / Formatage
-  - [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
   - [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) (très pratique pour JS / React / Vue)
 - Divers
   - [IntelliSense for CSS class names in HTML](https://marketplace.visualstudio.com/items?itemName=Zignd.html-css-class-completion)
@@ -101,7 +110,7 @@ Exemple recommandé de fichier `.prettierrc` :
 - [Bracket Pair Colorizer](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer)
 - [Indent Rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow)
 - [Select highlight in minimap](https://marketplace.visualstudio.com/items?itemName=mde.select-highlight-minimap)
-- [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
+- [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) (affiche les erreurs des linters direcctement dans la fenêtre de code)
 
 ### Extensions spécifiques ou avancées
 
