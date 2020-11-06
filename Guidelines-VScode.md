@@ -42,9 +42,10 @@ trim_trailing_whitespace = false
 
 #### [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 
-Prettier est un formateur de syntaxe permettant d'assurer une consistance dans les projets (sauts de ligne, guillemets simples ou doubles, etc.).
+Prettier est un formateur de syntaxe permettant d'assurer une consistance tout au long du projet (sauts de ligne, guillemets simples ou doubles, etc.).
 
-Prettier applique les consignes d'Editorconfig et peut être lui-même configuré via un fichier `.prettierrc` à la racine du projet. À la différence d'Editorconfig, Prettier ne modifie pas les réglages natifs de l'IDE, il ne fait qu'appliquer les règles lors de son application (activer, si souhaité, `"editor.formatOnSave": true` dans les settings de Visual Studio Code).
+Prettier applique les consignes d'Editorconfig et peut être lui-même configuré via un fichier `.prettierrc` à la racine du projet.
+À la différence d'Editorconfig, Prettier ne modifie pas les réglages natifs de l'IDE, il ne fait qu'appliquer les règles lors de son application (activer, si souhaité, `"editor.formatOnSave": true` dans les settings de Visual Studio Code).
 
 Prettier, intégré dans un Workflow, peut également empêcher la validation de code ou le commit dans Git.
 
