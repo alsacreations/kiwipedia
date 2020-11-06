@@ -23,6 +23,16 @@ Par ailleurs VS Code dispose de vérificateurs de qualité (Linters) par défaut
 - CSS / SCSS
   - [SCSS Intellisense](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-scss) (autocomplétion SCSS : classes, variables, etc.)
 
+## Extensions recommandées
+
+- Git
+  - [Gitlens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
+  - [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
+- Qualité / Linting / Formatage
+  - [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) (très pratique pour JS / React / Vue)
+  - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+  - [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) (Linter pour Markdown)
+
 ## Extensions spécifiques par projets
 
 Dans Visual Studio Code un fichier `.vscode/extensions.json` liste les extensions recommandées du projet (voir <https://twitter.com/j_niewczas/status/1284157199741157376>)
