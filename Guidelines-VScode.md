@@ -2,14 +2,6 @@
 
 L'Éditeur de code recommandé pour HTML, CSS, PHP, JS est [Visual Studio Code](https://code.visualstudio.com/). Il est libre (son noyau), gratuit et bénéficie de nombreuses mises à jour. Un package réellement libre est [VSCodium](https://vscodium.com/) (absence de la télémétrie Microsoft et utilisation d'un autre store d'extensions).
 
-## Suivi de Qualité de code
-
-Visual Studio Code dispose de vérificateurs de qualité (Linters) par défaut, au minimum dans les langages suivants&nbsp;: PHP, CSS, SCSS. La configuration par défaut de Visual Studio Code est préservée au maximum.
-
-Toujours vérifier les erreurs et warnings déclarés par les **linters** dans la console de Visual Studio Code.
-
-Le **formatage** (indentation, espaces ou tabulations, lignes vides, etc.) est consigné dans le fichier `.editorconfig` et appliqué via `.prettierrc` (activer, si souhaité, `"editor.formatOnSave": true` dans les settings de Visual Studio Code).
-
 ## [Raccourcis incontournables](https://code.visualstudio.com/docs/getstarted/keybindings#_keyboard-shortcuts-reference)
 
 - `⌘⇧P` (`Ctrl+Shift+P` sur Windows) : Show Command Palette (permet de lancer une tâche d'un plugin)
@@ -20,15 +12,72 @@ Le **formatage** (indentation, espaces ou tabulations, lignes vides, etc.) est c
 
 ## Extensions Visual Studio Code
 
+### Extensions de suivi de qualité de code
+
+#### Linters natifs
+
+Visual Studio Code dispose de vérificateurs de qualité (Linters) par défaut, au minimum dans les langages suivants&nbsp;: CSS, SCSS et PHP. La configuration par défaut de Visual Studio Code doit être préservée au maximum pour éviter les conflits sur des postes différents.
+
+#### [EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
+
+Editorconfig impose un formatage (espace vs tabs) et des règles de syntaxe directement dans l'éditeur, ainsi ce dernier s'adapte à chaque projet.
+
+La configuration de Editorconfig se fait via un fichier `.editorconfig` placé à la racine du projet dont voici un exemple recommandé&nbsp;:
+
+```js
+# editorconfig.org
+root = true
+
+[*]
+indent_style = space
+indent_size = 2
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.md]
+trim_trailing_whitespace = false
+```
+
+#### [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+
+Prettier est un formateur de syntaxe permettant d'assurer une consistance dans les projets (sauts de ligne, guillemets simples ou doubles, etc.).
+
+Prettier applique les consignes d'Editorconfig et peut être lui-même configuré via un fichier `.prettierrc` à la racine du projet. À la différence d'Editorconfig, Prettier ne modifie pas les réglages natifs de l'IDE, il ne fait qu'appliquer les règles lors de son application (activer, si souhaité, `"editor.formatOnSave": true` dans les settings de Visual Studio Code).
+
+Exemple recommandé de fichier `.prettierrc` :
+
+```json
+{
+  "endOfLine": "lf",
+  "semi": false,
+  "arrowParens": "always",
+  "printWidth": 120,
+  "tabWidth": 2,
+  "useTabs": false,
+  "singleQuote": true,
+  "overrides": [
+    {
+      "files": ["*.css", "*.scss"],
+      "options": {
+        "singleQuote": false
+      }
+    }
+  ]
+}
+```
+
+#### [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+
+#### [Markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
+
+(Linter pour Markdown)
+
 ### Extensions indispensables (tous projets)
 
 - Général
   - [Project Manager](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager)
-- Qualité / Linting / Formatage
-  - [EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) (pour imposer un formatage de syntaxe commun à tous, avec configuration via `.editorconfig`)
-  - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-  - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) (pour appliquer le formatage, avec configuration via `.prettierrc`)
-  - [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) (Linter pour Markdown)
 - CSS / SCSS
   - [SCSS Intellisense](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-scss) (autocomplétion SCSS : classes, variables, etc.)
 
@@ -73,11 +122,7 @@ Exemple :
 
 ```json
 {
-  "recommendations": [
-    "esbenp.prettier-vscode",
-    "EditorConfig.EditorConfig",
-    "mrmlnc.vscode-scss"
-  ]
+  "recommendations": ["esbenp.prettier-vscode", "EditorConfig.EditorConfig", "mrmlnc.vscode-scss"]
 }
 ```
 
