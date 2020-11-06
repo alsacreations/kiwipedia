@@ -4,9 +4,9 @@ _Quelques bonnes pratiques pour un WorkFlow de production_
 
 ## Généralités
 
-* L’encodage des fichiers et des bases de données doit se faire en UTF-8 (sans BOM).
-* Les indentations se font à l’aide de deux espaces et non sous forme de tabulations.
-Pour assurer une cohérence inter-projets, utiliser la convention [EditorConfig](http://editorconfig.org/).
+- L’encodage des fichiers et des bases de données doit se faire en UTF-8 (sans BOM).
+- Les indentations se font à l’aide de deux espaces et non sous forme de tabulations.
+  Pour assurer une cohérence inter-projets, utiliser la convention [EditorConfig](http://editorconfig.org/).
 
 ## Organisation globale et outils
 
@@ -28,14 +28,9 @@ _**Note :** Yarn est un excellent gestionnaire de dépendances également._
 
 #### Éditeurs
 
-Voici la liste des éditeurs de code communément adoptés :
+L'éditeur recommandé est Visual Studio Code.
 
-* Visual Studio Code (conseillé) <https://code.visualstudio.com/>
-* Atom <https://atom.io/>
-
-#### Extensions
-
-Dans Visual Studio Code un fichier `.vscode/extensions.json` liste les extensions recommandées du projet (voir <https://twitter.com/j_niewczas/status/1284157199741157376>)
+Pour les détails, voir [Guidelines VS Code](Guidelines-VScode.md)
 
 #### Automatisation de tâches
 
@@ -43,15 +38,15 @@ Pour les projets d'application exploitant un framework tel que Vue.js, **webpack
 
 Pour les projets d'intégration statique **Gulp** est utilisé pour automatiser les tâches courantes :
 
-* minification des fichiers js (gulp-uglify)
-* minification des fichiers css (gulp-csso)
-* préprocesseur Sass (gulp-sass)
-* concaténation tous types (gulp-concat)
-* renommage (gulp-rename)
-* sourcemaps (gulp-sourcemaps)
-* autoprefixer (gulp-autoprefixer)
-* compression des images (avec imagemin, pour jpeg, png, svg)
-* En bonus : browser-sync
+- minification des fichiers js (gulp-uglify)
+- minification des fichiers css (gulp-csso)
+- préprocesseur Sass (gulp-sass)
+- concaténation tous types (gulp-concat)
+- renommage (gulp-rename)
+- sourcemaps (gulp-sourcemaps)
+- autoprefixer (gulp-autoprefixer)
+- compression des images (avec imagemin, pour jpeg, png, svg)
+- En bonus : browser-sync
 
 ## Nouveau Projet
 
@@ -61,26 +56,26 @@ L'outil de création d’un projet-type, **"Bretzel"**, se trouve sur Github à 
 
 Il est prévu pour fonctionner automatiquement avec les outils suivants :
 
-* Gulp
-* Sass
-* KNACSS
+- Gulp
+- Sass
+- KNACSS
 
 ### Nouveau projet
 
-* Création d'un dossier au nom du projet
-* récupérez **Bretzel** :
-    * grâce au plugin npm [bretzel-start](https://github.com/alsacreations/bretzel-start) ❤
-    * ou bien en enregistrant le `.zip`
-    * ou au pire via `npm install alsacreations/bretzel`
-* lancez `npm install` (ou `npm update`) pour installer les plugins gulp nécessaires et les dépendances (KNACSS et jQuery par défaut)
-* Créer un dépôt Git
+- Création d'un dossier au nom du projet
+- récupérez **Bretzel** :
+  - grâce au plugin npm [bretzel-start](https://github.com/alsacreations/bretzel-start) ❤
+  - ou bien en enregistrant le `.zip`
+  - ou au pire via `npm install alsacreations/bretzel`
+- lancez `npm install` (ou `npm update`) pour installer les plugins gulp nécessaires et les dépendances (KNACSS et jQuery par défaut)
+- Créer un dépôt Git
 
 ### EditorConfig
 
 Afin d’assurer une consistance entre notre éditeur HTML et notre convention d’espaces / tabulations pour chaque projet :
 
-* Installer le [plugin EditorConfig](http://editorconfig.org/#download) correspondant à notre éditeur
-* Ajouter un fichier [.editorconfig](http://editorconfig.org/) à la racine du projet, dont le contenu sera :
+- Installer le [plugin EditorConfig](http://editorconfig.org/#download) correspondant à notre éditeur
+- Ajouter un fichier [.editorconfig](http://editorconfig.org/) à la racine du projet, dont le contenu sera :
 
 ```
 root = true
@@ -114,44 +109,43 @@ Notre outil d’environnement de développement front-end est **[Gulp](http://gu
 
 Deux utilisations sont possibles :
 
-* à distance sur le serveur par SSH
-* en disque local sur son poste (avec la ligne de commande)
+- à distance sur le serveur par SSH
+- en disque local sur son poste (avec la ligne de commande)
 
 Ne pas utiliser la ligne de commande locale sur le partage de fichiers distant
 
 #### Usage direct sur le serveur distant
 
-* Se connecter en SSH sur le serveur de développement
-* Aller dans le répertoire du projet avec la commande cd (ex : `cd /var/www/`)
-* Utiliser les commandes habituelles de gulp
-
+- Se connecter en SSH sur le serveur de développement
+- Aller dans le répertoire du projet avec la commande cd (ex : `cd /var/www/`)
+- Utiliser les commandes habituelles de gulp
 
 #### Usage local avec disque local
 
-* si vous n’avez pas Gulp installé sur votre machine :
-    * si `package.json` existe,  alors installer gulp ainsi : `npm install --save-dev gulp`
-    * si `package.json` n’est pas présent, le créer d’abord : `npm init`
-    * pour installer Gulp sans créer de `package.json` (normalement on ne le fait pas) : `npm install gulp`
-* pour installer les plugins gulp nécessaires :
-    * l’un après l’autre :  `npm install <gulp-*>` (`*` = nom du plugin)
-    * tous d’un coup (via `package.json`) : `npm install`
-    * (voire `npm upgrade` pour tous les modules manquants listés dans `package.json`)
-* (note : pour installer gulp en global sur sa machine, une fois pour toutes (précéder de `sudo` sur Mac OS X) : `npm install -g gulp`)
+- si vous n’avez pas Gulp installé sur votre machine :
+  - si `package.json` existe, alors installer gulp ainsi : `npm install --save-dev gulp`
+  - si `package.json` n’est pas présent, le créer d’abord : `npm init`
+  - pour installer Gulp sans créer de `package.json` (normalement on ne le fait pas) : `npm install gulp`
+- pour installer les plugins gulp nécessaires :
+  - l’un après l’autre : `npm install <gulp-*>` (`*` = nom du plugin)
+  - tous d’un coup (via `package.json`) : `npm install`
+  - (voire `npm upgrade` pour tous les modules manquants listés dans `package.json`)
+- (note : pour installer gulp en global sur sa machine, une fois pour toutes (précéder de `sudo` sur Mac OS X) : `npm install -g gulp`)
 
 La configuration de Gulp se trouve au sein des fichiers :
 
-* `package.json` (liste des plugins : minify, autoprefixer, Sass, etc.)
-* `gulpfile.js` (liste des tâches)
+- `package.json` (liste des plugins : minify, autoprefixer, Sass, etc.)
+- `gulpfile.js` (liste des tâches)
 
 #### Commandes
 
-* `gulp` (équivalent à gulp default, qui est lié aux tâches suivantes communes)
-* `gulp styles` : génération des styles à partir des pré-processeurs
-* `gulp scripts` : génération des scripts
-* `gulp watch` : exécution des tâches communes précédentes lorsqu’un fichier change
+- `gulp` (équivalent à gulp default, qui est lié aux tâches suivantes communes)
+- `gulp styles` : génération des styles à partir des pré-processeurs
+- `gulp scripts` : génération des scripts
+- `gulp watch` : exécution des tâches communes précédentes lorsqu’un fichier change
 
 #### Guide pour reprendre un projet
 
-* `git pull` (récupération des fichiers du repository)
-* `npm install` (installation des nouveau modules gulp présents dans `package.json` - le dossier `node_modules` n’étant normalement pas versionné.)
-* `gulp` , `gulp styles` ou `gulp watch` (tâches classiques gulp)
+- `git pull` (récupération des fichiers du repository)
+- `npm install` (installation des nouveau modules gulp présents dans `package.json` - le dossier `node_modules` n’étant normalement pas versionné.)
+- `gulp` , `gulp styles` ou `gulp watch` (tâches classiques gulp)
