@@ -110,7 +110,7 @@ Markdownlint est un linter pour langage Markdown et prend en compte toutes les r
 - [Bracket Pair Colorizer](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer)
 - [Indent Rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow)
 - [Select highlight in minimap](https://marketplace.visualstudio.com/items?itemName=mde.select-highlight-minimap)
-- [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) (affiche les erreurs des linters direcctement dans la fenêtre de code)
+- [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) (affiche les erreurs des linters directement dans la fenêtre de code)
 
 ### Extensions spécifiques ou avancées
 
