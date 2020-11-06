@@ -19,7 +19,9 @@ Le **formatage** (indentation, espaces ou tabulations, lignes vides, etc.) est c
 - `⌘F` (`Ctrl+F`) : Find (rechercher dans le projet)
 - `⌥⌘F` (`Ctrl+H`) : Replace (remplacer dans le projet)
 
-## Extensions indispensables (tous projets)
+## Extensions VS Code
+
+### Extensions indispensables (tous projets)
 
 - Général
   - [Project Manager](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager)
@@ -29,7 +31,7 @@ Le **formatage** (indentation, espaces ou tabulations, lignes vides, etc.) est c
 - CSS / SCSS
   - [SCSS Intellisense](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-scss) (autocomplétion SCSS : classes, variables, etc.)
 
-## Extensions recommandées
+### Extensions recommandées
 
 - Git
   - [Gitlens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
@@ -42,7 +44,7 @@ Le **formatage** (indentation, espaces ou tabulations, lignes vides, etc.) est c
   - [IntelliSense for CSS class names in HTML](https://marketplace.visualstudio.com/items?itemName=Zignd.html-css-class-completion)
   - [Auto Close Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag)
 
-## Extensions suggérées
+### Extensions suggérées
 
 - [French Language Pack](https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-fr)
 - [highlight-matching-tag](https://marketplace.visualstudio.com/items?itemName=vincaslt.highlight-matching-tag)
@@ -51,7 +53,7 @@ Le **formatage** (indentation, espaces ou tabulations, lignes vides, etc.) est c
 - [Indent Rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow)
 - [Select highlight in minimap](https://marketplace.visualstudio.com/items?itemName=mde.select-highlight-minimap)
 
-## Extensions spécifiques ou avancées
+### Extensions spécifiques ou avancées
 
 - [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 - Partial Diff
@@ -60,7 +62,7 @@ Le **formatage** (indentation, espaces ou tabulations, lignes vides, etc.) est c
 - PHP Intellisense
 - phpcs
 
-## Extensions spécifiques par projets
+### Extensions spécifiques par projets
 
 Dans Visual Studio Code un fichier `.vscode/extensions.json` liste les extensions recommandées du projet (voir <https://twitter.com/j_niewczas/status/1284157199741157376>)
 
@@ -69,9 +71,14 @@ Exemple :
 ```json
 {
   "recommendations": [
-    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
     "EditorConfig.EditorConfig",
-    "msjsdiag.debugger-for-chrome"
+    "mrmlnc.vscode-scss"
   ]
 }
 ```
+
+## Astuces
+
+- `editor.minimap.renderCharacters = false`, et la minimap devient plus belle
+- `explorer.openEditors.visible = false`, car on voit déjà les fichiers ouverts dans les onglets
