@@ -1,7 +1,7 @@
 # Guidelines : Visual Studio Code
 
 L'Éditeur de code recommandé pour HTML, CSS, PHP, JS est [Visual Studio Code](https://code.visualstudio.com/). Il est libre (son noyau), gratuit et bénéficie de nombreuses mises à jour.
-Un package réellement libre est VSCodium (absence de la télémétrie Microsoft et utilisation d'un autre store d'extensions).
+Un package réellement libre est [VSCodium](https://vscodium.com/) (absence de la télémétrie Microsoft et utilisation d'un autre store d'extensions).
 
 ## Suivi de Qualité de code
 
