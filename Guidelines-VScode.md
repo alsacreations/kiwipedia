@@ -75,6 +75,8 @@ Exemple recommandé de fichier `.prettierrc` :
 
 ESLint est un analyseur de code pour identifier les problématiques trouvés dans le code JavaScript (Vue, React, etc.) et les résoudre automatiquement.
 
+L'extension VS Code ESlint avec ses réglages de base (sans configuration particulière) est suffisante dans la plupart des cas.
+
 #### [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
 
 Stylelint est un linter CSS (SCSS, LESS) apportant une configuration plus fine que les linters natifs de VS Code.
