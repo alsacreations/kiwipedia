@@ -88,7 +88,7 @@ Markdownlint est un linter pour langage Markdown et prend en compte toutes les r
 ### Extensions indispensables (tous projets)
 
 - Général
-  - [Project Manager](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager)
+  - [Project Manager](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager) (si vous jonglez entre plusieurs projets, c'est un must)
 - CSS / SCSS
   - [SCSS Intellisense](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-scss) (autocomplétion SCSS : classes, variables, etc.)
 
