@@ -77,6 +77,8 @@ ESLint est un analyseur de code pour identifier les problématiques trouvés dan
 
 L'extension VS Code ESlint avec ses réglages de base (sans configuration particulière) est suffisante dans la plupart des cas.
 
+Au sein d'un Workflow, et lorsque des paramètres avancés sont nécessaires, ESlint est configuré via un fichier `.eslintrc`).
+
 #### [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
 
 Stylelint est un linter CSS (SCSS, LESS) apportant une configuration plus fine que les linters natifs de VS Code.
