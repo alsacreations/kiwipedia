@@ -79,7 +79,9 @@ ESLint est un analyseur de code pour identifier les problématiques trouvés dan
 
 Stylelint est un linter CSS (SCSS, LESS) apportant une configuration plus fine que les linters natifs de VS Code.
 
-Au sein d'un Workflow, Stylelint permet d'appliquer des fonctionnalités avancées telles que la correction de l'ordre d'affichage des propriétés CSS (plugin `stylelint-order`).
+L'extension VS Code Stylelint avec ses réglages de base (sans configuration particulière) est suffisante dans la plupart des cas.
+
+Au sein d'un Workflow, et lorsque des paramètres avancés sont nécessaires, Stylelint est configuré via un fichier `.stylelintrc`) qui permet alors par exemple d'appliquer des fonctionnalités telles que la correction de l'ordre d'affichage des propriétés CSS (plugin `stylelint-order`).
 
 #### [Markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
 
