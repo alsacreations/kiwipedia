@@ -73,7 +73,7 @@ L'inconvénient de cette notation est qu'elle génère des sélecteurs CSS compo
 }
 ```
 
-**À conseiller** (un seul niveau d'imbrication génère des sélecteurs composés de 2 niveaux `.home .home-first { … }`) :
+**À conseiller** (un seul niveau d'imbrication génère des sélecteurs composés de 2 niveaux au maximum `.home .home-first { … }`) :
 
 ```scss
 .home {
@@ -83,6 +83,19 @@ L'inconvénient de cette notation est qu'elle génère des sélecteurs CSS compo
   }
 }
 ```
+
+## Commentaires
+
+Les commentaires CSS et l'usage de mots-clés informatifs au sein de commentaires importants sont appréciés, sous la forme :
+
+- `TODO:` → point à finir / corriger avant de livrer
+
+Cette syntaxe est préconisée car correspond au réglage par défaut de l'extension VSCode [TODO Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight).
+
+D'autres mots-clés peuvent être additionels selon les cas (ne pas en abuser) :
+
+- `TODO:RG` → tâche à réaliser par Raphaël
+- `TODO:URL` → URL manquante
 
 ## Ordre des déclarations
 
@@ -153,22 +166,6 @@ TODO:
 - Toujours préciser quelle(s) propriété(s) doit être animée dans transition ou animation
 - Éviter d’animer des propriétés autres que **transform** ou **opacity** ou **filter** (ou alors ajouter la propriété `will-change` et/ou le hack de `translateZ()`.) Source : [https://tzi.github.io/presentation-CSS-perfs/](https://tzi.github.io/presentation-CSS-perfs/)
 - `@font-face` : N’imposez pas de chargements aux anciens navigateurs (IE8). Privilégiez `.woff2`. Pour le détail, voir la partie ["medias / polices"](#polices)
-
-## Commentaires
-
-Usage de mots-clés informatifs au sein de commentaires importants sont appréciés, sous la forme :
-
-- `TODO:` → point à finir / corriger avant de livrer
-
-Cette syntaxe est préconisée car correspond au réglage par défaut de l'extension VSCode TODO Highlight <https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight>
-
-D'autres mots-clés peuvent être utiles selon les projets (ne pas en abuser) :
-
-- `@BUGFIX` → explication d’une correction de bug
-- `@NOTE` → note importante à partager
-- `@AUTHOR` → auteur du document
-- `@TESTED` → navigateurs / environnements testés
-- `@TOPROD` → note à l’intention de la version de production
 
 ## Nommage des sélecteurs CSS
 
