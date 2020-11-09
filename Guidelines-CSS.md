@@ -37,7 +37,11 @@ Documentation : [fichiers reset de KNACSS Reborn](https://github.com/raphaelgoet
 
 ## Sélection des éléments
 
-Privilégier au maximum l'usage de classes plutôt que d'écrire des sélecteurs basés sur le type des éléments ou leur `id` [CSS with only class names](http://www.drinchev.com/blog/css-with-only-class-names/)
+La maintenabilité des feuilles de styles est une priorité. Il est nécessaire de prioriser les sélecteurs ayant le moins de spécificité (poids) possible.
+
+Privilégier au maximum l'usage de [**classes**](http://www.drinchev.com/blog/css-with-only-class-names/) plutôt que d'écrire des sélecteurs basés sur le type des éléments ou leur `id`.
+
+Cibler avec un seul sélecteur tant que cela est possible. Éviter de cibler `.modal span` ou `.modal .date` mais plutôt `.modal-date` pour conserver un poids minimal. Cela implique que chaque élément HTML, même anodin tels que des `<span>`, de `<p>` ou des `<a>` disposent d'attributs de classe afin de pouvoir être ciblés sans avoir à faire à leur hiérarchie.
 
 ## Notation imbriquée Scss
 
