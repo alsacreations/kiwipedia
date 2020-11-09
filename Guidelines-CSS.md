@@ -138,11 +138,11 @@ Notre Workflow varie selon les types de projets, la maturité des navigateurs we
 
 Notre rôle est de nous adapter constamment à ces évolutions, et nos solutions technique sont à ce jour&nbsp;: NPM, Vue, React, WordPress, Gulp, site statique ("pas de workflow").
 
-Les [méthodologies et conventions de nommage CSS](https://speakerdeck.com/goetter/conventions-de-nommage-en-css) que nous préconisons selon les projets sont l'une d'entre-elles&nbsp;:
+Les [méthodologies et conventions de nommage CSS](https://speakerdeck.com/goetter/conventions-de-nommage-en-css) que nous préconisons selon les projets sont&nbsp;:
 
 - Tailwind
-- KNACSS
-- Bootstrap
+- ou KNACSS
+- ou Bootstrap
 
 ### Tailwind
 
@@ -157,7 +157,7 @@ La méthodologie et les conventions de Tailwind sont très spécifiques car tout
 Contient (ou devrait contenir) :
 
 - reset KNACSS ?
-- convention de nommage TW Utility first
+- Convention de nommage "Utility first"
 - PurgeCSS
 
 ### KNACSS Reborn
@@ -174,7 +174,7 @@ Contient (ou devrait contenir) :
 
 - Fichiers "reset" KNACSS avec un condensé de bonnes pratiques
 - Architecture et imports des fichiers KNACSS
-- Mixins respond-to
+- Mixin `respond-to`
 - Convention de nommage : "sémantique" (se rapproche de [BEM](http://getbem.com/))
 
 ### Bootstrap
@@ -190,6 +190,7 @@ Contient (ou devrait contenir) :
 - Reset KNACSS ?
 - Convention de nommage : "sémantique" (se rapproche de BEM)
 - Composants préfabriqués (modales, navigation, etc.)
+- Grille de mise en forme --> préférer l'usage de Grid Layout plutôt que la grille de Bootstrap nécessitant des imbrications HTML
 
 ## Divers
 
