@@ -1,56 +1,55 @@
 # Guidelines : CSS
 
-_Bonnes pratiques CSS (et SCSS)  en production_
-
-Ces conventions CSS rassemblent les bonnes pratiques appliquées par l'agence web Alsacreations.fr. <br>
-Elles ont pour but d'évoluer dans le temps et de s'adapter à chaque nouveau projet.
-
+Cette présente convention rassemble les bonnes pratiques CSS (et SCSS) en production appliquées par l'agence web Alsacreations.fr. Elle a pour but d'évoluer dans le temps et de s'adapter à chaque nouveau projet.
 
 ## Généralités
 
-* L’encodage des fichiers et des bases de données doit se faire en UTF-8 (sans BOM).
-* Les indentations se font à l’aide de deux espaces et sous forme de tabulations.
-Pour assurer une cohérence inter-projets, utiliser la convention [EditorConfig](http://editorconfig.org/).
-* Le code CSS produit doit être propre, optimisé et (autant que faire se peut) valide selon les normes (http://jigsaw.w3.org/css-validator/).
-* La feuille de style CSS est de préférence unique et minifiée et appelée à l'aide d'un élément `<link>` dans la section `<head>`. Pas de `@import` dans un fichier CSS.
-* Privilégier tant que possible les syntaxes via propriétés raccourcies : `margin`, `padding`, `font`, `border`, `background`, `border-radius`
-* Utiliser toujours le même type de guillemets. De préférence des doubles guillemets, exemple : `content: ""`;
-* Utiliser toujours des guillemets pour les valeurs dans les sélecteurs, exemple : `input[type="checkbox"]`
-* Éviter de spécifier les unités pour les valeurs nulles ainsi que pour les hauteurs de lignes, exemple : `margin: 0; line-height: 1.5`. La seule exception étant `flex-basis` pour des raisons de compatibilité IE11.
+### Éditeur, Formatage et Qualité
 
-## Compatibilité navigateurs
+- L'éditeur de code recommandé pour HTML, CSS, PHP, JS est [Visual Studio Code](https://code.visualstudio.com/). Il est libre (son noyau), gratuit et bénéficie de nombreuses mises à jour. Un package réellement libre est [VSCodium](https://vscodium.com/) (absence de la télémétrie Microsoft et utilisation d'un autre store d'extensions).
+- [EditorConfig](http://editorconfig.org/) et [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) imposent un formatage (UTF-8, espace vs tabs, guillemets) et des règles de syntaxe directement dans l'éditeur, ainsi ce dernier s'adapte à chaque projet.
+- [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint) est un linter CSS (SCSS, LESS) apportant une configuration qui vient s'ajouter aux linters natifs de VS Code.
 
-L'ensemble des recommandations de ce document est prévu pour être compatible avec les navigateurs suivants (fichier `.browserslistrc` de l'outil [KNACSS](https://www.knacss.com/)) :
+### Langage : Scss
 
+Le pré-processeur [Sass](https://sass-lang.com/) (syntaxe `.scss`) est employé afin d'apporter certaines fonctionnalités indispensables&nbsp;: variables, notation imbriquée, mixins, etc.
+
+### Compatibilité navigateurs
+
+L'ensemble des recommandations de ce document est prévu pour être compatible avec tous les navigateurs représentant plus de 1.5% de la population, ce qui représente notamment tous les navigateurs modernes supportant [CSS Grid Layout](https://caniuse.com/css-grid). **Cela ne concerne donc pas IE10 et IE11.**
+
+La liste des navigateurs supportés est définie par le fichier `.browserslistrc` placé en racine du projet, sur lequel se base Autoprefixer et dont la valeur est&nbsp;:
+
+```json
+>1.5%
+not op_mini all
 ```
-> 1%
-last 2 versions
-IE >= 11
-Edge >= 16
-Chrome >= 60
-Firefox >= 50
-Firefox ESR
-Safari >= 10
-ios_saf >= 10
-Android >= 6
-```
+
+### Fichier CSS de base ("Reset")
+
+Un "reset" CSS permettant d'harmoniser les styles par défaut des navigateurs est systématiquement appliqué en début de projet.
+
+Normalize, Sanitize et Reboot sont des fichiers de base courants. **Nous privilégions les fichiers de base de KNACSS Reborn** qui est un récapitulatif de ces ressources.
+
+Documentation : [fichiers reset de KNACSS Reborn](https://github.com/raphaelgoetter/knacss-reborn/tree/master/sass/base)
+
+## Conventions variables selon les projets
+
+### Workflow
+
+### Framework
+
+### Nommage
 
 ## Faciliter la réutilisation de code
 
 Repérer systématiquement les « objets CSS » (OOCSS), c'est-à-dire des « patterns visuels » qui se répètent, afin de définir ainsi des classes réutilisables, des styles de base et des variantes.
-* Privilégier au maximum l'usage de classes plutôt que d'écrire des sélecteurs basés sur le type des éléments ou leur `id` [CSS with only class names](http://www.drinchev.com/blog/css-with-only-class-names/)
-* Séparer la structure de l’apparence (une règle CSS ne devrait pas comporter à la fois `padding` et `background` par exemple)
-* Séparer le conteneur du contenu (un composant ne devrait jamais être ciblé par un sélecteur qui tient compte de son parent)
+
+- Privilégier au maximum l'usage de classes plutôt que d'écrire des sélecteurs basés sur le type des éléments ou leur `id` [CSS with only class names](http://www.drinchev.com/blog/css-with-only-class-names/)
+- Séparer la structure de l’apparence (une règle CSS ne devrait pas comporter à la fois `padding` et `background` par exemple)
+- Séparer le conteneur du contenu (un composant ne devrait jamais être ciblé par un sélecteur qui tient compte de son parent)
 
 Documentation : [http://www.nicoespeon.com/fr/2013/05/plongee-au-coeur-de-oocss/](http://www.nicoespeon.com/fr/2013/05/plongee-au-coeur-de-oocss/)
-
-## Fichier CSS de base ("Reset")
-
-Un "reset" CSS permettant d’harmoniser les styles par défaut des navigateurs est systématiquement appliqué en début de projet.
-
-Normalize, Sanitize et Reboot sont des fichiers de base courants. **Nous privilégions le fichier de base de KNACSS** qui est un récapitulatif de ces ressources.
-
-Documentation : [fichier reset de KNACSS](https://github.com/alsacreations/KNACSS/blob/v8/sass/base/_reset.scss)
 
 ## Syntaxe
 
@@ -78,8 +77,7 @@ Voici dans quel ordre nous déclarons nos propriétés :
 4. Modèle de boîte : tout ce qui influe sur les dimensions de l’élément (`width`, `height`, `min-width`, `min-height`, `max-width`, `max-height`, `margin`, `padding`, `border`, `overflow`).
 5. Transformations et transitions : propriétés et valeurs CSS 3 (`transform`, `transition`, `animation`).
 6. Typographie : tout ce qui détermine les caractéristiques de la police de caractères (`font`, `text-align`, `text-decoration`, `letter-spacing`, `text-indent`, `line-height`, `text-transform`, `white-space`, `word-wrap`).
-Décoration : les propriétés purement ornementales (`background`, `color`, `list-style`, `outline`).
-
+   Décoration : les propriétés purement ornementales (`background`, `color`, `list-style`, `outline`).
 
 Exemple :
 
@@ -107,10 +105,10 @@ Certaines propriétés CSS nécessitent d’être préfixées de la manière sui
 
 Exemple :
 
-* `-webkit-propriété`
-* `-moz-propriété`
-* `-ms-propriété`
-* `propriété`
+- `-webkit-propriété`
+- `-moz-propriété`
+- `-ms-propriété`
+- `propriété`
 
 **_Note : l’outil "Autoprefixer" permet de préfixer automatiquement les propriétés CSS. Il peut être utilisé sous forme de plugin (Atom, Brackets, Sublime text) ou intégré à un Workflow sous forme de tâche Gulp ou Grunt : [https://autoprefixer.github.io/](https://autoprefixer.github.io/)_**
 
@@ -126,17 +124,17 @@ En dernier ressort, employer la ressource [Browserhacks](http://browserhacks.com
 
 Usage de mots-clés informatifs au sein de commentaires importants sont appréciés, sous la forme :
 
-* `TODO:` → point à finir / corriger avant de livrer
+- `TODO:` → point à finir / corriger avant de livrer
 
 Cette syntaxe est préconisée car correspond au réglage par défaut de l'extension VSCode TODO Highlight <https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight>
 
 D'autres mots-clés peuvent être utiles selon les projets (ne pas en abuser) :
 
-* `@BUGFIX` → explication d’une correction de bug
-* `@NOTE` → note importante à partager
-* `@AUTHOR` → auteur du document
-* `@TESTED` → navigateurs / environnements testés
-* `@TOPROD` → note à l’intention de la version de production
+- `@BUGFIX` → explication d’une correction de bug
+- `@NOTE` → note importante à partager
+- `@AUTHOR` → auteur du document
+- `@TESTED` → navigateurs / environnements testés
+- `@TOPROD` → note à l’intention de la version de production
 
 ## Choix des sélecteurs CSS
 
@@ -146,11 +144,11 @@ Ainsi, il est indiqué de pouvoir cibler n’importe quel élément indépendamm
 
 De manière générale :
 
-* **Il est préférable de cibler les éléments à l’aide de leur classe** qui pourrait être utilisée dans n’importe quel contexte, par exemple `.title-primary`,
-* **Les sélecteurs  #id doivent être évités en CSS** car trop spécifiques dans le calcul du poids. Si un id doit être ciblé, préférer un sélecteur d’attribut, par exemple `[id=header]`,
-* **Les sélecteurs en cascade ou hyper-structurel doivent être évités** de manière générale (ex: `ul.header li .info` ou `h1 + p + p`),
-* **Un sélecteur parfait est une classe unique,** par exemple `.title-primary` (pas d'imbrication, pas de sélecteurs multiples),
-* La règle `!important` doit être éradiquée si possible du fait de son poids extrêmement important (certaines parties des styles peuvent toutefois exceptionnellement employer à juste titre `!important`).
+- **Il est préférable de cibler les éléments à l’aide de leur classe** qui pourrait être utilisée dans n’importe quel contexte, par exemple `.title-primary`,
+- **Les sélecteurs #id doivent être évités en CSS** car trop spécifiques dans le calcul du poids. Si un id doit être ciblé, préférer un sélecteur d’attribut, par exemple `[id=header]`,
+- **Les sélecteurs en cascade ou hyper-structurel doivent être évités** de manière générale (ex: `ul.header li .info` ou `h1 + p + p`),
+- **Un sélecteur parfait est une classe unique,** par exemple `.title-primary` (pas d'imbrication, pas de sélecteurs multiples),
+- La règle `!important` doit être éradiquée si possible du fait de son poids extrêmement important (certaines parties des styles peuvent toutefois exceptionnellement employer à juste titre `!important`).
 
 ## Nommage des sélecteurs CSS
 
@@ -164,10 +162,10 @@ Grâce au préprocesseur Sass, il est possible de bénéficier du sélecteur de 
 ```css
 .block {
   &__element {
-    ...
+    ...;
   }
   &--modifier {
-    ...
+    ...;
   }
 }
 ```
@@ -176,10 +174,10 @@ Sera compilé en :
 
 ```css
 .block__element {
-  ...
+  ...;
 }
 .block--modifier {
-  ...
+  ...;
 }
 ```
 
@@ -264,7 +262,7 @@ Positionner les éléments en choisissant de préférence parmi ces méthodes se
 
 - Gabarit global de page : **Grid Layout** en priorité (prévoir une dégradation pour IE11);
 - Composants (modales, galeries, paginations) : **Flexbox** en priorité, mais Grid Layout est une sérieuse option également;
-- Placements d'éléments divers :  `display: block` | `inline;`;
+- Placements d'éléments divers : `display: block` | `inline;`;
 - Déplacements d'éléments : `transform: translate()`;
 - Superposition d'éléments : Grid Layout, Flexbox, `position: absolute` | `sticky` | `fixed`;
 - Enrobage d'éléments (images), ou cas très particuliers : `float: left` | `right`.
@@ -330,15 +328,15 @@ Définir des plages d’empilement (z-index) et s’y tenir, afin d’éviter le
 
 Par exemple :
 
-* `0000–1999`: Elements and Components
-* `2000–2999`: Element and Component Drop Downs
-* `3000–3999`: Secondary Navigation
-* `4000–4999`: Header / Footer
-* `5000–5999`: Primary Navigation
-* `6000–6999`: Full Screen Features
-* `7000–7999`: Special Cases
-* `8000–8999`: Modals / Dialog Windows
-* `9000–9999`: Notifications
+- `0000–1999`: Elements and Components
+- `2000–2999`: Element and Component Drop Downs
+- `3000–3999`: Secondary Navigation
+- `4000–4999`: Header / Footer
+- `5000–5999`: Primary Navigation
+- `6000–6999`: Full Screen Features
+- `7000–7999`: Special Cases
+- `8000–8999`: Modals / Dialog Windows
+- `9000–9999`: Notifications
 
 Documentation : [https://medium.com/@davidjpfeiffer/z-index-organization-in-css-5913fd4c25c9#.49lr5zmrs](https://medium.com/@davidjpfeiffer/z-index-organization-in-css-5913fd4c25c9#.49lr5zmrs)
 
@@ -631,13 +629,13 @@ div {
 
 Documentation : [https://github.com/bendc/frontend-guidelines#units](https://github.com/bendc/frontend-guidelines#units)
 
-**Note :** La seule exception à cette règle concerne la propriété `flex-basis`.  L'unité doit toujours être renseignée même si la valeur est de `0`. Ex. ne jamais écrire `flex: 1` mais `flex: 1 1 0%`.
+**Note :** La seule exception à cette règle concerne la propriété `flex-basis`. L'unité doit toujours être renseignée même si la valeur est de `0`. Ex. ne jamais écrire `flex: 1` mais `flex: 1 1 0%`.
 
 ### Animations gourmandes
 
-* Toujours préciser quelle(s) propriété(s) doit être animée dans transition ou animation
-* Éviter d’animer des propriétés autres que **transform** ou **opacity** ou **filter** (ou alors ajouter la
-propriété `will-change` et/ou le hack de `translateZ()`.) Source : [https://tzi.github.io/presentation-CSS-perfs/](https://tzi.github.io/presentation-CSS-perfs/)
+- Toujours préciser quelle(s) propriété(s) doit être animée dans transition ou animation
+- Éviter d’animer des propriétés autres que **transform** ou **opacity** ou **filter** (ou alors ajouter la
+  propriété `will-change` et/ou le hack de `translateZ()`.) Source : [https://tzi.github.io/presentation-CSS-perfs/](https://tzi.github.io/presentation-CSS-perfs/)
 
 **Non :**
 
@@ -684,10 +682,10 @@ Utiliser des pré-processeurs (Sass, LESS) pour éviter les répétitions de cod
 
 Concerne principalement :
 
-* les couleurs de texte
-* les couleurs de fond
-* les tailles de police
-* les breakpoints des Media Queries en Responsive
+- les couleurs de texte
+- les couleurs de fond
+- les tailles de police
+- les breakpoints des Media Queries en Responsive
 
 **Non :**
 
@@ -724,15 +722,14 @@ p {
 }
 ```
 
-
 Documentation : [http://sass-lang.com/](http://sass-lang.com/)
 
 ### Media Queries
 
 Pour éviter les intervalles qui se chevauchent, ou des Media Queries trop variés, la convention pour définir la valeur d’un Breakpoint est systématiquement :
 
-* **(min-width: $breakpoint)**** **
-* **(max-width: ($breakpoint - 1))**
+- **(min-width: \$breakpoint)\*\*** \*\*
+- **(max-width: (\$breakpoint - 1))**
 
 Exemple avec les variables de Breakpoints suivantes :
 
@@ -744,7 +741,7 @@ $large: 992px;
 $extra-large: 1200px;
 ```
 
-**Non :** 
+**Non :**
 
 ```
 @media (min-width: 767px) {...}
@@ -764,8 +761,8 @@ $extra-large: 1200px;
 
 ### Préfixes navigateurs
 
-* Automatiser la gestion des préfixes à l’aide de Autoprefixer, ne pas le faire à la main
-* Ne pas utiliser un mixin Sass/LESS pour cette tâche.
+- Automatiser la gestion des préfixes à l’aide de Autoprefixer, ne pas le faire à la main
+- Ne pas utiliser un mixin Sass/LESS pour cette tâche.
 
 **Non (mixin Sass) :**
 
@@ -836,7 +833,6 @@ Résultat :
 }
 ```
 
-
 Documentation : [http://sass-guidelin.es/#syntax--formatting](http://sass-guidelin.es/#syntax--formatting)
 
 ## Médias (polices, images)
@@ -851,7 +847,7 @@ Il est conseillé de récupérer les fontes sur ce repo Github si cela est possi
 
 Le format WOFF2 (Web Open Font Format 2) est privilégié dans tous les cas de figure, pour sa compatibilité et sa légèreté. En second lieu, utiliser WOFF.
 
-Ces formats seront mentionnés en priorité dans la déclaration `@font-face` avant les autres formats (TTF, OTF,  SVG). Voir [Optimiser le rendu des police @font-face](http://www.clever-age.com/veille/blog/optimiser-le-rendu-de-font-face.html)
+Ces formats seront mentionnés en priorité dans la déclaration `@font-face` avant les autres formats (TTF, OTF, SVG). Voir [Optimiser le rendu des police @font-face](http://www.clever-age.com/veille/blog/optimiser-le-rendu-de-font-face.html)
 
 Voici un exemple de chargement de police conseillé (IE9 minimum) :
 
@@ -874,18 +870,18 @@ Voici un exemple de chargement de police conseillé (IE9 minimum) :
 
 **BONUS :** Il est vivement conseillé d'utiliser la directive `<link rel="preload">` pour charger les fontes de manière asynchrone.
 
-Compatibilité : http://caniuse.com/#feat=link-rel-preload
+Compatibilité : <http://caniuse.com/#feat=link-rel-preload>
 
-Ressource : https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf
+Ressource : <https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf>
 
 ### Contenus de remplissage
 
-Le remplissage par du contenu temporaire peut faire appel à *Lorem Ipsum*.
+Le remplissage par du contenu temporaire peut faire appel à _Lorem Ipsum_.
 
-* Pour le texte :
-    * [http://schnaps.it/](http://schnaps.it/)
-    * [http://loripsum.net/](http://loripsum.net/)
-    * [http://chuckipsum.com/](http://chuckipsum.com/)
-* Pour les images :
-    * [http://placekitten.com/](http://placekitten.com/)
-    * [http://flickholdr.com/](http://flickholdr.com/)
+- Pour le texte :
+  - [http://schnaps.it/](http://schnaps.it/)
+  - [http://loripsum.net/](http://loripsum.net/)
+  - [http://chuckipsum.com/](http://chuckipsum.com/)
+- Pour les images :
+  - [http://placekitten.com/](http://placekitten.com/)
+  - [http://flickholdr.com/](http://flickholdr.com/)
