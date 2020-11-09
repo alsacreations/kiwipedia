@@ -263,20 +263,18 @@ Le format WOFF2 (Web Open Font Format 2) est privilégié dans tous les cas de f
 
 Ces formats seront mentionnés en priorité dans la déclaration `@font-face` avant les autres formats (TTF, OTF, SVG). Voir [Optimiser le rendu des police @font-face](http://www.clever-age.com/veille/blog/optimiser-le-rendu-de-font-face.html)
 
-Voici un exemple de chargement de police conseillé (IE9 minimum) :
+Voici un exemple de chargement de police conseillé :
 
-```
+```css
 @font-­face {
   font-­family: 'kiwi';
-  src:   url('kiwi.woff2') format('woff2'),
-         url('kiwi.woff') format('woff');
+  src: url('kiwi.woff2') format('woff2'), url('kiwi.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 @font-­face {
   font-­family: 'kiwi';
-  src:   url('kiwi-bold.woff2') format('woff2'),
-         url('kiwi-bold.woff') format('woff');
+  src: url('kiwi-bold.woff2') format('woff2'), url('kiwi-bold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
 }
