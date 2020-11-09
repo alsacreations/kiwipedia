@@ -86,17 +86,26 @@ L'inconvénient de cette notation est qu'elle génère des sélecteurs CSS compo
 
 ## Conventions variables selon les projets
 
-### Workflow
+### Workflow général
 
 TODO:
 
-### Framework
+NPM, Vue, React, WordPress, site statique ("pas de workflow")
+
+### Framework CSS
 
 TODO:
 
-### Nommage
+- Bootstrap
+- KNACSS
+- Tailwind
 
-TODO: Sémantique (BEM) ou Utility first (TW)
+### Convention de Nommage
+
+TODO:
+
+- Sémantique (BEM)
+- Utility first (TW)
 
 ## Faciliter la réutilisation de code
 
