@@ -12,7 +12,9 @@ Cette présente convention rassemble les bonnes pratiques CSS (et SCSS) en produ
 
 ### Langage : Scss
 
-Le pré-processeur [Sass](https://sass-lang.com/) (syntaxe `.scss`) est employé afin d'apporter certaines fonctionnalités indispensables&nbsp;: variables, notation imbriquée, mixins, etc.
+Le pré-processeur [Sass](https://sass-lang.com/) (syntaxe `.scss`) est un langage compilé employé afin d'apporter certaines fonctionnalités indispensables&nbsp;: variables, notation imbriquée, mixins, etc.
+
+La méthode de compilation de Sass vers CSS dépend du type de projet (voir partie "Conventions variables selon les projets").
 
 ### Compatibilité navigateurs
 
@@ -33,13 +35,27 @@ Normalize, Sanitize et Reboot sont des fichiers de base courants. **Nous privil�
 
 Documentation : [fichiers reset de KNACSS Reborn](https://github.com/raphaelgoetter/knacss-reborn/tree/master/sass/base)
 
+## Sélection des éléments
+
+Privilégier au maximum l'usage de classes plutôt que d'écrire des sélecteurs basés sur le type des éléments ou leur `id` [CSS with only class names](http://www.drinchev.com/blog/css-with-only-class-names/)
+
+## Notation imbriquée Scss
+
+TODO:
+
 ## Conventions variables selon les projets
 
 ### Workflow
 
+TODO:
+
 ### Framework
 
+TODO:
+
 ### Nommage
+
+TODO: Sémantique (BEM) ou Utility first (TW)
 
 ## Faciliter la réutilisation de code
 
