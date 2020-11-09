@@ -95,7 +95,7 @@ Au sein d'un Workflow, et lorsque des paramètres avancés sont nécessaires, St
 
 #### [Markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
 
-Markdownlint est un linter pour langage Markdown et prend en compte toutes les règles à appliquer sur les fichiers `.md` notamment les fichiers `readme.md`.
+Markdownlint est un linter pour langage Markdown et prend en compte toutes les règles à appliquer sur les fichiers `.md` notamment les fichiers `readme.md` présents dans chaque projet.
 
 ### Extensions indispensables (tous projets)
 
