@@ -134,26 +134,44 @@ selecteur {
 
 ### Workflow général
 
-TODO:
+Notre Workflow varie selon les types de projets, la maturité des navigateurs web et l'obsolescence des technologies.
 
-NPM, Vue, React, WordPress, site statique ("pas de workflow")
+Notre rôle est de nous adapter constamment à ces évolutions, et nos solutions technique sont à ce jour&nbsp;: NPM, Vue, React, WordPress, Gulp, site statique ("pas de workflow").
 
-### Framework CSS
+Les méthodologies CSS que nous préconisons selon les profils de projets sont l'une d'entre-elles&nbsp;:
 
-TODO:
-
-- Bootstrap
-- KNACSS
-- mixins respond-to
-- sémantique
 - Tailwind
+- KNACSS
+- Bootstrap
 
-### Convention de Nommage
+### Tailwind
 
-TODO:
+Source : <https://tailwindcss.com/>
 
-- Sémantique (BEM)
-- Utility first (TW)
+- reset KNACSS ?
+- convention de nommage TW Utility first
+- PurgeCSS
+
+### KNACSS Reborn
+
+Source : <https://www.knacss.com/doc-reborn.html>
+
+- reset KNACSS
+- architecture et imports des fichiers KNACSS
+- mixins respond-to
+- sémantique BEM
+
+### Bootstrap
+
+Source : <https://getbootstrap.com/>
+
+- reset KNACSS ?
+- sémantique BEM
+
+Le nom d'un sélecteur CSS doit être "sémantique" dans le sens où il sera compris et maintenu par des collègues de travail (des êtres humains en général).
+
+Se rapprocher d'une convention de nommage telle que
+[BEM](https://en.bem.info/) facilite ce choix dans le cas de projets d'envergure ou de longue haleine : opter pour des nommages `__` pour les éléments, ou `--` pour les variantes est une convention de plus en plus courante.
 
 ## Divers
 
@@ -168,13 +186,6 @@ TODO:
 - Toujours préciser quelle(s) propriété(s) doit être animée dans transition ou animation
 - Éviter d’animer des propriétés autres que **transform** ou **opacity** ou **filter** (ou alors ajouter la propriété `will-change` et/ou le hack de `translateZ()`.) Source : [https://tzi.github.io/presentation-CSS-perfs/](https://tzi.github.io/presentation-CSS-perfs/)
 - `@font-face` : N’imposez pas de chargements aux anciens navigateurs (IE8). Privilégiez `.woff2`. Pour le détail, voir la partie ["medias / polices"](#polices)
-
-## Nommage des sélecteurs CSS
-
-Le nom d'un sélecteur CSS doit être "sémantique" dans le sens où il sera compris et maintenu par des collègues de travail (des êtres humains en général).
-
-Se rapprocher d'une convention de nommage telle que
-[BEM](https://en.bem.info/) facilite ce choix dans le cas de projets d'envergure ou de longue haleine : opter pour des nommages `__` pour les éléments, ou `--` pour les variantes est une convention de plus en plus courante.
 
 ## Guidelines Sass
 
