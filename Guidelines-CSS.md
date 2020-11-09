@@ -284,7 +284,7 @@ Voici un exemple de chargement de police conseillé (IE9 minimum) :
 
 **BONUS :** Il est vivement conseillé d'utiliser la directive `<link rel="preload">` pour charger les fontes de manière asynchrone.
 
-Compatibilité : <http://caniuse.com/#feat=link-rel-preload>
+Compatibilité : <https://caniuse.com/link-rel-preload>
 
 Ressource : <https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf>
 
