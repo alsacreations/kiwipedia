@@ -293,9 +293,7 @@ Ressource : <https://medium.com/reloading/preload-prefetch-and-priorities-in-chr
 Le remplissage par du contenu temporaire peut faire appel à _Lorem Ipsum_.
 
 - Pour le texte :
-  - [http://schnaps.it/](http://schnaps.it/)
-  - [http://loripsum.net/](http://loripsum.net/)
-  - [http://chuckipsum.com/](http://chuckipsum.com/)
+  - [https://schnaps.it/](https://schnaps.it/)
+  - [https://loripsum.net/](https://loripsum.net/)
 - Pour les images :
-  - [http://placekitten.com/](http://placekitten.com/)
-  - [http://flickholdr.com/](http://flickholdr.com/)
+  - Voir <https://github.com/alsacreations/guidelines/blob/master/Ressources-liens.md#placeholders-images-de-remplissage>
