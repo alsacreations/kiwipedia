@@ -158,6 +158,7 @@ Contient (ou devrait contenir) :
 
 - reset KNACSS ?
 - Convention de nommage "Utility first"
+- Compatible Sass
 - PurgeCSS
 
 ### KNACSS Reborn
@@ -173,6 +174,7 @@ KNACSS est un micro-framework CSS constitué au fur et à mesure au sein d'Alsac
 Contient (ou devrait contenir) :
 
 - Fichiers "reset" KNACSS avec un condensé de bonnes pratiques
+- Compatible Sass
 - Architecture et imports des fichiers KNACSS
 - Mixin `respond-to`
 - Convention de nommage : "sémantique" (se rapproche de [BEM](http://getbem.com/))
@@ -188,6 +190,7 @@ Lorsque le client est déjà familier avec ce Framework ou nous l'impose.
 Contient (ou devrait contenir) :
 
 - Reset KNACSS ?
+- Compatible Sass
 - Convention de nommage : "sémantique" (se rapproche de BEM)
 - Composants préfabriqués (modales, navigation, etc.)
 - Grille de mise en forme --> préférer l'usage de Grid Layout plutôt que la grille de Bootstrap nécessitant des imbrications HTML
