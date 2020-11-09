@@ -14,6 +14,12 @@ L'Éditeur de code recommandé pour HTML, CSS, PHP, JS est [Visual Studio Code](
 
 ### Extensions de suivi de qualité de code
 
+Des outils automatiques permettant de vérifier la qualité du code produit de manière continue sont nécessaires au sein d'une équipe&nbsp;:
+
+- Pour ne pas écrire de code obsolète et gérer des bugs par la suite
+- Pour connaître les bonnes pratiques dès le départ
+- Pour harmoniser la syntaxe lorsque plusieurs personnes agissent sur les mêmes documents
+
 #### Linters natifs
 
 Visual Studio Code dispose de vérificateurs de qualité (Linters) par défaut, au minimum dans les langages suivants&nbsp;: CSS, SCSS et PHP. La configuration par défaut de Visual Studio Code doit être préservée au maximum pour éviter les conflits sur des postes différents.
