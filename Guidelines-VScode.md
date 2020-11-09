@@ -128,7 +128,8 @@ Markdownlint est un linter pour langage Markdown et prend en compte toutes les r
 
 ### Extensions spécifiques ou avancées
 
-- [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+- [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) (lance un serveur locat, avec rafraîchissement automatique, pour pages statiques)
+- [Sass/Less/Scss/Typescript/Javascript/Jade/Pug Compile Hero Pro](https://marketplace.visualstudio.com/items?itemName=Wscats.eno) (multicompilateur, en cas de projet sans "Workflow" NPM ou Gulp)
 - [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
 - [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur) pour Vue.js
 - Partial Diff
