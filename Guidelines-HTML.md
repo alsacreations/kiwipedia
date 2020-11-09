@@ -57,35 +57,7 @@ Pour une adaptation du site web vers les terminaux mobiles, l’élément `<meta
 
 **_Note : Les syntaxes empêchant l’agrandissement des contenus par le visiteur seront proscrites (maximum-scale=1, user-scalable=no, etc.)._**
 
-
-Documentation : [http://www.alsacreations.com/article/lire/1490-comprendre-le-viewport-dans-le-web-mobile.html](http://www.alsacreations.com/article/lire/1490-comprendre-le-viewport-dans-le-web-mobile.html)
-
-## Classes conditionnelles
-
-Dans le cas de modifications à opérer pour les anciennes versions d'Internet Explorer, et si le document CSS se doit d'être validé par l'outil de validation du W3C, un nom de classe spécifique à l’élément `<html>` sera appliqué via un commentaire conditionnel et sans nécessiter d’appel vers une feuille de styles supplémentaire.
-
-**_Note : par défaut, nous ne tenons plus compte des versions Internet Explorer strictement inférieures à IE11, donc nous n’employons plus de classes conditionnelles._**
-
-```
-<!--[if lte IE 7]> <html class="ie67 ie678" lang="fr"> <![endif]-->
-<!--[if IE 8]> <html class="ie8 ie678" lang="fr"> <![endif]-->
-<!--[if IE 9]> <html class="ie9" lang="fr"> <![endif]-->
-<!--[if gt IE 9]><!--> <html lang="fr"> <!--<![endif]-->
-```
-
-## HTML5shim / shiv
-
-**_Note :_ par défaut, nous ne tenons plus compte des versions Internet Explorer strictement inférieures à IE11, donc nous n’employons plus HTML5shim._**
-
-Pour IE6, IE7 et IE8, il est nécessaire de déclarer les éléments HTML5 dans le DOM en JavaScript pour pouvoir les styler. [HTML5shiv](http://code.google.com/p/html5shiv/) est dédié à cet usage et affecte déjà des styles par défaut. À systématiquement placer dans la section `<head>`.
-
-```
-<!--[if lt IE 9]>
-<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-```
-
-Si Modernizr est embarqué dans la page (pour bénéficier d’un support dédié à l’amélioration progressive pour les anciens navigateurs), ce script peut déjà inclure un équivalent HTML5shiv (si on l’ajoute lors de la composition de Modernizr).
+Documentation : [https://www.alsacreations.com/article/lire/1490-comprendre-le-viewport-dans-le-web-mobile.html](http://www.alsacreations.com/article/lire/1490-comprendre-le-viewport-dans-le-web-mobile.html)
 
 ## Forcer le mode de compatibilité IE
 
@@ -101,25 +73,12 @@ Pour forcer IE à passer dans le mode de compatibilité standard le plus récent
 
 L’icône de favori est utilisée de différentes manières par les navigateurs et systèmes. Le format ICO est ancien, le format PNG permet une meilleure définition avec un poids plus léger. Mais :
 
+* Tous les navigateurs récents reconnaissent le format PNG
 * IE ne reconnaît que la relation "shortcut icon" (standard : “icon”), ne reconnaît pas le format PNG, et la version 10 ne supporte plus les commentaires conditionnels (pour isoler sa déclaration non standard et le format ICO). IE (y compris 10) va tout de même chercher par défaut dans la racine `/favicon.ico`
-* Tous les autres navigateurs reconnaissent le format PNG, mais Chrome et Safari choisissent le format ICO s’il est précisé plutôt que le PNG. Opera choisit au hasard.
 
 Source : [http://realfavicongenerator.net/](http://realfavicongenerator.net/)
 
 Source (variante) : [https://github.com/audreyr/favicon-cheat-sheet](https://github.com/audreyr/favicon-cheat-sheet)
-
-Structure satisfaisante de favicon :
-
-```
-<link rel="apple-touch-icon-precomposed" href="path/to/favicon-152x152.png">
-<link rel="icon" href="path/to/favicon-32.png" sizes="32x32">
-<!--[if IE]><link rel="shortcut icon" href="path/to/favicon.ico"><![endif]-->
-<!-- et utiliser /favicon.ico pour IE10 -->
-<!-- Windows8 tuile Modern UI (facultatif et invalide HTML W3C) -->
-<meta name="msapplication-TileColor" content="#D83434">
-<meta name="msapplication-TileImage" content="path/to/favicon-144x144.png">
-<!-- /Windows8 -->
-```
 
 ## Sémantique globale
 
@@ -180,9 +139,9 @@ Documentation : [https://github.com/DISIC/guide-integrateur](https://github.com/
 
 Dans la mesure du possible, et selon le type de site, les microformats les plus courants seront ajoutés.
 
-Vocabulaire privilégié : [http://schema.org](http://schema.org) (promu et utilisé par Google, Yahoo, Bing, Yandex).
+Vocabulaire privilégié : [http://schema.org](https://schema.org) (promu et utilisé par Google, Yahoo, Bing, Yandex).
 
-Types : Events, Person, Product, Movie, Book, Recipe, et toute la [hiérarchie](http://schema.org/docs/full.html), avec les attributs HTML5.
+Types : Events, Person, Product, Movie, Book, Recipe, et toute la [hiérarchie](https://schema.org/docs/full.html), avec les attributs HTML5.
 
 Documentation : [http://www.alsacreations.com/article/lire/1509-microdata-microformats-schema-semantique.html](http://www.alsacreations.com/article/lire/1509-microdata-microformats-schema-semantique.html)
 
