@@ -130,15 +130,15 @@ selecteur {
 
 **_Note : l'outil "Stylelint" intégré au Workflow sous forme de tâche Gulp permet de réordonner automatiquement les déclarations CSS grâce au plugin [stylelint-order](https://www.npmjs.com/package/stylelint-order)_**
 
-## Conventions variables selon les projets
+## Méthodologies et Conventions de nommage CSS
 
-### Workflow général
+### Workflow = "ça dépend"
 
 Notre Workflow varie selon les types de projets, la maturité des navigateurs web et l'obsolescence des technologies.
 
 Notre rôle est de nous adapter constamment à ces évolutions, et nos solutions technique sont à ce jour&nbsp;: NPM, Vue, React, WordPress, Gulp, site statique ("pas de workflow").
 
-Les méthodologies CSS que nous préconisons selon les profils de projets sont l'une d'entre-elles&nbsp;:
+Les [méthodologies et conventions de nommage CSS](https://speakerdeck.com/goetter/conventions-de-nommage-en-css) que nous préconisons selon les projets sont l'une d'entre-elles&nbsp;:
 
 - Tailwind
 - KNACSS
@@ -146,7 +146,15 @@ Les méthodologies CSS que nous préconisons selon les profils de projets sont l
 
 ### Tailwind
 
-Source : <https://tailwindcss.com/>
+TODO: vérifier et donner des détails
+
+_Source : <https://tailwindcss.com/>_
+
+TailwindCSS correspond à une approche "atomique" de CSS, comprendre qu'à chaque classe correspond une action et une seule.
+
+La méthodologie et les conventions de Tailwind sont très spécifiques car toutes les classes sont déjà existantes dans les fichiers CSS, il suffit donc de les appliquer au sein des fichiers HTML. Il n'est nécessaire d'écrire des styles que sporadiquement au cours du projet.
+
+Contient (ou devrait contenir) :
 
 - reset KNACSS ?
 - convention de nommage TW Utility first
@@ -154,24 +162,34 @@ Source : <https://tailwindcss.com/>
 
 ### KNACSS Reborn
 
-Source : <https://www.knacss.com/doc-reborn.html>
+TODO: vérifier et donner des détails
 
-- reset KNACSS
-- architecture et imports des fichiers KNACSS
-- mixins respond-to
-- sémantique BEM
+_Source : <https://www.knacss.com/doc-reborn.html>_
+
+Principalement pour des sites statiques (intégration simple), voire sans Workflow.
+
+KNACSS est un micro-framework CSS constitué au fur et à mesure au sein d'Alsacréations pour répondre à nos besoins de conventions et de bonnes pratiques, notamment en terme d'Accessibilité.
+
+Contient (ou devrait contenir) :
+
+- Fichiers "reset" KNACSS avec un condensé de bonnes pratiques
+- Architecture et imports des fichiers KNACSS
+- Mixins respond-to
+- Convention de nommage : "sémantique" (se rapproche de [BEM](http://getbem.com/))
 
 ### Bootstrap
 
-Source : <https://getbootstrap.com/>
+TODO: vérifier et donner des détails
 
-- reset KNACSS ?
-- sémantique BEM
+_Source : <https://getbootstrap.com/>_
 
-Le nom d'un sélecteur CSS doit être "sémantique" dans le sens où il sera compris et maintenu par des collègues de travail (des êtres humains en général).
+Lorsque le client est déjà familier avec ce Framework ou nous l'impose.
 
-Se rapprocher d'une convention de nommage telle que
-[BEM](https://en.bem.info/) facilite ce choix dans le cas de projets d'envergure ou de longue haleine : opter pour des nommages `__` pour les éléments, ou `--` pour les variantes est une convention de plus en plus courante.
+Contient (ou devrait contenir) :
+
+- Reset KNACSS ?
+- Convention de nommage : "sémantique" (se rapproche de BEM)
+- Composants préfabriqués (modales, navigation, etc.)
 
 ## Divers
 
