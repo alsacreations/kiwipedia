@@ -144,6 +144,8 @@ TODO:
 
 - Bootstrap
 - KNACSS
+- mixins respond-to
+- sémantique
 - Tailwind
 
 ### Convention de Nommage
@@ -192,114 +194,27 @@ Cette consigne concerne principalement :
 
 ### Media Queries
 
-Pour éviter les intervalles qui se chevauchent, ou des Media Queries trop variés, la convention pour définir la valeur d’un Breakpoint est systématiquement :
+Pour éviter les intervalles qui se chevauchent, ou des Media Queries trop variés, nous préconisons d'appliquer un [mixin Sass "respond-to"](https://github.com/raphaelgoetter/knacss-reborn/blob/master/sass/abstracts/_mixins-sass.scss) pour appliquer des styles Responsive&nbsp:
 
-- **(min-width: \$breakpoint)**
-- **(max-width: (\$breakpoint - 1))**
-
-Exemple avec les variables de Breakpoints suivantes :
-
-```
-$tiny: 480px;
-$small: 576px;
-$medium: 768px;
-$large: 992px;
-$extra-large: 1200px;
-```
-
-**Non :**
-
-```
-@media (min-width: 767px) {...}
-@media (max-width: 768px) {...}
-@media (min-width: $small - 1) {...}
-@media (min-width: $small) and (max-width: $large) {...}
-```
-
-**Oui :**
-
-```
-@media (min-width: 768px) {...}
-@media (max-width: 767px) {...}
-@media (min-width: $small) {...}
-@media (min-width: $small) and (max-width: ($large - 1)) {...}
-```
-
-### Préfixes navigateurs
-
-- Automatiser la gestion des préfixes à l’aide de Autoprefixer, ne pas le faire à la main
-- Ne pas utiliser un mixin Sass/LESS pour cette tâche.
-
-**Non (mixin Sass) :**
-
-```
-div {
-  transform: scale(2);
-  -webkit-transform: scale(2);
-  -moz-transform: scale(2);
-  -ms-transform: scale(2);
-  transition: 1s;
-  -webkit-transition: 1s;
-  -moz-transition: 1s;
-  -ms-transition: 1s;
-}
-```
-
-**Oui (Autoprefixer) :**
-
-```
-div {
-  -webkit-transform: scale(2);
-  transform: scale(2);
-  transition: 1s;
-}
-```
-
-Documentation : [https://autoprefixer.github.io/](https://autoprefixer.github.io/)
-
-### Nestings (imbrications)
-
-Éviter tant que possible les imbrications de plus d'un niveau en Sass.
-
-**Non :**
-
-```
-.foo {
-  .bar {
-    &:hover {
-      color: red;
-    }
+```scss
+.modal {
+  background: $hotpink;
+  @include respond-to('medium-up') {
+    background: $tomato;
   }
 }
 ```
 
-Résultat :
+Les valeurs prévues dans notre mixin sont (privilégier les premières, respectueuses de la méthodologie "Mobile First") :
 
-```
-.foo .bar:hover {
-  color: red;
-}
-```
-
-**Oui (pas de nesting) :**
-
-```
-.foo {
-  &-bar {
-    color: red;
-  }
-}
-```
-
-Résultat :
-
-```
-.foo-bar {
-  color: red;
-}
-```
-
-Documentation : [http://sass-guidelin.es/#syntax--formatting](http://sass-guidelin.es/#syntax--formatting)
+- `'small-up'` : correspond à `(min-width: $small)`
+- `'medium-up'` : correspond à `(min-width: $medium)`
+- `'large-up'` : correspond à `(min-width: $large)`
+- `'extra-large-up'` : correspond à `(min-width: $extra-large)`
+- `'small'` : correspond à `(max-width: $small - 1)`
+- `'medium'` : correspond à `(max-width: $medium - 1)`
+- `'large'` : correspond à `(max-width: $large - 1)`
+- `'extra-large'` : correspond à `(max-width: $extra-large - 1)`
 
 ## Médias (polices, images)
 
