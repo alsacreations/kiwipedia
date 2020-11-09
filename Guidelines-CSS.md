@@ -174,61 +174,27 @@ Le nom d'un sélecteur CSS doit être "sémantique" dans le sens où il sera com
 Se rapprocher d'une convention de nommage telle que
 [BEM](https://en.bem.info/) facilite ce choix dans le cas de projets d'envergure ou de longue haleine : opter pour des nommages `__` pour les éléments, ou `--` pour les variantes est une convention de plus en plus courante.
 
-## Sass et outils d’automatisation
+## Guidelines Sass
 
-### Répétitions
+### Variables
 
-Utiliser des pré-processeurs (Sass, LESS) pour éviter les répétitions de code.
+Utiliser systématiquement les variables Sass (`$variable`) pour éviter les répétitions de code et favoriser la maintenance du projet.
 
-Concerne principalement :
+Cette consigne concerne principalement :
 
 - les couleurs de texte
 - les couleurs de fond
 - les tailles de police
 - les breakpoints des Media Queries en Responsive
+- les margin et les padding
 
-**Non :**
-
-```
-li {
-  color: red;
-}
-div {
-  color: #F00;
-}
-p {
-  color: #FF0000;
-}
-p {
-  color: #FF0001;
-}
-```
-
-**Oui :**
-
-```
-// déclaration de variable Sass
-$color: #F00;
-
-// application de la variable
-li {
-  color: $color;
-}
-div {
-  color: $color;
-}
-p {
-  color: $color;
-}
-```
-
-Documentation : [http://sass-lang.com/](http://sass-lang.com/)
+**Aucune de ces valeurs ne devraient apparaître dans les styles de développement sans être associées à des variables.**
 
 ### Media Queries
 
 Pour éviter les intervalles qui se chevauchent, ou des Media Queries trop variés, la convention pour définir la valeur d’un Breakpoint est systématiquement :
 
-- **(min-width: \$breakpoint)\*\*** \*\*
+- **(min-width: \$breakpoint)**
 - **(max-width: (\$breakpoint - 1))**
 
 Exemple avec les variables de Breakpoints suivantes :
