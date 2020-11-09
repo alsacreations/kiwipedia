@@ -37,15 +37,52 @@ Documentation : [fichiers reset de KNACSS Reborn](https://github.com/raphaelgoet
 
 ## Sélection des éléments
 
-La maintenabilité des feuilles de styles est une priorité. Il est nécessaire de prioriser les sélecteurs ayant le moins de spécificité (poids) possible.
+La maintenabilité des feuilles de styles est une priorité. Il est nécessaire de prioriser les sélecteurs ayant le moins de spécificité (poids) possible afin de faciliter les modifications ultérieures ou dans des contexte différents (Responsive).
 
 Privilégier au maximum l'usage de [**classes**](http://www.drinchev.com/blog/css-with-only-class-names/) plutôt que d'écrire des sélecteurs basés sur le type des éléments ou leur `id`.
 
-Cibler avec un seul sélecteur tant que cela est possible. Éviter de cibler `.modal span` ou `.modal .date` mais plutôt `.modal-date` pour conserver un poids minimal. Cela implique que chaque élément HTML, même anodin tels que des `<span>`, de `<p>` ou des `<a>` disposent d'attributs de classe afin de pouvoir être ciblés sans avoir à faire à leur hiérarchie.
+Le sélecteur CSS doit être _unique_ si cela est possible (une seule classe). Éviter les _sélecteurs composés_ tels que `.modal span` ou `.modal .date` mais plutôt `.modal-date` pour conserver un poids minimal.
+
+Cela implique que chaque élément HTML, même anodin tels que des `<span>`, de `<p>` ou des `<a>` disposent d'attributs de classe afin de pouvoir être ciblés sans avoir à faire à leur hiérarchie.
 
 ## Notation imbriquée Scss
 
-TODO:
+La [Notation imbriquée](https://sass-lang.com/guide#topic-3) de Sass offre une vision sur la "hiérarchie" du composant et facilite la lecture du code.
+
+L'inconvénient de cette notation est qu'elle génère des sélecteurs CSS composés. **Il est conseillé de limiter la syntaxe à un seul niveau d'imbrication.**
+
+**À éviter** (car génère des sélecteurs composés de 3 niveaux `.home .home-first .home-spotlights { … }`) :
+
+```scss
+.home {
+  .home-first {
+    .home-spotlights {
+    }
+  }
+}
+```
+
+**À éviter** (génère un sélecteur simple `.home-first-spotlights { … }`, mais rend difficile la lecture du code et la recherche dans les fichiers) :
+
+```scss
+.home {
+  $-first {
+    $-spotlights {
+    }
+  }
+}
+```
+
+**À conseiller** (un seul niveau d'imbrication génère des sélecteurs composés de 2 niveaux `.home .home-first { … }`) :
+
+```scss
+.home {
+  .home-first {
+  }
+  .home-spotlights {
+  }
+}
+```
 
 ## Conventions variables selon les projets
 
