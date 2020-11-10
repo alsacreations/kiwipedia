@@ -14,17 +14,52 @@ L'Éditeur de code recommandé pour HTML, CSS, PHP, JS est [Visual Studio Code](
 
 ## Extensions Visual Studio Code
 
-### Extensions de suivi de qualité de code
+Des outils automatiques permettant de vérifier la qualité du code produit de manière continue sont nécessaires dans une équipe&nbsp;:
 
-Des outils automatiques permettant de vérifier la qualité du code produit de manière continue sont nécessaires au sein d'une équipe&nbsp;:
-
-- Pour ne pas écrire de code obsolète et gérer des bugs par la suite
+- Pour ne pas écrire de code obsolète et avoir à gérer des bugs ou de la dette technique par la suite
 - Pour connaître les bonnes pratiques dès le départ
 - Pour harmoniser la syntaxe lorsque plusieurs personnes agissent sur les mêmes documents
 
-#### Linters natifs
-
 Visual Studio Code dispose de vérificateurs de qualité (Linters) par défaut, au minimum dans les langages suivants&nbsp;: CSS, SCSS et PHP. La configuration par défaut de Visual Studio Code doit être préservée au maximum pour éviter les conflits sur des postes différents.
+
+### Extensions indispensables (tous projets)
+
+- [Project Manager](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager) (si vous jonglez entre plusieurs projets, c'est un must)
+- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) (vérification syntaxe JavaScript)
+- [SCSS Intellisense](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-scss) (autocomplétion SCSS : classes, variables, etc.)
+
+### Extensions recommandées
+
+- [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) (fonctions avancées Git dans VS Code)
+
+### Extensions suggérées
+
+- [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph) (version graphique des branches Git)
+- [IntelliSense for CSS class names in HTML](https://marketplace.visualstudio.com/items?itemName=Zignd.html-css-class-completion) (autocomplétion des classes HTML)
+- [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) (affiche les erreurs des linters directement dans la fenêtre de code)
+- [Statusbar Error](https://marketplace.visualstudio.com/items?itemName=JoeBerria.statusbarerror) (affiche les erreurs des linters dans la barre basse et/ou dans la gouttière)
+- [Auto Close Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag) (fermeture automatiques des balises)
+- [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) (très pratique pour JS / React / Vue)
+- [French Language Pack](https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-fr)
+- [Select highlight in minimap](https://marketplace.visualstudio.com/items?itemName=mde.select-highlight-minimap) (sélection visible dans la minimap)
+- [TODO Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight) (mise en avant des `TODO:)`
+- [Bracket Pair Colorizer](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer) (mise en avant de l'accolade fermante correspondante en CSS)
+- [Indent Rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow) (coloration des niveaux d'indentation)
+- [highlight-matching-tag](https://marketplace.visualstudio.com/items?itemName=vincaslt.highlight-matching-tag) (mise en avant de la balise fermante correspondante en HTML)
+
+### Extensions spécifiques ou avancées
+
+- [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) (lance un serveur local, avec rafraîchissement automatique, pour pages statiques)
+- [Sass/Less/Scss/Typescript/Javascript/Jade/Pug Compile Hero Pro](https://marketplace.visualstudio.com/items?itemName=Wscats.eno) (multicompilateur, en cas de projet sans "Workflow" NPM ou Gulp)
+- [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
+- [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur) pour Vue.js
+- [Partial Diff](https://marketplace.visualstudio.com/items?itemName=ryu1kn.partial-diff)
+- [Git History](https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory)
+- [PHP Debug](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug)
+- [PHP Intellisense](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-intellisense)
+- [phpcs](https://marketplace.visualstudio.com/items?itemName=ikappas.phpcs)
+
+## Extensions détaillées
 
 #### [EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
 
@@ -99,48 +134,7 @@ Au sein d'un Workflow, et lorsque des paramètres avancés sont nécessaires, St
 
 Markdownlint est un linter pour langage Markdown et prend en compte toutes les règles à appliquer sur les fichiers `.md` notamment les fichiers `readme.md` présents dans chaque projet.
 
-### Extensions indispensables (tous projets)
-
-- Général
-  - [Project Manager](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager) (si vous jonglez entre plusieurs projets, c'est un must)
-- CSS / SCSS
-  - [SCSS Intellisense](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-scss) (autocomplétion SCSS : classes, variables, etc.)
-
-### Extensions recommandées
-
-- Git
-  - [Gitlens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) (fonctions avancées Git dans VS Code)
-  - [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph) (version graphique des branches Git)
-- Qualité / Linting / Formatage
-  - [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) (très pratique pour JS / React / Vue)
-- Divers
-  - [IntelliSense for CSS class names in HTML](https://marketplace.visualstudio.com/items?itemName=Zignd.html-css-class-completion) (autocomplétion des classes HTML)
-  - [Auto Close Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag) (fermeture automatiques des balises)
-
-### Extensions suggérées
-
-- [French Language Pack](https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-fr)
-- [highlight-matching-tag](https://marketplace.visualstudio.com/items?itemName=vincaslt.highlight-matching-tag) (mise en avant de la balise fermante correspondante en HTML)
-- [TODO Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight) (mise en avant des `TODO:)`
-- [Bracket Pair Colorizer](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer) (mise en avant de l'accolade fermante correspondante en CSS)
-- [Indent Rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow) (coloration des niveaux d'indentation)
-- [Select highlight in minimap](https://marketplace.visualstudio.com/items?itemName=mde.select-highlight-minimap) (sélection visible dans la minimap)
-- [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) (affiche les erreurs des linters directement dans la fenêtre de code)
-- [Statusbar Error](https://marketplace.visualstudio.com/items?itemName=JoeBerria.statusbarerror) (affiche les erreurs des linters dans la barre basse et/ou dans la gouttière)
-
-### Extensions spécifiques ou avancées
-
-- [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) (lance un serveur locat, avec rafraîchissement automatique, pour pages statiques)
-- [Sass/Less/Scss/Typescript/Javascript/Jade/Pug Compile Hero Pro](https://marketplace.visualstudio.com/items?itemName=Wscats.eno) (multicompilateur, en cas de projet sans "Workflow" NPM ou Gulp)
-- [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
-- [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur) pour Vue.js
-- Partial Diff
-- Git History
-- PHP Debug
-- PHP Intellisense
-- phpcs
-
-### Extensions spécifiques par projets
+### Extensions recommandées par projet
 
 Dans Visual Studio Code un fichier `.vscode/extensions.json` liste les extensions recommandées du projet (voir <https://twitter.com/j_niewczas/status/1284157199741157376>)
 
