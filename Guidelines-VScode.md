@@ -33,6 +33,7 @@ Visual Studio Code dispose de vérificateurs de qualité (Linters) par défaut, 
 
 - [stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
 - [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) (fonctions avancées Git dans VS Code)
+- [Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify) (remise en forme propre d'un code mal indenté/formaté)
 
 ### Extensions suggérées
 
