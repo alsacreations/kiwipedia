@@ -27,9 +27,11 @@ Visual Studio Code dispose de vérificateurs de qualité (Linters) par défaut, 
 - [Project Manager](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager) (si vous jonglez entre plusieurs projets, c'est un must)
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) (vérification syntaxe JavaScript)
 - [SCSS Intellisense](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-scss) (autocomplétion SCSS : classes, variables, etc.)
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 
 ### Extensions recommandées
 
+- [stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
 - [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) (fonctions avancées Git dans VS Code)
 
 ### Extensions suggérées
