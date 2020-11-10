@@ -14,7 +14,7 @@ Cette présente convention rassemble les bonnes pratiques CSS (et SCSS) en produ
 
 Le pré-processeur [Sass](https://sass-lang.com/) (syntaxe `.scss`) est un langage compilé employé afin d'apporter certaines fonctionnalités indispensables&nbsp;: variables, notation imbriquée, mixins, etc.
 
-La méthode de compilation de Sass vers CSS dépend du type de projet (voir partie "Conventions variables selon les projets").
+La méthode de compilation de Sass vers CSS dépend du type de projet (voir partie ["Méthodologies et conventions de nommage"](#méthodologies-et-conventions-de-nommage-css)).
 
 ### Compatibilité navigateurs
 
