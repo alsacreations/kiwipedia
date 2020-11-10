@@ -52,6 +52,7 @@ Visual Studio Code dispose de vérificateurs de qualité (Linters) par défaut, 
 - [Bracket Pair Colorizer](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer) (mise en avant de l'accolade fermante correspondante en CSS)
 - [Indent Rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow) (coloration des niveaux d'indentation)
 - [highlight-matching-tag](https://marketplace.visualstudio.com/items?itemName=vincaslt.highlight-matching-tag) (mise en avant de la balise fermante correspondante en HTML)
+- [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
 
 ### Extensions spécifiques ou avancées
 
