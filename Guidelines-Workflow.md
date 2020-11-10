@@ -1,6 +1,6 @@
 # Guidelines : WorkFlow
 
-_Quelques bonnes pratiques pour un WorkFlow de production_
+_Statut : Working Draft (WD)_
 
 ## Généralités
 

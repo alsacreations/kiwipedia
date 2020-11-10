@@ -1,19 +1,19 @@
 # Guidelines : HTML
 
-*Bonnes pratiques HTML en production*
+_Statut : Working Draft (WD)_
 
 ## Généralités
 
-* L’encodage des fichiers et des bases de données doit se faire en UTF-8 (sans BOM).
-* Les indentations se font à l’aide de deux espaces et non à l'aide de tabulations. Pour assurer une cohérence inter-projets, utiliser la convention [EditorConfig](http://editorconfig.org/).
-* Les liens absolus ne doivent pas faire apparaître le protocole (par exemple href="//www.alsacreations.fr/" et non href="http://www.alsacreations.fr").
-* Choisir des noms en anglais prioritairement (classes, fichiers, images, etc.).
-* Séparer les noms des fichiers, des images des classes et id CSS par des tirets (`.slide-info`, `styles-ie.css`, `jquery-2.0.min.css`, etc), sauf convention contraire apportée par le client.
-* Les noms d'éléments et des attributs sont rédigés en minuscules,
-* Les éléments sont imbriqués correctement,
-* Les éléments sont fermés à l'aide de la balise correspondante (exception pour éléments auto-fermants HTML5 : pas de `/>`),
-* Les valeurs identiques aux attributs ne sont pas renseignées sauf nécessité (ex. en HTML5 pas de `checked="checked"`),
-* L'usage des double quotes est préconisé autour des valeurs d’attributs (ex. `class="fruit"`) ainsi que les simples quotes dans les autres langages JavaScript, PHP (ex. `alert('blup');`) de manière à faciliter les imbrications (ex. `alert('<p class="fruit">plop</p>');`)
+- L’encodage des fichiers et des bases de données doit se faire en UTF-8 (sans BOM).
+- Les indentations se font à l’aide de deux espaces et non à l'aide de tabulations. Pour assurer une cohérence inter-projets, utiliser la convention [EditorConfig](http://editorconfig.org/).
+- Les liens absolus ne doivent pas faire apparaître le protocole (par exemple href="//www.alsacreations.fr/" et non href="http://www.alsacreations.fr").
+- Choisir des noms en anglais prioritairement (classes, fichiers, images, etc.).
+- Séparer les noms des fichiers, des images des classes et id CSS par des tirets (`.slide-info`, `styles-ie.css`, `jquery-2.0.min.css`, etc), sauf convention contraire apportée par le client.
+- Les noms d'éléments et des attributs sont rédigés en minuscules,
+- Les éléments sont imbriqués correctement,
+- Les éléments sont fermés à l'aide de la balise correspondante (exception pour éléments auto-fermants HTML5 : pas de `/>`),
+- Les valeurs identiques aux attributs ne sont pas renseignées sauf nécessité (ex. en HTML5 pas de `checked="checked"`),
+- L'usage des double quotes est préconisé autour des valeurs d’attributs (ex. `class="fruit"`) ainsi que les simples quotes dans les autres langages JavaScript, PHP (ex. `alert('blup');`) de manière à faciliter les imbrications (ex. `alert('<p class="fruit">plop</p>');`)
 
 ## Doctype
 
@@ -25,7 +25,7 @@ Le doctype HTML5 est fortement recommandé.
 
 ## Langue
 
-La langue de la page est systématiquement renseignée via un attribut dans l’élément `<html>`  :
+La langue de la page est systématiquement renseignée via un attribut dans l’élément `<html>` :
 
 ```
 <html lang="fr">
@@ -73,8 +73,8 @@ Pour forcer IE à passer dans le mode de compatibilité standard le plus récent
 
 L’icône de favori est utilisée de différentes manières par les navigateurs et systèmes. Le format ICO est ancien, le format PNG permet une meilleure définition avec un poids plus léger. Mais :
 
-* Tous les navigateurs récents reconnaissent le format PNG
-* IE ne reconnaît que la relation "shortcut icon" (standard : “icon”), ne reconnaît pas le format PNG, et la version 10 ne supporte plus les commentaires conditionnels (pour isoler sa déclaration non standard et le format ICO). IE (y compris 10) va tout de même chercher par défaut dans la racine `/favicon.ico`
+- Tous les navigateurs récents reconnaissent le format PNG
+- IE ne reconnaît que la relation "shortcut icon" (standard : “icon”), ne reconnaît pas le format PNG, et la version 10 ne supporte plus les commentaires conditionnels (pour isoler sa déclaration non standard et le format ICO). IE (y compris 10) va tout de même chercher par défaut dans la racine `/favicon.ico`
 
 Source : [http://realfavicongenerator.net/](http://realfavicongenerator.net/)
 
@@ -88,15 +88,15 @@ Les éléments HTML5 `<header>`, `<article>`, `<main>`, `<footer>`, `<aside>`, `
 
 La structure globale préconisée est celle-ci :
 
-* `<body>` : corps de page et du site web
-* `<div id="wrapper">` : sous-conteneur optionnel. Par exemple si body ne suffit pas
-* `<div class="inner">` : sous-conteneur optionnel. Par exemple pour centrer plusieurs blocs de la même manière
-* `<main id="main" role="main">` : conteneur général du contenu principal, typiquement ce qui n'est pas dans header et footer
-* `<header id="header" role="banner">` : entête global, comportant souvent la navigation et des éléments qui se retrouvent en commun sur (quasiment) toutes les pages
-* `<footer id="footer" role="contentinfo">` : pied de page global comportant des éléments qui se retrouvent en commun sur (quasiment) toutes les pages
-* `<aside class="aside" role="complementary">` : barre latérale globale. Note : `<aside>` doit pouvoir être extrait de la page sans poser de problème, en clair ne pas y placer la navigation par exemple.
-* `<nav id="navigation" role="navigation">` : navigation principale
-* `<form id="search" role="search">` : recherche principale
+- `<body>` : corps de page et du site web
+- `<div id="wrapper">` : sous-conteneur optionnel. Par exemple si body ne suffit pas
+- `<div class="inner">` : sous-conteneur optionnel. Par exemple pour centrer plusieurs blocs de la même manière
+- `<main id="main" role="main">` : conteneur général du contenu principal, typiquement ce qui n'est pas dans header et footer
+- `<header id="header" role="banner">` : entête global, comportant souvent la navigation et des éléments qui se retrouvent en commun sur (quasiment) toutes les pages
+- `<footer id="footer" role="contentinfo">` : pied de page global comportant des éléments qui se retrouvent en commun sur (quasiment) toutes les pages
+- `<aside class="aside" role="complementary">` : barre latérale globale. Note : `<aside>` doit pouvoir être extrait de la page sans poser de problème, en clair ne pas y placer la navigation par exemple.
+- `<nav id="navigation" role="navigation">` : navigation principale
+- `<form id="search" role="search">` : recherche principale
 
 ## Liens d’évitement
 
@@ -149,9 +149,9 @@ Documentation : [http://www.alsacreations.com/article/lire/1509-microdata-microf
 
 Les éléments ayant une condition ou un état particulier seront préfixés :
 
-* Le lien, l’onglet ou la page active est désigné par la classe `.is-current`
-* tout état sera préfixé par "is-". Ex. `.is-paused`, `.is-opened`, `.is-hidden`, `.has-*`
-* tout événement ou comportement JavaScript sera préfixé par "js-". Ex. `.js-nav-button`, `.js-menu`, `.js-is-hidden`
+- Le lien, l’onglet ou la page active est désigné par la classe `.is-current`
+- tout état sera préfixé par "is-". Ex. `.is-paused`, `.is-opened`, `.is-hidden`, `.has-*`
+- tout événement ou comportement JavaScript sera préfixé par "js-". Ex. `.js-nav-button`, `.js-menu`, `.js-is-hidden`
 
 ## Nombre de classes par élément
 
@@ -159,7 +159,7 @@ Pour des raisons évidentes de maintenance et de lisibilité, nous limitons le n
 
 Nous éviterons de telles syntaxes : `img class="mod clearfix fl inbl w200p pas mb1 large-mb2 small-mbn"`, mais opterons plutôt pour une classe personnalisée : `img class="media"`.
 
-## Liens target _blank
+## Liens target \_blank
 
 Dans la mesure du possible, éviter les liens ouvrant une nouvelle fenêtre/onglet, sans les signaler explicitement. Ils perturbent la navigation classique du visiteur et peuvent créer des failles de sécurité.
 
@@ -177,7 +177,7 @@ Elle permet une présentation améliorée d’un site web sur le réseau Twitter
 
 ![twitter card](images/html01.png)
 
-Exemple d’une carte de type *summary*
+Exemple d’une carte de type _summary_
 
 Le code correspondant pourrait ressembler à cela :
 
@@ -191,12 +191,12 @@ Le code correspondant pourrait ressembler à cela :
 <meta name="twitter:creator" content="@diou">
 ```
 
-* **Twitter:card** : "summary", “player” ou “photo” sont des valeurs possibles
-* **Twitter:url** : l’URL canonique de la référence
-* **Twitter:title** : Le titre de la carte (devrait correspondre au titre de la page de l’URL canonique)
-* **Twitter:image** : l’URL de l’image illustrant la page
-* **Twitter:site** : le compte Twitter associé au site web éditeur (publisher)
-* **Twitter:creator** : le compte Twitter associé à l’auteur
+- **Twitter:card** : "summary", “player” ou “photo” sont des valeurs possibles
+- **Twitter:url** : l’URL canonique de la référence
+- **Twitter:title** : Le titre de la carte (devrait correspondre au titre de la page de l’URL canonique)
+- **Twitter:image** : l’URL de l’image illustrant la page
+- **Twitter:site** : le compte Twitter associé au site web éditeur (publisher)
+- **Twitter:creator** : le compte Twitter associé à l’auteur
 
 Plus d’infos : [https://dev.twitter.com/cards/types/summary](https://dev.twitter.com/cards/types/summary)
 
@@ -204,7 +204,7 @@ Exemple d’une carte de type "photo" (la première) et “player” (la seconde
 
 ![photo card](images/html02.png)![player card](images/html03.png)
 
-**_Note : l’utilisation de ces meta invalide le document s’il est de doctype HTML5. La valeur twitter:* n’est en effet pas reconnue pour la balise meta._**
+**_Note : l’utilisation de ces meta invalide le document s’il est de doctype HTML5. La valeur twitter:\* n’est en effet pas reconnue pour la balise meta._**
 
 Une fois en place, il faut demander la validation par Twitter : [https://dev.twitter.com/docs/cards/validation/validator](https://dev.twitter.com/docs/cards/validation/validator)
 
@@ -240,10 +240,10 @@ Si le projet comporte un moteur de recherche efficace et pertinent, il peut êtr
 
 On veillera à respecter des critères communs de performance :
 
-* Limiter le nombre de ressources différentes exploitées (images, feuilles de styles, scripts, fonts)
-* Limiter le nombre de requêtes HTTP
-* Minifier les ressources texte (CSS, JavaScript, JSON...)
-* Différer les requêtes moins importantes (lazy loading) (en JavaScript ou avec l'attribut natif `loading`)
-* Établir [https://bitsofco.de/your-first-performance-budget-with-lighthouse/](un budget de performance pour Lighthouse)
+- Limiter le nombre de ressources différentes exploitées (images, feuilles de styles, scripts, fonts)
+- Limiter le nombre de requêtes HTTP
+- Minifier les ressources texte (CSS, JavaScript, JSON...)
+- Différer les requêtes moins importantes (lazy loading) (en JavaScript ou avec l'attribut natif `loading`)
+- Établir [https://bitsofco.de/your-first-performance-budget-with-lighthouse/](un budget de performance pour Lighthouse)
 
 Voir aussi : https://github.com/thedaviddias/Front-End-Performance-Checklist

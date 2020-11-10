@@ -1,11 +1,13 @@
 # Guidelines : WordPress
 
+_Statut : Working Draft (WD)_
+
 ## Installation
 
 ## Migration
 
-* https://codex.wordpress.org/Changing_The_Site_URL
-* Utiliser WP Migrate DB pour remplacer les URLs de la base de données, y compris dans les données sérialisées.
+- https://codex.wordpress.org/Changing_The_Site_URL
+- Utiliser WP Migrate DB pour remplacer les URLs de la base de données, y compris dans les données sérialisées.
 
 ## Développement et versionnement
 
@@ -22,7 +24,9 @@ Utiliser/adapter https://salferrarello.com/wordpress-gitignore/
 ## Snippets
 
 ### Récupérer le permalien des pages ayant un template spécifique
+
 #### Pour une seule page ayant le template ciblé
+
 ```
 //Pour une seule page
 $page_template_link = get_permalink(get_pages(
@@ -32,7 +36,9 @@ $page_template_link = get_permalink(get_pages(
     )
 )[0]->ID);
 ```
+
 #### Pour plusieurs pages ayant le template ciblé
+
 ```
 //Pour plusieurs pages ayant le même template
 $page_template_link = get_pages(
@@ -50,10 +56,10 @@ if(!empty($page_template_link)){
 }
 ```
 
-
 ### Forcer la mise à jour par téléchargement direct
 
 Dans `wp-config.php` ajouter
+
 ```
 define('FS_METHOD' 'direct');
 ```

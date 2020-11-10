@@ -1,15 +1,15 @@
 # Guidelines : Accessibilité
 
-Bonnes pratiques accessibilité en production.
+_Statut : Working Draft (WD)_
 
 ## Généralités
 
-* Ne pas fixer de hauteur sur les éléments afin que le contenu reste lisible lorsque le texte est zoomé.
-* Respecter la hiérarchie des titres `<hX>`.
-* Ne pas supprimer l’*outline* autour des éléments cliquables (pas de `outline: none`).
-* Utiliser les éléments HTML pour leur fonction/sémantique et non pas pour leur forme.
-  * Utiliser les éléments pouvant recevoir le focus (`<a>`, `<input type="button">`) lorsqu'ils sont cliquables/interactifs.
-* Exploiter WAI ARIA <https://www.w3.org/WAI/intro/aria> lorsque c'est pertinent pour aider le navigateur.
+- Ne pas fixer de hauteur sur les éléments afin que le contenu reste lisible lorsque le texte est zoomé.
+- Respecter la hiérarchie des titres `<hX>`.
+- Ne pas supprimer l’_outline_ autour des éléments cliquables (pas de `outline: none`).
+- Utiliser les éléments HTML pour leur fonction/sémantique et non pas pour leur forme.
+  - Utiliser les éléments pouvant recevoir le focus (`<a>`, `<input type="button">`) lorsqu'ils sont cliquables/interactifs.
+- Exploiter WAI ARIA <https://www.w3.org/WAI/intro/aria> lorsque c'est pertinent pour aider le navigateur.
 
 ## Structure générale
 
@@ -24,9 +24,7 @@ Utiliser des combinaisons `<ul><li>` (liste non ordonnée) pour structurer les m
 #### Zone d’en-tête principale
 
 ```html
-<header role="banner">
-  […]
-</header>
+<header role="banner">[…]</header>
 ```
 
 La balise `<header>` peut être utilisée plusieurs fois dans la page mais l’attribut `role="banner"` ne doit être utilisé qu’une seule fois.
@@ -34,9 +32,7 @@ La balise `<header>` peut être utilisée plusieurs fois dans la page mais l’a
 #### Pied de page
 
 ```html
-<footer role="contentinfo">
-  […]
-</footer>
+<footer role="contentinfo">[…]</footer>
 ```
 
 La balise `<footer>` peut être utilisée plusieurs fois dans la page mais l’attribut `role="contentinfo"` ne doit être utilisé qu’une seule fois.
@@ -44,9 +40,7 @@ La balise `<footer>` peut être utilisée plusieurs fois dans la page mais l’a
 #### Zone de contenu principal
 
 ```html
-<main role="main">
-  […]
-</main>
+<main role="main">[…]</main>
 ```
 
 La balise `<main>` ne peut être utilisée qu’une seule fois dans la page ainsi que l’attribut `role="main"`.
@@ -54,24 +48,22 @@ La balise `<main>` ne peut être utilisée qu’une seule fois dans la page ains
 #### Système de navigation principale
 
 ```html
-<nav role="navigation">
-  […]
-</nav>
+<nav role="navigation">[…]</nav>
 ```
 
 La balise `<nav>` et son attribut `role="navigation"` peuvent être utilisés pour un système de navigation principal ou secondaire, englobant des menus contenant des liens internes au site.
 
 Exemple :
 
-* Le menu principal du site (souvent affiché dans l’en-tête)
-* Un menu secondaire affiché dans certaines pages internes (parfois dans une barre latérale)
-* Un menu secondaire affiché dans le pied de page
+- Le menu principal du site (souvent affiché dans l’en-tête)
+- Un menu secondaire affiché dans certaines pages internes (parfois dans une barre latérale)
+- Un menu secondaire affiché dans le pied de page
 
 Ne sont pas concernés :
 
-* Le fil d’ariane
-* Les systèmes de pagination
-* table des matières
+- Le fil d’ariane
+- Les systèmes de pagination
+- table des matières
 
 Plus d’informations : [http://www.accede-web.com/notices/html-css-javascript/1-structure/1-5-role-navigation/](http://www.accede-web.com/notices/html-css-javascript/1-structure/1-5-role-navigation/)
 
@@ -88,9 +80,7 @@ Pour éviter cela, il est préférable d’insérer l’attribut `aria-hidden=tr
 Exemple :
 
 ```html
-<a href="URL" class="btn">
-  <i class="icon-kiwi" aria-hidden="true"></i> KiwiParty
-</a>
+<a href="URL" class="btn"> <i class="icon-kiwi" aria-hidden="true"></i> KiwiParty </a>
 ```
 
 ### Contenu lu mais masqué à l’écran
@@ -114,9 +104,9 @@ Utiliser plutôt la classe `.visually-hidden`, présente dans [KNACSS](http://kn
 **Exemple :**
 
 ![Bouton "précédent" d’un slider](images/accessibilite01.png)
-*Bouton "précédent" d’un slider*
+_Bouton "précédent" d’un slider_
 
- Ne pas faire :
+Ne pas faire :
 
 ```html
 <button class="btn-icon swiper-button-prev">
@@ -131,7 +121,7 @@ Utiliser plutôt la classe `.visually-hidden`, présente dans [KNACSS](http://kn
 }
 ```
 
- À faire :
+À faire :
 
 ```html
 <button class="btn-icon swiper-button-prev">
@@ -144,13 +134,13 @@ Utiliser plutôt la classe `.visually-hidden`, présente dans [KNACSS](http://kn
 
 WAI-ARIA est une technologie permettant de donner des indications d'accessibilité supplémentaires par rapport aux comportements natifs déjà prévus par les navigateurs pour les éléments HTML de base. Elle passe par les attributs `role` (landmarks, regions, widgets divers) et `aria-*` (propriétés). ARIA est particulièrement recommandé pour les composants complexes pilotés par JavaScript (ex : menus déroulants, sliders, onglets, modales...).
 
-* [Matrice des rôles ARIA](http://whatsock.com/training/matrices/)
+- [Matrice des rôles ARIA](http://whatsock.com/training/matrices/)
 
 La bibliothèque de plugins jQuery Pepin utilise ARIA pour la plupart des composants <https://github.com/alsacreations/pepin>
 
 ## Liens d’évitement
 
-* Prévoir des liens d'évitement en haut de document pour accéder rapidement au contenu, à la navigation à la recherche, etc.
+- Prévoir des liens d'évitement en haut de document pour accéder rapidement au contenu, à la navigation à la recherche, etc.
 
 Voir [Guidelines HTML](Guidelines-HTML.md)
 
@@ -167,7 +157,7 @@ Tous les liens doivent avoir un **intitulé**, un lien "vide" n’est pas access
 **Exemple :**
 
 ![Liens vers les réseaux sociaux](images/accessibilite02.png)
-*Liens vers les réseaux sociaux*
+_Liens vers les réseaux sociaux_
 
 Ne pas faire :
 
@@ -180,7 +170,7 @@ Ne pas faire :
   display: block;
   height: 2rem;
   width: 2rem;
-  background-image: url("facebook.png");
+  background-image: url('facebook.png');
 }
 ```
 
@@ -202,7 +192,7 @@ De plus, il n’est pas sûr à 100% que l’attribut `title` soit correctement 
   display: block;
   height: 2rem;
   width: 2rem;
-  background-image: url("facebook.png");
+  background-image: url('facebook.png');
 }
 ```
 
@@ -240,7 +230,7 @@ Exemple d’une image **cliquable** :
 
 ```html
 <a href="www.knacss.com">
-   <img src="knacss.png" alt="Knacss">
+  <img src="knacss.png" alt="Knacss" />
 </a>
 ```
 
@@ -249,7 +239,7 @@ Exemple d’une image **porteuse d’information** :
 ![4,9 milliards € sont consacrés à la modernisation - 10 millions € - 700km](images/accessibilite04.png)
 
 ```html
-<img src="banner.png" alt="4,9 milliards € sont consacrés à la modernisation […] - 10 millions € […] - 700km">
+<img src="banner.png" alt="4,9 milliards € sont consacrés à la modernisation […] - 10 millions € […] - 700km" />
 ```
 
 **Attention** : inutile de commencer l’attribut `alt=""` par `"Image : …"`, cette information sera retranscrite par les lecteurs d’écrans lors de la lecture de l’élément `<img>`.
@@ -263,7 +253,7 @@ Exemple d’une image de **décoration** :
 ![image alt text](images/accessibilite05.png)
 
 ```html
-<img src="kiwiparty.png" alt="">
+<img src="kiwiparty.png" alt="" />
 ```
 
 ## SVG
@@ -295,7 +285,7 @@ Compléter si besoin par `aria-required="true"` et `aria-labelledby` par exemple
 
 ```html
 <label for="numero-m">Numéro de membre *</label>
-<input type="text" id="numero-m" aria-describedby="hint">
+<input type="text" id="numero-m" aria-describedby="hint" />
 <p id="hint">Numéro composé de 4 chiffres.</p>
 ```
 
@@ -327,8 +317,8 @@ Fournir une piste de sous-titres avec le format webVTT et l'élément `<track>`.
 
 Respecter les taux de contrastes minimum entre le texte et le fond.
 
-* https://app.contrast-finder.org/ propose des couleurs suffisament contrastées quand c'est pas déjà le cas
-* https://developer.paciellogroup.com/resources/contrastanalyser/ à installer, permet de pipetter dans tout programme, pas juste le navigateur
+- https://app.contrast-finder.org/ propose des couleurs suffisament contrastées quand c'est pas déjà le cas
+- https://developer.paciellogroup.com/resources/contrastanalyser/ à installer, permet de pipetter dans tout programme, pas juste le navigateur
 
 Ne pas indiquer une information uniquement par la couleur.
 
@@ -358,21 +348,21 @@ Pour les menus déroulants et mega menus, Accessible Mega Menu a fait ses preuve
 
 ## Ressources
 
-* Notices Accedeweb [http://www.accede-web.com/notices/](http://www.accede-web.com/notices/)
-* Patterns accessibles [http://a11yproject.com/patterns/](http://a11yproject.com/patterns/)
-* Exemples ARIA [http://heydonworks.com/practical_aria_examples/](http://heydonworks.com/practical_aria_examples/)
-* RGAA 3 [https://references.modernisation.gouv.fr/rgaa-accessibilite](https://references.modernisation.gouv.fr/rgaa-accessibilite)
-* Plugins jQuery accessibles [https://a11y.nicolas-hoffmann.net/](https://a11y.nicolas-hoffmann.net/)
-* Plugins vanilla JS accessibles [https://van11y.net/](https://van11y.net/)
+- Notices Accedeweb [http://www.accede-web.com/notices/](http://www.accede-web.com/notices/)
+- Patterns accessibles [http://a11yproject.com/patterns/](http://a11yproject.com/patterns/)
+- Exemples ARIA [http://heydonworks.com/practical_aria_examples/](http://heydonworks.com/practical_aria_examples/)
+- RGAA 3 [https://references.modernisation.gouv.fr/rgaa-accessibilite](https://references.modernisation.gouv.fr/rgaa-accessibilite)
+- Plugins jQuery accessibles [https://a11y.nicolas-hoffmann.net/](https://a11y.nicolas-hoffmann.net/)
+- Plugins vanilla JS accessibles [https://van11y.net/](https://van11y.net/)
 
 ## Outils
 
 ### Devtools
 
-* Accessibilité dans les devtools de Chrome [https://www.smashingmagazine.com/2020/08/accessibility-chrome-devtools/](https://www.smashingmagazine.com/2020/08/accessibility-chrome-devtools/)
+- Accessibilité dans les devtools de Chrome [https://www.smashingmagazine.com/2020/08/accessibility-chrome-devtools/](https://www.smashingmagazine.com/2020/08/accessibility-chrome-devtools/)
 
 ### Synthèses vocales
 
-* NVDA
-* VoiceOver (natif sur macOS, iOS) (activation : cmd + fn + F5), voir [https://www.apple.com/voiceover/info/guide/_1131.html](raccourcis clavier)
-* Jaws
+- NVDA
+- VoiceOver (natif sur macOS, iOS) (activation : cmd + fn + F5), voir [https://www.apple.com/voiceover/info/guide/_1131.html](raccourcis clavier)
+- Jaws

@@ -1,5 +1,7 @@
 # Guidelines : CSS
 
+_Statut : Working Draft (WD)_
+
 Cette présente convention rassemble les bonnes pratiques CSS (et SCSS) en production appliquées par l'agence web Alsacreations.fr. Elle a pour but d'évoluer dans le temps et de s'adapter à chaque nouveau projet.
 
 ## Généralités

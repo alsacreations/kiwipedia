@@ -1,17 +1,18 @@
-
 # Commandes Linux (cheatsheet)
+
+_Statut : Working Draft (WD)_
 
 Utiles pour un serveur de développement ou un serveur web/mail/ftp, notamment sous Ubuntu/Debian.
 
-* Voir aussi https://explainshell.com/ pour expliquer les commandes shell entrées
-* Voir aussi http://samrowe.com/wordpress/advancing-in-the-bash-shell/
-* Voir aussi https://github.com/donnemartin/awesome-aws pour AWS
-* MiniVim https://github.com/sd65/MiniVim
-* Commandline challenge https://cmdchallenge.com/
+- Voir aussi https://explainshell.com/ pour expliquer les commandes shell entrées
+- Voir aussi http://samrowe.com/wordpress/advancing-in-the-bash-shell/
+- Voir aussi https://github.com/donnemartin/awesome-aws pour AWS
+- MiniVim https://github.com/sd65/MiniVim
+- Commandline challenge https://cmdchallenge.com/
 
 Rechercher rapidement dans les précédentes commandes : `Ctrl+R`
 
-___
+---
 
 ## Root
 
@@ -33,21 +34,21 @@ Connaître la release Linux
 Consulter le log mémoire tampon du noyau
 `dmesg`
 
-___
+---
 
 ## Chemins courants
 
-* `/var/log/`                      Logs généraux
-* `/var/log/syslog`                Logs système
-* `/var/log/mail.log`              Logs mail/postfix
-* `/var/log/apache2/`              Logs Apache
-* `/var/www/`                      Hébergement http
-* `/var/vmail/`                    Hébergement mails
-* `/var/lib/mysql/`                MySQL
-* `/var/log/ispconfig/`            Logs ISPConfig
-* `/var/log/ispconfig/httpd/`      Logs Apache individuels
+- `/var/log/` Logs généraux
+- `/var/log/syslog` Logs système
+- `/var/log/mail.log` Logs mail/postfix
+- `/var/log/apache2/` Logs Apache
+- `/var/www/` Hébergement http
+- `/var/vmail/` Hébergement mails
+- `/var/lib/mysql/` MySQL
+- `/var/log/ispconfig/` Logs ISPConfig
+- `/var/log/ispconfig/httpd/` Logs Apache individuels
 
-___
+---
 
 ## Maintenance et mises à jour avec apt
 
@@ -122,7 +123,7 @@ Reconfigurer le niveau de question
 `dpkg --get-selections`
 `dpkg --set-selections`
 
-___
+---
 
 ### Autres commandes utiles
 
@@ -144,7 +145,7 @@ Uptime du serveur et charge
 Dernières connexions
 `last`
 
-___
+---
 
 ## Utilisateurs
 
@@ -199,9 +200,9 @@ Supprimer
 `smbpasswd -x <login>`
 
 Utilisateurs autorisés : dans `/etc/samba/smb.conf`
-`valid users  <login1> <login2> @group1`
+`valid users <login1> <login2> @group1`
 
-___
+---
 
 ## Clés
 
@@ -218,7 +219,7 @@ Générer une clé sécurisée (https://blog.g3rt.nl/upgrade-your-ssh-keys.html)
 Lister les types de clés
 `for keyfile in ~/.ssh/my*; do ssh-keygen -l -f "${keyfile}"; done | uniq`
 
-___
+---
 
 ## Monitoring
 
@@ -300,11 +301,12 @@ RAM (non cachée) utilisée par chaque process Apache2 (colonne RSS en Ko)
 `ps -ylC apache2 --sort:rss`
 
 PHP Poids moyen d'un child (ou autre processus, remplacer php5-fpm dans ce cas)
+
 ```
 ps --no-headers -o "rss,cmd" -C php5-fpm | awk '{ sum+=$1 } END { printf ("%d%s\n", sum/NR/1024,"M") }'
 ```
 
-___
+---
 
 ## Screen
 
@@ -320,7 +322,8 @@ Récupérer <id_optionnel>
 `screen -r`
 
 Se détacher du screen courant : combinaison de touches Ctrl + A + D
-___
+
+---
 
 ## Fichiers
 
@@ -375,7 +378,7 @@ Déplacer/renommer un fichier ou un répertoire
 Copier un fichier ou un répertoire
 `cp <file1> <file2>`
 
-___
+---
 
 ## Disque dur
 
@@ -452,7 +455,7 @@ Checkdisk ext4
 
 ### Raid
 
-Vue globale Raid [U_] : U = Up, _ = Down
+Vue globale Raid [U_] : U = Up, \_ = Down
 `cat /proc/mdstat`
 
 Administration RAID : scan des array présents
@@ -480,8 +483,9 @@ Ajouter une partition sdb1 au raid md0
 `mdadm --manage /dev/md0 --add /dev/sdb1`
 
 Voir aussi
-* http://www.ducea.com/2009/03/08/mdadm-cheat-sheet/
-* https://buzut.net/diagnostiquer-et-recuperer-une-defaillance-raid/
+
+- http://www.ducea.com/2009/03/08/mdadm-cheat-sheet/
+- https://buzut.net/diagnostiquer-et-recuperer-une-defaillance-raid/
 
 ### Smart
 
@@ -501,7 +505,7 @@ Voir aussi https://www.cyberciti.biz/tips/linux-find-out-if-harddisk-failing.htm
 Liste users (espace utilisé, limites...)
 `repquota -avs`
 
-___
+---
 
 ## Cron
 
@@ -520,14 +524,15 @@ Lister pour tous les utilisateurs
 ### Syntaxe
 
 Tous les jours à 3h05
-`5 3  * *  * /usr/bin/apt-get update`
+`5 3 * * * /usr/bin/apt-get update`
 
 Backup SQL quotidien
+
 ```
 15 2 * * * root mysqldump -u root -p<password> --all-databases | gzip > /mnt/disk2/database_`data ' %m-%d-%Y'`.sql.gz
 ```
 
-___
+---
 
 ## Réseau
 
@@ -608,7 +613,7 @@ Effacer la règle n°4 en input (1ere ligne = 1)
 Effacer la règle n°1 de fail2ban
 `iptables -D fail2ban-courierauth 1`
 
-Bloquer adresses IP x.x.x.*
+Bloquer adresses IP x.x.x.\*
 `iptables -A INPUT -s x.x.x.0/24 -j DROP`
 
 Bloquer des requêtes HTTP sur un domaine
@@ -631,7 +636,7 @@ Sur la machine qui écoute (pour trouver son ip hostname -I)
 Sur la machine qui envoie
 `cat bigfile | nc 192.168.0.37 1337`
 
-___
+---
 
 ## SCP
 
@@ -639,6 +644,7 @@ Copier fichier vers machine distante (répertoire home)
 `scp -P 22222 <fichier> login@www.example.org:`
 
 Copier fichier vers machine distante avec clé ssh
+
 ```
 scp -i ~/.ssh/www.example.org <fichier> ubuntu@www.example.org:
 scp -P 22222 -i ~/.ssh/key-rsa.txt <fichier> login@www.example.org:
@@ -656,7 +662,7 @@ Copier répertoire depuis machine distante
 RSync de serveur à serveur
 `rsync -av -e "ssh -p 22222" /tmp/ root@192.168.0.37:/tmp`
 
-___
+---
 
 ## Fichiers
 
@@ -709,6 +715,7 @@ Supprimer toutes les balises img contenant co.cc
 ### Texte
 
 Trouver un fichier php contenant "virtual" à partir de .
+
 ```
 grep "virtual" `find . -name "*.php"`
 ```
@@ -740,6 +747,7 @@ Afficher le contenu d'un fichier
 `cat <file>`
 
 Compter le nombre de lignes
+
 ```
 wc -l <file>
 ```
@@ -791,7 +799,7 @@ Créer un tar.gz
 Créer un tar.gz et déréférencer les symlinks
 `tar -cvzfh test.tar.gz <path>`
 
-___
+---
 
 ## VI/VIM
 
@@ -855,6 +863,7 @@ VIM en mode diff entre deux fichiers
 `vimdiff <file1> <file2>`
 
 Modifier la configuration vi par défaut, éditer `~/.exrc`
+
 ```
 set nu
 set noautoindent
@@ -873,26 +882,31 @@ else
 				echoerr "Sorry, this version of (g)vim was not compiled with +multi_byte"
 endif
 ```
-___
+
+---
 
 ## Wget : télécharger/cloner un fichier/un site par HTTP ou FTP
 
 Commande de base récupérant la page d'index
+
 ```
 wget http://www.perdu.com/
 ```
 
 Wget : aspirer une page en particulier et toutes ses dépendances
+
 ```
 wget -E -H -k -K -p http://www.perdu.com/
 ```
 
 Wget récursif, sans accepter les fichiers en gzip (sinon ça ne marche pas)
+
 ```
 wget --header="accept-encoding: none" --recursive http://www.azerty0.ironie.org/
 ```
 
 Wget miroir d'un site, récursif, adaptant les liens et extensions, téléchargeant les ressources internes, ignorant robots.txt
+
 ```
 wget --mirror --convert-links --adjust-extension --page-requisites --no-parent -e robots=off http://www.azerty0.ironie.org/
 ```
@@ -909,42 +923,50 @@ Split un fichier PDF en plusieurs autres
 `pdfseparate -f 1 -l 10 doc.pdf tmp/doc-%d.pdf`
 
 Convertir un fichier en utf8
+
 ```
 iconv -f latin1 -t utf8 update.sql >update-utf8.sql
 ```
 
 Compter le nombre de lignes de plein de fichiers dans une arbo web
+
 ```
 find . -name "*.php" -o -name "*.less" -o -name "*.css" -o -name "*.js" -o -name "*.html" | xargs wc -l
 ```
 
 Supprimer fichiers vides
+
 ```
 for file in * .*; do [ -f "$file" ] && [ 0 -eq "$(wc -c "$file" | cut -d" " -f1)" ] && rm -f "$file"; done
 ```
 
 Trouver les 404 et leur total dans un log Apache
+
 ```
 grep " 404" access.log | awk '{print $7}' | sort | uniq -c
 ```
 
 Trouver les adresses IP uniques et le nombre de requêtes dans un log Apache (ajouter `| wc -l` pour le total)
+
 ```
 cat access.log | awk '{ print $1 }' | sort | uniq -c | sort -n
 ```
 
 Lister récursivement tous les fichiers contenant une chaîne sans l'afficher
+
 ```
 grep -lR "quelquechose" *
 ```
 
 Trouver les robots en excluant ceux connus (-E expression régulière, -i case insensitive, -v inverse)
 (on exclut aussi les requêtes sur robots.txt et la font roboto)
+
 ```
 grep "bot" other_vhosts_access.log | grep -Eiv "Googlebot|Yahoo|Slurp|WorldSearch|Exabot|facebot|ia_archiver|alexa|msnbot|bingbot|Sogou|Baidu|Yandex|DuckDuckBot|archive\.org_bot|Semrush|orangebot|AhrefsBot|MJ12bot|Twitterbot|robot\.dlweb|dotbot|rogerbot|SEOkicks|AdsBot|spbot|XoviBot|Cliqzbot|SearchmetricsBot|flamingosearch|SeznamBot|smtbot|MojeekBot|robots\.txt|roboto|Slackbot"
 ```
 
 Nombre de requêtes par domaines
+
 ```
 awk '{print $1}' /var/log/apache2/other_vhosts_access.log | sort | uniq -c
 ```
@@ -956,11 +978,13 @@ find . -type f -exec grep -q "blablablabla" {} \; -exec echo rm {} \;
 ```
 
 Supprimer fichiers de plus de 90 jours dans le répertoire courant
+
 ```
 find . -mtime +90 -exec rm {} \;
 ```
 
 Supprimer fichiers de plus de 90 jours dans le répertoire courant, en excluant x.html
+
 ```
 find . ! -name "*.html" -mtime +90 -exec rm {} \;
 ```
@@ -980,6 +1004,7 @@ done
 ```
 
 Script pour bannir rapidement une adresse IP en ligne de commande
+
 ```
 #!/bin/bash
 if [[ -z "$1" ]]; then
@@ -990,7 +1015,7 @@ else
 fi
 ```
 
-___
+---
 
 ## Droits/permissions
 
@@ -1009,6 +1034,7 @@ Changer droits sur certains fichiers
 `find . -name "*.php" -print0 | xargs -0 chmod -x`
 
 ### Masques
+
 ```
     rwx
 0 : 000
@@ -1026,7 +1052,7 @@ Changer droits sur certains fichiers
 764 = rwx rw- r--
 ```
 
-___
+---
 
 ## Services
 
@@ -1105,7 +1131,7 @@ Recharger dovecot
 `dovecot reload`
 
 Qui est connecté ?
-`dovecot who`  
+`dovecot who`
 
 ### Gitlab
 
@@ -1133,6 +1159,7 @@ Réactualiser la db
 `pure-pw mkdb`
 
 Divers
+
 ```
 pure-pw passwd ftpwww
 pure-pw userdel ftpwww
@@ -1205,13 +1232,13 @@ Faire un backup d'apprentissage (STDOUT)
 Restaurer un backup d'apprentissage
 `sa-learn --restore <fichier_backup>`
 
-___
+---
 
 ### Alternatives
 
 `update-alternatives --config editor`
 
-___
+---
 
 ## Services version init.d
 
@@ -1230,7 +1257,7 @@ Ajouter au démarrage, option defaults, priorité 99
 Supprimer
 `update-rc.d <script> remove`
 
-___
+---
 
 ## AWS S3
 
@@ -1246,7 +1273,7 @@ Lister les fichiers
 Supprimer un fichier
 `s3cmd del s3://bucket-name/<file>`
 
-___
+---
 
 ## Sécurité Linux
 

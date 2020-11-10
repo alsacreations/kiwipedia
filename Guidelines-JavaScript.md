@@ -1,35 +1,35 @@
 # Guidelines JavaScript
 
-_Bonnes pratiques JavaScript (et jQuery) en production_
-
+_Statut : Working Draft (WD)_
 
 ## Généralités
 
-* L’encodage des fichiers et des bases de données doit se faire en UTF-8 (sans BOM).
-* JavaScript apporte une amélioration progressive, c’est-à-dire qu’il se produit une dégradation gracieuse lorsqu’il est désactivé.
-* Les scripts doivent être placés de préférence en fin de document, avant la balise `</body>` (ceci n’est plus extrêmement significatif suite aux optimisations des navigateurs mais permet d’éviter les écueils majeurs et de visualiser l’ordre de chargement au même endroit).
-* L’appel à une librairie ou à un framework (jQuery) fait toujours apparaître le numéro de version et le suffixe `-min` si le fichier a été minifié.
-* Les attributs `defer` et `async` seront utilisés à bon escient pour réduire la latence (voir [Article](http://www.alsacreations.com/astuce/lire/1562-script-attribut-async-defer.html)).
+- L’encodage des fichiers et des bases de données doit se faire en UTF-8 (sans BOM).
+- JavaScript apporte une amélioration progressive, c’est-à-dire qu’il se produit une dégradation gracieuse lorsqu’il est désactivé.
+- Les scripts doivent être placés de préférence en fin de document, avant la balise `</body>` (ceci n’est plus extrêmement significatif suite aux optimisations des navigateurs mais permet d’éviter les écueils majeurs et de visualiser l’ordre de chargement au même endroit).
+- L’appel à une librairie ou à un framework (jQuery) fait toujours apparaître le numéro de version et le suffixe `-min` si le fichier a été minifié.
+- Les attributs `defer` et `async` seront utilisés à bon escient pour réduire la latence (voir [Article](http://www.alsacreations.com/astuce/lire/1562-script-attribut-async-defer.html)).
 
 ### Syntaxe
 
-* Valider le code avec JSHint (disponible en plugins d’éditeur de code ou gulp).
-* Les indentations se font à l’aide de deux espaces et non avec la tabulation.
-Pour assurer une cohérence inter-projets, utiliser la convention [EditorConfig](http://editorconfig.org/).
-* Utiliser la syntaxe _lowerCamelCase_ (voir https://fr.wikipedia.org/wiki/CamelCase) pour l'écriture des noms de variables, fonctions, objets, etc.
-* Utiliser "use strict"; en début de script pour activer le mode strict d’ECMAScript.
-* Toujours utiliser le mot clé `var` pour déclarer une variable et maîtriser sa portée.
-* Toujours terminer les instructions par un `;`.
-* Toujours commenter (même brièvement) le code à l’aide de `//` ou `/* */`.
-* Ne jamais laisser un appel à `console.log()` ou `eval()` dans le code en production.
-* Ne pas déclarer de fonctions/variables dans le scope global qui pourraient amener à des conflits avec d’autres scripts. Si besoin, utiliser une [IIFE](https://en.wikipedia.org/wiki/Immediately-invoked_function_expression).
+- Valider le code avec JSHint (disponible en plugins d’éditeur de code ou gulp).
+- Les indentations se font à l’aide de deux espaces et non avec la tabulation.
+  Pour assurer une cohérence inter-projets, utiliser la convention [EditorConfig](http://editorconfig.org/).
+- Utiliser la syntaxe _lowerCamelCase_ (voir https://fr.wikipedia.org/wiki/CamelCase) pour l'écriture des noms de variables, fonctions, objets, etc.
+- Utiliser "use strict"; en début de script pour activer le mode strict d’ECMAScript.
+- Toujours utiliser le mot clé `var` pour déclarer une variable et maîtriser sa portée.
+- Toujours terminer les instructions par un `;`.
+- Toujours commenter (même brièvement) le code à l’aide de `//` ou `/* */`.
+- Ne jamais laisser un appel à `console.log()` ou `eval()` dans le code en production.
+- Ne pas déclarer de fonctions/variables dans le scope global qui pourraient amener à des conflits avec d’autres scripts. Si besoin, utiliser une [IIFE](https://en.wikipedia.org/wiki/Immediately-invoked_function_expression).
 
 En bonus, suivre les recommandations de
-* [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
-* [JavaScript The Right Way](http://jstherightway.org/)
-* [Principe d'écriture d'un code Javascript cohérent et idiomatique](https://github.com/rwaldron/idiomatic.js/tree/master/translations/fr_FR)
-* [Programming JavaScript Applications](http://chimera.labs.oreilly.com/books/1234000000262/apa.html)
-* [clean-code-javascript](https://github.com/ryanmcdermott/clean-code-javascript/blob/master/README.md)
+
+- [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
+- [JavaScript The Right Way](http://jstherightway.org/)
+- [Principe d'écriture d'un code Javascript cohérent et idiomatique](https://github.com/rwaldron/idiomatic.js/tree/master/translations/fr_FR)
+- [Programming JavaScript Applications](http://chimera.labs.oreilly.com/books/1234000000262/apa.html)
+- [clean-code-javascript](https://github.com/ryanmcdermott/clean-code-javascript/blob/master/README.md)
 
 ## Déclaration et variables
 
@@ -88,9 +88,9 @@ maConfig.fonctionSpecifique = function() {
 
 De préférence :
 
-* Nommer les fonctions/plugins d’après les classes HTML avec lesquelles elles vont interagir.
-* Les préfixer par un code relatif au nom du projet.
-* Placer les accolades sur la première ligne de bloc et non sur la suivante pour éviter (entre autres) les erreurs de minification dues à l’insertion implicite de `;` pour terminer les lignes.
+- Nommer les fonctions/plugins d’après les classes HTML avec lesquelles elles vont interagir.
+- Les préfixer par un code relatif au nom du projet.
+- Placer les accolades sur la première ligne de bloc et non sur la suivante pour éviter (entre autres) les erreurs de minification dues à l’insertion implicite de `;` pour terminer les lignes.
 
 ```
 if (quelquechose) {
@@ -182,13 +182,13 @@ charset = utf-8
 
 ### Généralités
 
-* Préfixer une variable représentant un objet jQuery (résultat d’un sélecteur) par `$`
+- Préfixer une variable représentant un objet jQuery (résultat d’un sélecteur) par `$`
 
 ```
 var $el = $('#el');
 ```
 
-* Démarrer avec cette syntaxe pour document ready :
+- Démarrer avec cette syntaxe pour document ready :
 
 ```
 jQuery(document).ready(function($) {
@@ -198,9 +198,9 @@ jQuery(document).ready(function($) {
 
 ### Convention de nommage
 
-* Exploiter au maximum le document "statique" HTML, dont les attributs `data-*`, les classes, ou l’ordre des éléments pour construire un script autour, plutôt que de se reposer uniquement sur JavaScript ou des variables indépendantes de la structure HTML.
-* Placer les attributs `data-*` sur les éléments pour lesquels ils seront utiles, notamment le conteneur du plugin/composant.
-* Différencier classes qui vont permettre de styler l’élément (dans les fichiers CSS) et classes qui vont permettre d’activer un comportement spécifique JS sur l’élément (fichiers JS) en les préfixant par `js-`.
+- Exploiter au maximum le document "statique" HTML, dont les attributs `data-*`, les classes, ou l’ordre des éléments pour construire un script autour, plutôt que de se reposer uniquement sur JavaScript ou des variables indépendantes de la structure HTML.
+- Placer les attributs `data-*` sur les éléments pour lesquels ils seront utiles, notamment le conteneur du plugin/composant.
+- Différencier classes qui vont permettre de styler l’élément (dans les fichiers CSS) et classes qui vont permettre d’activer un comportement spécifique JS sur l’élément (fichiers JS) en les préfixant par `js-`.
 
 ```
 <div class="slideshow js-slideshow" data-timing="2000" ...>
@@ -211,11 +211,11 @@ jQuery(document).ready(function($) {
 
 ![Nommage de classes](images/js-classes.png)
 
-* `.is-active` pour un élément qui est tout le temps visible mais qui peut avoir un état actif/inactif (ex : élément de menu ou de sous-menu au focus/survol).
-* `.is-selected` pour un élément qui est tout le temps visible mais qui peut avoir un état sélectionné/désélectionné (ex : bouton/bloc radio/checkbox).
-* `.is-opened` pour un élément qui peut avoir deux états affiché ou masqué (ex : menu déroulant, panel d'accordéon). Inverse possible : `.is-closed`.
+- `.is-active` pour un élément qui est tout le temps visible mais qui peut avoir un état actif/inactif (ex : élément de menu ou de sous-menu au focus/survol).
+- `.is-selected` pour un élément qui est tout le temps visible mais qui peut avoir un état sélectionné/désélectionné (ex : bouton/bloc radio/checkbox).
+- `.is-opened` pour un élément qui peut avoir deux états affiché ou masqué (ex : menu déroulant, panel d'accordéon). Inverse possible : `.is-closed`.
 
-* Utiliser les classes CSS du projet pour cacher/masquer des éléments, lancer des transitions, ou changer leur état
+- Utiliser les classes CSS du projet pour cacher/masquer des éléments, lancer des transitions, ou changer leur état
 
 ```
 $('element').addClass('visually-hidden');
@@ -227,22 +227,22 @@ plutôt que
 $('element').hide();
 ```
 
-* De même pour les animations/transitions, il est souvent préférable de passer par l’ajout/suppression de classes CSS.
+- De même pour les animations/transitions, il est souvent préférable de passer par l’ajout/suppression de classes CSS.
 
 #### Interactions et événements
 
-* Se reposer sur les éléments pouvant recevoir le focus (`<a>`, `<button>`, `<input>`) pour l’ajout d’événements `onclick`, etc.
-* Toujours écrire les gestionnaires d'événement avec `.on()` pour les retrouver plus facilement dans le code plutôt qu'avec les alias.
-* Penser à prévoir les cas de figure où le code peut être appelé plusieurs fois dans une même page, ou plusieurs fois par erreur sur un même élément (par exemple avec la gestion `.off()` et `.on()` des événements, les attributs `data-*` pour savoir s’il a déjà été appliqué, etc).
-* Suivre le principe des _Optimistic Updates_ : les opérations du visiteur prennent effet immédiatment pour ne pas attendre, et son corrigées une fois le résultat réel de l'opération retournée par le serveur.
+- Se reposer sur les éléments pouvant recevoir le focus (`<a>`, `<button>`, `<input>`) pour l’ajout d’événements `onclick`, etc.
+- Toujours écrire les gestionnaires d'événement avec `.on()` pour les retrouver plus facilement dans le code plutôt qu'avec les alias.
+- Penser à prévoir les cas de figure où le code peut être appelé plusieurs fois dans une même page, ou plusieurs fois par erreur sur un même élément (par exemple avec la gestion `.off()` et `.on()` des événements, les attributs `data-*` pour savoir s’il a déjà été appliqué, etc).
+- Suivre le principe des _Optimistic Updates_ : les opérations du visiteur prennent effet immédiatment pour ne pas attendre, et son corrigées une fois le résultat réel de l'opération retournée par le serveur.
 
 ### ARIA et accessibilité
 
 Exploiter les [propriétés/états](https://www.w3.org/TR/wai-aria/states_and_properties) ARIA pour les composants dynamiques :
 
-* Ajouter/supprimer l'attribut `aria-hidden="true"` pour les éléments qui ne doivent pas être visibles ni rendus vocalement. Celui-ci peut être décorélé de `.visually-hidden`.
-* Utiliser les attributs `aria-selected`, `aria-checked`, `aria-expanded`, `aria-controls` le cas échéant.
-* Utiliser `aria-live` pour les zones de contenu se mettant à jour en JavaScript et devant être signalées.
+- Ajouter/supprimer l'attribut `aria-hidden="true"` pour les éléments qui ne doivent pas être visibles ni rendus vocalement. Celui-ci peut être décorélé de `.visually-hidden`.
+- Utiliser les attributs `aria-selected`, `aria-checked`, `aria-expanded`, `aria-controls` le cas échéant.
+- Utiliser `aria-live` pour les zones de contenu se mettant à jour en JavaScript et devant être signalées.
 
 Exploiter les [rôles](https://www.w3.org/TR/wai-aria/roles) pour les composants complexes (ex : onglets avec `tab`, `tabpanel`, `tablist`... accordéons et sliders divers).
 
@@ -250,12 +250,13 @@ Vérifier que la navigation au clavier par tabulations suit un cheminement logiq
 
 ## Plugin boilerplate
 
-Encapsuler les développements jQuery tant que possible dans des plugins, idéalement avec le *boilerplate* : un modèle relativement simple de plugin-type, avec options par défaut, remplacées/complétées par les paramètres `data-*` en HTML, méthodes privées et publiques.
+Encapsuler les développements jQuery tant que possible dans des plugins, idéalement avec le _boilerplate_ : un modèle relativement simple de plugin-type, avec options par défaut, remplacées/complétées par les paramètres `data-*` en HTML, méthodes privées et publiques.
 
 Voir aussi sur le dépôt Github [https://github.com/alsacreations/pepin](https://github.com/alsacreations/pepin)
 
 À l'intérieur du plugin :
-* Se servir des paramètres par défaut et de la possibilité de les remplacer lors de l'appel par des options passées en objet au plugin et/ou par la valeur des attributs `data-*`.
-* Simplifier au maximum le code en découpant par actions simples.
+
+- Se servir des paramètres par défaut et de la possibilité de les remplacer lors de l'appel par des options passées en objet au plugin et/ou par la valeur des attributs `data-*`.
+- Simplifier au maximum le code en découpant par actions simples.
 
 Ne pas hésiter à utiliser des plugins éprouvés mais toujours tester s’ils peuvent être multiples sur une même page.
