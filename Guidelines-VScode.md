@@ -37,6 +37,7 @@ Visual Studio Code dispose de vérificateurs de qualité (Linters) par défaut, 
 
 ### Extensions suggérées
 
+- [DotENV](https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv) (support de la syntaxe des fichiers .env)
 - [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph) (version graphique des branches Git)
 - [IntelliSense for CSS class names in HTML](https://marketplace.visualstudio.com/items?itemName=Zignd.html-css-class-completion) (autocomplétion des classes HTML)
 - [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) (affiche les erreurs des linters directement dans la fenêtre de code)
