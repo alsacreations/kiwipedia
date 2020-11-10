@@ -22,16 +22,16 @@ Des outils automatiques permettant de vérifier la qualité du code produit de m
 
 Visual Studio Code dispose de vérificateurs de qualité (Linters) par défaut, au minimum dans les langages suivants&nbsp;: CSS, SCSS et PHP. La configuration par défaut de Visual Studio Code doit être préservée au maximum pour éviter les conflits sur des postes différents.
 
-### Extensions indispensables (tous projets)
+### Extensions indispensables ❤️
 
 - [Project Manager](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager) (si vous jonglez entre plusieurs projets, c'est un must)
-- [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) (respect configuration tabs vs spaces, eol, etc)
+- [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) (respect configuration tabs vs spaces à l'insertion, encodage, eol, etc)
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) (vérification syntaxe JavaScript)
 - [SCSS Intellisense](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-scss) (autocomplétion SCSS : classes, variables, etc.)
-- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) (reformatage du code d'après une configuration précise)
 - [Markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) (vérification syntaxe Markdown)
 
-### Extensions fortement recommandées
+### Extensions fortement recommandées ⭐
 
 - [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense) (autocomplétion des chemins)
 - [HTML CSS Support](https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css)
@@ -42,7 +42,7 @@ Visual Studio Code dispose de vérificateurs de qualité (Linters) par défaut, 
 - [Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify) (remise en forme propre d'un code mal indenté/formaté)
 - [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) (affiche les erreurs des linters directement dans la fenêtre de code)
 
-### Extensions suggérées
+### Extensions suggérées 👍
 
 - [DotENV](https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv) (support de la syntaxe des fichiers .env)
 - [Auto Close Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag) (fermeture automatiques des balises)
