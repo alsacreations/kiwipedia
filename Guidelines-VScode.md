@@ -31,21 +31,25 @@ Visual Studio Code dispose de vérificateurs de qualité (Linters) par défaut, 
 - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 - [Markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) (vérification syntaxe Markdown)
 
-### Extensions recommandées
+### Extensions fortement recommandées
 
+- [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense) (autocomplétion des chemins)
+- [HTML CSS Support](https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css)
+- [IntelliSense for CSS class names in HTML](https://marketplace.visualstudio.com/items?itemName=Zignd.html-css-class-completion) (autocomplétion des classes HTML)
+- [Auto rename tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)
 - [stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
 - [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) (fonctions avancées Git dans VS Code)
 - [Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify) (remise en forme propre d'un code mal indenté/formaté)
+- [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) (affiche les erreurs des linters directement dans la fenêtre de code)
 
 ### Extensions suggérées
 
 - [DotENV](https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv) (support de la syntaxe des fichiers .env)
-- [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph) (version graphique des branches Git)
-- [IntelliSense for CSS class names in HTML](https://marketplace.visualstudio.com/items?itemName=Zignd.html-css-class-completion) (autocomplétion des classes HTML)
-- [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) (affiche les erreurs des linters directement dans la fenêtre de code)
-- [Statusbar Error](https://marketplace.visualstudio.com/items?itemName=JoeBerria.statusbarerror) (affiche les erreurs des linters dans la barre basse et/ou dans la gouttière)
 - [Auto Close Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag) (fermeture automatiques des balises)
 - [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) (très pratique pour JS / React / Vue)
+
+Confort visuel :
+
 - [French Language Pack](https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-fr)
 - [Select highlight in minimap](https://marketplace.visualstudio.com/items?itemName=mde.select-highlight-minimap) (sélection visible dans la minimap)
 - [TODO Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight) (mise en avant des `TODO:` et `FIXME:`)
@@ -53,13 +57,15 @@ Visual Studio Code dispose de vérificateurs de qualité (Linters) par défaut, 
 - [Indent Rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow) (coloration des niveaux d'indentation)
 - [highlight-matching-tag](https://marketplace.visualstudio.com/items?itemName=vincaslt.highlight-matching-tag) (mise en avant de la balise fermante correspondante en HTML)
 - [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
+- [Statusbar Error](https://marketplace.visualstudio.com/items?itemName=JoeBerria.statusbarerror) (affiche les erreurs des linters dans la barre basse et/ou dans la gouttière)
+- [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph) (version graphique des branches Git)
 
 ### Extensions spécifiques ou avancées
 
 - [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) (lance un serveur local, avec rafraîchissement automatique, pour pages statiques)
 - [Sass/Less/Scss/Typescript/Javascript/Jade/Pug Compile Hero Pro](https://marketplace.visualstudio.com/items?itemName=Wscats.eno) (multicompilateur, en cas de projet sans "Workflow" NPM ou Gulp)
 - [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
-- [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur) pour Vue.js
+- [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur) (pour Vue.js)
 - [Partial Diff](https://marketplace.visualstudio.com/items?itemName=ryu1kn.partial-diff)
 - [Git History](https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory)
 - [PHP Debug](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug)
