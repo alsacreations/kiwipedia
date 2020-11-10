@@ -227,7 +227,7 @@ Cette consigne concerne principalement :
 
 ### Media Queries
 
-Pour éviter les intervalles qui se chevauchent, ou des Media Queries trop variés, nous préconisons d'appliquer un [mixin Sass "respond-to"](https://github.com/raphaelgoetter/knacss-reborn/blob/master/sass/abstracts/_mixins-sass.scss) pour appliquer des styles Responsive&nbsp:
+Pour éviter les intervalles qui se chevauchent, ou des Media Queries trop variés, nous préconisons d'appliquer un [mixin Sass "respond-to"](https://github.com/raphaelgoetter/knacss-reborn/blob/master/sass/abstracts/_mixins-sass.scss) pour appliquer des styles Responsive&nbsp;:
 
 ```scss
 .modal {
