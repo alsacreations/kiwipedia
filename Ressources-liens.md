@@ -105,6 +105,7 @@
 
 ## Node.js / npm
 * https://nodejs.org/fr/
+* https://jsmates.com/blog/managing-secrets-and-env-variables-using-dotenv Fichiers .env
 
 ### Gulp
 
