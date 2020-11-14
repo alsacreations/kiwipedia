@@ -47,6 +47,7 @@ Visual Studio Code dispose de vérificateurs de qualité (Linters) par défaut, 
 - [DotENV](https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv) (support de la syntaxe des fichiers .env)
 - [Auto Close Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag) (fermeture automatiques des balises)
 - [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) (très pratique pour JS / React / Vue)
+- [Debugger for Firefox](https://marketplace.visualstudio.com/items?itemName=firefox-devtools.vscode-firefox-debug)
 
 Confort visuel :
 
