@@ -11,6 +11,7 @@ Cette présente charte a pour objectif :
 
 ## Liste des documents
 
+* [**Guidelines Visual Studio Code**](Guidelines-VScode.md)
 * [**Guidelines HTML**](Guidelines-HTML.md)
 * [**Guidelines CSS**](Guidelines-CSS.md)
 * [**Guidelines JavaScript / jQuery**](Guidelines-JavaScript.md)
@@ -26,7 +27,7 @@ Cette présente charte a pour objectif :
 * [**Checklist**](Checklist.md)
 * [**Ressources et liens utiles**](Ressources-liens.md)
 
-### TODO
+### En cours
 
 * [**Guidelines WordPress**](Guidelines-WordPress.md) (Draft)
 
