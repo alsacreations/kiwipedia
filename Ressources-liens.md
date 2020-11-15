@@ -660,9 +660,14 @@ Maquettes / story-boards / wireframes / mockups / zoning
 * https://www.campaignmonitor.com/resources/ Ressources Campaign Monitor
 
 ## Machines virtuelles
-* https://www.docker.com/
+
 * https://www.virtualbox.org/ VirtualBox (Oracle)
 * https://css-tricks.com/an-introduction-to-vagrant/ Vagrant
+
+## Docker
+
+* https://www.docker.com/
+* https://medium.com/@remyc/comprendre-docker-dockerfile-et-docker-compose-f21fe4ba22cb
 
 ## App mobiles/hybrides
 * https://electron.atom.io/
