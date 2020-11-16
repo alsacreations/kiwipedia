@@ -156,12 +156,14 @@ TailwindCSS correspond à une approche "atomique" de CSS, comprendre qu'à chaqu
 
 La méthodologie et les conventions de Tailwind sont très spécifiques car toutes les classes sont déjà existantes dans les fichiers CSS, il suffit donc de les appliquer au sein des fichiers HTML. Il n'est nécessaire d'écrire des styles que sporadiquement au cours du projet.
 
-Contient (ou devrait contenir) :
+**Ce framework CSS "Utility First" est préconisé dans la plupart des projets (WordPress, PHP, VueJS) (pour la configuration voir _Guidelines Tailwind TODO:_)**
 
-- reset KNACSS ?
-- Convention de nommage "Utility first"
-- Compatible Sass
-- PurgeCSS
+Notre workflow Tailwind comporte :
+
+- Un mini fichier CSS "reset" KNACSS dédié (TODO:)
+- Une compatibilité Sass
+- Une Convention de nommage "Utility first" (_Guidelines Tailwind TODO:_)
+- PurgeCSS (tâche permettant de supprimer les styles inutilisés)
 
 ### KNACSS Reborn
 
@@ -169,17 +171,17 @@ TODO: vérifier et donner des détails
 
 _Source : <https://www.knacss.com/doc-reborn.html>_
 
-Principalement pour des sites statiques (intégration simple), voire sans Workflow.
-
 KNACSS est un micro-framework CSS constitué au fur et à mesure au sein d'Alsacréations pour répondre à nos besoins de conventions et de bonnes pratiques, notamment en terme d'Accessibilité.
 
-Contient (ou devrait contenir) :
+**Ce micro-framework CSS sera choisi principalement pour des sites statiques (intégration simple), voire sans Workflow particuliers.**
+
+Notre workflow KNACSS comporte :
 
 - Fichiers "reset" KNACSS avec un condensé de bonnes pratiques
-- Compatible Sass
-- Architecture et imports des fichiers KNACSS
-- Mixin `respond-to`
-- Convention de nommage : "sémantique" (se rapproche de [BEM](http://getbem.com/))
+- Une compatibilité Sass
+- Une Architecture et imports des fichiers KNACSS
+- Un Mixin `respond-to`
+- Une Convention de nommage : "sémantique" (se rapproche de [BEM](http://getbem.com/))
 
 ### Bootstrap
 
@@ -187,12 +189,12 @@ TODO: vérifier et donner des détails
 
 _Source : <https://getbootstrap.com/>_
 
-Lorsque le client est déjà familier avec ce Framework ou nous l'impose.
+**Ce framework HTML/CSS sera choisi lorsque le client est déjà familier avec ce Framework ou nous l'impose.**
 
-Contient (ou devrait contenir) :
+Notre workflow Bootstrap comporte :
 
-- Reset KNACSS ?
-- Compatible Sass
+- Fichiers "reset" KNACSS avec un condensé de bonnes pratiques
+- Une compatibilité Sass
 - Convention de nommage : "sémantique" (se rapproche de BEM)
 - Composants préfabriqués (modales, navigation, etc.)
 - Grille de mise en forme --> préférer l'usage de Grid Layout plutôt que la grille de Bootstrap nécessitant des imbrications HTML
