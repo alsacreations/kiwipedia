@@ -135,7 +135,7 @@ selecteur {
 }
 ```
 
-**_Note : l'outil "Stylelint" intégré au Workflow sous forme de tâche Gulp permet de réordonner automatiquement les déclarations CSS grâce au plugin [stylelint-order](https://www.npmjs.com/package/stylelint-order)_**
+**_Note : La démarche de réordonnement est généralement manuelle, en se servant de cette liste comme référence. Si un projet le nécessite, l'outil "Stylelint" intégré au Workflow sous forme de tâche Gulp permet de réordonner automatiquement les déclarations CSS grâce au plugin [stylelint-order](https://www.npmjs.com/package/stylelint-order)_**
 
 ## Méthodologies et Conventions de nommage CSS
 
