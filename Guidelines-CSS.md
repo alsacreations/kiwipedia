@@ -206,7 +206,7 @@ Notre workflow Bootstrap comporte :
 
 ## Divers
 
-- L'outil [Autoprefixer](https://autoprefixer.github.io/) est employé lorsque des préfixes navigateurs sont nécessaires pour un projet.
+- L'outil [Autoprefixer](https://autoprefixer.github.io/) est employé lorsque des préfixes navigateurs sont nécessaires pour un projet (dépend du Workflow / Framework).
 - Les "hacks" ou détournements de propriétés ou valeurs sont vivement déconseillés. En dernier ressort, employer la ressource [Browserhacks](http://browserhacks.com/)
 - La règle `!important` doit être éradiquée si possible du fait de son poids extrêmement important (certaines parties des styles peuvent toutefois exceptionnellement employer à juste titre `!important`).
 - Opter pour des tailles de polices fluides (de préférence en `rem`), éviter les tailles de police de taille fixe (`px` ou `pt`) car inaccessible aux personnes nécessitant d’agrandir les contenus textuels.
@@ -216,7 +216,7 @@ Notre workflow Bootstrap comporte :
 - Les fichiers CSS doivent être minifiés pour économiser du poids de chargement.
 - Toujours préciser quelle(s) propriété(s) doit être animée dans transition ou animation
 - Éviter d’animer des propriétés autres que **transform** ou **opacity** ou **filter** (ou alors ajouter la propriété `will-change` et/ou le hack de `translateZ()`.) Source : [https://tzi.github.io/presentation-CSS-perfs/](https://tzi.github.io/presentation-CSS-perfs/)
-- `@font-face` : N’imposez pas de chargements aux anciens navigateurs (IE8). Privilégiez `.woff2`. Pour le détail, voir la partie ["medias / polices"](#polices)
+- `@font-face` : Privilégiez `.woff2`. Pour le détail, voir la partie ["medias / polices"](#polices)
 
 ## Guidelines Sass
 
