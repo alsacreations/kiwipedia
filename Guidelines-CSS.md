@@ -80,7 +80,7 @@ Les inconvénients majeurs de cette notation est :
 }
 ```
 
-**À conseiller** (un seul niveau d'imbrication génère des sélecteurs composés de 2 niveaux au maximum `.home .home-first { … }`) :
+**À conseiller si vraiment nécessaire** (un seul niveau d'imbrication génère des sélecteurs composés de 2 niveaux au maximum `.home .home-first { … }`) :
 
 ```scss
 .home {
