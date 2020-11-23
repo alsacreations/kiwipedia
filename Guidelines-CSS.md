@@ -49,9 +49,14 @@ Cela implique que chaque élément HTML, même anodin tels que des `<span>`, de 
 
 ## Notation imbriquée Scss
 
-La [Notation imbriquée](https://sass-lang.com/guide#topic-3) de Sass offre une vision sur la "hiérarchie" du composant et facilite la lecture du code.
+La [Notation imbriquée](https://sass-lang.com/guide#topic-3) (nesting) de Sass offre une vision sur la "hiérarchie" du composant et facilite la lecture du code.
 
-L'inconvénient de cette notation est qu'elle génère des sélecteurs CSS composés. **Il est conseillé de limiter la syntaxe à un seul niveau d'imbrication.**
+Les inconvénients majeurs de cette notation est :
+
+- Qu'elle génère des sélecteurs CSS composés (donc avec un poids qui augmente).
+- Qu'elle impose une structure au sélecteur. L'élément n'est ciblé que s'il est descendant d'un autre élément. On ne peut plus réutiliser l'élément ailleurs, au sein d'une autre structure.
+
+**Il est conseillé d'éviter les sélecteurs imbriqués, ou au pire de limiter la syntaxe à un seul niveau d'imbrication.**
 
 **À éviter** (car génère des sélecteurs composés de 3 niveaux `.home .home-first .home-spotlights { … }`) :
 
