@@ -4,10 +4,8 @@ _Statut : Working Draft (WD)_
 
 ## Généralités
 
-- Dans la mesure du possible sur de petits scripts d'agrément (ex: visuel) JavaScript apporte une amélioration progressive, c’est-à-dire qu’il se produit une dégradation gracieuse lorsqu’il est désactivé (on peut toujours accéder au contenu).
-- Les scripts doivent être placés de préférence en fin de document, avant la balise `</body>` (ceci n’est plus extrêmement significatif suite aux optimisations des navigateurs mais permet d’éviter les écueils majeurs et de visualiser l’ordre de chargement au même endroit).
-- L’appel à une librairie ou à un framework (ex: jQuery) fait toujours apparaître le numéro de version et le suffixe `-min` si le fichier a été minifié.
-- Les attributs `defer` et `async` seront utilisés à bon escient pour réduire la latence (voir [Article](http://www.alsacreations.com/astuce/lire/1562-script-attribut-async-defer.html)).
+- Dans la mesure du possible sur de petits scripts d'agrément (ex: visuel) JavaScript apporte une amélioration progressive, c’est-à-dire qu’il se produit une dégradation gracieuse lorsqu’il est désactivé (on peut toujours accéder au contenu). Ces scripts doivent être placés de préférence en fin de document, avant la balise `</body>` (ceci n’est plus extrêmement significatif suite aux optimisations des navigateurs mais permet d’éviter les écueils majeurs et de visualiser l’ordre de chargement au même endroit). Les attributs `defer` et `async` seront utilisés à bon escient pour réduire la latence (voir [Article](http://www.alsacreations.com/astuce/lire/1562-script-attribut-async-defer.html)).
+- L’appel à une librairie ou à un framework (ex: jQuery, Vue, React) fait toujours apparaître le numéro de version et le suffixe `-min` si le fichier a été minifié.
 
 ### Syntaxe et nommage
 
@@ -16,7 +14,7 @@ _Statut : Working Draft (WD)_
 - Les indentations se font à l’aide de deux espaces, idéalement définies par [EditorConfig](http://editorconfig.org/).
 - Utiliser la syntaxe _lowerCamelCase_ (voir https://fr.wikipedia.org/wiki/CamelCase) pour l'écriture des noms de variables, fonctions, objets, etc.
 - Utiliser le mot clé `var` ou `let` ou `const` pour déclarer une variable/constante et maîtriser sa portée.
-- Terminer les instructions par un `;`.
+- Terminer les instructions par un `;` sauf si la configuration eslint du projet le permet autrement.
 - Toujours commenter (même brièvement) le code, les fonctions, les variables (à l’aide de `//` ou `/* */`).
 - Ne jamais laisser un appel à `console.log()` ou `eval()` dans le code en production.
 - Ne pas déclarer de fonctions/variables dans le scope global qui pourraient amener à des conflits avec d’autres scripts. Si besoin, utiliser une [IIFE](https://en.wikipedia.org/wiki/Immediately-invoked_function_expression).
