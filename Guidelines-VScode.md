@@ -63,8 +63,8 @@ Confort visuel :
 
 ### Extensions spécifiques ou avancées
 
-- [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) (lance un serveur local, avec rafraîchissement automatique, pour pages statiques)
-- [Sass/Less/Scss/Typescript/Javascript/Jade/Pug Compile Hero Pro](https://marketplace.visualstudio.com/items?itemName=Wscats.eno) (multicompilateur, en cas de projet sans "Workflow" NPM ou Gulp)
+- [Live Sass Compiler](https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass) : Surveille automatiquement les modifications de fichiers Sass dans le projet et les compile en CSS (ainsi qu'en version minifiée `.min.css`).
+- [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) : L'extension Live Server ouvre un serveur local dans une page du navigateur, rafraîchie automatiquement.
 - [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
 - [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur) (pour Vue.js)
 - [Partial Diff](https://marketplace.visualstudio.com/items?itemName=ryu1kn.partial-diff)
