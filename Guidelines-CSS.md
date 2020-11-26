@@ -153,15 +153,13 @@ Les [méthodologies et conventions de nommage CSS](https://speakerdeck.com/goett
 
 ### Tailwind
 
-TODO: vérifier et donner des détails
-
 _Source : <https://tailwindcss.com/>_
 
 TailwindCSS correspond à une approche "atomique" de CSS, comprendre qu'à chaque classe correspond une action et une seule.
 
 La méthodologie et les conventions de Tailwind sont très spécifiques car toutes les classes sont déjà existantes dans les fichiers CSS, il suffit donc de les appliquer au sein des fichiers HTML. Il n'est nécessaire d'écrire des styles que sporadiquement au cours du projet.
 
-**Ce framework CSS "Utility First" est préconisé dans la plupart des projets (WordPress, PHP, VueJS) (pour la configuration voir _Guidelines Tailwind TODO:_)**
+**Ce framework CSS "Utility First" est notre choix prioritaire et préconisé dans la plupart des projets (WordPress, PHP, VueJS) (pour la configuration voir _Guidelines Tailwind TODO:_)**
 
 Notre workflow Tailwind comporte :
 
@@ -172,9 +170,7 @@ Notre workflow Tailwind comporte :
 
 ### KNACSS Reborn
 
-TODO: vérifier et donner des détails
-
-_Source : <https://www.knacss.com/doc-reborn.html>_
+_Source : <https://www.knacss.com/doc.html>_
 
 KNACSS est un micro-framework CSS constitué au fur et à mesure au sein d'Alsacréations pour répondre à nos besoins de conventions et de bonnes pratiques, notamment en terme d'Accessibilité.
 
@@ -189,8 +185,6 @@ Notre workflow KNACSS comporte :
 - Une Convention de nommage : "sémantique" (se rapproche de [BEM](http://getbem.com/))
 
 ### Bootstrap
-
-TODO: vérifier et donner des détails
 
 _Source : <https://getbootstrap.com/>_
 
