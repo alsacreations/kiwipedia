@@ -1,6 +1,6 @@
 # Guidelines : CSS
 
-_Statut : Working Draft (WD)_
+_Statut : Recommendation (REC)_
 
 Cette présente convention rassemble les bonnes pratiques CSS (et SCSS) en production appliquées par l'agence web Alsacreations.fr. Elle a pour but d'évoluer dans le temps et de s'adapter à chaque nouveau projet.
 
@@ -22,7 +22,7 @@ La méthode de compilation de Sass vers CSS dépend du type de projet (voir part
 
 L'ensemble des recommandations de ce document est prévu pour être compatible avec tous les navigateurs représentant plus de 1.5% de la population, ce qui représente notamment tous les navigateurs modernes supportant [CSS Grid Layout](https://caniuse.com/css-grid). **Cela ne concerne donc pas Internet Explorer.**
 
-La liste des navigateurs supportés est définie par [browserslist](https://github.com/browserslist/browserslist) que l'on retrouve dans `package.json` et dont la valeur est&nbsp;:
+La liste des navigateurs supportés est définie au sein du fichier [browserslist](https://github.com/browserslist/browserslist) que l'on retrouve dans `package.json` et dont la valeur est&nbsp;:
 
 ```json
 "browserslist": [
@@ -75,8 +75,8 @@ Les inconvénients majeurs de cette notation est :
 
 ```scss
 .home {
-  $-first {
-    $-spotlights {
+  &-first {
+    &-spotlights {
     }
   }
 }
@@ -92,6 +92,8 @@ Les inconvénients majeurs de cette notation est :
   }
 }
 ```
+
+**Exception : le sélecteur de parent `&` est parfaitement préconisé dans le cas d'événements tels que `&:hover`, `&:focus` ou `&:active`.**
 
 ## Commentaires
 
@@ -145,7 +147,7 @@ selecteur {
 
 Notre Workflow varie selon les types de projets, la maturité des navigateurs web et l'obsolescence des technologies.
 
-Notre rôle est de nous adapter constamment à ces évolutions, et nos solutions technique sont à ce jour&nbsp;: NPM, Vue, React, WordPress, Gulp, site statique ("pas de workflow").
+Notre rôle est de nous adapter constamment à ces évolutions, et nos solutions technique sont à ce jour&nbsp;: NPM, Vue, React, Webpaxmix, WordPress, Gulp, site statique ("pas de workflow").
 
 Les [méthodologies et conventions de nommage CSS](https://speakerdeck.com/goetter/conventions-de-nommage-en-css) que nous préconisons selon les projets sont&nbsp;:
 
@@ -161,12 +163,12 @@ TailwindCSS correspond à une approche "atomique" de CSS, comprendre qu'à chaqu
 
 La méthodologie et les conventions de Tailwind sont très spécifiques car toutes les classes sont déjà existantes dans les fichiers CSS, il suffit donc de les appliquer au sein des fichiers HTML. Il n'est nécessaire d'écrire des styles que sporadiquement au cours du projet.
 
-**Ce framework CSS "Utility First" est notre choix prioritaire et préconisé dans la plupart des projets (WordPress, PHP, VueJS) (pour la configuration voir _Guidelines Tailwind TODO:_)**
+**Ce framework CSS "Utility First" est notre choix prioritaire et préconisé dans la plupart des projets (WordPress, PHP, VueJS, Webpackmix) (pour la configuration voir _Guidelines Tailwind TODO:_)**
 
 Notre workflow Tailwind comporte :
 
 - Un mini fichier CSS "reset" KNACSS dédié (TODO:)
-- Une compatibilité Sass
+- Une configuration personnalisée pour Webpackmix et tenant compte de&nbsp;: Tailwind, Browsersync (ainsi que Sass et Autoprefixer présents dans la configuration par défaut) (TODO:)
 - Une Convention de nommage "Utility first" (_Guidelines Tailwind TODO:_)
 - PurgeCSS (tâche permettant de supprimer les styles inutilisés)
 
@@ -208,7 +210,7 @@ Notre workflow Bootstrap comporte :
 - Opter pour des tailles de polices fluides (de préférence en `rem`), éviter les tailles de police de taille fixe (`px` ou `pt`) car inaccessible aux personnes nécessitant d’agrandir les contenus textuels.
 - Opter pour le modèle de boîte CSS3 (`box-sizing: border-box`) en début de la feuille de style. Cela permet de connaître la taille de tous les éléments sans avoir à faire le calcul de `taille+padding+border`.
 - Éviter d’écraser une règle par une autre.
-- Les fichiers CSS doivent être rassemblés en un seul afin d’éviter les requêtes multiples.
+- Durant la phase de développement l'intégration se fait sur plusieurs fichiers CSS (composants, layout, etc.) que l'on rassemble (`@import`) dans un fichier unique.
 - Les fichiers CSS doivent être minifiés pour économiser du poids de chargement.
 - Toujours préciser quelle(s) propriété(s) doit être animée dans transition ou animation
 - Éviter d’animer des propriétés autres que **transform** ou **opacity** ou **filter** (ou alors ajouter la propriété `will-change` et/ou le hack de `translateZ()`.) Source : [https://tzi.github.io/presentation-CSS-perfs/](https://tzi.github.io/presentation-CSS-perfs/)
@@ -290,6 +292,18 @@ Voici un exemple de chargement de police conseillé :
 Compatibilité : <https://caniuse.com/link-rel-preload>
 
 Ressource : <https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf>
+
+**BONUS :** La déclaration `font-display: swap;` évite les effets de FOIT et est vivement recommandée au sein de la règle `@font-face` :
+
+```css
+@font-face {
+  font-family: merriweather;
+  src: url('/fonts/merriweather.woff2');
+  font-display: swap;
+}
+```
+
+Ressource : <https://www.alsacreations.com/article/lire/1779-CSS-font-display-et-le-chargement-des-polices-web.html>
 
 ### Contenus de remplissage
 
