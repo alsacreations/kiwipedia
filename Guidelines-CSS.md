@@ -41,7 +41,7 @@ Documentation : [fichiers reset de KNACSS Reborn](https://github.com/raphaelgoet
 
 ## Sélection des éléments
 
-La maintenabilité des feuilles de styles est une priorité. Il est nécessaire de prioriser les sélecteurs ayant le moins de spécificité (poids) possible afin de faciliter les modifications ultérieures ou dans des contexte différents (Responsive).
+La maintenabilité des feuilles de styles est une priorité. Il est nécessaire de prioriser les sélecteurs ayant le moins de spécificité (poids) possible afin de faciliter les modifications ultérieures ou dans des contextes différents (Responsive).
 
 Privilégier au maximum l'usage de [**classes**](http://www.drinchev.com/blog/css-with-only-class-names/) plutôt que d'écrire des sélecteurs basés sur le type des éléments ou leur `id`.
 
@@ -53,7 +53,7 @@ Cela implique que chaque élément HTML, même anodin tels que des `<span>`, de 
 
 La [Notation imbriquée](https://sass-lang.com/guide#topic-3) (nesting) de Sass offre une vision sur la "hiérarchie" du composant et facilite la lecture du code.
 
-Les inconvénients majeurs de cette notation est :
+Les inconvénients majeurs de cette notation sont :
 
 - Qu'elle génère des sélecteurs CSS composés (donc avec un poids qui augmente).
 - Qu'elle impose une structure au sélecteur. L'élément n'est ciblé que s'il est descendant d'un autre élément. On ne peut plus réutiliser l'élément ailleurs, au sein d'une autre structure.
@@ -147,7 +147,7 @@ selecteur {
 
 Notre Workflow varie selon les types de projets, la maturité des navigateurs web et l'obsolescence des technologies.
 
-Notre rôle est de nous adapter constamment à ces évolutions, et nos solutions technique sont à ce jour&nbsp;: NPM, Vue, React, Webpaxmix, WordPress, Gulp, site statique ("pas de workflow").
+Notre rôle est de nous adapter constamment à ces évolutions, et nos solutions techniques sont à ce jour&nbsp;: NPM, Vue, React, Webpaxmix, WordPress, Gulp, site statique ("pas de workflow").
 
 Les [méthodologies et conventions de nommage CSS](https://speakerdeck.com/goetter/conventions-de-nommage-en-css) que nous préconisons selon les projets sont&nbsp;:
 
@@ -287,7 +287,7 @@ Voici un exemple de chargement de police conseillé :
 }
 ```
 
-**BONUS :** Il est vivement conseillé d'utiliser la directive `<link rel="preload">` pour charger les fontes de manière asynchrone.
+**BONUS :** Il est vivement conseillé d'utiliser la directive `<link rel="preload">` pour charger les fonts de manière asynchrone.
 
 Compatibilité : <https://caniuse.com/link-rel-preload>
 
