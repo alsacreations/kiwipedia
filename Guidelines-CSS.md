@@ -2,21 +2,19 @@
 
 _Statut : Recommendation (REC)_
 
-Cette présente convention rassemble les bonnes pratiques CSS (et SCSS) en production appliquées par l'agence web Alsacreations.fr. Elle a pour but d'évoluer dans le temps et de s'adapter à chaque nouveau projet.
+Cette présente convention rassemble les bonnes pratiques CSS (et SCSS) en production appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/). Elle a pour but d'évoluer dans le temps et de s'adapter à chaque nouveau projet.
 
 ## Généralités
 
 ### Éditeur, Formatage et Qualité
 
-- L'éditeur de code recommandé pour HTML, CSS, PHP, JS est [Visual Studio Code](https://code.visualstudio.com/) (voir [Guidelines VS Code](Guidelines-VScode.md)).
+- L'éditeur de code recommandé pour HTML, CSS, PHP, JavaScript est [Visual Studio Code](https://code.visualstudio.com/) (voir [Guidelines VS Code](Guidelines-VScode.md)).
 - [EditorConfig](http://editorconfig.org/) et [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) imposent un formatage (UTF-8, espace vs tabs, guillemets) et des règles de syntaxe directement dans l'éditeur, ainsi ce dernier s'adapte à chaque projet.
-- [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint) est un linter CSS (SCSS, LESS) apportant une configuration qui vient s'ajouter aux linters natifs de VS Code.
+- [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint) et [eslint](https://eslint.org/) sont des linters apportant une configuration qui vient s'ajouter aux outils natifs de Visual Studio Code.
 
 ### Langage : Scss
 
-Le pré-processeur [Sass](https://sass-lang.com/) (syntaxe `.scss`) est un langage compilé employé afin d'apporter certaines fonctionnalités indispensables&nbsp;: variables, notation imbriquée, mixins, etc.
-
-La méthode de compilation de Sass vers CSS dépend du type de projet (voir partie ["Méthodologies et conventions de nommage"](#méthodologies-et-conventions-de-nommage-css)).
+Le pré-processeur [Sass](https://sass-lang.com/) (syntaxe `.scss`) apporte des fonctionnalités CSS indispensables&nbsp;: variables, notation imbriquée, mixins, etc. La méthode de compilation de Sass vers CSS dépend du type de projet (voir partie ["Méthodologies et conventions de nommage"](#méthodologies-et-conventions-de-nommage-css)).
 
 ### Compatibilité navigateurs
 
