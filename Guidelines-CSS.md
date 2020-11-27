@@ -22,11 +22,13 @@ La méthode de compilation de Sass vers CSS dépend du type de projet (voir part
 
 L'ensemble des recommandations de ce document est prévu pour être compatible avec tous les navigateurs représentant plus de 1.5% de la population, ce qui représente notamment tous les navigateurs modernes supportant [CSS Grid Layout](https://caniuse.com/css-grid). **Cela ne concerne donc pas Internet Explorer.**
 
-La liste des navigateurs supportés est définie par le fichier `.browserslistrc` placé en racine du projet, sur lequel se base Autoprefixer et dont la valeur est&nbsp;:
+La liste des navigateurs supportés est définie par [browserslist](https://github.com/browserslist/browserslist) que l'on retrouve dans `package.json` et dont la valeur est&nbsp;:
 
 ```json
->1.5%
-not op_mini all
+"browserslist": [
+    ">1.5%",
+    "not op_mini all"
+  ]
 ```
 
 ### Fichier CSS de base ("Reset")
