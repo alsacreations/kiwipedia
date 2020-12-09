@@ -92,6 +92,11 @@ end_of_line = lf
 charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
+tab_width = 4
+
+[*.{dtd,inc,php,phpt,rng,wsdl,xml,xsd,xsl}]
+indent_size = 4
+indent_style = space
 
 [*.md]
 trim_trailing_whitespace = false
