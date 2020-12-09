@@ -1,4 +1,6 @@
-# editorconfig.org
+#
+# *** ATTENTION : Ce fichier n'est pas la configuration par défaut pour les projets, il est uniquement dédié au repo des Guidelines ***
+#
 root = true
 
 [*]
