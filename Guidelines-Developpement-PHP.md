@@ -2,7 +2,8 @@
 
 _Statut : Working Draft (WD)_
 
-* On suit [https://www.php-fig.org/psr/psr-12/](PSR-12: Extended Coding Style)
+* On suit [PSR-12: Extended Coding Style](https://www.php-fig.org/psr/psr-12/)
+* Voir aussi [https://phptherightway.com/](https://phptherightway.com/)
 
 ## Généralités
 
@@ -26,11 +27,6 @@ _Statut : Working Draft (WD)_
 Source : https://xkcd.com/1319/ (Automation)
 
 ## PHP
-
-Conventions générales :
-
-- [http://www.phptherightway.com/](http://www.phptherightway.com/)
-- [http://www.php-fig.org/psr/](http://www.php-fig.org/psr/) (de 1 à ?, en anglais a priori)
 
 Les balises fermantes `?>` doivent être omises en fin de fichier pour éviter la production d’espaces indésirables entre différents scripts. Dans la mesure du possible, un commentaire peut être ajouté signifiant la fin du fichier, afin de déterminer si celui-ci n’a pas été tronqué.
 
