@@ -120,13 +120,11 @@ Types : Events, Person, Product, Movie, Book, Recipe, et toute la [hiérarchie](
 
 Documentation : [http://www.alsacreations.com/article/lire/1509-microdata-microformats-schema-semantique.html](http://www.alsacreations.com/article/lire/1509-microdata-microformats-schema-semantique.html)
 
-## États des éléments
-
-Les éléments ayant une condition ou un état particulier seront préfixés :
+## Classes et états
 
 - Le lien, l’onglet ou la page active est désigné par la classe `.is-current`
-- tout état sera préfixé par "is-". Ex. `.is-paused`, `.is-opened`, `.is-hidden`, `.has-*`
-- tout événement ou comportement JavaScript sera préfixé par "js-". Ex. `.js-nav-button`, `.js-menu`, `.js-is-hidden`
+- Tout état est préfixé par "is-". Ex : `.is-paused`, `.is-opened`, `.is-hidden`, `.has-*`
+- Tout élément manipulé par JavaScript est préfixé par "js-". Ex : `.js-nav-button`, `.js-menu`, `.js-is-hidden`
 
 ## Liens target \_blank
 
