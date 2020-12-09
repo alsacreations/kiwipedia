@@ -2,10 +2,12 @@
 
 _Statut : Working Draft (WD)_
 
+* On suit [https://www.php-fig.org/psr/psr-12/](PSR-12: Extended Coding Style)
+
 ## Généralités
 
 - L’encodage des fichiers et des bases de données doit se faire en UTF-8 (sans BOM).
-- Les indentations se font à l’aide de deux espaces et sous forme de tabulations.
+- Les indentations se font à l’aide d'espaces.
   Pour assurer une cohérence inter-projets, utiliser la convention [EditorConfig](http://editorconfig.org/).
 - La numérotation des versions suit [Semantic Versioning](http://semver.org/)
 
