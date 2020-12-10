@@ -635,11 +635,9 @@ Accessibilité des SVG
 ## Git
 
 - <https://www.atlassian.com/git/tutorials/setting-up-a-repository> Guide général sur Git
-- <http://www.git-tower.com/learn/videos>
-- <http://articles.nissone.com/2014/11/gitpourlanulle/>
-- <http://www.git-attitude.fr/2014/05/04/bien-utiliser-git-merge-et-rebase/>
-- <https://github.com/blog/2019-how-to-undo-almost-anything-with-git>
-- 99% des commandes Git en un script <https://bitbucket.org/BitPusher16/dotfiles/raw/49a01d929dcaebcca68bbb1859b4ac1aea93b073/refs/git/git_examples.sh>
+- <https://www.git-tower.com/learn/git/videos/>
+- <https://learngitbranching.js.org/?locale=fr_FR> Learn Git Branching : apprendre les branches
+- <https://github.blog/2015-06-08-how-to-undo-almost-anything-with-git/>
 
 ### Clients git
 
