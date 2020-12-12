@@ -70,7 +70,7 @@ Confort visuel :
 - [Partial Diff](https://marketplace.visualstudio.com/items?itemName=ryu1kn.partial-diff)
 - [Git History](https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory)
 - [PHP Debug](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug)
-- [PHP Intellisense](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-intellisense)
+- [PHP Intellisense](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-intellisense) ou [PHP Intelephense](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client)
 - [phpcs](https://marketplace.visualstudio.com/items?itemName=ikappas.phpcs)
 
 ## Extensions détaillées
