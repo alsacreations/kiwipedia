@@ -559,6 +559,7 @@ Accessibilité des SVG
 ### Progressive Web Apps (PWA)
 
 - <https://app-manifest.firebaseapp.com/> Générateur de web manifest
+- <https://pwadvent.dev/> PWAdvent 24 bonnes fonctionnalités PWA
 
 ---
 
