@@ -78,7 +78,7 @@ Plus d’informations : [http://www.accede-web.com/notices/html-css-javascript/1
 
 Les éléments interactifs (liens, champs, boutons) affichent un contour lorsqu'ils réagissent au `:focus`, c'est à dire au clic, au touch ou à la navigation clavier.
 
-Ce contour correspond à la propriété CSS `outline` (ce n'est pas une `border` ni un `box-shadow`) et il est important de ne pas le supprimer autour des éléments cliquables (pas de `outline: none`) car il a été conçu pour rendre ces éléments accessibles à tous (= se repérer lors d'une navigation au clavier).
+Ce contour correspond à la propriété CSS `outline` (ce n'est pas une `border` ni un `box-shadow`) et il est important de ne pas le supprimer autour des éléments cliquables (pas de `outline: none`) car il a été conçu pour rendre ces éléments accessibles à tous (= se repérer lors d'une navigation au clavier). On peut préserver une mise en exergue des éléments recevant le focus clavier avec `:focus-visible` (voir <https://css-tricks.com/almanac/selectors/f/focus-visible/>).
 
 Exemple tiré de&nbsp;: <https://developer.mozilla.org/fr/docs/Web/CSS/:focus-visible>
 
