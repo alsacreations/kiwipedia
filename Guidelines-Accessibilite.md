@@ -89,7 +89,7 @@ Exemple tiré de&nbsp;: <https://developer.mozilla.org/fr/docs/Web/CSS/:focus-vi
 }
 
 .custom-button:focus-visible {
-  /* affchage du focus lors de la navigation au clavier */
+  /* affichage du focus lors de la navigation au clavier */
   outline: 4px dashed darkorange;
   background: transparent;
 }
