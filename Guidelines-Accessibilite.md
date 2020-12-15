@@ -6,7 +6,6 @@ _Statut : Working Draft (WD)_
 
 - Ne pas fixer de hauteur sur les éléments afin que le contenu reste lisible lorsque le texte est zoomé.
 - Respecter la hiérarchie des titres `<hX>`.
-- Ne pas supprimer l’_outline_ autour des éléments cliquables (pas de `outline: none`).
 - Utiliser les éléments HTML pour leur fonction/sémantique et non pas pour leur forme.
   - Utiliser les éléments pouvant recevoir le focus (`<a>`, `<input type="button">`) lorsqu'ils sont cliquables/interactifs.
 - Exploiter WAI ARIA <https://www.w3.org/WAI/intro/aria> lorsque c'est pertinent pour aider le navigateur.
@@ -68,6 +67,33 @@ Ne sont pas concernés :
 Plus d’informations : [http://www.accede-web.com/notices/html-css-javascript/1-structure/1-5-role-navigation/](http://www.accede-web.com/notices/html-css-javascript/1-structure/1-5-role-navigation/)
 
 ## Un peu de CSS
+
+### outline et focus
+
+Les éléments interactifs (liens, champs, boutons) affichent un contour lorsqu'ils réagissent au `:focus`, c'est à dire au clic, au touch ou à la navigation clavier.
+
+Ce contour correspond à la propriété CSS `outline` (ce n'est pas une `border` ni un `box-shadow`) et il est important de ne pas le supprimer autour des éléments cliquables (pas de `outline: none`) car il a été conçu pour rendre ces éléments accessibles à tous (= se repérer lors d'une navigation au clavier).
+
+Exemple tiré de&nbsp;: <https://developer.mozilla.org/fr/docs/Web/CSS/:focus-visible>
+
+```css
+.custom-button:focus {
+  /* alternative pour anciens navigateurs */
+  outline: none;
+  background: lightgrey;
+}
+
+.custom-button:focus:not(:focus-visible) {
+  /* suppression du focus lors du clic/tap */
+  background: transparent;
+}
+
+.custom-button:focus-visible {
+  /* affchage du focus lors de la navigation au clavier */
+  outline: 4px dashed darkorange;
+  background: transparent;
+}
+```
 
 ### CSS generated content
 
