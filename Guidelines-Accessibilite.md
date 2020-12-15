@@ -14,6 +14,12 @@ _Statut : Working Draft (WD)_
 
 ### Structure HTML
 
+#### Rôles ARIA
+
+Notre structure HTML type exploite les rôles landmarks ARIA (`role=`). C'est un choix volontaire de notre part bien que les spécifications WAI-ARIA considère que c'est inutile. La raison est que le référentiel français RGAA 4 les recommande.
+
+Pour plus de détails, voir [partie ARIA](#aria) ci-dessous.
+
 #### Menu de navigation
 
 Utiliser des combinaisons `<ul><li>` (liste non ordonnée) pour structurer les menus de navigation dans un élément `<nav role="navigation”>`.
