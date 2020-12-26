@@ -380,10 +380,10 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 ### Favicon
 
-- <http://realfavicongenerator.net/> outil ultime pour tout générer
+- <https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs>
+- <https://realfavicongenerator.net/> outil ultime pour tout générer
 - <https://favicon.io/> génère à partir de lettres
 - <http://lab.ejci.net/favico.js/> (badges en JS sur la favicon)
-- <https://github.com/audreyr/favicon-cheat-sheet>
 
 ---
 
