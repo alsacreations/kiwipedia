@@ -669,20 +669,30 @@ Accessibilité des SVG
 
 ## Intégration mail et e-mailing
 
-- <https://explore.reallygoodemails.com/new-to-email-coding-heres-where-to-start-2494422f0bd4> Résumé des pratiques
-- <https://litmus.com/> (screenshots de mails multi-clients)
-- <http://www.inboxinspector.com/> (pareil mais gratuit)
-- <https://topol.io/> Outil de conception en ligne (gratuit)
-- <https://mjml.io/getting-started-onboard> + <https://mjml.io/try-it-live> Syntaxe simplifiée générant du HTML compatible + éditeur en ligne
-- <https://www.inkbrush.com/> Intégration à partir de maquettes + découpage + responsive + envoi !
+- <https://explore.reallygoodemails.com/new-to-email-coding-heres-where-to-start-2494422f0bd4> Résumé de quelques pratiques d'intégration
+
+### Conception
+
+- <https://www.caniemail.com/> L'équivalent de caniuse pour connaître le support des clients mail (html, css...)
+- <https://mjml.io/getting-started-onboard> + <https://mjml.io/try-it-live> (syntaxe simplifiée générant du HTML compatible + éditeur en ligne)
+- <https://heml.io/> (syntaxe simplifiée générant du HTML compatible)
+- <https://maizzle.com/> (framework pour conception rapide d'e-mails basé sur Tailwind)
+
+### Outils et ressources
+
+- <https://topol.io/> Outil de conception en ligne
 - <https://htmlemail.io/> Responsive HTML Email Templates
-- <https://targeted.io/> (pareil)
-- <http://putsmail.com/> (envoie de mail à partir d’un code HTML - permet de checker le code)
-- <http://premailer.dialect.ca/> Preformate un mail pour optimiser sa compatibilité (utilise API Campaign Monitor)
-- <http://zurb.com/ink/> Templates responsive
-- <http://www.sitepoint.com/first-email-newsletter/>
+- <https://www.mrtemplates.com/premailer/> Préformate un mail - son code - pour optimiser sa compatibilité (utilise API Campaign Monitor)
 - <https://templates.mailchimp.com/resources/> Ressources Mailchimp
 - <https://www.campaignmonitor.com/resources/> Ressources Campaign Monitor
+
+### Aperçus de rendu client mail et tests
+
+- <https://litmus.com/> (screenshots de mails multi-clients, le plus populaire)
+- <https://www.emailonacid.com/> (screenshots de mails multi-clients)
+- <https://www.mail-tester.com/> indique le niveau de "qualité" d'un e-mail envoyé à une adresse
+- <http://putsmail.com/> (envoi de mail à partir d'un code HTML collé)
+- <https://mailtrap.io/> Capture les mails envoyés pour les inspecter
 
 ---
 
