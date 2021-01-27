@@ -4,34 +4,36 @@ _Nos bonnes pratiques et recommandations internes à l'agence web [Alsacréation
 
 Cette présente charte a pour objectif :
 
-* d'uniformiser et d’harmoniser les processus
-* de faciliter la production et la maintenance des projets web
-* de favoriser l’intervention de profils de compétences variés au sein d'une équipe
-* et de disposer d’outils réutilisables
+- d'uniformiser et d’harmoniser les processus
+- de faciliter la production et la maintenance des projets web
+- de favoriser l’intervention de profils de compétences variés au sein d'une équipe
+- et de disposer d’outils réutilisables
 
 ## Liste des documents
 
-* [**Guidelines Visual Studio Code**](Guidelines-VScode.md)
-* [**Guidelines HTML**](Guidelines-HTML.md)
-* [**Guidelines CSS**](Guidelines-CSS.md)
-* [**Guidelines JavaScript / jQuery**](Guidelines-JavaScript.md)
-* [**Guidelines Accessibilité**](Guidelines-Accessibilite.md)
-* [**Guidelines Workflow**](Guidelines-Workflow.md)
-* [**Guidelines Développement PHP / MySql**](Guidelines-Developpement-PHP.md)
+- [**Conventions Générales de Nommage**](Conventions-generales-nommage.md)
+- [**Guidelines Visual Studio Code**](Guidelines-VScode.md)
+- [**Guidelines HTML**](Guidelines-HTML.md)
+- [**Guidelines CSS**](Guidelines-CSS.md)
+- [**Guidelines JavaScript / jQuery**](Guidelines-JavaScript.md)
+- [**Guidelines Accessibilité**](Guidelines-Accessibilite.md)
+- [**Guidelines Workflow**](Guidelines-Workflow.md)
+- [**Guidelines Développement PHP / MySql**](Guidelines-Developpement-PHP.md)
 
-### Ressources et pense-bêtes
+## En cours
 
-* [**Pense-Bête Flexbox (PDF)**](https://github.com/alsacreations/guidelines/blob/master/flexbox-cheatsheet.pdf)
-* [**Pense-Bête Grid Layout (PDF)**](https://github.com/alsacreations/guidelines/blob/master/grid-cheatsheet.pdf)
-* [**Commandes Linux**](Commandes-Linux.md) (Cheatsheet)
-* [**Checklist**](Checklist.md)
-* [**Ressources et liens utiles**](Ressources-liens.md)
-
-### En cours
-
-* [**Guidelines WordPress**](Guidelines-WordPress.md) (Draft)
+- [**Guidelines WordPress**](Guidelines-WordPress.md) (Draft)
+- [**Guidelines Webdesign**]() (Draft)
 
 **NOTE : Aucun de ces documents n'est figé, ils sont en constante amélioration et évolution.**
+
+## Ressources et pense-bêtes
+
+- [**Pense-Bête Flexbox (PDF)**](https://github.com/alsacreations/guidelines/blob/master/flexbox-cheatsheet.pdf)
+- [**Pense-Bête Grid Layout (PDF)**](https://github.com/alsacreations/guidelines/blob/master/grid-cheatsheet.pdf)
+- [**Commandes Linux**](Commandes-Linux.md) (Cheatsheet)
+- [**Checklist**](Checklist.md)
+- [**Ressources et liens utiles**](Ressources-liens.md)
 
 ## Licence
 
