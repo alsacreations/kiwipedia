@@ -2,8 +2,8 @@
 
 _Statut : Working Draft (WD)_
 
-* On suit [PSR-12: Extended Coding Style](https://www.php-fig.org/psr/psr-12/)
-* Voir aussi [https://phptherightway.com/](https://phptherightway.com/)
+- On suit [PSR-12: Extended Coding Style](https://www.php-fig.org/psr/psr-12/)
+- Voir aussi [https://phptherightway.com/](https://phptherightway.com/)
 
 ## Généralités
 
