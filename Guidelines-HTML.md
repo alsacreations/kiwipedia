@@ -5,14 +5,28 @@ _Statut : Working Draft (WD)_
 ## Généralités
 
 - L’encodage des fichiers et des bases de données doit se faire en UTF-8 (sans BOM).
-- Les indentations se font à l’aide de deux espaces et non à l'aide de tabulations. Pour assurer une cohérence inter-projets, utiliser la convention [EditorConfig](http://editorconfig.org/).
 - Les liens absolus ne doivent pas faire apparaître le protocole (par exemple href="//www.alsacreations.fr/" et non href="http://www.alsacreations.fr").
-- Choisir des noms en anglais prioritairement (classes, fichiers, images, etc.).
-- Séparer les noms des fichiers, des images des classes et id CSS par des tirets (`.slide-info`, `styles-ie.css`, `jquery-2.0.min.css`, etc), sauf convention contraire apportée par le client.
-- Les noms d'éléments et des attributs sont rédigés en minuscules,
-- Les éléments sont imbriqués correctement,
 - Les valeurs identiques aux attributs ne sont pas renseignées sauf nécessité (ex. en HTML5 pas de `checked="checked"`),
-- L'usage des double quotes est préconisé autour des valeurs d’attributs (ex. `class="fruit"`) ainsi que les simples quotes dans les autres langages JavaScript, PHP (ex. `alert('blup');`) de manière à faciliter les imbrications (ex. `alert('<p class="fruit">plop</p>');`)
+
+## Formatage
+
+- Les indentations se font à l’aide de deux espaces et non à l'aide de tabulations. Pour assurer une cohérence inter-projets, utiliser la convention [EditorConfig](http://editorconfig.org/).
+- Séparer les noms des fichiers, des images des classes et id CSS par des tirets (`.slide-info`, `styles-ie.css`, `jquery-2.0.min.css`, etc), sauf convention contraire apportée par le client.
+- L'usage des double quotes est préconisé autour des valeurs d’attributs (ex. `class="fruit"`) ainsi que les simples quotes dans les autres langages JavaScript, PHP (ex. `alert('blup');`) de manière à faciliter les imbrications (ex. `alert('<p class="fruit">plop</p>');`).
+
+## Nommage
+
+- Choisir des noms en anglais prioritairement (classes, fichiers, images, etc.).
+- Les noms d'éléments et des attributs sont rédigés en minuscules.
+- Les éléments disposants d’id (pour JavaScript) doivent disposer d’une classe dupliquée (pour CSS).
+
+La règle de nommage des éléments suit le modèle “fonction” puis “variante”, séparées par des traits d'union :
+
+- navigation : ~~`main-navigation` (non)~~ -> `navigation-main` (oui)
+- bouton “burger” : ~~`nav-button` (non)~~ -> `button-nav` (oui)
+- pagination : ~~`primary-breadcrumb` (non)~~ -> `breadcrumb-primary` (oui)
+- boutons : `btn-primary` (oui) ou `button-primary` (oui)
+- modales : `modal-fullscreen` (oui)
 
 ## Doctype
 
