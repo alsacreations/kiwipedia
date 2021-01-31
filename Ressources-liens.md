@@ -476,33 +476,37 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 ## SVG
 
-- <https://svgontheweb.com/> guide ultime SVG sur le web
-- <http://svgpocketguide.com/book/> Pocket guide to writing SVG
-- <http://lynn.ru/examples/svg/en.html> + <http://css-tricks.com/svg-fallbacks/> + <http://css-tricks.com/scale-svg/> Intégration dans HTML
-- <http://svgjs.com/> Animations via JavaScript
-- <http://thenewcode.com/1094/Using-JavaScript-in-SVG> Include du code JavaScript dans SVG
-- <http://sarasoueidan.com/blog/svg-tips-for-designers/> Guide de production SVG pour Illustrator & co
-- <https://css-tricks.com/understanding-and-manually-improving-svg-optimization/>
+- <https://svgontheweb.com/> Guide ultime SVG sur le web
+- <https://svgpocketguide.com/book/> Pocket guide to writing SVG
+- <https://lynn.ru/examples/svg/en.html> + <https://css-tricks.com/svg-fallbacks/> + <https://css-tricks.com/scale-svg/> + <https://css-tricks.com/using-svg/> Intégration dans HTML
+- <https://sarasoueidan.com/blog/svg-tips-for-designers/> Guide de production SVG pour Illustrator & co
+- <https://sarasoueidan.com/blog/svg-coordinate-systems/> Système de coordonnées, viewbox, viewport, preserveAspectRatio
+- <https://sarasoueidan.com/demos/interactive-svg-coordinate-system/index.html> Cheatsheet Coordonnées
+- <https://la-cascade.io/comprendre-svg-viewbox-et-viewport/> Comprendre SVG viewBox et viewport
+- <https://www.w3.org/TR/SVG/propidx.html> Propriétés manipulables en CSS
+
+### Outils pour produire du SVG
+
 - <https://inkscape.org/en/> éditeur SVG open-source
-- <http://maxwellito.github.io/vivus/> Animation filaire
 - <https://design.tutsplus.com/tutorials/svg-files-from-illustrator-to-the-web--vector-20899> SVG Files: From Illustrator to the Web
+
+### Animations
+
+- <https://svgjs.com/> Animations de SVG via JavaScript
 - <http://snapsvg.io/> (animation SVG via JS)
-- <http://www.svgjs.com/> (génération/animation en JS)
+- <http://maxwellito.github.io/vivus/> Animation SVG filaire
+- <https://css-tricks.com/animating-svg-css/> (animation via CSS)
+- <http://sozi.baierouge.fr/pages/10-about.html> Présentations animées avec zoom/dézoom
+
+### Optimisation et astuces
+
 - <http://petercollingridge.appspot.com/svg-optimiser>
 - <https://github.com/svg/svgo> Optimisation
 - <https://jakearchibald.github.io/svgomg/> Optimisation en ligne
-- <http://www.svgeneration.com/> Génération de motifs
-- <http://gionkunz.github.io/chartist-js/index.html> (graphiques animés et rwd)
-- <http://sarasoueidan.com/blog/svg-coordinate-systems/> Système de coordonnées, viewbox, viewport, preserveAspectRatio
-- <http://sarasoueidan.com/demos/interactive-svg-coordinate-system/index.html> Cheatsheet Coordonnées
-- <https://la-cascade.io/comprendre-svg-viewbox-et-viewport/>
-- <http://css-tricks.com/animating-svg-css/> (animation via CSS)
-- <https://css-tricks.com/scale-svg/>
-- <https://css-tricks.com/using-svg/>
-- <http://sozi.baierouge.fr/pages/10-about.html> Présentations animées avec zoom/dézoom
-- <http://www.w3.org/TR/SVG/propidx.html> Propriétés manipulables en CSS
+- <https://css-tricks.com/understanding-and-manually-improving-svg-optimization/>
+- <https://thenewcode.com/1094/Using-JavaScript-in-SVG> Include du code JavaScript dans SVG
 
-Accessibilité des SVG
+### Accessibilité des SVG
 
 - <http://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-2-svg-images-vectorielles/>
 - <http://la-cascade.ghost.io/rendre-svg-accessible/> SVG accessible
