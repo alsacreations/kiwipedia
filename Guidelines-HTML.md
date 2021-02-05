@@ -5,7 +5,6 @@ _Statut : Working Draft (WD)_
 ## Généralités
 
 - L’encodage des fichiers et des bases de données doit se faire en `UTF-8` (sans `BOM`).
-- Les liens absolus ne doivent pas faire apparaître le protocole (par exemple `href="//www.alsacreations.fr/"` et non `href="http://www.alsacreations.fr"`).
 - Les valeurs identiques aux attributs ne sont pas renseignées sauf nécessité (ex. en HTML5 pas de `checked="checked"`),
 
 ## Formatage
