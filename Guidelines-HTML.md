@@ -127,9 +127,7 @@ Documentation : [https://github.com/DISIC/guide-integrateur](https://github.com/
 
 Dans la mesure du possible, et selon le type de site, les microformats les plus courants seront ajoutés.
 
-Vocabulaire privilégié : [http://schema.org](https://schema.org) (promu et utilisé par Google, Yahoo, Bing, Yandex).
-
-Types : Events, Person, Product, Movie, Book, Recipe, et toute la [hiérarchie](https://schema.org/docs/full.html), avec les attributs HTML5.
+Vocabulaire privilégié : [http://schema.org](https://schema.org) (promu et utilisé par Google, Yahoo, Bing, Yandex) avec toute la [hiérarchie](https://schema.org/docs/full.html) de types prévus.
 
 Documentation : [http://www.alsacreations.com/article/lire/1509-microdata-microformats-schema-semantique.html](http://www.alsacreations.com/article/lire/1509-microdata-microformats-schema-semantique.html)
 
