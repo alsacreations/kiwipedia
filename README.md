@@ -1,13 +1,11 @@
 # Guidelines Alsacréations
 
-_Nos bonnes pratiques et recommandations internes à l'agence web [Alsacréations](http://www.alsacreations.fr)_
-
 Cette présente charte a pour objectif :
 
-- d'uniformiser et d’harmoniser les processus
+- d'uniformiser et d’harmoniser les processus de conception
 - de faciliter la production et la maintenance des projets web
 - de favoriser l’intervention de profils de compétences variés au sein d'une équipe
-- et de disposer d’outils réutilisables
+- de disposer d’outils réutilisables
 
 ## Liste des documents
 
@@ -22,8 +20,9 @@ Cette présente charte a pour objectif :
 
 ## En cours
 
-- [**Guidelines WordPress**](Guidelines-WordPress.md) (Draft)
-- [**Guidelines Webdesign**]() (Draft)
+- [**Guidelines WordPress**](Guidelines-WordPress.md) (Working Draft)
+- [**Guidelines Webdesign**]() (Working Draft)
+- [**Sécurité HTTP**]() (Working Draft)
 
 **NOTE : Aucun de ces documents n'est figé, ils sont en constante amélioration et évolution.**
 
