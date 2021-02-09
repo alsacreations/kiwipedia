@@ -350,7 +350,7 @@ Fournir une piste de sous-titres avec le format webVTT et l'élément `<track>`.
 Respecter les taux de contrastes minimum entre le texte et le fond.
 
 - https://toolness.github.io/accessible-color-matrix/ établit la matrice des couleurs à partir de la palette
-- https://app.contrast-finder.org/ propose des couleurs suffisament contrastées quand c'est pas déjà le cas
+- https://app.contrast-finder.org/ propose des couleurs suffisamment contrastées quand c'est pas déjà le cas
 - https://developer.paciellogroup.com/resources/contrastanalyser/ à installer, permet de pipetter dans tout programme, pas juste le navigateur
 
 Ne pas indiquer une information uniquement par la couleur.
