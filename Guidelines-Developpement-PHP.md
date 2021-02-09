@@ -137,7 +137,7 @@ function kaki($val1, $val2 = FALSE)
 Quelques critères essentiels sont à observer (parmi d’autres, la liste est non exhaustive) :
 
 - Suivre les recommandations de l'OWASP pour éviter les failles XSS (Cross Site Scripting) https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet
-- Utiliser les fonctions d’échappement pour valider les données utlisateur, avant traitement ou insertion dans la base de données.
+- Utiliser les fonctions d’échappement pour valider les données utilisateur, avant traitement ou insertion dans la base de données.
   - MySQL : [mysql_real_escape_string](http://php.net/manual/fr/function.mysql-real-escape-string.php) pour les chaînes de texte.
   - [preg_quote](http://php.net/manual/fr/function.preg-quote.php) pour les expressions régulières.
   - MySQL : Utiliser les fonctions de PDO quand c’est possible pour [échapper](http://www.php.net/manual/fr/pdostatement.bindparam.php) ou [préparer une requête](http://www.php.net/manual/fr/pdo.prepare.php).
