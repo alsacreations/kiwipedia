@@ -1,6 +1,6 @@
 # Guidelines JavaScript
 
-_Statut : Working Draft (WD)_
+_Statut : Recommendation (REC)_
 
 ## Généralités
 
