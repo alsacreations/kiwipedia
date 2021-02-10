@@ -23,9 +23,7 @@ La langue Anglaise demeure préconisée pour :
 
 ## Convention de Formatage
 
-La règle d’Indentation appliquée globalement est de **“2 espaces”** pour l’ensemble des langages.
-
-Les conventions spécifiques à certains langages ou technologies (PHP, WordPress) écrasent la règle générale au cas par cas si nécessaire.
+La règle d’indentation appliquée par défaut est de **“2 espaces”** pour l’ensemble des langages. Les conventions spécifiques à certains langages ou technologies (PHP, WordPress) sont prioritaires sur cette règle générale au cas par cas.
 
 Par exemple :
 
