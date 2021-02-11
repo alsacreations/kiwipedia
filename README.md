@@ -17,6 +17,7 @@ Cette présente charte a pour objectif :
 - [**Guidelines Accessibilité**](Guidelines-Accessibilite.md)
 - [**Guidelines Workflow**](Guidelines-Workflow.md)
 - [**Guidelines Développement PHP / MySql**](Guidelines-Developpement-PHP.md)
+- [**Guidelines Sécurité HTTP**](Guidelines-Securite-HTTP.md)
 
 ## En cours
 
