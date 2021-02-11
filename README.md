@@ -2,7 +2,7 @@
 
 Cette présente charte a pour objectif :
 
-- d'uniformiser et d’harmoniser les processus de conception
+- d'uniformiser et d’harmoniser les processus de conception au sein de l'agence web [Alsacreations.fr](https://www.alsacreations.fr/)
 - de faciliter la production et la maintenance des projets web
 - de favoriser l’intervention de profils de compétences variés au sein d'une équipe
 - de disposer d’outils réutilisables

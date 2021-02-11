@@ -2,6 +2,8 @@
 
 _Statut : Working Draft (WD)_
 
+Cette présente convention rassemble les bonnes pratiques de développement en production appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/). Elle a pour but d'évoluer dans le temps et de s'adapter à chaque nouveau projet.
+
 - On suit [PSR-12: Extended Coding Style](https://www.php-fig.org/psr/psr-12/)
 - Voir aussi [https://phptherightway.com/](https://phptherightway.com/)
 

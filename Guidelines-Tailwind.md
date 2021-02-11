@@ -1,0 +1,291 @@
+# Guidelines Tailwind
+
+_Statut : Working Draft (WD)_
+
+Tailwind est un framework CSS qui adopte une approche "atomique" de CSS, comprendre qu'à chaque classe correspond une action et une seule.
+
+Ce framework CSS "Utility First" est notre choix prioritaire et préconisé dans la plupart des projets de l'agence web [Alsacreations.fr](https://www.alsacreations.fr/) (WordPress, PHP, VueJS, Webpackmix).
+
+## Structure de projet
+
+De manière générale, sauf exceptions, Tailwind sera installé et configuré à la racine du projet. Il sera donc toujours dans le dossier `node_modules`, à côté des autres potentiels packages.
+
+### Installation
+
+#### Wordplate - Wordpress
+
+1. Installer les dépendances NPM `npm install tailwindcss postcss autoprefixer mix-tailwindcss`.
+
+2. Créer un fichier de config avec `npx tailwindcss init` vierge si possible.
+
+3. Configurer les fichiers qui seront à purger dans la config js.
+
+4. Dans le fichier `webpack.mix.js` ajouter Mix-Tailwind et l’utiliser sur mix.sass.
+
+5. Enfin dans `resources\styles\app.scss`, ajouter Tailwind.
+
+##### _tailwind.config.js_
+
+```js
+purge: ['public/theme/**/*.php', 'public/theme/**/*.twig', 'public/theme/**/*.js']
+```
+
+##### _webpack.mix.js_
+
+```js
+require('mix-tailwindcss')
+mix.sass('resources/styles/app.scss', 'styles').tailwind()
+```
+
+##### _resources\styles\app.scss_
+
+```scss
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+```
+
+#### Vue - Nuxt
+
+1. Installer les dépendances NPM npm install tailwindcss postcss autoprefixer. Note: Postcss est généralement installé par défaut, vérifier que c’est une version compatible tailwind.
+
+2. Créer un fichier de config avec `npx tailwindcss init` vierge si possible.
+
+3. Configurer les fichiers qui seront à purger dans la config js.
+
+4. Créer le fichier de config `postcss`.
+
+5. Enfin dans le fichier styles par défaut ajouter `Tailwind`.
+
+##### _tailwind.config.js_
+
+```js
+purge: ['src/**/*.vue', 'src/**/*.ts', 'src/**/*.js']
+```
+
+##### _postcss.config.js_
+
+```js
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+}
+```
+
+#### _fichier de styles scss_
+
+```scss
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+```
+
+### Outils importants et recommandés
+
+Il est important de télécharger l’extension VSCode [https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss).
+
+Cette extension permettra l’autocomplétion des class en prenant en compte la config.
+Note: l’extension ne marche que quand le workspace VSCode est ouvert à la racine du projet (où se trouve le fichier `tailwind.config.js`).
+
+Pour tester: [https://play.tailwindcss.com/](https://play.tailwindcss.com/)
+La doc: [https://tailwindcss.com/docs](https://tailwindcss.com/docs)
+
+Il est également important d’installer `tailwind-loves-sass` `npm i tailwind-loves-sass`.
+Il faudra ensuite l’inclure à la suite de Tailwind dans son fichier scss:
+
+```scss
+@import “tailwind-loves-sass”;
+```
+
+Ce package npm mettra à disposition des `mixins` `sass` pour chaque règle Tailwind comme `apply`, `screen`, …
+
+### Configuration
+
+Nous devrons toujours utiliser la configuration de Tailwind pour:
+
+- Les couleurs
+- Les fonts
+- La purge
+
+Ces points sont différents pour chaque projet et sont donc nécessaires à configurer. Il en résultera un fichier `CSS` optimisé.
+
+Cependant tout autre modification devra être faite avec Tailwind sauf si c’est impossible. De cette manière nous savons où tout est configuré peu importe le projet.
+
+L’ajout d’utility classes à une propriété déjà existante devra se faire dans la config et non dans le css sauf en cas complexe.
+
+Si l’on souhaite ajouter une utility class qui n’existe pas déjà, nous la créons en `SCSS` dans un fichier à part en utilisant un:
+
+```scss
+@include layer('utilities') {
+  .utility {
+    @include apply('font-bold');
+  }
+}
+```
+
+**Important**: L'ajout de valeur à une uitlité existante se fera également dans le fichier de configuration.
+
+EX:
+
+```js
+module.exports = {
+  theme: {
+    /**
+     * Ce que nous mettons dans extend sera rajouté à la configuration par défaut
+     */
+    extend: {
+      /**
+       * Ceci va donner toutes les valeurs de positions à background position!
+       */
+      backgroundPosition: (theme) => theme('positions'),
+      /**
+       * Ici on donne un valeur supplémentaire au spacing utilities de Tailwind
+       */
+      spacing: {
+        '12xl': '90rem',
+      },
+    },
+  },
+}
+```
+
+Le plus important est de ne garder que les couleurs que l’on utilise puisque ce sont elles qui pèsent le plus dans le fichiers global. Même si la purge nettoiera ces styles, il est important de le faire pour avoir une autocomplétion correcte et propre.
+
+**Enfin, il est obligatoire de spécifier les fichiers à purger pour le build final de Tailwind.**
+
+### Intégration
+
+`Tailwind` se résume autour de la création et réutilisation de composants HTML et non pas `CSS`. Il est donc !important de garder en tête de déstructurer son code HTML en composants, partials et autres.
+
+Nous évitons donc d’utiliser `@apply` ou `theme()` pour créer des composants CSS. Tout doit se faire autant que possible\* dans le HTML (composants `twig`, `php`, `vue`, ...).
+
+\*\*Dans un projet où il n’est pas possible de faire des includes ou composants `HTML`, il est alors conseillé d’utiliser `@apply` ou `theme()` dans le `CSS` directement.
+
+**Dans tous les cas, nous devons éviter la répétition.**
+
+### Écriture du HTML
+
+Il faut donner une classe sémantique permettant d’identifier le contexte de l’élément, cela rendra la lecture du HTML plus simple. **Toujours en début d’attribut classe.**
+
+Notre liste de classe devrait être organisée, c'est-à-dire, regrouper les classes en fonction de leur utilité. Nous faisons donc référence aux Guidelines CSS.
+
+Note: Lors de l’écriture d’un élément HTML qui ne sera pas découpé en composant uniquement (ex: un élément présent une seule fois sur un site), les transitions / animations / dégradés seront à écrire dans un fichier `CSS` à part. De cette manière nous évitons une pollution du code importante.
+
+```html
+<!-- Ne pas faire, le code est pollué -->
+<div class="card transition-colors duration-200 ease-in-out ..."></div>
+
+<!-- Dans ce cas on ne laisse que la classe sémantique -->
+<div class="card"></div>
+```
+
+```scss
+// On fait cette transition dans le scss directement
+@include layer('components') {
+  .card {
+    @include apply('transition-colors duration-200 ease-in-out');
+  }
+}
+```
+
+### Écrire du HTML purgeable
+
+`PurgeCSS` va en fait chercher toutes les classes `Tailwind` dans nos fichiers et ne comprendra pas une classe dynamique comme `“text-”~variable`.
+
+Il est obligatoire (dans le cas d’une classe `Tailwind`) de faire apparaître explicitement la classe entière.
+
+```html
+❌
+<div class="text-{{  error ? 'red-500' : 'blue-500' }}"></div>
+✔️
+<div class="{{  error ? 'text-red-500' : 'text-blue-500' }}"></div>
+```
+
+**Note:** Purge ne va supprimer que les styles de `Tailwind` et pas les nôtres (à part si ils sont dans un `layer`).
+
+### Ecriture du css custom
+
+La règle apply doit suivre le même ordre que l’attribut class en `HTML`, c’est à dire comme dans les `Guidelines CSS`.
+
+De plus, la bonne pratique serait de découper les styles en plusieurs `@apply` pour faciliter la lecture. Toujours en suivant l’ordre correct.
+
+Chaque `@apply` doit être commenté pour permettre de déterminer son utilité.
+
+```scss
+.custom-css-component {
+  // Background
+  @include apply('bg-blue-500');
+
+  // Colors
+  @include apply('text-blue-800');
+}
+```
+
+Il est également possible d’accéder aux variables tailwind avec `theme()`
+
+Ceci est notamment utile pour pouvoir utiliser les valeurs `Tailwind` pour créer des grid plus complexes ou dans des `calc()` par exemple.
+
+```scss
+.component {
+  display: grid;
+  grid-template-columns: theme('spacing.10') auto min-content;
+}
+```
+
+On utilise juste une notation d’objet js. Ex: `theme('spacing.64')` ou `theme('colors.blue.500')`.
+
+**Note:** Les valeurs sont séparées par des points et non des tirets dans cette notation.
+
+### Autres Directives Tailwind
+
+#### `@layer`
+
+Notre `css` doit être décomposé entre les différents layer `Tailwind` (“components”, “utilities”, “base”).
+
+Ceci à l’avantage de générer nos classes au même niveau que celles de `Tailwind`. De plus, nos classes seront également purgeables.
+
+```scss
+@include layer('component') {
+  .mon-composant {
+    ...
+  }
+}
+```
+
+#### `@variants`
+
+Ceci peut générer toute les classes `responsive`, `hover`, `focus`. Elles seront utilisables de la même manière que celles de Tailwind. `md:`, `hover:`, `focus:`.
+
+Elles seront de préférence dans le layer `utilities`.
+
+```scss
+@include layer('utilities') {
+  @include variants('resposive, hover, focus') {
+    .mon-utilite {
+      background-color: transparent;
+    }
+  }
+}
+```
+
+**Note:** Ces classes sont indépendantes, il est impossible d’avoir une classe qui fait `color: red;` mais qui fera `color: blue`; à partir d’un autre breakpoint.
+
+Puisque une class = une utilité.
+
+A partir du moment où notre classe a plus d’une utilité, c’est un `component`.
+
+Les préfix sm, md, hover, focus, … sont donc des switchs on/off pour une seule utilité.
+
+Ex: `sm:text-blue-500 md:text-red-500`
+
+#### `@screen`
+
+Il est possible de l’utiliser pour simplifier la lecture des media queries.
+
+```scss
+@include screen('md') {
+  ...
+}
+```
