@@ -25,7 +25,6 @@ Cette présente charte a pour objectif :
 - [**Guidelines Vue**]() (Working Draft)
 - [**Guidelines Vue dans WordPress**]() (Working Draft)
 - [**Guidelines TailwindCSS**]() (Working Draft)
-- [**Sécurité HTTP**]() (Working Draft)
 
 **NOTE : Aucun de ces documents n'est figé, ils sont en constante amélioration et évolution.**
 
