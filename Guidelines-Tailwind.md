@@ -8,20 +8,16 @@ Ce framework CSS "Utility First" est notre choix prioritaire et préconisé dans
 
 ## Structure de projet
 
-De manière générale, sauf exceptions, Tailwind sera installé et configuré à la racine du projet. Il sera donc toujours dans le dossier `node_modules`, à côté des autres potentiels packages.
+De manière générale, sauf exceptions, Tailwind sera installé et configuré à la racine du projet. Il sera donc toujours placé dans le dossier `node_modules`, au même titre que les autres packages potentiels.
 
 ### Installation
 
-#### Wordplate - Wordpress
+#### Wordplate - WordPress
 
 1. Installer les dépendances NPM `npm install tailwindcss postcss autoprefixer mix-tailwindcss`.
-
 2. Créer un fichier de config avec `npx tailwindcss init` vierge si possible.
-
-3. Configurer les fichiers qui seront à purger dans la config js.
-
+3. Configurer les fichiers qui seront à purger dans la configuration JS.
 4. Dans le fichier `webpack.mix.js` ajouter Mix-Tailwind et l’utiliser sur mix.sass.
-
 5. Enfin dans `resources\styles\app.scss`, ajouter Tailwind.
 
 ##### _tailwind.config.js_
@@ -47,14 +43,10 @@ mix.sass('resources/styles/app.scss', 'styles').tailwind()
 
 #### Vue - Nuxt
 
-1. Installer les dépendances NPM npm install tailwindcss postcss autoprefixer. Note: Postcss est généralement installé par défaut, vérifier que c’est une version compatible tailwind.
-
+1. Installer les dépendances NPM `npm install tailwindcss postcss autoprefixer`. Note: Postcss est généralement installé par défaut, vérifier que c’est une version compatible Tailwind.
 2. Créer un fichier de config avec `npx tailwindcss init` vierge si possible.
-
 3. Configurer les fichiers qui seront à purger dans la config js.
-
 4. Créer le fichier de config `postcss`.
-
 5. Enfin dans le fichier styles par défaut ajouter `Tailwind`.
 
 ##### _tailwind.config.js_
@@ -86,14 +78,17 @@ module.exports = {
 
 Il est important de télécharger l’extension VSCode [https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss).
 
-Cette extension permettra l’autocomplétion des class en prenant en compte la config.
-Note: l’extension ne marche que quand le workspace VSCode est ouvert à la racine du projet (où se trouve le fichier `tailwind.config.js`).
+Cette extension permettra l’autocomplétion des class en prenant en compte la configuration.
 
-Pour tester: [https://play.tailwindcss.com/](https://play.tailwindcss.com/)
-La doc: [https://tailwindcss.com/docs](https://tailwindcss.com/docs)
+_Note: l’extension ne fonctionne que quand le workspace VSCode est ouvert à la racine du projet (où se trouve le fichier `tailwind.config.js`)._
+
+Pour tester Tailwind en ligne : [https://play.tailwindcss.com/](https://play.tailwindcss.com/)
+
+La documentation de Tailwind : [https://tailwindcss.com/docs](https://tailwindcss.com/docs)
 
 Il est également important d’installer `tailwind-loves-sass` `npm i tailwind-loves-sass`.
-Il faudra ensuite l’inclure à la suite de Tailwind dans son fichier scss:
+
+Il faudra ensuite l’inclure à la suite de Tailwind dans son fichier scss :
 
 ```scss
 @import “tailwind-loves-sass”;
@@ -103,19 +98,19 @@ Ce package npm mettra à disposition des `mixins` `sass` pour chaque règle Tail
 
 ### Configuration
 
-Nous devrons toujours utiliser la configuration de Tailwind pour:
+Nous utilisons toujours la configuration de Tailwind pour :
 
 - Les couleurs
 - Les fonts
 - La purge
 
-Ces points sont différents pour chaque projet et sont donc nécessaires à configurer. Il en résultera un fichier `CSS` optimisé.
+Ces aspects sont différents à chaque projet et sont donc nécessaires à configurer. Il en résultera un fichier CSS optimisé.
 
-Cependant tout autre modification devra être faite avec Tailwind sauf si c’est impossible. De cette manière nous savons où tout est configuré peu importe le projet.
+Cependant tout autre modification devra être faite via Tailwind sauf si cela n'est paspossible. De cette manière nous savons où tout est configuré peu importe le projet.
 
-L’ajout d’utility classes à une propriété déjà existante devra se faire dans la config et non dans le css sauf en cas complexe.
+L’ajout de classes utilitairs à une propriété déjà existante devra se faire dans la configuration et non dans le CSS sauf en cas complexe.
 
-Si l’on souhaite ajouter une utility class qui n’existe pas déjà, nous la créons en `SCSS` dans un fichier à part en utilisant un:
+Si l’on souhaite ajouter une classe utilitaire qui n’existe pas déjà, nous la créons en `SCSS` dans un fichier à part en utilisant un :
 
 ```scss
 @include layer('utilities') {
@@ -125,7 +120,7 @@ Si l’on souhaite ajouter une utility class qui n’existe pas déjà, nous la 
 }
 ```
 
-**Important**: L'ajout de valeur à une uitlité existante se fera également dans le fichier de configuration.
+**Important**: L'ajout de valeur à une utilité existante se fera également dans le fichier de configuration.
 
 EX:
 
@@ -151,27 +146,27 @@ module.exports = {
 }
 ```
 
-Le plus important est de ne garder que les couleurs que l’on utilise puisque ce sont elles qui pèsent le plus dans le fichiers global. Même si la purge nettoiera ces styles, il est important de le faire pour avoir une autocomplétion correcte et propre.
+Le plus important est de ne conserver que les couleurs que l’on utilise puisque ce sont elles qui pèsent le plus dans le fichiers finaux. Même si la _Purge_ nettoiera ces styles, il est important de le faire pour avoir une autocomplétion correcte et propre.
 
 **Enfin, il est obligatoire de spécifier les fichiers à purger pour le build final de Tailwind.**
 
-### Intégration
+### Bonnes pratiques d'intégration
 
-`Tailwind` se résume autour de la création et réutilisation de composants HTML et non pas `CSS`. Il est donc !important de garder en tête de déstructurer son code HTML en composants, partials et autres.
+`Tailwind` est axé sur la création et réutilisation de composants HTML et non pas CSS. Il est donc _!important_ de garder en tête de déstructurer son code HTML en composants, partials et autres.
 
-Nous évitons donc d’utiliser `@apply` ou `theme()` pour créer des composants CSS. Tout doit se faire autant que possible\* dans le HTML (composants `twig`, `php`, `vue`, ...).
+Nous évitons donc d’utiliser `@apply` ou `theme()` pour créer des composants CSS. Tout doit se faire autant que possible dans le HTML (composants `twig`, `php`, `vue`, ...).
 
-\*\*Dans un projet où il n’est pas possible de faire des includes ou composants `HTML`, il est alors conseillé d’utiliser `@apply` ou `theme()` dans le `CSS` directement.
+Dans un projet où il n’est pas possible de profiter des includes ou composants HTML, il est alors conseillé d’utiliser `@apply` ou `theme()` dans le CSS directement.
 
 **Dans tous les cas, nous devons éviter la répétition.**
 
 ### Écriture du HTML
 
-Il faut donner une classe sémantique permettant d’identifier le contexte de l’élément, cela rendra la lecture du HTML plus simple. **Toujours en début d’attribut classe.**
+Nous appliquons une classe sémantique permettant d’identifier le contexte de l’élément, cela rendra la lecture du HTML plus simple. **Toujours en début d’attribut `class`.**
 
-Notre liste de classe devrait être organisée, c'est-à-dire, regrouper les classes en fonction de leur utilité. Nous faisons donc référence aux Guidelines CSS.
+Notre liste de classe devrait être organisée, c'est-à-dire, regrouper les classes en fonction de leur utilité. Nous faisons donc référence aux [Guidelines CSS](Guidelines-CSS.md).
 
-Note: Lors de l’écriture d’un élément HTML qui ne sera pas découpé en composant uniquement (ex: un élément présent une seule fois sur un site), les transitions / animations / dégradés seront à écrire dans un fichier `CSS` à part. De cette manière nous évitons une pollution du code importante.
+_Note : Lors de l’écriture d’un élément HTML qui ne sera pas découpé en composant uniquement (ex: un élément présent une seule fois sur un site), les transitions / animations / dégradés seront à écrire dans un fichier CSS à part. De cette manière nous évitons une pollution du code importante._
 
 ```html
 <!-- Ne pas faire, le code est pollué -->
@@ -192,7 +187,9 @@ Note: Lors de l’écriture d’un élément HTML qui ne sera pas découpé en c
 
 ### Écrire du HTML purgeable
 
-`PurgeCSS` va en fait chercher toutes les classes `Tailwind` dans nos fichiers et ne comprendra pas une classe dynamique comme `“text-”~variable`.
+`PurgeCSS` est un outil d'optimisation du poids du fichier CSS consistant à supprimer toutes les classes CSS inutilisées au sein du projet.
+
+Purge va chercher toutes les classes `Tailwind` dans nos fichiers et ne comprendra pas une classe dynamique comme `“text-”~variable`.
 
 Il est obligatoire (dans le cas d’une classe `Tailwind`) de faire apparaître explicitement la classe entière.
 
@@ -203,13 +200,13 @@ Il est obligatoire (dans le cas d’une classe `Tailwind`) de faire apparaître 
 <div class="{{  error ? 'text-red-500' : 'text-blue-500' }}"></div>
 ```
 
-**Note:** Purge ne va supprimer que les styles de `Tailwind` et pas les nôtres (à part si ils sont dans un `layer`).
+**Note:** Purge ne va supprimer que les styles de `Tailwind` et pas les nôtres (à part si ceux-ci sont dans un `layer`).
 
-### Ecriture du css custom
+### Écriture des styles personnalisés
 
-La règle apply doit suivre le même ordre que l’attribut class en `HTML`, c’est à dire comme dans les `Guidelines CSS`.
+La règle `apply` doit suivre le même ordre que l’attribut `class` en HTML, c’est à dire comme dans les [Guidelines CSS](Guidelines-CSS.md).
 
-De plus, la bonne pratique serait de découper les styles en plusieurs `@apply` pour faciliter la lecture. Toujours en suivant l’ordre correct.
+La bonne pratique est de découper les styles en plusieurs `@apply` pour faciliter la lecture. Toujours en suivant l’ordre correct.
 
 Chaque `@apply` doit être commenté pour permettre de déterminer son utilité.
 
@@ -223,9 +220,9 @@ Chaque `@apply` doit être commenté pour permettre de déterminer son utilité.
 }
 ```
 
-Il est également possible d’accéder aux variables tailwind avec `theme()`
+Il est également possible d’accéder aux variables Tailwind avec `theme()`
 
-Ceci est notamment utile pour pouvoir utiliser les valeurs `Tailwind` pour créer des grid plus complexes ou dans des `calc()` par exemple.
+Ceci est notamment utile pour pouvoir utiliser les valeurs `Tailwind` pour créer des Grilles plus complexes ou dans des `calc()` par exemple.
 
 ```scss
 .component {
@@ -234,17 +231,17 @@ Ceci est notamment utile pour pouvoir utiliser les valeurs `Tailwind` pour crée
 }
 ```
 
-On utilise juste une notation d’objet js. Ex: `theme('spacing.64')` ou `theme('colors.blue.500')`.
+On utilise juste une notation d’objet JS. Ex: `theme('spacing.64')` ou `theme('colors.blue.500')`.
 
-**Note:** Les valeurs sont séparées par des points et non des tirets dans cette notation.
+**Note:** Les valeurs sont séparées par des points (`.`) et non des tirets (`-`) dans cette notation.
 
 ### Autres Directives Tailwind
 
 #### `@layer`
 
-Notre `css` doit être décomposé entre les différents layer `Tailwind` (“components”, “utilities”, “base”).
+Notre CSS doit être décomposé entre les différents layer `Tailwind` (“components”, “utilities”, “base”).
 
-Ceci à l’avantage de générer nos classes au même niveau que celles de `Tailwind`. De plus, nos classes seront également purgeables.
+Ceci à l’avantage de générer nos classes au même niveau que celles de `Tailwind`. De plus, nos classes seront également _purgeables_.
 
 ```scss
 @include layer('component') {
@@ -272,11 +269,9 @@ Elles seront de préférence dans le layer `utilities`.
 
 **Note:** Ces classes sont indépendantes, il est impossible d’avoir une classe qui fait `color: red;` mais qui fera `color: blue`; à partir d’un autre breakpoint.
 
-Puisque une class = une utilité.
+Le principe général est qu'`une class = une fonction`. Donc à partir du moment où notre classe a plus d’une classe, elle devient un `component`.
 
-A partir du moment où notre classe a plus d’une utilité, c’est un `component`.
-
-Les préfix sm, md, hover, focus, … sont donc des switchs on/off pour une seule utilité.
+Les préfix `sm`, `md`, `hover`, `focus`, … sont donc des switchs `on/off` pour une seule utilité.
 
 Ex: `sm:text-blue-500 md:text-red-500`
 
