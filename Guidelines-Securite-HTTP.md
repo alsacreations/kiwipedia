@@ -84,9 +84,12 @@ Voir aussi <https://developer.mozilla.org/fr/docs/Web/HTTP/Headers/Referrer-Poli
 
 ## Cookies
 
-L'option `HttpOnly` s'assure de ne pas rendre accessibles les cookies en JavaScript.
+Modifie la façon dont les cookies sont créés par le serveur via les en-têtes HTTP en ajoutant ces indications :
 
-L'option `secure` assure de n'envoyer les cookies au navigateur que s'il est connecté en HTTPS.
+* L'option `HttpOnly` s'assure de ne pas rendre accessibles les cookies en JavaScript.
+* L'option `Secure` assure de n'envoyer les cookies au navigateur que s'il est connecté en HTTPS.
+
+Par exemple `Set-Cookie: nomducookie=valeur; Expires=Wed, 30 Oct 2030 13:37:00 GMT; Secure; HttpOnly`
 
 * S'assurer qu'ils sont juste utilisés par le lanagage back-end (envoyés par le navigateur via les en-têtes HTTP de la requête) et non pas par des scripts front (par exemple avec `document.cookie`).
 * S'assurer qu'en environnement de développement (http) les cookies ne sont pas bloqués par `secure`.
