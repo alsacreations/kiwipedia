@@ -156,7 +156,7 @@ console.log('hop')
 
 ## Access-Control-Allow-Origin (CORS)
 
-Indique quelle origine peut accéder aux ressources :
+Fait partie de Cross-origin Resource Sharing et indique quelle origine peut accéder aux ressources :
 
 * Soit toutes avec `*`.
 * Soit une seule origine précise (il n'est pas possible d'en indiquer plusieurs, ce qui peut être parfois problématique).
