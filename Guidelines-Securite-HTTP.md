@@ -51,7 +51,7 @@ Header set X-Frame-Options DENY
 
 ## X-Permitted-Cross-Domain-Policies
 
-Empêche des applications Adobe telles que PDF, Flash à utiliser du cross-domain.
+Empêche des applications Adobe telles que PDF, Flash (old!) d'utiliser du cross-domain.
 
 ```apache
 Header set X-Permitted-Cross-Domain-Policies "none"
