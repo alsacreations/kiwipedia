@@ -15,6 +15,7 @@ Autres listes de ressources
 
 - <http://cssvalues.com/> dictionnaire des propriétés et valeurs
 - <http://overapi.com/>
+- <https://devhints.io>
 - <http://devdocs.io/>
 - <http://wwwhere.io/>
 - <http://html5index.org/>
