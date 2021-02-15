@@ -13,14 +13,13 @@ Autres listes de ressources
 
 ## Documentations générales rapides
 
-- <http://cssvalues.com/> dictionnaire des propriétés et valeurs
-- <http://overapi.com/>
 - <https://devhints.io>
-- <http://devdocs.io/>
-- <http://wwwhere.io/>
+- <https://devdocs.io/>
+- <https://wwwhere.io/>
+- <https://overapi.com/>
 - <http://html5index.org/>
 - <https://platform.html5.org/>
-- <https://material.io/devices/> Google device metrics (pas que Google)
+- <https://cssvalues.com/> dictionnaire des propriétés et valeurs
 
 ## Compatibilité navigateur
 
