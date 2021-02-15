@@ -605,6 +605,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 - <http://net.tutsplus.com/tutorials/apache-2-basic-configuration-on-unix-like-systems/> Configuration Apache de base sous Linux (NetTuts)
 - <https://github.com/phanan/htaccess> snippets .htaccess
+- <https://htaccess.madewithlove.be> Tester/simuler les règles de réécriture
 - <https://code.tutsplus.com/tutorials/introduction-to-mailtrap-a-fake-smtp-server-for-pre-production-testing--cms-23279> Mailtrap : fake smtp server
 - <https://serversforhackers.com/series>
 
