@@ -149,9 +149,9 @@ Content-Security-Policy: script-src 'nonce-1337c4f42c'
 ```
 
 ```html
-<li nonce="1337c4f42c">
+<script nonce="1337c4f42c">
 console.log('hop')
-</li>
+</script>
 ```
 
 ## Access-Control-Allow-Origin (CORS)
