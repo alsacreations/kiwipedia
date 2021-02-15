@@ -1,5 +1,7 @@
 # Sécurité
 
+_Statut : Recommendation (REC)_
+
 Tests et ressources :
 
 * <https://observatory.mozilla.org/>
