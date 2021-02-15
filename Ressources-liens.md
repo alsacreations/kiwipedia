@@ -630,6 +630,13 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 ---
 
+## API
+
+- <https://insomnia.rest/> Tester/inspecter une API REST, GraphQL...
+- <https://hoppscotch.io/fr/> Tester une API en ligne
+
+---
+
 ## PHP
 
 - <http://www.phpliveregex.com/> Tester les regexp en live
