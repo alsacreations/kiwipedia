@@ -16,9 +16,9 @@ Cette présente convention rassemble les bonnes pratiques d'Accessibilité en pr
 
 ### Taux de contraste
 
-Respecter les taux de contrastes minimum entre le texte et le fond.
+Respecter les taux de contraste minimum entre le texte et le fond.
 
-Les outils de mesure de contrastes employés sont :
+Les outils de mesure de contraste employés sont :
 
 - https://contrast-finder.tanaguru.com/ (outil en ligne)
 - https://developer.paciellogroup.com/resources/contrastanalyser/ (Windows, MacOS)
