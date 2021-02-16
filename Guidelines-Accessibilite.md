@@ -57,23 +57,21 @@ Les outils de mesure de contrastes employés sont :
 
 ---
 
-## Bonnes pratiques d'intégration (HTML, CSS, ARIA, JavaScript)
+## Bonnes pratiques HTML
 
-### Bonnes pratiques HTML
-
-#### Rôles ARIA
+### Rôles ARIA
 
 Notre structure HTML type exploite les rôles landmarks ARIA (`role=`). C'est un choix volontaire de notre part bien que les spécifications WAI-ARIA considère que c'est inutile. La raison est que le référentiel français RGAA 4 les recommande.
 
 Pour plus de détails, voir [partie ARIA](#aria) ci-dessous.
 
-#### Menu de navigation
+### Menu de navigation
 
 Utiliser des combinaisons `<ul><li>` (liste non ordonnée) pour structurer les menus de navigation dans un élément `<nav role="navigation”>`.
 
-### Éléments sémantiques HTML5
+## Éléments sémantiques HTML5
 
-#### Zone d’en-tête principale
+### Zone d’en-tête principale
 
 ```html
 <header role="banner">[…]</header>
@@ -81,7 +79,7 @@ Utiliser des combinaisons `<ul><li>` (liste non ordonnée) pour structurer les m
 
 La balise `<header>` peut être utilisée plusieurs fois dans la page mais l’attribut `role="banner"` ne doit être utilisé qu’une seule fois.
 
-#### Pied de page
+### Pied de page
 
 ```html
 <footer role="contentinfo">[…]</footer>
@@ -89,7 +87,7 @@ La balise `<header>` peut être utilisée plusieurs fois dans la page mais l’a
 
 La balise `<footer>` peut être utilisée plusieurs fois dans la page mais l’attribut `role="contentinfo"` ne doit être utilisé qu’une seule fois.
 
-#### Zone de contenu principal
+### Zone de contenu principal
 
 ```html
 <main role="main">[…]</main>
@@ -97,7 +95,7 @@ La balise `<footer>` peut être utilisée plusieurs fois dans la page mais l’a
 
 La balise `<main>` ne peut être utilisée qu’une seule fois dans la page ainsi que l’attribut `role="main"`.
 
-#### Système de navigation principale
+### Système de navigation principale
 
 ```html
 <nav role="navigation">[…]</nav>
@@ -119,19 +117,19 @@ Ne sont pas concernés :
 
 Plus d’informations : [http://www.accede-web.com/notices/html-css-javascript/1-structure/1-5-role-navigation/](http://www.accede-web.com/notices/html-css-javascript/1-structure/1-5-role-navigation/)
 
-#### Liens d’évitement
+### Liens d’évitement
 
 - Prévoir des liens d'évitement en haut de document pour accéder rapidement au contenu, à la navigation à la recherche, etc.
 
 Voir [Guidelines HTML](Guidelines-HTML.md)
 
-#### Titres de page
+### Titres de page
 
 Dans `<title>`, éviter le caractère `|` (pipe) comme séparateur. Préférer `:` (deux-points).
 
-#### Liens
+### Liens
 
-##### Les intitulés des liens
+#### Les intitulés des liens
 
 Tous les liens doivent avoir un **intitulé**, un lien "vide" n’est pas accessible.
 
@@ -179,23 +177,23 @@ De plus, il n’est pas sûr à 100% que l’attribut `title` soit correctement 
 
 → dans ce cas là, le lecteur d’écran retranscrit bien _"Retrouvez-nous sur Facebook"_.
 
-##### Ouverture dans une nouvelle fenêtre
+#### Ouverture dans une nouvelle fenêtre
 
 Signaler lorsqu’un lien s’ouvre dans une nouvelle fenêtre :
 
-###### Première méthode
+##### Première méthode
 
 ```html
 <a href="URL" target="_blank" aria-label="Lire l’article (nouvelle fenêtre)">Lire l’article</a>
 ```
 
-###### Deuxième méthode
+##### Deuxième méthode
 
 ```html
 <a href="URL" target="_blank" title="Lire l’article (nouvelle fenêtre)">Lire l’article</a>
 ```
 
-#### Formulaires
+### Formulaires
 
 Utiliser l'élément `<fieldset>` associé à `<legend>` pour regrouper les champs ayant trait à la même thématique (ex : coordonnées du visiteur lors d'une commande en ligne.
 
@@ -213,13 +211,13 @@ Compléter si besoin par `aria-required="true"` et `aria-labelledby` par exemple
 <p id="hint">Numéro composé de 4 chiffres.</p>
 ```
 
-#### Navigation
+### Navigation
 
-##### Navigation cohérente
+#### Navigation cohérente
 
 Faciliter la navigation avec un menu, une recherche ou un plan du site, exploitables au clavier.
 
-##### Tabindex
+#### Tabindex
 
 Les éléments pouvant recevoir le focus autres que nativement `<a>`, `<input>` ou `<button>` pourront être équipés de `tabindex="0"`.
 
@@ -227,15 +225,15 @@ Les éléments ne devant pas recevoir de focus doivent comporter l'attribut `tab
 
 S'il y a lieu, changer l'ordre de tabulation avec des attributs `tabindex` positifs pour réfléter l'ordre logique et/ou l'ordre visuel des éléments.
 
-#### Tableaux
+### Tableaux
 
 N'utiliser les tableaux que pour la présentation de données, et non pour la structure du document ou du design.
 
 ---
 
-### Bonnes pratiques CSS
+## Bonnes pratiques CSS
 
-#### outline et focus
+### outline et focus
 
 Les éléments interactifs (liens, champs, boutons) affichent un contour lorsqu'ils réagissent au `:focus`, c'est à dire au clic, au touch ou à la navigation clavier.
 
@@ -262,7 +260,7 @@ Exemple tiré de&nbsp;: <https://developer.mozilla.org/fr/docs/Web/CSS/:focus-vi
 }
 ```
 
-#### CSS generated content
+### CSS generated content
 
 On peut générer du contenu en CSS à l’aide de `::before` et `::after` et la propriété `content`, pour afficher une icône par exemple (gérée via une font-icon).
 
@@ -276,7 +274,7 @@ Exemple :
 <a href="URL" class="btn"> <i class="icon-kiwi" aria-hidden="true"></i> KiwiParty </a>
 ```
 
-#### Contenu lu mais masqué à l’écran
+### Contenu lu mais masqué à l’écran
 
 Ne **jamais** utiliser `display: none` ou `visibility: hidden` pour masquer visuellement du texte qui devrait être retranscrit par un lecteur d’écran.
 
@@ -325,7 +323,7 @@ Ne pas faire :
 
 ---
 
-### Bonnes pratiques ARIA
+## Bonnes pratiques ARIA
 
 WAI-ARIA est une technologie permettant de donner des indications d'accessibilité supplémentaires par rapport aux comportements natifs déjà prévus par les navigateurs pour les éléments HTML de base. Elle passe par les attributs `role` (landmarks, regions, widgets divers) et `aria-*` (propriétés). ARIA est particulièrement recommandé pour les composants complexes pilotés par JavaScript (ex : menus déroulants, sliders, onglets, modales...).
 
@@ -335,13 +333,13 @@ La bibliothèque de plugins jQuery Pepin utilise ARIA pour la plupart des compos
 
 ---
 
-### Bonnes pratiques Images et Médias
+## Bonnes pratiques Images et Médias
 
 Chaque image doit avoir un attribut `alt`. Les images décoratives (qui n'apportent rien au contenu) doivent avoir un attribut alt vide `<img ... alt="">`.
 
 Documentation : [https://www.w3.org/WAI/tutorials/images/](https://www.w3.org/WAI/tutorials/images/)
 
-#### Image porteuse d’information ou cliquable
+### Image porteuse d’information ou cliquable
 
 Une image **porteuse d’information ou cliquable** doit avoir une alternative textuelle, l’attribut `alt` doit reprendre l’information figurant sur l’image.
 
@@ -365,7 +363,7 @@ Exemple d’une image **porteuse d’information** :
 
 **Attention** : inutile de commencer l’attribut `alt=""` par `"Image : …"`, cette information sera retranscrite par les lecteurs d’écrans lors de la lecture de l’élément `<img>`.
 
-#### Image décorative
+### Image décorative
 
 Une image de **décoration** doit avoir un `alt` vide afin que l’image ne soit pas retranscrite par les lecteurs d’écrans.
 
@@ -377,9 +375,9 @@ Exemple d’une image de **décoration** :
 <img src="kiwiparty.png" alt="" />
 ```
 
-#### SVG
+### SVG
 
-##### SVG dans lien
+#### SVG dans lien
 
 Utiliser de préférence un `<span>` invisible pour l’alternative textuelle, le texte sera alors retranscrit par les lecteurs d’écrans (cf "[Astuces CSS](#heading=h.wsw7a5jk60yz)" plus haut).
 
@@ -392,7 +390,7 @@ Meilleure technique relevée par Atalan : [http://blog.atalan.fr/svg-liens-et-le
 </a>
 ```
 
-#### Vidéos
+### Vidéos
 
 Utiliser un lecteur audio/vidéo accessible, par exemple les éléments HTML5 natifs.
 
@@ -400,9 +398,9 @@ Fournir une piste de sous-titres avec le format webVTT et l'élément `<track>`.
 
 ---
 
-### Bonnes pratiques Javascript
+## Bonnes pratiques Javascript
 
-#### ARIA live
+### ARIA live
 
 Utiliser l'attribut `aria-live` sur les informations provenant de chargements AJAX ou dévoilées par JavaScript dynamiquement (ex : non présentes naturellement dans le flux de la page comme des alertes).
 
@@ -414,13 +412,15 @@ Utiliser l'attribut `aria-live` sur les informations provenant de chargements AJ
 
 On pourra moduler avec `aria-relevant` (`additions`, `removals`, `text`, `all`) selon qu'on ajoute le contenu au conteneur ou que c'est lui-même qui se voit inséré dans le corps de la page.
 
-#### Autres composants
+### Autres composants
 
 Pour tous les composants de page agissant sur le contenu, de type swiper, slider, slideshow, accordéon, pagination, onglets, menu déroulant, on privilégiera les scripts "accessibles", y compris ceux utilisant ARIA. Le but étant, entre autres, de ne pas gêner la navigation au clavier et de permettre la lecture de la page avec une synthèse vocale.
 
 La bibliothèque de plugins jQuery Pepin est un départ pour cela <https://github.com/alsacreations/pepin>
 
 Pour les menus déroulants et mega menus, Accessible Mega Menu a fait ses preuves <https://adobe-accessibility.github.io/Accessible-Mega-Menu/>
+
+---
 
 ## Ressources Générales
 
