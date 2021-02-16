@@ -424,12 +424,11 @@ Pour les menus déroulants et mega menus, Accessible Mega Menu a fait ses preuve
 
 ## Ressources Générales
 
-- Notices Accedeweb [http://www.accede-web.com/notices/](http://www.accede-web.com/notices/)
-- Patterns accessibles [http://a11yproject.com/patterns/](http://a11yproject.com/patterns/)
-- Exemples ARIA [http://heydonworks.com/practical_aria_examples/](http://heydonworks.com/practical_aria_examples/)
-- RGAA 3 [https://references.modernisation.gouv.fr/rgaa-accessibilite](https://references.modernisation.gouv.fr/rgaa-accessibilite)
-- Plugins jQuery accessibles [https://a11y.nicolas-hoffmann.net/](https://a11y.nicolas-hoffmann.net/)
-- Plugins vanilla JS accessibles [https://van11y.net/](https://van11y.net/)
+- Notices Accedeweb <https://www.accede-web.com/notices/>
+- Checklist <https://www.a11yproject.com/checklist/>
+- Patterns accessibles <https://www.w3.org/TR/wai-aria-practices-1.1/>
+- RGAA <https://www.numerique.gouv.fr/publications/rgaa-accessibilite/>
+- Scripts vanilla JS accessibles <https://van11y.net/>
 
 ## Outils
 
