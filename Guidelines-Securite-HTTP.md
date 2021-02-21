@@ -2,13 +2,17 @@
 
 _Statut : Recommendation (REC)_
 
-Tests et ressources :
+Outils de test :
 
 * <https://observatory.mozilla.org/>
 * <https://securityheaders.com/>
 * <https://www.serpworx.com/check-security-headers/>
 * <https://www.immuniweb.com/websec/>
 * <https://csp-evaluator.withgoogle.com/>
+
+Ressources :
+
+* [https://www.alsacreations.com/article/lire/1723-tour-horizon-https-et-en-tetes-de-securite.html](Tour d’horizon sur HTTPS et les en-têtes de sécurité) sur alsacreations.com
 * <https://blog.appcanary.com/2017/http-security-headers.html>
 
 **Définition** : La notion d'origine (ou _same-origin_) indique qu'il a correspondance du protocole (http, https), du port (80) et du nom de domaine complet (avec ses sous domaines).
