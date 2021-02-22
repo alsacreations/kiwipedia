@@ -246,24 +246,3 @@ WHERE foo != 'oof'
 ORDER BY foofoo
 LIMIT 5, 100");
 ```
-
-## Serveur et performance
-
-Afin d’améliorer la réactivité de chargement et l’évaluation des performances par les moteurs de recherche, des bonnes pratiques sont à considérer :
-
-- Configurer la mise en cache des fichiers (notamment JS, CSS, images) avec les en-têtes HTTP Expires ou Cache-Control.
-- Configurer la compression des fichiers (textes, JS, CSS, HTML) et leur minification (gzip, deflate et autres algorithmes).
-
-### Outils de diagnostic
-
-- L’onglet Network/Réseau et Timeline des outils de développement navigateur
-- [PageSpeed](https://developers.google.com/speed/pagespeed/insights/)
-
-### Références
-
-- [https://css-tricks.com/performance-tools/](https://css-tricks.com/performance-tools/)
-- [Web Performance best practices](https://developers.google.com/speed/docs/insights/rules) (Google)
-
-## Sitemap
-
-Un fichier sitemap est placé à la racine du site et contient des références vers les pages les plus importantes du site ainsi que leur fréquence de mise à jour pour faciliter leur indexation par les moteurs de recherche. Des extensions pour CMS (WordPress, etc) existent pour générer automatiquement ce fichier.
