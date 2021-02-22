@@ -19,11 +19,11 @@ Cette présente charte a pour objectif :
 
 ## En cours
 
-- [**Guidelines WordPress**](Guidelines-WordPress.md) (Working Draft)
+- [**Guidelines WordPress**](Guidelines-WordPress.md)
 - [**Guidelines Accessibilité**](Guidelines-Accessibilite.md)
-- [**Guidelines Webdesign**]() (Working Draft)
-- [**Guidelines Vue**]() (Working Draft)
-- [**Guidelines Vue dans WordPress**]() (Working Draft)
+- [**Guidelines Webdesign**](Guidelines-Webdesign.md)
+- [**Guidelines Vue**](Guidelines-Vue.md)
+- [**Guidelines Vue dans WordPress**](Guidelines-Vue-WordPress.md)
 - [**Guidelines Développement PHP / MySql**](Guidelines-Developpement-PHP.md)
 
 **NOTE : Aucun de ces documents n'est figé, ils sont en constante amélioration et évolution.**
