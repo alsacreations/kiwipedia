@@ -13,6 +13,7 @@ Cette présente charte a pour objectif :
 - [**Guidelines Visual Studio Code**](Guidelines-VScode.md)
 - [**Guidelines HTML**](Guidelines-HTML.md)
 - [**Guidelines CSS**](Guidelines-CSS.md)
+- [**Guidelines TailwindCSS**](Guidelines-Tailwind.md)
 - [**Guidelines JavaScript / jQuery**](Guidelines-JavaScript.md)
 - [**Guidelines Accessibilité**](Guidelines-Accessibilite.md)
 - [**Guidelines Développement PHP / MySql**](Guidelines-Developpement-PHP.md)
@@ -24,7 +25,6 @@ Cette présente charte a pour objectif :
 - [**Guidelines Webdesign**]() (Working Draft)
 - [**Guidelines Vue**]() (Working Draft)
 - [**Guidelines Vue dans WordPress**]() (Working Draft)
-- [**Guidelines TailwindCSS**]() (Working Draft)
 
 **NOTE : Aucun de ces documents n'est figé, ils sont en constante amélioration et évolution.**
 
