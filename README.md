@@ -15,7 +15,6 @@ Cette présente charte a pour objectif :
 - [**Guidelines CSS**](Guidelines-CSS.md)
 - [**Guidelines TailwindCSS**](Guidelines-Tailwind.md)
 - [**Guidelines JavaScript / jQuery**](Guidelines-JavaScript.md)
-- [**Guidelines Développement PHP / MySql**](Guidelines-Developpement-PHP.md)
 - [**Guidelines Sécurité HTTP**](Guidelines-Securite-HTTP.md)
 
 ## En cours
@@ -25,6 +24,7 @@ Cette présente charte a pour objectif :
 - [**Guidelines Webdesign**]() (Working Draft)
 - [**Guidelines Vue**]() (Working Draft)
 - [**Guidelines Vue dans WordPress**]() (Working Draft)
+- [**Guidelines Développement PHP / MySql**](Guidelines-Developpement-PHP.md)
 
 **NOTE : Aucun de ces documents n'est figé, ils sont en constante amélioration et évolution.**
 
