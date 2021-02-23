@@ -10,7 +10,7 @@ Cette présente convention rassemble les bonnes pratiques d'Accessibilité en pr
 - Respecter la hiérarchie des titres `<hX>`.
 - Utiliser les éléments HTML pour leur fonction/sémantique et non pas pour leur forme.
   - Utiliser les éléments pouvant recevoir le focus (`<a>`, `<input type="button">`) lorsqu'ils sont cliquables/interactifs.
-- Exploiter WAI ARIA <https://www.w3.org/WAI/intro/aria> lorsque c'est pertinent pour aider le navigateur.
+- Exploiter WAI ARIA <https://www.w3.org/WAI/standards-guidelines/aria/> lorsque c'est pertinent pour aider le navigateur.
 
 ## Bonnes pratiques Webdesign
 
@@ -325,9 +325,10 @@ Ne pas faire :
 
 ## Bonnes pratiques ARIA
 
-WAI-ARIA est une technologie permettant de donner des indications d'accessibilité supplémentaires par rapport aux comportements natifs déjà prévus par les navigateurs pour les éléments HTML de base. Elle passe par les attributs `role` (landmarks, regions, widgets divers) et `aria-*` (propriétés). ARIA est particulièrement recommandé pour les composants complexes pilotés par JavaScript (ex : menus déroulants, sliders, onglets, modales...).
+WAI-ARIA est une technologie permettant de donner des indications d'accessibilité supplémentaires par rapport aux comportements natifs déjà prévus par les navigateurs pour les éléments HTML de base. Elle passe par les attributs `role` (landmarks, regions, widgets divers) et `aria-*` (propriétés). ARIA est aussi particulièrement recommandé pour les composants complexes pilotés par JavaScript (ex : menus déroulants, sliders, onglets, modales...).
 
 - [Matrice des rôles ARIA](http://whatsock.com/training/matrices/)
+- aria-labelledby + aria-describedby <https://a11y-guidelines.orange.com/fr/articles/attributs-aria-qui-peuvent-vous-sauver/>
 
 La bibliothèque de plugins jQuery Pepin utilise ARIA pour la plupart des composants <https://github.com/alsacreations/pepin>
 
