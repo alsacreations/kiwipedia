@@ -115,7 +115,7 @@ Ne sont pas concernés :
 - Les systèmes de pagination
 - table des matières
 
-Plus d’informations : [http://www.accede-web.com/notices/html-css-javascript/1-structure/1-5-role-navigation/](http://www.accede-web.com/notices/html-css-javascript/1-structure/1-5-role-navigation/)
+Plus d’informations : <https://www.accede-web.com/notices/html-et-css/structure-generale/structurer-les-menus-de-navigation-principaux-et-secondaires-avec-nav-rolenavigation/>
 
 ### Liens d’évitement
 
@@ -264,7 +264,7 @@ Exemple tiré de&nbsp;: <https://developer.mozilla.org/fr/docs/Web/CSS/:focus-vi
 
 On peut générer du contenu en CSS à l’aide de `::before` et `::after` et la propriété `content`, pour afficher une icône par exemple (gérée via une font-icon).
 
-Mais la plupart des lecteurs d’écrans actuels peuvent retranscrire ce contenu, ce qui peut provoquer une gêne (voir [http://tink.uk/accessibility-support-for-css-generated-content/](http://tink.uk/accessibility-support-for-css-generated-content/)).
+Mais la plupart des lecteurs d’écrans actuels peuvent retranscrire ce contenu, ce qui peut provoquer une gêne (voir <https://tink.uk/accessibility-support-for-css-generated-content>).
 
 Pour éviter cela, il est préférable d’insérer l’attribut `aria-hidden=true` sur l’élément.
 
@@ -278,7 +278,7 @@ Exemple :
 
 Ne **jamais** utiliser `display: none` ou `visibility: hidden` pour masquer visuellement du texte qui devrait être retranscrit par un lecteur d’écran.
 
-Utiliser plutôt la classe `.visually-hidden`, présente dans [KNACSS](http://knacss.com/). Cette astuce CSS permet de cacher visuellement du contenu texte mais tout en restant accessible aux lecteurs d’écrans.
+Utiliser plutôt la classe `.visually-hidden`, présente dans [KNACSS](https://www.knacss.com/). Cette astuce CSS permet de cacher visuellement du contenu texte mais tout en restant accessible aux lecteurs d’écrans.
 
 ```css
 .visually-hidden {
@@ -382,7 +382,7 @@ Exemple d’une image de **décoration** :
 
 Utiliser de préférence un `<span>` invisible pour l’alternative textuelle, le texte sera alors retranscrit par les lecteurs d’écrans (cf "[Astuces CSS](#heading=h.wsw7a5jk60yz)" plus haut).
 
-Meilleure technique relevée par Atalan : [http://blog.atalan.fr/svg-liens-et-lecteurs-decran/](http://blog.atalan.fr/svg-liens-et-lecteurs-decran/)
+Meilleure technique relevée par Atalan : <https://blog.atalan.fr/svg-liens-et-lecteurs-decran/>
 
 ```html
 <a href="…">
