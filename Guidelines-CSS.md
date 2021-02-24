@@ -161,12 +161,11 @@ TailwindCSS correspond à une approche "atomique" de CSS, comprendre qu'à chaqu
 
 La méthodologie et les conventions de Tailwind sont très spécifiques car toutes les classes sont déjà existantes dans les fichiers CSS, il suffit donc de les appliquer au sein des fichiers HTML. Il n'est nécessaire d'écrire des styles que sporadiquement au cours du projet.
 
-**Ce framework CSS "Utility First" est notre choix prioritaire et préconisé dans la plupart des projets (WordPress, PHP, VueJS, Webpackmix) (pour la configuration voir _Guidelines Tailwind TODO:_)**
+**Ce framework CSS "Utility First" est notre choix prioritaire et préconisé dans la plupart des projets (WordPress, PHP, VueJS, Webpackmix) (pour la configuration voir [_Guidelines Tailwind_](Guidelines-Tailwind.md))**
 
 Notre workflow Tailwind comporte :
 
 - Un [mini fichier CSS "reset" KNACSS dédié](https://github.com/nicolassutter/Tailwind_loves_sass/tree/main/options/knacss)
-- Une configuration personnalisée pour Webpackmix et tenant compte de&nbsp;: Tailwind, Browsersync (ainsi que Sass et Autoprefixer présents dans la configuration par défaut) (TODO:)
 - Une [Convention de nommage "Utility first"](Guidelines-Tailwind.md)
 - PurgeCSS (tâche permettant de supprimer les styles inutilisés)
 
