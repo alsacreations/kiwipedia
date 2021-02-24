@@ -165,9 +165,9 @@ La méthodologie et les conventions de Tailwind sont très spécifiques car tout
 
 Notre workflow Tailwind comporte :
 
-- Un mini fichier CSS "reset" KNACSS dédié (TODO:)
+- Un [mini fichier CSS "reset" KNACSS dédié](https://github.com/nicolassutter/Tailwind_loves_sass/tree/main/options/knacss)
 - Une configuration personnalisée pour Webpackmix et tenant compte de&nbsp;: Tailwind, Browsersync (ainsi que Sass et Autoprefixer présents dans la configuration par défaut) (TODO:)
-- Une Convention de nommage "Utility first" (_Guidelines Tailwind TODO:_)
+- Une [Convention de nommage "Utility first"](Guidelines-Tailwind.md)
 - PurgeCSS (tâche permettant de supprimer les styles inutilisés)
 
 ### KNACSS Reborn

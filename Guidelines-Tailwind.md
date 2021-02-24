@@ -96,6 +96,8 @@ Il faudra ensuite l’inclure à la suite de Tailwind dans son fichier scss :
 
 Ce package npm mettra à disposition des `mixins` `sass` pour chaque règle Tailwind comme `apply`, `screen`, …
 
+Il intègre également un [micro-reset CSS issu du projet KNACSS](https://github.com/nicolassutter/Tailwind_loves_sass/tree/main/options/knacss).
+
 ### Configuration
 
 Nous utilisons toujours la configuration de Tailwind pour :
