@@ -311,9 +311,9 @@ Autres listes de ressources
 
 ## Typographie, @font-face et polices
 
+- <https://google-webfonts-helper.herokuapp.com/> Télécharger les Google fonts en zip
 - <https://font-display.glitch.me/> Explication de font-display
-- <http://type-scale.com/>
-- <http://stateofwebtype.com/>
+- <https://type-scale.com/>
 - <https://prowebtype.com/> E-book (gratuit) Professionnal web typography (très bon, à lire)
 - <http://fontfamily.io/> Tester la présence des polices sur les OS
 - <http://icomoon.io/app/> (font-icons)
@@ -325,7 +325,6 @@ Autres listes de ressources
 - <http://www.shapecatcher.com/>
 - <http://fontcombiner.com/> (Combiner des glyphes)
 - <http://www.freefontconverter.com/> Convertir formats
-- <http://fontfamily.io/>
 
 ---
 
