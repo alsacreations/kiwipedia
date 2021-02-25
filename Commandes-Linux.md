@@ -679,6 +679,9 @@ Taille >50 Mo
 Trouver les fichiers php contenant mysql_pconnect
 `find . -name "*.php" | xargs grep "mysql_connect"`
 
+Trouver des fichiers et les supprimer
+`find -name "arfarfarf.txt" -delete
+
 Supprimer les fichiers vides
 `find -size 0 -print -exec rm {} \;`
 
