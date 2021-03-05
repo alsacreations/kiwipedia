@@ -591,6 +591,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 - <https://nodejs.org/fr/>
 - <https://jsmates.com/blog/managing-secrets-and-env-variables-using-dotenv> Fichiers .env
+- <https://github.com/oncletom/nodebook/blob/master/book.adoc> Apprendre Node.js par la pratique (par Thomas Parisot)
 
 ### Gulp
 
