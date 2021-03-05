@@ -20,6 +20,7 @@ Autres listes de ressources
 - <http://html5index.org/>
 - <https://platform.html5.org/>
 - <https://cssvalues.com/> dictionnaire des propriétés et valeurs
+- <https://free-for.dev/> Plein de ressources pour développeurs
 
 ## Compatibilité navigateur
 
