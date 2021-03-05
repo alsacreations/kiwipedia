@@ -568,6 +568,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://pwadvent.dev/> PWAdvent 24 bonnes fonctionnalités PWA
 - <https://firt.dev/pwa-2021> PWA en 2021
 - <https://www.smashingmagazine.com/2020/12/progressive-web-apps/> How To Optimize Progressive Web Apps
+- <https://medium.com/@firt/progressive-web-apps-in-2020-c15018c9931c> Progressive Web Apps in 2020
 - <https://www.davrous.com/2019/10/18/myth-busting-pwas-the-new-edge-edition/> (2019)
 - <https://medium.com/@firt/iphone-11-ipados-and-ios-13-for-pwas-and-web-development-5d5d9071cc49> (2019)
 
