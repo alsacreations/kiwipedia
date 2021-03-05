@@ -4,7 +4,9 @@ Autres listes de ressources
 
 - <https://github.com/sdmg15/Best-websites-a-programmer-should-visit/blob/master/README.md>
 - <https://github.com/dypsilon/frontend-dev-bookmarks>
-
+- <https://frontendmasters.com/books/front-end-handbook/2019/>
+- <https://free-for.dev/> Plein de ressources pour développeurs
+- 
 ## Sites d'actualités, tutoriels
 
 - <https://css-tricks.com/>
@@ -20,7 +22,6 @@ Autres listes de ressources
 - <http://html5index.org/>
 - <https://platform.html5.org/>
 - <https://cssvalues.com/> dictionnaire des propriétés et valeurs
-- <https://free-for.dev/> Plein de ressources pour développeurs
 
 ## Compatibilité navigateur
 
