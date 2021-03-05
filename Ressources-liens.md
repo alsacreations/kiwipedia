@@ -6,7 +6,7 @@ Autres listes de ressources
 - <https://github.com/dypsilon/frontend-dev-bookmarks>
 - <https://frontendmasters.com/books/front-end-handbook/2019/>
 - <https://free-for.dev/> Plein de ressources pour développeurs
-- 
+
 ## Sites d'actualités, tutoriels
 
 - <https://css-tricks.com/>
@@ -40,6 +40,7 @@ Autres listes de ressources
 - <https://html.spec.whatwg.org/multipage/> Spécification HTML WhatWG
 - <https://w3c.github.io/html/> Spécification HTML5 W3C
 - <https://schnaps.it/> Templates HTML5 avec KNACSS
+- <https://htmlparser.info/introduction/> Idiosyncrasies of the HTML parser (Simon Pieters)
 
 ### Microdata et sémantique
 
