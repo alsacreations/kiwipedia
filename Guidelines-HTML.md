@@ -6,20 +6,19 @@ Cette présente convention rassemble les bonnes pratiques HTML en production app
 
 ## Généralités
 
+Sauf spécificités contraires :
+
 - L’encodage des fichiers et des bases de données doit se faire en `UTF-8` (sans `BOM`).
 - Les valeurs identiques aux attributs ne sont pas renseignées sauf nécessité (ex. en HTML5 pas de `checked="checked"`),
-
-## Formatage
-
-- Les indentations se font à l’aide de deux espaces et non à l'aide de tabulations. Pour assurer une cohérence inter-projets, utiliser la convention [EditorConfig](http://editorconfig.org/).
-- Séparer les noms des fichiers, des images des classes et id CSS par des tirets (`.slide-info`, `styles-ie.css`, `jquery-2.0.min.css`, etc), sauf convention contraire apportée par le client.
+- Les indentations se font à l’aide de deux espaces et non à l'aide de tabulations. Pour assurer une cohérence inter-projets, utiliser la convention [EditorConfig](https://editorconfig.org/), voire Prettier.
+- Séparer les noms des fichiers, des images des classes et id CSS par des tirets (`.slide-info`, `styles-ie.css`, `jquery-3.0.min.css`, etc).
 - L'usage des double quotes est préconisé autour des valeurs d’attributs (ex. `class="fruit"`) ainsi que les simples quotes dans les autres langages JavaScript, PHP (ex. `alert('blup');`) de manière à faciliter les imbrications (ex. `alert('<p class="fruit">plop</p>');`).
 
 ## Nommage
 
 - Choisir des noms en anglais prioritairement (classes, fichiers, images, etc.).
 - Les noms d'éléments et des attributs sont rédigés en minuscules.
-- Les éléments disposants d’id (pour JavaScript) doivent disposer d’une classe dupliquée (pour CSS).
+- Les éléments disposants d’id (à limiter autant que possible) doivent disposer d’une classe dupliquée (pour CSS).
 
 La règle de nommage des éléments suit le modèle “fonction” puis “variante”, séparées par des traits d'union :
 
@@ -31,7 +30,7 @@ La règle de nommage des éléments suit le modèle “fonction” puis “varia
 
 ## Doctype
 
-Le doctype HTML5 est fortement recommandé.
+Le doctype HTML/HTML5 est :
 
 ```html
 <!DOCTYPE html>
@@ -39,7 +38,7 @@ Le doctype HTML5 est fortement recommandé.
 
 ## Langue
 
-La langue de la page est systématiquement renseignée via un attribut dans l’élément `<html>` :
+La langue de la page est systématiquement renseignée via un attribut dans l’élément `<html>` et un code [Code ISO 639-1](https://fr.wikipedia.org/wiki/Liste_des_codes_ISO_639-1) :
 
 ```html
 <html lang="fr"></html>
@@ -71,18 +70,14 @@ Pour une adaptation du site web vers les terminaux mobiles, l’élément `<meta
 
 **_Note : Les syntaxes empêchant l’agrandissement des contenus par le visiteur seront proscrites (maximum-scale=1, user-scalable=no, etc.)._**
 
-Documentation : [https://www.alsacreations.com/article/lire/1490-comprendre-le-viewport-dans-le-web-mobile.html](http://www.alsacreations.com/article/lire/1490-comprendre-le-viewport-dans-le-web-mobile.html)
+Documentation : [https://www.alsacreations.com/article/lire/1490-comprendre-le-viewport-dans-le-web-mobile.html](https://www.alsacreations.com/article/lire/1490-comprendre-le-viewport-dans-le-web-mobile.html)
 
 ## Favicon
 
-L’icône de favori est utilisée de différentes manières par les navigateurs et systèmes. Le format ICO est ancien, le format PNG permet une meilleure définition avec un poids plus léger. Mais :
+L’icône de favori (favicon) est utilisée de différentes manières par les navigateurs et systèmes. Le format ICO est ancien, le format PNG permet une meilleure définition avec un poids plus léger, et le [format SVG](https://css-tricks.com/svg-favicons-and-all-the-fun-things-we-can-do-with-them/) se voit [désormais supporté](https://caniuse.com/link-icon-svg).
 
-- Tous les navigateurs récents reconnaissent le format PNG
-- IE ne reconnaît que la relation "shortcut icon" (standard : “icon”), ne reconnaît pas le format PNG, et la version 10 ne supporte plus les commentaires conditionnels (pour isoler sa déclaration non standard et le format ICO). IE (y compris 10) va tout de même chercher par défaut dans la racine `/favicon.ico`
-
-Source : [http://realfavicongenerator.net/](http://realfavicongenerator.net/)
-
-Source (variante) : [https://github.com/audreyr/favicon-cheat-sheet](https://github.com/audreyr/favicon-cheat-sheet)
+* [https://realfavicongenerator.net/](https://realfavicongenerator.net/)
+* [https://github.com/audreyr/favicon-cheat-sheet](https://github.com/audreyr/favicon-cheat-sheet)
 
 ## Sémantique globale
 
@@ -129,9 +124,9 @@ Documentation : [https://github.com/DISIC/guide-integrateur](https://github.com/
 
 Dans la mesure du possible, et selon le type de site, les microformats les plus courants seront ajoutés.
 
-Vocabulaire privilégié : [http://schema.org](https://schema.org) (promu et utilisé par Google, Yahoo, Bing, Yandex) avec toute la [hiérarchie](https://schema.org/docs/full.html) de types prévus.
+Vocabulaire privilégié : [https://schema.org](https://schema.org) (promu et utilisé par Google, Yahoo, Bing, Yandex) avec toute la [hiérarchie](https://schema.org/docs/full.html) de types prévus.
 
-Documentation : [http://www.alsacreations.com/article/lire/1509-microdata-microformats-schema-semantique.html](http://www.alsacreations.com/article/lire/1509-microdata-microformats-schema-semantique.html)
+Documentation : [https://www.alsacreations.com/article/lire/1509-microdata-microformats-schema-semantique.html](https://www.alsacreations.com/article/lire/1509-microdata-microformats-schema-semantique.html)
 
 ## Classes et états
 
@@ -163,7 +158,7 @@ Le code correspondant pourrait ressembler à cela :
 
 ```html
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:url" content="http://alsacreations.com/{content_url}" />
+<meta name="twitter:url" content="https://alsacreations.com/{content_url}" />
 <meta name="twitter:image" content="/default_square_icon.png" />
 <meta name="twitter:title" content="{page_title} – Alsacréations" />
 <meta
@@ -191,15 +186,15 @@ Exemple d’une carte de type "photo" (la première) et “player” (la seconde
 
 Une fois en place, il faut demander la validation par Twitter : [https://dev.twitter.com/docs/cards/validation/validator](https://dev.twitter.com/docs/cards/validation/validator)
 
-### Facebook et OpenGraph
+### OpenGraph
 
-L’[OpenGraph](http://ogp.me/) permet, à l’instar de Twitter Cards, de maîtriser d’avantage les contenus partagés sur le réseaux social Facebook (entre autres). Le titre, l’image d’illustration, la description, l’URL, etc. peuvent être personnalisés pour ce réseaux spécifique.
+L’[OpenGraph](https://ogp.me/) permet de maîtriser davantage l'apparence des contenus partagés via URL sur les réseaux sociaux (Facebook, Twitter, entre autres). Le titre, l'image d'aperçu, la description, etc. peuvent être personnalisés. On peut tester l'implémentation à l'aide de <https://www.opengraph.xyz/>
 
 Parmi les valeurs de og: les plus utilisées on retrouve :
 
 ```html
 <meta property="og:title" content="Alsacréations, agence Web exotique" />
-<meta property="og:url" content="http://alsacreations.fr" />
+<meta property="og:url" content="https://alsacreations.fr" />
 <meta property="og:locale" content="fr_FR" />
 <meta property="og:site_name" content="Alsacréations.fr" />
 <meta
@@ -210,27 +205,18 @@ Parmi les valeurs de og: les plus utilisées on retrouve :
 <meta property="og:type" content="website" />
 ```
 
-Une balise meta spécifique à Facebook permet d’associer le site web à une application précise de Facebook.
-
-```html
-<meta property="fb:app_id" content="250737731706431" />
-Afin de pouvoir utiliser ces meta spécifiques, un namespace xmlns doit être créé, ce qui rend invalide la page en HTML5
-pur. La balise HTML devient alors :
-<html lang="fr" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/"></html>
-```
-
 ### OpenSearch
 
-Si le projet comporte un moteur de recherche efficace et pertinent, il peut être doté d’[OpenSearch](http://www.opensearch.org/).
+Si le projet comporte un moteur de recherche efficace et pertinent, il peut être doté d’[OpenSearch](https://www.opensearch.org/).
 
 ## Performance
 
 On veillera à respecter des critères communs de performance :
 
-- Limiter le nombre de ressources différentes exploitées (images, feuilles de styles, scripts, fonts)
-- Limiter le nombre de requêtes HTTP
+- Limiter le nombre de ressources différentes exploitées et donc de requêtes HTTP (images, feuilles de styles, scripts, fonts).
 - Minifier les ressources texte (CSS, JavaScript, JSON...)
 - Différer les requêtes moins importantes (lazy loading) (en JavaScript ou avec l'attribut natif `loading`)
+- Utiliser `prefetch` pour donner des indications de pré-chargement
 - Établir [https://bitsofco.de/your-first-performance-budget-with-lighthouse/](un budget de performance pour Lighthouse)
 
 Voir aussi : <https://github.com/thedaviddias/Front-End-Performance-Checklist>
