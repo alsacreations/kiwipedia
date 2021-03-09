@@ -7,6 +7,8 @@ Cette présente charte a pour objectif :
 - de favoriser l’intervention de profils de compétences variés au sein d'une équipe
 - de disposer d’outils réutilisables
 
+💬 Le web est un métier de plus en plus vaste, comportant une foule de détails qui vont avoir un impact sur la qualité, l'ergonomie, la performance, le référencement (SEO), la maintenabilité et au final sur le succès auprès de l'utilisateur. Tous les critères ne seront pas toujours applicables et le seront bien souvent en fonction du temps alloué.
+
 ## Liste des documents
 
 - [**Conventions Générales de Nommage**](Conventions-generales-nommage.md)
