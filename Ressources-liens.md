@@ -1,11 +1,13 @@
 # Ressources et liens utiles
 
-Autres listes de ressources
+Autres listes de ressources et checklists
 
 - <https://github.com/sdmg15/Best-websites-a-programmer-should-visit/blob/master/README.md>
 - <https://github.com/dypsilon/frontend-dev-bookmarks>
 - <https://frontendmasters.com/books/front-end-handbook/2019/>
 - <https://free-for.dev/> Plein de ressources pour développeurs
+- <https://github.com/thedaviddias/Front-End-Checklist>
+- <https://github.com/thedaviddias/Front-End-Performance-Checklist>
 
 ## Sites d'actualités, tutoriels
 
