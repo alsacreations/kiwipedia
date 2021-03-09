@@ -264,7 +264,7 @@ Exemple tiré de&nbsp;: <https://developer.mozilla.org/fr/docs/Web/CSS/:focus-vi
 }
 ```
 
-Autre méthode _(Note : à ce jour, Safari et Internet Explorer ne reconnaissent pas `:focus-visible` ni `@supports selector()`)_.:
+Autre méthode _(Note : à ce jour, Safari et Internet Explorer ne reconnaissent ni `:focus-visible` ni `@supports selector()` et appliqueront leur outline par défaut lors du focus sur cet exemple)_.:
 
 ```css
 @supports selector(div:focus-visible) {
