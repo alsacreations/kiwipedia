@@ -277,6 +277,8 @@ Autre méthode _(Note : à ce jour, Safari et Internet Explorer ne reconnaissant
 }
 ```
 
+Voir en ligne et tester [sur CodePen](https://codepen.io/alsacreations/pen/MWbzYJQ?editors=1100)
+
 ### CSS generated content
 
 On peut générer du contenu en CSS à l’aide de `::before` et `::after` et la propriété `content`, pour afficher une icône par exemple (gérée via une font-icon).
