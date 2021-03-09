@@ -28,7 +28,11 @@ La règle de nommage des éléments suit le modèle “fonction” puis “varia
 - boutons : `btn-primary` (oui) ou `button-primary` (oui)
 - modales : `modal-fullscreen` (oui)
 
-## Doctype
+## En-tête de document
+
+Tout ce que l'on peut y trouver : <https://github.com/joshbuchea/HEAD>
+
+### Doctype
 
 Le doctype HTML/HTML5 est :
 
@@ -36,7 +40,7 @@ Le doctype HTML/HTML5 est :
 <!DOCTYPE html>
 ```
 
-## Langue
+### Langue
 
 La langue de la page est systématiquement renseignée via un attribut dans l’élément `<html>` et un code [Code ISO 639-1](https://fr.wikipedia.org/wiki/Liste_des_codes_ISO_639-1) :
 
@@ -44,7 +48,13 @@ La langue de la page est systématiquement renseignée via un attribut dans l’
 <html lang="fr"></html>
 ```
 
-## Encodage
+Les langues alternatives en cas de site multilingue sont indiquées par une balise link de type _alternate_.
+
+```html
+<link rel="alternate" href="https://en.example.com/" hreflang="en">
+```
+
+### Encodage
 
 L’encodage du document (en UTF-8) est systématiquement renseigné via un élément meta dans le `<head>` :
 
@@ -52,27 +62,27 @@ L’encodage du document (en UTF-8) est systématiquement renseigné via un él�
 <meta charset="UTF-8" />
 ```
 
-## Titre de la page
+### Titre de la page
 
-Le titre de page, différent à chaque page, est systématiquement renseigné via un élément `<title>` dans le `<head>` :
+Le titre de page, différent à chaque page, d'une longueur maximum de 55 caractères (SEO), est systématiquement renseigné via un élément `<title>` dans le `<head>` :
 
 ```html
 <title>J'aime la choucroute</title>
 ```
 
-## Meta "Viewport"
+### Meta "Viewport"
 
 Pour une adaptation du site web vers les terminaux mobiles, l’élément `<meta name="viewport">` est ajouté dans la partie `<head>`.
 
 ```html
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 ```
 
 **_Note : Les syntaxes empêchant l’agrandissement des contenus par le visiteur seront proscrites (maximum-scale=1, user-scalable=no, etc.)._**
 
 Documentation : [https://www.alsacreations.com/article/lire/1490-comprendre-le-viewport-dans-le-web-mobile.html](https://www.alsacreations.com/article/lire/1490-comprendre-le-viewport-dans-le-web-mobile.html)
 
-## Favicon
+### Favicon
 
 L’icône de favori (favicon) est utilisée de différentes manières par les navigateurs et systèmes. Le format ICO est ancien, le format PNG permet une meilleure définition avec un poids plus léger, et le [format SVG](https://css-tricks.com/svg-favicons-and-all-the-fun-things-we-can-do-with-them/) se voit [désormais supporté](https://caniuse.com/link-icon-svg).
 
@@ -95,6 +105,10 @@ La structure globale préconisée est celle-ci :
 - `<nav id="navigation" role="navigation">` : navigation principale
 - `<form id="search" role="search">` : recherche principale
 
+### Niveaux de titres
+
+Chaque page doit comprendre un élément de titre de premier niveau `<h1>` et la structure des autres niveaux doit suivre un ordre logique (h1 à h6).
+
 ## Liens d’évitement
 
 Afin de proposer une navigation alternative au clavier pour certaines déficiences visuelles, des liens d’évitements sont systématiquement intégrés dans la structure HTML :
@@ -116,9 +130,7 @@ color:#fff; text-decoration: none; } .skip-links a:focus { position: static; }
 
 ## Accessibilité
 
-Une attention toute particulière sera apportée à l’accessibilité des documents afin que chaque utilisateur, quelle que soit sa défaillance, puisse avoir plein accès aux contenus proposés.
-
-Documentation : [https://github.com/DISIC/guide-integrateur](https://github.com/DISIC/guide-integrateur)
+Une attention toute particulière sera apportée à l’accessibilité des documents afin que chaque utilisateur, quelle que soit sa défaillance, puisse avoir plein accès aux contenus proposés. Voir aussi [Guidelines Accessibilité](Guidelines-Accessibilite.md) et <https://github.com/DISIC/guide-integrateur>.
 
 ## Microdata
 
@@ -136,11 +148,9 @@ Documentation : [https://www.alsacreations.com/article/lire/1509-microdata-micro
 
 ## Liens target \_blank
 
-Dans la mesure du possible, éviter les liens ouvrant une nouvelle fenêtre/onglet, sans les signaler explicitement. Ils perturbent la navigation classique du visiteur et peuvent créer des failles de sécurité.
+Dans la mesure du possible, éviter les liens ouvrant une nouvelle fenêtre/onglet, sans les signaler explicitement. Ils perturbent la navigation classique du visiteur et peuvent créer des failles de sécurité. Voir aussi [https://medium.com/@jitbit/target-blank-the-most-underestimated-vulnerability-ever-96e328301f4c](https://medium.com/@jitbit/target-blank-the-most-underestimated-vulnerability-ever-96e328301f4c).
 
-Voir aussi [https://medium.com/@jitbit/target-blank-the-most-underestimated-vulnerability-ever-96e328301f4c](https://medium.com/@jitbit/target-blank-the-most-underestimated-vulnerability-ever-96e328301f4c)
-
-**_Toujours utiliser `rel="noopener noreferrer"` sur des liens `target="_blank"`_**
+**_Toujours utiliser `rel="noopener"` sur des liens `target="_blank"`_**
 
 ## Meta spécifiques - SEO et réseaux sociaux
 
