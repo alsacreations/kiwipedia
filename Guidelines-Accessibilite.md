@@ -237,9 +237,11 @@ N'utiliser les tableaux que pour la présentation de données, et non pour la st
 
 Les éléments interactifs (liens, champs, boutons) affichent un contour lorsqu'ils réagissent au `:focus`, c'est à dire au clic, au touch ou à la navigation clavier (les 3).
 
-Ce contour correspond à la propriété CSS `outline` (ce n'est pas une `border` ni un `box-shadow`) et il est important de ne pas le supprimer autour des éléments cliquables (pas de `outline: none`) car il a été conçu pour rendre ces éléments accessibles à tous (= se repérer lors d'une navigation au clavier).
+Ce contour correspond à la propriété CSS `outline` (ce n'est pas une `border` ni un `box-shadow`).
 
-On peut préserver une mise en exergue des éléments recevant le focus clavier avec `:focus-visible` _(Note : à ce jour, Safari et Internet Explorer ne reconnaissant pas `:focus-visible`)_.
+L'ensemble des navigateurs appliquent par défaut un `outline` visible lors de l'événement `:focus` et, même si nous pourrions trouver cela disgracieux, il est important de ne pas le supprimer autour des éléments cliquables (pas de `outline: none`) car il a été conçu pour rendre ces éléments accessibles à tous (= se repérer lors d'une navigation au clavier).
+
+Grâce à la pseudo-classe `:focus-visible` il est possible de masquer le contour (focus) lors du clic ou d'un touch tout en le préservant lors d'un focus au clavier _(Note : à ce jour, Safari et Internet Explorer ne reconnaissent pas `:focus-visible`)_.
 
 Exemple tiré de&nbsp;: <https://developer.mozilla.org/fr/docs/Web/CSS/:focus-visible>
 
@@ -262,15 +264,15 @@ Exemple tiré de&nbsp;: <https://developer.mozilla.org/fr/docs/Web/CSS/:focus-vi
 }
 ```
 
-Autre méthode _(Note : à ce jour, Safari et Internet Explorer ne reconnaissant pas `:focus-visible` ni `@supports selector()`)_.:
+Autre méthode _(Note : à ce jour, Safari et Internet Explorer ne reconnaissent pas `:focus-visible` ni `@supports selector()`)_.:
 
 ```css
 @supports selector(div:focus-visible) {
-  /* only on clic/tap focus */
+  /* uniquement au clic/tap focus */
   .custom-button:focus:not(:focus-visible) {
     outline: 0;
   }
-  /* only on keyboard focus */
+  /* uniquement au focus clavier */
   .custom-button:focus-visible {
     outline: 6px dashed hotpink;
   }
