@@ -110,6 +110,10 @@ Autres listes de ressources et checklists
 - <http://screensiz.es/>
 - <http://dev.opera.com/articles/responsive-images/> Responsive images use cases sippets
 
+### Autres techniques et modules CSS
+
+- <https://learnui.design/tools/gradient-generator.html> Générateur de beaux dégradés de couleur
+
 ---
 
 ## Accessibilité
