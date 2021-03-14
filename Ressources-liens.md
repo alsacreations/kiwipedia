@@ -326,14 +326,13 @@ Autres listes de ressources et checklists
 - <https://type-scale.com/>
 - <https://prowebtype.com/> E-book (gratuit) Professionnal web typography (très bon, à lire)
 - <http://fontfamily.io/> Tester la présence des polices sur les OS
-- <http://icomoon.io/app/> (font-icons)
+- <https://icomoon.io/app/> (font-icons)
 - <http://fontastic.me/> (font-icons)
 - <https://fontello.com/> (font-icons)
 - <http://www.fontsquirrel.com/tools/webfont-generator>
 - <http://www.losttype.com/browse/>
-- <http://www.clever-age.com/veille/blog/optimiser-le-rendu-de-font-face.html>
 - <http://www.shapecatcher.com/>
-- <http://fontcombiner.com/> (Combiner des glyphes)
+- <https://fontcombiner.com/> Combiner des glyphes
 - <http://www.freefontconverter.com/> Convertir formats
 
 ---
@@ -342,7 +341,6 @@ Autres listes de ressources et checklists
 
 - <https://www.figma.com/> Figma
 - <https://www.sketchapp.com/> Sketch
-- <http://www.psdvalidator.com/> valide les PSD selon l’étiquette
 - <https://assets.adobe.com/link/b8ecd6b6-94ac-468c-9cfa-b2c666c81a6c?section=extract> Adobe Assets : découpage CSS/PNG en ligne, extraction de codes
 - <https://designer.io/> Gravit designer
 - <https://www.photopea.com/> Ouvre/édite/sauve PSD, Gimp, Sketch en ligne
@@ -417,6 +415,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 ### Images libres (ou pas)
 
+- <https://iconduck.com/> Icônes
 - <https://www.stickpng.com/> (PNG transparents)
 - <https://pngdb.com/> (PNG transparents)
 - <https://www.pinpng.com> (PNG transparents)
