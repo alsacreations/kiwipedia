@@ -380,7 +380,16 @@ Copier un fichier ou un répertoire
 
 ---
 
-## Disque dur
+## Disque dur, partitions, structure
+
+Checkdisk ext4
+`fsck.ext4`
+
+Lister la configuration des partitions et montages
+`cat /etc/fstab`
+
+Infos de montages actives
+`cat /proc/mounts`
 
 Liste les devices de bloc (disques durs) et leurs points de montage
 `lsblk`
@@ -394,32 +403,40 @@ Liste tous les UUID
 Liste tous les disques par ID matériel
 `ls -al /dev/disk/by-id`
 
-Liste de toutes les partitions
-`fdisk -l` ou `parted -l`
-
-Statistiques I/O disques durs
-`cat /proc/diskstats`
+Lister toutes les partitions
+`fdisk -l` ou `parted -l` ou `gdisk -l /dev/XXXX`
 
 Démonter un volume
 `umount /dev/sda1`
 
 Démonter un volume (forcer)
-`umount -fl /dev/sda1`
+`umount -fl /dev/XXXX`
 
 Monter un volume (déjà listé dans fstab)
-`mount /dev/sda1`
+`mount /dev/XXXX`
 
-Monter un volume à la demande
-`mount -t ext4 /dev/sda1 /mnt/path`
-
-Infos de montages
-`cat /proc/mounts`
-
-Qui utilise la ressource ?
-`fuser -v /media/path/`
+Monter un volume à la demande en spécifiant le type de système de fichiers
+`mount -t ext4 /dev/XXXX /mnt/path`
 
 Partitionner (p = afficher, d = supprimer, n = new)
 `fdisk /dev/XXXX`
+
+Créer une partition ext4 sur /dev/sda
+`mkfs.ext4 /dev/sda -v`
+
+Recopier partitions sda vers sdb (après remplacement disque par exemple)
+`sfdisk -d /dev/sda | sfdisk /dev/sdb`
+
+Copier tous les fichiers d'un disque/point de montage vers un autre (en préservant les droits, liens etc)
+`rsync -aHAXSWx /source /destination`
+
+### Divers
+
+Statistiques I/O disques durs
+`cat /proc/diskstats`
+
+Qui utilise la ressource ?
+`fuser -v /media/path/`
 
 Espace disque libre
 `df -h`
@@ -429,32 +446,6 @@ Espace disque occupé dans les sous-dossiers classés par taille
 
 Triple benchmark rapide disque
 `for i in 1 2 3; do hdparm -tT /dev/hda; done`
-
-### Partitions, structure
-
-Lister la configuration des partitions et montages
-`cat /etc/fstab`
-
-Créer une partition ext4 sur /dev/sda
-`mkfs.ext4 /dev/sda -v`
-
-Taille des partitions
-`sfdisk -s`
-
-Vérifier type/boot partitions
-`sfdisk -V /dev/sdb`
-
-Liste des partitions sur le disque
-`sfdisk -l /dev/sda`
-
-Recopier partitions sda vers sdb (après remplacement disque par exemple)
-`sfdisk -d /dev/sda | sfdisk /dev/sdb`
-
-Checkdisk ext4
-`fsck.ext4`
-
-Copier tous les fichiers d'un disque/point de montage vers un autre (en préservant les droits, liens etc)
-`rsync -aHAXSWx /source /destination`
 
 ### Raid
 
