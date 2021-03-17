@@ -391,9 +391,6 @@ Liste tous les UUID
 Liste tous les disques par ID matériel
 `ls -al /dev/disk/by-id`
 
-Espace disque libre
-`df -h`
-
 Liste de toutes les partitions
 `fdisk -l` ou `parted -l`
 
@@ -421,8 +418,11 @@ Qui utilise la ressource ?
 Partitionner (p = afficher, d = supprimer, n = new)
 `fdisk /dev/XXXX`
 
+Espace disque libre
+`df -h`
+
 Espace disque occupé dans les sous-dossiers classés par taille
-`du -hs * | sort -h`
+`du -skh * | sort -h`
 
 Triple benchmark rapide disque
 `for i in 1 2 3; do hdparm -tT /dev/hda; done`
