@@ -452,7 +452,7 @@ Triple benchmark rapide disque
 Vue globale Raid [U_] : U = Up, \_ = Down
 `cat /proc/mdstat`
 
-Administration RAID : scan des array présents
+Administration RAID : scan des arrays présents
 `mdadm --detail --scan`
 
 Administration RAID : vue des détails pour un array spécifique
@@ -461,10 +461,16 @@ Administration RAID : vue des détails pour un array spécifique
 Si tout va bien, "State : clean", "Active Devices : 2", "Working Devices : 2"
 Qui utilise quoi ? `cat /proc/mounts` (voir aussi `lsblk`)
 
-Marquer comme défectueux avant de remove
+Assembler un array connu (utilise `/etc/mdadm/mdadm.conf`, nécessite un `mount` ensuite pour être utilisé)
+`mdadm --assemble /dev/mdXXX`
+
+Arrêter un array connu
+`mdadm --stop /dev/mdXXX`
+
+Marquer un disque comme défectueux avant de remove d'un array
 `mdadm --set-faulty /dev/md0 /dev/sdb`
 
-Remove
+Remove un disque d'un array
 `mdadm --remove /dev/md0 /dev/sdb`
 
 Forcer un remove de disque déjà en fail (F) mais devenu indisponible en device
@@ -476,7 +482,7 @@ Remettre à zéro les superblocs Raid (erreur négligeable si aucun reste de rai
 Ajouter une partition sdb1 au raid md0
 `mdadm --manage /dev/md0 --add /dev/sdb1`
 
-Mettre à jour le fichier de configuration pour le démarrage (attention, vérifier à la main)
+Mettre à jour le fichier de configuration pour le démarrage (attention, vérifier à la main, et il faut probablement aussi `update-initramfs -u` après)
 `mdadm --examine --scan >>/etc/mdadm/mdadm.conf`
 
 Voir aussi
