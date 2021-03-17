@@ -385,6 +385,9 @@ Copier un fichier ou un répertoire
 Liste les devices de bloc (disques durs) et leurs points de montage
 `lsblk`
 
+Liste les types de systèmes de fichiers
+`lsblk -f`
+
 Liste tous les UUID
 `blkid`
 
