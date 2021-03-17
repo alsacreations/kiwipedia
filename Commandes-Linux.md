@@ -482,6 +482,9 @@ Remettre à zéro les superblocs Raid (erreur négligeable si aucun reste de rai
 Ajouter une partition sdb1 au raid md0
 `mdadm --manage /dev/md0 --add /dev/sdb1`
 
+Mettre à jour le fichier de configuration pour le démarrage (attention, vérifier à la main)
+`mdadm --examine --scan >>/etc/mdadm/mdadm.conf`
+
 Voir aussi
 
 - http://www.ducea.com/2009/03/08/mdadm-cheat-sheet/
