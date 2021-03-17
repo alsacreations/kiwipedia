@@ -438,9 +438,6 @@ Lister la configuration des partitions et montages
 Créer une partition ext4 sur /dev/sda
 `mkfs.ext4 /dev/sda -v`
 
-Copier la structure des partitions de sda vers sdb
-`sfdisk -d /dev/sda | sfdisk /dev/sdb`
-
 Taille des partitions
 `sfdisk -s`
 
@@ -455,6 +452,9 @@ Recopier partitions sda vers sdb (après remplacement disque par exemple)
 
 Checkdisk ext4
 `fsck.ext4`
+
+Copier tous les fichiers d'un disque/point de montage vers un autre (en préservant les droits, liens etc)
+`rsync -aHAXSWx /source /destination`
 
 ### Raid
 
