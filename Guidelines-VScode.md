@@ -10,6 +10,8 @@ Cette présente convention rassemble les bonnes pratiques VS Code en production 
 
 - `⌘⇧P` (`Ctrl+Shift+P` sur Windows) : Show Command Palette (permet de lancer une tâche d'un plugin)
 - `⌘P` (`Ctrl+P`) : _Quick Open_, _Go to File_ : recherche rapide de fichiers dans le projet
+- `⇧⌘L` (`Ctrl+Shift+L`) : _Select all occurrences of current selection_ : sélectionne toutes les occurences d'un mot
+- `⇧⌥↓` (`Shift+Alt + ↓`) : _Copy line down_ : duplique la ligne courante
 - `⌘⇧F` (`Ctrl+Shift+F`) : _Find_ : rechercher dans le projet
 - `⌥⌘F` (`Ctrl+H`) : _Replace_ : remplacer dans le projet
 - `⌘,` (`Ctrl+,`) : _Settings_ : paramètres
