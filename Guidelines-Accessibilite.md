@@ -7,9 +7,9 @@ Cette présente convention rassemble les bonnes pratiques d'Accessibilité en pr
 ## Généralités
 
 - Ne pas fixer de hauteur sur les éléments afin que le contenu reste lisible lorsque le texte est zoomé.
-- Respecter la hiérarchie des titres `<hX>`.
+- Respecter la hiérarchie des titres `<hX>` (l'extension "Headings Map" (extension [Chrome](https://chrome.google.com/webstore/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi) et [Firefox](https://addons.mozilla.org/fr/firefox/addon/headingsmap/)) permet de vérifier que la hiérachie des titres est cohérente).
 - Utiliser les éléments HTML pour leur fonction/sémantique et non pas pour leur forme.
-  - Utiliser les éléments pouvant recevoir le focus (`<a>`, `<input type="button">`) lorsqu'ils sont cliquables/interactifs.
+  - Utiliser les éléments pouvant recevoir le focus (`<a>`, `<input type="button">`, `<button>`) lorsqu'ils sont cliquables/interactifs.
 - Exploiter WAI ARIA <https://www.w3.org/WAI/standards-guidelines/aria/> lorsque c'est pertinent pour aider le navigateur.
 
 ## Bonnes pratiques Webdesign
@@ -24,19 +24,22 @@ Les outils de mesure de contraste employés sont :
 - https://developer.paciellogroup.com/resources/contrastanalyser/ (Windows, MacOS)
 - https://usecontrast.com/ (MacOS)
 - https://contrasteapp.com/ (MacOS)
+- https://app.contrast-finder.org/ (outil en ligne)
+- WCAG Color contrast checker (extension [Chrome](https://chrome.google.com/webstore/detail/wcag-color-contrast-check/plnahcmalebffmaghcpcmpaciebdhgdf) et [Firefox](https://addons.mozilla.org/fr/firefox/addon/wcag-contrast-checker/)) qui permet de vérifier les contrastes de couleurs directement depuis sa page HTML.
+
 
 ### Checklist accessibilité Webdesign
 
-- Respecter le Contrastes de couleur + Gammes de couleurs
+- Respecter le contraste de couleur + gammes de couleurs
 - Ne pas indiquer une information uniquement par la couleur.
 - Respecter une taille minimum de police pour la lisibilité.
-- Pas d’information uniquement véhiculée par la couleur
 - Tailles des zones de touch en mobile + espacements suffisants entre les zones
 - Présence d’un menu de liens rapides
 - Icônes et/ou images accompagnées d’un texte/intitulé si nécessaire
 - Clarté du/des textes/du langage
 - Mise en contexte des "Call To Action"
 - Indiquer clairement quels libellés correspondent à quels champs de formulaires
+- Les libellés et les champs doivent être accolés 
 - Boutons radios/checkboxes : le champ de sélection doit être large et pas seulement sur la box
 - Indication des champs obligatoires
 - Indication des formats de saisie (numérique, …)
@@ -95,43 +98,71 @@ La balise `<footer>` peut être utilisée plusieurs fois dans la page mais l’a
 
 La balise `<main>` ne peut être utilisée qu’une seule fois dans la page ainsi que l’attribut `role="main"`.
 
-### Système de navigation principale
+### Système de navigation
 
 ```html
 <nav role="navigation">[…]</nav>
 ```
 
-La balise `<nav>` et son attribut `role="navigation"` peuvent être utilisés pour un système de navigation principal ou secondaire, englobant des menus contenant des liens internes au site.
+La balise `<nav>` et son attribut `role="navigation"` peuvent être utilisés pour un système de navigation principale ou secondaire, englobant des menus contenant des liens internes au site.
 
 Exemple :
 
 - Le menu principal du site (souvent affiché dans l’en-tête)
 - Un menu secondaire affiché dans certaines pages internes (parfois dans une barre latérale)
 - Un menu secondaire affiché dans le pied de page
+- Un fil d’ariane
+- Une pagination
+- Une table des matières
 
-Ne sont pas concernés :
+Pour chaque balise `<nav role="navigation">`, ajouter un aria-label descriptif.
 
-- Le fil d’ariane
-- Les systèmes de pagination
-- table des matières
+**Exemple :**
+
+`<nav role="navigation" aria-label="Menu principal">[…]</nav>`
 
 Plus d’informations : <https://www.accede-web.com/notices/html-et-css/structure-generale/structurer-les-menus-de-navigation-principaux-et-secondaires-avec-nav-rolenavigation/>
 
+### Moteur de recherche
+
+Le rôle `role="search"` doit être ajouté dans l'élément HTML englobant le formulaire de recherche.
+```html
+<div role="search">
+  <form>[…]</form>
+</div>
+```
+
+Pour chaque balise comprenant un `role="search"`, ajouter un aria-label descriptif.
+
+**Exemple :**
+
+`<div role="search" aria-label="Moteur de recherche principal">[…]</div>`
+
+Plus d’informations : <https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Search_role/>
+
 ### Liens d’évitement
 
-- Prévoir des liens d'évitement en haut de document pour accéder rapidement au contenu, à la navigation à la recherche, etc.
+- Il est **obligatoire** d'avoir au moins 1 lien d'évitement permettant d'accéder directement au contenu principal. D'autres liens d'évitement peuvent être ajoutés pour accéder rapidement à la navigation, à la recherche, au pied de page, etc.
+- Il doit être le premier lien de la page
+- Il peut être masqué (class `visually-hidden`) et visible lors du focus
+- Si le contenu principal est un élément non interactif il faut mettre un `tabindex="-1"` pour rendre cet élément focusable (ex. sur une balise `<main>`)
 
 Voir [Guidelines HTML](Guidelines-HTML.md)
 
 ### Titres de page
 
-Dans `<title>`, éviter le caractère `|` (pipe) comme séparateur. Préférer `:` (deux-points).
+Le titre de la page doit être pertinent et de préférence unique pour chaque page. Dans `<title>`, éviter le caractère `|` (pipe) comme séparateur. Préférer `:` (deux-points).
+
+**Exemple :**
+
+Pour une page de recherche, il faut indiquer le mot recherché ainsi que la page actuelle si une pagination est présente :
+"Vous avez recherché le mot : xxx - page 2"
 
 ### Liens
 
 #### Les intitulés des liens
 
-Tous les liens doivent avoir un **intitulé**, un lien "vide" n’est pas accessible.
+Tous les liens doivent avoir un **intitulé** explicite, un lien "vide" n’est pas accessible.
 
 **Exemple :**
 
@@ -195,21 +226,53 @@ Signaler lorsqu’un lien s’ouvre dans une nouvelle fenêtre :
 
 ### Formulaires
 
-Utiliser l'élément `<fieldset>` associé à `<legend>` pour regrouper les champs ayant trait à la même thématique (ex : coordonnées du visiteur lors d'une commande en ligne.
+Utiliser l'élément `<fieldset>` associé à `<legend>` pour regrouper les champs ayant trait à la même thématique (ex : coordonnées du visiteur lors d'une commande en ligne).
+
+Exemple : 
+```html
+<form>
+  <fieldset>
+    <legend>Indiquer vos coordonnées</legend>
+
+    <input type="text" id="name" name="name">
+    <label for="name">Nom</label><br/>
+
+    <input type="email" id="email" name="email">
+    <label for="email">Email</label><br/>
+  </fieldset>
+</form>
+`
 
 Toujours associer un `<label>` à un élément de formulaire `<input>` ou `<textarea>` pour définir son intitulé. Ne pas utiliser l'attribut `placeholder` comme seule indication.
 
 Ne pas enlever les styles au focus pour toujours savoir quel est le champ actif.
 
-Indiquer de manière claire les champs obligatoires.
+Indiquer de manière claire les champs obligatoires, soit en l'indiquant dans le label ou bien en ajoutant une phrase en début de formulaire.
 
-Compléter si besoin par `aria-required="true"` et `aria-labelledby` par exemple
+Compléter si besoin par `aria-required="true"` et `aria-describedby` (pour décrire un élément) par exemple :
 
 ```html
 <label for="numero-m">Numéro de membre *</label>
 <input type="text" id="numero-m" aria-describedby="hint" />
 <p id="hint">Numéro composé de 4 chiffres.</p>
 ```
+
+Toujours indiquer le format attendu. Exemple :
+```html
+<input type="email" id="email" name="email" autocomplete="email"/>
+<p>
+  <label class="label-text" for="email">  Votre email (<abbr title="obligatoire" tabindex="0">*</abbr>)    <span class="exemple">(nomprenom@mail.com) </span> </label>
+  <input required="" autocomplete="email" type="email" name="email" id="email" value="">
+			</p>
+`
+
+Associer un `autocomplete` pour un champ demandant un donnée personnelle (nom, prénom, email, adresse, etc.) :
+
+```html
+<label for="name">Nom</p>
+<input type="text" id="name" name="name" autocomplete="family-name"/>
+`
+[Voir la liste complète des `autocomplete` existants](https://www.w3.org/TR/WCAG21/#input-purposes) 
 
 ### Navigation
 
