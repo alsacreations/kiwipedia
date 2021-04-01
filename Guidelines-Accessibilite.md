@@ -6,7 +6,9 @@ Cette présente convention rassemble les bonnes pratiques d'Accessibilité en pr
 
 ## Généralités
 
+- Respecter les standards W3C et [valider son code](https://validator.w3.org/).
 - Ne pas fixer de hauteur sur les éléments afin que le contenu reste lisible lorsque le texte est zoomé.
+- Travailler avec des tailles de polices fluides (`em` ou `rem`).
 - Respecter la hiérarchie des titres `<hX>` (l'extension "Headings Map" (extension [Chrome](https://chrome.google.com/webstore/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi) et [Firefox](https://addons.mozilla.org/fr/firefox/addon/headingsmap/)) permet de vérifier que la hiérachie des titres est cohérente).
 - Utiliser les éléments HTML pour leur fonction/sémantique et non pas pour leur forme.
   - Utiliser les éléments pouvant recevoir le focus (`<a>`, `<input type="button">`, `<button>`) lorsqu'ils sont cliquables/interactifs.
@@ -145,7 +147,7 @@ Plus d’informations : <https://developer.mozilla.org/en-US/docs/Web/Accessibil
 - Il est **obligatoire** d'avoir au moins 1 lien d'évitement permettant d'accéder directement au contenu principal. D'autres liens d'évitement peuvent être ajoutés pour accéder rapidement à la navigation, à la recherche, au pied de page, etc.
 - Il doit être le premier lien de la page
 - Il peut être masqué (class `visually-hidden`) et visible lors du focus
-- Si le contenu principal est un élément non interactif il faut mettre un `tabindex="-1"` pour rendre cet élément focusable (ex. sur une balise `<main>`)
+- Si le contenu principal est un élément non interactif il faut mettre un `tabindex="-1"` pour rendre cet élément focusable (ex. sur une balise `<main>`). Voir [la partie sur les tabindex](https://github.com/alsacreations/guidelines/blob/master/Guidelines-Accessibilite.md#tabindex)
 
 Voir [Guidelines HTML](Guidelines-HTML.md)
 
@@ -226,53 +228,53 @@ Signaler lorsqu’un lien s’ouvre dans une nouvelle fenêtre :
 
 ### Formulaires
 
-Utiliser l'élément `<fieldset>` associé à `<legend>` pour regrouper les champs ayant trait à la même thématique (ex : coordonnées du visiteur lors d'une commande en ligne).
+Utiliser l'élément `<fieldset>` associé à `<legend>` pour regrouper les champs ayant trait à la même thématique. Exemple : coordonnées du visiteur lors d'une commande en ligne :
 
-Exemple : 
 ```html
 <form>
   <fieldset>
     <legend>Indiquer vos coordonnées</legend>
 
     <input type="text" id="name" name="name">
-    <label for="name">Nom</label><br/>
+    <label for="name">Nom</label>
 
     <input type="email" id="email" name="email">
-    <label for="email">Email</label><br/>
+    <label for="email">Email</label>
   </fieldset>
 </form>
-`
+```
 
 Toujours associer un `<label>` à un élément de formulaire `<input>` ou `<textarea>` pour définir son intitulé. Ne pas utiliser l'attribut `placeholder` comme seule indication.
 
 Ne pas enlever les styles au focus pour toujours savoir quel est le champ actif.
 
-Indiquer de manière claire les champs obligatoires, soit en l'indiquant dans le label ou bien en ajoutant une phrase en début de formulaire.
-
-Compléter si besoin par `aria-required="true"` et `aria-describedby` (pour décrire un élément) par exemple :
+Indiquer de manière claire les champs obligatoires, soit en l'indiquant dans le label ou bien en ajoutant une phrase en début de formulaire. Compléter si besoin par `aria-required="true"`.
+  
+Si un champ attend un format spécifique, toujours l'indiquer. Exemple :
 
 ```html
-<label for="numero-m">Numéro de membre *</label>
-<input type="text" id="numero-m" aria-describedby="hint" />
+<label for="email">Email <span>(nomprenom@mail.com)</label>
+<input type="email" name="email" id="email" autocomplete="email">
+```
+
+Il est également possible de l'afficher avec `aria-describedby` qui fait référence à un élément comprenant une description.
+  
+**Exemple :**
+
+```html
+<label for="numero-m">Numéro de membre</label>
+<input type="text" id="numero-m" name="numero-m" aria-describedby="hint">
 <p id="hint">Numéro composé de 4 chiffres.</p>
 ```
 
-Toujours indiquer le format attendu. Exemple :
-```html
-<input type="email" id="email" name="email" autocomplete="email"/>
-<p>
-  <label class="label-text" for="email">  Votre email (<abbr title="obligatoire" tabindex="0">*</abbr>)    <span class="exemple">(nomprenom@mail.com) </span> </label>
-  <input required="" autocomplete="email" type="email" name="email" id="email" value="">
-			</p>
-`
-
-Associer un `autocomplete` pour un champ demandant un donnée personnelle (nom, prénom, email, adresse, etc.) :
+Associer un `autocomplete` pour les champs demandant une donnée personnelle (nom, prénom, email, adresse, etc.) :
 
 ```html
 <label for="name">Nom</p>
-<input type="text" id="name" name="name" autocomplete="family-name"/>
-`
-[Voir la liste complète des `autocomplete` existants](https://www.w3.org/TR/WCAG21/#input-purposes) 
+<input type="text" id="name" name="name" autocomplete="family-name">
+```
+
+Voir [la liste complète des `autocomplete`](https://www.w3.org/TR/WCAG21/#input-purposes) 
 
 ### Navigation
 
@@ -282,11 +284,16 @@ Faciliter la navigation avec un menu, une recherche ou un plan du site, exploita
 
 #### Tabindex
 
-Les éléments pouvant recevoir le focus autres que nativement `<a>`, `<input>` ou `<button>` pourront être équipés de `tabindex="0"`.
+Il permet de capturer l’ordre du focus selon le chiffre qu’on lui attribue. Un ordre logique est "naturellement" créé selon les éléments interactifs du DOM.  Il comprend tous les chiffres positifs à partir de 0. 
+→ Il faut éviter de toucher au `tabindex` positif.
 
-Les éléments ne devant pas recevoir de focus doivent comporter l'attribut `tabindex="-1"`.
+On peut utiliser :
+- `-1` : permet de rendre un élément focusable sans le rendre navigable au clavier. S'il est ajouté sur un élément interactif, celui-ci perdra le focus.
+- `0` : l'élément peut capturer le focus et être atteint via la navigation au clavier.
 
-S'il y a lieu, changer l'ordre de tabulation avec des attributs `tabindex` positifs pour réfléter l'ordre logique et/ou l'ordre visuel des éléments.
+→ Les éléments pouvant recevoir le focus autres que nativement `<a>`, `<input>` ou `<button>` pourront être équipés de `tabindex="0"`.
+
+Pour en [savoir plus](https://developer.mozilla.org/fr/docs/Web/HTML/Global_attributes/tabindex)
 
 ### Tableaux
 
@@ -475,11 +482,50 @@ Meilleure technique relevée par Atalan : <https://blog.atalan.fr/svg-liens-et-l
 </a>
 ```
 
+#### SVG porteuse d'information
+
+Dans ce cas, il faut lui passer l'attribut `role="img"` pour indiquer aux lecteurs d'écrans de la considérer comme une image et lui éviter de lire tous les nœuds HTML du SVG.
+Il faut ensuite ajouter un `<title>` ou un `aria-label` pour explicité la fonction de l'image.
+
+**Exemple :**
+
+```html
+<svg role="img" aria-label="Le titre du lien">
+<title>Le titre du lien</title>
+[…]
+</svg>
+```
+
+#### SVG décoratives
+
+Dans ce cas, il faut uniquement mettre `aria-hidden="true"` sur le `svg` afin d'indiquer aux lecteurs d'écran de ne pas la restituer. 
+
+**Exemple :**
+
+```html
+<svg aria-hidden="true">
+[…]
+</svg>
+```
+
 ### Vidéos
 
 Utiliser un lecteur audio/vidéo accessible, par exemple les éléments HTML5 natifs.
 
 Fournir une piste de sous-titres avec le format webVTT et l'élément `<track>`.
+
+### PDF
+
+Il faut que le PDF soit lui-même accessible, ou il faut proposer une alternative `HTML`, `.doc`, `.odt` structurés.
+
+Lorsqu'un lien renvoi vers un téléchargement de PDF, il faut spécifier dans le `title`:
+- son intitulé
+- sa taille
+- son format
+- et l'ouverture dans une nouvelle fenêtre
+
+**Exemple :**
+`<a href="[url]" title="Intitulé (PDF, 456ko, nouvelle fenêtre)>Intitulé</a>`
 
 ---
 
