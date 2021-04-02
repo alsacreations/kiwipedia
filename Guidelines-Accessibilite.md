@@ -24,8 +24,6 @@ Les outils de mesure de contraste employés sont :
 
 - https://contrast-finder.tanaguru.com/ (outil en ligne)
 - https://developer.paciellogroup.com/resources/contrastanalyser/ (Windows, MacOS)
-- https://usecontrast.com/ (MacOS)
-- https://contrasteapp.com/ (MacOS)
 - https://app.contrast-finder.org/ (outil en ligne)
 - WCAG Color contrast checker (extension [Chrome](https://chrome.google.com/webstore/detail/wcag-color-contrast-check/plnahcmalebffmaghcpcmpaciebdhgdf) et [Firefox](https://addons.mozilla.org/fr/firefox/addon/wcag-contrast-checker/)) qui permet de vérifier les contrastes de couleurs directement depuis sa page HTML.
 
@@ -117,7 +115,7 @@ Exemple :
 - Une pagination
 - Une table des matières
 
-Pour chaque balise `<nav role="navigation">`, ajouter un aria-label descriptif.
+Pour chaque balise `<nav role="navigation">`, ajouter un `aria-label` descriptif.
 
 **Exemple :**
 
@@ -134,7 +132,7 @@ Le rôle `role="search"` doit être ajouté dans l'élément HTML englobant le f
 </div>
 ```
 
-Pour chaque balise comprenant un `role="search"`, ajouter un aria-label descriptif.
+Pour chaque balise comprenant un `role="search"`, ajouter un `aria-label` descriptif.
 
 **Exemple :**
 
@@ -145,9 +143,9 @@ Plus d’informations : <https://developer.mozilla.org/en-US/docs/Web/Accessibil
 ### Liens d’évitement
 
 - Il est **obligatoire** d'avoir au moins 1 lien d'évitement permettant d'accéder directement au contenu principal. D'autres liens d'évitement peuvent être ajoutés pour accéder rapidement à la navigation, à la recherche, au pied de page, etc.
-- Il doit être le premier lien de la page
-- Il peut être masqué (class `visually-hidden`) et visible lors du focus
-- Si le contenu principal est un élément non interactif il faut mettre un `tabindex="-1"` pour rendre cet élément focusable (ex. sur une balise `<main>`). Voir [la partie sur les tabindex](https://github.com/alsacreations/guidelines/blob/master/Guidelines-Accessibilite.md#tabindex)
+- Il doit être le premier lien de la page.
+- Il peut être masqué (class `visually-hidden`) et visible lors du focus.
+- Si le contenu principal est un élément non interactif il faut mettre un `tabindex="-1"` pour rendre cet élément focusable (ex. sur une balise `<main>`). Voir [la partie sur les tabindex.](https://github.com/alsacreations/guidelines/blob/master/Guidelines-Accessibilite.md#tabindex)
 
 Voir [Guidelines HTML](Guidelines-HTML.md)
 
@@ -235,10 +233,10 @@ Utiliser l'élément `<fieldset>` associé à `<legend>` pour regrouper les cham
   <fieldset>
     <legend>Indiquer vos coordonnées</legend>
 
-    <input type="text" id="name" name="name">
+    <input type="text" id="name" name="name" autocomplete="family-name">
     <label for="name">Nom</label>
 
-    <input type="email" id="email" name="email">
+    <input type="email" id="email" name="email" autocomplete="email">
     <label for="email">Email</label>
   </fieldset>
 </form>
@@ -250,7 +248,9 @@ Ne pas enlever les styles au focus pour toujours savoir quel est le champ actif.
 
 Indiquer de manière claire les champs obligatoires, soit en l'indiquant dans le label ou bien en ajoutant une phrase en début de formulaire. Compléter si besoin par `aria-required="true"`.
   
-Si un champ attend un format spécifique, toujours l'indiquer. Exemple :
+Si un champ attend un format spécifique, toujours l'indiquer.
+
+**Exemple :**
 
 ```html
 <label for="email">Email <span>(nomprenom@mail.com)</label>
@@ -274,7 +274,7 @@ Associer un `autocomplete` pour les champs demandant une donnée personnelle (no
 <input type="text" id="name" name="name" autocomplete="family-name">
 ```
 
-Voir [la liste complète des `autocomplete`](https://www.w3.org/TR/WCAG21/#input-purposes) 
+Voir [la liste complète des `autocomplete`.](https://www.w3.org/TR/WCAG21/#input-purposes) 
 
 ### Navigation
 
@@ -285,6 +285,7 @@ Faciliter la navigation avec un menu, une recherche ou un plan du site, exploita
 #### Tabindex
 
 Il permet de capturer l’ordre du focus selon le chiffre qu’on lui attribue. Un ordre logique est "naturellement" créé selon les éléments interactifs du DOM.  Il comprend tous les chiffres positifs à partir de 0. 
+
 → Il faut éviter de toucher au `tabindex` positif.
 
 On peut utiliser :
