@@ -306,6 +306,12 @@ PHP Poids moyen d'un child (ou autre processus, remplacer php5-fpm dans ce cas)
 ps --no-headers -o "rss,cmd" -C php5-fpm | awk '{ sum+=$1 } END { printf ("%d%s\n", sum/NR/1024,"M") }'
 ```
 
+RAM % utilisée par une application faisant appel à plusieurs processus
+
+```sh
+ps aux | awk '/gitlab/ { sum+=$4 } END { print sum }'
+```
+
 ---
 
 ## Screen
