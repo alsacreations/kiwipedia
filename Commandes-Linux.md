@@ -4,11 +4,11 @@ _Statut : Working Draft (WD)_
 
 Utiles pour un serveur de développement ou un serveur web/mail/ftp, notamment sous Ubuntu/Debian.
 
-- Voir aussi https://explainshell.com/ pour expliquer les commandes shell entrées
-- Voir aussi http://samrowe.com/wordpress/advancing-in-the-bash-shell/
-- Voir aussi https://github.com/donnemartin/awesome-aws pour AWS
-- MiniVim https://github.com/sd65/MiniVim
-- Commandline challenge https://cmdchallenge.com/
+- Voir aussi <https://explainshell.com/> pour expliquer les commandes shell entrées
+- Voir aussi <http://samrowe.com/wordpress/advancing-in-the-bash-shell/>
+- Voir aussi <https://github.com/donnemartin/awesome-aws> pour AWS
+- MiniVim <https://github.com/sd65/MiniVim>
+- Commandline challenge <https://cmdchallenge.com/>
 
 Rechercher rapidement dans les précédentes commandes : `Ctrl+R`
 
@@ -52,7 +52,7 @@ Consulter le log mémoire tampon du noyau
 
 ## Maintenance et mises à jour avec apt
 
-Voir aussi https://debian-handbook.info/browse/fr-FR/stable/sect.apt-get.html
+Voir aussi <https://debian-handbook.info/browse/fr-FR/stable/sect.apt-get.html>
 
 Met à jour les paquets disponibles
 `apt-get update`
@@ -212,7 +212,7 @@ Connaître la clé publique à partir d’une clé privée générée (dsa, rsa,
 Générer une clé RSA 4096
 `ssh-keygen -b 4096 -t rsa`
 
-Générer une clé sécurisée (https://blog.g3rt.nl/upgrade-your-ssh-keys.html)
+Générer une clé sécurisée (<https://blog.g3rt.nl/upgrade-your-ssh-keys.html>)
 (ne fonctionne pas avec Putty sous Windows)
 `ssh-keygen -o -a 100 -t ed25519`
 
@@ -302,7 +302,7 @@ RAM (non cachée) utilisée par chaque process Apache2 (colonne RSS en Ko)
 
 PHP Poids moyen d'un child (ou autre processus, remplacer php5-fpm dans ce cas)
 
-```
+```sh
 ps --no-headers -o "rss,cmd" -C php5-fpm | awk '{ sum+=$1 } END { printf ("%d%s\n", sum/NR/1024,"M") }'
 ```
 
@@ -487,8 +487,8 @@ Mettre à jour le fichier de configuration pour le démarrage (attention, vérif
 
 Voir aussi
 
-- http://www.ducea.com/2009/03/08/mdadm-cheat-sheet/
-- https://buzut.net/diagnostiquer-et-recuperer-une-defaillance-raid/
+- <http://www.ducea.com/2009/03/08/mdadm-cheat-sheet/>
+- <https://buzut.net/diagnostiquer-et-recuperer-une-defaillance-raid/>
 
 ### Smart
 
@@ -501,7 +501,7 @@ Lancer un test Smart sur un disque
 Lancer un test Smart approfondi
 `smartctl -t long /dev/sdb -C` (ou sans -C) puis attendre et vérifier `smartctl -a /dev/sdb`
 
-Voir aussi https://www.cyberciti.biz/tips/linux-find-out-if-harddisk-failing.html
+Voir aussi <https://www.cyberciti.biz/tips/linux-find-out-if-harddisk-failing.html>
 
 ### Quota
 
@@ -533,7 +533,7 @@ Tous les jours à 3h05
 
 Backup SQL quotidien
 
-```
+```conf
 15 2 * * * root mysqldump -u root -p<password> --all-databases | gzip > /mnt/disk2/database_`data ' %m-%d-%Y'`.sql.gz
 ```
 
@@ -650,7 +650,7 @@ Copier fichier vers machine distante (répertoire home)
 
 Copier fichier vers machine distante avec clé ssh
 
-```
+```sh
 scp -i ~/.ssh/www.example.org <fichier> ubuntu@www.example.org:
 scp -P 22222 -i ~/.ssh/key-rsa.txt <fichier> login@www.example.org:
 ```
@@ -724,7 +724,7 @@ Supprimer toutes les balises img contenant co.cc
 
 Trouver un fichier php contenant "virtual" à partir de .
 
-```
+```sh
 grep "virtual" `find . -name "*.php"`
 ```
 
@@ -756,7 +756,7 @@ Afficher le contenu d'un fichier
 
 Compter le nombre de lignes
 
-```
+```sh
 wc -l <file>
 ```
 
@@ -872,22 +872,22 @@ VIM en mode diff entre deux fichiers
 
 Modifier la configuration vi par défaut, éditer `~/.exrc`
 
-```
+```conf
 set nu
 set noautoindent
 ```
 
 Support UTF-8 pour VI : éditer le fichier `/etc/vim/vimrc` et ajouter
 
-```
+```conf
 if has("multi_byte")
-				set encoding=utf-8
-				setglobal fileencoding=utf-8
-				set bomb
-				set termencoding=iso-8859-15
-				set fileencodings=ucs-bom,iso-8859-15,iso-8859-3,utf-8
+    set encoding=utf-8
+    setglobal fileencoding=utf-8
+    set bomb
+    set termencoding=iso-8859-15
+    set fileencodings=ucs-bom,iso-8859-15,iso-8859-3,utf-8
 else
-				echoerr "Sorry, this version of (g)vim was not compiled with +multi_byte"
+    echoerr "Sorry, this version of (g)vim was not compiled with +multi_byte"
 endif
 ```
 
@@ -897,25 +897,25 @@ endif
 
 Commande de base récupérant la page d'index
 
-```
+```sh
 wget http://www.perdu.com/
 ```
 
 Wget : aspirer une page en particulier et toutes ses dépendances
 
-```
+```sh
 wget -E -H -k -K -p http://www.perdu.com/
 ```
 
 Wget récursif, sans accepter les fichiers en gzip (sinon ça ne marche pas)
 
-```
+```sh
 wget --header="accept-encoding: none" --recursive http://www.azerty0.ironie.org/
 ```
 
 Wget miroir d'un site, récursif, adaptant les liens et extensions, téléchargeant les ressources internes, ignorant robots.txt
 
-```
+```sh
 wget --mirror --convert-links --adjust-extension --page-requisites --no-parent -e robots=off http://www.azerty0.ironie.org/
 ```
 
@@ -932,88 +932,88 @@ Split un fichier PDF en plusieurs autres
 
 Convertir un fichier en utf8
 
-```
+```sh
 iconv -f latin1 -t utf8 update.sql >update-utf8.sql
 ```
 
 Compter le nombre de lignes de plein de fichiers dans une arbo web
 
-```
+```sh
 find . -name "*.php" -o -name "*.less" -o -name "*.css" -o -name "*.js" -o -name "*.html" | xargs wc -l
 ```
 
 Supprimer fichiers vides
 
-```
+```sh
 for file in * .*; do [ -f "$file" ] && [ 0 -eq "$(wc -c "$file" | cut -d" " -f1)" ] && rm -f "$file"; done
 ```
 
 Trouver les 404 et leur total dans un log Apache
 
-```
+```sh
 grep " 404" access.log | awk '{print $7}' | sort | uniq -c
 ```
 
 Trouver les adresses IP uniques et le nombre de requêtes dans un log Apache (ajouter `| wc -l` pour le total)
 
-```
+```sh
 cat access.log | awk '{ print $1 }' | sort | uniq -c | sort -n
 ```
 
 Lister récursivement tous les fichiers contenant une chaîne sans l'afficher
 
-```
+```sh
 grep -lR "quelquechose" *
 ```
 
 Trouver les robots en excluant ceux connus (-E expression régulière, -i case insensitive, -v inverse)
 (on exclut aussi les requêtes sur robots.txt et la font roboto)
 
-```
+```sh
 grep "bot" other_vhosts_access.log | grep -Eiv "Googlebot|Yahoo|Slurp|WorldSearch|Exabot|facebot|ia_archiver|alexa|msnbot|bingbot|Sogou|Baidu|Yandex|DuckDuckBot|archive\.org_bot|Semrush|orangebot|AhrefsBot|MJ12bot|Twitterbot|robot\.dlweb|dotbot|rogerbot|SEOkicks|AdsBot|spbot|XoviBot|Cliqzbot|SearchmetricsBot|flamingosearch|SeznamBot|smtbot|MojeekBot|robots\.txt|roboto|Slackbot"
 ```
 
 Nombre de requêtes par domaines
 
-```
+```sh
 awk '{print $1}' /var/log/apache2/other_vhosts_access.log | sort | uniq -c
 ```
 
 Supprimer des fichiers contenant une certaine chaîne de texte
 
-```
+```sh
 find . -type f -exec grep -q "blablablabla" {} \; -exec echo rm {} \;
 ```
 
 Supprimer fichiers de plus de 90 jours dans le répertoire courant
 
-```
+```sh
 find . -mtime +90 -exec rm {} \;
 ```
 
 Supprimer fichiers de plus de 90 jours dans le répertoire courant, en excluant x.html
 
-```
+```sh
 find . ! -name "*.html" -mtime +90 -exec rm {} \;
 ```
 
 Effacer fichiers contenant XYZ
 
-```
+```sh
 #!/bin/sh
 for i in ./directory/*
 do
-	if grep -E "XYZ" $i > /dev/null; then
-		rm $i
-	else
-		echo "Not found"
-	fi
+ if grep -E "XYZ" $i > /dev/null; then
+  rm $i
+ else
+  echo "Not found"
+ fi
 done
 ```
 
 Script pour bannir rapidement une adresse IP en ligne de commande
 
-```
+```sh
 #!/bin/bash
 if [[ -z "$1" ]]; then
         echo "Veuillez indiquer une adresse IP"
@@ -1033,7 +1033,7 @@ Changer propriétaire d'un fichier
 Changer droits d'un fichier
 `chmod 0<rwx> <file>`
 
-Voir https://chmodcommand.com/ Chmod Calculator
+Voir <https://chmodcommand.com/> Chmod Calculator
 
 Changer droits sur les sous répertoires
 `find <path> -type d -print0 | xargs -0 chmod <permissions>`
@@ -1043,7 +1043,7 @@ Changer droits sur certains fichiers
 
 ### Masques
 
-```
+```txt
     rwx
 0 : 000
 1 : 001
@@ -1055,7 +1055,7 @@ Changer droits sur certains fichiers
 7 : 111
 ```
 
-```
+```txt
       U   G   O
 764 = rwx rw- r--
 ```
@@ -1168,7 +1168,7 @@ Réactualiser la db
 
 Divers
 
-```
+```sh
 pure-pw passwd ftpwww
 pure-pw userdel ftpwww
 pure-pw show ftpwww
@@ -1264,31 +1264,3 @@ Ajouter au démarrage, option defaults, priorité 99
 
 Supprimer
 `update-rc.d <script> remove`
-
----
-
-## AWS S3
-
-Récupérer un fichier
-`s3cmd get s3://bucket-name/<file> <local_file>`
-
-Espace occupé
-`s3cmd du s3://bucket-name/`
-
-Lister les fichiers
-`s3cmd ls s3://bucket-name/`
-
-Supprimer un fichier
-`s3cmd del s3://bucket-name/<file>`
-
----
-
-## Sécurité Linux
-
-1. Vérifier que les utilisateurs inutiles sont retirés ou n’ont pas de mot de passe (passwd -d <user>)
-2. Vérifier les groupes
-3. Utiliser des clés SSH et le groupe sudo/sudoers
-4. Chmod approprié sur les dossiers home et .ssh (dont authorized_keys, etc)
-5. Firewall
-6. Fermer les services et ports inutiles
-7. Suivre les mises à jour de sécurité
