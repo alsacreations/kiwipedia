@@ -4,7 +4,30 @@ _Statut : Working Draft (WD)_
 
 ## Commandes utiles
 
+* Compiler un Dockerfile dans le dossier courant pour créer une image `docker build -t <nomimage:tag> .`
+* Compiler une image en conteneur et l'exécuter `docker run --name <nomducontainer> <nomimage:tag>` (+ voir autres options)
+* Démarrer ou arrêter un container s'il est déjà existant : `docker start <nomducontainer>` (ou `stop`)
+* Exécuter une commande dans le container : `docker container exec -it <nomducontainer> <lacommande>` (par exemple `bash` pour ouvrir un shell)
+* Lister tous les containers : `docker container ls` ou `docker ps -a`
+* Lister toutes les images : `docker image ls`
+* Supprimer un container : `docker container rm <nomducontainer>`
+* Supprimer une image : `docker image rm <nomdelimage>`
+* Utiliser le chemin courant dans une commande docker : `$PWD`
+* Créer un network : `docker network create my-custom-net` et l'utiliser au run : `--network=my-custom-net`
+* Statistiques : `docker stats`
+
+## Options run
+
 TODO:
+
+* `-d`
+* `-p`
+* `-u`
+* `-v`
+* `-e`
+* `-it`
+* `--link`
+* `--restart always`
 
 ## Dockerfile
 
