@@ -10,6 +10,8 @@ TODO:
 
 Le fichier `Dockerfile` est compilé en image à l'aide de `docker build -t test/myapp .`
 
+<https://hadolint.github.io/hadolint/> est un Dockerfile Linter.
+
 * `FROM` Définit l'image source (`FROM php:7.4-cli`).
 * `ENV` Définit une variable d'environnement à la compilation et à l'exécution (`ENV MY_VAR=kiwi`).
 * `LABEL` Ajoute une métadonnée à l'image.
