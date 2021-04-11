@@ -29,6 +29,13 @@ TODO:
 * `--link`
 * `--restart always`
 
+Astuces :
+
+* ajouter `-v /etc/localtime:/etc/localtime:ro` pour faire correspondre avec le fuseau horaire hôte
+* ajouter `-m 256m` pour limiter la mémoire à 256 Mo
+* ajouter`--read-only` pour que le filesystem soit en lecture seule
+* suffixer un volume par`:ro` pour qu'il soit en lecture seule
+
 ## Dockerfile
 
 Le fichier `Dockerfile` est compilé en image à l'aide de `docker build -t test/myapp .`
