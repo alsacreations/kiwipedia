@@ -9,24 +9,59 @@ Cette présente convention rassemble les bonnes pratiques HTML en production app
 Sauf spécificités contraires :
 
 - L’encodage des fichiers et des bases de données doit se faire en `UTF-8` (sans `BOM`).
-- Les valeurs identiques aux attributs ne sont pas renseignées sauf nécessité (ex. en HTML5 pas de `checked="checked"`),
+- Les noms d'éléments et attributs HTML sont rédigés en minuscules, les attributs utilisent les double quotes (ex. `class="fruit"`). Les valeurs identiques aux attributs ne sont pas renseignées sauf nécessité (ex. en HTML5 pas de `checked="checked"`).
+- - Les éléments disposants d’id (à limiter autant que possible) doivent disposer d’une classe dupliquée (pour CSS).
 - Les indentations se font à l’aide de deux espaces et non à l'aide de tabulations. Pour assurer une cohérence inter-projets, utiliser la convention [EditorConfig](https://editorconfig.org/), voire Prettier.
 - Séparer les noms des fichiers, des images des classes et id CSS par des tirets (`.slide-info`, `styles-ie.css`, `jquery-3.0.min.css`, etc).
-- L'usage des double quotes est préconisé autour des valeurs d’attributs (ex. `class="fruit"`) ainsi que les simples quotes dans les autres langages JavaScript, PHP (ex. `alert('blup');`) de manière à faciliter les imbrications (ex. `alert('<p class="fruit">plop</p>');`).
 
-## Nommage
+## Modèle-type
 
-- Choisir des noms en anglais prioritairement (classes, fichiers, images, etc.).
-- Les noms d'éléments et des attributs sont rédigés en minuscules.
-- Les éléments disposants d’id (à limiter autant que possible) doivent disposer d’une classe dupliquée (pour CSS).
+```html
+<!DOCTYPE html>
+<html lang="fr" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-La règle de nommage des éléments suit le modèle “fonction” puis “variante”, séparées par des traits d'union :
+  <title>Titre unique de la page - Nom du site</title>
 
-- navigation : ~~`main-navigation` (non)~~ -> `navigation-main` (oui)
-- bouton “burger” : ~~`nav-button` (non)~~ -> `button-nav` (oui)
-- pagination : ~~`primary-breadcrumb` (non)~~ -> `breadcrumb-primary` (oui)
-- boutons : `btn-primary` (oui) ou `button-primary` (oui)
-- modales : `modal-fullscreen` (oui)
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/print.css" media="print">
+
+  <meta name="description" content="Description de la page">
+  <meta property="og:title" content="Titre unique de la page - Nom du site">
+  <meta property="og:description" content="Description de la page">
+  <meta property="og:image" content="https://www.example.com/image.jpg">
+  <meta property="og:image:alt" content="Description de l'image">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Nom du site">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:url" content="https://www.example.com/page">
+  <link rel="canonical" href="https://www.example.com/page">
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#abc737">
+</head>
+
+<body>
+  <!-- ... -->
+  <script src="/assets/js/global.js"></script>
+</body>
+</html>
+```
+
+Peut être complété par (ou intégré dans un autre script s'il s'agit d'une application compilée)
+
+```html
+  <script>
+    document.documentElement.classList.remove('no-js');
+    document.documentElement.classList.add('js');
+  </script>
+```
 
 ## En-tête de document
 
@@ -59,7 +94,7 @@ Les langues alternatives en cas de site multilingue sont indiquées par une bali
 L’encodage du document (en UTF-8) est systématiquement renseigné via un élément meta dans le `<head>` :
 
 ```html
-<meta charset="UTF-8" />
+<meta charset="UTF-8">
 ```
 
 ### Titre de la page
@@ -67,7 +102,7 @@ L’encodage du document (en UTF-8) est systématiquement renseigné via un él�
 Le titre de page, différent à chaque page, d'une longueur maximum de 55 caractères (SEO), est systématiquement renseigné via un élément `<title>` dans le `<head>` :
 
 ```html
-<title>J'aime la choucroute</title>
+<title>Titre unique de la page - Nom du site</title>
 ```
 
 ### Meta "Viewport"
@@ -156,46 +191,6 @@ Dans la mesure du possible, éviter les liens ouvrant une nouvelle fenêtre/ongl
 
 Les liens entre site web et les différents réseaux sociaux sont de plus en plus forts. Certaines meta spécifiques permettent de faciliter ou d’améliorer ces liens, sans que l’on connaisse directement leur impact sur le référencement direct.
 
-### Twitter card
-
-Elle permet une présentation améliorée d’un site web sur le réseau Twitter et lien ce site web à un compte Twitter via son URL mentionnée dans un Tweet. Exemple :
-
-![twitter card](images/html01.png)
-
-Exemple d’une carte de type _summary_
-
-Le code correspondant pourrait ressembler à cela :
-
-```html
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:url" content="https://alsacreations.com/{content_url}" />
-<meta name="twitter:image" content="/default_square_icon.png" />
-<meta name="twitter:title" content="{page_title} – Alsacréations" />
-<meta
-  name="twitter:description"
-  content="Alsacréations, blog d'actualité dans le monde des technologies web (HTML5, CSS 3, JavaScript, etc.)"
-/>
-<meta name="twitter:site" content="@alsacreations" />
-<meta name="twitter:creator" content="@diou" />
-```
-
-- **Twitter:card** : "summary", “player” ou “photo” sont des valeurs possibles
-- **Twitter:url** : l’URL canonique de la référence
-- **Twitter:title** : Le titre de la carte (devrait correspondre au titre de la page de l’URL canonique)
-- **Twitter:image** : l’URL de l’image illustrant la page
-- **Twitter:site** : le compte Twitter associé au site web éditeur (publisher)
-- **Twitter:creator** : le compte Twitter associé à l’auteur
-
-Plus d’infos : [https://dev.twitter.com/cards/types/summary](https://dev.twitter.com/cards/types/summary)
-
-Exemple d’une carte de type "photo" (la première) et “player” (la seconde) :
-
-![photo card](images/html02.png)![player card](images/html03.png)
-
-**_Note : l’utilisation de ces meta invalide le document s’il est de doctype HTML5. La valeur twitter:\* n’est en effet pas reconnue pour la balise meta._**
-
-Une fois en place, il faut demander la validation par Twitter : [https://dev.twitter.com/docs/cards/validation/validator](https://dev.twitter.com/docs/cards/validation/validator)
-
 ### OpenGraph
 
 L’[OpenGraph](https://ogp.me/) permet de maîtriser davantage l'apparence des contenus partagés via URL sur les réseaux sociaux (Facebook, Twitter, LinkedIn, Pinterest entre autres). Le titre, l'image d'aperçu, la description, etc. peuvent être personnalisés. On peut tester l'implémentation à l'aide de <https://www.opengraph.xyz/>
@@ -203,17 +198,34 @@ L’[OpenGraph](https://ogp.me/) permet de maîtriser davantage l'apparence des 
 Parmi les valeurs de og: les plus utilisées on retrouve :
 
 ```html
-<meta property="og:title" content="Alsacréations, agence Web exotique" />
-<meta property="og:url" content="https://alsacreations.fr" />
-<meta property="og:locale" content="fr_FR" />
-<meta property="og:site_name" content="Alsacréations.fr" />
-<meta
-  property="og:description"
-  content="Alsacréations est une agence Web exotique proposant à ses clients des solutions originales et professionnelles."
-/>
-<meta property="og:image" content="/default_square_icon.png" />
-<meta property="og:type" content="website" />
+<meta property="og:title" content="Titre unique de la page - Nom du site">
+<meta property="og:url" content="https://www.example.com/page">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:description" content="Description de la page">
+<meta property="og:image" content="https://www.example.com/image.jpg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nom du site">
 ```
+
+### Twitter card
+
+Elle complète les métadonnées OpenGraph et permet une présentation améliorée d’un site web sur le réseau Twitter et lien ce site web à un compte Twitter via son URL mentionnée dans un Tweet.
+
+```html
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@alsacreations">
+<meta name="twitter:creator" content="@diou">
+```
+
+- `twitter:card` : valeurs possibles [summary_large_image](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary-card-with-large-image), [summary](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary), [player](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/player-card), [app](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/app-card)
+- `twitter:site` : Compte Twitter associé au site web éditeur (_publisher_)
+- `twitter:creator` : Compte Twitter associé à l’auteur
+
+On peut donc omettre les valeurs twitter:url, twitter:image, twitter:title, twitter:description qui sont déjà lues dans les balises OpenGraph. Plus d'informations : [https://dev.twitter.com/cards/types/summary](https://dev.twitter.com/cards/types/summary)
+
+**_Note : l’utilisation de ces meta invalide le document s’il est de doctype HTML5. La valeur twitter:\* n’est en effet pas reconnue pour la balise meta._**
+
+Il existe un validateur de syntaxe Twitter Card Validator <https://cards-dev.twitter.com/validator>
 
 ### OpenSearch
 
@@ -227,6 +239,6 @@ On veillera à respecter des critères communs de performance :
 - Minifier les ressources texte (CSS, JavaScript, JSON...)
 - Différer les requêtes moins importantes (lazy loading) (en JavaScript ou avec l'attribut natif `loading`)
 - Utiliser `prefetch` pour donner des indications de pré-chargement
-- Établir [https://bitsofco.de/your-first-performance-budget-with-lighthouse/](un budget de performance pour Lighthouse)
+- Établir [un budget de performance pour Lighthouse](https://bitsofco.de/your-first-performance-budget-with-lighthouse/)
 
 Voir aussi : <https://github.com/thedaviddias/Front-End-Performance-Checklist>
