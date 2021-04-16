@@ -16,18 +16,17 @@ _Statut : Working Draft (WD)_
 * Créer un network : `docker network create my-custom-net` et l'utiliser au run : `--network=my-custom-net`
 * Statistiques : `docker stats`
 
-## Options run
+## Options Docker run
 
-TODO:
-
-* `-d`
-* `-p`
-* `-u`
-* `-v`
-* `-e`
-* `-it`
-* `--link`
-* `--restart always`
+* `-d` : permet de détacher l'exécution du container du terminal courant
+* `-p` : permet de lier un port (local:container `-p 8080:80`)
+* `-u` : permet de spécifier l'utilisateur+groupe d'exécution
+* `-v` : permet de déclarer un volume (local:container `-v /var/path/to/mydata/mysql:/var/lib/mysql`)
+* `-e` : permet de passer/spécifier une variable d'environnement
+* `-i` : permet d'avoir un terminal interactif (_stdin_), par exemple pour entrer un mot de passe au prompt (souvent combiné avec `t`)
+* `-t` : alloue un _pseudo-tty_
+* `--link` : permet de "lier" un hostname d'un container à un autre (par exemple un serveur mysql dans un 1er container `mysqlserver` devient `--link mysqlserver:db` dans le 2e, on utilise alors `db`)
+* `--restart always` : indique au service Docker de redémarrer le container au boot et de le maintenir actif si Docker est lui-même relancé
 
 Astuces :
 
