@@ -114,6 +114,12 @@ Autres listes de ressources et checklists
 
 - <https://learnui.design/tools/gradient-generator.html> Générateur de beaux dégradés de couleur
 
+### Analyse CSS
+
+- <https://www.projectwallace.com/analyze-css>
+- <https://jonassebastianohlsson.com/specificity-graph/> CSS Specificity Graph Generator
+- <https://isellsoap.github.io/specificity-visualizer/>
+
 ---
 
 ## Accessibilité
