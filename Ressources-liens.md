@@ -505,22 +505,24 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://design.tutsplus.com/tutorials/svg-files-from-illustrator-to-the-web--vector-20899> SVG Files: From Illustrator to the Web
 - <https://svgcrop.com/>
 
-### Générateurs
+### Générateurs SVG
 
 - <https://www.blobmaker.app/>
 - <https://squircley.app/>
 - <https://getwaves.io/>
 - <https://www.outpan.com/app/9aaaf27303/svg-gradient-wave-generator>
 
-### Animations
+### Animations SVG
 
+- <https://svgartista.net/>
+- <https://www.svgator.com/>
 - <https://svgjs.com/> Animations de SVG via JavaScript
 - <http://snapsvg.io/> (animation SVG via JS)
 - <http://maxwellito.github.io/vivus/> Animation SVG filaire
 - <https://css-tricks.com/animating-svg-css/> (animation via CSS)
 - <http://sozi.baierouge.fr/pages/10-about.html> Présentations animées avec zoom/dézoom
 
-### Optimisation et astuces
+### Optimisation SVG et astuces
 
 - <http://petercollingridge.appspot.com/svg-optimiser>
 - <https://github.com/svg/svgo> Optimisation
