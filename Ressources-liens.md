@@ -499,10 +499,18 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://la-cascade.io/comprendre-svg-viewbox-et-viewport/> Comprendre SVG viewBox et viewport
 - <https://www.w3.org/TR/SVG/propidx.html> Propriétés manipulables en CSS
 
-### Outils pour produire du SVG
+### Outils pour produire/éditer du SVG
 
 - <https://inkscape.org/en/> éditeur SVG open-source
 - <https://design.tutsplus.com/tutorials/svg-files-from-illustrator-to-the-web--vector-20899> SVG Files: From Illustrator to the Web
+- <https://svgcrop.com/>
+
+### Générateurs
+
+- <https://www.blobmaker.app/>
+- <https://squircley.app/>
+- <https://getwaves.io/>
+- <https://www.outpan.com/app/9aaaf27303/svg-gradient-wave-generator>
 
 ### Animations
 
