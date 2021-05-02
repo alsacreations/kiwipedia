@@ -711,6 +711,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 ## Intégration mail et e-mailing
 
+- <https://www.smashingmagazine.com/2021/04/complete-guide-html-email-templates-tools/> A Complete Guide To HTML Email
 - <https://explore.reallygoodemails.com/new-to-email-coding-heres-where-to-start-2494422f0bd4> Résumé de quelques pratiques d'intégration
 
 ### Conception
