@@ -428,7 +428,6 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://www.stockio.com/>
 - <https://visualhunt.com/> (CC)
 - <https://stocksnap.io/> (CC0)
-- <http://www.compfight.com/>
 - <https://www.pexels.com/>
 - <http://thestocks.im/> (meta-moteur)
 - <http://www.freepik.com> (vectoriel libre de droits / commercial avec mention)
