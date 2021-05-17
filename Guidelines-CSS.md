@@ -33,9 +33,9 @@ La liste des navigateurs supportés est définie au sein du fichier [browserslis
 
 Un "reset" CSS permettant d'harmoniser les styles par défaut des navigateurs est systématiquement appliqué en début de projet.
 
-Normalize, Sanitize et Reboot sont des fichiers de base courants. **Nous privilégions les fichiers de base de KNACSS Reborn** qui est un récapitulatif de ces ressources.
+Normalize, Sanitize et Reboot sont des fichiers de base courants. **Nous privilégions les fichiers de base de KNACSS** qui est un récapitulatif de ces ressources.
 
-Documentation : [fichiers reset de KNACSS Reborn](https://github.com/raphaelgoetter/knacss-reborn/tree/master/sass/base)
+Documentation : [fichiers reset de KNACSS](https://github.com/alsacreations/KNACSS/tree/master/sass/base)
 
 ## Sélection des éléments
 
@@ -169,7 +169,7 @@ Notre workflow Tailwind comporte :
 - Une [Convention de nommage "Utility first"](Guidelines-Tailwind.md)
 - PurgeCSS (tâche permettant de supprimer les styles inutilisés)
 
-### KNACSS Reborn
+### KNACSS
 
 _Source : <https://www.knacss.com/doc.html>_
 
@@ -231,7 +231,7 @@ Cette consigne concerne principalement :
 
 ### Media Queries
 
-Pour éviter les intervalles qui se chevauchent, ou des Media Queries trop variés, nous préconisons d'appliquer un [mixin Sass "respond-to"](https://github.com/raphaelgoetter/knacss-reborn/blob/master/sass/abstracts/_mixins-sass.scss) pour appliquer des styles Responsive&nbsp;:
+Pour éviter les intervalles qui se chevauchent, ou des Media Queries trop variés, nous préconisons d'appliquer un [mixin Sass "respond-to"](https://github.com/alsacreations/KNACSS/blob/master/sass/abstracts/_mixins-sass.scss) pour appliquer des styles Responsive&nbsp;:
 
 ```scss
 .modal {
