@@ -166,7 +166,23 @@ Exemple :
 
 ```json
 {
-  "recommendations": ["esbenp.prettier-vscode", "EditorConfig.EditorConfig", "mrmlnc.vscode-scss"]
+  "recommendations": [
+    "EditorConfig.EditorConfig",
+    "dbaeumer.vscode-eslint",
+    "mrmlnc.vscode-scss",
+    "octref.vetur",
+    "stylelint.vscode-stylelint",
+    "DavidAnson.vscode-markdownlint",
+    "mikestead.dotenv"
+    // "ecmel.vscode-html-css",
+    // "esbenp.prettier-vscode",
+    // "wix.vscode-import-cost",
+    // "wayou.vscode-todo-highlight,
+    // "mde.select-highlight-minimap",
+    // "CoenraadS.bracket-pair-colorizer",
+    // "christian-kohler.path-intellisense",
+  ]
+  // "unwantedRecommendations": []
 }
 ```
 
