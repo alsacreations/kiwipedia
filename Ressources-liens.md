@@ -402,13 +402,13 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 ## Images et ressources
 
-### Optimisation d'images
+### Optimisation d'images et outils
 
 - <https://www.squoosh.app>
 - <https://imageoptim.com/fr> Optimiser le poids des images
 - <https://images.guide/> Guide d'optimisation
 - <https://tinypng.com/> préserve la transparence et applique une compression (avec perte)
-- <https://compressor.io/compress>
+- <https://ezgif.com/resize> Redimensionner/transformer gif animé
 - <https://pageweight.imgix.com/> Diagnostiquer le poids des images
 
 ### Icônes
