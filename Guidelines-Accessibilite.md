@@ -570,6 +570,6 @@ Pour les menus déroulants et mega menus, Accessible Mega Menu a fait ses preuve
 
 ### Synthèses vocales
 
-- NVDA
-- VoiceOver (natif sur macOS, iOS) (activation : cmd + fn + F5), voir [https://www.apple.com/voiceover/info/guide/_1131.html](raccourcis clavier)
-- Jaws
+- [NVDA](https://www.nvda-fr.org/)
+- VoiceOver (natif sur macOS, iOS) (activation : cmd + fn + F5), voir [raccourcis clavier](https://www.apple.com/voiceover/info/guide/_1131.html)
+- [Jaws](https://www.freedomscientific.com/products/software/jaws/)
