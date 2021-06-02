@@ -25,6 +25,10 @@ Autres listes de ressources et checklists
 - <https://platform.html5.org/>
 - <https://cssvalues.com/> dictionnaire des propriétés et valeurs
 
+### Écrire ou générer une documentation
+
+- <https://www.gitbook.com/>
+
 ## Compatibilité navigateur
 
 - <http://caniuse.com/> (tableaux de support)
