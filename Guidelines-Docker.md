@@ -14,7 +14,14 @@ _Statut : Working Draft (WD)_
 * Supprimer une image : `docker image rm <nomdelimage>`
 * Utiliser le chemin courant dans une commande docker : `$PWD`
 * Créer un network : `docker network create my-custom-net` et l'utiliser au run : `--network=my-custom-net`
+
+### Inspection
+
 * Statistiques : `docker stats`
+* Logs : `docker logs <nomducontainer>`
+* Ports ouverts : `docker port <nomducontainer>`
+* Processus : `docker top <nomducontainer>`
+* Différences appliquées : `docker diff <nomducontainer>`
 
 ## Options Docker run
 
@@ -65,3 +72,4 @@ Liste non exhaustive, voir <https://docs.docker.com/engine/reference/builder/>.
 * <https://github.com/FuriKuri/docker-best-practices>
 * <https://snyk.io/blog/10-docker-image-security-best-practices/>
 * <http://docs.projectatomic.io/container-best-practices/>
+* <https://quickref.me/docker>
