@@ -124,6 +124,10 @@ Autres listes de ressources et checklists
 - <https://jonassebastianohlsson.com/specificity-graph/> CSS Specificity Graph Generator
 - <https://isellsoap.github.io/specificity-visualizer/>
 
+### Propriétés et valeurs
+
+- <https://www.quirksmode.org/blog/archives/2021/06/inherit_initial.html> Inherit, initial, unset, revert
+
 ---
 
 ## Accessibilité
