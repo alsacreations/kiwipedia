@@ -111,7 +111,7 @@ Le titre de page, différent à chaque page, d'une longueur maximum de 55 caract
 Pour une adaptation du site web vers les terminaux mobiles, l’élément `<meta name="viewport">` est ajouté dans la partie `<head>`.
 
 ```html
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 ```
 
 **_Note : Les syntaxes empêchant l’agrandissement des contenus par le visiteur seront proscrites (maximum-scale=1, user-scalable=no, etc.)._**
