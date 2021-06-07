@@ -19,48 +19,49 @@ Sauf spécificités contraires :
 ```html
 <!DOCTYPE html>
 <html lang="fr" class="no-js">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
-  <title>Titre unique de la page - Nom du site</title>
+    <title>Titre unique de la page - Nom du site</title>
 
-  <link rel="stylesheet" href="/assets/css/styles.css">
-  <link rel="stylesheet" href="/assets/css/print.css" media="print">
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link rel="stylesheet" href="/assets/css/print.css" media="print" />
 
-  <meta name="description" content="Description de la page">
-  <meta property="og:title" content="Titre unique de la page - Nom du site">
-  <meta property="og:description" content="Description de la page">
-  <meta property="og:image" content="https://www.example.com/image.jpg">
-  <meta property="og:image:alt" content="Description de l'image">
-  <meta property="og:locale" content="fr_FR">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Nom du site">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta property="og:url" content="https://www.example.com/page">
-  <link rel="canonical" href="https://www.example.com/page">
+    <meta name="description" content="Description de la page" />
+    <meta property="og:title" content="Titre unique de la page - Nom du site" />
+    <meta property="og:description" content="Description de la page" />
+    <meta property="og:image" content="https://www.example.com/image.jpg" />
+    <meta property="og:image:alt" content="Description de l'image" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Nom du site" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:url" content="https://www.example.com/page" />
+    <link rel="canonical" href="https://www.example.com/page" />
 
-  <link rel="icon" href="/favicon.ico">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <meta name="theme-color" content="#abc737">
-</head>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" href="/favicon.ico" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff8a01" />
 
-<body>
-  <!-- ... -->
-  <script src="/assets/js/global.js"></script>
-</body>
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#abc737" />
+  </head>
+
+  <body>
+    <!-- ... -->
+    <script src="/assets/js/global.js"></script>
+  </body>
 </html>
 ```
 
 Peut être complété par (ou intégré dans un autre script s'il s'agit d'une application compilée)
 
 ```html
-  <script>
-    document.documentElement.classList.remove('no-js');
-    document.documentElement.classList.add('js');
-  </script>
+<script>
+  document.documentElement.classList.remove('no-js')
+  document.documentElement.classList.add('js')
+</script>
 ```
 
 ## En-tête de document
@@ -86,7 +87,7 @@ La langue de la page est systématiquement renseignée via un attribut dans l’
 Les langues alternatives en cas de site multilingue sont indiquées par une balise link de type _alternate_.
 
 ```html
-<link rel="alternate" href="https://en.example.com/" hreflang="en">
+<link rel="alternate" href="https://en.example.com/" hreflang="en" />
 ```
 
 ### Encodage
@@ -94,7 +95,7 @@ Les langues alternatives en cas de site multilingue sont indiquées par une bali
 L’encodage du document (en UTF-8) est systématiquement renseigné via un élément meta dans le `<head>` :
 
 ```html
-<meta charset="UTF-8">
+<meta charset="UTF-8" />
 ```
 
 ### Titre de la page
@@ -110,7 +111,7 @@ Le titre de page, différent à chaque page, d'une longueur maximum de 55 caract
 Pour une adaptation du site web vers les terminaux mobiles, l’élément `<meta name="viewport">` est ajouté dans la partie `<head>`.
 
 ```html
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 ```
 
 **_Note : Les syntaxes empêchant l’agrandissement des contenus par le visiteur seront proscrites (maximum-scale=1, user-scalable=no, etc.)._**
@@ -121,8 +122,18 @@ Documentation : [https://www.alsacreations.com/article/lire/1490-comprendre-le-v
 
 L’icône de favori (favicon) est utilisée de différentes manières par les navigateurs et systèmes. Le format ICO est ancien, le format PNG permet une meilleure définition avec un poids plus léger, et le [format SVG](https://css-tricks.com/svg-favicons-and-all-the-fun-things-we-can-do-with-them/) se voit [désormais supporté](https://caniuse.com/link-icon-svg).
 
-* [https://realfavicongenerator.net/](https://realfavicongenerator.net/)
-* [https://github.com/audreyr/favicon-cheat-sheet](https://github.com/audreyr/favicon-cheat-sheet)
+La syntaxe recommandée pour les navigateurs modernes est celle-ci :
+
+```html
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="alternate icon" href="/favicon.ico" />
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff8a01" />
+```
+
+Les navigateurs ne supportant pas le format `svg` vont ignorer la première instruction.
+
+- Générateur de favicon SVG (avec dark thème) : [https://realfavicongenerator.net/svg-favicon/](https://realfavicongenerator.net/svg-favicon/)
+- [https://github.com/audreyr/favicon-cheat-sheet](https://github.com/audreyr/favicon-cheat-sheet)
 
 ## Sémantique globale
 
@@ -198,13 +209,13 @@ L’[OpenGraph](https://ogp.me/) permet de maîtriser davantage l'apparence des 
 Parmi les valeurs de og: les plus utilisées on retrouve :
 
 ```html
-<meta property="og:title" content="Titre unique de la page - Nom du site">
-<meta property="og:url" content="https://www.example.com/page">
-<meta property="og:locale" content="fr_FR">
-<meta property="og:description" content="Description de la page">
-<meta property="og:image" content="https://www.example.com/image.jpg">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Nom du site">
+<meta property="og:title" content="Titre unique de la page - Nom du site" />
+<meta property="og:url" content="https://www.example.com/page" />
+<meta property="og:locale" content="fr_FR" />
+<meta property="og:description" content="Description de la page" />
+<meta property="og:image" content="https://www.example.com/image.jpg" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Nom du site" />
 ```
 
 ### Twitter card
@@ -212,9 +223,9 @@ Parmi les valeurs de og: les plus utilisées on retrouve :
 Elle complète les métadonnées OpenGraph et permet une présentation améliorée d’un site web sur le réseau Twitter et lien ce site web à un compte Twitter via son URL mentionnée dans un Tweet.
 
 ```html
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@alsacreations">
-<meta name="twitter:creator" content="@diou">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@alsacreations" />
+<meta name="twitter:creator" content="@diou" />
 ```
 
 - `twitter:card` : valeurs possibles [summary_large_image](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary-card-with-large-image), [summary](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary), [player](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/player-card), [app](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/app-card)
