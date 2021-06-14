@@ -227,6 +227,7 @@ Autres listes de ressources et checklists
 ## JavaScript front-end
 
 - <https://tc39.github.io/ecma262/> Spec ECMAScript
+- <https://wesbos.com/javascript> Beginner JavaScript Notes & Reference par Wes Bos
 - <https://auth0.com/blog/a-brief-history-of-javascript/> Une brève histoire de JavaScript
 - <https://github.com/naomihauret/js-stack-from-scratch/> JavaScript Stack from Scratch (traduction fr)
 - <http://jargon.js.org/> Jargon
