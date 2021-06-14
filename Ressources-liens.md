@@ -651,6 +651,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://hookbin.com/> Capture and inspect HTTP requests
 - <https://kinsta.com/learn/what-is-http2/> HTTP/2
 - <https://tools.keycdn.com/http2-test> Tester HTTP/2
+- <https://http3-explained.haxx.se/fr> HTTP/3
 
 ### Sécurité
 
