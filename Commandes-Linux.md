@@ -553,7 +553,7 @@ Connexions actives (serveurs et établies)
 Connexions actives (seulement serveurs)
 `netstat -tulp`
 
-Connexions et processus
+Connexions et processus liés (combinable avec grep pour le port)
 `netstat -tanpu`
 
 IP connectée à Apache en masse ?
@@ -589,7 +589,10 @@ Host
 Ping
 `ping <ip>`
 
-Ethernet top
+Trafic IP (si installé)
+`iptraf` ou `iptraf-ng`
+
+Top du trafic réseau (utiliser `?` pour connaître les filtres et options)
 `iftop`
 
 Connaître la vitesse de connexion du lien Ethernet (adapter le nom de l'interface avec celui trouvé dans ifconfig)
@@ -597,9 +600,6 @@ Connaître la vitesse de connexion du lien Ethernet (adapter le nom de l'interfa
 
 Capture de paquets réseau selon protocole/port
 `tcpdump -i eth0 'tcp port 80'`
-
-Trafic IP (si installé)
-`iptraf`
 
 Sniffer toutes les requêtes réseau contenant "favicon"
 `ngrep -d any favicon`
