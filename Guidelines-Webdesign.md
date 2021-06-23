@@ -90,3 +90,64 @@ Les éléments à ne pas oublier de faire apparaître dans les wireframes/maquet
     - J'accepte d’être informé•e des bons plans des partenaires de NOM DU CLIENT
     - J'accepte de recevoir la newsletter mensuelle
     - J'accepte les conditions générales d’utilisation (+URL)
+
+### Maquette
+
+La Maquette est l’évolution logique du Wireframe en y ajoutant la couche graphique et design. Les maquettes constituent le livrable définitif pour intégration.
+
+- La maquette doit comporter l’ensemble des éléments du wireframe (si l’élément est concerné) ainsi que :
+  - La page 404
+  - Le bandeau Cookies
+  - Breakpoints :
+  - Mobile first ?
+
+### UI Kit
+
+L’UI-Kit est un document servant de passerelle entre le designer et l’intégrateur. Il s’agit d’une “planche anatomique” où sont détaillés les éléments indispensables pour l’intégration : les valeurs de couleurs, les polices, les visuels des composants principaux, images et icônes y sont représentés.
+
+#### Valeurs
+
+Attention : ne pas se fier au rendu des couleurs avec les pipettes des navigateurs ou d’InVision.
+
+- Couleurs utilisées (textes, background, décorations), ainsi que couleurs
+  - survol / hover
+  - focus (pour les éléments pouvant recevoir le focus, liens, boutons, input)
+  - active (pour les liens)
+  - visited (pour les liens)
+- Familles de police (ainsi que variantes gras, semi-gras, italique, …) + lien de téléchargement
+- Tailles de polices et hauteurs de lignes utilisées
+- Valeurs des espacements utilisés (padding, margin)
+- Valeurs des coins arrondis
+
+#### Éléments
+
+- Les éléments HTML “classiques” (titres, paragraphes, listes, boutons, formulaires, tableaux)
+- Composants présents dans la maquette (boîtes, alertes, pagination, navigation, …)
+- Une barre de séparation horizontale : `<hr>` (si présente)
+
+#### Formulaires
+
+- Les états d’avertissement/[erreur](https://medium.com/nextux/forms-need-validation-2ecbccbacea1)/info sur certains éléments (si présents)
+- Les champs obligatoires des formulaires
+- Les champs disabled des formulaires
+- Les messages d’erreur des formulaires
+- Les [boutons primaires et secondaires](https://uxplanet.org/primary-secondary-action-buttons-c16df9b36150) (un exemple de bouton qui n'est pas un submit, par exemple un "annuler")
+- Les cases à cocher button/checkbox (avec leurs différents états)
+
+#### Interactions utilisateur
+
+- Les états de survol / focus (liens, formulaires, boutons, etc.)
+- Les exemples de transitions (faire des liens vers des démos)
+- Les Liens d’évitement masqués au départ et déclenchés avec la touche Tab (cf. nos [Guidelines HTML](https://www.alsacreations.com/outils/guidelines/Guidelines-HTML.md))
+
+#### Divers
+
+- Une référence (lien) vers l’endroit où sont stockés tous les assets (images, icônes, favicon, bouton burger, polices, etc.). Le format SVG est privilégié pour les icônes, sauf cas exceptionnel
+- Liens vers les banques d’images utilisées
+- La compression et l’optimisation des SVG/fonts est à la charge de l’intégrateur
+- La compression et l’optimisation des Bitmap (Jpeg, png, webp, avif) est à la charge du/de la webdesigneur/euse
+- Option : un style de lien externe, par exemple avec une icône “↗” (accessibilité)
+
+## Transmission des infos
+
+Selon le destinataire (client ou intégrateur), les différentes données (maquettes, arborescence, interactions) sont transmises de manière différente :
