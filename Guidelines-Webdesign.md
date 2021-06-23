@@ -158,3 +158,48 @@ Selon le destinataire (client ou intégrateur), les différentes données (maque
 | Wireframes (interactifs) | Client       | Sketch → InVision (**Dossier InVision “Projet client”**)  |
 | Maquettes                | Client       | Sketch → InVision (**Dossier InVision “Projet client”**)  |
 | UI Kit                   | Intégrateur  | Sketch → InVision (**Dossier InVision “Review interne”**) |
+
+## Validation des livrables
+
+- L’ensemble des livrables présentés dans InVision sont validés directement sur cette plateforme.
+- Les autres livrables sont validés par mail.
+
+## Points de vigilance
+
+### Grille
+
+Une grille de mise en forme est une aide précieuse pour le Designer (respect des alignements et des proportions). Le designer choisit son format de grille colonnes/tailles, l’applique uniformément à l’ensemble des maquettes et en informe l’Intégrateur.
+
+L’Intégrateur, lui, va raisonner en “composants” plutôt qu’en mise en page globale et s’adapte à la grille proposée par le Designer.
+
+### Polices de caractère
+
+Pour des raisons de performance, il est conseillé :
+
+- Titrages : se limiter à deux Familles de police au maximum (ex. Merryweather et Roboto)
+- Titrages : se limiter à 3-4 Variantes de police au maximum (ex. Merryweather bold, Roboto regular, Roboto bold, Roboto italic)
+- Labeur : “system font” par défaut de préférence (ex. system-ui)
+
+Si le nombre de variantes pour une police est supérieur à 3 alors une “Variable Font” devient plus intéressante en termes de poids/requêtes car 1 seul fichier pour toute la famille de police.
+
+### Favicon
+
+L'icône à fournir à l’intégrateur est au format SVG et PNG à la taille 1024x1024px, si possible.
+
+L’intégration du favicon est à la charge de l’Intégrateur et est décrite dans nos Guidelines HTML.
+
+### Retina
+
+Afin d’optimiser la netteté des images Bitmap (jpg, png) sur écrans Retina et Haute Définition, lors de la livraison de la maquette, chaque image bitmap (photo, arrière-plan) est fournie en SD (x1) et HD (x2).
+
+Les formats privilégiés à transmettre à l’Intégrateur :
+
+- JPG : photos et images bitmap en général
+- PNG : images bitmap nécessitant de la transparence
+- SVG : iconographie et formats vectoriels
+
+L’intégrateur aura à sa charge l’optimisation du poids des assets (notamment le choix de WEBP si nécessaire).
+
+### Accessibilité et taux de contraste
+
+cf. [guidelines Accessibilité Numérique](https://github.com/alsacreations/guidelines/blob/master/Guidelines-Accessibilite.md#checklist-accessibilit%C3%A9-webdesign)
