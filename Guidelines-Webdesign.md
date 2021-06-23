@@ -68,7 +68,7 @@ Les éléments à ne pas oublier de faire apparaître dans les wireframes/maquet
 - Navigation principale + secondaire (menu desktop, menu mobile)
 - Fil d’ariane
 - Modale (pop-in)
-- On reprend les textes et contenus du client (noms, fil d’ariane, navigation), s’il n’y en a pas, on utilise un texte de remplacement (ex. Schnapsum)
+- Nous reprenons les textes et contenus (noms, fil d’ariane, navigation), s’il n’y en a pas, nous utilisons un texte de remplacement (ex. Schnapsum)
 - Header et Footer
   - Navigation
   - Barre de recherche
