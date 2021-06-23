@@ -151,3 +151,10 @@ Attention : ne pas se fier au rendu des couleurs avec les pipettes des navigateu
 ## Transmission des infos
 
 Selon le destinataire (client ou intégrateur), les différentes données (maquettes, arborescence, interactions) sont transmises de manière différente :
+
+| Information              | Destinataire | Méthode                                                   |
+| ------------------------ | ------------ | --------------------------------------------------------- |
+| Arborescence             | Client       | Flowmapp → Gdrive → Cahier des Spécifications             |
+| Wireframes (interactifs) | Client       | Sketch → InVision (**Dossier InVision “Projet client”**)  |
+| Maquettes                | Client       | Sketch → InVision (**Dossier InVision “Projet client”**)  |
+| UI Kit                   | Intégrateur  | Sketch → InVision (**Dossier InVision “Review interne”**) |
