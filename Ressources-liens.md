@@ -635,6 +635,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 - <https://webpack.js.org/> Webpack
 - <https://www.taniarascia.com/how-to-use-webpack/> Comment utiliser webpack
+- <https://www.smashingmagazine.com/2021/06/getting-started-webpack/> Introduction à webpack
 
 ---
 
