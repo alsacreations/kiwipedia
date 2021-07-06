@@ -114,7 +114,7 @@ Ici, deux cellules inversées sur mobiles via `table-header-group` et `table-foo
 
 Voir [la démo sur Codepen](https://codepen.io/maizzle/pen/dgpxbB?editors=1000).
 
-## Images de contenu
+## Images
 
 ### Généralités
 
@@ -145,7 +145,7 @@ Ceci fonctionne :
 <img src="https://picsum.photos/600/600" width="300" class="w-300; max-w-full;" />
 ```
 
-## Images de fond
+### Images de fond
 
 Outlook, depuis la version 7, n'affiche plus les images de fond et nécessite un langage particulier pour les reconnaître [(Vector Markup Language - VML)](https://www.emailonacid.com/blog/article/email-development/emailology_vector_markup_language_and_backgrounds/).
 
@@ -155,11 +155,9 @@ D'autre part, le chemin absolu vers les images doit être précisé spécifiquem
 
 Plus d'information concernant ce sujet passionnant sur <https://backgrounds.cm/>
 
-### Listes à puces
+## Listes à puces
 
 Les listes à puces ne sont pas vraiment des Composants mais nécessitent des adaptations si particulières qu'elles méritent une documentation rien que pour elles.
-
-**État des lieux :**
 
 - Une liste à puce nécessite un code HTML sémantique pour être [reconnue par des Assistances Techniques](https://www.litmus.com/blog/the-ultimate-guide-to-bulleted-lists-in-html-email/) (pas de tableaux ou de bidouilles donc, mais des vrais `<ul></ul>` et `<li></li>`)
 - Gmail a des marges/paddings totalement différents des autres clients emails
