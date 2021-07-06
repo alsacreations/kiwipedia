@@ -18,12 +18,13 @@ Cette présente charte a pour objectif :
 - [**Guidelines TailwindCSS**](Guidelines-Tailwind.md)
 - [**Guidelines JavaScript / jQuery**](Guidelines-JavaScript.md)
 - [**Guidelines Sécurité HTTP**](Guidelines-Securite-HTTP.md)
+- [**Guidelines Webdesign**](Guidelines-Webdesign.md)
+- [**Guidelines E-mailing**](Guidelines-E-mailing.md)
 
 ## En cours
 
 - [**Guidelines WordPress**](Guidelines-WordPress.md)
 - [**Guidelines Accessibilité**](Guidelines-Accessibilite.md)
-- [**Guidelines Webdesign**](Guidelines-Webdesign.md)
 - [**Guidelines Vue**](Guidelines-Vue.md)
 - [**Guidelines Vue dans WordPress**](Guidelines-Vue-WordPress.md)
 - [**Guidelines Développement PHP / MySql**](Guidelines-Developpement-PHP.md)
