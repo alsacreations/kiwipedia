@@ -464,6 +464,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <http://www.photocrops.com/browse/>
 - <http://realisticshots.com/>
 - <https://bossfight.co/>
+- <https://clouddevs.com/3dbay/> Free 3D Images
 
 ### Placeholders (images de remplissage)
 
