@@ -93,6 +93,7 @@ Autres listes de ressources et checklists
 - <http://twitter.github.io/bootstrap/> Bootstrap (par Twitter)
 - <http://purecss.io/> Pure (Yahoo)
 - <http://designmodo.github.io/Flat-UI/> Flat UI
+- <https://knightsoftheflexboxtable.com/> Jeu pour apprendre flexbox avec Tailwind
 
 ### RWD Responsive Web Design
 
@@ -318,8 +319,7 @@ Autres listes de ressources et checklists
 - <http://gridster.net/> (grille drag&dropable)
 - <http://dimsemenov.com/plugins/magnific-popup/> (lightbox)
 - <http://jvectormap.com/> (cartes géographiques france/monde/pays en vectoriel, fonctionne sur tactile)
-- <http://www.woothemes.com/flexslider/> (slider RWD)
-- <http://ricostacruz.com/nprogress/> (progress à la Youtube)
+- <https://ricostacruz.com/nprogress/> (progress à la Youtube)
 - <http://patrickkunka.github.io/easydropdown/> (inputs select stylables)
 - <http://www.croppic.net/> (crop image)
 - <http://leafo.net/sticky-kit/> (créer des éléments sticky de manière avancée - APIs très pratiques)
