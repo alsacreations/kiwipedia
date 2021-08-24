@@ -177,7 +177,7 @@ Exemple :
     // "ecmel.vscode-html-css",
     // "esbenp.prettier-vscode",
     // "wix.vscode-import-cost",
-    // "wayou.vscode-todo-highlight,
+    // "wayou.vscode-todo-highlight",
     // "mde.select-highlight-minimap",
     // "CoenraadS.bracket-pair-colorizer",
     // "christian-kohler.path-intellisense",
