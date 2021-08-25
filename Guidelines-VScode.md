@@ -30,17 +30,17 @@ Visual Studio Code dispose de vérificateurs de qualité (Linters) par défaut, 
 
 - [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) (respect configuration tabs vs spaces à l'insertion, encodage, eol, etc)
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) (vérification syntaxe JavaScript)
-- [stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint) (vérifie la syntaxe CSS d'après un ensemble de règles)
+- [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint) (vérifie la syntaxe CSS d'après un ensemble de règles)
 - [SCSS Intellisense](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-scss) (autocomplétion SCSS : classes, variables, etc.)
-- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) (reformatage du code d'après une configuration précise)
 - [Markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) (vérification syntaxe Markdown)
+- **Note : Prettier crée des conflits avec ESLint (ex. sauts de ligne dans les balises). Il n'est donc généralement pas recommandé au sein de nos projets nécessitant ESlint.**
 
 ### Extensions fortement recommandées ⭐
 
 - [Project Manager](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager) (si vous jonglez entre plusieurs projets, c'est un must)
+- [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) (autocomplétion des classes Tailwind)
 - [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense) (autocomplétion des chemins)
 - [HTML CSS Support](https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css) (autocomplétion et documentation des balises+attributs)
-- [IntelliSense for CSS class names in HTML](https://marketplace.visualstudio.com/items?itemName=Zignd.html-css-class-completion) (autocomplétion des classes HTML)
 - [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) (fonctions avancées Git dans VS Code)
 - [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) (affiche les erreurs des linters directement dans la fenêtre de code)
 
@@ -78,113 +78,13 @@ Confort visuel :
 - [PHP Intellisense](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-intellisense) ou [PHP Intelephense](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client)
 - [phpcs](https://marketplace.visualstudio.com/items?itemName=ikappas.phpcs)
 
-## Extensions détaillées
+## Configuration des extensions et linters
 
-#### [EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
+Tous les détails et configuration des Extensions et Linters sont décrits au sein des Guidelines selon la typologie de projet :
 
-Editorconfig impose un formatage (espace vs tabs) et des règles de syntaxe directement dans l'éditeur, ainsi ce dernier s'adapte à chaque projet.
-
-La configuration de Editorconfig se fait via un fichier `.editorconfig` placé à la racine du projet dont voici un exemple recommandé&nbsp;:
-
-```js
-# editorconfig.org
-root = true
-
-[*]
-indent_style = space
-indent_size = 2
-end_of_line = lf
-charset = utf-8
-trim_trailing_whitespace = true
-insert_final_newline = true
-tab_width = 4
-
-[*.{dtd,inc,php,phpt,rng,wsdl,xml,xsd,xsl}]
-indent_size = 4
-indent_style = space
-
-[*.md]
-trim_trailing_whitespace = false
-```
-
-#### [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-
-Prettier est un formateur de syntaxe permettant d'assurer une consistance tout au long du projet (sauts de ligne, guillemets simples ou doubles, etc.).
-
-Prettier applique les consignes d'Editorconfig et peut être lui-même configuré via un fichier `.prettierrc` à la racine du projet.
-À la différence d'Editorconfig, Prettier ne modifie pas les réglages natifs de l'IDE, il ne fait qu'appliquer les règles lors de son application (activer, si souhaité, `"editor.formatOnSave": true` dans les settings de Visual Studio Code).
-
-Prettier, intégré dans un Workflow, peut également empêcher la validation de code ou le commit dans Git.
-
-Exemple recommandé de fichier `.prettierrc` :
-
-```json
-{
-  "endOfLine": "lf",
-  "semi": false,
-  "arrowParens": "always",
-  "printWidth": 120,
-  "tabWidth": 2,
-  "useTabs": false,
-  "singleQuote": true,
-  "overrides": [
-    {
-      "files": ["*.css", "*.scss"],
-      "options": {
-        "singleQuote": false
-      }
-    }
-  ]
-}
-```
-
-#### [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-
-ESLint est un analyseur de code pour identifier les problématiques trouvés dans le code JavaScript (Vue, React, etc.) et les résoudre automatiquement.
-
-L'extension VS Code ESlint avec ses réglages de base (sans configuration particulière) est suffisante dans la plupart des cas.
-
-Au sein d'un Workflow, et lorsque des paramètres avancés sont nécessaires, ESlint est configuré via un fichier `.eslintrc`).
-
-#### [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
-
-Stylelint est un linter CSS (SCSS, LESS) apportant une configuration plus fine que les linters natifs de VS Code.
-
-L'extension VS Code Stylelint avec ses réglages de base (sans configuration particulière) est suffisante dans la plupart des cas.
-
-Au sein d'un Workflow, et lorsque des paramètres avancés sont nécessaires, Stylelint est configuré via un fichier `.stylelintrc`) qui permet alors par exemple d'appliquer des fonctionnalités telles que la correction de l'ordre d'affichage des propriétés CSS (plugin `stylelint-order`).
-
-#### [Markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
-
-Markdownlint est un linter pour langage Markdown et prend en compte toutes les règles à appliquer sur les fichiers `.md` notamment les fichiers `readme.md` présents dans chaque projet.
-
-### Extensions recommandées par projet
-
-Dans Visual Studio Code un fichier `.vscode/extensions.json` liste les extensions recommandées du projet (voir <https://twitter.com/j_niewczas/status/1284157199741157376>)
-
-Exemple :
-
-```json
-{
-  "recommendations": [
-    "EditorConfig.EditorConfig",
-    "dbaeumer.vscode-eslint",
-    "mrmlnc.vscode-scss",
-    "octref.vetur",
-    "stylelint.vscode-stylelint",
-    "DavidAnson.vscode-markdownlint",
-    "mikestead.dotenv"
-    // "ecmel.vscode-html-css",
-    // "esbenp.prettier-vscode",
-    // "wix.vscode-import-cost",
-    // "wayou.vscode-todo-highlight",
-    // "mde.select-highlight-minimap",
-    // "CoenraadS.bracket-pair-colorizer",
-    // "christian-kohler.path-intellisense",
-  ]
-  // "unwantedRecommendations": []
-}
-```
+- [Guidelines Vue-Nuxt-Front-End](Guidelines-Vue-Nuxt-Front-End.md)
+- [Guidelines Vue-WordPress](Guidelines-Vue-WordPress.md)
+- [Guidelines WordPress](Guidelines-WordPress.md)
 
 ## Astuces
 

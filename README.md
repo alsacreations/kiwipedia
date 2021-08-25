@@ -9,10 +9,17 @@ Cette présente charte a pour objectif :
 
 💬 Le web est un métier de plus en plus vaste, comportant une foule de détails qui vont avoir un impact sur la qualité, l'ergonomie, la performance, le référencement (SEO), la maintenabilité et au final sur le succès auprès de l'utilisateur. Tous les critères ne seront pas toujours applicables et le seront bien souvent en fonction du temps alloué.
 
-## Liste des documents
+## Selon typologie de projet (en cours)
+
+- [Guidelines Vue-Nuxt-Front-End](Guidelines-Vue-Nuxt-Front-End.md)
+- [Guidelines Vue-WordPress](Guidelines-Vue-WordPress.md)
+- [Guidelines WordPress](Guidelines-WordPress.md)
+
+## Guidelines transversales
 
 - [**Conventions Générales de Nommage**](Conventions-generales-nommage.md)
 - [**Guidelines Visual Studio Code**](Guidelines-VScode.md)
+- [**Guidelines Accessibilité**](Guidelines-Accessibilite.md)
 - [**Guidelines HTML**](Guidelines-HTML.md)
 - [**Guidelines CSS**](Guidelines-CSS.md)
 - [**Guidelines TailwindCSS**](Guidelines-Tailwind.md)
@@ -24,9 +31,6 @@ Cette présente charte a pour objectif :
 ## En cours
 
 - [**Guidelines WordPress**](Guidelines-WordPress.md)
-- [**Guidelines Accessibilité**](Guidelines-Accessibilite.md)
-- [**Guidelines Vue et Nuxt**](Guidelines-Vue-Nuxt.md)
-- [**Guidelines Vue dans WordPress**](Guidelines-Vue-WordPress.md)
 - [**Guidelines Développement PHP / MySql**](Guidelines-Developpement-PHP.md)
 
 **NOTE : Aucun de ces documents n'est figé, ils sont en constante amélioration et évolution.**
