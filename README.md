@@ -25,7 +25,7 @@ Cette présente charte a pour objectif :
 
 - [**Guidelines WordPress**](Guidelines-WordPress.md)
 - [**Guidelines Accessibilité**](Guidelines-Accessibilite.md)
-- [**Guidelines Vue**](Guidelines-Vue.md)
+- [**Guidelines Vue et Nuxt**](Guidelines-Vue-Nuxt.md)
 - [**Guidelines Vue dans WordPress**](Guidelines-Vue-WordPress.md)
 - [**Guidelines Développement PHP / MySql**](Guidelines-Developpement-PHP.md)
 
