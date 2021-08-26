@@ -88,6 +88,8 @@ Stylelint est l'unique formatteur pour les styles CSS et scss du projet. Les Lin
 La configuration recommandée de Stylelint est récupérée dans le projet via 
 `npm install stylelint-config-recommended --save-dev`
 
+Stylelint pour Nuxt est installé via `npm install --save-dev stylelint`.
+
 ([Afficher/télécharger le fichier `stylelint.config.js`](assets/vue-nuxt-front-end/stylelint.config.js)).
 
 ### Prettier
