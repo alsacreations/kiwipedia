@@ -64,7 +64,7 @@ Les outils de mesure de contraste employés sont :
 
 ### Rôles ARIA
 
-Notre structure HTML type exploite les rôles landmarks ARIA (`role=`). C'est un choix volontaire de notre part bien que les spécifications WAI-ARIA considère que c'est inutile. La raison est que le référentiel français RGAA 4 les recommande.
+Notre structure HTML type exploite les rôles landmarks ARIA (`role=`). C'est un choix volontaire de notre part bien que les spécifications WAI-ARIA considèrent que c'est inutile. La raison est que le référentiel français RGAA 4 les recommande.
 
 Pour plus de détails, voir [partie ARIA](#aria) ci-dessous.
 
