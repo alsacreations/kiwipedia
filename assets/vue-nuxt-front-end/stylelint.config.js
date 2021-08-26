@@ -11,7 +11,6 @@ module.exports = {
         'ignoreAtRules': ['function', 'if', 'each', 'include', 'mixin', 'extends', 'tailwind']
       }
     ],
-    'block-no-empty': null,
-    'unit-allowed-list': ['em', 'rem', '%', 's']
+    'block-no-empty': null
   }
 }
