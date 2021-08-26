@@ -50,12 +50,14 @@ La configuration fournie dans le fichier `/.vscode/settings.json` permet de :
 ```yaml
 {
   "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
   },
   "stylelint.enable": true,
   "css.validate": false,
-  "scss.validate": false,
+  "scss.validate": false
 }
 ```
 
