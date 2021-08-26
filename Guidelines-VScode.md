@@ -26,6 +26,8 @@ Des outils automatiques permettant de vérifier la qualité du code produit de m
 
 Visual Studio Code dispose de vérificateurs de qualité (Linters) par défaut, au minimum dans les langages suivants&nbsp;: CSS, SCSS et PHP. La configuration par défaut de Visual Studio Code doit être préservée au maximum pour éviter les conflits sur des postes différents.
 
+Lister les extensions : `code --list-extensions`
+
 ### Extensions indispensables ❤️
 
 - [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) (respect configuration tabs vs spaces à l'insertion, encodage, eol, etc)
