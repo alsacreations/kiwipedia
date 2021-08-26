@@ -123,6 +123,8 @@ Vetur nécessite un fichier `jsconfig.json` dont voici un exemple :
 
 ## Installation initiale
 
+### Installation Nuxt
+
 Doc : <https://nuxtjs.org/docs/2.x/get-started/installation>
 
 ```yaml
@@ -142,3 +144,7 @@ Réponses recommandées aux questions :
 - Development tools : jsconfig.json
 - Continuous integration: None
 - Version control system: Git
+
+### Installation Tailwind dans Nuxt
+
+Doc : <https://tailwindcss.com/docs/guides/nuxtjs>
