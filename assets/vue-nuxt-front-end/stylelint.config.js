@@ -17,6 +17,8 @@ module.exports = {
     'declaration-colon-space-before': 'never', // jamais d'espace avant le double-point
     'declaration-colon-space-after': 'always', // toujours une espace après le double-point
     'rule-empty-line-before': 'always', // ligne vide entre deux blocs
+    'max-empty-lines': 1, // une ligne maxi entre deux blocks
+    'no-eol-whitespace': true, // pas de whitespace en fin de ligne
     'font-family-name-quotes': 'always-where-recommended', // quotes si nécessaires
     'selector-attribute-quotes': 'always', // quotes dans les sélecteurs d'attributs
     'at-rule-no-unknown': [
