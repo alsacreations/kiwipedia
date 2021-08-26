@@ -120,3 +120,25 @@ Vetur nécessite un fichier `jsconfig.json` dont voici un exemple :
 "exclude": ["node_modules", ".nuxt", "dist"]
 }
 ```
+
+## Installation initiale
+
+Doc : <https://nuxtjs.org/docs/2.x/get-started/installation>
+
+```yaml
+npm init nuxt-app
+```
+
+Réponses recommandées aux questions :
+
+- Programming language: JavaScript
+- Package manager: Npm
+- UI framework: au choix ou None si on ajoute Tailwind autrement
+- Modules: Axios si usage d'API
+- Linting tools : EsLint (PAS Prettier) + Stylelint
+- Testing: None ou selon projet
+- Rendering mode: SSR/SSG
+- Deployment target: selon projet
+- Development tools : jsconfig.json
+- Continuous integration: None
+- Version control system: Git
