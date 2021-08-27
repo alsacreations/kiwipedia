@@ -68,9 +68,9 @@ Les éléments à ne pas oublier de faire apparaître dans les wireframes/maquet
 - Navigation principale + secondaire (menu desktop, menu mobile)
 - Fil d’ariane
 - Modale (pop-in)
-- Nous reprenons les textes et contenus (noms, fil d’ariane, navigation), s’il n’y en a pas, nous utilisons un texte de remplacement (ex. Schnapsum)
+- Nous reprenons les textes et contenus (noms, fil d’ariane, navigation), s’il n’y en a pas, nous utilisons un texte de remplacement (ex. Schnapsum, Lorem Ipsum) mais idéalement il faut un vrai contenu
 - Header et Footer
-  - Navigation
+  - Navigation desktop et mobile
   - Barre de recherche
   - Informations de contact (formulaire, adresse, téléphone)
   - Plan du site
@@ -137,7 +137,7 @@ Attention : ne pas se fier au rendu des couleurs avec les pipettes des navigateu
 #### Interactions utilisateur
 
 - Les états de survol / focus (liens, formulaires, boutons, etc.)
-- Les exemples de transitions (faire des liens vers des démos)
+- Les exemples de transitions ou animations (faire des liens vers des démos)
 - Les Liens d’évitement masqués au départ et déclenchés avec la touche Tab (cf. nos [Guidelines HTML](https://www.alsacreations.com/outils/guidelines/Guidelines-HTML.md))
 
 #### Divers
