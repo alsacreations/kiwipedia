@@ -87,8 +87,7 @@ Il est étendu aux fichiers HTML à l'aide d'un plugin installé via `npm instal
 
 Stylelint est l'unique formatteur pour les styles CSS et scss du projet. Les Linters natifs CSS et scss de VSCode doivent être désactivés (voir précédemment).
 
-La configuration recommandée de Stylelint est récupérée dans le projet via 
-`npm install stylelint-config-recommended --save-dev`
+La configuration recommandée de Stylelint est récupérée dans le projet via `npm install stylelint-config-recommended --save-dev`
 
 Stylelint pour Nuxt est installé via `npm install --save-dev stylelint`.
 
@@ -152,3 +151,34 @@ Réponses recommandées aux questions :
 ### Installation Tailwind dans Nuxt
 
 Doc : <https://tailwindcss.com/docs/guides/nuxtjs>
+
+### Internationalisation (i18n)
+
+Usage de <https://nuxt-community.github.io/nuxt-i18n/> avec fichiers de configuration des langues (par exemple `i18n/fr-FR.js` et `i18n/en-US.js`) organisant les chaînes par une structure objet. On privilégie les regroupements par fonctionnalité (ex : formulaires, boutons, actions utilisateur communes), puis par nom de composant s'ils sont plus spécifiques.
+
+- En tant que texte brut dans un balisage HTML : `<legend>{{ $t('identSignin.createAccount') }}</legend>`
+- En tant que valeur de prop/attribut : `:placeholder="$t('formInput.lastname')"`
+- En tant que valeur dans script : `title: this.$t('result.title')`
+- En tant que condition : `v-if="$i18n.locale == 'fr'"`
+- Lien racine : `<nuxt-link :to="localePath('/')">`
+
+Pour des formatages plus complexes voir <https://kazupon.github.io/vue-i18n/guide/formatting.html#html-formatting>
+
+### Pratiques permises par Nuxt
+
+- Routage automatique (fichiers placés dans `pages/`) <https://nuxtjs.org/docs/2.x/get-started/routing>
+- Layouts (dossier `layouts/`) <https://nuxtjs.org/docs/2.x/directory-structure/layouts>
+- Gestion des erreurs avec `error.vue` <https://nuxtjs.org/docs/2.x/concepts/views#error-page>
+- Auto-import des composants <https://fr.nuxtjs.org/docs/2.x/configuration-glossary/configuration-components>
+- Transitions full-page
+
+Exécution du code en front ou en back (SSR) : vérifier `process.client` ou `process.server`
+
+### Hooks
+
+- asyncdata
+- fetch
+
+### Extensions
+
+- Nuxt Content <https://content.nuxtjs.org/fr/>
