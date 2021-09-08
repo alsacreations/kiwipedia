@@ -226,9 +226,9 @@ Lister les types de clés
 ### CPU et processus
 
 Top des processus (< > modif colonne tri) (shift+O = tri des colonnes)
-`top`
+`top` ou encore mieux `htop`
 
-Processus
+Processus détaillés
 `ps auxwwwwf`
 
 Processus par mémoire requise

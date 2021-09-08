@@ -74,6 +74,7 @@ Confort visuel :
 - [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
 - [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) (pour connexion SSH par exemple)
 - [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur) (pour Vue.js)
+- [i18n Ally](lokalise.i18n-ally) pour les projets Vue/Nuxt avec internationalisation
 - [Partial Diff](https://marketplace.visualstudio.com/items?itemName=ryu1kn.partial-diff)
 - [Git History](https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory)
 - [PHP Debug](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug)
