@@ -23,8 +23,10 @@ module.exports = {
     'declaration-block-single-line-max-declarations': 1, // nombre de déclaration max par ligne
     'declaration-colon-space-before': 'never', // jamais d'espace avant le double-point
     'declaration-colon-space-after': 'always', // toujours une espace après le double-point
-    'selector-combinator-space-before': 'always', // // toujours une espace avant un combinateur
-    'selector-combinator-space-after': 'always', // // toujours une espace après un combinateur
+    'selector-combinator-space-before': 'always', // toujours une espace avant un combinateur
+    'selector-combinator-space-after': 'always', // toujours une espace après un combinateur
+    'at-rule-semicolon-space-before': 'never', // pas d'espace avant un point virgule
+    'declaration-block-semicolon-space-before': 'never', // pas d'espace avant un point virgule
     'rule-empty-line-before': 'always', // ligne vide entre deux blocs
     'max-empty-lines': 1, // une ligne maxi entre deux blocks
     'no-eol-whitespace': true, // pas de whitespace en fin de ligne
@@ -33,7 +35,7 @@ module.exports = {
     'at-rule-no-unknown': [
       true,
       {
-        'ignoreAtRules': ['function', 'if', 'each', 'include', 'mixin', 'layer', 'extends', 'tailwind']
+        'ignoreAtRules': ['function', 'if', 'each', 'include', 'mixin', 'layer', 'extends', 'apply', 'tailwind']
       }
     ]
   }
