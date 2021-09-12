@@ -68,6 +68,8 @@ Autres listes de ressources et checklists
 
 ## CSS
 
+- <https://www.smashingmagazine.com/2021/09/interactive-learning-tools-front-end-developers/> Jeux pour apprendre flexbox, grid
+
 ### Grids
 
 - <https://learncssgrid.com/> Apprendre CSS Grid Layout
@@ -93,7 +95,6 @@ Autres listes de ressources et checklists
 - <http://twitter.github.io/bootstrap/> Bootstrap (par Twitter)
 - <http://purecss.io/> Pure (Yahoo)
 - <http://designmodo.github.io/Flat-UI/> Flat UI
-- <https://knightsoftheflexboxtable.com/> Jeu pour apprendre flexbox avec Tailwind
 
 ### RWD Responsive Web Design
 
