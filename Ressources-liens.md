@@ -687,6 +687,12 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 ---
 
+## SQL et MySQL
+
+- <https://sqlbolt.com/> Apprendre SQL de manière interactive
+
+---
+
 ## Git
 
 - <https://www.atlassian.com/git/tutorials/setting-up-a-repository> Guide général sur Git
