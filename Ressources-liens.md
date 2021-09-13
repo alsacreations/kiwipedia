@@ -235,6 +235,7 @@ Autres listes de ressources et checklists
 - <http://jargon.js.org/> Jargon
 - <http://fr.eloquentjavascript.net/>
 - <https://basarat.gitbook.io/typescript/> TypeScript Deep Dive
+- <https://blog.scottlogic.com/2021/09/06/how-to-write-an-es-lint-rule-for-beginners.html> écrire ses propres règles eslint
 
 - Bonnes pratiques et style guides
 
