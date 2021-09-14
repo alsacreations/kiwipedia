@@ -85,7 +85,7 @@ Il est étendu aux fichiers HTML à l'aide d'un plugin installé via `npm instal
 
 ### Stylelint
 
-Stylelint est l'unique formatteur pour les styles CSS et scss du projet. Les Linters natifs CSS et scss de VSCode doivent être désactivés (voir précédemment).
+Stylelint est l'unique formatteur pour les styles CSS et scss du projet. <br>Les Linters natifs CSS et scss de VSCode **doivent être désactivés** (voir précédemment).
 
 La configuration recommandée de Stylelint est récupérée dans le projet via `npm install stylelint-config-recommended --save-dev`
 
