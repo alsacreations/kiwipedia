@@ -153,10 +153,6 @@ Par exemple :
 ```scss
 .grid-wrapper {
 
-    @media (max-width: theme("screens.small.max")) {
-      padding-inline: theme("spacing.10");
-    }
-
     @media (min-width: theme("screens.lg")) {
       grid-template-columns: minmax(theme("spacing.20"), 1fr)
         theme("spacing.60")
@@ -206,11 +202,44 @@ Exemple d'usage dans un fichier CSS ou `.vue` :
 - transitions / animations
 - dégradés
 - filtres / `backdrop-filter`
-- `:not()`, `:first-child`, `:checked`, `:empty` et autres pseudo classes
+- `:not()`, `:first-child`, `:nth-child()`, `:empty` et autres pseudo classes
 - `::before` / `::after` et autres pseudo-éléments
 - `calc()`
 - `clip()`
 - etc.
+
+### Privilégier `@apply` ou des styles CSS "classiques" ?
+
+De manière générale la syntaxe via `@apply` est bien moins verbeuse que la version "classique", notamment lorsque le contexte change (media-query, survol, dark mode, etc.).
+
+Elle est donc à privilégier, comme le montre l'exemple ci-dessous.
+
+Version `@apply` :
+
+```scss
+.footer {
+  @apply ml-10 md:ml-20 bg-white text-gray-dark dark:bg-gray-dark dark:text-white;
+}
+```
+
+Équivalent en version Scss :
+
+```scss
+.footer {
+  margin-left: theme("spacing.10");
+  color: theme("colors.gray-dark");
+  background-color: theme("colors.white");
+
+  @media (min-width: theme("screens.md")) {
+    margin-left: theme("spacing.20");
+  }
+
+  .dark & {
+    color: theme("colors.white");
+    background-color: theme("colors.gray-dark");
+  }
+}
+```
 
 ## Nommage et organisation
 
