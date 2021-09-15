@@ -220,7 +220,9 @@ Par exemple :
 Exemple (dans le fichier `app.scss`):
 
 ```scss
-// La règle @layer ajoute les styles dans la couche Tailwind "base". Ceci leur permet d'être Purgés et de ne être déclarés en fin des fichiers CSS (ils n'écraseront pas les classes TW utilitaires par exemple)
+// La règle @layer ajoute les styles dans la couche Tailwind "base". 
+// Ceci leur permet d'être Purgés et de ne être déclarés en fin des fichiers CSS
+// (ils n'écraseront pas les classes TW utilitaires par exemple)
 @layer base {
 
   body {
@@ -312,7 +314,7 @@ L'extension VSCode [Tailwind CSS intellisense](https://marketplace.visualstudio.
 1. Dans un fichier CSS, "à la Tailwind" :
 
 ```scss
-@include layer('utilities') {
+@layer utilities {
   .visually-hidden {
     @include apply('absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0');
     clip: rect(0, 0, 0, 0);
@@ -337,9 +339,3 @@ L'extension VSCode [Tailwind CSS intellisense](https://marketplace.visualstudio.
   }
 }
 ```
-
-## Des questions ?
-
-Quelle Différence entre `.visually-hidden {...}` et `@layer utilities { .visually-hidden {...} }`
-
-La première règle n'est pas "gérée" par Tailwind, elle sera déclarée (et appliquée) après les fichiers Tailwind (donc va les écraser systématiquement). De plus, ces styles ne seront pas comptabilisés parmi ceux pouvant être purgés, et le poids du fichier CSS final s'en ressentira.
