@@ -80,7 +80,7 @@ theme: {
 
 ### Remarque concernant les valeurs de `spacing` et `fontSize`
 
-Pour être le plus intuitif possible, les valeurs d'espacement et de tailles de polices correspondent à un "équivalent en pixel". <br>Par exemple la valeur "20" dans `text-20` vaut 1.25rem et est calculée pour être équivalente à 20px.
+Pour être les plus intuitives possibles, les valeurs d'espacement et de tailles de polices correspondent à un "équivalent en pixel". <br>Par exemple la valeur "20" dans `text-20` vaut 1.25rem et est calculée pour être équivalente à 20px.
 
 ```yaml
 fontSize: {
@@ -125,9 +125,16 @@ Il existe trois manières d'appliquer des styles CSS dans un projet Tailwind :
 
 Exemple d'usage dans une classe Tailwind : `<blockquote class="font-comic sm:text-20 md:text-24 md:text-center">`
 
-**Usage pertinent :** des éléments peu déterminants, nécessitant simplement des classes utilitaires
+**Usage pertinent :** des éléments peu déterminants, nécessitant simplement des classes utilitaires (marges, couleurs, tailles de police). Par exemple : des paragraphes, des blocs à décaler
 
-**Usage pertinent :** un Composant
+**Usage pertinent :** un Composant (unique ou réutilisable) tel que Navigation, Breadcrumb, Card, Pagination, Header, Footer, Taglist, Bouton, etc.
+
+Concrètement, concernant les Composants :
+
+- Celui-ci dispose d'une classe sémantique identique à son nom de fichier (ex. `class="nav-socials"` pour le composant `NavSocials.vue`)
+- Les styles de structure inhérents à ce composant sont à placer en (S)CSS "classique" dans l'élément `<style>`. Par exemple : `.nav-socials { display: flex; justify-content: center; flex-wrap: wrap;}`
+- Les styles de structure des descendants sont également renseignés en CSS dans l'élément `<style>`, par exemple `.nav-social-item`, `.nav-social-link`.
+- Les classes utilitaires et modificateurs (marges, padding, gouttières, couleurs, etc.) sont à placer dans le HTML car susceptibles d'être modifiés selon les contextes, par exemple `class="nav-socials mt-60 gap-10 md:gap-20 lg:gap-32"`
 
 ### Dans le (S)CSS via `@apply`
 
@@ -139,9 +146,47 @@ Exemple d'usage dans un fichier CSS via `@apply` :
 }
 ```
 
-**Usage pertinent :** Des parties de Layout, les grilles de mise en forme
+**Usage pertinent :** Des parties de Layout, les grilles de mise en forme.
 
-**Usage pertinent :** Des styles qui se répètent
+Par exemple :
+
+```scss
+.grid-wrapper {
+
+    @media (max-width: theme("screens.small.max")) {
+      padding-inline: theme("spacing.10");
+    }
+
+    @media (min-width: theme("screens.lg")) {
+      grid-template-columns: minmax(theme("spacing.20"), 1fr)
+        theme("spacing.60")
+        minmax(auto, theme("screens.lg"))
+        theme("spacing.60")
+        minmax(theme("spacing.20"), 1fr);
+    }
+  }
+```
+
+**Usage pertinent :** Des styles sur des éléments HTML de base.
+
+Exemple (dans le fichier `app.scss`):
+
+```scss
+@layer base {
+
+  body {
+    @apply text-base leading-relaxed font-body font-medium bg-white dark:bg-gray-dark text-gray-dark dark:text-white;
+  }
+
+  a {
+    @apply text-base font-heading font-extrabold underline;
+
+    &:hover, &:focus {
+      @apply no-underline;
+    }
+  }
+}
+```
 
 ### Dans le (S)CSS via... des propriétés CSS
 
