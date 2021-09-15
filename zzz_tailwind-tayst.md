@@ -303,7 +303,7 @@ Version `@apply` :
   color: theme("colors.gray-dark");
   background-color: theme("colors.white");
 
-  @media (min-width: theme("screens.md")) {
+  @screen md {
     margin-left: theme("spacing.20");
   }
 
@@ -377,7 +377,7 @@ Ceci a l’avantage de générer des classes au même niveau d'importance que ce
 
 ### `@screen`
 
-La directive `@screen` simplifie significativement la lecture des media queries. Elle est conseillée.
+La directive `@screen` simplifie significativement la lecture des media queries. Elle est vivement conseillée.
 
 Version via Media Query classique :
 
