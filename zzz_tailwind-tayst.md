@@ -79,12 +79,13 @@ Concrètement, nous renseignons notre palette de couleurs ainsi :
 ```yaml
 theme: {
   colors: {
-    // Configure your color palette here
+    // Ici la palette de couleurs de notre projet
+    'canary': '#C8FA64', // liens, icônes
   }
 }
 ```
 
-Pour les thématiques qui doivent conserver l'existant de Tailwind et se contenter d'ajouter des règles/valeurs supplémentaires, nous **étendons** au sein de `theme.extend` :
+Pour les styles qui doivent conserver l'existant de Tailwind et se contenter d'ajouter des règles/valeurs supplémentaires, nous **étendons** au sein de `theme.extend` :
 
 ```yaml
 theme: {
@@ -96,6 +97,36 @@ theme: {
       inherit: 'inherit'
     }
   }
+}
+```
+
+**Écraser** les propriétés les plus utilisées et **étendre** uniquement celles nécessaires permet d'alléger significativement le fichier CSS final.
+
+### Remarque concernant la Purge
+
+Tailwind dispose d'un outil de Purge consistant à supprimer toutes les règles et déclarations CSS non utilisées dans le projet compilé. **Ce mécanisme est primordial et allège considérablement le poids des fichiers (de l'ordre de plusieurs Mo!)**.
+
+Sont purgés par défaut :
+
+- Tous les styles Tailwind du fichier `tailwind.config.js`
+- Tous les styles déclaré via `@apply`
+- Tous les styles encadrés par une règle `@layer`
+
+Ne sont pas purgés par défaut :
+
+- Tous les styles additionnels "classiques" (fichiers `app.css`, `custom.scss`, etc.).
+
+Dans des projets VueJS / Nuxt, il est important d'inclure dans la Purge les fichiers `.vue` car ils contiennent eux-aussi des styles CSSd&nbsp;:
+
+```yaml
+module.exports = {
+  purge: [
+    './components/**/*.{vue,js}',
+    './layouts/**/*.vue',
+    './pages/**/*.vue',
+    './plugins/**/*.{js,ts}',
+    './nuxt.config.{js,ts}'
+  ]
 }
 ```
 
