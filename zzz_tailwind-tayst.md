@@ -130,6 +130,17 @@ module.exports = {
 }
 ```
 
+**Particularité :** Purge va chercher toutes les classes `Tailwind` dans nos fichiers et ne comprend pas une classe dynamique comme `“text-”~variable`.
+
+Il est obligatoire (dans le cas d’une classe `Tailwind`) de faire apparaître explicitement la classe entière.
+
+```html
+❌
+<div class="text-{{  error ? 'red-500' : 'blue-500' }}"></div>
+✔️
+<div class="{{  error ? 'text-red-500' : 'text-blue-500' }}"></div>
+```
+
 ### Remarque concernant les valeurs de `spacing` et `fontSize`
 
 Pour être les plus intuitives possibles, les valeurs d'espacement et de tailles de polices correspondent à un "équivalent en pixel". <br>Par exemple la valeur "20" dans `text-20` vaut 1.25rem et est calculée pour être équivalente à 20px.
@@ -198,23 +209,6 @@ Exemple d'usage dans un fichier CSS via `@apply` :
 }
 ```
 
-**Usage pertinent :** Des parties de Layout, les grilles de mise en forme. Ce sont des domaines souvent très spécifiques à chaque projet et qui sortent du cadre de faisabilité via Tailwind.
-
-Par exemple :
-
-```scss
-.grid-wrapper {
-
-    @screen lg {
-      grid-template-columns: minmax(theme("spacing.20"), 1fr)
-        theme("spacing.60")
-        minmax(auto, theme("screens.lg"))
-        theme("spacing.60")
-        minmax(theme("spacing.20"), 1fr);
-    }
-  }
-```
-
 **Usage pertinent :** Des styles sur des éléments HTML de base (`body`, niveaux de titres, liens, etc.)
 
 Exemple (dans le fichier `app.scss`):
@@ -238,6 +232,29 @@ Exemple (dans le fichier `app.scss`):
   }
 }
 ```
+
+**Usage pertinent :** Des parties de Layout, les grilles de mise en forme. Ce sont des domaines souvent très spécifiques à chaque projet et qui sortent du cadre de faisabilité via Tailwind.
+
+Par exemple :
+
+```scss
+.grid-wrapper {
+
+    @screen lg {
+      grid-template-columns: minmax(theme("spacing.20"), 1fr)
+        theme("spacing.60")
+        minmax(auto, theme("screens.lg"))
+        theme("spacing.60")
+        minmax(theme("spacing.20"), 1fr);
+    }
+  }
+```
+
+Notons sur l'exemple précédent la possibilité d'accéder aux variables Tailwind avec **`theme()`**.
+
+Le principe est d'employer une notation d'objet JavaScript. Ex: `theme('spacing.64')` ou `theme('colors.blue.500')`.
+
+Les valeurs sont séparées par des points (`.`) et non des traits d'union (`-`) dans cette notation.
 
 ### Dans le (S)CSS via... des propriétés CSS
 
