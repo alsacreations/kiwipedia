@@ -116,7 +116,7 @@ Ne sont pas purgés par défaut :
 
 - Tous les styles additionnels "classiques" (fichiers `app.css`, `custom.scss`, etc.).
 
-Dans des projets VueJS / Nuxt, il est important d'inclure dans la Purge les fichiers `.vue` car ils contiennent eux-aussi des styles CSSd&nbsp;:
+Dans des projets VueJS / Nuxt, il est important d'inclure dans la Purge (au début de `tailwind.config.js`) les fichiers `.vue` car ils contiennent eux-aussi des styles CSS&nbsp;:
 
 ```yaml
 module.exports = {
@@ -220,6 +220,7 @@ Par exemple :
 Exemple (dans le fichier `app.scss`):
 
 ```scss
+// La règle @layer ajoute les styles dans la couche Tailwind "base". Ceci leur permet d'être Purgés et de ne être déclarés en fin des fichiers CSS (ils n'écraseront pas les classes TW utilitaires par exemple)
 @layer base {
 
   body {
