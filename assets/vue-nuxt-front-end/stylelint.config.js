@@ -35,7 +35,7 @@ module.exports = {
     'at-rule-no-unknown': [
       true,
       {
-        'ignoreAtRules': ['function', 'if', 'each', 'include', 'mixin', 'layer', 'extends', 'apply', 'tailwind']
+        'ignoreAtRules': ['function', 'if', 'each', 'include', 'mixin', 'layer', 'extends', 'tailwind', 'apply', 'screen']
       }
     ]
   }
