@@ -50,7 +50,7 @@ Nous configurons Stylelint pour ignorer les règles-at inconnues :
 'at-rule-no-unknown': [
   true,
   {
-    'ignoreAtRules': ['function', 'if', 'each', 'include', 'mixin', 'layer', 'extends', 'apply', 'tailwind']
+    'ignoreAtRules': ['function', 'if', 'each', 'include', 'mixin', 'layer', 'extends', 'apply', 'tailwind', 'screen']
   }
 ]
 ```
