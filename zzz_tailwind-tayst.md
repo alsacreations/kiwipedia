@@ -25,7 +25,7 @@ Tailwind, associé à un environnement de travail et un workflow adaptés (VS Co
 
 Nous utilisons VS Code et l'extension VSCode [Tailwind CSS intellisense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss).
 
-Tailwind apporte son lot de règles-at spécifiques (`@apply`, `@layer`, `@screen`, etc.) pouvant être pointées du doigt par les Linters CSS.
+Tailwind apporte son lot de directives sous forme de règles-at spécifiques (`@apply`, `@layer`, `@screen`, `@variants`, etc.) pouvant être pointées du doigt par les Linters CSS.
 
 Stylelint est notre formatteur (unique) pour les styles CSS et scss du projet. <br>Les Linters natifs CSS et scss de VSCode **doivent être désactivés** dans la configuration `settings.json`&nbsp;:
 
@@ -205,7 +205,7 @@ Par exemple :
 ```scss
 .grid-wrapper {
 
-    @media (min-width: theme("screens.lg")) {
+    @screen lg {
       grid-template-columns: minmax(theme("spacing.20"), 1fr)
         theme("spacing.60")
         minmax(auto, theme("screens.lg"))
@@ -244,7 +244,7 @@ Exemple (dans le fichier `app.scss`):
 Exemple d'usage dans un fichier CSS ou `.vue` :
 
 ```scss
-@media (min-width: theme("screens.md")) {
+@screen md {
 
   .glass-layer {
     width: calc(100% - theme("spacing.40"));
@@ -339,3 +339,73 @@ L'extension VSCode [Tailwind CSS intellisense](https://marketplace.visualstudio.
   }
 }
 ```
+
+## Directives Tailwind
+
+En plus de `@apply`, Tailwind CSS propose plusieurs directives intéressantes.
+
+### `@layer`
+
+L'ensemble des styles CSS "classiques" sont placés au sein des différentes couches (layer) Tailwind que sont "base", "components" et "utilities".
+
+Ceci a l’avantage de générer des classes au même niveau d'importance que celles de Tailwind et qui pourront être purgeables.
+
+```scss
+@layer component {
+  .mon-composant {
+    
+  }
+}
+```
+
+### `@screen`
+
+La directive `@screen` simplifie significativement la lecture des media queries. Elle est conseillée.
+
+Version via Media Query classique :
+
+```scss
+body {
+  @apply bg-white;
+
+  @media (max-width: theme("screens.lg")) {
+    @apply bg-pink;
+  }
+}
+```
+
+Version avec `@screen` :
+
+```scss
+body {
+  @apply bg-white;
+
+  @screen lg {
+    @apply bg-pink;
+  }
+}
+```
+
+### `@variants`
+
+Cette directive peut générer toutes les classes `responsive`, `hover`, `focus` pour une classe personnalisée. Elle devient utilisable de la même manière que celles de Tailwind avec les préfixes `md:`, `hover:`, `focus:`.
+
+Elles seront de préférence dans le layer `utilities`.
+
+```scss
+@layer utilities {
+  @include variants('responsive, hover, focus') {
+    .mon-utility {
+      @apply bg-pink;
+    }
+  }
+}
+```
+
+**Note:** Ces classes sont indépendantes, il est impossible d'avoir une classe  `color: red;` mais qui devient `color: blue`; à partir d'un autre breakpoint.
+
+Le principe général est qu'`une propriété CSS = une fonction`. Donc à partir du moment où notre classe nécessite plus d'une propriété CSS, elle devient un **Component**.
+
+Les préfixes `sm`, `md`, `hover`, `focus`, … sont donc des switchs `on/off` pour une seule utilité.
+
+Ex: `sm:text-blue-500 md:text-red-500`
