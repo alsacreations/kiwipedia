@@ -194,7 +194,7 @@ Exemple d'usage dans une classe Tailwind : `<blockquote class="font-comic sm:tex
 
 Concrètement, dans le cas d'un Composant :
 
-- Celui-ci dispose d'une classe sémantique identique à son nom de fichier (ex. `class="nav-socials"` pour le composant `NavSocials.vue`)
+- Celui-ci dispose d'une **classe sémantique identique à son nom de fichier** (ex. `class="nav-socials"` pour le composant `NavSocials.vue`)
 - Les styles de structure inhérents à ce composant sont à placer en (S)CSS "classique" dans l'élément `<style>` du fichier `.vue` du composant. Par exemple : `.nav-socials { display: flex; justify-content: center; flex-wrap: wrap;}`
 - Les styles de structure des descendants sont également renseignés en CSS dans l'élément `<style>`, par exemple `.nav-social-item`, `.nav-social-link`.
 - Les classes utilitaires et modificateurs (marges, padding, gouttières, couleurs, etc.) sont à placer dans le HTML car susceptibles d'être modifiés selon les contextes, par exemple `class="nav-socials mt-60 gap-10 md:gap-20 lg:gap-32"`
@@ -318,9 +318,9 @@ Version `@apply` :
 
 L'extension VSCode [Tailwind CSS intellisense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) offre une auto-complétion ainsi qu'une tooltip au survol des classe bien pratique, mais nous observons deux principes supplémentaires :
 
-1. Nous appliquons une classe sémantique permettant d’identifier le contexte de l’élément, cela rendra la lecture du HTML plus simple. Toujours en début d’attribut class. Ex: `<ol class="breadcrumb-group leading-none small:my-10">`
+1. Nous appliquons une **classe sémantique** permettant d’identifier le contexte de l’élément, cela rendra la lecture du HTML plus simple. Toujours en début d’attribut class. Ex: `<ol class="breadcrumb-group leading-none small:my-10">`
 
-2. Notre liste de classe est être organisée, c'est-à-dire, regrouper les classes en fonction de leur utilité par ordre d'importance (l'esthétique à la fin). Nous faisons donc référence à nos Guidelines CSS pour cela.
+2. Notre liste de classe est être **organisée**, c'est-à-dire, regrouper les classes en fonction de leur utilité par ordre d'importance (l'esthétique à la fin). Nous faisons donc référence à nos Guidelines CSS pour cela.
 
 ## Ajouter une nouvelle valeur
 
