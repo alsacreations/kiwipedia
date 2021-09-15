@@ -201,13 +201,22 @@ Exemple d'usage dans un fichier CSS ou `.vue` :
 }
 ```
 
-**Usage pertinent :** les transitions, les animations, les dégradés et autres fonctionnalités très spécifiques (filtres, `calc()`, pseudo-éléments, etc.) seront à écrire dans un fichier CSS à part. De cette manière nous évitons une pollution du code importante.
+**Usage pertinent :** toutes les fonctionnalités spécifiques ou complexe à reproduire via Tailwind :
+
+- transitions / animations
+- dégradés
+- filtres / `backdrop-filter`
+- `:not()`, `:first-child`, `:checked`, `:empty` et autres pseudo classes
+- `::before` / `::after` et autres pseudo-éléments
+- `calc()`
+- `clip()`
+- etc.
 
 ## Nommage et organisation
 
 L'extension VSCode [Tailwind CSS intellisense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) offre une auto-complétion ainsi qu'une tooltip au survol des classe bien pratique, mais nous observons deux principes supplémentaires :
 
-1. Nous appliquons une classe sémantique permettant d’identifier le contexte de l’élément, cela rendra la lecture du HTML plus simple. Toujours en début d’attribut class. Ex: `<ol class="breadcrumb-group flex flex-wrap leading-none small:my-10">`
+1. Nous appliquons une classe sémantique permettant d’identifier le contexte de l’élément, cela rendra la lecture du HTML plus simple. Toujours en début d’attribut class. Ex: `<ol class="breadcrumb-group leading-none small:my-10">`
 
 2. Notre liste de classe est être organisée, c'est-à-dire, regrouper les classes en fonction de leur utilité par ordre d'importance (l'esthétique à la fin). Nous faisons donc référence à nos Guidelines CSS pour cela.
 
@@ -246,16 +255,8 @@ L'extension VSCode [Tailwind CSS intellisense](https://marketplace.visualstudio.
 }
 ```
 
-# DES QUESTIONS ?????
+## Des questions ?
 
-- Différence entre `.visually-hidden {...}`
-- et `@layer utilities { .visually-hidden {...} }`
+Quelle Différence entre `.visually-hidden {...}` et `@layer utilities { .visually-hidden {...} }`
 
-1er est déclaré après les fichiers TW + pas purgé
-
-Quid de :
-
-:not()
-::before / ::after
-calc())
-clip
+La première règle n'est pas "gérée" par Tailwind, elle sera déclarée (et appliquée) après les fichiers Tailwind (donc va les écraser systématiquement). De plus, ces styles ne seront pas comptabilisés parmi ceux pouvant être purgés, et le poids du fichier CSS final s'en ressentira.
