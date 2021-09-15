@@ -109,12 +109,12 @@ Tailwind dispose d'un outil de Purge consistant à supprimer toutes les règles 
 Sont purgés par défaut :
 
 - Tous les styles Tailwind du fichier `tailwind.config.js`
-- Tous les styles déclaré via `@apply`
+- Tous les styles déclarés via `@apply`
 - Tous les styles encadrés par une règle `@layer`
 
 Ne sont pas purgés par défaut :
 
-- Tous les styles additionnels "classiques" (fichiers `app.css`, `custom.scss`, etc.).
+- Tous les styles additionnels "classiques" (fichiers `app.css`, `custom.scss`, etc.). *Ces styles sont, par ailleurs, déclarés à la suite des styles Tailwind et les écrasent.*
 
 Dans des projets VueJS / Nuxt, il est important d'inclure dans la Purge (au début de `tailwind.config.js`) les fichiers `.vue` car ils contiennent eux-aussi des styles CSS&nbsp;:
 
@@ -181,10 +181,10 @@ Exemple d'usage dans une classe Tailwind : `<blockquote class="font-comic sm:tex
 
 **Usage pertinent :** un Composant (unique ou réutilisable) tel que Navigation, Breadcrumb, Card, Pagination, Header, Footer, Taglist, Bouton, etc.
 
-Concrètement, concernant les Composants :
+Concrètement, dans le cas d'un Composant :
 
 - Celui-ci dispose d'une classe sémantique identique à son nom de fichier (ex. `class="nav-socials"` pour le composant `NavSocials.vue`)
-- Les styles de structure inhérents à ce composant sont à placer en (S)CSS "classique" dans l'élément `<style>`. Par exemple : `.nav-socials { display: flex; justify-content: center; flex-wrap: wrap;}`
+- Les styles de structure inhérents à ce composant sont à placer en (S)CSS "classique" dans l'élément `<style>` du fichier `.vue` du composant. Par exemple : `.nav-socials { display: flex; justify-content: center; flex-wrap: wrap;}`
 - Les styles de structure des descendants sont également renseignés en CSS dans l'élément `<style>`, par exemple `.nav-social-item`, `.nav-social-link`.
 - Les classes utilitaires et modificateurs (marges, padding, gouttières, couleurs, etc.) sont à placer dans le HTML car susceptibles d'être modifiés selon les contextes, par exemple `class="nav-socials mt-60 gap-10 md:gap-20 lg:gap-32"`
 
@@ -198,7 +198,7 @@ Exemple d'usage dans un fichier CSS via `@apply` :
 }
 ```
 
-**Usage pertinent :** Des parties de Layout, les grilles de mise en forme.
+**Usage pertinent :** Des parties de Layout, les grilles de mise en forme. Ce sont des domaines souvent très spécifiques à chaque projet et qui sortent du cadre de faisabilité via Tailwind.
 
 Par exemple :
 
@@ -215,7 +215,7 @@ Par exemple :
   }
 ```
 
-**Usage pertinent :** Des styles sur des éléments HTML de base.
+**Usage pertinent :** Des styles sur des éléments HTML de base (`body`, niveaux de titres, liens, etc.)
 
 Exemple (dans le fichier `app.scss`):
 
