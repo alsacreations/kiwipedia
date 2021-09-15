@@ -197,10 +197,11 @@ Exemple d'usage dans un fichier CSS ou `.vue` :
 }
 ```
 
-**Usage pertinent :** toutes les fonctionnalités spécifiques ou complexe à reproduire via Tailwind :
+**Usage pertinent :** toutes les fonctionnalités spécifiques, complexes ou impossibles à reproduire via Tailwind :
 
 - transitions / animations
 - dégradés
+- ombrages
 - filtres / `backdrop-filter`
 - `:not()`, `:first-child`, `:nth-child()`, `:empty` et autres pseudo classes
 - `::before` / `::after` et autres pseudo-éléments
