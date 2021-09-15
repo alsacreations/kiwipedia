@@ -1,17 +1,23 @@
-# Tailwind : Guidelines d'intégration au quotidien
+# Tailwind CSS : bonnes pratiques d'intégration
 
-TODO: TODOOOOO:
+## Tailwind : un framework "utilitaire" avant tout
 
-## Utilitaire avant tout
+Ce que Tailwind fait de bien :
 
-- Tailwind c'est bien pratique
-- Tailwind c'est une belle grosse usine à gaz
-- ... et Devient de plus en plus usine à gaz (pseudo-éléments, :first-letter, :checked, selection et plein de nouveaux sélecteurs). <br>Par exemple, quel être humain est instinctivement à l'aise avec `class="bg-gradient-to-r from-red-500/50/[0.31]"` ?
+- Le principe des classes utilitaires (espacements, polices, couleurs, etc.)
+- L'adaptativité à différents contextes (responsive, survol/focus, dark mode, etc.)
 
-- BAD : transitions, animations, filtres, transformations, backdrop, text clip, marsking
-- GOOD : utilities (espacements, polices, couleurs), adaptativité (responsive, survol, dark mode)
+Ce que Tailwind fait de mal (ou ne fait pas du tout) :
 
-Les classes utilitaires sont une bénédictions sur des gros projets, longs, avec de multiples participants *(notre projet KNACSS, initié en 2012 sous forme de simple fichier Reset.css est devenu de plus en plus cohérent avec la philosophie de Tailwind... en ce qui concerne les classes utilitaires en tout cas)*.
+- De nombreuses propriétés CSS (transitions, animations, filtres, transformations, etc.)
+- De nombreux pseudo-éléments ou pseudo-classes
+- Il vite une usine à gaz si l'on veut "tout faire via Tailwind" <br>Par exemple, quel être humain normalement constitué est instinctivement à l'aise avec `class="bg-gradient-to-r from-red-500/50/[0.31]"`&nbsp;?
+
+## Pourquoi on utilise Tailwind chez Alsacréations&nbsp;?
+
+Les classes utilitaires sont une bénédiction sur des gros projets, longs, avec de multiples participants *(notre projet KNACSS, initié en 2012 sous forme de simple fichier Reset.css est devenu de plus en plus cohérent avec la philosophie de Tailwind... en ce qui concerne les classes utilitaires en tout cas)*.
+
+Tailwind, associé à un environnement de travail et un workflow adaptés (VS Code, Intellisense, auto-complétion, coloration syntaxique, etc.) apporte plus de bénéfices que d'inconvénients.
 
 **En bref : utilisons Tailwind pour ses bons côtés et ne nous forçons pas à utiliser Tailwind pour ce qu'il ne fait pas bien.**
 
