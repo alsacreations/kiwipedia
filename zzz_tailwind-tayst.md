@@ -397,7 +397,33 @@ Version avec `@screen` :
 body {
   @apply bg-white;
 
+  // => @media (min-width: "lg")
   @screen lg {
+    @apply bg-pink;
+  }
+}
+```
+
+**Remarque :** Le mécanisme classique des Media Queries dans Taiwlind est "Mobile First", la détection est donc en mode `min-width:`, maisl il est également possible de cibler via `max-width:`.
+
+Pour ce faire, déclarer la valeur de breakpoint dans `tailwing.config.js` (ici `small`)&nbsp;:
+
+```yaml
+theme: {
+  screens: {
+    'small': { 'max': '575px' }
+  }
+}
+```
+
+Puis utiliser `small` comme n'importe quelle autre valeur :
+
+```scss
+body {
+  @apply bg-white;
+
+  // => @media (max-width: 575)
+  @screen small {
     @apply bg-pink;
   }
 }
