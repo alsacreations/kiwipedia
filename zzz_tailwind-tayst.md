@@ -27,7 +27,7 @@ Nous utilisons VS Code et l'extension VSCode [Tailwind CSS intellisense](https:/
 
 Tailwind apporte son lot de directives sous forme de règles-at spécifiques (`@apply`, `@layer`, `@screen`, `@variants`, etc.) pouvant être pointées du doigt par les Linters CSS.
 
-Stylelint est notre formatteur (unique) pour les styles CSS et scss du projet. <br>Les Linters natifs CSS et scss de VSCode **doivent être désactivés** dans la configuration `settings.json`&nbsp;:
+Stylelint est notre formatteur (unique) pour les styles CSS et scss du projet. <br>Les Linters natifs CSS et scss de VSCode **doivent être désactivés** dans la configuration VSCode `settings.json`&nbsp;:
 
 ```json
 {
@@ -44,7 +44,7 @@ Stylelint est notre formatteur (unique) pour les styles CSS et scss du projet. <
 }
 ```
 
-Nous configurons Stylelint pour ignorer les règles-at inconnues :
+De plus, nous configurons spécifiquement Stylelint (dans `stylelint.config.js`) pour ignorer les règles-at inconnues :
 
 ```json
 'at-rule-no-unknown': [
