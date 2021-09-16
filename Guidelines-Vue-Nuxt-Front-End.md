@@ -45,7 +45,7 @@ La configuration fournie dans le fichier `/.vscode/settings.json` permet de :
 - De corriger automatiquement les erreurs ESLint lors de la sauvegarde du fichier
 - De désactiver les linters natifs VSCode CSS et scss et d'activer Stylelint uniquement pour éviter certains conflits.
 
-([Afficher/télécharger ce fichier](assets/vue-nuxt-front-end/.vscode/settings.json))
+([Afficher/télécharger le fichier `settings.json`](assets/vue-nuxt-front-end/.vscode/settings.json))
 
 ```yaml
 {
@@ -87,11 +87,14 @@ Il est étendu aux fichiers HTML à l'aide d'un plugin installé via `npm instal
 
 Stylelint est l'unique formatteur pour les styles CSS et scss du projet. <br>Les Linters natifs CSS et scss de VSCode **doivent être désactivés** (voir précédemment).
 
-La configuration recommandée de Stylelint est récupérée dans le projet via `npm install stylelint-config-recommended --save-dev`
+La procédure d'installation de Stylelint est la suivante :
 
-Stylelint pour Nuxt est installé via `npm install --save-dev stylelint`.
+- Installer l'extension [Stylelint pour VSCode](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint),
+- Installer le package Stylelint via `npm install stylelint --save-dev` *(ceci étant généralement déjà prévu dans le `package.json` du projet)*,
+- Installer la configuration recommandée de Stylelint via `npm install stylelint-config-recommended --save-dev`
+- Créer un fichier `stylelint.config.js` contenant les règles à appliquer.
 
-([Afficher/télécharger le fichier `stylelint.config.js`](assets/vue-nuxt-front-end/stylelint.config.js)).
+([Afficher/télécharger le fichier `stylelint.config.js` recommandé](assets/vue-nuxt-front-end/stylelint.config.js)).
 
 ### Prettier
 

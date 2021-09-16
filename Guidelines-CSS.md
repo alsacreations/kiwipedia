@@ -12,6 +12,14 @@ Cette présente convention rassemble les bonnes pratiques CSS (et SCSS) en produ
 - [EditorConfig](http://editorconfig.org/) et [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) imposent un formatage (UTF-8, espace vs tabs, guillemets) et des règles de syntaxe directement dans l'éditeur, ainsi ce dernier s'adapte à chaque projet.
 - [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint) et [eslint](https://eslint.org/) sont des linters apportant une configuration qui vient s'ajouter aux outils natifs de Visual Studio Code.
 
+### Configuration des extensions et linters
+
+Tous les détails et configuration des Extensions et Linters sont décrits au sein des Guidelines selon la typologie de projet :
+
+- [Guidelines Vue-Nuxt-Front-End](Guidelines-Vue-Nuxt-Front-End.md)
+- [Guidelines Vue-WordPress](Guidelines-Vue-WordPress.md)
+- [Guidelines WordPress](Guidelines-WordPress.md)
+
 ### Langage : Scss
 
 Le pré-processeur [Sass](https://sass-lang.com/) (syntaxe `.scss`) apporte des fonctionnalités CSS indispensables&nbsp;: variables, notation imbriquée, mixins, etc. La méthode de compilation de Sass vers CSS dépend du type de projet (voir partie ["Méthodologies et conventions de nommage"](#méthodologies-et-conventions-de-nommage-css)).

@@ -29,7 +29,6 @@ Cette présente charte a pour objectif :
 - [**Guidelines WordPress**](Guidelines-WordPress.md)
 - [**Guidelines Développement PHP / MySql**](Guidelines-Developpement-PHP.md)
 
-
 **NOTE : Aucun de ces documents n'est figé, ils sont en constante amélioration et évolution.**
 
 ## Ressources et pense-bêtes
