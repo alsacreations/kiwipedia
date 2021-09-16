@@ -32,6 +32,7 @@ module.exports = {
     'no-eol-whitespace': true, // pas de whitespace en fin de ligne
     'font-family-name-quotes': 'always-where-recommended', // quotes si nécessaires
     'selector-attribute-quotes': 'always', // quotes dans les sélecteurs d'attributs
+    'no-invalid-position-at-import-rule': null, // @import autorisé dans @layer
     'at-rule-no-unknown': [
       true,
       {
