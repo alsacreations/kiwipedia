@@ -9,9 +9,9 @@ Ce que Tailwind fait de bien :
 
 Ce que Tailwind fait de mal (ou ne fait pas du tout) :
 
-- De nombreuses propriétés CSS (transitions, animations, filtres, transformations, etc.)
-- De nombreux pseudo-éléments ou pseudo-classes
-- Il vite une usine à gaz si l'on veut "tout faire via Tailwind" <br>Par exemple, quel être humain normalement constitué est instinctivement à l'aise avec `class="bg-gradient-to-r from-red-500/50/[0.31]"`&nbsp;?
+- De nombreuses propriétés CSS sont "inadaptées" à Tailwind (transitions, animations, filtres, transformations, grilles, etc.)
+- De nombreux pseudo-éléments ou pseudo-classes n'existent pas dans Tailwind
+- Tailwind devient vite une usine à gaz si l'on veut *"tout faire via Tailwind"* <br>Par exemple, quel être humain normalement constitué est instinctivement à l'aise avec `class="bg-gradient-to-r from-red-500/50/[0.31] via-indigo-700 items-baseline backdrop-invert-0 md:row-start-5 sm:content-around leading-snug dark:tracking-wider placeholder-gray-50::placeholder"`&nbsp;?
 
 ## Pourquoi on utilise Tailwind chez Alsacréations&nbsp;?
 
