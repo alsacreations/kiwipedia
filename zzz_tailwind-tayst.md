@@ -137,7 +137,7 @@ Il est obligatoire (dans le cas d’une classe `Tailwind`) de faire apparaître 
 ```html
 ❌
 <div class="text-{{  error ? 'red-500' : 'blue-500' }}"></div>
-✔️
+✅
 <div class="{{  error ? 'text-red-500' : 'text-blue-500' }}"></div>
 ```
 
@@ -180,24 +180,13 @@ zIndex: {
 
 Il existe trois manières d'appliquer des styles CSS dans un projet Tailwind :
 
-1. Dans le HTML *(Tailwind)*
+1. Dans le Template HTML *(Tailwind)*
 2. Dans le (S)CSS via `@apply` *(Tailwind)*
 3. Dans le (S)CSS via... des propriétés CSS *(pas Tailwind)*
 
 ### Dans le HTML
 
 Exemple d'usage dans une classe Tailwind : `<blockquote class="font-comic sm:text-20 md:text-24 md:text-center">`
-
-**Usage pertinent :** des éléments peu déterminants, nécessitant simplement des classes utilitaires (marges, couleurs, tailles de police). Par exemple : des paragraphes, des blocs à décaler
-
-**Usage pertinent :** un Composant (unique ou réutilisable) tel que Navigation, Breadcrumb, Card, Pagination, Header, Footer, Taglist, Bouton, etc.
-
-Concrètement, dans le cas d'un Composant :
-
-- Celui-ci dispose d'une **classe sémantique identique à son nom de fichier** (ex. `class="nav-socials"` pour le composant `NavSocials.vue`)
-- Les styles de structure inhérents à ce composant sont à placer en (S)CSS "classique" dans l'élément `<style>` du fichier `.vue` du composant. Par exemple : `.nav-socials { display: flex; justify-content: center; flex-wrap: wrap;}`
-- Les styles de structure des descendants sont également renseignés en CSS dans l'élément `<style>`, par exemple `.nav-social-item`, `.nav-social-link`.
-- Les classes utilitaires et modificateurs (marges, padding, gouttières, couleurs, etc.) sont à placer dans le HTML car susceptibles d'être modifiés selon les contextes, par exemple `class="nav-socials mt-60 gap-10 md:gap-20 lg:gap-32"`
 
 ### Dans le (S)CSS via `@apply`
 
@@ -209,56 +198,9 @@ Exemple d'usage dans un fichier CSS via `@apply` :
 }
 ```
 
-**Usage pertinent :** Des styles sur des éléments HTML de base (`body`, niveaux de titres, liens, etc.)
-
-Exemple (dans le fichier `app.scss`):
-
-```scss
-// La règle @layer ajoute les styles dans la couche Tailwind "base". 
-// Ceci leur permet d'être Purgés et de ne être déclarés en fin des fichiers CSS
-// (ils n'écraseront pas les classes TW utilitaires par exemple)
-@layer base {
-
-  body {
-    @apply text-base leading-relaxed font-body font-medium bg-white dark:bg-gray-dark text-gray-dark dark:text-white;
-  }
-
-  a {
-    @apply text-base font-heading font-extrabold underline;
-
-    &:hover, &:focus {
-      @apply no-underline;
-    }
-  }
-}
-```
-
-**Usage pertinent :** Des parties de Layout, les grilles de mise en forme. Ce sont des domaines souvent très spécifiques à chaque projet et qui sortent du cadre de faisabilité via Tailwind.
-
-Par exemple :
-
-```scss
-.grid-wrapper {
-
-    @screen lg {
-      grid-template-columns: minmax(theme("spacing.20"), 1fr)
-        theme("spacing.60")
-        minmax(auto, theme("screens.lg"))
-        theme("spacing.60")
-        minmax(theme("spacing.20"), 1fr);
-    }
-  }
-```
-
-Notons sur l'exemple précédent la possibilité d'accéder aux variables Tailwind avec **`theme()`**.
-
-Le principe est d'employer une notation d'objet JavaScript. Ex: `theme('spacing.64')` ou `theme('colors.blue.500')`.
-
-Les valeurs sont séparées par des points (`.`) et non des traits d'union (`-`) dans cette notation.
-
 ### Dans le (S)CSS via... des propriétés CSS
 
-Exemple d'usage dans un fichier CSS ou `.vue` :
+Exemple d'usage dans un fichier CSS ou la partie `<style></style>` d'un fichier `.vue` :
 
 ```scss
 @screen md {
@@ -269,19 +211,7 @@ Exemple d'usage dans un fichier CSS ou `.vue` :
 }
 ```
 
-**Usage pertinent :** toutes les fonctionnalités spécifiques, complexes ou impossibles à reproduire via Tailwind :
-
-- transitions / animations
-- dégradés
-- ombrages
-- filtres / `backdrop-filter`
-- `:not()`, `:first-child`, `:nth-child()`, `:empty` et autres pseudo classes
-- `::before` / `::after` et autres pseudo-éléments
-- `calc()`
-- `clip()`
-- etc.
-
-### Privilégier `@apply` ou des styles CSS "classiques" ?
+## Privilégier les classes HTML, `@apply` ou des styles CSS "classiques" ?
 
 De manière générale la syntaxe via `@apply` est bien moins verbeuse que la version "classique", notamment lorsque le contexte change (media-query, survol, dark mode, etc.).
 
@@ -314,13 +244,175 @@ Version `@apply` :
 }
 ```
 
+**Usage pertinent de classes dans le HTML :** Les styles utilitaires (marges, couleurs, tailles de police). Par exemple : des paragraphes, des blocs à décaler, à modifier selon les contextes.
+
+**Usage pertinent de styles via `@apply` :** Les styles récurrents sur des éléments HTML de base (`body`, niveaux de titres, liens, etc.).
+
+**Usage pertinent de CSS "classiques" :** Des parties de Layout, les grilles de mise en forme. Ce sont des domaines souvent très spécifiques à chaque projet et qui sortent du cadre de faisabilité via Tailwind.
+
+**Usage pertinent de CSS "classique" :** Des parties de Layout, les grilles de mise en forme ainsi que toutes les fonctionnalités spécifiques, complexes ou impossibles à reproduire via Tailwind&nbsp;:
+
+- transitions / animations
+- dégradés
+- ombrages
+- filtres / `backdrop-filter`
+- `:not()`, `:first-child`, `:nth-child()`, `:empty` et autres pseudo classes
+- `::before` / `::after` et autres pseudo-éléments
+- `calc()`
+- `clip()`
+- etc.
+
+## Dans le détail : les éléments basiques
+
+Ce sont les éléments que l'on retrouve maintes fois dans les documents (`body`, niveaux de titres, liens, etc.)
+
+**Les styles des éléments basiques sont généralement appliqués via `@apply`** au sein d'un fichier `app.scss` :
+
+```scss
+// La règle @layer ajoute les styles dans la couche Tailwind "base". 
+// Ceci leur permet d'être Purgés et de ne être déclarés en fin des fichiers CSS
+// (ils n'écraseront pas les classes TW utilitaires par exemple)
+@layer base {
+
+  body {
+    // séparer en plusieurs apply selon les groupes de styles
+    @apply text-base leading-relaxed font-body font-medium;
+    @apply text-gray-dark dark:text-white;
+    @apply bg-white dark:bg-gray-dark;
+  }
+
+  a {
+    @apply text-base font-heading font-extrabold;
+    @apply underline;
+
+    &:hover, &:focus {
+      @apply no-underline;
+    }
+  }
+}
+```
+
+## Dans le détail : un élément de Layout
+
+Un élément de Layout désigne une zone dépourvue de "sémantique", uniquement destinée à placer son contenu selon une grille ou un alignement spécifique.
+
+**Les styles des éléments de Layout sont généralement appliqués via CSS "classique"** (car trop complexes pour être pris en compte par Tailwind entièrement) au sein d'un fichier `app.scss` :
+
+Par exemple :
+
+```scss
+// Placer les styles de Layout au niveau des couches de base
+@layer base {
+// Donner un nom différent de la nomenclature Tailwind (pas de "grid-8" par ex.)
+.layout-wrapper {
+
+    @screen lg {
+      grid-template-columns: minmax(theme("spacing.20"), 1fr)
+        theme("spacing.60")
+        minmax(auto, theme("screens.lg"))
+        theme("spacing.60")
+        minmax(theme("spacing.20"), 1fr);
+    }
+  }
+}
+```
+
+Notons sur cet exemple la possibilité d'accéder aux variables Tailwind avec **`theme()`**.
+
+Le principe est d'employer une notation d'objet JavaScript. Ex: `theme('spacing.64')` ou `theme('colors.blue.500')`.
+
+Les valeurs sont séparées par des points (`.`) et non des traits d'union (`-`) dans cette notation.
+
+## Dans le détail : un Composant
+
+Un Composant est un élément généralement réutilisable à divers endroits du projet. Celui-ci dispose d'une **classe sémantique identique à son nom de fichier** (ex. `class="nav-socials"` pour le composant `NavSocials.vue`)
+
+Il est inséré au sein d'une page via `<NavSocials></NavSocials>`.
+
+```html
+<!-- partie Template du fichier NavSocials.vue -->
+<template>
+  <ul class="nav-socials">
+    <li class="nav-socials-item">
+      <a class="nav-socials-link"
+        href="">Nos actualités</a>
+    </li>
+    <li class="nav-socials-item">
+      <a class="nav-socials-link"
+        href="">Facebook</a>
+    </li>
+    <li class="nav-socials-item">
+      <a class="nav-socials-link"
+        href="">Github</a>
+    </li>
+  </ul>
+</template>
+```
+
+```html
+<!-- partie <style></style> du fichier NavSocials.vue -->
+<style lang="scss">
+@layer components {
+
+  .nav-socials {
+    @apply flex justify-center flex-wrap;
+  }
+
+  .nav-socials-item {
+    @apply flex items-center;
+  }
+
+  .nav-socials-link {
+    @apply font-medium font-body;
+
+    &:hover, &:focus {
+      @apply no-underline;
+    }
+  }
+}
+</style>
+```
+
+**Bonnes pratiques d'intégration des Composants :**
+
+- Les styles sont généralement à déclarer via `@apply` (pas de classes dans le template HTML)
+- Attribuer des noms de classes aux éléments à cibler en CSS et n'utiliser que des sélecteurs de classes si possible, pas de sélecteurs composés (utiliser `.nav-socials-link` et jamais `.nav-socials a`)
+- Un Composant nécessitant des variantes ou modificateurs (marges, padding, gouttières, couleurs, etc.) disposera de classes Tailwind lors de son insersion (`<NavSocials class="mt-60 gap-10 md:gap-20 lg:gap-32"></NavSocials>`)
+- Préciser le langage des styles quand Sass est employé (`<style lang="scss">`) pour éviter d'affoler les Linters
+- Englober les styles de composants au sein d'un layer (`@layer components {}`) pour permettre la purge et éviter d'écraser les styles utilitaires
+
 ## Nommage et organisation
 
 L'extension VSCode [Tailwind CSS intellisense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) offre une auto-complétion ainsi qu'une tooltip au survol des classe bien pratique, mais nous observons deux principes supplémentaires :
 
-1. Nous appliquons une **classe sémantique** permettant d’identifier le contexte de l’élément, cela rendra la lecture du HTML plus simple. Toujours en début d’attribut class. Ex: `<ol class="breadcrumb-group leading-none small:my-10">`
+Notre liste de classes Tailwind est **organisée**, c'est-à-dire que nous regroupons les classes en fonction de leur utilité par ordre d'importance (l'esthétique à la fin). Nous faisons donc référence à nos Guidelines CSS pour cela.
 
-2. Notre liste de classe est être **organisée**, c'est-à-dire, regrouper les classes en fonction de leur utilité par ordre d'importance (l'esthétique à la fin). Nous faisons donc référence à nos Guidelines CSS pour cela.
+## Importer les styles
+
+```scss
+// Fichier `tailwind.css`
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+**Remarque :** le layer `base` contient un fichier reset (Modern Normalize) lui-même [modifié par Tailwind](https://tailwindcss.com/docs/preflight).
+
+Le fichier [alsa-TW-Reset](assets/vue-nuxt-front-end/alsa-tw-reset.scss) apporte des styles complémentaires (fix, accessibilité, print) que nous estimons nécessaires.
+
+```scss
+// Fichier `app.css`
+@layer base {
+  @import "alsa-tw-reset.scss";
+  @import "fonts.scss";
+}
+
+/* ------------------------------------- */
+/* Styles personnalisés                  */
+@layer base {
+  ...
+}
+```
 
 ## Ajouter une nouvelle valeur
 
