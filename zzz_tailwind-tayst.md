@@ -213,36 +213,14 @@ Exemple d'usage dans un fichier CSS ou la partie `<style></style>` d'un fichier 
 
 ## Privilégier les classes HTML, `@apply` ou des styles CSS "classiques" ?
 
-De manière générale la syntaxe via `@apply` est bien moins verbeuse que la version "classique", notamment lorsque le contexte change (media-query, survol, dark mode, etc.).
+**Bien que la "philosophie" de Tailwind consiste à écrire tous les styles sous forme de classes au sein du template (HTML, Vue), nous pensons que cela n'est pas toujours pertinent et préconisons de réserver les classes HTML pour les styles purement utilitaires (marges, polices, couleurs, etc.).**
 
-Elle est donc à privilégier, comme le montre l'exemple ci-dessous.
+Nous appliquons donc généralement les styles ainsi :
 
-Version `@apply` :
+- Les **Composants** sont stylisés dans la partie `<style>` de leur page `.vue`, à l'exception des variantes en classes utilitaires (voir exemple concret plus loin)
+- Les **Styles globaux** (body, liens, titres, etc.) ainsi que les **Layouts** (grilles) sont stylisés dans un fichier `app.scss`
 
-```scss
-.footer {
-  @apply ml-10 md:ml-20 bg-white text-gray-dark dark:bg-gray-dark dark:text-white;
-}
-```
-
-Équivalent en version Scss :
-
-```scss
-.footer {
-  margin-left: theme("spacing.10");
-  color: theme("colors.gray-dark");
-  background-color: theme("colors.white");
-
-  @screen md {
-    margin-left: theme("spacing.20");
-  }
-
-  .dark & {
-    color: theme("colors.white");
-    background-color: theme("colors.gray-dark");
-  }
-}
-```
+De manière générale la syntaxe via `@apply` est bien moins verbeuse que la version CSS "classique", notamment lorsque le contexte change (media-query, survol, dark mode, etc.). Elle est donc à privilégier.
 
 **Usage pertinent de classes dans le HTML :** Les styles utilitaires (marges, couleurs, tailles de police). Par exemple : des paragraphes, des blocs à décaler, à modifier selon les contextes.
 
@@ -387,7 +365,9 @@ L'extension VSCode [Tailwind CSS intellisense](https://marketplace.visualstudio.
 
 Notre liste de classes Tailwind est **organisée**, c'est-à-dire que nous regroupons les classes en fonction de leur utilité par ordre d'importance (l'esthétique à la fin). Nous faisons donc référence à nos Guidelines CSS pour cela.
 
-## Importer les styles
+## Importer les styles dans un projet Tailwind
+
+Le fichier Tailwind se charge d'importer 3 fichiers principaux.
 
 ```scss
 // Fichier `tailwind.css`
