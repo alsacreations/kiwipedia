@@ -2,18 +2,18 @@
 
 ## Tailwind : un framework "utilitaire" avant tout
 
-Ce que Tailwind fait de bien :
+Ce que [Tailwind](https://tailwindcss.com/) fait bien :
 
 - Le principe des classes utilitaires (espacements, polices, couleurs, etc.)
 - L'adaptativité à différents contextes (responsive, survol/focus, dark mode, etc.)
 
-Ce que Tailwind fait de mal (ou ne fait pas du tout) :
+Ce que Tailwind fait mal (ou ne fait pas du tout) :
 
 - De nombreuses propriétés CSS sont "inadaptées" à Tailwind (transitions, animations, filtres, transformations, grilles, etc.)
 - De nombreux pseudo-éléments ou pseudo-classes n'existent pas dans Tailwind
 - Tailwind devient vite une usine à gaz si l'on veut *"tout faire via Tailwind"* <br>Par exemple, quel être humain normalement constitué est instinctivement à l'aise avec `class="bg-gradient-to-r from-red-500/50/[0.31] via-indigo-700 items-baseline backdrop-invert-0 md:row-start-5 sm:content-around leading-snug dark:tracking-wider placeholder-gray-50::placeholder"`&nbsp;?
 
-## Pourquoi on utilise Tailwind chez Alsacréations&nbsp;?
+## Pourquoi utilise-t-on Tailwind chez Alsacréations ?
 
 Les classes utilitaires sont une bénédiction sur des gros projets, longs, avec de multiples participants *(notre projet KNACSS, initié en 2012 sous forme de simple fichier Reset.css est devenu de plus en plus cohérent avec la philosophie de Tailwind... en ce qui concerne les classes utilitaires en tout cas)*.
 
@@ -104,7 +104,7 @@ theme: {
 
 ### Remarque concernant la Purge
 
-Tailwind dispose d'un outil de Purge consistant à supprimer toutes les règles et déclarations CSS non utilisées dans le projet compilé. **Ce mécanisme est primordial et allège considérablement le poids des fichiers (de l'ordre de plusieurs Mo!)**.
+Tailwind dispose d'un outil de Purge consistant à supprimer toutes les règles et déclarations CSS non utilisées dans le projet compilé. **Ce mécanisme est primordial et allège considérablement le poids des fichiers (de 3.5 Mo par défaut à quelques Ko)**.
 
 Sont purgés par défaut :
 
@@ -176,7 +176,7 @@ zIndex: {
 },
 ```
 
-## Comment appliquer les classes TW ?
+## Comment appliquer les classes Tailwind ?
 
 Il existe trois manières d'appliquer des styles CSS dans un projet Tailwind :
 
@@ -248,7 +248,7 @@ Ce sont les éléments que l'on retrouve maintes fois dans les documents (`body`
 ```scss
 // La règle @layer ajoute les styles dans la couche Tailwind "base". 
 // Ceci leur permet d'être Purgés et de ne être déclarés en fin des fichiers CSS
-// (ils n'écraseront pas les classes TW utilitaires par exemple)
+// (ils n'écraseront pas les classes Tailwind utilitaires par exemple)
 @layer base {
 
   body {
