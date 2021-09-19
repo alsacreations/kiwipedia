@@ -226,10 +226,9 @@ De manière générale la syntaxe via `@apply` est bien moins verbeuse que la ve
 
 **Usage pertinent de styles via `@apply` :** Les styles récurrents sur des éléments HTML de base (`body`, niveaux de titres, liens, etc.).
 
-**Usage pertinent de CSS "classiques" :** Des parties de Layout, les grilles de mise en forme. Ce sont des domaines souvent très spécifiques à chaque projet et qui sortent du cadre de faisabilité via Tailwind.
-
 **Usage pertinent de CSS "classique" :** Des parties de Layout, les grilles de mise en forme ainsi que toutes les fonctionnalités spécifiques, complexes ou impossibles à reproduire via Tailwind&nbsp;:
 
+- Grid Layout
 - transitions / animations
 - dégradés
 - ombrages
@@ -353,11 +352,11 @@ Il est inséré au sein d'une page via `<NavSocials></NavSocials>`.
 
 **Bonnes pratiques d'intégration des Composants :**
 
-- Les styles sont généralement à déclarer via `@apply` (pas de classes dans le template HTML)
-- Attribuer des noms de classes aux éléments à cibler en CSS et n'utiliser que des sélecteurs de classes si possible, pas de sélecteurs composés (utiliser `.nav-socials-link` et jamais `.nav-socials a`)
-- Un Composant nécessitant des variantes ou modificateurs (marges, padding, gouttières, couleurs, etc.) disposera de classes Tailwind lors de son insersion (`<NavSocials class="mt-60 gap-10 md:gap-20 lg:gap-32"></NavSocials>`)
-- Préciser le langage des styles quand Sass est employé (`<style lang="scss">`) pour éviter d'affoler les Linters
-- Englober les styles de composants au sein d'un layer (`@layer components {}`) pour permettre la purge et éviter d'écraser les styles utilitaires
+- Les styles sont généralement à déclarer via `@apply` **(pas de classes dans le template HTML)**
+- Attribuer des noms de classes aux éléments à cibler en CSS et **n'utiliser que des sélecteurs de classes** si possible, pas de sélecteurs composés (utiliser `.nav-socials-link` et jamais `.nav-socials a`)
+- **Un Composant nécessitant des variantes ou modificateurs (marges, padding, gouttières, couleurs, etc.) disposera de classes Tailwind lors de son insersion (`<NavSocials class="mt-60 gap-10 md:gap-20 lg:gap-32"></NavSocials>`)**
+- **Préciser le langage des styles** quand Sass est employé (`<style lang="scss">`) pour éviter d'affoler les Linters
+- Englober les styles de composants au **sein d'un layer** (`@layer components {}`) pour permettre la purge et éviter d'écraser les styles utilitaires
 
 ## Nommage et organisation
 
