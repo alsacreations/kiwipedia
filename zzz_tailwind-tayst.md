@@ -374,7 +374,7 @@ Cette version est très pratique pour des composants simples, avec répétitions
 ```html
 <!-- partie Template du fichier NavSocials.vue -->
 <template>
-  <ul class="nav-socials">
+  <ul class="nav-socials flex justify-center flex-wrap">
     <li v-for="(link, index) in links"
       :key="`link-${index}`"
       class="flex items-center">
