@@ -43,11 +43,13 @@ mix.sass('resources/styles/app.scss', 'styles').tailwind()
 
 #### Vue - Nuxt
 
-1. Installer les dépendances NPM `npm install tailwindcss postcss autoprefixer`. Note: Postcss est généralement installé par défaut, vérifier que c’est une version compatible Tailwind.
+> NOTE: Ne pas dire **Oui** quand Nuxt propose d'installer Tailwind automatiquement. On le fait nous même pour éviter tout soucis de compatibilité.
+
+1. Installer les dépendances NPM `npm install -D @nuxtjs/tailwindcss tailwindcss@latest postcss@latest autoprefixer@latest`.
 2. Créer un fichier de config avec `npx tailwindcss init` vierge si possible.
 3. Configurer les fichiers qui seront à purger dans la config js.
-4. Créer le fichier de config `postcss`.
-5. Enfin dans le fichier styles par défaut ajouter `Tailwind`.
+4. Ajouter Tailwind aux `buildModules` de Nuxt.
+5. Ajouter les styles `@utilities`, `@base`, `@components` dans le fichier `assets/css/tailwind.css`, il est possible de changer de fichier d'endroit mais il faut le spécifier dans la config de Nuxt.
 
 ##### _tailwind.config.js_
 
@@ -55,23 +57,18 @@ mix.sass('resources/styles/app.scss', 'styles').tailwind()
 purge: ['src/**/*.vue', 'src/**/*.ts', 'src/**/*.js']
 ```
 
-##### _postcss.config.js_
+##### _nuxt.config.js_
 
 ```js
-module.exports = {
-  plugins: {
-    tailwindcss: {},
-    autoprefixer: {},
-  },
-}
+buildModules: ['@nuxtjs/tailwindcss']
 ```
 
-#### _fichier de styles scss_
+#### _assets/css/tailwind.css_
 
-```scss
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 ```
 
 ### Outils importants et recommandés
