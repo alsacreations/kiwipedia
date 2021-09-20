@@ -314,12 +314,12 @@ Selon le projet, le type et la complexité de chaque composant, la méthode de m
 
 Les bonnes pratiques suivantes doivent cependant être respectées tant que possible&nbsp;:
 
-1- Attribuer un nom de classe sémantique au composant (ex. `.nav-socials`).
-2- Lister des classes Tailwind de façon **organisée**, c'est-à-dire regrouper les classes en fonction de leur utilité par ordre d'importance (l'esthétique à la fin).
-3- Attribuer des noms de classes aux éléments à cibler en CSS et **n'utiliser que des sélecteurs de classes** si possible, pas de sélecteurs composés (utiliser `.nav-socials-link` et jamais `.nav-socials a`).
-4- **Un Composant nécessitant des variantes ou modificateurs (marges, padding, gouttières, couleurs, etc.) disposera de classes Tailwind lors de son insersion (`<NavSocials class="mt-60 gap-10 md:gap-20 lg:gap-32"></NavSocials>`)**.
-5- **Préciser le langage des styles** quand Sass est employé (`<style lang="scss">`) pour éviter d'affoler les Linters.
-6- Englober les styles de composants au **sein d'un layer** (`@layer components {}`) pour permettre la purge et éviter d'écraser les styles utilitaires.
+1. Attribuer un nom de classe sémantique au composant (ex. `.nav-socials`).
+2. Lister des classes Tailwind de façon **organisée**, c'est-à-dire regrouper les classes en fonction de leur utilité par ordre d'importance (l'esthétique à la fin).
+3. Attribuer des noms de classes aux éléments à cibler en CSS et **n'utiliser que des sélecteurs de classes** si possible, pas de sélecteurs composés (utiliser `.nav-socials-link` et jamais `.nav-socials a`).
+4. **Un Composant nécessitant des variantes ou modificateurs (marges, padding, gouttières, couleurs, etc.) disposera de classes Tailwind lors de son insersion (`<NavSocials class="mt-60 gap-10 md:gap-20 lg:gap-32"></NavSocials>`)**.
+5. **Préciser le langage des styles** quand Sass est employé (`<style lang="scss">`) pour éviter d'affoler les Linters.
+6. Englober les styles de composants au **sein d'un layer** (`@layer components {}`) pour permettre la purge et éviter d'écraser les styles utilitaires.
 
 ### Version 1 : pas de classes TW dans le template
 
