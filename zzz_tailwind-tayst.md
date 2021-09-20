@@ -367,6 +367,42 @@ Les bonnes pratiques suivantes doivent cependant être respectées tant que poss
 </style>
 ```
 
+### Version 2 : avec classes TW dans le template
+
+Cette version est très pratique pour des composants simples, avec répétitions.
+
+```html
+<!-- partie Template du fichier NavSocials.vue -->
+<template>
+  <ul class="nav-socials">
+    <li v-for="(link, index) in links"
+      :key="`link-${index}`"
+      class="flex items-center">
+      <a class="font-medium font-body hover:no-underline focus:no-underline"
+        :href="link.href">
+        {{ link.content }}
+      </a>
+    </li>
+  </ul>
+</template>
+```
+
+```html
+<!-- partie <script></script> du fichier NavSocials.vue -->
+<script>
+export default {
+  data() {
+    return {
+      links: [
+        { href: 'http://', content: 'Twitter' },
+        ...
+      ]
+    }
+  }
+}
+</script>
+```
+
 ## Importer les styles dans un projet Tailwind
 
 Le fichier Tailwind se charge d'importer 3 fichiers principaux.
