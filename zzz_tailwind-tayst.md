@@ -308,7 +308,7 @@ Un Composant est un élément généralement réutilisable à divers endroits du
 
 Il est inséré au sein d'une page via `<NavSocials></NavSocials>`.
 
-## Bonnes pratiques d'intégration des Composants
+### Bonnes pratiques d'intégration des Composants
 
 Selon le projet, le type et la complexité de chaque composant, la méthode de mise en forme (avec/sans classes TW, avec `@apply` ou CSS "classique) est différente et laissé au libre arbitre lors de l'intégration.
 
