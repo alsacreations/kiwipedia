@@ -19,6 +19,8 @@ Les classes utilitaires sont une bénédiction sur des gros projets, longs, avec
 
 Tailwind, associé à un environnement de travail et un workflow adaptés (VS Code, Intellisense, auto-complétion, coloration syntaxique, etc.) apporte plus de bénéfices que d'inconvénients.
 
+L'extension VSCode [Tailwind CSS intellisense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) offre une auto-complétion ainsi qu'une tooltip au survol des classe bien pratique.
+
 **En bref : utilisons Tailwind pour ses bons côtés et ne nous forçons pas à utiliser Tailwind pour ce qu'il ne fait pas bien.**
 
 ## Préambule important : l'environnement de travail
@@ -176,7 +178,7 @@ zIndex: {
 },
 ```
 
-## Comment appliquer les classes TW ?
+## Comment appliquer les classes Tailwind ?
 
 Il existe trois manières d'appliquer des styles CSS dans un projet Tailwind :
 
@@ -193,7 +195,7 @@ Exemple d'usage dans une classe Tailwind : `<blockquote class="font-comic sm:tex
 Exemple d'usage dans un fichier CSS via `@apply` :
 
 ```scss
-.grid-2 {
+.layout-2 {
   @apply sm:grid relative col-start-3 sm:grid-cols-2 gap-5 sm:gap-x-20 sm:gap-y-10 lg:gap-x-40;
 }
 ```
@@ -306,6 +308,21 @@ Un Composant est un élément généralement réutilisable à divers endroits du
 
 Il est inséré au sein d'une page via `<NavSocials></NavSocials>`.
 
+## Bonnes pratiques d'intégration des Composants
+
+Selon le projet, le type et la complexité de chaque composant, la méthode de mise en forme (avec/sans classes TW, avec `@apply` ou CSS "classique) est différente et laissé au libre arbitre lors de l'intégration.
+
+Les bonnes pratiques suivantes doivent cependant être respectées tant que possible&nbsp;:
+
+1- Attribuer un nom de classe sémantique au composant (ex. `.nav-socials`).
+2- Lister des classes Tailwind de façon **organisée**, c'est-à-dire regrouper les classes en fonction de leur utilité par ordre d'importance (l'esthétique à la fin).
+3- Attribuer des noms de classes aux éléments à cibler en CSS et **n'utiliser que des sélecteurs de classes** si possible, pas de sélecteurs composés (utiliser `.nav-socials-link` et jamais `.nav-socials a`).
+4- **Un Composant nécessitant des variantes ou modificateurs (marges, padding, gouttières, couleurs, etc.) disposera de classes Tailwind lors de son insersion (`<NavSocials class="mt-60 gap-10 md:gap-20 lg:gap-32"></NavSocials>`)**.
+5- **Préciser le langage des styles** quand Sass est employé (`<style lang="scss">`) pour éviter d'affoler les Linters.
+6- Englober les styles de composants au **sein d'un layer** (`@layer components {}`) pour permettre la purge et éviter d'écraser les styles utilitaires.
+
+### Version 1 : pas de classes TW dans le template
+
 ```html
 <!-- partie Template du fichier NavSocials.vue -->
 <template>
@@ -350,20 +367,6 @@ Il est inséré au sein d'une page via `<NavSocials></NavSocials>`.
 </style>
 ```
 
-**Bonnes pratiques d'intégration des Composants :**
-
-- Les styles sont généralement à déclarer via `@apply` **(pas de classes dans le template HTML)**
-- Attribuer des noms de classes aux éléments à cibler en CSS et **n'utiliser que des sélecteurs de classes** si possible, pas de sélecteurs composés (utiliser `.nav-socials-link` et jamais `.nav-socials a`)
-- **Un Composant nécessitant des variantes ou modificateurs (marges, padding, gouttières, couleurs, etc.) disposera de classes Tailwind lors de son insersion (`<NavSocials class="mt-60 gap-10 md:gap-20 lg:gap-32"></NavSocials>`)**
-- **Préciser le langage des styles** quand Sass est employé (`<style lang="scss">`) pour éviter d'affoler les Linters
-- Englober les styles de composants au **sein d'un layer** (`@layer components {}`) pour permettre la purge et éviter d'écraser les styles utilitaires
-
-## Nommage et organisation
-
-L'extension VSCode [Tailwind CSS intellisense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) offre une auto-complétion ainsi qu'une tooltip au survol des classe bien pratique, mais nous observons deux principes supplémentaires :
-
-Notre liste de classes Tailwind est **organisée**, c'est-à-dire que nous regroupons les classes en fonction de leur utilité par ordre d'importance (l'esthétique à la fin). Nous faisons donc référence à nos Guidelines CSS pour cela.
-
 ## Importer les styles dans un projet Tailwind
 
 Le fichier Tailwind se charge d'importer 3 fichiers principaux.
@@ -404,7 +407,7 @@ Le fichier [alsa-TW-Reset](assets/vue-nuxt-front-end/alsa-tw-reset.scss) apporte
 ```scss
 @layer utilities {
   .visually-hidden {
-    @include apply('absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0');
+    @apply('absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0');
     clip: rect(0, 0, 0, 0);
   }
 }
@@ -508,7 +511,7 @@ Elles seront de préférence dans le layer `utilities`.
 
 ```scss
 @layer utilities {
-  @include variants('responsive, hover, focus') {
+  @variants responsive, hover, focus {
     .mon-utility {
       @apply bg-pink;
     }
