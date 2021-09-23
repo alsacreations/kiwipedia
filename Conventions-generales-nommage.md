@@ -47,7 +47,7 @@ Exemple :
 function Book(title, author) {}
 ```
 
-Toujours configurer et appliquer **Editorconfig** et **Prettier** (voir détails dans les [Guidelines VSCode](Guidelines-VScode.md))
+Toujours configurer et appliquer les Linters et Formatters **Editorconfig**, **ESlint** et **Stylelint** (voir détails dans les [Guidelines VSCode](Guidelines-VScode.md))
 
 ## Convention d'Union de mots
 
@@ -68,6 +68,36 @@ Les conventions d’usage pour lier les mots sont :
   - constantes
 - snake_case :
   - nope
+
+## Convention de nommage pour code en attente
+
+En phase de développement d'un projet, les notes de modifications et améliorations restant à réaliser dans le code (CSS, HTML, JavaScript) doivent être consignées et notées `TODO:` (et non ~~@TODO~~) ou `FIXME:` selon leur fonction&nbsp;:
+
+- `TODO:` Partie de code **non finalisée**, non mis en oeuvre (par exemple `TODO: implémenter les données`, `<a href="TODO:">`)
+- `FIXME:` Partie de code **à améliorer**, à modifier pour être plus performant, plus maintenable, etc. (par exemple : `FIXME: mieux gérer le responsive`, `FIXME: refactoring`)
+
+L'extension VSCode **[TODO Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight)** permet de mettre en exergue les tags `TODO:` (en jaune par défaut) et `FIXME:` (en rose par défaut).
+
+TODO Highlight propose également de lister l'ensemble des tags par fichier via `ctrl/cmd + maj + p` > `List highlighted annotations` (liste les tags dans le document en cours).
+
+Si nécessaire, il est possible d'indiquer quels types de fichiers sont à surveiller par TODO Highlight au sein de `settings.json` (par exemple, les fichiers `.vue` et `.md` ne sont pas surveillés par défaut).
+
+```json
+"todohighlight.include": [
+    "**/*.js",
+    "**/*.jsx",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.html",
+    "**/*.vue",
+    "**/*.php",
+    "**/*.md",
+    "**/*.css",
+    "**/*.scss"
+  ]
+```
+
+**En fin de phase de développement, avant la livraison du projet, il est fondamental de vérifier la présence indésirable de ces tags au sein du code. L'idéal étant qu'un projet soit livré au client avec zéro tag `TODO:`.**
 
 ## Convention pour Langages spécifiques et Frameworks
 
