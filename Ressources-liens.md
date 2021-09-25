@@ -250,7 +250,8 @@ Autres listes de ressources et checklists
   - <https://leanpub.com/setting-up-es6/read>
   - <http://exploringjs.com/es2016-es2017/>
   - <http://exploringjs.com/es6/index.html>
-  - <http://speakingjs.com/es5/index.html>
+  - <http://speakingjs.com/es5/index.html
+  - <https://bevacqua.github.io/promisees/> Les promesses expliquées et visualisées en animations
 
 - Libs et frameworks
 
@@ -297,7 +298,7 @@ Autres listes de ressources et checklists
   - <https://github.com/jairajs89/Touchy.js>
   - <http://pressurejs.com/>
 
-### Vue
+### Vue / Nuxt
 
 - Le repo [awesome-vue](https://github.com/vuejs/awesome-vue) sur Github avec plein de ressources
 - Plein d'exemples : [vuejsexamples.com](https://vuejsexamples.com/)
