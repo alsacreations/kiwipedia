@@ -639,6 +639,12 @@ Stopper un jail
 Tester une regex
 `fail2ban-regex /var/log/apache2/other_vhosts_access.log /etc/fail2ban/filter.d/apache-wp-login.conf`
 
+## Netcat
+
+Savoir si un port distant est ouvert en TCP `nc -vz lehostname 80`, en UDP `nc -vz -u lehostname 53`
+
+Simuler un port ouvert `nc -l 1337`
+
 ### Envoyer/recevoir avec netcat
 
 Sur la machine qui écoute (pour trouver son ip hostname -I)
