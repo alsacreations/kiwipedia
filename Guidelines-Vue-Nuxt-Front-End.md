@@ -135,7 +135,7 @@ On utilise des fichiers `.env` multiples pour définir les grandes constantes de
 | --- | --- | --- | --- |
 | .env | Par défaut | + | git |
 | .env.local | Prioritaire sur .env | ±± | - |
-| .env.development | Prioritaire sur .env | ±±+ | oui |
+| .env.development | Prioritaire sur .env | ±±+ | git |
 | .env.development.local | Prioritaire sur .env | ±±++ | - |
 
 ...et équivalent avec `production` selon le nom de l'environnement déclenché par les scripts avec `cross-env NODE_ENV=***` grâce à <https://github.com/kentcdodds/cross-env>. Voir package.json et <https://www.npmjs.com/package/dotenv-flow>.
