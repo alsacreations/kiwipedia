@@ -127,6 +127,47 @@ Vetur nécessite un fichier `jsconfig.json` dont voici un exemple :
 }
 ```
 
+## Environnements et fichiers .env
+
+On utilise des fichiers `.env` multiples pour définir les grandes constantes de l'application selon le contexte ; les fichiers `*.local` sont propres à chaque machine et ne sont pas versionnés :
+
+| Fichier | Description | Priorité | Versionné ? |
+| .env | Par défaut | + | git |
+| .env.local | Prioritaire sur .env | ±± | - |
+| .env.development | Prioritaire sur .env | ±±+ | oui |
+| .env.development.local | Prioritaire sur .env | ±±++ | - |
+
+...et équivalent avec `production` selon le nom de l'environnement déclenché par les scripts avec `cross-env NODE_ENV=***` grâce à <https://github.com/kentcdodds/cross-env>. Voir package.json et <https://www.npmjs.com/package/dotenv-flow>.
+
+```
+# local .env* files
+.env.local
+.env.*.local
+```
+
+Avec Nuxt l'environnement peut être :
+- `development` en mode `npm run dev` ou `npm run generate`
+- `production` en mode `npm run build` ou `npm run start`
+
+Dans Nuxt, nécessite l’installation de [dotenv-module](https://github.com/nuxt-community/dotenv-module) : 
+- les variables doivent être préfixées de `VUE_APP_`, exemple `VUE_APP_API_URL=https://api.example.org:80` pour être utilisées dans les scripts avec `process.env.VUE_APP_API_URL`
+- dans les composants ou dans nuxt.config.js on pourra utiliser `process.env.NODE_ENV` par exemple `if (process.env.NODE_ENV === 'development')`
+
+Voir aussi <https://stackoverflow.com/questions/55406055/toggle-between-multiple-env-files-like-env-development-with-node-js>.
+
+### config.js
+
+config.js
+Les variables de configuration ou globales (activation de fonctionnalités) sont ajoutées dans le fichier config.js dans l'entrée correspondante. Si cette entrée n'existe pas, il convient d'en ajouter une nouvelle.
+const config = {
+  isProduction: isMaster,
+  app: {
+    title: 'MonApp',
+  },
+  api: {
+    apiUrl: process.env.VUE_APP_API_URL
+...
+
 ## Installation initiale
 
 ### Installation Nuxt
