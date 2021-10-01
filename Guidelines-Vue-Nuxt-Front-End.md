@@ -132,6 +132,7 @@ Vetur nécessite un fichier `jsconfig.json` dont voici un exemple :
 On utilise des fichiers `.env` multiples pour définir les grandes constantes de l'application selon le contexte ; les fichiers `*.local` sont propres à chaque machine et ne sont pas versionnés :
 
 | Fichier | Description | Priorité | Versionné ? |
+| --- | --- | --- | --- |
 | .env | Par défaut | + | git |
 | .env.local | Prioritaire sur .env | ±± | - |
 | .env.development | Prioritaire sur .env | ±±+ | oui |
