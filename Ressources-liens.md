@@ -69,6 +69,7 @@ Autres listes de ressources et checklists
 ## CSS
 
 - <https://www.smashingmagazine.com/2021/09/interactive-learning-tools-front-end-developers/> Jeux pour apprendre flexbox, grid
+- <https://web.dev/learn/css/>
 
 ### Grids
 
