@@ -85,7 +85,7 @@ Il est étendu aux fichiers HTML à l'aide d'un plugin installé via `npm instal
 
 ### Stylelint
 
-Stylelint est l'unique formatteur pour les styles CSS et scss du projet. <br>Les Linters natifs CSS et scss de VSCode **doivent être désactivés** (voir précédemment).
+Stylelint est l'unique formatteur pour les styles CSS et scss du projet. Les Linters natifs CSS et scss de VSCode **doivent être désactivés** (voir précédemment).
 
 La procédure d'installation de Stylelint est la suivante :
 
@@ -140,17 +140,19 @@ On utilise des fichiers `.env` multiples pour définir les grandes constantes de
 
 ...et équivalent avec `production` selon le nom de l'environnement déclenché par les scripts avec `cross-env NODE_ENV=***` grâce à <https://github.com/kentcdodds/cross-env>. Voir package.json et <https://www.npmjs.com/package/dotenv-flow>.
 
-```
+```text
 # local .env* files
 .env.local
 .env.*.local
 ```
 
 Avec Nuxt l'environnement peut être :
+
 - `development` en mode `npm run dev` ou `npm run generate`
 - `production` en mode `npm run build` ou `npm run start`
 
-Dans Nuxt, nécessite l’installation de [dotenv-module](https://github.com/nuxt-community/dotenv-module) : 
+Dans Nuxt, nécessite l’installation de [dotenv-module](https://github.com/nuxt-community/dotenv-module) :
+
 - les variables doivent être préfixées de `VUE_APP_`, exemple `VUE_APP_API_URL=https://api.example.org:80` pour être utilisées dans les scripts avec `process.env.VUE_APP_API_URL`
 - dans les composants ou dans nuxt.config.js on pourra utiliser `process.env.NODE_ENV` par exemple `if (process.env.NODE_ENV === 'development')`
 
