@@ -171,9 +171,9 @@ const config = {
     apiUrl: process.env.VUE_APP_API_URL
 ...
 
-## Installation initiale
+## Installation et configuration initiale
 
-### Installation Nuxt
+### Installation de Nuxt
 
 Doc : <https://nuxtjs.org/docs/2.x/get-started/installation>
 
@@ -195,11 +195,23 @@ Réponses recommandées aux questions :
 - Continuous integration: None
 - Version control system: Git
 
-### Installation Tailwind dans Nuxt
+Installation de Tailwind dans Nuxt : voir <https://tailwindcss.com/docs/guides/nuxtjs>
 
-Doc : <https://tailwindcss.com/docs/guides/nuxtjs>
+## Composants : conventions et nommage
 
-### Internationalisation (i18n)
+### Template
+
+- Les directives `v-if`, `v-for` et `v-show` sont sur la même ligne que la déclaration du composant. De cette manière, on peut identifier en un coup d’œil ces conditions importantes, même si le bloc de code est compacté dans l'éditeur. Le reste des attributs HTML et directives Vue vont en dessous, à la ligne. Règle eslint : `vue/max-attributes-per-line`.
+- On espace les expressions entre moustaches `{{ variable }}`.
+- On écrit les composants en `<PascalCase>`.
+- On n'utilise pas les attributs `id` car ils peuvent se retrouver dupliqués dans la page si un composant est utilisé plusieurs fois. Si besoin : `:id="'truc'+_uid"` car `_uid` est un identifiant unique généré pour chaque composant chargé.
+- On utilise un élément `button` ou `input type="button"` plutôt qu'un lien pour des actions ne changeant pas de page.
+
+### Props
+
+Toutes les props ont une valeur par défaut. Les variables d'état sont préfixées par `is` (ex : `isLoading`, `isDoingThis` , `isReady`).
+
+## Internationalisation (i18n)
 
 Usage de <https://nuxt-community.github.io/nuxt-i18n/> avec fichiers de configuration des langues (par exemple `i18n/fr-FR.js` et `i18n/en-US.js`) organisant les chaînes par une structure objet. On privilégie les regroupements par fonctionnalité (ex : formulaires, boutons, actions utilisateur communes), puis par nom de composant s'ils sont plus spécifiques.
 
@@ -210,6 +222,8 @@ Usage de <https://nuxt-community.github.io/nuxt-i18n/> avec fichiers de configur
 - Lien racine : `<nuxt-link :to="localePath('/')">`
 
 Pour des formatages plus complexes voir <https://kazupon.github.io/vue-i18n/guide/formatting.html#html-formatting>
+
+## Nuxt
 
 ### Pratiques permises par Nuxt
 
