@@ -671,6 +671,10 @@ Maquettes / story-boards / wireframes / mockups / zoning
   - <https://securityheaders.io/> pour check
   - <https://www.ssllabs.com/ssltest/> pour check
 
+### CORS
+
+- <https://jakearchibald.com/2021/cors/> + <https://jakearchibald.com/2021/cors/playground/>
+
 ---
 
 ## API
