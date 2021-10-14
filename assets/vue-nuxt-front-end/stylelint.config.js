@@ -7,7 +7,7 @@ module.exports = {
    * https://stylelint.io/user-guide/configuration
    */
   rules: {
-    'indentation': 2, // indentation = 2 espaces
+    indentation: 2, // indentation = 2 espaces
     'string-quotes': 'double', // double quotes dans les chaînes
     'selector-max-id': 0, // pas de sélecteur id
     'block-no-empty': true, // pas de block vide
@@ -25,8 +25,10 @@ module.exports = {
     'declaration-colon-space-after': 'always', // toujours une espace après le double-point
     'selector-combinator-space-before': 'always', // toujours une espace avant un combinateur
     'selector-combinator-space-after': 'always', // toujours une espace après un combinateur
+    'block-opening-brace-space-before': 'always', // toujours une espace avant le bloc de déclarations
     'at-rule-semicolon-space-before': 'never', // pas d'espace avant un point virgule
     'declaration-block-semicolon-space-before': 'never', // pas d'espace avant un point virgule
+    'function-parentheses-space-inside': 'never', // pas d'espace dans les parenthèses
     'rule-empty-line-before': 'always', // ligne vide entre deux blocs
     'max-empty-lines': 1, // une ligne maxi entre deux blocks
     'no-eol-whitespace': true, // pas de whitespace en fin de ligne
