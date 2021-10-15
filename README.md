@@ -21,6 +21,7 @@ Cette présente charte a pour objectif :
 - [**Guidelines Sécurité HTTP**](Guidelines-Securite-HTTP.md)
 - [**Guidelines Webdesign**](Guidelines-Webdesign.md)
 - [**Guidelines E-mailing**](Guidelines-E-mailing.md)
+- [**Guidelines Docker**](Guidelines-Docker.md)
 
 ## Selon typologie de projet (en cours)
 
@@ -36,8 +37,9 @@ Cette présente charte a pour objectif :
 - [**Pense-Bête Flexbox (PDF)**](https://github.com/alsacreations/guidelines/blob/master/flexbox-cheatsheet.pdf)
 - [**Pense-Bête Grid Layout (PDF)**](https://github.com/alsacreations/guidelines/blob/master/grid-cheatsheet.pdf)
 - [**Commandes Linux**](Commandes-Linux.md) (Cheatsheet)
-- [**Checklist**](Checklist.md)
+- [**Cheatsheet htaccess**](Cheatsheet-htaccess.md)
 - [**Ressources et liens utiles**](Ressources-liens.md)
+- [**Checklist**](Checklist.md)
 
 ## Licence
 
