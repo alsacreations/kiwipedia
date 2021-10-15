@@ -1,4 +1,4 @@
-# Guidelines Alsacréations
+# Guidelines Alsacréations 🥝
 
 Cette présente charte a pour objectif :
 
