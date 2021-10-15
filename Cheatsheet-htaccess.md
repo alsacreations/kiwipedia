@@ -1,5 +1,7 @@
 # Cheatsheet htaccess (rewriting, redirections...)
 
+Compilation rapide d'instructions à utiliser dans un fichier .htaccess pour le serveur Apache (équipé de [mod_rewrite](https://httpd.apache.org/docs/2.4/fr/rewrite/)).
+
 ## Bloquer l'accès à une ressource
 
 ```htaccess
