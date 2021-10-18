@@ -69,7 +69,7 @@ TODO:
 
 ### Traductions
 
-TODO:
+Voir <https://www.alsacreations.com/article/lire/1837-wordpress-theme-internationalisation.html>
 
 ### functions.php
 
@@ -113,11 +113,17 @@ TODO:
 
 ## Performance
 
-TODO:
+👉 Mettre en place un plugin de cache (voir extensions)
+
+- Identifier les requêtes lentes https://css-tricks.com/finding-and-fixing-slow-wordpress-database-queries/ 
 
 ## Recette
 
-TODO:
+👉 On utilise wp-migrate-db pour exporter les contenus en adaptant les URLs développement vers recette.
+
+👉 Ne pas laisser indexer ce site par Google, en ajoutant une identification HTTP (par exemple avec .htaccess).
+- Mise en place d’un webhook Gitlab possible pour auto-pull les derniers commits git.
+- Checklist de qualité https://wpaudit.site
 
 ## Mise en ligne
 
