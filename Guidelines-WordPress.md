@@ -7,6 +7,7 @@ Cette présente convention rassemble les bonnes pratiques WordPress en productio
 ## Structure de projet
 
 On utilise
+
 - [Composer](https://getcomposer.org/) pour installer WordPress et ses extensions.
 - [WordPlate](https://github.com/wordplate/wordplate) qui fonctionne avec [webpackmix](https://github.com/devanandb/webpack-mix/tree/master/docs).
 - [Tailwind](https://github.com/timber/timber) en tant que framework CSS.
@@ -23,6 +24,7 @@ On utilise
 ## Git
 
 On versionne les fichiers :
+
 - .env.example
 - composer.lock
 - package.json
@@ -32,6 +34,7 @@ On versionne les fichiers :
 - les fichiers de traduction du thème (dossier /languages) ou de l’extension (dossier de l’extension)
 
 On ne versionne **pas** :
+
 - .env (sauf exception)
 - WordPress lui-même (car installé/mis à jour par composer)
 - les extensions tierces (car installé/mis à jour par composer)
@@ -49,7 +52,7 @@ On ne versionne **pas** :
 
 ## Thème
 
-- 👉 On privilégie de démarrer avec un starter thème épuré https://underscores.me/ ou https://github.com/timber/starter-theme lorsque l’on utilise Timber.
+- 👉 On privilégie de démarrer avec un starter thème épuré <https://underscores.me/> ou <https://github.com/timber/starter-theme> lorsque l’on utilise Timber.
 - 👉 Supprimer les autres thèmes livrés par défaut.
 - Il est plus rapide de développer le thème dans WordPress plutôt que de passer par une phase d’intégration statique.
 - On évite d’utiliser un thème acheté car cela sous-entend qu’on ne pourra pas tout mettre en place dans ces guidelines et qu’on ne maîtrise pas son contenu (code, extensions, évolutions). Si toutefois cela arrive, utiliser le principe de thème enfant pour ne pas modifier le thème parent, qui pourrait être mis à jour par la suite.
@@ -117,15 +120,16 @@ TODO:
 
 👉 Mettre en place un plugin de cache (voir extensions)
 
-- Identifier les requêtes lentes https://css-tricks.com/finding-and-fixing-slow-wordpress-database-queries/ 
+- Identifier les requêtes lentes <https://css-tricks.com/finding-and-fixing-slow-wordpress-database-queries/>
 
 ## Recette
 
 👉 On utilise wp-migrate-db pour exporter les contenus en adaptant les URLs développement vers recette.
 
 👉 Ne pas laisser indexer ce site par Google, en ajoutant une identification HTTP (par exemple avec .htaccess).
+
 - Mise en place d’un webhook Gitlab possible pour auto-pull les derniers commits git.
-- Checklist de qualité https://wpaudit.site
+- Checklist de qualité <https://wpaudit.site>
 
 ## Mise en ligne
 
@@ -153,4 +157,3 @@ TODO:
 ## Environnement sans Docker
 
 TODO:
-
