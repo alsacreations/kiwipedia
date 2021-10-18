@@ -38,3 +38,96 @@ On ne versionne **pas** :
 - les uploads
 
 👉 Le fichier README.md à la racine du projet doit contenir toutes les informations pour ré-installer le site rapidement en production.
+
+## Configuration de base
+
+### Sécurité, utilisateurs
+
+- 👉 Supprimer l’utilisateur admin et l’utilisateur avec l’ID 1. Créer un utilisateur de niveau administrateur avec identifiant spécifique différent de “admin”.
+- Créer un ou plusieurs utilisateurs de niveau éditeur pour les intervenants (doit être différent du nom de domaine pour des raisons de sécurité), ayant accès juste aux fonctionnalités utiles.
+- Ajouter le script pour enlever le warning à la connexion qui permet d’indiquer que l’identifiant est le bon mais pas le mot de passe.
+
+## Thème
+
+- 👉 On privilégie de démarrer avec un starter thème épuré https://underscores.me/ ou https://github.com/timber/starter-theme lorsque l’on utilise Timber.
+- 👉 Supprimer les autres thèmes livrés par défaut.
+- Il est plus rapide de développer le thème dans WordPress plutôt que de passer par une phase d’intégration statique.
+- On évite d’utiliser un thème acheté car cela sous-entend qu’on ne pourra pas tout mettre en place dans ces guidelines et qu’on ne maîtrise pas son contenu (code, extensions, évolutions). Si toutefois cela arrive, utiliser le principe de thème enfant pour ne pas modifier le thème parent, qui pourrait être mis à jour par la suite.
+- Modifier le logo sur le formulaire de connexion admin (voir snippets).
+
+### Intégration du thème
+
+TODO:
+
+### Hiérarchie de fichiers et documentation
+
+TODO:
+
+### À prévoir dans le thème
+
+TODO:
+
+### Traductions
+
+TODO:
+
+### functions.php
+
+TODO:
+
+### Shortcodes
+
+TODO:
+
+### Gutenberg / éditeur wysiwyg
+
+TODO:
+
+### Formulaires
+
+TODO:
+
+## Extensions
+
+TODO:
+
+### Obligatoires
+
+TODO:
+
+### Recommandées selon usage
+
+TODO:
+
+### E-commerce
+
+TODO:
+
+## Sécurité
+
+TODO:
+
+## Développement
+
+TODO:
+
+## Performance
+
+TODO:
+
+## Recette
+
+TODO:
+
+## Mise en ligne
+
+TODO:
+
+## Maintenance
+
+TODO:
+
+## Environnement sans Docker
+
+TODO:
+
