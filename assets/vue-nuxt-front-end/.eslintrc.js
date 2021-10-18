@@ -12,7 +12,7 @@ module.exports = {
   plugins: ['html'],
   // add your custom rules here
   rules: {
-    indent: ['error', 2],
+    indent: ['error', 2, { SwitchCase: 1 }],
     // Force des espaces consistants dans les parenthèses
     'space-in-parens': ['error', 'never'],
     // Force un espace avant et après un mot clé, if, else etc
