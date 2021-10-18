@@ -68,7 +68,42 @@ TODO:
 
 ### À prévoir dans le thème
 
-TODO:
+👉On ne nomme/préfixe pas le thème ou ses classes/fonctions par alsa_ mais plutôt par le nom du projet.
+
+La [structure standard](https://developer.wordpress.org/themes/basics/organizing-theme-files/) est :
+
+```text
+assets (dir)
+      - css (dir)
+      - images (dir)
+      - js (dir)
+inc (dir)
+template-parts (dir)
+      - footer (dir)
+      - header (dir)
+      - navigation (dir)
+      - page (dir)
+      - post (dir)
+404.php
+archive.php
+comments.php
+footer.php
+front-page.php
+functions.php
+header.php
+index.php
+page.php
+README.txt
+rtl.css
+screenshot.png
+search.php
+searchform.php
+sidebar.php
+single.php
+style.css
+```
+
+[Theme Check](https://wordpress.org/plugins/theme-check/) permet de vérifier si le thème correspond aux standards (ne fonctionne pas avec Timber).
 
 ### Traductions
 
@@ -80,15 +115,18 @@ TODO:
 
 ### Shortcodes
 
-TODO:
+Lors de la création d’un [shortcode](https://codex.wordpress.org/fr:Shortcode) avec paramètres, il est conseillé de ne plus utiliser la fonction extract (voir <https://core.trac.wordpress.org/ticket/22400>). Tout shortcode ajouté doit faire l’objet d’un guide écrit pour l’utilisateur final.
+
+Voir <https://capitainewp.io/formations/developper-theme-wordpress/shortcode/> et <https://kinsta.com/fr/blog/shortcodes-wordpress/>
 
 ### Gutenberg / éditeur wysiwyg
 
-TODO:
+- Palette de couleurs <https://speckyboy.com/custom-color-palette-wordpress-gutenberg-editor/>
 
 ### Formulaires
 
-TODO:
+- Valider les données avec les méthodes natives <https://codex.wordpress.org/Data_Validation>
+- Un formulaire = un nonce <https://codex.wordpress.org/WordPress_Nonces>
 
 ## Extensions
 
@@ -96,7 +134,8 @@ TODO:
 
 ### Obligatoires
 
-TODO:
+- [wp-fail2ban](https://wordpress.org/plugins/wp-fail2ban/) si hébergement interne : permet de signaler les erreurs d’identification à fail2ban+iptables pour bannir les IP tentant du bruteforce ; n’utilisez alors pas d’extension pour changer l’url de wp-admin.
+- [WP Migrate DB](https://fr.wordpress.org/plugins/wp-migrate-db/) pour migrer les données de local > dev > recette > prod (et inversement), à désinstaller par sécurité après mise en production.
 
 ### Recommandées selon usage
 
