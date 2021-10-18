@@ -26,8 +26,10 @@
   */
 
 html {
-  -webkit-tap-highlight-color: transparent; /* 1 */
-  overflow-wrap: break-word; /* 3 */
+  -webkit-tap-highlight-color: transparent;
+  /* 1 */
+  overflow-wrap: break-word;
+  /* 3 */
 }
 
 /*
@@ -146,7 +148,7 @@ svg:not([fill]) {
     display: none;
   }
 
-/* Ni veuves ni orphelins */
+  /* Ni veuves ni orphelins */
 
   p,
   .p-like,
@@ -155,7 +157,7 @@ svg:not([fill]) {
     widows: 3;
   }
 
-/* Pas de breaks au sein de ces éléments */
+  /* Pas de breaks au sein de ces éléments */
 
   blockquote,
   ul,
@@ -164,7 +166,7 @@ svg:not([fill]) {
   }
 
 
-/* Pas de breaks après ces éléments */
+  /* Pas de breaks après ces éléments */
 
   h1,
   .h1-like,
@@ -185,4 +187,5 @@ svg:not([fill]) {
     content: "";
   }
 }
+
 /* stylelint-enable */
