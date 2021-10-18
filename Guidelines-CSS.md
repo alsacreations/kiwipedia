@@ -173,7 +173,7 @@ La méthodologie et les conventions de Tailwind sont très spécifiques car tout
 
 Notre workflow Tailwind comporte :
 
-- Un [mini fichier CSS "reset" KNACSS dédié](https://github.com/nicolassutter/Tailwind_loves_sass/tree/main/options/knacss)
+- Un mini fichier CSS "Alsa-TW-reset" dédié (voir [_Guidelines Tailwind_](Guidelines-Tailwind.md)
 - Une [Convention de nommage "Utility first"](Guidelines-Tailwind.md)
 - PurgeCSS (tâche permettant de supprimer les styles inutilisés)
 
