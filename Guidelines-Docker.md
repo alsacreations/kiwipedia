@@ -1,6 +1,8 @@
 # Guidelines : Docker
 
-_Statut : Working Draft (WD)_
+_Statut : Recommendation (REC)_
+
+Voir aussi <https://www.alsacreations.com/tuto/lire/1836-Docker--decouverte-et-environnement-LAMP-pour-WordPress.html>
 
 ## Commandes utiles
 

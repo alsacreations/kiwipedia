@@ -1,6 +1,6 @@
 # Commandes Git (cheatsheet)
 
-_Statut : Working Draft (WD)_
+_Statut : Recommendation (REC)_
 
 ## Init
 
@@ -202,7 +202,7 @@ git blame css/styles.less -L 85,90
 
 3 endroits différents stockent la configuration par ordre de priorité descendante
 
-```
+```text
 <repo>/.git/config – Config spécifique du dépôt
 ~/.gitconfig – Config de l’utilisateur (là où est stocké --global)
 /etc/gitconfig – Config générale du système
@@ -222,13 +222,14 @@ Edition de toute la configuration : `git config --global --edit`
 
 ## Ignorer des fichiers avec .gitignore
 
-Le fichier .gitignore permet d’ignorer des fichiers à versionner. Ils ne seront pas stockés sur le repo. Il faut le placer au choix 
+Le fichier .gitignore permet d’ignorer des fichiers à versionner. Ils ne seront pas stockés sur le repo. Il faut le placer au choix
+
 * à la racine du projet (concerne tout le projet)
 * dans des répertoires spécifiques (ne concerne que le sous-répertoire)
 
 Exemple :
 
-```
+```text
 /.htaccess       # ignore le fichier .htaccess à la racine
 .htaccess        # ignore tous les fichiers .htaccess
 /node_modules/   # ignore le dossier node_modules à la racine
