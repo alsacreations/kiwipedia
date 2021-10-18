@@ -101,7 +101,9 @@ TODO:
 
 ### E-commerce
 
-TODO:
+- [WooCommerce](https://woocommerce.com/) est le plugin le plus actif (communauté, support) à l’heure actuelle. Il propose des feuilles de style par défaut, un système de coupon, gestion des stocks automatisé, gestion des e-mails client avancés, plein de hooks partout.
+- [WOOF](https://fr.wordpress.org/plugins/woocommerce-products-filter/) : Filtres plus riche en fonctionnalités que ceux de WooCommerce natif
+- [Tickera](https://tickera.com/) Vente de billets, compatible avec WooCommerce.
 
 ## Sécurité
 
@@ -127,9 +129,24 @@ TODO:
 
 ## Mise en ligne
 
-TODO:
+👉 On utilise wp-migrate-db pour exporter les contenus en adaptant les URLs développement/recette vers production.
+
+- Autoriser l’indexation par les robots à la mise en production (dans la configuration).
+- Modifier l’adresse e-mail du compte administrateur.
+- Activer le cache.
+- Vérifier que toutes les anciennes URLs de développement ont disparu de la base.
+- Modifier les constantes `WP_ENVIRONMENT_TYPE` à `production` et `WP_DEBUG` à `false`.
+
+Si l'hébergement est mutualisé et ne permet de pointer dans le dossier /public, activer la réécriture avec un fichier .htaccess à la racine :
+
+```htaccess
+RewriteEngine on
+RewriteRule ^(.*)$ /public/$1 [L]
+```
 
 ## Maintenance
+
+On peut utiliser [WP-CLI](http://www.smashingmagazine.com/2015/09/wordpress-management-with-wp-cli/) pour opérations pratiques en ligne de commande.
 
 TODO:
 
