@@ -67,6 +67,39 @@ Les conventions d’usage pour lier les mots sont :
 - snake_case :
   - nope
 
+## Synonymes
+
+Si on privilégie l'anglais pour le code et malgré son apparente simplicité, il existe toujours des synonymes.
+
+Exemple à ne **pas** reproduire (coexistence de _cancel_/_remove_/_delete_) :
+
+```
+<button class="cancelProduct" onclick="removeProduct(1337)">
+  <svg id="remove" ...>
+</button>
+function removeProduct(id) {
+   axios.delete('/api/product', id)
+}
+```
+
+Suggestions et raisons :
+
+- Ajouter à une liste : `add` ou `append`
+- Suppression complète de données : `delete` (car les méthodes REST utilisent DELETE)
+- Retirer un élément d'une liste : `remove`
+- Annulation d'action : `cancel`
+- Ouverture/fermeture : `open`/`close` (alternativement : `toggle`)
+- Récupération de données : `get` (existe en tant que méthode HTTP)
+- Remplacement de données : `set` (écrase tout)
+- Mise à jour de données : `update` (similaire à patch, peut remplacer certaines clés d'un objet mais pas toutes)
+- Réinitialisation à l'état initial : `reset`
+- Callback/gestionnaire : `handle` (ex : _handleClick_)
+- Dénombrement : `count` (ex: _pageCount_)
+- États : `is` ou `has` (ex : _isOpened_, _hasItems_)
+- Précédent/suivant : `prev`/`next`
+
+Voir aussi [Coding like Shakespeare: Practical Function Naming Conventions](https://dmitripavlutin.com/coding-like-shakespeare-practical-function-naming-conventions/) et [Naming cheatsheet](https://github.com/kettanaito/naming-cheatsheet)
+
 ## Nommage pour code en attente
 
 En phase de développement d'un projet, les notes de modifications et améliorations restant à réaliser dans le code (CSS, HTML, JavaScript) doivent être consignées et notées `TODO:` (et non ~~@TODO~~) ou `FIXME:` selon leur fonction&nbsp;:
