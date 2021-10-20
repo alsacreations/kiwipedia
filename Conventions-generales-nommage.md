@@ -4,26 +4,24 @@ _Statut : Working Draft (WD)_
 
 Ces présentes conventions ont pour objectif d'harmoniser les noms des fichiers, des fonctions ou classes utilisées au sein des projets web de l'agence [Alsacréations](https://www.alsacreations.fr/).
 
-## Convention de Langue
+## Langue
 
-La langue employée pour tout texte rédigé au cours d’un projet est le Français.
-
-Cela concerne :
+La langue employée pour tout texte rédigé au cours d’un projet est le français :
 
 - les commentaires dans un fichier de code,
 - les titres de commit (_versionning_),
 - les instructions dans le fichier `readme.md`,
 - toute documentation explicative ou technique.
 
-La langue Anglaise demeure préconisée pour :
+La langue anglaise demeure préconisée pour :
 
-- L’architecture et les dossiers du projet (assets, layout, components, fonts)
-- Le nom des fichiers (`single-something.html`)
-- Les branches principales de versionning (`master`, `develop`), avec possibilités en français si besoin (`recette`)
+- L’architecture et les dossiers du projet (_assets_, _layout_, _components_, _fonts_)
+- Le nom des fichiers (`single-something.html`, `ProductCard.vue`)
+- Les branches principales de versionning (`main`, `develop`), avec possibilités en français si besoin (`recette`)
 
-## Convention de Formatage
+## Formatage
 
-La règle d’indentation appliquée par défaut est de **“2 espaces”** pour l’ensemble des langages. Les conventions spécifiques à certains langages ou technologies (PHP, WordPress) sont prioritaires sur cette règle générale au cas par cas.
+La règle d’indentation appliquée par défaut est de **2 espaces** pour l’ensemble des langages. Les conventions spécifiques à certains langages ou technologies (PHP, WordPress) sont prioritaires sur cette règle générale au cas par cas.
 
 Par exemple :
 
@@ -47,9 +45,9 @@ Exemple :
 function Book(title, author) {}
 ```
 
-Toujours configurer et appliquer les Linters et Formatters **Editorconfig**, **ESlint** et **Stylelint** (voir détails dans les [Guidelines VSCode](Guidelines-VScode.md))
+Toujours configurer et appliquer les Linters et Formatters **editorconfig**, **ESlint** et **Stylelint** (voir détails dans les [Guidelines VSCode](Guidelines-VScode.md))
 
-## Convention d'Union de mots
+## Union de mots
 
 Les conventions d’usage pour lier les mots sont :
 
@@ -69,7 +67,7 @@ Les conventions d’usage pour lier les mots sont :
 - snake_case :
   - nope
 
-## Convention de nommage pour code en attente
+## Nommage pour code en attente
 
 En phase de développement d'un projet, les notes de modifications et améliorations restant à réaliser dans le code (CSS, HTML, JavaScript) doivent être consignées et notées `TODO:` (et non ~~@TODO~~) ou `FIXME:` selon leur fonction&nbsp;:
 
@@ -108,4 +106,3 @@ Les règles de nommage particulières à chaque langage sont consignées dans le
 - [Guidelines Développement PHP](Guidelines-Developpement-PHP.md)
 - [Guidelines JavaScript](Guidelines-JavaScript.md)
 - [Guidelines WordPress](Guidelines-WordPress.md)
-- [Guidelines Accessibilité](Guidelines-Accessibilite.md)
