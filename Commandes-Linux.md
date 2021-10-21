@@ -45,8 +45,6 @@ Consulter le log mémoire tampon du noyau
 - `/var/www/` Hébergement http
 - `/var/vmail/` Hébergement mails
 - `/var/lib/mysql/` MySQL
-- `/var/log/ispconfig/` Logs ISPConfig
-- `/var/log/ispconfig/httpd/` Logs Apache individuels
 
 ---
 
@@ -125,7 +123,44 @@ Reconfigurer le niveau de question
 
 ---
 
+### Base et navigation dans le système de fichiers
+
+Changer de répertoire
+`cd mondossier` ou `cd /var/www`
+
+Copier un fichier
+`cp lefichier.txt lacopie.txt` ou pour un dossier en mode récursif `cp -r ledossier/ lenouveau/`
+
+Déplacer un fichier
+`mv lefichier.txt /vers/le/dossier/` ou renommer `mv lefichier.txt lenouveau.txt`
+
+Supprimer un fichier
+`rm lefichier.txt` ou récursivement `rm -rf ledossier/`
+
+Supprimer un fichier et le rendre irrécupérable en écrasant son contenu par de l'aléatoire
+`shred -u lefichier.txt`
+
+Créer un dossier
+`mkdir ledossier`
+
+Modifier la date d'accès ou créer un fichier vide
+`touch index.html`
+
+Afficher le contenu d'un fichier
+`cat lefichier.txt`
+
+Mettre fin à la session
+`exit`
+
+Arrêter la machine
+`shutdown`
+
+---
+
 ### Autres commandes utiles
+
+Créer un alias de commande
+`alias ll="ls -al"`
 
 Dernières commandes
 `history`
