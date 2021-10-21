@@ -23,11 +23,11 @@ Cette présente charte a pour objectif :
 - [**Guidelines E-mailing**](Guidelines-E-mailing.md)
 - [**Guidelines Docker**](Guidelines-Docker.md)
 
-## Selon typologie de projet (en cours)
+## Selon typologie de projet
 
 - [**Guidelines Vue-Nuxt-Front-End**](Guidelines-Vue-Nuxt-Front-End.md)
-- [**Guidelines Vue-WordPress**](Guidelines-Vue-WordPress.md)
 - [**Guidelines WordPress**](Guidelines-WordPress.md)
+- [**Guidelines Vue dans WordPress**](Guidelines-Vue-WordPress.md)
 - [**Guidelines Développement PHP / MySql**](Guidelines-Developpement-PHP.md)
 
 **NOTE : Aucun de ces documents n'est figé, ils sont en constante amélioration et évolution.**
