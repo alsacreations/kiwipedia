@@ -326,8 +326,7 @@ deny from all
 
 ## Développement
 
-- [Query Monitor](https://wordpress.org/plugins/query-monitor/) affiche les requêtes exécutées.
-- [Show Current Template](https://wordpress.org/plugins/show-current-template/) montre quel est le template réellement utilisé.
+- [Query Monitor](https://wordpress.org/plugins/query-monitor/) affiche les requêtes SQL exécutées et leur performance ainsi que les fichiers templates utilisés.
 
 ### Ajouter le support de Gutenberg pour les CPT
 
