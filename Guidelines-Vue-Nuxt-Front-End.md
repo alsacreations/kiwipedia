@@ -197,6 +197,14 @@ Réponses recommandées aux questions :
 
 Installation de Tailwind dans Nuxt : voir <https://tailwindcss.com/docs/guides/nuxtjs>
 
+## Dépendances
+
+Les dépendances fortement recommandées sont : [vuex](https://vuex.vuejs.org/) (store), [vue-router](https://router.vuejs.org/) (routage), [vue-i18n](https://kazupon.github.io/vue-i18n/) (traduction), [axios](https://fr.vuejs.org/v2/cookbook/using-axios-to-consume-apis.html) s'il y a usage d'une API.
+
+Les dépendances de développement recommandées sont : eslint, eslint-plugin-vue, sass, autoprefixer, babel.
+
+Avant l'ajout d’une dépendance au projet (`npm install`) vérifier le poids avec https://bundlephobia.com/
+
 ## Composants : conventions et nommage
 
 ### Template
