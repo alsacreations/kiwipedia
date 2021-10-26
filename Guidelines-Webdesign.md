@@ -60,7 +60,11 @@ Les pages à ne pas oublier de faire apparaître dans l'arborescence sont :
 
 ### Wireframe
 
-Un Wireframe consiste en des tracés de type “fil-de-fer” avec textes et composants intégrés (par exemple une “zone emploi” avec 3 icônes et 2 emplacements de texte). Aucun design ni aucune couleur ne sont associés au Wireframe qui doit demeurer neutre pour se concentrer exclusivement sur les aspects fonctionnels et ergonomiques du site web.
+Un Wireframe consiste en des tracés de type “fil-de-fer” avec textes et composants intégrés (par exemple une “zone emploi” avec 3 icônes et 2 emplacements de texte).
+
+Aucun design ni aucune couleur ne sont associés au Wireframe qui doit demeurer neutre pour se concentrer exclusivement sur les aspects fonctionnels et ergonomiques du site web.
+
+Les pages concernées par les wireframes dépendent du projet, mais "un nombre représentatif" sera conçu (à minima la page d'accueil, une page de contenu et la page de contact).
 
 Les éléments à ne pas oublier de faire apparaître dans les wireframes/maquettes sont :
 
@@ -95,11 +99,18 @@ Les éléments à ne pas oublier de faire apparaître dans les wireframes/maquet
 
 La Maquette est l’évolution logique du Wireframe en y ajoutant la couche graphique et design. Les maquettes constituent le livrable définitif pour intégration.
 
-- La maquette doit comporter l’ensemble des éléments du wireframe (si l’élément est concerné) ainsi que :
-  - La page 404
-  - Le bandeau Cookies
-  - Breakpoints :
-  - Mobile first ?
+La maquette doit comporter l’ensemble des éléments du wireframe (si l’élément est concerné) ainsi que :
+
+- La page 404
+- Le bandeau Cookies
+
+### Mobile first
+
+La conception de nos maquettes est réalisée dans un esprit "Mobile First" (meilleures performances générales) c'est à dire que la priorité est donnée aux vues "Mobiles", puis déclinées en vues "Desktop", avec "adaptation au mieux" pour devices intermédiaires.
+
+Les maquettes conçues respectent les Points de Rupture (Breakpoints) recommandés dans nos [Guidelines CSS](Guidelines-CSS.md).
+
+Comme pour la phase de Wireframe, les pages concernées par les maquettes Mobiles ou Desktop dépendent du projet, mais "un nombre représentatif" sera proposé (à minima la page d'accueil, une page de contenu et la page de contact).
 
 ### UI Kit
 
