@@ -237,7 +237,19 @@ Cette consigne concerne principalement :
 
 **Aucune de ces valeurs ne devraient apparaître dans les styles de développement sans être associées à des variables.**
 
-### Media Queries
+### Breakpoints et Media Queries
+
+La liste de points de rupture (breakpoints) recommandée est proposée sous forme de couple "clé:valeur" et peut bien entendu être élargie&nbsp;:
+
+```scss
+$breakpoints : (
+  sm: 576px,
+  md: 992px,
+  lg: 1400px
+);
+```
+
+Conformément à la démarche "Mobile First", ces valeurs correspondent à des jalons minimum : `sm: '576px'` correspond au Media Query `@media (min-width: 576px) {...}`.
 
 Pour éviter les intervalles qui se chevauchent, ou des Media Queries trop variés, nous préconisons d'appliquer un [mixin Sass "respond-to"](https://github.com/alsacreations/KNACSS/blob/master/sass/abstracts/_mixins-sass.scss) pour appliquer des styles Responsive&nbsp;:
 

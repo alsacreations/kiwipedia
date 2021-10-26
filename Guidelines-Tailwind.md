@@ -215,6 +215,21 @@ Il est obligatoire (dans le cas d’une classe `Tailwind`) de faire apparaître 
 <div class="{{  error ? 'text-red-500' : 'text-blue-500' }}"></div>
 ```
 
+### Remarque concernant les Breakpoints
+
+La liste de points de rupture (breakpoints) recommandée est proposée sous forme de couple "clé:valeur" et peut bien entendu être élargie&nbsp;:
+
+```scss
+screens: {
+  'small': { 'max': '575px' }, // => @media (max-width: 575)
+  'sm': '576px', // => @media (min-width: 576)
+  'md': '992px', // => @media (min-width: 992)
+  'lg': '1400px' // => @media (min-width: 1400)
+},
+```
+
+Conformément à la démarche "Mobile First", ces valeurs correspondent à des jalons minimum : `sm: '576px'` correspond au Media Query `@media (min-width: 576px) {...}`.
+
 ### Remarque concernant les valeurs de `spacing` et `fontSize`
 
 Pour être les plus intuitives possibles, les valeurs d'espacement et de tailles de polices correspondent à un "équivalent en pixel". <br>Par exemple la valeur "20" dans `text-20` vaut 1.25rem et est calculée pour être équivalente à 20px.
