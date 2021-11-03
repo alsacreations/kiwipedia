@@ -203,7 +203,7 @@ Les dépendances fortement recommandées sont : [vuex](https://vuex.vuejs.org/) 
 
 Les dépendances de développement recommandées sont : eslint, eslint-plugin-vue, sass, autoprefixer, babel.
 
-Avant l'ajout d’une dépendance au projet (`npm install`) vérifier le poids avec https://bundlephobia.com/
+Avant l'ajout d’une dépendance au projet (`npm install`) vérifier le poids avec <https://bundlephobia.com/>
 
 ## Composants : conventions et nommage
 
