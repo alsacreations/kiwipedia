@@ -90,7 +90,7 @@ Valide dans un commit les fichiers ajoutés (par add par exemple) et demande une
 git commit
 ```
 
-Avec l’option `--amend` permet de modifier le dernier commit
+L’option `--amend` permet de modifier le dernier message de commit, ensuite il "suffit" de `git push --force`
 
 ```sh
 git commit --amend
