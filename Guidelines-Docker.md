@@ -17,6 +17,7 @@ Voir aussi <https://www.alsacreations.com/tuto/lire/1836-Docker--decouverte-et-e
 * Utiliser le chemin courant dans une commande docker : `$PWD`
 * Créer un network : `docker network create my-custom-net` et l'utiliser au run : `--network=my-custom-net`
 * Copier un fichier dans un container actif `docker cp .\fichier.sql.gz 133713371337:/root` où 133713371337 est l'ID du container obtenu par `docker container list` et `/root` le chemin de destination.
+* Nettoyer les images/volumes inutilisés `docker image prune` / `docker volume prune`
 
 ### Inspection
 
