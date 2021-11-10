@@ -443,32 +443,20 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://visualhunt.com/> (CC)
 - <https://stocksnap.io/> (CC0)
 - <https://www.pexels.com/>
-- <http://thestocks.im/> (meta-moteur)
-- <http://www.freepik.com> (vectoriel libre de droits / commercial avec mention)
+- <https://fr.freepik.com/> (vectoriel libre de droits / commercial avec mention)
 - <https://www.vexels.com/> (vectoriel gratuit avec mention)
 - <https://www.vecteezy.com/> (vectoriel)
-- <http://picography.co/>
+- <https://picography.co/>
 - <https://unsplash.com/>
-- <http://cupcake.nilssonlee.se/>
-- <http://freelyphotos.com/>
-- <http://www.gratisography.com/>
-- <http://finda.photo/>
-- <http://kaboompics.com/>
-- <https://stock.tookapic.com/photos?filter=free>
-- <http://images.superfamous.com/>
-- <http://freenaturestock.com/>
-- <http://jaymantri.com/> (CC0)
-- <http://nos.twnsnd.co/>
-- <https://pixabay.com/en/editors_choice/>
-- <https://realgraphy.org/>
-- <https://lookingglassfreephotos.tumblr.com/>
-- <http://freestocks.org/>
-- <http://photos.polarfox.com/>
-- <http://photocollections.io/>
-- <http://foodshot.co/>
-- <http://www.photocrops.com/browse/>
-- <http://realisticshots.com/>
-- <https://bossfight.co/>
+- <https://www.freelyphotos.com/>
+- <https://gratisography.com/>
+- <https://kaboompics.com/>
+- <https://pixabay.com/editors_choice/>
+- <https://realisticshots.com/>
+- <https://freenaturestock.com/>
+- <https://jaymantri.com/> (CC0 photographe)
+- <https://nos.twnsnd.co/> (vintage)
+- <http://thestocks.im/> (meta-moteur)
 
 ### Placeholders (images de remplissage)
 
