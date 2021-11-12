@@ -173,6 +173,22 @@ const config = {
 
 ## Installation et configuration initiale
 
+### Installation de Vue
+
+L'installation d’un nouveau projet se fait à l’aide de [vue cli](https://cli.vuejs.org/) : `npm install -g @vue/cli`, voir aussi <https://cli.vuejs.org/guide/creating-a-project.html>
+
+* Par interface graphique : `vue ui`
+* Par ligne de commande `vue create <projet>`
+
+Options recommandées :
+
+* Manually select features
+* ESLint (sans Prettier)
+* Lint on save
+* Config in dedicated config files
+
+On développe avec `npm run serve`, on compile avec `npm run build`
+
 ### Installation de Nuxt
 
 Doc : <https://nuxtjs.org/docs/2.x/get-started/installation>
