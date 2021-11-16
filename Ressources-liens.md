@@ -425,12 +425,15 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://ezgif.com/resize> Redimensionner/transformer gif animé
 - <https://pageweight.imgix.com/> Diagnostiquer le poids des images
 
-### Icônes
+### Icônes / SVG
 
+- <https://tablericons.com/>
 - <https://iconmonstr.com/>
 - <https://www.iconsdb.com/>
 - <https://www.iconfinder.com/>
 - <https://findicons.com/>
+- <https://www.svgrepo.com/>
+- <https://www.flaticon.com/fr/>
 - <https://github.com/paulirish/browser-logos> Logos de navigateurs
 
 ### Images libres (ou pas)
