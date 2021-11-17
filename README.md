@@ -38,6 +38,7 @@ Cette présente charte a pour objectif :
 - [**Pense-Bête Grid Layout (PDF)**](https://github.com/alsacreations/guidelines/blob/master/grid-cheatsheet.pdf)
 - [**Commandes Linux**](Commandes-Linux.md) (Cheatsheet)
 - [**Cheatsheet htaccess**](Cheatsheet-htaccess.md)
+- [**Cheatsheet git**](Cheatsheet-Git.md)
 - [**Ressources et liens utiles**](Ressources-liens.md)
 - [**Checklist**](Checklist.md)
 
