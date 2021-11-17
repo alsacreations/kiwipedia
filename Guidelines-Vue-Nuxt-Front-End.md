@@ -177,15 +177,15 @@ const config = {
 
 L'installation d’un nouveau projet se fait à l’aide de [vue cli](https://cli.vuejs.org/) : `npm install -g @vue/cli`, voir aussi <https://cli.vuejs.org/guide/creating-a-project.html>
 
-* Par interface graphique : `vue ui`
-* Par ligne de commande `vue create <projet>`
+- Par interface graphique : `vue ui`
+- Par ligne de commande `vue create <projet>`
 
 Options recommandées :
 
-* Manually select features
-* ESLint (sans Prettier)
-* Lint on save
-* Config in dedicated config files
+- Manually select features
+- ESLint (sans Prettier)
+- Lint on save
+- Config in dedicated config files
 
 On développe avec `npm run serve`, on compile avec `npm run build`
 
@@ -215,11 +215,20 @@ Installation de Tailwind dans Nuxt : voir <https://tailwindcss.com/docs/guides/n
 
 ## Dépendances
 
-Les dépendances fortement recommandées sont : [vuex](https://vuex.vuejs.org/) (store), [vue-router](https://router.vuejs.org/) (routage), [vue-i18n](https://kazupon.github.io/vue-i18n/) (traduction), [axios](https://fr.vuejs.org/v2/cookbook/using-axios-to-consume-apis.html) s'il y a usage d'une API.
+Les dépendances fortement recommandées sont :
+
+- [vuex](https://vuex.vuejs.org/) (store)
+- [vue-router](https://router.vuejs.org/) (routage)
+- [vue-i18n](https://kazupon.github.io/vue-i18n/) (traduction)
+- [axios](https://fr.vuejs.org/v2/cookbook/using-axios-to-consume-apis.html) s'il y a usage d'une API
 
 Les dépendances de développement recommandées sont : eslint, eslint-plugin-vue, sass, autoprefixer, babel.
 
-Avant l'ajout d’une dépendance au projet (`npm install`) vérifier le poids avec <https://bundlephobia.com/>
+Avant l'ajout d’une dépendance au projet (`npm install`) vérifier le poids avec <https://bundlephobia.com/>.
+
+Autres dépendances utiles :
+
+- [vue-the-mask](https://vuejs-tips.github.io/vue-the-mask/) : masques de saisie (téléphone, date, code postal, carte bancaire...)
 
 ## Composants : conventions et nommage
 
@@ -230,10 +239,37 @@ Avant l'ajout d’une dépendance au projet (`npm install`) vérifier le poids a
 - On écrit les composants en `<PascalCase>`.
 - On n'utilise pas les attributs `id` car ils peuvent se retrouver dupliqués dans la page si un composant est utilisé plusieurs fois. Si besoin : `:id="'truc'+_uid"` car `_uid` est un identifiant unique généré pour chaque composant chargé.
 - On utilise un élément `button` ou `input type="button"` plutôt qu'un lien pour des actions ne changeant pas de page.
+- Pour l'ajout d'événements, on utilise `v-on:click="action"` au lieu de `@click="action"` pour rechercher plus facilement les événements de manière globale dans le code source du projet. La méthode est appelée sans parenthèses s'il n'y a pas de paramètre à lui passer. [Pourquoi ?](https://stackoverflow.com/questions/50635404/parentheses-while-calling-a-method-in-vue).
 
 ### Props
 
 Toutes les props ont une valeur par défaut. Les variables d'état sont préfixées par `is` (ex : `isLoading`, `isDoingThis` , `isReady`).
+
+### Data
+
+On préfixe les variables liées (v-model) à des champs de formulaires par `form`, par exemple `formLogin`, `formProductQty`.
+
+### Computed
+
+TODO: à venir, voir <https://vuejs.org/v2/guide/computed.html>
+
+### Methods
+
+TODO: à venir
+
+### Events
+
+TODO: à venir, voir <https://vuejs.org/v2/guide/components-events.html>
+
+### Hooks
+
+Pour le chargement de données (depuis une API), on utilise le hook `created` et non pas `mounted`.
+
+## Routage
+
+On utilise le paramètre :to ainsi qu'une route nommée. Ainsi, un retour à la page d'accueil se fait avec `:to="{ name: 'accueil' }"`
+
+En cas de redirection à faire dans une fonction, on utilise router.push avec une route nommée, par exemple `router.push({ name: 'accueil' })` pour retourner à l'accueil.
 
 ## Internationalisation (i18n)
 
