@@ -247,7 +247,19 @@ Toutes les props ont une valeur par défaut. Les variables d'état sont préfix�
 
 ### Data
 
-On préfixe les variables liées (v-model) à des champs de formulaires par `form`, par exemple `formLogin`, `formProductQty`.
+On réunit les variables liées (v-model) à des champs de formulaires dans un objet unique, cela permet de les nommer/regrouper proprement et d'envoyer cet objet complet à l'API directement. Par exemple
+
+```js
+data() {
+  return {
+    form: {
+      email : '',
+      productQty: 0
+    }
+    autreData: ''
+  }
+}
+```
 
 ### Computed
 
