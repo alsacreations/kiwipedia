@@ -653,7 +653,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 ### Sécurité
 
-- <https://letsencrypt.org/> Let’s Encrypt : certificats HTTPS gratuits
+- <https://letsencrypt.org/> Let’s Encrypt (certificats HTTPS gratuits avec certbot)
 - <https://blog.appcanary.com/2017/http-security-headers.html> Tout sur les en-têtes HTTP de sécurité
 - <https://movingtohttps.com/> Migrer vers HTTPS, techniques et outils
 - <https://wiki.mozilla.org/Security/Server_Side_TLS> la référence pour configurer
@@ -666,6 +666,10 @@ Maquettes / story-boards / wireframes / mockups / zoning
 ### CORS
 
 - <https://jakearchibald.com/2021/cors/> + <https://jakearchibald.com/2021/cors/playground/>
+
+### E-mails
+
+- <https://www.alexblackie.com/articles/email-authenticity-dkim-spf-dmarc/> DKIM, SPF, DMARC
 
 ---
 
