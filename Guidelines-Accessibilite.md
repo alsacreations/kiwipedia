@@ -342,7 +342,7 @@ Autre méthode _(Note : à ce jour, Safari et Internet Explorer ne reconnaissent
 @supports selector(div:focus-visible) {
   /* uniquement au clic/tap focus */
   .custom-button:focus:not(:focus-visible) {
-    outline: 0;
+    outline-color: transparent;
   }
   /* uniquement au focus clavier */
   .custom-button:focus-visible {
