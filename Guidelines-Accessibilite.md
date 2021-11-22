@@ -313,30 +313,7 @@ Ce contour correspond à la propriété CSS `outline` (ce n'est pas une `border`
 
 L'ensemble des navigateurs appliquent par défaut un `outline` visible lors de l'événement `:focus` et, même si nous pourrions trouver cela disgracieux, il est important de ne pas le supprimer autour des éléments cliquables (pas de `outline: none`) car il a été conçu pour rendre ces éléments accessibles à tous (= se repérer lors d'une navigation au clavier).
 
-Grâce à la pseudo-classe `:focus-visible` il est possible de masquer le contour (focus) lors du clic ou d'un touch tout en le préservant lors d'un focus au clavier _(Note : à ce jour, Safari et Internet Explorer ne reconnaissent pas `:focus-visible`)_.
-
-Exemple tiré de&nbsp;: <https://developer.mozilla.org/fr/docs/Web/CSS/:focus-visible>
-
-```css
-.custom-button:focus {
-  /* alternative pour anciens navigateurs */
-  outline: none;
-  background: lightgrey;
-}
-
-.custom-button:focus:not(:focus-visible) {
-  /* suppression du focus lors du clic/tap */
-  background: transparent;
-}
-
-.custom-button:focus-visible {
-  /* affichage du focus lors de la navigation au clavier */
-  outline: 4px dashed darkorange;
-  background: transparent;
-}
-```
-
-Autre méthode _(Note : à ce jour, Safari et Internet Explorer ne reconnaissent ni `:focus-visible` ni `@supports selector()` et appliqueront leur outline par défaut lors du focus sur cet exemple)_.:
+Grâce à la pseudo-classe `:focus-visible` il est possible de masquer le contour (focus) lors du clic ou d'un touch tout en le préservant lors d'un focus au clavier _(Note : à ce jour, Safari et Internet Explorer ne reconnaissent ni `:focus-visible` ni `@supports selector()` et appliqueront leur outline par défaut lors du focus sur cet exemple)_.:
 
 ```css
 @supports selector(div:focus-visible) {
