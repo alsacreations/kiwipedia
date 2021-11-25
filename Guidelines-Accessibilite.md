@@ -478,48 +478,91 @@ Exemple d’une image de **décoration** :
 ![image alt text](images/accessibilite05.png)
 
 ```html
-<img src="kiwiparty.png" alt="" />
+<img src="kiwiparty.png" alt="">
 ```
 
-### SVG
+### SVG et accessibilité
 
-#### SVG dans lien
+Les exemples à suivre proviennent du [Design System du W3C](https://design-system.w3.org/styles/svg-icons.html) ainsi que de l'article [Contextually Marking up accessible images and SVGs](https://www.scottohara.me/blog/2019/05/22/contextual-images-svgs-and-a11y.html)
 
-Utiliser de préférence un `<span>` invisible pour l’alternative textuelle, le texte sera alors retranscrit par les lecteurs d’écrans (cf "[Astuces CSS](#heading=h.wsw7a5jk60yz)" plus haut).
+**Important :** Toujours commencer par nettoyer proprement les fichiers SVG (avec [SVGOMG](https://jakearchibald.github.io/svgomg/)) car les éditeurs graphiques ajoutent de nombreux éléments inutiles tels que des `<title>` de type "créé par Sketch".
 
-Meilleure technique relevée par Atalan : <https://blog.atalan.fr/svg-liens-et-lecteurs-decran/>
+#### SVG porteur d'information
+
+**Cas d'un SVG inline :**
+
+Ajouter l'attribut `role="img"` pour indiquer aux lecteurs d'écrans de la considérer comme une image et lui éviter de lire tous les nœuds HTML du SVG.
+Il faut ensuite ajouter un `<title>` (ou un `aria-label`) pour expliciter la fonction de l'image.
+Ajouter également `focusable="false"`pour éviter que la touche <kbd>Tab</kbd> ne navigue au sein du SVG.
+
+```xml
+<svg role="img" focusable="false">
+<title>Le nom accessible</title>
+  <use xlink:href="#svg-id-to-reference" aria-hidden="true" />
+  <!-- contenu du SVG -->
+</svg>
+```
+
+ou bien (si l'infobulle au survol n'est pas souhaitée)&nbsp;:
+
+```xml
+<svg role="img" aria-label="Nom accessible" focusable="false">
+  <use xlink:href="#..." aria-hidden="true"></use>
+</svg>
+```
+
+**Cas d'une image SVG :**
+
+Ajouter l'attribut `role="img"`.
+
+```xml
+<img src="image.svg" role="img" alt="Nom accessible">
+```
+
+#### SVG décoratif
+
+**Cas d'un SVG inline :**
+
+Appliquer `aria-hidden="true"` sur le `svg` afin d'indiquer aux lecteurs d'écran de ne pas le restituer, ainsi que `focusable="false"`.
+
+```xml
+<svg aria-hidden="true" focusable="false">
+  <!-- contenu du SVG -->
+</svg>
+```
+
+**Cas d'une image SVG :**
+
+`alt` vide, simplement.
 
 ```html
-<a href="…">
-  <span class="visually-hidden">Le titre du lien</span>
-  <svg aria-hidden="true">…</svg>
+<img src="image.svg" alt="">
+```
+
+#### SVG dans lien ou dans un bouton
+
+La méthode `aria-label="Nom accessible"` est mal supportées par certaines assistances techniques lorsque le SVG est contenu dans un lien ou un bouton.
+
+Il est préférable d'utiliser un `<span>` invisible pour le nom accessible s'il doit être masqué à l'écran, le texte sera alors retranscrit par les lecteurs d’écrans.
+
+**Cas d'un SVG inline :**
+
+```xml
+<a href="#">
+  <svg aria-hidden="true" focusable="false">
+    <!-- contenu du SVG -->
+  </svg>
+  <span class="sr-only">Nom accessible masqué à l'écran</span>
 </a>
 ```
 
-#### SVG porteuse d'information
-
-Dans ce cas, il faut lui passer l'attribut `role="img"` pour indiquer aux lecteurs d'écrans de la considérer comme une image et lui éviter de lire tous les nœuds HTML du SVG.
-Il faut ensuite ajouter un `<title>` ou un `aria-label` pour expliciter la fonction de l'image.
-
-**Exemple :**
+**Cas d'une image SVG :**
 
 ```html
-<svg role="img" aria-label="Le titre du lien">
-<title>Le titre du lien</title>
-[…]
-</svg>
-```
-
-#### SVG décoratives
-
-Dans ce cas, il faut uniquement mettre `aria-hidden="true"` sur le `svg` afin d'indiquer aux lecteurs d'écran de ne pas la restituer.
-
-**Exemple :**
-
-```html
-<svg aria-hidden="true">
-[…]
-</svg>
+<a href="#">
+  <img src="image.svg" alt="">
+  Nom accessible visible à l'écran
+</a>
 ```
 
 ### Vidéos
