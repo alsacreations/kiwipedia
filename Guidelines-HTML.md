@@ -10,9 +10,10 @@ Sauf spécificités contraires :
 
 - L’encodage des fichiers et des bases de données doit se faire en `UTF-8` (sans `BOM`).
 - Les noms d'éléments et attributs HTML sont rédigés en minuscules, les attributs utilisent les double quotes (ex. `class="fruit"`). Les valeurs identiques aux attributs ne sont pas renseignées sauf nécessité (ex. en HTML5 pas de `checked="checked"`).
-- - Les éléments disposants d’id (à limiter autant que possible) doivent disposer d’une classe dupliquée (pour CSS).
+- Les éléments disposants d’id (à limiter autant que possible) doivent disposer d’une classe dupliquée (pour CSS).
 - Les indentations se font à l’aide de deux espaces et non à l'aide de tabulations. Pour assurer une cohérence inter-projets, utiliser la convention [EditorConfig](https://editorconfig.org/), voire Prettier.
 - Séparer les noms des fichiers, des images des classes et id CSS par des tirets (`.slide-info`, `styles-ie.css`, `jquery-3.0.min.css`, etc).
+- Exploiter le [Design System du W3C](https://design-system.w3.org/) pour les différents composants
 
 ## Modèle-type
 

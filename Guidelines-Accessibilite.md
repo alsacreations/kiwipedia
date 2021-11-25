@@ -13,6 +13,7 @@ Cette présente convention rassemble les bonnes pratiques d'Accessibilité en pr
 - Utiliser les éléments HTML pour leur fonction/sémantique et non pas pour leur forme.
   - Utiliser les éléments pouvant recevoir le focus (`<a>`, `<input type="button">`, `<button>`) lorsqu'ils sont cliquables/interactifs.
 - Exploiter WAI ARIA <https://www.w3.org/WAI/standards-guidelines/aria/> lorsque c'est pertinent pour aider le navigateur.
+- Exploiter le [Design System du W3C](https://design-system.w3.org/) pour les différents composants
 
 ## Bonnes pratiques Webdesign
 
