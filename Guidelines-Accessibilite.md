@@ -186,9 +186,7 @@ Plus d’informations : <https://developer.mozilla.org/en-US/docs/Web/Accessibil
 
 Le titre de la page doit être pertinent et de préférence unique pour chaque page. Dans `<title>`, éviter le caractère `|` (pipe) comme séparateur. Préférer `:` (deux-points).
 
-**Exemple :**
-
-Pour une page de recherche, il faut indiquer le mot recherché ainsi que la page actuelle si une pagination est présente :
+Pour une page de résultats de recherche, il faut indiquer dans le titre le mot recherché ainsi que la page actuelle si une pagination est présente :
 "Vous avez recherché le mot : xxx - page 2"
 
 ### Liens
