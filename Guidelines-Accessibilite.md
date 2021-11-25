@@ -141,14 +141,46 @@ Pour chaque balise comprenant un `role="search"`, ajouter un `aria-label` descri
 
 Plus d’informations : <https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Search_role/>
 
-### Liens d’évitement
+### Liens d’évitement ("skip link")
 
 - Il est **obligatoire** d'avoir au moins 1 lien d'évitement permettant d'accéder directement au contenu principal. D'autres liens d'évitement peuvent être ajoutés pour accéder rapidement à la navigation, à la recherche, au pied de page, etc.
 - Il doit être le premier lien de la page.
 - Il peut être masqué (classe Tailwind [`sr-only`](https://tailwindcss.com/docs/screen-readers)) et visible lors du focus.
 - Si le contenu principal est un élément non interactif il faut mettre un `tabindex="-1"` pour rendre cet élément focusable (ex. sur une balise `<main>`). Voir [la partie sur les tabindex.](https://github.com/alsacreations/guidelines/blob/master/Guidelines-Accessibilite.md#tabindex)
 
-Voir [Guidelines HTML](Guidelines-HTML.md)
+À titre indocatif, voici le lien d'évitement employé au sein du [Design System du W3C](https://design-system.w3.org/)&nbsp;:
+
+```html
+<a href="#main" class="skip-link">Skip to content</a>
+```
+
+```css
+.skip-link {
+  background-color: #f9dc4a;
+  border: solid 3px #000;
+  color: #000;
+  padding: 0.625em 0.9375em;
+  text-decoration: none;
+}
+.skip-link:not(:focus):not(:active) {
+  border: 0;
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  height: 1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+.skip-link:focus {
+  left: 0;
+  position: absolute;
+  top: 0;
+  z-index: 999;
+}
+```
 
 ### Titres de page
 
