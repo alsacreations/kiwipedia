@@ -336,6 +336,31 @@ N'utiliser les tableaux que pour la présentation de données, et non pour la st
 
 ---
 
+## Bonnes pratiques ARIA
+
+[WAI-ARIA](https://developer.mozilla.org/fr/docs/Web/Accessibility/ARIA) est une technologie permettant de donner des indications d'accessibilité supplémentaires par rapport aux comportements natifs déjà prévus par les navigateurs pour les éléments HTML de base.
+
+Trois caractéristiques principales sont définies dans la spécification&nbsp;:
+
+- les **attributs** `role` (landmarks), voir la [Matrice des rôles ARIA](http://whatsock.com/training/matrices/)
+- les **propriétés**, par exemple `aria-label` ou `aria-required`.
+- les **états**, par exemple `aria-disabled`
+
+ARIA est aussi recommandé pour les composants complexes pilotés par JavaScript (ex : menus déroulants, sliders, onglets, modales, etc.).
+
+La bibliothèque de plugins jQuery Pepin utilise ARIA pour la plupart des composants <https://github.com/alsacreations/pepin>
+
+Voici un exemple d'usage de l'attribut `aria-label` :
+
+```html
+<button aria-label="accéder au code Hypertext markup language">html</button>
+```
+
+Cet exemple est issu d'un article des Guidelines Accessibilité de Orange nommé [Les attributs ARIA qui peuvent vous sauver !
+](https://a11y-guidelines.orange.com/fr/articles/attributs-aria-qui-peuvent-vous-sauver/) décrivant en détail les différences d'usage de `aria-label`, `aria-labelledby` et  `aria-describedby`.
+
+---
+
 ## Bonnes pratiques CSS
 
 ### outline et focus
@@ -428,17 +453,6 @@ Ne pas faire :
 
 ---
 
-## Bonnes pratiques ARIA
-
-WAI-ARIA est une technologie permettant de donner des indications d'accessibilité supplémentaires par rapport aux comportements natifs déjà prévus par les navigateurs pour les éléments HTML de base. Elle passe par les attributs `role` (landmarks, regions, widgets divers) et `aria-*` (propriétés). ARIA est aussi particulièrement recommandé pour les composants complexes pilotés par JavaScript (ex : menus déroulants, sliders, onglets, modales...).
-
-- [Matrice des rôles ARIA](http://whatsock.com/training/matrices/)
-- aria-labelledby + aria-describedby <https://a11y-guidelines.orange.com/fr/articles/attributs-aria-qui-peuvent-vous-sauver/>
-
-La bibliothèque de plugins jQuery Pepin utilise ARIA pour la plupart des composants <https://github.com/alsacreations/pepin>
-
----
-
 ## Bonnes pratiques Images et Médias
 
 Chaque image doit avoir un attribut `alt`. Les images décoratives (qui n'apportent rien au contenu) doivent avoir un attribut alt vide `<img ... alt="">`.
@@ -505,7 +519,7 @@ Lorsqu'un lien renvoi vers un téléchargement de PDF, il faut spécifier dans l
 
 ## SVG et accessibilité
 
-Les exemples à suivre proviennent du [Design System du W3C](https://design-system.w3.org/styles/svg-icons.html) ainsi que de l'article [Contextually Marking up accessible images and SVGs](https://www.scottohara.me/blog/2019/05/22/contextual-images-svgs-and-a11y.html)
+Les exemples à suivre proviennent du [Design System du W3C](https://design-system.w3.org/styles/svg-icons.html) ainsi que de l'article [Contextually Marking up accessible images and SVGs](https://www.scottohara.me/blog/2019/05/22/contextual-images-svgs-and-a11y.html) et [Les images SVG sont de plus en plus utilisées sur le web mais qu’en est-il de leur accessibilité ?](https://a11y-guidelines.orange.com/fr/articles/svg-accessibles/).
 
 **Important :** Toujours commencer par nettoyer proprement les fichiers SVG (avec [SVGOMG](https://jakearchibald.github.io/svgomg/)) car les éditeurs graphiques ajoutent de nombreux éléments inutiles tels que des `<title>` de type "créé par Sketch".
 
@@ -518,8 +532,8 @@ Il faut ensuite ajouter un `<title>` (ou un `aria-label`) pour expliciter la fon
 Ajouter également `focusable="false"`pour éviter que la touche <kbd>Tab</kbd> ne navigue au sein du SVG.
 
 ```xml
-<svg role="img" focusable="false">
-<title>Le nom accessible</title>
+<svg role="img" focusable="false" aria-labelledby="title">
+  <title id="title">Le nom accessible</title>
   <use xlink:href="#svg-id-to-reference" aria-hidden="true" />
   <!-- contenu du SVG -->
 </svg>
@@ -555,10 +569,10 @@ Appliquer `aria-hidden="true"` sur le `svg` afin d'indiquer aux lecteurs d'écra
 
 **Cas d'une image SVG :**
 
-`alt` vide, simplement.
+`alt` vide, `aria-hidden="true"`.
 
 ```html
-<img src="image.svg" alt="">
+<img src="image.svg" alt="" aria-hidden="true">
 ```
 
 ### SVG dans lien ou dans un bouton
