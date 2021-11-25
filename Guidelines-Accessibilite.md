@@ -481,13 +481,35 @@ Exemple d’une image de **décoration** :
 <img src="kiwiparty.png" alt="">
 ```
 
-### SVG et accessibilité
+### Vidéos
+
+Utiliser un lecteur audio/vidéo accessible, par exemple les éléments HTML5 natifs.
+
+Fournir une piste de sous-titres avec le format webVTT et l'élément `<track>`.
+
+### PDF
+
+Il faut que le PDF soit lui-même accessible, ou il faut proposer une alternative `HTML`, `.doc`, `.odt` structurés.
+
+Lorsqu'un lien renvoi vers un téléchargement de PDF, il faut spécifier dans le `title`:
+
+- son intitulé
+- sa taille
+- son format
+- et l'ouverture dans une nouvelle fenêtre
+
+**Exemple :**
+`<a href="[url]" title="Intitulé (PDF, 456ko, nouvelle fenêtre)>Intitulé</a>`
+
+---
+
+## SVG et accessibilité
 
 Les exemples à suivre proviennent du [Design System du W3C](https://design-system.w3.org/styles/svg-icons.html) ainsi que de l'article [Contextually Marking up accessible images and SVGs](https://www.scottohara.me/blog/2019/05/22/contextual-images-svgs-and-a11y.html)
 
 **Important :** Toujours commencer par nettoyer proprement les fichiers SVG (avec [SVGOMG](https://jakearchibald.github.io/svgomg/)) car les éditeurs graphiques ajoutent de nombreux éléments inutiles tels que des `<title>` de type "créé par Sketch".
 
-#### SVG porteur d'information
+### SVG porteur d'information
 
 **Cas d'un SVG inline :**
 
@@ -519,7 +541,7 @@ Ajouter l'attribut `role="img"`.
 <img src="image.svg" role="img" alt="Nom accessible">
 ```
 
-#### SVG décoratif
+### SVG décoratif
 
 **Cas d'un SVG inline :**
 
@@ -539,7 +561,7 @@ Appliquer `aria-hidden="true"` sur le `svg` afin d'indiquer aux lecteurs d'écra
 <img src="image.svg" alt="">
 ```
 
-#### SVG dans lien ou dans un bouton
+### SVG dans lien ou dans un bouton
 
 La méthode `aria-label="Nom accessible"` est mal supportées par certaines assistances techniques lorsque le SVG est contenu dans un lien ou un bouton.
 
@@ -564,26 +586,6 @@ Il est préférable d'utiliser un `<span>` invisible pour le nom accessible s'il
   Nom accessible visible à l'écran
 </a>
 ```
-
-### Vidéos
-
-Utiliser un lecteur audio/vidéo accessible, par exemple les éléments HTML5 natifs.
-
-Fournir une piste de sous-titres avec le format webVTT et l'élément `<track>`.
-
-### PDF
-
-Il faut que le PDF soit lui-même accessible, ou il faut proposer une alternative `HTML`, `.doc`, `.odt` structurés.
-
-Lorsqu'un lien renvoi vers un téléchargement de PDF, il faut spécifier dans le `title`:
-
-- son intitulé
-- sa taille
-- son format
-- et l'ouverture dans une nouvelle fenêtre
-
-**Exemple :**
-`<a href="[url]" title="Intitulé (PDF, 456ko, nouvelle fenêtre)>Intitulé</a>`
 
 ---
 
