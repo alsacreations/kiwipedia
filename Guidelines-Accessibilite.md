@@ -629,6 +629,7 @@ Pour les menus déroulants et mega menus, Accessible Mega Menu a fait ses preuve
 
 ## Ressources Générales
 
+- [Design System du W3C](https://design-system.w3.org/)
 - Notices Accedeweb <https://www.accede-web.com/notices/>
 - Checklist <https://www.a11yproject.com/checklist/>
 - Patterns accessibles <https://www.w3.org/TR/wai-aria-practices-1.1/>
@@ -637,8 +638,13 @@ Pour les menus déroulants et mega menus, Accessible Mega Menu a fait ses preuve
 
 ## Outils
 
-### Devtools
+### Support assistances techniques
 
+- <https://a11ysupport.io/>
+
+### Plugins
+
+- [Wave browser extension](https://wave.webaim.org/extension/) (Firefox et Chrome)
 - Accessibilité dans les devtools de Chrome [https://www.smashingmagazine.com/2020/08/accessibility-chrome-devtools/](https://www.smashingmagazine.com/2020/08/accessibility-chrome-devtools/)
 
 ### Synthèses vocales
