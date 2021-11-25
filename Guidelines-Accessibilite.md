@@ -466,7 +466,7 @@ Meilleure technique relevée par Atalan : <https://blog.atalan.fr/svg-liens-et-l
 #### SVG porteuse d'information
 
 Dans ce cas, il faut lui passer l'attribut `role="img"` pour indiquer aux lecteurs d'écrans de la considérer comme une image et lui éviter de lire tous les nœuds HTML du SVG.
-Il faut ensuite ajouter un `<title>` ou un `aria-label` pour explicité la fonction de l'image.
+Il faut ensuite ajouter un `<title>` ou un `aria-label` pour expliciter la fonction de l'image.
 
 **Exemple :**
 
