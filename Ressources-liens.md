@@ -194,11 +194,6 @@ Autres listes de ressources et checklists
 - <https://youdescribe.org/> Audio desc avec Youtube
 - <https://521dimensions.com/open-source/amplitudejs>
 
-### SVG accessible
-
-- <http://www.sitepoint.com/tips-accessible-svg/> Rendre SVG accessible
-- <http://ljwatson.github.io/decks/2017/lws/index.html> Making SVG accessible (Paciello)
-
 ### JavaScript et composants
 
 - <https://github.com/alphagov/accessible-typeahead> Typeahead accessible
@@ -508,6 +503,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://inkscape.org/en/> éditeur SVG open-source
 - <https://design.tutsplus.com/tutorials/svg-files-from-illustrator-to-the-web--vector-20899> SVG Files: From Illustrator to the Web
 - <https://svgcrop.com/>
+- <https://svgco.de/> à partir d'une image bitmap (vectorisation)
 
 ### Générateurs SVG
 
@@ -515,6 +511,14 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://squircley.app/>
 - <https://getwaves.io/>
 - <https://www.outpan.com/app/9aaaf27303/svg-gradient-wave-generator>
+
+### Optimisation SVG et astuces
+
+- <http://petercollingridge.appspot.com/svg-optimiser>
+- <https://github.com/svg/svgo> Optimisation
+- <https://jakearchibald.github.io/svgomg/> Optimisation en ligne
+- <https://css-tricks.com/understanding-and-manually-improving-svg-optimization/>
+- <https://thenewcode.com/1094/Using-JavaScript-in-SVG> Include du code JavaScript dans SVG
 
 ### Animations SVG
 
@@ -526,22 +530,15 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://css-tricks.com/animating-svg-css/> (animation via CSS)
 - <http://sozi.baierouge.fr/pages/10-about.html> Présentations animées avec zoom/dézoom
 
-### Optimisation SVG et astuces
-
-- <http://petercollingridge.appspot.com/svg-optimiser>
-- <https://github.com/svg/svgo> Optimisation
-- <https://jakearchibald.github.io/svgomg/> Optimisation en ligne
-- <https://css-tricks.com/understanding-and-manually-improving-svg-optimization/>
-- <https://thenewcode.com/1094/Using-JavaScript-in-SVG> Include du code JavaScript dans SVG
-
 ### Accessibilité des SVG
 
-- <http://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-2-svg-images-vectorielles/>
-- <http://la-cascade.ghost.io/rendre-svg-accessible/> SVG accessible
+- <https://www.accede-web.com/notices/html-et-css/images-et-icones/gerer-lalternative-des-svg-images-vectorielles/> Gérer l’alternative des SVG
+- <https://la-cascade.io/rendre-svg-accessible/> SVG accessible
 - <https://css-tricks.com/accessible-svgs/>
 - <https://www.paciellogroup.com/blog/2013/12/using-aria-enhance-svg-accessibility/>
-- <https://www.sitepoint.com/tips-accessible-svg/>
-
+- <https://www.sitepoint.com/tips-accessible-svg/> Rendre SVG accessible
+- <http://ljwatson.github.io/decks/2017/lws/index.html> Making SVG accessible (Paciello)
+- 
 ## Cartes géographiques
 
 - <https://developers.google.com/maps/?hl=fr> Google Maps
