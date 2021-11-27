@@ -693,26 +693,22 @@ Sur la machine qui envoie
 ## SCP
 
 Copier fichier vers machine distante (répertoire home)
-`scp -P 22222 <fichier> login@www.example.org:`
+`scp -P 1337 <fichier> login@www.example.org:`
 
-Copier fichier vers machine distante avec clé ssh
+* Port spécifique `-P 1337`
+* Clé ssh spécifiée depuis un fichier `-i ~/.ssh/key-rsa`
 
-```sh
-scp -i ~/.ssh/www.example.org <fichier> ubuntu@www.example.org:
-scp -P 22222 -i ~/.ssh/key-rsa.txt <fichier> login@www.example.org:
-```
+Copier fichier vers machine distante (en spécifiant répertoire/fichier destination)
+`scp <fichier> login@www.example.org:path/<fichier>`
 
-Copier fichier vers machine distante (répertoire/fichier destination)
-`scp -P 22222 <fichier> login@www.example.org:path/<fichier>`
+Copier répertoire récursivement vers machine distante
+`scp -r directory login@www.example.org:`
 
-Copier répertoire vers machine distante
-`scp -P 22222 -r directory login@www.example.org:`
-
-Copier répertoire depuis machine distante
-`scp -P 22222 -r login@www.example.org:directory .`
+Copier répertoire *depuis* machine distante
+`scp -r login@www.example.org:directory .`
 
 RSync de serveur à serveur
-`rsync -av -e "ssh -p 22222" /tmp/ root@192.168.0.37:/tmp`
+`rsync -av -e "ssh -p 1337" /tmp/ root@192.168.0.37:/tmp`
 
 ---
 
