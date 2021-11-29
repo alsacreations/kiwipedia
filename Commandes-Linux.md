@@ -471,6 +471,9 @@ Recopier partitions sda vers sdb (après remplacement disque par exemple)
 Copier tous les fichiers d'un disque/point de montage vers un autre (en préservant les droits, liens etc)
 `rsync -aHAXSWx /source /destination`
 
+Outil visuel pour la gestion des partitions
+`cfdisk` ou `cfdisk /dev/sdX`
+
 ### Divers
 
 Statistiques I/O disques durs
