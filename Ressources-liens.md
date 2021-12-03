@@ -456,6 +456,10 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://nos.twnsnd.co/> (vintage)
 - <http://thestocks.im/> (meta-moteur)
 
+### Templates/modèles de slides
+
+- <https://slidesgo.com/>
+
 ### Placeholders (images de remplissage)
 
 - <https://picsum.photos/images>
