@@ -643,6 +643,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://htaccess.madewithlove.be> Tester/simuler les règles de réécriture
 - <https://code.tutsplus.com/tutorials/introduction-to-mailtrap-a-fake-smtp-server-for-pre-production-testing--cms-23279> Mailtrap : fake smtp server
 - <https://serversforhackers.com/series>
+- <https://vim.is/> Apprendre VIM avec des exercices interactifs
 
 ## HTTP
 
