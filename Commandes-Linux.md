@@ -965,6 +965,12 @@ Wget miroir d'un site, récursif, adaptant les liens et extensions, télécharge
 wget --mirror --convert-links --adjust-extension --page-requisites --no-parent -e robots=off http://www.azerty0.ironie.org/
 ```
 
+Télécharger récursivement un dossier FTP avec wget
+
+```
+wget -r ftp://login:password@example.org:port/path/to/folder/
+```
+
 ## Scripts utiles et shell
 
 Date
