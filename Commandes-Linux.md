@@ -974,13 +974,19 @@ wget -r ftp://login:password@example.org:port/path/to/folder/
 ## Scripts utiles et shell
 
 Date
-`echo $(date +%Y-%m-%d)`
+```sh
+echo $(date +%Y-%m-%d)
+```
 
 Envoyer un mail
-`echo "Arf" | mail -s "Sujet" destinataire@example.org`
+```sh
+echo "Arf" | mail -s "Sujet" destinataire@example.org
+```
 
-Split un fichier PDF en plusieurs autres
-`pdfseparate -f 1 -l 10 doc.pdf tmp/doc-%d.pdf`
+Split (découper) un fichier PDF en plusieurs autres
+```sh
+pdfseparate -f 1 -l 10 doc.pdf tmp/doc-%d.pdf
+```
 
 Convertir un fichier en utf8
 
