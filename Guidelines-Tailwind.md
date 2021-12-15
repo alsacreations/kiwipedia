@@ -404,11 +404,11 @@ Les bonnes pratiques suivantes doivent cependant être respectées tant que poss
 1. Attribuer un nom de classe sémantique au composant (ex. `.nav-socials`).
 2. Lister des classes Tailwind de façon **organisée**, c'est-à-dire regrouper les classes en fonction de leur utilité par ordre d'importance (l'esthétique à la fin).
 3. Attribuer des noms de classes aux éléments à cibler en CSS et **n'utiliser que des sélecteurs de classes** si possible, pas de sélecteurs composés (utiliser `.nav-socials-link` et jamais `.nav-socials a`).
-4. **Un Composant nécessitant des variantes ou modificateurs (marges, padding, gouttières, couleurs, etc.) disposera de classes Tailwind lors de son insersion (`<NavSocials class="mt-60 gap-10 md:gap-20 lg:gap-32"></NavSocials>`)**.
+4. **Un Composant nécessitant des variantes ou modificateurs (marges, padding, gouttières, couleurs, etc.) disposera de classes Tailwind lors de son insertion (`<NavSocials class="mt-60 gap-10 md:gap-20 lg:gap-32"></NavSocials>`)**.
 5. **Préciser le langage des styles** quand Sass est employé (`<style lang="scss">`) pour éviter d'affoler les Linters.
 6. Englober les styles de composants au **sein d'un layer** (`@layer components {}`) pour éviter d'écraser les styles utilitaires.
 
-### Version 1 : pas de classes TW dans le template
+### Version 1 : pas de classes Tailwind dans le template
 
 ```html
 <!-- partie Template du fichier NavSocials.vue -->
@@ -454,7 +454,7 @@ Les bonnes pratiques suivantes doivent cependant être respectées tant que poss
 </style>
 ```
 
-### Version 2 : avec classes TW dans le template
+### Version 2 : avec classes Tailwind dans le template
 
 Cette version est très pratique pour des composants simples, avec répétitions.
 
@@ -646,6 +646,6 @@ Elles seront de préférence dans le layer `utilities`.
 
 Le principe général est qu'`une propriété CSS = une fonction`. Donc à partir du moment où notre classe nécessite plus d'une propriété CSS, elle devient un **Component**.
 
-Les préfixes `sm`, `md`, `hover`, `focus`, … sont donc des switchs `on/off` pour une seule utilité.
+Les préfixes `sm`, `md`, `hover`, `focus`, … sont donc des switchs `on`/`off` pour une seule utilité.
 
 Ex: `sm:text-blue-500 md:text-red-500`
