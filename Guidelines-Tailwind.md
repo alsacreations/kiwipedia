@@ -33,56 +33,57 @@ De manière générale, sauf exceptions, Tailwind sera installé et configuré �
 
 ### Wordplate - WordPress
 
-1. Installer les dépendances NPM `npm install tailwindcss postcss autoprefixer mix-tailwindcss`.
+1. Installer les dépendances NPM `npm install -D tailwindcss postcss autoprefixer`.
 2. Créer un fichier de config avec `npx tailwindcss init` vierge si possible.
-3. Configurer les fichiers qui seront à purger dans la configuration JS.
-4. Dans le fichier `webpack.mix.js` ajouter Mix-Tailwind et l’utiliser sur mix.sass.
-5. Enfin dans `resources\styles\app.scss`, ajouter Tailwind.
+3. Configurer les fichiers qui seront à observer dans la configuration JS.
+4. Dans le fichier `webpack.mix.js` ajouter Tailwind au build postcss.
+5. Enfin dans `resources\styles\app.css`, ajouter Tailwind.
 
 #### _tailwind.config.js_
 
 ```js
-purge: ['public/theme/**/*.php', 'public/theme/**/*.twig', 'public/theme/**/*.js']
+content: ['public/theme/**/*.php', 'public/theme/**/*.twig', 'public/theme/**/*.js']
 ```
 
 #### _webpack.mix.js_
 
 ```js
-require('mix-tailwindcss')
-mix.sass('resources/styles/app.scss', 'styles').tailwind()
+mix.postCss("resources/css/app.css", "public/css", [
+  require("tailwindcss")
+])
 ```
 
-#### _resources\styles\app.scss_
+#### _resources\styles\app.css
 
 ```scss
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 ```
 
 ### Vue - Nuxt
 
 > NOTE: Ne pas dire **Oui** quand Nuxt propose d'installer Tailwind automatiquement. On le fait nous même pour éviter tout soucis de compatibilité.
 
-1. Installer les dépendances NPM `npm install -D @nuxtjs/tailwindcss tailwindcss@latest postcss@latest autoprefixer@latest`.
+1. Installer les dépendances NPM `npm install -D tailwindcss postcss@latest autoprefixer@latest @nuxt/postcss8`.
 2. Créer un fichier de config avec `npx tailwindcss init` vierge si possible.
-3. Configurer les fichiers qui seront à purger dans la config js.
-4. Ajouter Tailwind aux `buildModules` de Nuxt.
-5. Ajouter les styles `@utilities`, `@base`, `@components` dans le fichier `assets/css/tailwind.css`, il est possible de changer de fichier d'endroit mais il faut le spécifier dans la config de Nuxt.
+3. Configurer les fichiers qui seront observés dans `tailwind.config.js` dans le tableau `content`.
+4. Ajouter `'@nuxt/postcss8'` aux `buildModules` de Nuxt.
+5. Ajouter les styles `@utilities`, `@base`, `@components` dans le fichier de styles principal.
 
 #### _tailwind.config.js_
 
 ```js
-purge: ['src/**/*.vue', 'src/**/*.ts', 'src/**/*.js']
+content: ['src/**/*.vue', 'src/**/*.ts', 'src/**/*.js']
 ```
 
 #### _nuxt.config.js_
 
 ```js
-buildModules: ['@nuxtjs/tailwindcss']
+buildModules: ['@nuxt/postcss8']
 ```
 
-#### _assets/css/tailwind.css_
+#### _assets/css/app.css_
 
 ```css
 @tailwind base;
@@ -144,7 +145,7 @@ Pour éviter la présence de centaines de valeurs inutiles (et hors charte graph
 - `fontWeight` : Les graisses de police
 - `fontSize` : Les tailles de police
 - `zIndex` : Les niveaux d'empilement
-- La purge (fichiers destinés à être [purgés par Tailwind](https://tailwindcss.com/docs/optimizing-for-production#basic-usage))
+- Le `content` (fichiers destinés à être [obervés par Tailwind](https://tailwindcss.com/docs/content-configuration))
 
 Ces aspects sont différents à chaque projet et sont donc nécessaires à configurer. Il en résultera un fichier CSS optimisé.
 
@@ -176,35 +177,34 @@ theme: {
 
 **Écraser** les propriétés les plus utilisées et **étendre** uniquement celles nécessaires permet d'alléger significativement le fichier CSS final.
 
-### Remarque concernant la Purge
+### Remarque concernant `content`
 
-Tailwind dispose d'un outil de Purge consistant à supprimer toutes les règles et déclarations CSS non utilisées dans le projet compilé. **Ce mécanisme est primordial et allège considérablement le poids des fichiers (de 3.5 Mo par défaut à quelques Ko)**.
+Tailwind dispose d'un outil permettant de ne générer que les classes CSS utilisées. **Ce mécanisme est primordial et allège considérablement le poids des fichiers qui ne contiendra pas toutes les classes de Tailwind disponibles**.
 
-Sont purgés par défaut :
+Sont observés par défaut :
 
 - Tous les styles Tailwind du fichier `tailwind.config.js`
 - Tous les styles déclarés via `@apply`
 - Tous les styles encadrés par une règle `@layer`
 
-Ne sont pas purgés par défaut :
+Ne sont pas observés par défaut (et seront donc toujours générés) :
 
 - Tous les styles additionnels "classiques" (fichiers `app.css`, `custom.scss`, etc.). *Ces styles sont, par ailleurs, déclarés à la suite des styles Tailwind et les écrasent.*
 
-Dans des projets VueJS / Nuxt, il est important d'inclure dans la Purge (au début de `tailwind.config.js`) les fichiers `.vue` car ils contiennent eux-aussi des styles CSS&nbsp;:
+Dans des projets VueJS / Nuxt, il est important d'inclure dans `content` (au début de `tailwind.config.js`) les fichiers `.vue` car ils contiennent eux-aussi des styles CSS&nbsp;:
 
 ```yaml
 module.exports = {
-  purge: [
+  content: [
     './components/**/*.{vue,js}',
     './layouts/**/*.vue',
     './pages/**/*.vue',
-    './plugins/**/*.{js,ts}',
-    './nuxt.config.{js,ts}'
+    './plugins/**/*.{js,ts}'
   ]
 }
 ```
 
-**Particularité :** Purge va chercher toutes les classes `Tailwind` dans nos fichiers et ne comprend pas une classe dynamique comme `“text-”~variable`.
+**Particularité :** `content` va chercher toutes les classes `Tailwind` dans nos fichiers et ne comprend pas une classe dynamique comme `“text-”~variable`.
 
 Il est obligatoire (dans le cas d’une classe `Tailwind`) de faire apparaître explicitement la classe entière.
 
@@ -336,7 +336,7 @@ Ce sont les éléments que l'on retrouve maintes fois dans les documents (`body`
 
 ```scss
 // La règle @layer ajoute les styles dans la couche Tailwind "base". 
-// Ceci leur permet d'être Purgés et de ne être déclarés en fin des fichiers CSS
+// Ceci leur permet d'être déclarés en fin des fichiers CSS
 // (ils n'écraseront pas les classes Tailwind utilitaires par exemple)
 @layer base {
 
@@ -406,7 +406,7 @@ Les bonnes pratiques suivantes doivent cependant être respectées tant que poss
 3. Attribuer des noms de classes aux éléments à cibler en CSS et **n'utiliser que des sélecteurs de classes** si possible, pas de sélecteurs composés (utiliser `.nav-socials-link` et jamais `.nav-socials a`).
 4. **Un Composant nécessitant des variantes ou modificateurs (marges, padding, gouttières, couleurs, etc.) disposera de classes Tailwind lors de son insersion (`<NavSocials class="mt-60 gap-10 md:gap-20 lg:gap-32"></NavSocials>`)**.
 5. **Préciser le langage des styles** quand Sass est employé (`<style lang="scss">`) pour éviter d'affoler les Linters.
-6. Englober les styles de composants au **sein d'un layer** (`@layer components {}`) pour permettre la purge et éviter d'écraser les styles utilitaires.
+6. Englober les styles de composants au **sein d'un layer** (`@layer components {}`) pour éviter d'écraser les styles utilitaires.
 
 ### Version 1 : pas de classes TW dans le template
 
@@ -562,7 +562,7 @@ En plus de `@apply`, Tailwind CSS propose plusieurs directives intéressantes.
 
 L'ensemble des styles CSS "classiques" sont placés au sein des différentes couches (layer) Tailwind que sont "base", "components" et "utilities".
 
-Ceci a l’avantage de générer des classes au même niveau d'importance que celles de Tailwind et qui pourront être purgeables.
+Ceci a l’avantage de générer des classes au même niveau d'importance que celles de Tailwind.
 
 ```scss
 @layer component {
