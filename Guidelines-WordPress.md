@@ -334,7 +334,9 @@ Si le projet nécessite d’utiliser Gutenberg, penser à ajouter `"show_in_rest
 
 ### Ajout des fonctionnalités essentielles dans des mu-plugins
 
-Toutes les fonctions de base et sur lesquelles un non-administrateur ne doit pas avoir la main doivent passer par des mu-plugins. C’est le cas notamment du renommage de fichiers dès l’upload dans la bibliothèque de médias, mais également du retrait des indices lors des erreurs de connexion au back-office (admin).
+Toutes les fonctions de base, sur lesquelles un non-administrateur ne doit pas avoir la main doivent passer par des extensions indispensables, ou _mu-plugins_ (mu = _must use_). Elles ne peuvent être désactivées par l'interface web. C'est le cas notamment du renommage de fichiers dès l’upload dans la bibliothèque de médias, mais également du retrait des indices lors des erreurs de connexion au back-office (admin).
+
+Quelques MU Plugins bien utiles : <https://gitlab.com/ArmandPhilippot/mu-plugins>
 
 ```php
 function no_wordpress_errors() {
