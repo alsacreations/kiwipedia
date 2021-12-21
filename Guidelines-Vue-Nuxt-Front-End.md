@@ -273,6 +273,8 @@ TODO: à venir
 
 TODO: à venir, voir <https://vuejs.org/v2/guide/components-events.html>
 
+Pour *debounce* des événements (limiter leur nombre d'appels toutes les *n* millisecondes) voir <https://dmitripavlutin.com/vue-debounce-throttle/>
+
 ### Hooks
 
 Pour le chargement de données (depuis une API), on utilise le hook `created` et non pas `mounted`.
