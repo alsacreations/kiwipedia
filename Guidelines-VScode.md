@@ -61,7 +61,6 @@ Confort visuel :
 - [French Language Pack](https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-fr)
 - [Select highlight in minimap](https://marketplace.visualstudio.com/items?itemName=mde.select-highlight-minimap) (sélection visible dans la minimap)
 - [TODO Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight) (mise en avant des `TODO:` et `FIXME:`)
-- [Bracket Pair Colorizer](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer) (mise en avant de l'accolade fermante correspondante en CSS)
 - [Indent Rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow) (coloration des niveaux d'indentation)
 - [highlight-matching-tag](https://marketplace.visualstudio.com/items?itemName=vincaslt.highlight-matching-tag) (mise en avant de la balise fermante correspondante en HTML)
 - [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme) (mieux visualiser les types de fichiers dans l'arborescence)
@@ -105,8 +104,8 @@ Tous les détails et configuration des Extensions et Linters sont décrits au se
 
 Usage :
 
-- aller dans n’importe quel fichier,
-- taper “sch” ou “schnaps” puis Tabulation
-- 3 choix sont proposés : version courte, moyenne ou longue
-- valider le choix avec Entrée
-- Enjoy!
+- Aller dans n’importe quel fichier.
+- Taper “sch” ou “schnaps” puis Tabulation.
+- 3 choix sont proposés : version courte, moyenne ou longue.
+- Valider le choix avec Entrée.
+- Enjoy !
