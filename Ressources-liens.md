@@ -679,6 +679,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 - <https://insomnia.rest/> Tester/inspecter une API REST, GraphQL...
 - <https://hoppscotch.io/fr/> Tester une API en ligne
+- <https://github.com/graphql-editor/graphql-editor> GraphQLEditor
 
 ---
 
