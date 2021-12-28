@@ -77,3 +77,4 @@ Liste non exhaustive, voir <https://docs.docker.com/engine/reference/builder/>.
 * <https://snyk.io/blog/10-docker-image-security-best-practices/>
 * <http://docs.projectatomic.io/container-best-practices/>
 * <https://quickref.me/docker>
+* <https://enix.io/fr/blog/cherie-j-ai-retreci-docker-part1/>
