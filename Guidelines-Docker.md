@@ -8,16 +8,17 @@ Voir aussi <https://www.alsacreations.com/tuto/lire/1836-Docker--decouverte-et-e
 
 * Compiler un Dockerfile dans le dossier courant pour créer une image `docker build -t <nomimage:tag> .`
 * Compiler une image en conteneur et l'exécuter `docker run --name <nomducontainer> <nomimage:tag>` (+ voir autres options)
-* Démarrer ou arrêter un container s'il est déjà existant : `docker start <nomducontainer>` (ou `stop`)
-* Exécuter une commande dans le container : `docker container exec -it <nomducontainer> <lacommande>` (par exemple `bash` pour ouvrir un shell)
-* Lister tous les containers : `docker container ls` ou `docker ps -a`
+* Démarrer ou arrêter un conteneur s'il est déjà existant : `docker start <nomducontainer>` (ou `stop`)
+* Exécuter une commande dans le conteneur : `docker container exec -it <nomducontainer> <lacommande>` (par exemple `bash` pour ouvrir un shell)
+* Lister tous les conteneurs : `docker container ls` ou `docker ps -a`
 * Lister toutes les images : `docker image ls`
-* Supprimer un container : `docker container rm <nomducontainer>`
+* Supprimer un conteneur : `docker container rm <nomducontainer>`
 * Supprimer une image : `docker image rm <nomdelimage>`
 * Utiliser le chemin courant dans une commande docker : `$PWD`
 * Créer un network : `docker network create my-custom-net` et l'utiliser au run : `--network=my-custom-net`
-* Copier un fichier dans un container actif `docker cp .\fichier.sql.gz 133713371337:/root` où 133713371337 est l'ID du container obtenu par `docker container list` et `/root` le chemin de destination.
+* Copier un fichier dans un conteneur actif `docker cp .\fichier.sql.gz 133713371337:/root` où 133713371337 est l'ID du conteneur obtenu par `docker container list` et `/root` le chemin de destination.
 * Nettoyer les images/volumes inutilisés `docker image prune` / `docker volume prune`
+* Redémarrer tous les conteneurs arrêtés `docker restart $(docker ps -a -q)`
 
 ### Inspection
 
@@ -29,15 +30,15 @@ Voir aussi <https://www.alsacreations.com/tuto/lire/1836-Docker--decouverte-et-e
 
 ## Options Docker run
 
-* `-d` : permet de détacher l'exécution du container du terminal courant
+* `-d` : permet de détacher l'exécution du conteneur du terminal courant
 * `-p` : permet de lier un port (local:container `-p 8080:80`)
 * `-u` : permet de spécifier l'utilisateur+groupe d'exécution
 * `-v` : permet de déclarer un volume (local:container `-v /var/path/to/mydata/mysql:/var/lib/mysql`)
 * `-e` : permet de passer/spécifier une variable d'environnement
 * `-i` : permet d'avoir un terminal interactif (_stdin_), par exemple pour entrer un mot de passe au prompt (souvent combiné avec `t`)
 * `-t` : alloue un _pseudo-tty_
-* `--link` : permet de "lier" un hostname d'un container à un autre (par exemple un serveur mysql dans un 1er container `mysqlserver` devient `--link mysqlserver:db` dans le 2e, on utilise alors `db`)
-* `--restart always` : indique au service Docker de redémarrer le container au boot et de le maintenir actif si Docker est lui-même relancé
+* `--link` : permet de "lier" un hostname d'un conteneur à un autre (par exemple un serveur mysql dans un 1er conteneur `mysqlserver` devient `--link mysqlserver:db` dans le 2e, on utilise alors `db`)
+* `--restart always` : indique au service Docker de redémarrer le conteneur au boot et de le maintenir actif si Docker est lui-même relancé
 
 Astuces :
 
