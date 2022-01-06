@@ -435,6 +435,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 ### Images libres (ou pas)
 
 - <https://iconduck.com/> Icônes
+- <https://icones.js.org/> Icônes SVG
 - <https://www.stickpng.com/> (PNG transparents)
 - <https://pngdb.com/> (PNG transparents)
 - <https://www.pinpng.com> (PNG transparents)
