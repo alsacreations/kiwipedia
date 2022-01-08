@@ -137,6 +137,7 @@ Autres listes de ressources et checklists
 
 ## Accessibilité
 
+- <https://accessibilite.public.lu/fr/tools/decla.html> Générer une déclaration d'accessibilité
 - <http://www.html5accessibility.com/>
 - <https://www.accede-web.com/notices/> Notices AccedeWeb
 - <https://bitsofco.de/the-accessibility-cheatsheet/> Cheatsheet résumée
