@@ -538,3 +538,7 @@ export default function({ store, app: { $axios, $api } }) {
   }
 }
 ```
+
+### Déployer sur un CDN/statique/AWS S3/Cloudfront
+
+Suivre les indications de <https://nuxtjs.org/deployments/amazon-web-services> et [Guidelines Vue-Nuxt-S3](Guidelines-Vue-Nuxt-S3.md).
