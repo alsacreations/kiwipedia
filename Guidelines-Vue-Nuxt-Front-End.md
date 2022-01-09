@@ -69,9 +69,7 @@ La configuration de Editorconfig se fait via un fichier `.editorconfig` à la ra
 
 ### ESlint
 
-ESLint est un analyseur de code pour identifier les problématiques trouvés dans le code JavaScript (Vue, React, etc.) et les résoudre automatiquement.
-
-ESlint est configuré via un fichier `.eslintrc.js`).
+ESLint est un analyseur de code pour identifier les problématiques du code JavaScript (Vue, React, etc.) et les résoudre automatiquement. ESlint est configuré via un fichier `.eslintrc.js`.
 
 Il est étendu aux fichiers HTML à l'aide d'un plugin installé via `npm install eslint-plugin-html --save-dev` et ajouté dans le fichier de configuration ESlint ainsi :
 
@@ -81,7 +79,11 @@ Il est étendu aux fichiers HTML à l'aide d'un plugin installé via `npm instal
 ],
 ```
 
-([Afficher/télécharger le fichier `.eslintrc.js`](assets/vue-nuxt-front-end/.eslintrc.js)).
+Via le plugin eslint-plugin-vue on applique [les groupes de règles](https://eslint.vuejs.org/rules/) dans le fichier `.eslintrc.js` avec le tableau extends : _Priority A: Essential (plugin:vue/essential)_, _Priority B: Strongly Recommended (plugin:vue/strongly-recommended)_, _Eslint recommended : eslint:recommended_. Pour Nuxt : _plugin:nuxt/recommended_.
+
+Modification de _Priority B_ : on veut des `v-on:click` plutôt que `@click` : `'vue/v-on-style': ['warn', 'longform'],`. On peut aussi vouloir harmoniser l'ordre des déclarations dans les composants avec `'vue/order-in-components': 'warn'`.
+
+([Afficher/télécharger le fichier complet recommandé `.eslintrc.js`](assets/vue-nuxt-front-end/.eslintrc.js)).
 
 ### Stylelint
 
@@ -108,9 +110,7 @@ Markdownlint est un linter pour langage Markdown et prend en compte toutes les r
 
 ### Vetur
 
-Ensemble d'outils Vue pour VSCode (coloration, linter).
-
-Vetur nécessite un fichier `jsconfig.json` dont voici un exemple :
+Ensemble d'outils Vue pour VSCode (coloration, linter). Vetur nécessite un fichier `jsconfig.json` dont voici un exemple :
 
 ```yaml
 {
@@ -219,22 +219,34 @@ Les dépendances fortement recommandées sont :
 
 - [vuex](https://vuex.vuejs.org/) (store)
 - [vue-router](https://router.vuejs.org/) (routage)
-- [vue-i18n](https://kazupon.github.io/vue-i18n/) (traduction)
+- [vue-i18n](https://kazupon.github.io/vue-i18n/) (traduction) et [vue-i18n-loader](https://www.npmjs.com/package/@intlify/vue-i18n-loader)
 - [axios](https://fr.vuejs.org/v2/cookbook/using-axios-to-consume-apis.html) s'il y a usage d'une API
 
 Les dépendances de développement recommandées sont : eslint, eslint-plugin-vue, sass, autoprefixer, babel.
 
-Avant l'ajout d’une dépendance au projet (`npm install`) vérifier le poids avec <https://bundlephobia.com/>.
+👉 Avant l'ajout d’une dépendance au projet (`npm install`) vérifier le poids avec <https://bundlephobia.com/>.
 
 Autres dépendances utiles :
 
-- [vue-the-mask](https://vuejs-tips.github.io/vue-the-mask/) : masques de saisie (téléphone, date, code postal, carte bancaire...)
+- [vue-the-mask](https://vuejs-tips.github.io/vue-the-mask/) : masques de saisie (téléphone, date, code postal, carte bancaire...).
+- [vee-validate](https://logaretm.github.io/vee-validate/overview.html) : validation de formulaires.
+- [v-calendar](https://vcalendar.io/) : calendrier, datepicker.
+- [vue-gtag](https://github.com/MatteoGabriele/vue-gtag) : G. Analytics.
+- [date-fns](https://date-fns.org/) : Dates.
+- [vue-meta](https://vue-meta.nuxtjs.org/) : Balises meta, SEO.
+- [vue-toasted](https://github.com/shakee93/vue-toasted) : Notifications/toasts.
+- [vue-svg-loader](https://vue-svg-loader.js.org/) : Icônes SVG + composant maison permettant de compiler/inline tous les fichiers SVG avec `<icon i="nomdelicone">` + `fill="currentColor"` dans le .svg ; pour créer un sprite à base de `<symbol>` : nuxt-svg-sprite-module (qui sans surprise reprend svg-sprite-module).
 
 ## Composants : conventions et nommage
+
+- On classe les composants dans des sous-dossiers selon leur usage (ex : ui/, profile/, modals/).
+- Tous les composants ont une propriété name de la même syntaxe que l'on retrouve dans les autres `<template>`. Si `name: 'MonComposant'` alors on écrira `<MonComposant>` ; si `name: 'mon-composant'` alors on écrira `<mon-composant>`.
+- Les noms de fichiers et de classes sont en anglais-américain (en-US).
 
 ### Template
 
 - Les directives `v-if`, `v-for` et `v-show` sont sur la même ligne que la déclaration du composant. De cette manière, on peut identifier en un coup d’œil ces conditions importantes, même si le bloc de code est compacté dans l'éditeur. Le reste des attributs HTML et directives Vue vont en dessous, à la ligne. Règle eslint : `vue/max-attributes-per-line`.
+- La directive `v-for` est toujours complétée par `:key` pour les itérations. `:key` peut être utilisée pour [forcer le rafraîchissement d’un composant](https://michaelnthiessen.com/force-re-render/).
 - On espace les expressions entre moustaches `{{ variable }}`.
 - On écrit les composants en `<PascalCase>`.
 - On n'utilise pas les attributs `id` car ils peuvent se retrouver dupliqués dans la page si un composant est utilisé plusieurs fois. Si besoin : `:id="'truc'+_uid"` car `_uid` est un identifiant unique généré pour chaque composant chargé.
@@ -261,17 +273,19 @@ data() {
 }
 ```
 
+Lors d'un développement avec données partielles/de remplissage, on peut préfixer les données temporaires par `TEMP`, `TODO`, etc, ou les charger depuis un fichier externe pour éviter la surcharge du composant `require('demodata.js')`.
+
 ### Computed
 
-TODO: à venir, voir <https://vuejs.org/v2/guide/computed.html>
+On favorise au maximum les propriétés calculées pour des raisons de performance/cache/concision, calcul automatique sans avoir besoin de déclencher une fonction. Voir <https://vuejs.org/v2/guide/computed.html>
 
 ### Methods
 
-TODO: à venir
+On privilégie un nommage bien parlant. Les méthodes sont appelées sans parenthèses dans le template.
 
 ### Events
 
-TODO: à venir, voir <https://vuejs.org/v2/guide/components-events.html>
+Voir <https://vuejs.org/v2/guide/components-events.html>
 
 Pour *debounce* des événements (limiter leur nombre d'appels toutes les *n* millisecondes) voir <https://dmitripavlutin.com/vue-debounce-throttle/>
 
@@ -279,11 +293,77 @@ Pour *debounce* des événements (limiter leur nombre d'appels toutes les *n* mi
 
 Pour le chargement de données (depuis une API), on utilise le hook `created` et non pas `mounted`.
 
+### Mixins
+
+On privilégie l’écriture de [Mixins](https://fr.vuejs.org/v2/guide/mixins.html) pour éviter la répétition dans plusieurs composants.
+
+### Composants globaux
+
+Dans Vue, pour éviter d'avoir à importer des composants très fréquemment utilisés on peut initialiser un chargement de composants globaux. Le fichier `globalComponentLoader.js` est à ajouter aux plugins (dans le fichier `vue.config.js` ou `nuxt.config.js`) :
+
+```js
+export default
+  plugins: [
+    {
+      // Loader de composants globaux
+      src: '~plugins/globalComponentLoader.js'
+    },
+```
+
+Exemple de contenu du fichier globalComponentLoader.js
+
+```js
+import Vue from 'vue'
+import Icon from '@/components/global/Icon'
+import ButtonSimple from '@/components/global/ButtonSimple'
+import Alert from '@/components/ui/Alert'
+Vue.component('icon', Icon)
+Vue.component('button-simple', ButtonSimple)
+Vue.component('alert', Alert)
+```
+
 ## Routage
 
 On utilise le paramètre :to ainsi qu'une route nommée. Ainsi, un retour à la page d'accueil se fait avec `:to="{ name: 'accueil' }"`
 
 En cas de redirection à faire dans une fonction, on utilise router.push avec une route nommée, par exemple `router.push({ name: 'accueil' })` pour retourner à l'accueil.
+
+## Store
+
+Le store Vuex est toujours découpé en modules par type d'usage (ce qui permet de nommer également les mutations par module).
+
+Nommage de clés :
+
+- `id` pour les identifiants internes au store (itérations)
+- `image` pour les urls vers des images
+- `href` pour les liens externes
+- `slug` pour les portions de texte servant à l'écriture des urls internes
+- `title` pour le titre principal
+- `label` lorsqu'il s'agit d'un titre court
+- `description` pour la description étendue
+
+## API
+
+Les appels API sont gérés dans les stores correspondants, ou encore mieux via des fichiers spécifiques importés par les stores (~ `api.js`) pour ne pas surcharger l'écriture des composants. On utilise [Axios](https://axios.nuxtjs.org/). Voir aussi <https://www.smashingmagazine.com/2020/05/getting-started-axios-nuxt/>.
+
+On utilise les promesses avec async/await et les blocs try/catch.
+
+```js
+async function getData() {
+  try {
+    const response = await axios.get('/api/data')
+    return response.data
+    // ou return await axios.$get('/api/data')
+  } catch (error) {
+    console.log(error) // Ou autre variante
+    throw error
+  }
+}
+```
+
+### API en tant que plugin injecté
+
+Dans `nuxt.config.js` on déclare un plugin `{ src: '~/plugins/api' },` et on utilise [Afficher/télécharger un exemple de fichier `api.js`](assets/vue-nuxt-front-end/api.js) qui permet la syntaxe `this.$api` dans les composants et dans le Store.
 
 ## Internationalisation (i18n)
 
@@ -295,7 +375,123 @@ Usage de <https://nuxt-community.github.io/nuxt-i18n/> avec fichiers de configur
 - En tant que condition : `v-if="$i18n.locale == 'fr'"`
 - Lien racine : `<nuxt-link :to="localePath('/')">`
 
+On formate les nombres/prix avec `$n(13.37, 'currency')` ou `$n(13.37, { currency: 'EUR' })`. Voir aussi <https://vue-i18n.intlify.dev/guide/essentials/number.html#basic-usage> pour importer _numberFormats_ dans le fichier de configuration (vueI18n).
+
 Pour des formatages plus complexes voir <https://kazupon.github.io/vue-i18n/guide/formatting.html#html-formatting>
+
+### Écrire des clés i18n dans une fichier/composant Vue
+
+Permet d'utiliser la balise `<i18n>` en fin de fichier et de ne pas faire grossir le fichier commun des chaînes traduites. Activer vueI18nLoader dans `nuxt.config.js`, `modules`, ajouter `['@nuxtjs/i18n', { vueI18nLoader: true }]`. Attention, traductions non reconnues par l'extension i18n-ally et à utiliser avec modération (textes uniques de pages types).
+
+```html
+<i18n>
+{
+  "fr": {
+    "title": "Le titre",
+    "description": "La description"
+  }
+}
+</i18n>
+```
+
+### Écrire les routes en fonction de la locale
+
+Dans `nuxt.config.js`, `i18n`, `pages` utiliser la structure
+
+```js
+'tunnel/my-cart': {
+  fr: '/panier',
+  en: '/cart'
+}
+```
+
+Dans un fichier, pour créer la route dynamiquement en fonction de la locale, il suffit d'utiliser `localePath` avec le chemin du fichier. Attention, si le chemin du fichier contient des slash "/", les remplacer par des tirets. Pour notre l'exemple précédent, la route dynamique correspondante devient `this.localePath('tunnel-my-cart')`.
+
+## Validation des formulaires avec vee-validate
+
+Par l'usage de [VeeValidate](https://vee-validate.logaretm.com/) on n'utilise pas d'attribut HTML natif `required` sur les `<input>` texte ou équivalent qui sont assortis d'un message de validation texte (on le tolère pour les checkbox/radio qui en sont dépourvus dans certains cas).
+
+1. Exploiter `<ValidationProvider v-slot="v" rules="required|autre_regle" slim>` *autour* du conteneur `<p class="form-group" :class="v.classes">`. Voir les [règles](https://logaretm.github.io/vee-validate/guide/rules.html#rules).
+2. Les classes ajoutées sont définies dans `plugins\vee-validate.js` [Afficher/télécharger un exemple du fichier `vee-validate.js`](assets/vue-nuxt-front-end/vee-validate.js).
+3. Il doit encapsuler un input avec `v-model`, par ex `<input v-model="currentIban" type="text">`.
+4. Affichage du message d'erreur dans ce même bloc `<span class="form-label-error">{{ v.errors[0] }}</span>`.
+5. Ne pas oublier `</ValidationProvider>`.
+6. Moduler si nécessaire par le mode `agressive`, `passive`, `lazy`, `eager`, voir <https://vee-validate.logaretm.com/v2/guide/interaction.html#configuration> ; `mode="eager"` permet de n’afficher l’erreur que si on tente une validation de formulaire. L'attribut slim (ou `:slim="true"`) évite de générer un élément span autour d'un élément p (invalide en HTML). L'attribut `tag="div"` qui génère un div au lieu d'un span ne convient souvent pas car on souhaite conserver des éléments ayant un parent commun pour des raisons de styles CSS.
+
+Exemple :
+
+```html
+<ValidationProvider v-slot="v" rules="required|iban" slim>
+  <p class="form-group" :class="v.classes">
+    <label class="form-label" for="iban">
+      <span class="form-text">Numéro de compte bancaire (IBAN)<span class="form-required">&nbsp;*</span></span>
+      <input
+        id="iban"
+        v-model="currentIban"
+        type="text"
+        class="form-control"
+      />
+      <span class="form-label-error">{{ v.errors[0] }}</span>
+    </label>
+  </p>
+</ValidationProvider>
+```
+
+### Bloquer un formulaire non valide
+
+1. Englober le formulaire (élément `<form>`) avec `<ValidationObserver v-slot="{ handleSubmit }">`
+2. Ajouter la fonction à la validation `<form v-on:submit.prevent="handleSubmit(submitForm)">`
+
+Ce qui produit une structure similaire à :
+
+```html
+<ValidationObserver v-slot="{ handleSubmit }">
+  <form v-on:submit.prevent="handleSubmit(submitForm)">
+    <ValidationProvider v-slot="v" rules="required" slim>
+      <p class="form-group" :class="v.classes">
+        <input>
+        <span class="form-label-error">{{ v.errors[0] }}</span>
+      </p>
+    ...
+```
+
+On tolère l'usage de l'attribut HTML natif `required` sur les inputs checkbox ou radio.
+
+### Réinitialiser un formulaire et ses erreurs après validation
+
+1. Utiliser `v-slot="{ handleSubmit, reset }"`
+2. `<form v-on:submit.prevent="handleSubmit(submitForm)" v-on:reset.prevent="reset" ref="theform">`
+
+Puis exploitable côté script à la demande
+
+```js
+this.$nextTick(() => {
+  this.$refs['theform'].reset()
+})
+```
+
+## Performance
+
+- Lazy-loading de routes : on utilise <https://www.digitalocean.com/community/tutorials/vuejs-lazy-loading-vue-cli-3-webpack>
+- Lazy-loading import à l’interaction : on utilise <https://calendar.perfplanet.com/2020/optimizing-performance-with-the-import-on-interaction-pattern/>
+
+## Modales
+
+TODO: Composant-type avec slot, overlay, ouverture/fermeture, piloté par l'intermédiaire du store.
+
+```html
+<modal
+  name="burger"
+  variant="modal-simple modal-xxx"
+  classname="modal-burger"
+  title="Menu"
+  >
+  <p>Le contenu de la modale, ou un autre composant :</p>
+  <modal-burger></modal-burger>
+</modal>
+```
+
+Ouvrir une modale : `this.$store.commit('modals/open', { name: 'burger' })`. Émettre un événement depuis une modale (dans un slot) : `$parent.$emit('blabla')`.
 
 ## Nuxt
 
@@ -309,7 +505,19 @@ Pour des formatages plus complexes voir <https://kazupon.github.io/vue-i18n/guid
 
 Exécution du code en front ou en back (SSR) : vérifier `process.client` ou `process.server`
 
-### Hooks
+### Distinction exécution client (navigateur) / serveur (SSR, node)
+
+Dans la liste des plugins de `nuxt.config.js` on distingue ceux destinés au côté client et ceux destinés au côté serveur, ou les deux.
+
+```js
+plugins: [
+  {src: '~/plugins/vue-scrollto', mode: 'client'},
+  {src: '~/plugins/something', mode: 'server'},
+  {src: '~/plugins/axios'},
+]
+```
+
+### Hooks Nuxt
 
 - asyncdata
 - fetch
@@ -317,3 +525,16 @@ Exécution du code en front ou en back (SSR) : vérifier `process.client` ou `pr
 ### Extensions
 
 - Nuxt Content <https://content.nuxtjs.org/fr/>
+
+### Accéder au store ou à un autre plugin injecté
+
+On ajoute par exemple `{ src: '~/plugins/init', mode: 'client' },` aux plugins de `nuxt.config.js` (attention à l’ordre de chargement dans nuxt.config), avec cet exemple d'usage :
+
+```js
+export default function({ store, app: { $axios, $api } }) {
+  // Si la session n'est pas établie...
+  if (!store.getters['session/isLogged']) {
+    store.dispatch('session/loadGetconnectedUser')
+  }
+}
+```
