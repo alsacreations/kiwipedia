@@ -84,6 +84,7 @@ module.exports = {
     'vue/custom-event-name-casing': 'warn',
     'vue/require-name-property': 'error',
     'vue/prop-name-casing': ['error', 'camelCase'],
+    'vue/order-in-components': 'warn',
     'vue/v-slot-style': [
       'error',
       {
