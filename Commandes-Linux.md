@@ -749,6 +749,9 @@ Supprimer tous les dossiers node_modules à partir du répertoire courant
 Que les fichiers (pas les dossiers)
 `find -type f`
 
+Les fichiers modifiés entre deux dates
+`find . -name "*.php" -type f -newermt 2021-02-24 ! -newermt 2021-02-25`
+
 Arborescence à 2 niveaux
 `tree -L 2`
 
