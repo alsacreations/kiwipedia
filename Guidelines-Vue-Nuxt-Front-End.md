@@ -235,6 +235,7 @@ Autres dépendances utiles :
 - [date-fns](https://date-fns.org/) : Dates.
 - [vue-meta](https://vue-meta.nuxtjs.org/) : Balises meta, SEO.
 - [vue-toasted](https://github.com/shakee93/vue-toasted) : Notifications/toasts.
+- [vue-infinite-loading](https://peachscript.github.io/vue-infinite-loading/) : Infinite loading.
 - [vue-svg-loader](https://vue-svg-loader.js.org/) : Icônes SVG + composant maison permettant de compiler/inline tous les fichiers SVG avec `<icon i="nomdelicone">` + `fill="currentColor"` dans le .svg ; pour créer un sprite à base de `<symbol>` : nuxt-svg-sprite-module (qui sans surprise reprend svg-sprite-module).
 
 ## Composants : conventions et nommage
@@ -472,8 +473,43 @@ this.$nextTick(() => {
 
 ## Performance
 
-- Lazy-loading de routes : on utilise <https://www.digitalocean.com/community/tutorials/vuejs-lazy-loading-vue-cli-3-webpack>
+- Compression : [Nuxt.js on Brotli](https://blog.lichter.io/posts/nuxtjs-on-brotli/)
+- Cache : [Nuxt SSR cache](https://www.npmjs.com/package/nuxt-ssr-cache)
+
+### Lazy-loading de routes
+
+- Lazy-loading de routes pour les pages les moins consultées : on utilise <https://www.digitalocean.com/community/tutorials/vuejs-lazy-loading-vue-cli-3-webpack>
+
+```js
+const routes = [
+  { path: '/', component: () => import('./Home.vue') }
+  { path: '/apropos', component: () => import('./Apropos.vue') }
+]
+```
+
+### Lazy-loading de composants
+
 - Lazy-loading import à l’interaction : on utilise <https://calendar.perfplanet.com/2020/optimizing-performance-with-the-import-on-interaction-pattern/>
+
+```html
+<template>
+  <header>
+    <LeComposant v-if="activated" />
+  </header>
+</template>
+<script>
+export default {
+  components: {
+    LeComposant: () => import('~/components/component.vue')
+  },
+  data() {
+    return {
+      activated: false
+    }
+  }
+}
+</script>
+```
 
 ## Modales
 
