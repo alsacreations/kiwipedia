@@ -1,6 +1,6 @@
 # Guidelines PHP / MySQL
 
-_Statut : Working Draft (WD)_
+Statut : Working Draft (WD)
 
 Cette présente convention rassemble les bonnes pratiques de développement en production appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/). Elle a pour but d'évoluer dans le temps et de s'adapter à chaque nouveau projet.
 
@@ -26,7 +26,7 @@ Cette présente convention rassemble les bonnes pratiques de développement en p
 
 ![faites simple](images/php01.png)
 
-Source : https://xkcd.com/1319/ (Automation)
+Source : <https://xkcd.com/1319/> (Automation)
 
 ## PHP
 
@@ -34,7 +34,7 @@ Les balises fermantes `?>` doivent être omises en fin de fichier pour éviter l
 
 **Incorrect :**
 
-```
+```php
 <?php
 echo "Hello!";
 ?>
@@ -42,7 +42,7 @@ echo "Hello!";
 
 **Correct :**
 
-```
+```php
 <?php
 echo "Hello!";
 
@@ -54,7 +54,7 @@ echo "Hello!";
 
 Les variables sont rédigées en minuscules, les termes séparés par underscore.
 
-```
+```php
 $str
 $buffer
 $group_id
@@ -63,7 +63,7 @@ $last_city
 
 Les constantes sont rédigées exclusivement en majuscules ainsi que les mots-clés booléens
 
-```
+```php
 PUBLIC_URL
 TRUE
 FALSE
@@ -72,7 +72,7 @@ NULL
 
 Les noms de classes doivent débuter par une majuscule. Les méthodes doivent être écrites en minuscules avec des termes séparés par underscore.
 
-```
+```php
 class Super_class {
   function __construct() {
   }
@@ -85,7 +85,7 @@ class Super_class {
 
 Pour les brefs commentaires, le double slash est privilégié.
 
-```
+```php
 // Une ligne de commentaire
 
 // Une deuxième ligne
@@ -93,14 +93,14 @@ Pour les brefs commentaires, le double slash est privilégié.
 
 Pour les descriptions de fonctions, le style DocBlock peut être utilisé.
 
-```
+```php
 /**
 
  * Rôle de la fonction
  *
- * @access	public
- * @param	string
- * @return	string
+ * @access public
+ * @param string
+ * @return string
  */
 
 function xml_encode($str) {
@@ -115,7 +115,7 @@ L’indentation utilise les espaces, il n’y a pas plus d’une instruction par
 
 Pour des raisons de performance, les chaînes de texte sont délimitées par des apostrophes simples, sauf exception possible pour éviter l’échappement dans les requêtes SQL nécessitant des guillemets internes simples.
 
-```
+```php
 'Mon texte'
 "SELECT * FROM table WHERE champ = 'valeur'"
 ```
@@ -124,13 +124,13 @@ Pour des raisons de performance, les chaînes de texte sont délimitées par des
 
 Spécifier des valeurs par défaut pour les arguments de fonction évite des appels incomplets et permet des solutions de repli rapides.
 
-```
+```php
 function kiwi($val1 = '', $val2 = FALSE)
 ```
 
 En cas de gestion des erreurs avec des try/catch, toujours mettre en derniers les valeurs qui ont une value définie par défaut.
 
-```
+```php
 function kaki($val1, $val2 = FALSE)
 ```
 
@@ -138,7 +138,7 @@ function kaki($val1, $val2 = FALSE)
 
 Quelques critères essentiels sont à observer (parmi d’autres, la liste est non exhaustive) :
 
-- Suivre les recommandations de l'OWASP pour éviter les failles XSS (Cross Site Scripting) https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet
+- Suivre les recommandations de l'OWASP pour éviter les failles XSS (Cross Site Scripting) <https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet>
 - Utiliser les fonctions d’échappement pour valider les données utilisateur, avant traitement ou insertion dans la base de données.
   - MySQL : [mysql_real_escape_string](http://php.net/manual/fr/function.mysql-real-escape-string.php) pour les chaînes de texte.
   - [preg_quote](http://php.net/manual/fr/function.preg-quote.php) pour les expressions régulières.
@@ -150,11 +150,11 @@ Quelques critères essentiels sont à observer (parmi d’autres, la liste est n
 
 ### Données
 
-- Tester et valider les expressions régulières (regexp) avec https://regex101.com/ (entre autres).
+- Tester et valider les expressions régulières (regexp) avec <https://regex101.com/> (entre autres).
 
 ## Composer
 
-Utilisation de https://getcomposer.org/ pour la gestion des dépendances PHP.
+Utilisation de <https://getcomposer.org/> pour la gestion des dépendances PHP.
 
 Fichier de configuration : `composer.json`
 
@@ -172,65 +172,33 @@ Met à jour les dépendances `composer update`
 
 Les noms des tables doivent être explicites. Les noms des champs associés doivent être préfixés par le nom de la table pour faciliter la lecture et l'écriture de requêtes avec jointures, s'ils ne sont pas assortis du nom de table.
 
-```
 Table users :
-user_id
-user_email
-user_email_archive
-user_status
-```
+
+- user_id
+- user_email
+- user_email_archive
+- user_status
 
 ### Types de champs
 
-<table>
-  <tr>
-    <td>Usage</td>
-    <td>Type à privilégier</td>
-  </tr>
-  <tr>
-    <td>Booléen</td>
-    <td>TINYINT</td>
-  </tr>
-  <tr>
-    <td>Valeur numérique entière</td>
-    <td>TINYINT à BIGINT selon la taille prévue</td>
-  </tr>
-  <tr>
-    <td>Chaîne de texte simple</td>
-    <td>CHAR(x)</td>
-  </tr>
-  <tr>
-    <td>Choix limités</td>
-    <td>ENUM</td>
-  </tr>
-  <tr>
-    <td>Valeur décimale</td>
-    <td>DECIMAL</td>
-  </tr>
-  <tr>
-    <td>Année</td>
-    <td>YEAR</td>
-  </tr>
-  <tr>
-    <td>Date et heure</td>
-    <td>DATETIME</td>
-  </tr>
-  <tr>
-    <td>Timestamp Unix</td>
-    <td>INT</td>
-  </tr>
-  <tr>
-    <td>Texte et contenu</td>
-    <td>TEXT</td>
-  </tr>
-</table>
+|Usage|Type à privilégier|
+|--- |--- |
+|Booléen|TINYINT|
+|Valeur numérique entière|TINYINT à BIGINT selon la taille prévue|
+|Chaîne de texte simple|CHAR(x)|
+|Choix limités|ENUM|
+|Valeur décimale|DECIMAL|
+|Année|YEAR|
+|Date et heure|DATETIME|
+|Timestamp Unix|INT|
+|Texte et contenu|TEXT|
 
 ### Index et performance
 
 Afin d’améliorer la performance :
 
 - Des index doivent être placés sur les champs servant dans les requêtes SELECT (au moins celles-là).
-- Examiner la performance de ces requêtes et l'usage des index avec l'instruction EXPLAIN https://dev.mysql.com/doc/refman/5.7/en/execution-plan-information.html
+- Examiner la performance de ces requêtes et l'usage des index avec l'instruction EXPLAIN <https://dev.mysql.com/doc/refman/5.7/en/execution-plan-information.html>
 - Dans le cas de jointures, les champs mis en relation (d’une table à l’autre) doivent être de même type (par exemple `INT` avec `INT` et non `INT` avec `MEDIUMINT`).
 - Faire attention au type de table utilisé (MyISAM vs InnoDB).
 
@@ -238,7 +206,7 @@ Afin d’améliorer la performance :
 
 Tous les mots clés doivent être rédigés en majuscules, et les requêtes longues peuvent être décomposées en plusieurs lignes avec un retour avant chaque mot clé.
 
-```
+```php
 $query = $this->db->query("
 SELECT foo, bar, foofoo, foobar AS raboof, foobaz
 FROM table

@@ -1,6 +1,6 @@
 # Commandes Git (cheatsheet)
 
-_Statut : Recommendation (REC)_
+Statut : Recommendation (REC)
 
 ## Init
 

@@ -1,7 +1,5 @@
 # Commandes Linux (cheatsheet)
 
-_Statut : Working Draft (WD)_
-
 Utiles pour un serveur de développement ou un serveur web/mail/ftp, notamment sous Ubuntu/Debian.
 
 - Voir aussi <https://explainshell.com/> pour expliquer les commandes shell entrées
@@ -419,6 +417,145 @@ Déplacer/renommer un fichier ou un répertoire
 Copier un fichier ou un répertoire
 `cp <file1> <file2>`
 
+### Trouver un fichier
+
+A partir du répertoire courant
+`find . -name <fichier>`
+
+Taille >50 Mo
+`find . -size +50M`
+
+Trouver les fichiers php contenant mysql_pconnect
+`find . -name "*.php" | xargs grep "mysql_connect"`
+
+Trouver des fichiers et les supprimer
+`find -name "arfarfarf.txt" -delete`
+
+Supprimer les fichiers vides
+`find -size 0 -print -exec rm {} \;`
+
+Supprimer les fichiers contenant une chaîne
+`grep -l "blablablabla" * | xargs rm`
+
+Supprimer les fichiers pollution macOS
+`find -name "._.DS_Store" -print -delete`
+
+Trouver tous les error.log et les classer par taille
+`find . -name "error.log" -exec ls -sh {} \; | sort -h`
+
+Supprimer tous les dossiers node_modules à partir du répertoire courant
+`find . -name "node_modules" -type d -prune -exec rm -rf '{}' +`
+
+Que les fichiers (pas les dossiers)
+`find -type f`
+
+Les fichiers modifiés entre deux dates
+`find . -name "*.php" -type f -newermt 2021-02-24 ! -newermt 2021-02-25`
+
+Arborescence à 2 niveaux
+`tree -L 2`
+
+### Remplacer dans des fichiers
+
+Dans fichiers html remplacer DATA par DATA2
+`find . -name "*.html" | xargs sed -i 's/DATA/DATA2/g'`
+
+Pareil
+`sed -i "s/DATA/DATA2/g" **/*.html`
+
+Supprimer toutes les balises img
+`find . -name "*.html" | xargs sed -i 's/<img.*>//g'`
+
+Supprimer toutes les balises img contenant co.cc
+`find . -name "*.html" | xargs sed -i 's/<img heigth.*co\.cc.*>//g'`
+
+### Texte
+
+Trouver un fichier php contenant "virtual" à partir de .
+
+```sh
+grep "virtual" `find . -name "*.php"`
+```
+
+5 Lignes avant dans un fichier
+`grep "panic" /var/log/syslog -B5`
+
+Rechercher/remplacer dans fichiers multiples
+`sed -i "s/ChaineRecherchee/Remplacement/g" le_fichier`
+
+Extraire les lignes d'un fichier texte de 1337 à 2000
+`sed -n 1337,2000p <fichier>`
+
+### Info sur les fichiers
+
+Sur l'ensemble du filesystem
+`locate <fichier>`
+
+Rechercher les fichiers exécutables, les sources et les pages de manuel d'une commande
+`whereis <fichier>`
+
+Description d'une commande
+`apropos <commande>`
+
+Page de manuel
+`man <commande>`
+
+Afficher le contenu d'un fichier
+`cat <file>`
+
+Compter le nombre de lignes
+
+```sh
+wc -l <file>
+```
+
+Afficher le contenu inversé
+`rev <file>`
+
+Editer un fichier avec vi
+`vi <file>`
+
+Editer un fichier avec nano
+`nano <file>`
+
+Lire un fichier (G = fin du fichier)
+`less <file>`
+
+Début d'un fichier
+`head <file>`
+
+Fin d'un fichier (-n 50 : 50 dernières lignes)
+`tail <file>`
+
+Monitorer un fichier (lignes ajoutées) / Ctrl+C pour quitter
+`tail -f <file>`
+
+### Compression
+
+Lister les contenus d'un fichier zip
+`unzip -l <fichier.zip>`
+
+Compression du dossier www dans www.zip
+`gzip -rc www >www.zip`
+
+Déompression de www.zip
+`gunzip www.zip`
+
+Détarer une archive
+`tar -xvf backup_complet.tar`
+
+Détarer la suite...
+`tar -xvf backup_incr1.tar --listed-incremental=backup.incremental-list.txt`
+
+Extraire un tar.gz
+`tar -xvzf <file.tar.gz>`
+
+Créer un tar.gz
+`tar -cvzf test.tar.gz <path>`
+
+Créer un tar.gz et déréférencer les symlinks
+`tar -cvzfh test.tar.gz <path>`
+
 ---
 
 ## Disque dur, partitions, structure
@@ -698,8 +835,8 @@ Sur la machine qui envoie
 Copier fichier vers machine distante (répertoire home)
 `scp -P 1337 <fichier> login@www.example.org:`
 
-* Port spécifique `-P 1337`
-* Clé ssh spécifiée depuis un fichier `-i ~/.ssh/key-rsa`
+- Port spécifique `-P 1337`
+- Clé ssh spécifiée depuis un fichier `-i ~/.ssh/key-rsa`
 
 Copier fichier vers machine distante (en spécifiant répertoire/fichier destination)
 `scp <fichier> login@www.example.org:path/<fichier>`
@@ -712,149 +849,6 @@ Copier répertoire *depuis* machine distante
 
 RSync de serveur à serveur
 `rsync -av -e "ssh -p 1337" /tmp/ root@192.168.0.37:/tmp`
-
----
-
-## Fichiers
-
-### Trouver un fichier
-
-A partir du répertoire courant
-`find . -name <fichier>`
-
-Taille >50 Mo
-`find . -size +50M`
-
-Trouver les fichiers php contenant mysql_pconnect
-`find . -name "*.php" | xargs grep "mysql_connect"`
-
-Trouver des fichiers et les supprimer
-`find -name "arfarfarf.txt" -delete`
-
-Supprimer les fichiers vides
-`find -size 0 -print -exec rm {} \;`
-
-Supprimer les fichiers contenant une chaîne
-`grep -l "blablablabla" * | xargs rm`
-
-Supprimer les fichiers pollution macOS
-`find -name "._.DS_Store" -print -delete`
-
-Trouver tous les error.log et les classer par taille
-`find . -name "error.log" -exec ls -sh {} \; | sort -h`
-
-Supprimer tous les dossiers node_modules à partir du répertoire courant
-`find . -name "node_modules" -type d -prune -exec rm -rf '{}' +`
-
-Que les fichiers (pas les dossiers)
-`find -type f`
-
-Les fichiers modifiés entre deux dates
-`find . -name "*.php" -type f -newermt 2021-02-24 ! -newermt 2021-02-25`
-
-Arborescence à 2 niveaux
-`tree -L 2`
-
-### Remplacer dans des fichiers
-
-Dans fichiers html remplacer DATA par DATA2
-`find . -name "*.html" | xargs sed -i 's/DATA/DATA2/g'`
-
-Pareil
-`sed -i "s/DATA/DATA2/g" **/*.html`
-
-Supprimer toutes les balises img
-`find . -name "*.html" | xargs sed -i 's/<img.*>//g'`
-
-Supprimer toutes les balises img contenant co.cc
-`find . -name "*.html" | xargs sed -i 's/<img heigth.*co\.cc.*>//g'`
-
-### Texte
-
-Trouver un fichier php contenant "virtual" à partir de .
-
-```sh
-grep "virtual" `find . -name "*.php"`
-```
-
-5 Lignes avant dans un fichier
-`grep "panic" /var/log/syslog -B5`
-
-Rechercher/remplacer dans fichiers multiples
-`sed -i "s/ChaineRecherchee/Remplacement/g" le_fichier`
-
-Extraire les lignes d'un fichier texte de 1337 à 2000
-`sed -n 1337,2000p <fichier>`
-
-### Info sur les fichiers
-
-Sur l'ensemble du filesystem
-`locate <fichier>`
-
-Rechercher les fichiers exécutables, les sources et les pages de manuel d'une commande
-`whereis <fichier>`
-
-Description d'une commande
-`apropos <commande>`
-
-Page de manuel
-`man <commande>`
-
-Afficher le contenu d'un fichier
-`cat <file>`
-
-Compter le nombre de lignes
-
-```sh
-wc -l <file>
-```
-
-Afficher le contenu inversé
-`rev <file>`
-
-Editer un fichier avec vi
-`vi <file>`
-
-Editer un fichier avec nano
-`nano <file>`
-
-Lire un fichier (G = fin du fichier)
-`less <file>`
-
-Début d'un fichier
-`head <file>`
-
-Fin d'un fichier (-n 50 : 50 dernières lignes)
-`tail <file>`
-
-Monitorer un fichier (lignes ajoutées) / Ctrl+C pour quitter
-`tail -f <file>`
-
-### Compression
-
-Lister les contenus d'un fichier zip
-`unzip -l <fichier.zip>`
-
-Compression du dossier www dans www.zip
-`gzip -rc www >www.zip`
-
-Déompression de www.zip
-`gunzip www.zip`
-
-Détarer une archive
-`tar -xvf backup_complet.tar`
-
-Détarer la suite...
-`tar -xvf backup_incr1.tar --listed-incremental=backup.incremental-list.txt`
-
-Extraire un tar.gz
-`tar -xvzf <file.tar.gz>`
-
-Créer un tar.gz
-`tar -cvzf test.tar.gz <path>`
-
-Créer un tar.gz et déréférencer les symlinks
-`tar -cvzfh test.tar.gz <path>`
 
 ---
 
@@ -970,23 +964,26 @@ wget --mirror --convert-links --adjust-extension --page-requisites --no-parent -
 
 Télécharger récursivement un dossier FTP avec wget
 
-```
+```sh
 wget -r ftp://login:password@example.org:port/path/to/folder/
 ```
 
 ## Scripts utiles et shell
 
 Date
+
 ```sh
 echo $(date +%Y-%m-%d)
 ```
 
 Envoyer un mail
+
 ```sh
 echo "Arf" | mail -s "Sujet" destinataire@example.org
 ```
 
 Split (découper) un fichier PDF en plusieurs autres
+
 ```sh
 pdfseparate -f 1 -l 10 doc.pdf tmp/doc-%d.pdf
 ```

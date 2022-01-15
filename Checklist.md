@@ -4,8 +4,9 @@
 Liste de bonnes pratiques et points à prendre en compte avant/durant/après l'élaboration d'un projet web.
 
 Voir aussi comme autres références :
-* Les check-lists Opquast http://checklists.opquast.com/fr/
-* La checklist Pidila pour les sites publics et gouvernementaux https://pidila.gitlab.io/checklist-pidila/
+
+* Les check-lists Opquast <http://checklists.opquast.com/fr/>
+* La checklist Pidila pour les sites publics et gouvernementaux <https://pidila.gitlab.io/checklist-pidila/>
 
 Les priorités indiquées sont purement indicatives à et moduler selon chaque projet. Tout critère pouvant être déterminant ou sensible à chaque phase, il est difficile de pondérer efficacement une telle liste.
 
@@ -50,7 +51,7 @@ ___
 
 |Critère|Priorité|
 | ------------- | ------------- |
-| Chaque page comporte une section <head> avec des balises <meta> description et keywords et autres indications pertinentes | * |
+| Chaque page comporte une section `<head>` avec des balises `<meta>` description et keywords et autres indications pertinentes | * |
 | Un tag de suivi des statistiques (Google Analytics ou équivalent) est inséré | * |
 | Le site est enregistré sur Google Search Console (compte Google requis) | * |
 | Le fichier robots.txt est présent | ** |
@@ -107,4 +108,3 @@ ___
 | Toutes les entrées utilisateur (formulaires, paramètres GET, etc) sont filtrées et validées côté serveur | *** |
 | Les en-têtes HTTP relatives à la sécurité (CSP, CSRF, X-XSS, etc) sont configurées | ** |
 | Le protocole HTTPS est utilisé avec un certificat valide | *** |
-

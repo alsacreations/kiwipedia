@@ -1,6 +1,6 @@
 # Guidelines : E-mailing
 
-_Statut : Working Draft (WD)_
+Statut : Working Draft (WD)
 
 Cette présente convention rassemble les bonnes pratiques E-mailing en production appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/). Elle a pour but d'évoluer dans le temps et de s'adapter à chaque nouveau projet.
 
@@ -57,7 +57,7 @@ maizzle build production
 
 Certains clients e-mails ajoutent une bordure de 1 pixel autour de chaque cellule de tableau. Maizzle corrige automatiquement le problème en appliquant `border-collapse: collapse;` sur les tableaux.
 
-Gmail ne reconnaît pas systématiquement les largeurs de 100%. Lorsque `width` ne suffit pas, il est parfois nécessaire d'ajouter `min-width`. Ainsi certains tableaux de structure doivent être stylés ainsi : `<table class="w-full min-w-full"> `.
+Gmail ne reconnaît pas systématiquement les largeurs de 100%. Lorsque `width` ne suffit pas, il est parfois nécessaire d'ajouter `min-width`. Ainsi certains tableaux de structure doivent être stylés ainsi : `<table class="w-full min-w-full">`.
 
 Outlook impose une hauteur minimale de 17px aux `<td>`. Pour créer des séparateurs très fins, l'élément `<hr>` est parfait :
 

@@ -1,6 +1,6 @@
 # Guidelines JavaScript
 
-_Statut : Recommendation (REC)_
+Statut : Recommendation (REC)
 
 Cette présente convention rassemble les bonnes pratiques JavaScript en production appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/). Elle a pour but d'évoluer dans le temps et de s'adapter à chaque nouveau projet.
 
@@ -14,7 +14,7 @@ Cette présente convention rassemble les bonnes pratiques JavaScript en producti
 - L’encodage des fichiers et des bases de données doit se faire en UTF-8.
 - Valider le code avec [eslint](https://eslint.org/).
 - Les indentations se font à l’aide de deux espaces, idéalement définies par [EditorConfig](http://editorconfig.org/).
-- Utiliser la syntaxe _lowerCamelCase_ (voir https://fr.wikipedia.org/wiki/CamelCase) pour l'écriture des noms de variables, fonctions, objets, etc.
+- Utiliser la syntaxe _lowerCamelCase_ (voir <https://fr.wikipedia.org/wiki/CamelCase>) pour l'écriture des noms de variables, fonctions, objets, etc.
 - Utiliser le mot clé `var` ou `let` ou `const` pour déclarer une variable/constante et maîtriser sa portée.
 - Terminer les instructions par un `;` sauf si la configuration eslint du projet le permet autrement.
 - Toujours commenter (même brièvement) le code, les fonctions, les variables (à l’aide de `//` ou `/* */`).
@@ -33,14 +33,14 @@ En bonus, suivre les recommandations de :
 
 Utiliser les structures littérales simple pour déclarer tableaux et objets.
 
-```
+```js
 var monTableau = [1,2,3];
 var monObjet = { };
 ```
 
 De préférence, encapsuler les ensembles de variables utilisés par un même script dans un objet, par exemple :
 
-```
+```js
 var maConfig = {
   slider_width: 800,
   slider_height: 600
@@ -49,7 +49,7 @@ var maConfig = {
 
 Ou :
 
-```
+```js
 var maConfig = {
   slider : {
     width: 800,
@@ -60,11 +60,11 @@ var maConfig = {
 
 L’accès est facile ensuite par `maConfig.slider.width` (dans cet exemple).
 
-# Fonctions et blocs
+## Fonctions et blocs
 
 Toujours déclarer les fonctions dans le scope, et pas dans un bloc (if ou autre car cela ne fait pas partie d’ECMAScript), à moins d’utiliser la notation suivante :
 
-```
+```js
 if (x) {
   var mafonction = function() {}
 }
@@ -72,7 +72,7 @@ if (x) {
 
 Sinon, en suivant le principe précédent
 
-```
+```js
 var maConfig = {
   slider: {
     width: 800,
@@ -98,7 +98,7 @@ Pour les brefs commentaires, le double slash `//` sur une seule ligne est privil
 
 Pour isoler le code JavaScript des autres scripts externes (frameworks, plug-ins...) et ne pas engendrer de conflit de variable, il est nécessaire d’encapsuler les instructions dans un bloc de fonction.
 
-```
+```js
 (function() {
   "use strict";
   // Le code…
@@ -107,7 +107,7 @@ Pour isoler le code JavaScript des autres scripts externes (frameworks, plug-ins
 
 Avec jQuery :
 
-```
+```js
 <script src="jquery.js">
 <script>
 (function($) {
@@ -118,17 +118,15 @@ Avec jQuery :
 
 ## Bonnes pratiques jQuery pour l'intégration
 
-### Généralités
-
 - Préfixer une variable représentant un objet jQuery (résultat d’un sélecteur) par `$`
 
-```
+```js
 var $el = $('#el');
 ```
 
 - Démarrer avec cette syntaxe pour document ready :
 
-```
+```js
 jQuery(document).ready(function($) {
   // à l’intérieur, usage de $ comme d’habitude...
 });
@@ -140,7 +138,7 @@ jQuery(document).ready(function($) {
 - Placer les attributs `data-*` sur les éléments pour lesquels ils seront utiles, notamment le conteneur du plugin/composant.
 - Différencier classes qui vont permettre de styler l’élément (dans les fichiers CSS) et classes qui vont permettre d’activer un comportement spécifique JS sur l’élément (fichiers JS) en les préfixant par `js-`.
 
-```
+```html
 <div class="slideshow js-slideshow" data-timing="2000" ...>
    <figure class="slideshow-item">
 ```
@@ -155,13 +153,13 @@ jQuery(document).ready(function($) {
 
 - Utiliser les classes CSS du projet pour cacher/masquer des éléments, lancer des transitions, ou changer leur état
 
-```
+```js
 $('element').addClass('visually-hidden');
 ```
 
 plutôt que
 
-```
+```js
 $('element').hide();
 ```
 

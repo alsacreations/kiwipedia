@@ -1,6 +1,6 @@
 # Guidelines : Docker
 
-_Statut : Recommendation (REC)_
+Statut : Recommendation (REC)
 
 Voir aussi <https://www.alsacreations.com/tuto/lire/1836-Docker--decouverte-et-environnement-LAMP-pour-WordPress.html>
 

@@ -1,6 +1,6 @@
 # Guidelines : Accessibilité
 
-_Statut : Working Draft (WD)_
+Statut : Working Draft (WD)
 
 Cette présente convention rassemble les bonnes pratiques d'Accessibilité en production appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/). Elle a pour but d'évoluer dans le temps et de s'adapter à chaque nouveau projet.
 
@@ -527,7 +527,7 @@ Les exemples à suivre proviennent du [Design System du W3C](https://design-syst
 
 Ajouter l'attribut `role="img"` pour indiquer aux lecteurs d'écrans de la considérer comme une image et lui éviter de lire tous les nœuds HTML du SVG.
 Il faut ensuite ajouter un `<title>` (ou un `aria-label`) pour expliciter la fonction de l'image.
-Ajouter également `focusable="false"`pour éviter que la touche <kbd>Tab</kbd> ne navigue au sein du SVG.
+Ajouter également `focusable="false"`pour éviter que la touche _Tab_ ne navigue au sein du SVG.
 
 ```xml
 <svg role="img" focusable="false" aria-labelledby="title">

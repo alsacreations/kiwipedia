@@ -1,6 +1,6 @@
 # Guidelines Tailwind CSS
 
-_Statut : Candidate Recommendation_
+Statut : Candidate Recommendation
 
 Tailwind est un framework CSS qui adopte une approche "atomique" de CSS, comprendre qu'à chaque classe correspond une action et une seule.
 
@@ -15,7 +15,7 @@ Ce que Tailwind fait mal (ou ne fait pas du tout) :
 
 - De nombreuses propriétés CSS sont "inadaptées" à Tailwind (transitions, animations, filtres, transformations, grilles, etc.)
 - De nombreux pseudo-éléments ou pseudo-classes n'existent pas dans Tailwind
-- Tailwind devient vite une usine à gaz si l'on veut *"tout faire via Tailwind"* <br>Par exemple, quel être humain normalement constitué est instinctivement à l'aise avec `class="bg-gradient-to-r from-red-500/50/[0.31] via-indigo-700 items-baseline backdrop-invert-0 md:row-start-5 sm:content-around leading-snug dark:tracking-wider placeholder-gray-50::placeholder"`&nbsp;?
+- Tailwind devient vite une usine à gaz si l'on veut *"tout faire via Tailwind"*. Par exemple, quel être humain normalement constitué est instinctivement à l'aise avec `class="bg-gradient-to-r from-red-500/50/[0.31] via-indigo-700 items-baseline backdrop-invert-0 md:row-start-5 sm:content-around leading-snug dark:tracking-wider placeholder-gray-50::placeholder"` ?
 
 ## Pourquoi utilise-t-on Tailwind chez Alsacréations ?
 
@@ -39,7 +39,7 @@ De manière générale, sauf exceptions, Tailwind sera installé et configuré �
 4. Dans le fichier `webpack.mix.js` ajouter Tailwind au build postcss.
 5. Enfin dans `resources\styles\app.css`, ajouter Tailwind.
 
-#### _tailwind.config.js_
+#### _tailwind.config.js_ (pour WordPlate/WordPress)
 
 ```js
 content: ['public/theme/**/*.php', 'public/theme/**/*.twig', 'public/theme/**/*.js']
@@ -71,7 +71,7 @@ mix.postCss("resources/css/app.css", "public/css", [
 4. Ajouter `'@nuxt/postcss8'` aux `buildModules` de Nuxt.
 5. Ajouter les styles `@utilities`, `@base`, `@components` dans le fichier de styles principal.
 
-#### _tailwind.config.js_
+#### _tailwind.config.js_ (pour Vue/Nuxt)
 
 ```js
 content: ['src/**/*.vue', 'src/**/*.ts', 'src/**/*.js']
@@ -97,7 +97,7 @@ Nous utilisons VS Code et l'extension VSCode **[Tailwind CSS intellisense](https
 
 Tailwind apporte son lot de directives sous forme de règles-at spécifiques (`@apply`, `@layer`, `@screen`, `@variants`, etc.) pouvant être pointées du doigt par les Linters CSS.
 
-Stylelint est notre formatteur (unique) pour les styles CSS et scss du projet. <br>Les Linters natifs CSS et scss de VSCode **doivent être désactivés** dans la configuration VSCode `settings.json`&nbsp;:
+Stylelint est notre formatteur (unique) pour les styles CSS et scss du projet. Les Linters natifs CSS et scss de VSCode **doivent être désactivés** dans la configuration VSCode `settings.json` :
 
 ```json
 {
@@ -232,7 +232,7 @@ Conformément à la démarche "Mobile First", ces valeurs correspondent à des j
 
 ### Remarque concernant les valeurs de `spacing` et `fontSize`
 
-Pour être les plus intuitives possibles, les valeurs d'espacement et de tailles de polices correspondent à un "équivalent en pixel". <br>Par exemple la valeur "20" dans `text-20` vaut 1.25rem et est calculée pour être équivalente à 20px.
+Pour être les plus intuitives possibles, les valeurs d'espacement et de tailles de polices correspondent à un "équivalent en pixel". Par exemple la valeur "20" dans `text-20` vaut 1.25rem et est calculée pour être équivalente à 20px.
 
 ```yaml
 fontSize: {
@@ -525,7 +525,7 @@ Le fichier [alsa-TW-Reset](assets/vue-nuxt-front-end/alsa-tw-reset.scss) apporte
 
 ## Ajouter une nouvelle classe utilitaire
 
-1. Dans un fichier CSS, "à la Tailwind" :
+1 - Dans un fichier CSS, "à la Tailwind" :
 
 ```scss
 @layer utilities {
@@ -536,7 +536,7 @@ Le fichier [alsa-TW-Reset](assets/vue-nuxt-front-end/alsa-tw-reset.scss) apporte
 }
 ```
 
-2. Dans un fichier CSS, en CSS "classique" :
+2 - Dans un fichier CSS, en CSS "classique" :
 
 ```css
 @layer utilities {

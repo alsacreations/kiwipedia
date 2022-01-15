@@ -1,6 +1,6 @@
 # Sécurité
 
-_Statut : Recommendation (REC)_
+Statut : Recommendation (REC)
 
 Outils de test :
 

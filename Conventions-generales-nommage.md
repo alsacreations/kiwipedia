@@ -1,6 +1,6 @@
 # Conventions Générales de Nommage
 
-_Statut : Working Draft (WD)_
+Statut : Working Draft (WD)
 
 Ces présentes conventions ont pour objectif d'harmoniser les noms des fichiers, des fonctions ou classes utilisées au sein des projets web de l'agence [Alsacréations](https://www.alsacreations.fr/).
 
@@ -73,7 +73,7 @@ Si on privilégie l'anglais pour le code et malgré son apparente simplicité, i
 
 Exemple à ne **pas** reproduire (coexistence de _cancel_/_remove_/_delete_) :
 
-```
+```html
 <button class="cancelProduct" onclick="removeProduct(1337)">
   <svg id="remove" ...>
 </button>
