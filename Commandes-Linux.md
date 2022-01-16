@@ -556,6 +556,8 @@ Créer un tar.gz
 Créer un tar.gz et déréférencer les symlinks
 `tar -cvzfh test.tar.gz <path>`
 
+Toutes les commandes tar <https://tarcommands.com/>
+
 ---
 
 ## Disque dur, partitions, structure
