@@ -268,6 +268,7 @@ Autres listes de ressources et checklists
 
 - Scripts divers
 
+  - <https://orejime.empreintedigitale.fr/> bannière cookies accessible
   - <https://plainjs.com/> Sélection de scripts et plugins sans framework (Vanilla)
   - <https://docs.slatejs.org> Editeurs wysiwyg
   - <http://rainsoft.io/gentle-explanation-of-this-in-javascript/> Explication de this
