@@ -1,6 +1,6 @@
 # Guidelines Tailwind CSS
 
-Statut : Candidate Recommendation
+Statut : Candidate Recommendation (CR)
 
 Tailwind est un framework CSS qui adopte une approche "atomique" de CSS, comprendre qu'à chaque classe correspond une action et une seule.
 
