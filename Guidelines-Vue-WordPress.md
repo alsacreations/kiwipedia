@@ -65,7 +65,7 @@ Timber::render('templates/index.twig', $context);
 
 Dans notre fichier twig, nous avons accès aux données du back dans `post` et `post_title` , dans le cas d’un string ou d’un number, il est possible de passer directement le contenu.
 
-Si nous voulons passer un array, object ou number et non leur valeur convertie en String, il faut penser à annoter sa prop de `:`
+Si nous voulons passer un _array_, _object_ ou _number_ et non leur valeur convertie en String, il faut penser à préfixer la prop de `:`
 
 ```twig
 {% extends 'base.twig' %}
@@ -158,7 +158,6 @@ function register_rest_custom_fields () {
     );
 }
 
-
 function get_rest_acf( $object ) {
     if ( $object ) {
         $acf = get_fields($object->ID);
@@ -176,7 +175,7 @@ add_action('rest_api_init', 'register_rest_custom_fields');
 
 Résultat:
 
-```json
+```js
 {
   post_title: '',
   acf: {
