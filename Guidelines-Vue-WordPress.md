@@ -1,6 +1,6 @@
 # Guidelines : Vue dans WordPress
 
-Statut : Statut : Candidate Recommendation (CR)
+Statut : Candidate Recommendation (CR)
 
 Cette présente convention rassemble les bonnes pratiques "Vue dans WordPress" en production appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/). Elle a pour but d'évoluer dans le temps et de s'adapter à chaque nouveau projet.
 
@@ -38,11 +38,11 @@ const app = new Vue({
 
 ## Règles d’utilisation dans WordPress
 
-Quand l'utiliser dans WordPress ?
-
 Nous utilisons Vue lors de la création de composants interactifs et plus complexes. De plus, le composant en question ne doit pas être important pour le SEO, puisque les robots n’auront pas accès au contenu. Sinon envisager Nuxt avec un rendu SSR. Nous ne l’utilisons donc pas pour créer des composants HTML types boutons etc… Pour cela nous avons Twig. Son utilisation doit permettre de faciliter considérablement les développements. Puisque nous ajoutons un script relativement lourd (~80 Ko minifié), il ne faut pas l’inclure dans tous les cas. Enfin nous devons prendre en considération l’impact sur le chargement de la page et de l’importance que l'on apporte à la performance.
 
-Pour un projet sans Timber, voir aussi
+Avec [WordPlate](https://github.com/wordplate/wordplate) nous bénéficions de Timber.
+
+Pour un projet sans Timber, voir aussi :
 
 - <https://dev.to/dgmann/vue-application-as-a-wordpress-plugin-9nm>
 - <https://dev.to/workingwebsites/using-vue-in-wordpress-1b9l>
