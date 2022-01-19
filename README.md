@@ -25,7 +25,7 @@ Cette présente charte a pour objectif :
 
 ## Selon typologie de projet
 
-- [**Guidelines Vue-Nuxt-Front-End**](Guidelines-Vue-Nuxt-Front-End.md)
+- [**Guidelines Vue et Nuxt**](Guidelines-Vue-Nuxt-Front-End.md)
 - [**Guidelines WordPress**](Guidelines-WordPress.md)
 - [**Guidelines Vue dans WordPress**](Guidelines-Vue-WordPress.md)
 - [**Guidelines Développement PHP / MySql**](Guidelines-Developpement-PHP.md)
