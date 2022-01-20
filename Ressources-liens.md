@@ -491,6 +491,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://anime-js.com/>
 - <http://bouncejs.com/>
 - <http://julian.com/research/velocity/>
+- <https://docs.theatrejs.com/> outil d'animation DOM, code et visuel
 - <http://paperjs.org/> librairie d'animation Canvas
 - <https://projects.verou.me/animatable/>
 - <https://tobiasahlin.com/spinkit/> Loaders animés (spin)
