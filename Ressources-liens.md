@@ -45,8 +45,12 @@ Autres listes de ressources et checklists
 
 - <https://html.spec.whatwg.org/multipage/> Spécification HTML WhatWG
 - <https://w3c.github.io/html/> Spécification HTML5 W3C
-- <https://schnaps.it/> Templates HTML5 avec KNACSS
 - <https://htmlparser.info/introduction/> Idiosyncrasies of the HTML parser (Simon Pieters)
+
+### Templates et boilerplates
+
+- <https://uisual.com/> Templates neutres pour startups
+- <https://schnaps.it/> Templates HTML5 avec KNACSS
 
 ### Microdata et sémantique
 
