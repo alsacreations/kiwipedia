@@ -575,6 +575,34 @@ export default function({ store, app: { $axios, $api } }) {
 }
 ```
 
+---
+
+## Astuces
+
 ### Déployer sur un CDN/statique/AWS S3/Cloudfront
 
 Suivre les indications de <https://nuxtjs.org/deployments/amazon-web-services> et [Guidelines Vue-Nuxt-S3](Guidelines-Vue-Nuxt-S3.md).
+
+### Générer une instance de composant et l'attacher dans le DOM
+
+```js
+import TheComponent from '~/components/TheComponent.vue'
+
+// ...
+
+// Props du composant
+const props = {
+    prop1: 'value1',
+    prop2: 'value2'
+}
+// On génère une instance de composant à la volée avec les props correspondantes
+const Duplicate = Vue.extend(TheComponent)
+const Component = new Duplicate({
+    propsData: props,
+    store: this.$store,
+    // i18n: this.$i18n (s'il y a i18n)
+})
+// On l'insère dans le DOM
+const mp = document.querySelector('#mount-point')
+Component.$mount(mp)
+```
