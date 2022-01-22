@@ -109,3 +109,16 @@ Usage :
 - 3 choix sont proposés : version courte, moyenne ou longue.
 - Valider le choix avec Entrée.
 - Enjoy !
+
+## Activer eslint fix on save (à chaque sauvegarde de fichier avec Ctrl/Command + S)
+
+Dans le projet, ajouter un fichier `.vscode/settings.json` contenant
+
+```js
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.validate": ["javascript"]
+}
+```
