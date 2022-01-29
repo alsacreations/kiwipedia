@@ -102,6 +102,11 @@ Autres listes de ressources et checklists
 - <http://purecss.io/> Pure (Yahoo)
 - <http://designmodo.github.io/Flat-UI/> Flat UI
 
+### Composants UI intégrés (souvent tailwind)
+
+- <https://hyperui.dev/>
+- <https://www.tailwind-kit.com/>
+
 ### RWD Responsive Web Design
 
 - <https://www.mydevice.io/> (made by Alsacréations)
