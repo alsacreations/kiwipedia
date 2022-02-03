@@ -748,6 +748,14 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 ---
 
+## CMS et outils headless/API
+
+- <https://wordpress.org/>
+- <https://strapi.io/> Strapi
+- <https://github.com/strapi/awesome-strapi> Ressources Strapi
+
+---
+
 ## Intégration mail et e-mailing
 
 - <https://www.smashingmagazine.com/2021/04/complete-guide-html-email-templates-tools/> A Complete Guide To HTML Email
