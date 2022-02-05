@@ -390,6 +390,8 @@ Autres listes de ressources et checklists
 
 Maquettes / story-boards / wireframes / mockups / zoning
 
+- <https://whimsical.com/>
+- <https://octopus.do/>
 - <https://www.mindmeister.com/fr>
 - <https://moqups.com/>
 - <https://wireframe.cc/>
@@ -401,6 +403,11 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://www.invisionapp.com/>
 - <http://www.bounceapp.com/>
 - <https://redpen.io/>
+
+### Ardoises en ligne
+
+- <https://excalidraw.com/>
+- <https://www.tldraw.com/>
 
 ### Logos
 
