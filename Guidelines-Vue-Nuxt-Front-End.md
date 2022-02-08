@@ -218,7 +218,9 @@ Réponses recommandées aux questions :
 - Continuous integration: None
 - Version control system: Git
 
-Installation de Tailwind dans Nuxt : voir <https://tailwindcss.com/docs/guides/nuxtjs>
+### Tailwind
+
+On utilise la méthode officielle proposée par Tailwind <https://tailwindcss.com/docs/guides/nuxtjs> et **non** le module [nuxt/tailwind](https://tailwindcss.nuxtjs.org/) car il injecte Tailwind lui même à un moment où on n'a pas le contrôle, ce qui rend la gestion des @apply en scss très compliquée.
 
 ## Dépendances
 
