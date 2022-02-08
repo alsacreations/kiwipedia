@@ -279,26 +279,29 @@ Les valeurs prévues dans notre mixin sont (privilégier les premières, respect
 
 Autant que possible, privilégier le chargement de polices légères et respectueuses des performances, indiquées notamment sur [Google Web Fonts](http://www.google.com/webfonts/v2). Limiter le nombre de ces polices à 2, voire 3 grand maximum.
 
-Alsacréations partage une collection de fontes adaptées et optimisées pour le web : [https://github.com/alsacreations/webfonts](https://github.com/alsacreations/webfonts)
+L'application web [Google Webfont Helper](https://google-webfonts-helper.herokuapp.com/) est une excellente ressource permettant d'optimiser finement les fichiers :
 
-Il est conseillé de récupérer les fontes sur ce repo Github si cela est possible.
+- choisir le bon subset (latin, latin-ext, etc.)
+- choisir les styles nécessaires au projet (normal, bold, italic, etc.)
+- copier le code CSS prévu pour les navigateurs modernes (woff2 et woff)
+- télécharger les fontes de Google Fonts aus formats woff2 et woff
 
-Le format WOFF2 (Web Open Font Format 2) est privilégié dans tous les cas de figure, pour sa compatibilité et sa légèreté. En second lieu, utiliser WOFF.
-
-Ces formats seront mentionnés en priorité dans la déclaration `@font-face` avant les autres formats (TTF, OTF, SVG). Voir [Optimiser le rendu des police @font-face](http://www.clever-age.com/veille/blog/optimiser-le-rendu-de-font-face.html)
+Il est conseillé de récupérer les fontes via cette ressource si cela est possible.
 
 Voici un exemple de chargement de police conseillé :
 
 ```css
 @font-­face {
   font-­family: 'kiwi';
-  src: url('kiwi.woff2') format('woff2'), url('kiwi.woff') format('woff');
+  src: url('kiwi.woff2') format('woff2'), 
+    url('kiwi.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 @font-­face {
   font-­family: 'kiwi';
-  src: url('kiwi-bold.woff2') format('woff2'), url('kiwi-bold.woff') format('woff');
+  src: url('kiwi-bold.woff2') format('woff2'), 
+    url('kiwi-bold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
 }
