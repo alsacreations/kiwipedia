@@ -7,5 +7,12 @@
   },
   "stylelint.enable": true,
   "css.validate": false,
-  "scss.validate": false
+  "scss.validate": false,
+  "stylelint.validate": [
+    "css",
+    "less",
+    "postcss",
+    "scss",
+    "sass"
+  ],
 }

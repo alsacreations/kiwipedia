@@ -57,7 +57,14 @@ La configuration fournie dans le fichier `/.vscode/settings.json` permet de :
   },
   "stylelint.enable": true,
   "css.validate": false,
-  "scss.validate": false
+  "scss.validate": false,
+  "stylelint.validate": [
+    "css",
+    "less",
+    "postcss",
+    "scss",
+    "sass"
+  ],
 }
 ```
 
@@ -79,9 +86,9 @@ Il est étendu aux fichiers HTML à l'aide d'un plugin installé via `npm instal
 ],
 ```
 
-Via le plugin eslint-plugin-vue on applique [les groupes de règles](https://eslint.vuejs.org/rules/) dans le fichier `.eslintrc.js` avec le tableau extends : _Priority A: Essential (plugin:vue/essential)_, _Priority B: Strongly Recommended (plugin:vue/strongly-recommended)_, _Eslint recommended : eslint:recommended_. Pour Nuxt : _plugin:nuxt/recommended_.
+Via le plugin eslint-plugin-vue on applique [les groupes de règles](https://eslint.vuejs.org/rules/) dans le fichier `.eslintrc.js` avec le tableau extends : *Priority A: Essential (plugin:vue/essential)*, *Priority B: Strongly Recommended (plugin:vue/strongly-recommended)*, *Eslint recommended : eslint:recommended*. Pour Nuxt : *plugin:nuxt/recommended*.
 
-Modification de _Priority B_ : on veut des `v-on:click` plutôt que `@click` : `'vue/v-on-style': ['warn', 'longform'],`. On peut aussi vouloir harmoniser l'ordre des déclarations dans les composants avec `'vue/order-in-components': 'warn'`.
+Modification de *Priority B* : on veut des `v-on:click` plutôt que `@click` : `'vue/v-on-style': ['warn', 'longform'],`. On peut aussi vouloir harmoniser l'ordre des déclarations dans les composants avec `'vue/order-in-components': 'warn'`.
 
 ([Afficher/télécharger le fichier complet recommandé `.eslintrc.js`](assets/vue-nuxt-front-end/.eslintrc.js)).
 
@@ -376,7 +383,7 @@ Usage de <https://nuxt-community.github.io/nuxt-i18n/> avec fichiers de configur
 - En tant que condition : `v-if="$i18n.locale == 'fr'"`
 - Lien racine : `<nuxt-link :to="localePath('/')">`
 
-On formate les nombres/prix avec `$n(13.37, 'currency')` ou `$n(13.37, { currency: 'EUR' })`. Voir aussi <https://vue-i18n.intlify.dev/guide/essentials/number.html#basic-usage> pour importer _numberFormats_ dans le fichier de configuration (vueI18n).
+On formate les nombres/prix avec `$n(13.37, 'currency')` ou `$n(13.37, { currency: 'EUR' })`. Voir aussi <https://vue-i18n.intlify.dev/guide/essentials/number.html#basic-usage> pour importer *numberFormats* dans le fichier de configuration (vueI18n).
 
 Pour des formatages plus complexes voir <https://kazupon.github.io/vue-i18n/guide/formatting.html#html-formatting>
 
