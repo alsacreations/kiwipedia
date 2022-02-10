@@ -571,19 +571,19 @@ Lister la configuration des partitions et montages
 Infos de montages actives
 `cat /proc/mounts`
 
-Liste les devices de bloc (disques durs) et leurs points de montage
+Devices de bloc (disques durs) et leurs points de montage
 `lsblk`
 
-Liste les types de systèmes de fichiers
+Types de systèmes de fichiers
 `lsblk -f`
 
-Liste tous les UUID
+Tous les UUID
 `blkid`
 
-Liste tous les disques par ID matériel
+Tous les disques par ID matériel
 `ls -al /dev/disk/by-id`
 
-Lister toutes les partitions
+Toutes les partitions
 `fdisk -l` ou `parted -l` ou `gdisk -l /dev/XXXX`
 
 Démonter un volume
@@ -739,16 +739,16 @@ IP connectée à Apache en masse ?
 Liste des processus
 `netstat -ntpl`
 
-Liste les connexions en écoute ouvertes
+Connexions en écoute ouvertes
 `lsof -n | grep LISTEN`
 
-Liste les connexions UDP ouvertes
+Connexions UDP ouvertes
 `lsof -n | grep UDP`
 
 Descripteurs ouverts par un processus
 `lsof -p <PID>`
 
-Liste les adresses IP / interfaces
+Adresses IP / interfaces
 `ip addr show`
 
 Ports référencés
