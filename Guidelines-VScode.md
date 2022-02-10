@@ -118,7 +118,6 @@ Dans le projet, ajouter un fichier `.vscode/settings.json` contenant
 {
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
-  },
-  "eslint.validate": ["javascript"]
+  }
 }
 ```
