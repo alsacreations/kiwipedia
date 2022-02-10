@@ -23,7 +23,7 @@ Voir aussi <https://www.alsacreations.com/tuto/lire/1836-Docker--decouverte-et-e
 ### Inspection
 
 * Statistiques : `docker stats`
-* Logs : `docker logs <nomducontainer>`
+* Logs : `docker logs <nomducontainer>` (ajouter `-f` pour suivre en continu)
 * Ports ouverts : `docker port <nomducontainer>`
 * Processus : `docker top <nomducontainer>`
 * Différences appliquées : `docker diff <nomducontainer>`
