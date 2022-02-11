@@ -38,13 +38,12 @@ module.exports = {
     'property-no-unknown': true, // pas de propriété inconnue
     'rule-empty-line-before': 'always', // ligne vide entre deux blocs
     'selector-attribute-brackets-space-inside': 'never', // espace dans selecteur attribut
-    'selector-attribute-operator-space-after': 'always', // espace dans selecteur attribut
+    'selector-attribute-operator-space-after': 'never', // espace dans selecteur attribut
     'selector-attribute-operator-space-before': 'never', // espace dans selecteur attribut
     'selector-attribute-quotes': 'always', // quotes dans les sélecteurs d'attributs
     'selector-combinator-space-after': 'always', // toujours une espace après un combinateur
     'selector-combinator-space-before': 'always', // toujours une espace avant un combinateur
     'selector-max-id': 0, // pas de sélecteur id
-    'selector-no-id': true, // pas d'id
     'selector-no-qualifying-type': true, // pas de selecteur complexe
     'selector-pseudo-class-parentheses-space-inside': 'never', // espace dans pseudo élément
     'selector-pseudo-element-colon-notation': 'double', // espace dans pseudo élément
