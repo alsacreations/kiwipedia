@@ -79,3 +79,14 @@ Liste non exhaustive, voir <https://docs.docker.com/engine/reference/builder/>.
 * <http://docs.projectatomic.io/container-best-practices/>
 * <https://quickref.me/docker>
 * <https://enix.io/fr/blog/cherie-j-ai-retreci-docker-part1/>
+
+---
+
+## Podman
+
+La grande majorité des commandes Docker ont un équivalent Podman (start, stop...).
+
+* Tous les containers `podman ps -a`
+* Démarrer à partir d'un fichier compose `podman-compose up -d`
+* Démarrer UN conteneur/service en particulier à partir d'un fichier compose `podman-compose up -d <service>`
+* Statistiques RAM en rootless `podman ps --size`
