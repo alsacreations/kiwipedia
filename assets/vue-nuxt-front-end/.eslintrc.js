@@ -34,7 +34,7 @@ const commonVueRules = Object.fromEntries(
  * JS natif
  */
 const jsRules = {
-  indent: ['error', 2],
+  indent: ['error', 2, { SwitchCase: 1 }],
   // Force les commentaires multi-lignes du type starred-block
   'multiline-comment-style': ['error', 'starred-block'],
   // Préfère les template string que les concaténations
@@ -42,7 +42,7 @@ const jsRules = {
   curly: 'error', // {} toujours requises
   'quote-props': 'off', // controle des quotes autour des propriétés des objets
   'no-trailing-spaces': 'warn', // pas d'espaces vides
-  semi: ['warn', 'never'], // pas de ";" à la fin des lignes
+  semi: ['error', 'never'], // pas de ";" à la fin des lignes
   'object-shorthand': 'warn',
   // les const, c'est la vie
   'prefer-const': [
