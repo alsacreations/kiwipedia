@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "EditorConfig.EditorConfig",
+    "dbaeumer.vscode-eslint",
+    "stylelint.vscode-stylelint",
+    "mrmlnc.vscode-scss",
+    "mikestead.dotenv",
+    "bradlc.vscode-tailwindcss",
+    "wayou.vscode-todo-highlight"
+  ]
+}
