@@ -82,7 +82,54 @@ Confort visuel :
 
 ## Configuration des extensions et linters
 
-Tous les détails et configuration des Extensions et Linters sont décrits au sein des Guidelines selon la typologie de projet :
+Pour tous les types de projets, ajouter un dossier `.vscode/` à la racine, contenant :
+
+- un fichier `.vscode/extensions.json` listant les extensions recommandées pour le projet
+- un fichier `.vscode/settings.json` contenant les réglages pour activer les linters
+
+Exemple de fichier `.vscode/extensions.json` recommandé :
+
+```js
+{
+  "recommendations": [
+    "EditorConfig.EditorConfig",
+    "dbaeumer.vscode-eslint",
+    "stylelint.vscode-stylelint",
+    "mrmlnc.vscode-scss",
+    "mikestead.dotenv",
+    "bradlc.vscode-tailwindcss",
+    "wayou.vscode-todo-highlight"
+  ]
+}
+```
+
+Exemple de fichier `.vscode/settings.json` recommandé :
+
+```js
+{
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
+  },
+  "stylelint.enable": true,
+  "css.validate": false,
+  "scss.validate": false,
+  "stylelint.validate": [
+    "css",
+    "less",
+    "postcss",
+    "scss",
+    "sass"
+  ],
+  "css.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore"
+}
+```
+
+Les détails de configuration des Extensions et Linters sont décrits au sein des Guidelines selon la typologie de projet :
 
 - [Guidelines Vue-Nuxt-Front-End](Guidelines-Vue-Nuxt-Front-End.md)
 - [Guidelines Vue-WordPress](Guidelines-Vue-WordPress.md)
@@ -109,15 +156,3 @@ Usage :
 - 3 choix sont proposés : version courte, moyenne ou longue.
 - Valider le choix avec Entrée.
 - Enjoy !
-
-## Activer eslint fix on save (à chaque sauvegarde de fichier avec Ctrl/Command + S)
-
-Dans le projet, ajouter un fichier `.vscode/settings.json` contenant
-
-```js
-{
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  }
-}
-```
