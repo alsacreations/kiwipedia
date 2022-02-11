@@ -89,4 +89,4 @@ La grande majorité des commandes Docker ont un équivalent Podman (start, stop.
 * Tous les containers `podman ps -a`
 * Démarrer à partir d'un fichier compose `podman-compose up -d`
 * Démarrer UN conteneur/service en particulier à partir d'un fichier compose `podman-compose up -d <service>`
-* Statistiques RAM en rootless `podman ps --size`
+* Poids des fichiers `podman ps --size --sort size`
