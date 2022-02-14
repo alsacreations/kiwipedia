@@ -39,7 +39,7 @@ const jsRules = {
   'multiline-comment-style': ['error', 'starred-block'],
   // Préfère les template string que les concaténations
   'prefer-template': 'error',
-  curly: 'error', // {} toujours requises
+  'curly': ['error', 'all'], // {} toujours requises
   'quote-props': 'off', // controle des quotes autour des propriétés des objets
   'no-trailing-spaces': 'warn', // pas d'espaces vides
   semi: ['error', 'never'], // pas de ";" à la fin des lignes
@@ -60,7 +60,8 @@ const jsRules = {
       named: 'never',
       asyncArrow: 'always'
     }
-  ]
+  ],
+  'comma-dangle': ['error', 'never']
 }
 
 /**
