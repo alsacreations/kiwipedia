@@ -171,8 +171,8 @@ module.exports = {
   ],
   rules: {
     ...commonRules,
-    ...jsRules,
-    ...commonVueRules,
-    ...vueRules
+    ...jsRules
+    //...commonVueRules,
+    //...vueRules
   }
 }
