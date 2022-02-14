@@ -15,7 +15,7 @@ const commonRules = {
   // triple = obligatoire
   eqeqeq: 'error',
   // espaces entre opérateurs
-  'space-infix-ops': ['warn'],
+  'space-infix-ops': ['error'],
   // Force les propriétés à être espacées Ex: { hello: 'World' } -> espace après le double point
   'key-spacing': ['error', { afterColon: true }]
 }
@@ -41,9 +41,9 @@ const jsRules = {
   'prefer-template': 'error',
   'curly': ['error', 'all'], // {} toujours requises
   'quote-props': 'off', // controle des quotes autour des propriétés des objets
-  'no-trailing-spaces': 'warn', // pas d'espaces vides
+  'no-trailing-spaces': 'error', // pas d'espaces vides
   semi: ['error', 'never'], // pas de ";" à la fin des lignes
-  'object-shorthand': 'warn',
+  'object-shorthand': ['errror', 'always'],
   // les const, c'est la vie
   'prefer-const': [
     'error',
@@ -60,8 +60,7 @@ const jsRules = {
       named: 'never',
       asyncArrow: 'always'
     }
-  ],
-  'comma-dangle': ['error', 'never']
+  ]
 }
 
 /**
@@ -70,9 +69,9 @@ const jsRules = {
 const vueRules = {
   'vue/no-spaces-around-equal-signs-in-attribute': 'error',
   'vue/this-in-template': ['error', 'never'],
-  'vue/v-on-style': ['warn', 'longform'],
-  'vue/v-bind-style': 'warn',
-  'vue/custom-event-name-casing': 'warn',
+  'vue/v-on-style': ['error', 'longform'],
+  'vue/v-bind-style': ['error', 'longform'],
+  'vue/custom-event-name-casing': 'error',
   'vue/require-name-property': 'error',
   'vue/prop-name-casing': ['error', 'camelCase'],
   'vue/v-slot-style': [
@@ -103,7 +102,7 @@ const vueRules = {
     }
   ],
   'vue/html-indent': [
-    'warn',
+    'error',
     2,
     {
       attribute: 1,
@@ -117,7 +116,7 @@ const vueRules = {
       singleline: 1,
       multiline: {
         max: 1,
-        allowFirstLine: true
+        allowFirstLine: false
       }
     }
   ],
@@ -165,8 +164,8 @@ module.exports = {
   extends: [
     'eslint:recommended',
     /* Vue / Nuxt uniquement*/
-    '@nuxtjs',
-    'plugin:nuxt/recommended'
+    // '@nuxtjs',
+    // 'plugin:nuxt/recommended'
   ],
   rules: {
     ...commonRules,
