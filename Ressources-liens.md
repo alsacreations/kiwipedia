@@ -107,6 +107,7 @@ Autres listes de ressources et checklists
 - <https://hyperui.dev/>
 - <https://www.tailwind-kit.com/>
 - <https://headlessui.dev/>
+- <https://tailwindui.com/>
 
 ### RWD Responsive Web Design
 
