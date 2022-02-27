@@ -2,7 +2,7 @@
 
 Utiles pour un serveur de développement ou un serveur web/mail/ftp, notamment sous Ubuntu/Debian.
 
-- Voir aussi <https://explainshell.com/> pour expliquer les commandes shell entrées
+- Voir aussi <https://explainshell.com/> et <https://www.shell.how/> pour expliquer les commandes shell entrées
 - Voir aussi <http://samrowe.com/wordpress/advancing-in-the-bash-shell/>
 - Voir aussi <https://github.com/donnemartin/awesome-aws> pour AWS
 - MiniVim <https://github.com/sd65/MiniVim>
