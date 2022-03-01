@@ -22,7 +22,7 @@ Fichier d'extensions `extensions.json` à placer à la racine du projet au sein 
     "stylelint.vscode-stylelint",
     "DavidAnson.vscode-markdownlint",
     "mrmlnc.vscode-scss",
-    "octref.vetur",
+    "johnsoncodehk.volar",
     "mikestead.dotenv",
     "bradlc.vscode-tailwindcss",
     "wayou.vscode-todo-highlight"
@@ -78,14 +78,6 @@ La configuration de Editorconfig se fait via un fichier `.editorconfig` à la ra
 
 ESLint est un analyseur de code pour identifier les problématiques du code JavaScript (Vue, React, etc.) et les résoudre automatiquement. ESlint est configuré via un fichier `.eslintrc.js`.
 
-Il est étendu aux fichiers HTML à l'aide d'un plugin installé via `npm install eslint-plugin-html --save-dev` et ajouté dans le fichier de configuration ESlint ainsi :
-
-```yaml
-"plugins": [
-  "html"
-],
-```
-
 Via le plugin eslint-plugin-vue on applique [les groupes de règles](https://eslint.vuejs.org/rules/) dans le fichier `.eslintrc.js` avec le tableau extends : *Priority A: Essential (plugin:vue/essential)*, *Priority B: Strongly Recommended (plugin:vue/strongly-recommended)*, *Eslint recommended : eslint:recommended*. Pour Nuxt : *plugin:nuxt/recommended*.
 
 Modification de *Priority B* : on veut des `v-on:click` plutôt que `@click` : `'vue/v-on-style': ['warn', 'longform'],`. On peut aussi vouloir harmoniser l'ordre des déclarations dans les composants avec `'vue/order-in-components': 'warn'`.
@@ -115,9 +107,9 @@ Prettier est un formateur de syntaxe permettant d'assurer une consistance tout a
 
 Markdownlint est un linter pour langage Markdown et prend en compte toutes les règles à appliquer sur les fichiers `.md` notamment les fichiers `readme.md` présents dans chaque projet.
 
-### Vetur
+### Volar
 
-Ensemble d'outils Vue pour VSCode (coloration, linter). Vetur nécessite un fichier `jsconfig.json` dont voici un exemple :
+Ensemble d'outils Vue pour VSCode (coloration, linter). Volar nécessite un fichier `jsconfig.json` ou `tsconfig.json` (normalement générés par défaut) dont voici un exemple :
 
 ```yaml
 {
@@ -182,41 +174,26 @@ const config = {
 
 ### Installation de Vue
 
-L'installation d’un nouveau projet se fait à l’aide de [vue cli](https://cli.vuejs.org/) : `npm install -g @vue/cli`, voir aussi <https://cli.vuejs.org/guide/creating-a-project.html>
+L'installation d’un nouveau projet se fait à l’aide de [Vite](https://vitejs.dev/).
 
-- Par interface graphique : `vue ui`
-- Par ligne de commande `vue create <projet>`
+- Par ligne de commande `npm create vite@latest`
 
 Options recommandées :
 
-- Manually select features
-- ESLint (sans Prettier)
-- Lint on save
-- Config in dedicated config files
+- vue
+- vue ou vue-ts
 
-On développe avec `npm run serve`, on compile avec `npm run build`
+On développe avec `npm run dev`, on compile avec `npm run build` 
+
+**Template déjà prêt**: <https://github.com/antfu/vitesse>
 
 ### Installation de Nuxt
 
-Doc : <https://nuxtjs.org/docs/2.x/get-started/installation>
+Doc : <https://v3.nuxtjs.org/getting-started/installation>
 
 ```yaml
-npm init nuxt-app
+npx nuxi init nuxt3-app
 ```
-
-Réponses recommandées aux questions :
-
-- Programming language: JavaScript
-- Package manager: Npm
-- UI framework: au choix ou None si on ajoute Tailwind autrement
-- Modules: Axios si usage d'API
-- Linting tools : EsLint (PAS Prettier) + Stylelint
-- Testing: None ou selon projet
-- Rendering mode: SSR/SSG
-- Deployment target: selon projet
-- Development tools : jsconfig.json
-- Continuous integration: None
-- Version control system: Git
 
 ### Tailwind
 
@@ -226,23 +203,28 @@ On utilise la méthode officielle proposée par Tailwind <https://tailwindcss.co
 
 Les dépendances fortement recommandées sont :
 
-- [vuex](https://vuex.vuejs.org/) (store)
+- [vuex](https://vuex.vuejs.org/) (store) ⚠️ Uniquement si @^5.x
+- [pinia](https://pinia.vuejs.org/) (store) ⚠️ Si Vuex n'est pas en @5.x
 - [vue-router](https://router.vuejs.org/) (routage)
 - [vue-i18n](https://kazupon.github.io/vue-i18n/) (traduction) et [vue-i18n-loader](https://www.npmjs.com/package/@intlify/vue-i18n-loader)
-- [axios](https://fr.vuejs.org/v2/cookbook/using-axios-to-consume-apis.html) s'il y a usage d'une API
+- [axios](https://www.npmjs.com/package/axios) s'il y a usage d'une API
 
-Les dépendances de développement recommandées sont : eslint, eslint-plugin-vue, sass, autoprefixer, babel.
+Les dépendances de développement recommandées sont : eslint, eslint-plugin-vue, sass, autoprefixer.
 
 👉 Avant l'ajout d’une dépendance au projet (`npm install`) vérifier le poids avec <https://bundlephobia.com/>.
 
 Autres dépendances utiles :
+
+⚠️ Vérifier compatibilité avec Vue 3
 
 - [vue-the-mask](https://vuejs-tips.github.io/vue-the-mask/) : masques de saisie (téléphone, date, code postal, carte bancaire...).
 - [vee-validate](https://logaretm.github.io/vee-validate/overview.html) : validation de formulaires.
 - [v-calendar](https://vcalendar.io/) : calendrier, datepicker.
 - [vue-gtag](https://github.com/MatteoGabriele/vue-gtag) : G. Analytics.
 - [date-fns](https://date-fns.org/) : Dates.
-- [vue-meta](https://vue-meta.nuxtjs.org/) : Balises meta, SEO.
+- [day.js](https://day.js.org/) : Dates
+- [vueuse/head](https://github.com/vueuse/head : Balises meta, SEO.
+- [vueuse](https://vueuse.org/): Utilités composition API (debounce, click-outside, etc.)
 - [vue-toasted](https://github.com/shakee93/vue-toasted) : Notifications/toasts.
 - [vue-infinite-loading](https://peachscript.github.io/vue-infinite-loading/) : Infinite loading.
 - [vue-svg-loader](https://vue-svg-loader.js.org/) : Icônes SVG + composant maison permettant de compiler/inline tous les fichiers SVG avec `<icon i="nomdelicone">` + `fill="currentColor"` dans le .svg ; pour créer un sprite à base de `<symbol>` : nuxt-svg-sprite-module (qui sans surprise reprend svg-sprite-module).
@@ -255,11 +237,11 @@ Autres dépendances utiles :
 
 ### Template
 
-- Les directives `v-if`, `v-for` et `v-show` sont sur la même ligne que la déclaration du composant. De cette manière, on peut identifier en un coup d’œil ces conditions importantes, même si le bloc de code est compacté dans l'éditeur. Le reste des attributs HTML et directives Vue vont en dessous, à la ligne. Règle eslint : `vue/max-attributes-per-line`.
+- Les directives `v-if`, `v-for` et `v-show` sont les premières directives dans la déclaration du composant
 - La directive `v-for` est toujours complétée par `:key` pour les itérations. `:key` peut être utilisée pour [forcer le rafraîchissement d’un composant](https://michaelnthiessen.com/force-re-render/).
 - On espace les expressions entre moustaches `{{ variable }}`.
 - On écrit les composants en `<PascalCase>`.
-- On n'utilise pas les attributs `id` car ils peuvent se retrouver dupliqués dans la page si un composant est utilisé plusieurs fois. Si besoin : `:id="'truc'+_uid"` car `_uid` est un identifiant unique généré pour chaque composant chargé.
+- On n'utilise pas les attributs `id` car ils peuvent se retrouver dupliqués dans la page si un composant est utilisé plusieurs fois. Si besoin, il faudra générer un id unique avec [uuid](https://www.npmjs.com/package/uuid) par exemple.
 - On utilise un élément `button` ou `input type="button"` plutôt qu'un lien pour des actions ne changeant pas de page.
 - Pour l'ajout d'événements, on utilise `v-on:click="action"` au lieu de `@click="action"` pour rechercher plus facilement les événements de manière globale dans le code source du projet. La méthode est appelée sans parenthèses s'il n'y a pas de paramètre à lui passer. [Pourquoi ?](https://stackoverflow.com/questions/50635404/parentheses-while-calling-a-method-in-vue).
 
@@ -272,22 +254,17 @@ Toutes les props ont une valeur par défaut. Les variables d'état sont préfix�
 On réunit les variables liées (v-model) à des champs de formulaires dans un objet unique, cela permet de les nommer/regrouper proprement et d'envoyer cet objet complet à l'API directement. Par exemple
 
 ```js
-data() {
-  return {
-    form: {
-      email : '',
-      productQty: 0
-    }
-    autreData: ''
-  }
-}
+const form = reactive({
+  email : '',
+  productQty: 0
+})
 ```
 
-Lors d'un développement avec données partielles/de remplissage, on peut préfixer les données temporaires par `TEMP`, `TODO`, etc, ou les charger depuis un fichier externe pour éviter la surcharge du composant `require('demodata.js')`.
+Lors d'un développement avec données partielles/de remplissage, on peut préfixer les données temporaires par `TEMP`, `TODO`, etc, ou les charger depuis un fichier externe pour éviter la surcharge du composant `import('demodata.js')`.
 
 ### Computed
 
-On favorise au maximum les propriétés calculées pour des raisons de performance/cache/concision, calcul automatique sans avoir besoin de déclencher une fonction. Voir <https://vuejs.org/v2/guide/computed.html>
+On favorise au maximum les propriétés calculées pour des raisons de performance/cache/concision, calcul automatique sans avoir besoin de déclencher une fonction. Voir <https://vuejs.org/guide/essentials/computed.html#computed-properties>
 
 ### Methods
 
@@ -295,17 +272,13 @@ On privilégie un nommage bien parlant. Les méthodes sont appelées sans parent
 
 ### Events
 
-Voir <https://vuejs.org/v2/guide/components-events.html>
+Voir <https://vuejs.org/guide/essentials/event-handling.html#event-handling>
 
-Pour *debounce* des événements (limiter leur nombre d'appels toutes les *n* millisecondes) voir <https://dmitripavlutin.com/vue-debounce-throttle/>
+Pour *debounce* des événements (limiter leur nombre d'appels toutes les *n* millisecondes) voir <https://www.npmjs.com/package/lodash.debounce>
 
-### Hooks
+### Composables
 
-Pour le chargement de données (depuis une API), on utilise le hook `created` et non pas `mounted`.
-
-### Mixins
-
-On privilégie l’écriture de [Mixins](https://fr.vuejs.org/v2/guide/mixins.html) pour éviter la répétition dans plusieurs composants.
+On privilégie l’écriture de [Composables](https://v3.nuxtjs.org/docs/directory-structure/composables#composables-directory) pour éviter la répétition dans plusieurs composants.
 
 ### Composants globaux
 
@@ -334,13 +307,13 @@ Vue.component('alert', Alert)
 
 ## Routage
 
-On utilise le paramètre :to ainsi qu'une route nommée. Ainsi, un retour à la page d'accueil se fait avec `:to="{ name: 'accueil' }"`
+On utilise le paramètre `:to` ainsi qu'une route nommée. Ainsi, un retour à la page d'accueil se fait avec `:to="{ name: 'accueil' }"`
 
 En cas de redirection à faire dans une fonction, on utilise router.push avec une route nommée, par exemple `router.push({ name: 'accueil' })` pour retourner à l'accueil.
 
 ## Store
 
-Le store Vuex est toujours découpé en modules par type d'usage (ce qui permet de nommer également les mutations par module).
+Le store Vuex / Pinia est toujours découpé en modules par type d'usage (ce qui permet de nommer également les mutations par module).
 
 Nommage de clés :
 
@@ -371,13 +344,9 @@ async function getData() {
 }
 ```
 
-### API en tant que plugin injecté
-
-Dans `nuxt.config.js` on déclare un plugin `{ src: '~/plugins/api' },` et on utilise [Afficher/télécharger un exemple de fichier `api.js`](assets/vue-nuxt-front-end/api.js) qui permet la syntaxe `this.$api` dans les composants et dans le Store.
-
 ## Internationalisation (i18n)
 
-Usage de <https://nuxt-community.github.io/nuxt-i18n/> avec fichiers de configuration des langues (par exemple `i18n/fr-FR.js` et `i18n/en-US.js`) organisant les chaînes par une structure objet. On privilégie les regroupements par fonctionnalité (ex : formulaires, boutons, actions utilisateur communes), puis par nom de composant s'ils sont plus spécifiques.
+Usage de <https://github.com/intlify/vue-i18n-next> avec fichiers de configuration des langues (par exemple `i18n/fr-FR.js` et `i18n/en-US.js`) organisant les chaînes par une structure objet. On privilégie les regroupements par fonctionnalité (ex : formulaires, boutons, actions utilisateur communes), puis par nom de composant s'ils sont plus spécifiques.
 
 - En tant que texte brut dans un balisage HTML : `<legend>{{ $t('identSignin.createAccount') }}</legend>`
 - En tant que valeur de prop/attribut : `:placeholder="$t('formInput.lastname')"`
@@ -500,52 +469,51 @@ const routes = [
 
 - Lazy-loading import à l’interaction : on utilise <https://calendar.perfplanet.com/2020/optimizing-performance-with-the-import-on-interaction-pattern/>
 
-```html
+```vue
+<script>
+defineComponent({
+  name: 'xxx',
+  components: {
+    LeComposant: () => import('~/components/component.vue')
+  }
+})
+
+const activated = ref(false)
+</script>
+
 <template>
   <header>
     <LeComposant v-if="activated" />
   </header>
 </template>
-<script>
-export default {
-  components: {
-    LeComposant: () => import('~/components/component.vue')
-  },
-  data() {
-    return {
-      activated: false
-    }
-  }
-}
-</script>
 ```
 
 ## Modales
 
-TODO: Composant-type avec slot, overlay, ouverture/fermeture, piloté par l'intermédiaire du store.
+Gestion des modales avec [Teleport](https://vuejs.org/guide/built-ins/teleport.html#teleport)
 
-```html
-<modal
-  name="burger"
-  variant="modal-simple modal-xxx"
-  classname="modal-burger"
-  title="Menu"
+```vue
+<Teleport to="body">
+  <modal v-if="isOpened"
+    name="burger"
+    variant="modal-simple modal-xxx"
+    classname="modal-burger"
+    title="Menu"
   >
-  <p>Le contenu de la modale, ou un autre composant :</p>
-  <modal-burger></modal-burger>
-</modal>
+    <p>Le contenu de la modale, ou un autre composant :</p>
+    <modal-burger></modal-burger>
+  </modal>
+</Teleport>
 ```
-
-Ouvrir une modale : `this.$store.commit('modals/open', { name: 'burger' })`. Émettre un événement depuis une modale (dans un slot) : `$parent.$emit('blabla')`.
 
 ## Nuxt
 
 ### Pratiques permises par Nuxt
 
-- Routage automatique (fichiers placés dans `pages/`) <https://nuxtjs.org/docs/2.x/get-started/routing>
-- Layouts (dossier `layouts/`) <https://nuxtjs.org/docs/2.x/directory-structure/layouts>
+- Routage automatique (fichiers placés dans `pages/`) <https://v3.nuxtjs.org/docs/directory-structure/pages>
+- Layouts (dossier `layouts/`) <https://v3.nuxtjs.org/docs/directory-structure/layouts>
 - Gestion des erreurs avec `error.vue` <https://nuxtjs.org/docs/2.x/concepts/views#error-page>
-- Auto-import des composants <https://fr.nuxtjs.org/docs/2.x/configuration-glossary/configuration-components>
+- Auto-import des composants <https://v3.nuxtjs.org/concepts/auto-imports#auto-imports>
 - Transitions full-page
 
 Exécution du code en front ou en back (SSR) : vérifier `process.client` ou `process.server`
@@ -556,16 +524,11 @@ Dans la liste des plugins de `nuxt.config.js` on distingue ceux destinés au cô
 
 ```js
 plugins: [
-  {src: '~/plugins/vue-scrollto', mode: 'client'},
-  {src: '~/plugins/something', mode: 'server'},
-  {src: '~/plugins/axios'},
+  { src: '~/plugins/vue-scrollto', mode: 'client' },
+  { src: '~/plugins/something', mode: 'server' },
+  { src: '~/plugins/axios' },
 ]
 ```
-
-### Hooks Nuxt
-
-- asyncdata
-- fetch
 
 ### Extensions
 
@@ -576,10 +539,10 @@ plugins: [
 On ajoute par exemple `{ src: '~/plugins/init', mode: 'client' },` aux plugins de `nuxt.config.js` (attention à l’ordre de chargement dans nuxt.config), avec cet exemple d'usage :
 
 ```js
-export default function({ store, app: { $axios, $api } }) {
+export default function({ store }) {
   // Si la session n'est pas établie...
   if (!store.getters['session/isLogged']) {
-    store.dispatch('session/loadGetconnectedUser')
+    store.dispatch('session/getConnectedUser')
   }
 }
 ```
@@ -594,6 +557,8 @@ Suivre les indications de <https://nuxtjs.org/deployments/amazon-web-services> e
 
 ### Générer une instance de composant et l'attacher dans le DOM
 
+⚠️ Ce fonctionnement n'est pas forcément le même dans Vue 3
+
 ```js
 import TheComponent from '~/components/TheComponent.vue'
 
@@ -604,6 +569,7 @@ const props = {
     prop1: 'value1',
     prop2: 'value2'
 }
+
 // On génère une instance de composant à la volée avec les props correspondantes
 const Duplicate = Vue.extend(TheComponent)
 const Component = new Duplicate({
@@ -611,6 +577,7 @@ const Component = new Duplicate({
     store: this.$store,
     // i18n: this.$i18n (s'il y a i18n)
 })
+
 // On l'insère dans le DOM
 const mp = document.querySelector('#mount-point')
 Component.$mount(mp)
