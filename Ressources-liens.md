@@ -280,6 +280,7 @@ Autres listes de ressources et checklists
 
 - Scripts divers
 
+  - <https://github.com/kochrt/cascade.page> Générer une timeline
   - <https://github.com/jekuer/add-to-calendar-button> Bouton d'ajout au calendrier
   - <https://orejime.empreintedigitale.fr/> bannière cookies accessible
   - <https://plainjs.com/> Sélection de scripts et plugins sans framework (Vanilla)
