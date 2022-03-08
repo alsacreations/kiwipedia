@@ -407,6 +407,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://www.invisionapp.com/>
 - <http://www.bounceapp.com/>
 - <https://redpen.io/>
+- <https://uigenerator.org/> Générer des mockups PNG d'interfaces (desktop/mobile)
 
 ### Ardoises en ligne
 
