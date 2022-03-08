@@ -1057,6 +1057,12 @@ Supprimer fichiers de plus de 90 jours dans le répertoire courant, en excluant 
 find . ! -name "*.html" -mtime +90 -exec rm {} \;
 ```
 
+Trouver les fichiers modifiés depuis 5 jours
+
+```sh
+find . -type f -mtime -5
+```
+
 Effacer fichiers contenant XYZ
 
 ```sh
