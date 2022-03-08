@@ -290,7 +290,7 @@ On peut utiliser la fonction `glob("*.js")` pour deviner automatiquement les fic
 
 À noter qu’une fonction `get_hashed_file` (dans notre plugin) est utilisée pour appeler les fichiers. Cette fonction permet de cibler les fichiers Vue, à l’aide d’une regex, car les noms des fichiers sont renommés à chaque compilation. Le nommage se fait systématiquement sous la forme suivante : `nomFichier.hash.js`
 
-TODO: déterminer une méthode pour charger les fichiers .css pour accéder aux styles WordPress (et au hot-reload).
+⚠ TODO: déterminer une méthode pour charger les fichiers .css pour accéder aux styles WordPress (et au hot-reload).
 
 ### Création du shortcode
 
