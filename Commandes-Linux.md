@@ -574,7 +574,7 @@ Infos de montages actives
 Devices de bloc (disques durs) et leurs points de montage
 `lsblk`
 
-Types de systèmes de fichiers
+Avec arborescence et types de systèmes de fichiers
 `lsblk -f`
 
 Tous les UUID
