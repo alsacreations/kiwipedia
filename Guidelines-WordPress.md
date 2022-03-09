@@ -280,6 +280,8 @@ Modèles d’extension à utiliser
 
 ## Sécurité
 
+- Utiliser notre plugin **[Kiwiplate Setup Theme](assets/wordpress/kiwiplate_setup_theme.php)**, et/ou mettre en place les actions suivantes (extensions + snippets de code).
+
 - [Disable emojis](https://fr.wordpress.org/plugins/disable-emojis/) : désactiver les appels de scripts externes vers WordPress (RGPD).
 - [Disable comments](https://wordpress.org/plugins/disable-comments/) : désactiver les commentaires sur les articles/pages/médias, au choix (très propre).
 - [User Name Security](https://wordpress.org/plugins/user-name-security/) supprime les mentions de l’utilisateur (id et username) dans `body_class()`, entre autres choses.
