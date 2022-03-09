@@ -303,6 +303,10 @@ function alsa_remove_generators() {
     // Display the XHTML generator that is generated on the wp_head hook, WP ver
     remove_action( 'wp_head', 'wp_generator' );
     remove_action( 'wp_head', 'wp_shortlink_wp_head' );
+    // Disable XML RPC
+    add_filter('xmlrpc_enabled', '__return_false');
+    // Removes REST API link tag from header
+    remove_action('wp_head', 'rest_output_link_wp_head', 10);
 }
 add_action( 'init', 'alsa_remove_generators' );
 ```
@@ -314,7 +318,7 @@ add_action( 'init', 'alsa_remove_generators' );
 - Surveiller si le thème / les extensions utilisées font l’objet d’une faille sur [wpscan](https://wpscan.com/)
 - Ajouter le script pour enlever l'avertissement à la connexion qui permet d’indiquer que l’identifiant est le bon mais pas le mot de passe.
 
-Bloquer xmlrpc (.htaccess)
+Bloquer xmlrpc (version .htaccess)
 
 ```htaccess
 <Files xmlrpc.php>
@@ -322,6 +326,33 @@ order deny,allow
 deny from all
 # allow from 123.123.123.123 (si IP identifiée)
 </Files>
+```
+
+Supprimer les infos utilisateur leakées par l'API REST
+
+```php
+/**
+ * kiwi_remove_rest_endpoints
+ * Disable default users API endpoints for security.
+ * https://www.wp-tweaks.com/hackers-can-find-your-wordpress-username/
+ * 
+ * @param  mixed $endpoints
+ * @return void
+ */
+public function kiwi_remove_rest_endpoints($endpoints)
+{
+  if (!is_user_logged_in()) {
+    if (isset($endpoints['/wp/v2/users'])) {
+     unset($endpoints['/wp/v2/users']);
+    }
+
+    if (isset($endpoints['/wp/v2/users/(?P<id>[\d]+)'])) {
+      unset($endpoints['/wp/v2/users/(?P<id>[\d]+)']);
+     }
+   }
+   return $endpoints;
+}
+add_filter('rest_endpoints', [$this, 'kiwi_remove_rest_endpoints']);
 ```
 
 ### Extensions de sécurité
