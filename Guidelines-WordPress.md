@@ -46,9 +46,8 @@ On ne versionne **pas** :
 
 ### Sécurité, utilisateurs
 
-- 👉 Supprimer l’utilisateur admin et l’utilisateur avec l’ID 1. Créer un utilisateur de niveau administrateur avec identifiant spécifique différent de “admin”.
-- Créer un ou plusieurs utilisateurs de niveau éditeur pour les intervenants (doit être différent du nom de domaine pour des raisons de sécurité), ayant accès juste aux fonctionnalités utiles.
-- Ajouter le script pour enlever le warning à la connexion qui permet d’indiquer que l’identifiant est le bon mais pas le mot de passe.
+- 👉 Supprimer l’utilisateur **admin** et l’utilisateur avec l’ID 1. Créer un utilisateur de niveau administrateur avec identifiant spécifique différent de “admin”.
+- Créer un ou plusieurs utilisateurs de niveau **éditeur** pour les intervenants (doit être différent du nom de domaine pour des raisons de sécurité), ayant accès juste aux fonctionnalités utiles.
 
 ## Thème
 
@@ -308,13 +307,12 @@ function alsa_remove_generators() {
 add_action( 'init', 'alsa_remove_generators' );
 ```
 
-- Compléter le fichier wp-config.php avec les valeurs de <https://wordplate.github.io/salt/>
-- Surveiller si le thème / les extensions utilisées font l’objet d’une faille sur [wpscan](https://wpscan.com/)
-- Toujours utiliser [les nonces](https://css-tricks.com/wordpress-front-end-security-csrf-and-nonces/) pour éviter les CSRF, s’il faut développer des modules admin et/ou pour les utilisateurs identifiés sur le site.
+- Créer un ou plusieurs utilisateurs de niveau éditeur pour les intervenants (doit être différent du nom de domaine pour des raisons de sécurité), ayant accès juste aux fonctionnalités utiles, **ne pas utiliser de compte admin** par défaut pour toutes les personnes car cela permet l'installation d'extensions.
+- Compléter le fichier `wp-config.php` avec les valeurs de <https://wordplate.github.io/salt/>
+- Toujours utiliser [les nonces](https://css-tricks.com/wordpress-front-end-security-csrf-and-nonces/) pour éviter les [CSRF](https://fr.wikipedia.org/wiki/Cross-site_request_forgery), s’il faut développer des modules admin et/ou pour les utilisateurs identifiés sur le site.
 - Désactiver l’édition du thème et des plugins en ligne dans wp-config.php `define('DISALLOW_FILE_EDIT', true);`
-- [SF Author URL control](https://wordpress.org/plugins/sf-author-url-control/) personnalise le “author” et le slug utilisateur pour sécuriser et personnaliser les URL des pages auteur.
-- [User Name Security](https://wordpress.org/plugins/user-name-security/) supprime les mentions de l’utilisateur (id et username) dans `body_class()`, entre autres choses.
-- [disable-emojis](https://geek.hellyer.kiwi/plugins/disable-emojis/) pour désactiver les appels de scripts externes vers WordPress.
+- Surveiller si le thème / les extensions utilisées font l’objet d’une faille sur [wpscan](https://wpscan.com/)
+- Ajouter le script pour enlever l'avertissement à la connexion qui permet d’indiquer que l’identifiant est le bon mais pas le mot de passe.
 
 Bloquer xmlrpc (.htaccess)
 
@@ -325,6 +323,13 @@ deny from all
 # allow from 123.123.123.123 (si IP identifiée)
 </Files>
 ```
+
+### Extensions de sécurité
+
+- [SF Author URL control](https://wordpress.org/plugins/sf-author-url-control/) personnalise le “author” et le slug utilisateur pour sécuriser et personnaliser les URL des pages auteur.
+- [User Name Security](https://wordpress.org/plugins/user-name-security/) supprime les mentions de l’utilisateur (id et username) dans `body_class()`, entre autres choses.
+- [disable-emojis](https://geek.hellyer.kiwi/plugins/disable-emojis/) pour désactiver les appels de scripts externes vers WordPress.
+- SecuPress ?
 
 ## Développement
 
