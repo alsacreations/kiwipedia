@@ -246,7 +246,8 @@ Modèles d’extension à utiliser
 
 ### Recommandées selon usage
 
-- [Disable comments](http://wordpress.org/extend/plugins/disable-comments/) : désactiver les commentaires sur les articles/pages/médias, au choix (très propre).
+- [Disable emojis](https://fr.wordpress.org/plugins/disable-emojis/) : désactiver les appels de scripts externes vers WordPress (RGPD).
+- [Disable comments](https://wordpress.org/plugins/disable-comments/) : désactiver les commentaires sur les articles/pages/médias, au choix (très propre).
 - [ACF](https://www.advancedcustomfields.com/) : ajouter des champs riches aux posts / pages / Custom posts.
 - [Duplicate Post](https://wordpress.org/plugins/duplicate-post/) : créer du contenu rapidement en dupliquant d'un simple clic un article, une page, ou un custom post.
 - [W3-total-cache](https://wordpress.org/plugins/w3-total-cache/) : cache de contenu pour améliorer les temps de réponse.
@@ -278,6 +279,12 @@ Modèles d’extension à utiliser
 - [Tickera](https://tickera.com/) Vente de billets, compatible avec WooCommerce.
 
 ## Sécurité
+
+- [Disable emojis](https://fr.wordpress.org/plugins/disable-emojis/) : désactiver les appels de scripts externes vers WordPress (RGPD).
+- [Disable comments](https://wordpress.org/plugins/disable-comments/) : désactiver les commentaires sur les articles/pages/médias, au choix (très propre).
+- [User Name Security](https://wordpress.org/plugins/user-name-security/) supprime les mentions de l’utilisateur (id et username) dans `body_class()`, entre autres choses.
+- [SF Author URL control](https://wordpress.org/plugins/sf-author-url-control/) personnalise le “author” et le slug utilisateur pour sécuriser et personnaliser les URL des pages auteur.
+- SecuPress ?
 
 Masquer la version de WordPress (balise meta generator qui apparaît en front) à ajouter dans functions.php :
 
@@ -354,13 +361,6 @@ public function kiwi_remove_rest_endpoints($endpoints)
 }
 add_filter('rest_endpoints', [$this, 'kiwi_remove_rest_endpoints']);
 ```
-
-### Extensions de sécurité
-
-- [SF Author URL control](https://wordpress.org/plugins/sf-author-url-control/) personnalise le “author” et le slug utilisateur pour sécuriser et personnaliser les URL des pages auteur.
-- [User Name Security](https://wordpress.org/plugins/user-name-security/) supprime les mentions de l’utilisateur (id et username) dans `body_class()`, entre autres choses.
-- [disable-emojis](https://geek.hellyer.kiwi/plugins/disable-emojis/) pour désactiver les appels de scripts externes vers WordPress.
-- SecuPress ?
 
 ## Développement
 
