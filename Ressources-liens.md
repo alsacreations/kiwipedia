@@ -815,3 +815,9 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://ionicframework.com/>
 - <https://www.appgyver.com/> (steroids.js)
 - <https://developer.amazon.com/sdk/webapps.html> Amazon Web Apps
+
+---
+
+## Réseaux sociaux
+
+- <https://github.com/bradvin/social-share-urls> Liens de partage vers les différents réseaux sociaux
