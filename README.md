@@ -1,11 +1,10 @@
 # Guidelines Alsacréations 🥝
 
-Cette présente charte a pour objectif :
+Les lignes directives ont pour objectif partagé :
 
-- d'uniformiser et d’harmoniser les processus de conception au sein de l'agence web [Alsacreations.fr](https://www.alsacreations.fr/)
-- de faciliter la production et la maintenance des projets web
+- d'uniformiser et d’harmoniser les processus de conception de l’agence web [Alsacreations.fr](https://www.alsacreations.fr/)
 - de favoriser l’intervention de profils de compétences variés au sein d'une équipe
-- de disposer d’outils réutilisables
+- de faciliter la maintenance des projets
 
 💬 Le web est un métier de plus en plus vaste, comportant une foule de détails qui vont avoir un impact sur la qualité, l'ergonomie, la performance, le référencement (SEO), la maintenabilité et au final sur le succès auprès de l'utilisateur. Tous les critères ne seront pas toujours applicables et le seront bien souvent en fonction du temps alloué.
 
