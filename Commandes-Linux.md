@@ -553,8 +553,7 @@ Extraire un tar.gz
 Créer un tar.gz
 `tar -cvzf test.tar.gz <path>`
 
-Créer un tar.gz et déréférencer les symlinks
-`tar -cvzfh test.tar.gz <path>`
+Ajouter `h` pour déréférencer les symlinks et `--exclude-vcs` pour exclure les dossiers `.git`
 
 Toutes les commandes tar <https://tarcommands.com/>
 
