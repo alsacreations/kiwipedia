@@ -32,6 +32,8 @@ La méthodologie consiste à copier-coller ce fichier dans Gitlab pour chaque no
 | UI Kit (figma) | - |
 | Dossier Assets dans Drive | - |
 | URL de recette | - |
+| URL de préproduction | - |
+| URL de production | - |
 
 ## Détails du workflow technique
 
