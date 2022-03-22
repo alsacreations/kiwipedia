@@ -11,6 +11,7 @@ Les lignes directives ont pour objectif partagé :
 ## Guidelines transversales
 
 - [**Conventions Générales de Nommage**](Conventions-generales-nommage.md)
+- [**Guidelines Readme**](Guidelines-Readme.md)
 - [**Guidelines Visual Studio Code**](Guidelines-VScode.md)
 - [**Guidelines Accessibilité**](Guidelines-Accessibilite.md)
 - [**Guidelines HTML**](Guidelines-HTML.md)
