@@ -21,6 +21,7 @@ Les lignes directives ont pour objectif partagé :
 - [**Guidelines Webdesign**](Guidelines-Webdesign.md)
 - [**Guidelines E-mailing**](Guidelines-E-mailing.md)
 - [**Guidelines Docker**](Guidelines-Docker.md)
+- [**Guidelines Icones**](Guidelines-Icones.md)
 
 ## Selon typologie de projet
 
