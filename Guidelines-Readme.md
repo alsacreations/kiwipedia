@@ -8,6 +8,8 @@ La méthodologie consiste à copier-coller ce fichier dans Gitlab pour chaque no
 
 ## Présentation du projet
 
+| Tâche | Description |
+| --- | --- |
 | Deadline  | - |
 | Coordonnées des intervenants - rôle  | - |
 | Environnement  | - |
@@ -16,6 +18,8 @@ La méthodologie consiste à copier-coller ce fichier dans Gitlab pour chaque no
 
 ## Accès directs
 
+| Ressource | Description |
+| --- | --- |
 | Devis | - |
 | Clickup consultable | - |
 | Octopus | - |
@@ -31,6 +35,8 @@ La méthodologie consiste à copier-coller ce fichier dans Gitlab pour chaque no
 
 ## Détails du workflow technique
 
+| Workflow | Description |
+| --- | --- |
 | Installation | - |
 | Versions | - |
 | Mise en ligne | - |
