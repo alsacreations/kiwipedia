@@ -151,7 +151,7 @@ Voir aussi <https://developer.mozilla.org/fr/docs/Web/HTTP/Headers/Content-Secur
 Exemple **à adapter absolument**
 
 ```apache
-Header set Content-Security-Policy "default-src 'self' *.domaine.net *.domaine.test *.gstatic.com *.googleapis.com *.bootstrapcdn.com; style-src 'self' fonts.googleapis.com *.domaine.net *.domaine.test *.bootstrapcdn.com 'unsafe-inline'; img-src * data:"
+Header set Content-Security-Policy "default-src 'self' *.example.org *.gstatic.com *.googleapis.com; script-src 'self' 'unsafe-inline'; style-src 'self' fonts.googleapis.com *.example.org 'unsafe-inline'; font-src 'self' *.googleapis.com *.gstatic.com data:; img-src * data:"; base-uri 'self'; form-action 'self; frame-ancestors 'none'
 ```
 
 * `default-src` est la règle s'appliquant par défaut si rien n'est spécifié pour `style-src`, `script-src`, `font-src`, `media-src`...
