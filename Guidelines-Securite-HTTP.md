@@ -88,6 +88,21 @@ Header set Referrer-Policy "strict-origin-when-cross-origin"
 
 Voir aussi <https://developer.mozilla.org/fr/docs/Web/HTTP/Headers/Referrer-Policy>
 
+## Permissions Policy
+
+Remplace _Feature-Policy_, débloque/bloque les API avancées telles que la géolocalisation, le plein écran, le microphone, d'après une [liste de clés](https://github.com/w3c/webappsec-permissions-policy/blob/main/features.md) et de valeurs parmi :
+
+* `*` : autorisation quelle que soit l'origine
+* `self` : autorisation depuis la même origine
+* `src` : définit une source précise
+* `()` : interdit la fonctionnalité
+
+```apache
+Header set Permissions-Policy "geolocation=(self), fullscreen=(self), autoplay=(self), display-capture=(self), accelerometer=(), battery=(), camera=()"
+```
+
+Voir aussi <https://www.w3.org/TR/permissions-policy-1/> et <https://github.com/w3c/webappsec-permissions-policy/blob/main/permissions-policy-explainer.md>
+
 ## Cookies
 
 Modifie la façon dont les cookies sont créés par le serveur via les en-têtes HTTP en ajoutant ces indications :
