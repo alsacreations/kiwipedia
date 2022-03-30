@@ -9,6 +9,7 @@ Outils de test :
 * <https://www.serpworx.com/check-security-headers/>
 * <https://www.immuniweb.com/websec/>
 * <https://csp-evaluator.withgoogle.com/>
+* SSL : <https://www.ssllabs.com/ssltest/analyze.html>
 
 Ressources :
 
