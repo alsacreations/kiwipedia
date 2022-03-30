@@ -273,6 +273,12 @@ Les valeurs prévues dans notre mixin sont (privilégier les premières, respect
 - `'large'` : correspond à `(max-width: $large - 1)`
 - `'extra-large'` : correspond à `(max-width: $extra-large - 1)`
 
+## Media print (impression)
+
+La feuille de styles dédiée à l'impression aide aussi à l'export PDF dans le navigateur. La plupart du temps il s'agira en priorité de masquer les éléments inutiles dans un document statique ou papier (ex : navigation) et de retirer les décorations superflues.
+
+- [https://www.alsacreations.com/tuto/lire/586-feuille-style-css-print-impression.html](Faire une feuille de style CSS print pour l'impression)
+
 ## Médias (polices, images)
 
 ### Polices
