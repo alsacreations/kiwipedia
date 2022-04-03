@@ -12,7 +12,7 @@ Rechercher rapidement dans les précédentes commandes : `Ctrl+R`
 
 ---
 
-## Root
+## Connexion et commandes root
 
 Console root permanente (à utiliser à vos risques et périls)
 `sudo -i`
@@ -32,17 +32,415 @@ Connaître la release Linux
 Consulter le log mémoire tampon du noyau
 `dmesg`
 
+Mettre fin à la session
+`exit`
+
+Arrêter la machine
+`shutdown`
+
 ---
 
 ## Chemins courants
 
-- `/var/log/` Logs généraux
-- `/var/log/syslog` Logs système
-- `/var/log/mail.log` Logs mail/postfix
-- `/var/log/apache2/` Logs Apache
-- `/var/www/` Hébergement http
-- `/var/vmail/` Hébergement mails
-- `/var/lib/mysql/` MySQL
+| Chemin | Description |
+| --- | --- |
+| `~` | dossier personnel |
+| `/` | racine du système de fichiers |
+| `/bin` | programmes |
+| `/boot` | bootloaders |
+| `/etc` | fichiers de configuration |
+| `/home` | utilisateurs |
+| `/lib` | librairies |
+| `/lib64` | librairies 64 bits |
+| `/lib/modules` | modules |
+| `/media` | médias |
+| `/mnt` | montages |
+| `/opt` | applications |
+| `/proc` | processus |
+| `/root` | dossier de l'utilisateur root |
+| `/run` | processus en cours d'exécution |
+| `/sbin` | programmes de base |
+| `/srv` | services |
+| `/tmp` | fichiers temporaires |
+| `/usr` | programmes utilisateurs |
+| `/var` | variables |
+| `/var/log/` | Logs généraux |
+| `/var/log/syslog` | Logs système |
+| `/var/log/mail.log` | Logs mail/postfix |
+| `/var/log/apache2/` | Logs Apache |
+| `/var/www/` | Hébergement http |
+| `/var/vmail/` | Hébergement mails |
+| `/var/lib/mysql/` | MySQL |
+
+---
+
+## Système de fichiers
+
+Afficher le dossier courant (*print working directory*)
+`pwd`
+
+Changer de dossier
+`cd un_sous_dossier` ou `cd /var/www`
+
+Remonter d'un niveau
+`cd ..`
+
+Revenir au précédent dossier
+`cd -`
+
+Revenir au dossier utilisateur
+`cd` ou `cd ~`
+
+Copier un fichier
+`cp lefichier.txt lacopie.txt` ou pour un dossier en mode récursif `cp -r ledossier/ lenouveau/`
+
+Déplacer un fichier
+`mv lefichier.txt /vers/le/dossier/` ou renommer `mv lefichier.txt lenouveau.txt`
+
+Supprimer un fichier
+`rm lefichier.txt` ou récursivement `rm -rf ledossier/`
+
+Supprimer un fichier et le rendre irrécupérable en écrasant son contenu par de l'aléatoire
+`shred -u lefichier.txt`
+
+Créer un dossier
+`mkdir ledossier`
+
+Modifier la date d'accès ou créer un fichier vide
+`touch index.html`
+
+Afficher le contenu d'un fichier
+`cat lefichier.txt`
+
+Lister les fichiers du dossier courant
+`ls`
+
+Lister les fichiers par dernière date de modification
+`ll -rt`
+
+Lister les fichiers par taille
+`ll -rSh`
+
+Lister par extension
+`ll -X`
+
+Récursif dans les dossiers
+`ll -R`
+
+Espace occupé par le dossier
+`du -skh`
+
+Espace occupé, groupé par dossiers
+`du -h --max-depth=1`
+
+Espace occupé, classé par taille
+`du -h --max-depth=1 | sort -h`
+
+Espace occupé en suivant les liens symboliques
+`du -skhL`
+
+Espace occupé par dossier, classé par taille (humaine)
+`du -skh * | sort -h`
+
+Supprimer un fichier
+`rm fichier1.txt`
+
+Supprimer un dossier (vide)
+`rmdir ledossier`
+
+Suppression récursive
+`rm -rf`
+
+Déplacer/renommer un fichier ou un dossier
+`mv fichier1.txt fichier2.txt` ou `mv fichier1.txt /tmp/fichier2.txt`
+
+Copier un fichier ou un dossier
+`cp fichier1.txt fichier2.txt` ou `cp -r dossier1 dossier2` (récursif)
+
+### Trouver un fichier
+
+À partir du dossier courant
+`find . -name index.html`
+
+Taille >50 Mo
+`find . -size +50M`
+
+Trouver les fichiers php contenant mysql_pconnect
+`find . -name "*.php" | xargs grep "mysql_connect"`
+
+Trouver des fichiers et les supprimer
+`find -name "arfarfarf.txt" -delete`
+
+Supprimer les fichiers vides
+`find -size 0 -print -exec rm {} \;`
+
+Supprimer les fichiers contenant une chaîne
+`grep -l "blablablabla" * | xargs rm`
+
+Supprimer les fichiers pollution macOS
+`find -name "._.DS_Store" -print -delete`
+
+Trouver tous les error.log et les classer par taille
+`find . -name "error.log" -exec ls -sh {} \; | sort -h`
+
+Supprimer tous les dossiers node_modules à partir du dossier courant
+`find . -name "node_modules" -type d -prune -exec rm -rf '{}' +`
+
+Que les fichiers (pas les dossiers)
+`find -type f`
+
+Les fichiers modifiés entre deux dates
+`find . -name "*.php" -type f -newermt 2021-02-24 ! -newermt 2021-02-25`
+
+Arborescence à 2 niveaux
+`tree -L 2`
+
+### Remplacer dans des fichiers
+
+Dans fichiers html remplacer DATA par DATA2
+`find . -name "*.html" | xargs sed -i 's/DATA/DATA2/g'`
+
+Pareil
+`sed -i "s/DATA/DATA2/g" **/*.html`
+
+Supprimer toutes les balises img
+`find . -name "*.html" | xargs sed -i 's/<img.*>//g'`
+
+Supprimer toutes les balises img contenant co.cc
+`find . -name "*.html" | xargs sed -i 's/<img heigth.*co\.cc.*>//g'`
+
+### Texte
+
+Trouver un fichier php contenant "virtual" à partir de .
+
+```sh
+grep "virtual" `find . -name "*.php"`
+```
+
+5 Lignes avant dans un fichier
+`grep "panic" /var/log/syslog -B5`
+
+Rechercher/remplacer dans fichiers multiples
+`sed -i "s/ChaineRecherchee/Remplacement/g" le_fichier`
+
+Extraire les lignes d'un fichier texte de 1337 à 2000
+`sed -n 1337,2000p fichier1.txt`
+
+### Info sur les fichiers
+
+Rechercher un fichier sur l'ensemble du filesystem
+`locate fichier1.txt`
+
+Rechercher les fichiers exécutables, les sources et les pages de manuel d'une commande
+`whereis fichier1.txt`
+
+Description d'une commande
+`apropos <commande>`
+
+Page de manuel
+`man <commande>`
+
+Afficher le contenu d'un fichier
+`cat fichier.txt`
+
+Compter le nombre de lignes d'un fichier
+`wc -l fichier.txt`
+
+Afficher le contenu inversé
+`rev fichier.txt`
+
+Editer un fichier avec vi ou avec nano
+`vi fichier.txt` ou `nano fichier.txt`
+
+Lire un fichier avec pagination (G = fin du fichier)
+`less fichier.txt`
+
+Début d'un fichier
+`head fichier.txt`
+
+Fin d'un fichier (-n 50 : 50 dernières lignes)
+`tail fichier.txt`
+
+Monitorer un fichier (lignes ajoutées) / Ctrl+C pour quitter
+`tail -f fichier.log`
+
+### Compression
+
+Lister les contenus d'un fichier zip
+`unzip -l <fichier.zip>`
+
+Compression du dossier www dans www.zip
+`gzip -rc www >www.zip`
+
+Déompression de www.zip
+`gunzip www.zip`
+
+Détarer une archive
+`tar -xvf backup_complet.tar`
+
+Détarer la suite...
+`tar -xvf backup_incr1.tar --listed-incremental=backup.incremental-list.txt`
+
+Extraire un tar.gz
+`tar -xvzf fichier.tar.gz`
+
+Créer une archive tar.gz à partir d'un dossier
+`tar -cvzf html.tar.gz /var/www/html`
+
+Ajouter `h` pour déréférencer les symlinks et `--exclude-vcs` pour exclure les dossiers `.git`
+
+Toutes les commandes tar <https://tarcommands.com/>
+
+---
+
+## Autres commandes de base utiles
+
+Créer un alias de commande
+`alias ll="ls -al"`
+
+Dernières commandes
+`history`
+
+Date du jour
+`date`
+
+Calendrier
+`cal`
+
+Rafraîchir une commande toutes les X secondes à l'écran (ex : cat)
+`watch <commande>`
+
+Uptime du serveur et charge
+`uptime`
+
+Dernières connexions
+`last`
+
+Variables d'environnement
+`env`
+
+Définir une variable d'environnement
+`export VARIABLE=valeur`
+
+Afficher une variable
+`echo $VARIABLE`
+
+---
+
+## Screen
+
+Exécuter des processus sans les fermer à la fin de la connexion SSH.
+
+Initialisation
+`screen`
+
+Liste des screens
+`screen -ls`
+
+Récupérer <id_optionnel>
+`screen -r`
+
+Se détacher du screen courant : combinaison de touches Ctrl + A + D.
+
+---
+
+## Utilisateurs
+
+Ajouter un utilisateur
+`useradd <login>`
+
+Attribuer un mot de passe
+`passwd <login>`
+
+Modification du shell (/bin/bash, /bin/false, /bin/nologin...)
+`usermod -s /usr/bin/passwd <login>`
+
+Désactivation du compte utilisateur
+`usermod -L -s /bin/nologin <login>`
+
+Supprimer un utilisateur
+`userdel <login>`
+
+Verrouiller le compte (permet à l'utilisateur de retrouver son mot de passe ensuite)
+`passwd -l <login>`
+
+Déverrouiller le compte
+`passwd -u <login>`
+
+Lister les groupes d'un user
+`groups <login>`
+
+Ajouter un groupe
+`groupadd <groupe>`
+
+Supprimer un groupe
+`groupdel <groupe>`
+
+Ajouter un utilisateur à un groupe
+`gpasswd -a <utilisateur> <groupe>`
+
+Supprimer un utilisateur d'un groupe
+`gpasswd -d <utilisateur> <groupe>`
+
+Redéfinir les groupes d'un user
+`usermod -G <group1,group2> <login>`
+
+---
+
+## Droits/permissions
+
+Changer propriétaire d'un fichier
+`chown <user>.<group> <file>`
+
+Changer droits d'un fichier
+`chmod 0<rwx> <file>`
+
+Voir <https://chmodcommand.com/> Chmod Calculator
+
+Changer les droits sur les sous dossiers
+`find <path> -type d -print0 | xargs -0 chmod <permissions>`
+
+Changer droits sur certains fichiers
+`find . -name "*.php" -print0 | xargs -0 chmod -x`
+
+Attribuer un groupe à un chemin (fichier, dossier)
+`chgrp <group> <path>`
+
+### Masques
+
+```txt
+    rwx
+0 : 000
+1 : 001
+2 : 010
+3 : 011
+4 : 100
+5 : 101
+6 : 110
+7 : 111
+```
+
+```txt
+  (User, Group, Other)
+      U   G   O
+764 = rwx rw- r--
+```
+
+---
+
+## Clés SSH
+
+Connaître la clé publique à partir d’une clé privée générée (dsa, rsa, etc) pour l’ajouter à authorized_keys
+`ssh-keygen -y`
+
+Générer une clé RSA 4096
+`ssh-keygen -b 4096 -t rsa`
+
+Générer une clé (<https://blog.g3rt.nl/upgrade-your-ssh-keys.html>)
+`ssh-keygen -o -a 100 -t ed25519`
+
+Lister les types de clés
+`for keyfile in ~/.ssh/my*; do ssh-keygen -l -f "${keyfile}"; done | uniq`
 
 ---
 
@@ -118,139 +516,6 @@ Reconfigurer le niveau de question
 
 `dpkg --get-selections`
 `dpkg --set-selections`
-
----
-
-### Base et navigation dans le système de fichiers
-
-Changer de répertoire
-`cd mondossier` ou `cd /var/www`
-
-Copier un fichier
-`cp lefichier.txt lacopie.txt` ou pour un dossier en mode récursif `cp -r ledossier/ lenouveau/`
-
-Déplacer un fichier
-`mv lefichier.txt /vers/le/dossier/` ou renommer `mv lefichier.txt lenouveau.txt`
-
-Supprimer un fichier
-`rm lefichier.txt` ou récursivement `rm -rf ledossier/`
-
-Supprimer un fichier et le rendre irrécupérable en écrasant son contenu par de l'aléatoire
-`shred -u lefichier.txt`
-
-Créer un dossier
-`mkdir ledossier`
-
-Modifier la date d'accès ou créer un fichier vide
-`touch index.html`
-
-Afficher le contenu d'un fichier
-`cat lefichier.txt`
-
-Mettre fin à la session
-`exit`
-
-Arrêter la machine
-`shutdown`
-
----
-
-### Autres commandes utiles
-
-Créer un alias de commande
-`alias ll="ls -al"`
-
-Dernières commandes
-`history`
-
-Date du jour
-`date`
-
-Calendrier
-`cal`
-
-Rafraîchir une commande toutes les X secondes à l'écran (ex : cat)
-`watch <commande>`
-
-Uptime du serveur et charge
-`uptime`
-
-Dernières connexions
-`last`
-
----
-
-## Utilisateurs
-
-Ajouter un utilisateur
-`useradd <login>`
-
-Attribuer un mot de passe
-`passwd <login>`
-
-Modification du shell (/bin/bash, /bin/false, /bin/nologin...)
-`usermod -s /usr/bin/passwd <login>`
-
-Désactivation du compte utilisateur
-`usermod -L -s /bin/nologin <login>`
-
-Supprimer un utilisateur
-`userdel <login>`
-
-Verrouiller le compte (permet à l'utilisateur de retrouver son mot de passe ensuite)
-`passwd -l <login>`
-
-Déverrouiller le compte
-`passwd -u <login>`
-
-Lister les groupes d'un user
-`groups <login>`
-
-Ajouter un groupe
-`groupadd <groupe>`
-
-Supprimer un groupe
-`groupdel <groupe>`
-
-Ajouter un utilisateur à un groupe
-`gpasswd -a <utilisateur> <groupe>`
-
-Supprimer un utilisateur d'un groupe
-`gpasswd -d <utilisateur> <groupe>`
-
-Redéfinir les groupes d'un user
-`usermod -G <group1,group2> <login>`
-
-Attribuer un groupe à un chemin (fichier, répertoire)
-`chgrp <group> <path>`
-
-### Samba (partage de fichiers)
-
-Ajouter un user samba (il faut avoir déjà créé un user linux)
-`smbpasswd -a <login>`
-
-Supprimer
-`smbpasswd -x <login>`
-
-Utilisateurs autorisés : dans `/etc/samba/smb.conf`
-`valid users <login1> <login2> @group1`
-
----
-
-## Clés
-
-Connaître la clé publique à partir d’une clé privée générée (dsa, rsa, etc) pour l’ajouter à authorized_keys
-`ssh-keygen -y`
-
-Générer une clé RSA 4096
-`ssh-keygen -b 4096 -t rsa`
-
-Générer une clé sécurisée (<https://blog.g3rt.nl/upgrade-your-ssh-keys.html>)
-(ne fonctionne pas avec Putty sous Windows)
-`ssh-keygen -o -a 100 -t ed25519`
-
-Lister les types de clés
-`for keyfile in ~/.ssh/my*; do ssh-keygen -l -f "${keyfile}"; done | uniq`
 
 ---
 
@@ -347,219 +612,15 @@ ps aux | awk '/gitlab/ { sum+=$4 } END { print sum }'
 
 ---
 
-## Screen
+## Disques, partitions
 
-Exécuter des processus sans les fermer à la fin de la connexion SSH
+Espace disque libre
+`df -h`
 
-Initialisation
-`screen`
-
-Liste des screens
-`screen -ls`
-
-Récupérer <id_optionnel>
-`screen -r`
-
-Se détacher du screen courant : combinaison de touches Ctrl + A + D
-
----
-
-## Fichiers
-
-Lister les fichiers
-`ls`
-
-Changer de répertoire
-`cd <path>`
-
-Revenir au précédent dossier
-`cd -`
-
-Lister les fichiers par dernière date de modification
-`ll -rt`
-
-Lister les fichiers par taille
-`ll -rSh`
-
-Lister par extension
-`ll -X`
-
-Récursif dans les dossiers
-`ll -R`
-
-Espace occupé par le répertoire
-`du -skh`
-
-Espace occupé, groupé par répertoires
-`du -h --max-depth=1`
-
-Espace occupé, classé par taille
-`du -h --max-depth=1 | sort -h`
-
-Espace occupé en suivant les liens symboliques
-`du -skhL`
-
-Espace occupé par dossier, classé par taille (humaine)
+Espace disque occupé dans les sous-dossiers classés par taille
 `du -skh * | sort -h`
 
-Supprimer un fichier
-`rm <file>`
-
-Supprimer un répertoire (vide)
-`rmdir <dir>`
-
-Suppression récursive
-`rm -rf`
-
-Déplacer/renommer un fichier ou un répertoire
-`mv <file1> <file2>`
-
-Copier un fichier ou un répertoire
-`cp <file1> <file2>`
-
-### Trouver un fichier
-
-A partir du répertoire courant
-`find . -name <fichier>`
-
-Taille >50 Mo
-`find . -size +50M`
-
-Trouver les fichiers php contenant mysql_pconnect
-`find . -name "*.php" | xargs grep "mysql_connect"`
-
-Trouver des fichiers et les supprimer
-`find -name "arfarfarf.txt" -delete`
-
-Supprimer les fichiers vides
-`find -size 0 -print -exec rm {} \;`
-
-Supprimer les fichiers contenant une chaîne
-`grep -l "blablablabla" * | xargs rm`
-
-Supprimer les fichiers pollution macOS
-`find -name "._.DS_Store" -print -delete`
-
-Trouver tous les error.log et les classer par taille
-`find . -name "error.log" -exec ls -sh {} \; | sort -h`
-
-Supprimer tous les dossiers node_modules à partir du répertoire courant
-`find . -name "node_modules" -type d -prune -exec rm -rf '{}' +`
-
-Que les fichiers (pas les dossiers)
-`find -type f`
-
-Les fichiers modifiés entre deux dates
-`find . -name "*.php" -type f -newermt 2021-02-24 ! -newermt 2021-02-25`
-
-Arborescence à 2 niveaux
-`tree -L 2`
-
-### Remplacer dans des fichiers
-
-Dans fichiers html remplacer DATA par DATA2
-`find . -name "*.html" | xargs sed -i 's/DATA/DATA2/g'`
-
-Pareil
-`sed -i "s/DATA/DATA2/g" **/*.html`
-
-Supprimer toutes les balises img
-`find . -name "*.html" | xargs sed -i 's/<img.*>//g'`
-
-Supprimer toutes les balises img contenant co.cc
-`find . -name "*.html" | xargs sed -i 's/<img heigth.*co\.cc.*>//g'`
-
-### Texte
-
-Trouver un fichier php contenant "virtual" à partir de .
-
-```sh
-grep "virtual" `find . -name "*.php"`
-```
-
-5 Lignes avant dans un fichier
-`grep "panic" /var/log/syslog -B5`
-
-Rechercher/remplacer dans fichiers multiples
-`sed -i "s/ChaineRecherchee/Remplacement/g" le_fichier`
-
-Extraire les lignes d'un fichier texte de 1337 à 2000
-`sed -n 1337,2000p <fichier>`
-
-### Info sur les fichiers
-
-Sur l'ensemble du filesystem
-`locate <fichier>`
-
-Rechercher les fichiers exécutables, les sources et les pages de manuel d'une commande
-`whereis <fichier>`
-
-Description d'une commande
-`apropos <commande>`
-
-Page de manuel
-`man <commande>`
-
-Afficher le contenu d'un fichier
-`cat <file>`
-
-Compter le nombre de lignes
-
-```sh
-wc -l <file>
-```
-
-Afficher le contenu inversé
-`rev <file>`
-
-Editer un fichier avec vi
-`vi <file>`
-
-Editer un fichier avec nano
-`nano <file>`
-
-Lire un fichier (G = fin du fichier)
-`less <file>`
-
-Début d'un fichier
-`head <file>`
-
-Fin d'un fichier (-n 50 : 50 dernières lignes)
-`tail <file>`
-
-Monitorer un fichier (lignes ajoutées) / Ctrl+C pour quitter
-`tail -f <file>`
-
-### Compression
-
-Lister les contenus d'un fichier zip
-`unzip -l <fichier.zip>`
-
-Compression du dossier www dans www.zip
-`gzip -rc www >www.zip`
-
-Déompression de www.zip
-`gunzip www.zip`
-
-Détarer une archive
-`tar -xvf backup_complet.tar`
-
-Détarer la suite...
-`tar -xvf backup_incr1.tar --listed-incremental=backup.incremental-list.txt`
-
-Extraire un tar.gz
-`tar -xvzf <file.tar.gz>`
-
-Créer un tar.gz
-`tar -cvzf test.tar.gz <path>`
-
-Ajouter `h` pour déréférencer les symlinks et `--exclude-vcs` pour exclure les dossiers `.git`
-
-Toutes les commandes tar <https://tarcommands.com/>
-
----
-
-## Disque dur, partitions, structure
+### Entretien, montage, partitions
 
 Checkdisk ext4
 `fsck.ext4`
@@ -619,12 +680,6 @@ Statistiques I/O disques durs
 
 Qui utilise la ressource ?
 `fuser -v /media/path/`
-
-Espace disque libre
-`df -h`
-
-Espace disque occupé dans les sous-dossiers classés par taille
-`du -skh * | sort -h`
 
 Triple benchmark rapide disque
 `for i in 1 2 3; do hdparm -tT /dev/hda; done`
@@ -689,35 +744,6 @@ Voir aussi <https://www.cyberciti.biz/tips/linux-find-out-if-harddisk-failing.ht
 
 Liste users (espace utilisé, limites...)
 `repquota -avs`
-
----
-
-## Cron
-
-Simulateur syntaxe cron : <https://crontab.guru>
-
-Editer la cron list
-`crontab -e`
-
-Lister les cron jobs
-`crontab -l`
-
-Editer pour un utilisateur spécifique
-`crontab -u <login> -e`
-
-Lister pour tous les utilisateurs
-`for user in $(cut -f1 -d: /etc/passwd); do crontab -u $user -l; done`
-
-### Syntaxe
-
-Tous les jours à 3h05
-`5 3 * * * /usr/bin/apt-get update`
-
-Backup SQL quotidien
-
-```conf
-15 2 * * * root mysqldump -u root -p<password> --all-databases | gzip > /mnt/disk2/database_`data ' %m-%d-%Y'`.sql.gz
-```
 
 ---
 
@@ -815,13 +841,13 @@ Stopper un jail
 Tester une regex
 `fail2ban-regex /var/log/apache2/other_vhosts_access.log /etc/fail2ban/filter.d/apache-wp-login.conf`
 
-## Netcat
+### Netcat
 
 Savoir si un port distant est ouvert en TCP `nc -vz lehostname 80`, en UDP `nc -vz -u lehostname 53`
 
 Simuler un port ouvert `nc -l 1337`
 
-### Envoyer/recevoir avec netcat
+#### Envoyer/recevoir avec netcat
 
 Sur la machine qui écoute (pour trouver son ip hostname -I)
 `nc -l 1337 >bigfile`
@@ -831,21 +857,21 @@ Sur la machine qui envoie
 
 ---
 
-## SCP
+## SCP (transfert de fichiers sur connexion SSH)
 
-Copier fichier vers machine distante (répertoire home)
+Copier fichier vers machine distante (dossier home)
 `scp -P 1337 <fichier> login@www.example.org:`
 
 - Port spécifique `-P 1337`
 - Clé ssh spécifiée depuis un fichier `-i ~/.ssh/key-rsa`
 
-Copier fichier vers machine distante (en spécifiant répertoire/fichier destination)
+Copier fichier vers machine distante (en spécifiant dossier/fichier destination)
 `scp <fichier> login@www.example.org:path/<fichier>`
 
-Copier répertoire récursivement vers machine distante
+Copier dossier récursivement vers machine distante
 `scp -r directory login@www.example.org:`
 
-Copier répertoire *depuis* machine distante
+Copier dossier *depuis* machine distante
 `scp -r login@www.example.org:directory .`
 
 RSync de serveur à serveur
@@ -855,7 +881,7 @@ RSync de serveur à serveur
 
 ## VI/VIM
 
-Quitter un mode : _Echap_
+Quitter un mode : *Echap*
 
 Mode insertion
 `i`
@@ -969,6 +995,37 @@ Télécharger récursivement un dossier FTP avec wget
 wget -r ftp://login:password@example.org:port/path/to/folder/
 ```
 
+---
+
+## Cron
+
+Simulateur syntaxe cron : <https://crontab.guru>
+
+Editer la cron list
+`crontab -e`
+
+Lister les cron jobs
+`crontab -l`
+
+Editer pour un utilisateur spécifique
+`crontab -u <login> -e`
+
+Lister pour tous les utilisateurs
+`for user in $(cut -f1 -d: /etc/passwd); do crontab -u $user -l; done`
+
+### Syntaxe
+
+Tous les jours à 3h05
+`5 3 * * * /usr/bin/apt-get update`
+
+Backup SQL quotidien
+
+```conf
+15 2 * * * root mysqldump -u root -p<password> --all-databases | gzip > /mnt/disk2/database_`data ' %m-%d-%Y'`.sql.gz
+```
+
+---
+
 ## Scripts utiles et shell
 
 Date
@@ -1044,13 +1101,13 @@ Supprimer des fichiers contenant une certaine chaîne de texte
 find . -type f -exec grep -q "blablablabla" {} \; -exec echo rm {} \;
 ```
 
-Supprimer fichiers de plus de 90 jours dans le répertoire courant
+Supprimer fichiers de plus de 90 jours dans le dossier courant
 
 ```sh
 find . -mtime +90 -exec rm {} \;
 ```
 
-Supprimer fichiers de plus de 90 jours dans le répertoire courant, en excluant x.html
+Supprimer fichiers de plus de 90 jours dans le dossier courant, en excluant x.html
 
 ```sh
 find . ! -name "*.html" -mtime +90 -exec rm {} \;
@@ -1090,49 +1147,23 @@ fi
 
 ---
 
-## Droits/permissions
-
-Changer propriétaire d'un fichier
-`chown <user>.<group> <file>`
-
-Changer droits d'un fichier
-`chmod 0<rwx> <file>`
-
-Voir <https://chmodcommand.com/> Chmod Calculator
-
-Changer droits sur les sous répertoires
-`find <path> -type d -print0 | xargs -0 chmod <permissions>`
-
-Changer droits sur certains fichiers
-`find . -name "*.php" -print0 | xargs -0 chmod -x`
-
-### Masques
-
-```txt
-    rwx
-0 : 000
-1 : 001
-2 : 010
-3 : 011
-4 : 100
-5 : 101
-6 : 110
-7 : 111
-```
-
-```txt
-      U   G   O
-764 = rwx rw- r--
-```
-
----
-
 ## Services
 
 ### NTP
 
 Mise à l'heure grâce à NTP (Network Time Protocol)
 `ntpdate fr.pool.ntp.org`
+
+### Samba (partage de fichiers)
+
+Ajouter un user samba (il faut avoir déjà créé un user linux)
+`smbpasswd -a <login>`
+
+Supprimer
+`smbpasswd -x <login>`
+
+Utilisateurs autorisés : dans `/etc/samba/smb.conf`
+`valid users <login1> <login2> @group1`
 
 ### MySQL
 
