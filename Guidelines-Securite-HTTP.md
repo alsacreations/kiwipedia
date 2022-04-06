@@ -154,6 +154,12 @@ Exemple **à adapter absolument**
 Header set Content-Security-Policy "default-src 'self' *.example.org *.gstatic.com *.googleapis.com; script-src 'self' 'unsafe-inline'; style-src 'self' fonts.googleapis.com *.example.org 'unsafe-inline'; font-src 'self' *.googleapis.com *.gstatic.com data:; img-src * data:; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
 ```
 
+Exemple plus restrictif
+
+```apache
+default-src 'self' *.example.org; script-src 'self'; style-src 'self'; font-src 'self'; img-src * data:; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+```
+
 * `default-src` est la règle s'appliquant par défaut si rien n'est spécifié pour `style-src`, `script-src`, `font-src`, `media-src`...
 * `'self'` est l'origine elle-même, `*` est le joker acceptant tout.
 * `frame-ancestors 'none'` indique qu'aucun parent ne peut intégrer la page en utilisant `<frame>`, `<iframe>`, etc. Remplace `X-Frame-Options: deny`.
