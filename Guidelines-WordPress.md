@@ -220,6 +220,11 @@ Voir <https://capitainewp.io/formations/developper-theme-wordpress/shortcode/> e
 
 - Palette de couleurs <https://speckyboy.com/custom-color-palette-wordpress-gutenberg-editor/>
 
+#### Blocs sur-mesure
+Nous utilisons les [blocs ACF](https://www.advancedcustomfields.com/resources/blocks/). Cette technique permet de ne rendre modifiable que des champs spécifiques (champ texte, image, colorpicker, etc.) et avoir les fonctionnalités d'ACF (champ [relationnel](https://www.advancedcustomfields.com/resources/relationship/), [taxonomies](https://www.advancedcustomfields.com/resources/taxonomy/), etc.).
+
+Dans le cas où on utilise un thème acheté et que les fichiers php ne sont pas utilisables, on se tournera vers une [extension](https://fr.wordpress.org/plugins/blockmeister/) afin de générer des ["patterns" Gutenberg](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-patterns/) sur-mesure.
+
 ### Formulaires
 
 - Valider les données avec les méthodes natives <https://codex.wordpress.org/Data_Validation>
