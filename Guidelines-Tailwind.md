@@ -4,12 +4,22 @@ Statut : Candidate Recommendation (CR)
 
 Tailwind est un framework CSS qui adopte une approche "atomique" de CSS, comprendre qu'à chaque classe correspond une action et une seule.
 
-## Tailwind : un framework "utilitaire" avant tout
+**Sommaire :**
 
-Ce que [Tailwind](https://tailwindcss.com/) fait bien :
+- [Introduction](#introduction)
+- [Installation et environnement](#installation-et-environnement)
+- [Configuration](#configuration-de-tailwind)
+- [Usage et bonnes pratiques](#usage-et-bonnes-pratiques)
+- [Configuration avancée](#configuration-avancée)
 
-- Le principe des classes utilitaires (espacements, polices, couleurs, etc.)
-- L'adaptativité à différents contextes (responsive, survol/focus, dark mode, etc.)
+## Introduction
+
+Tailwind est un framework CSS fondé sur une [méthodologie "utilitaire"](https://www.alsacreations.com/tuto/lire/1812-Tailwind-CSS-decouverte-du-framework-original-et-innovant.html) (classes atomiques)
+
+Ce que [Tailwind](https://tailwindcss.com/) fait très bien :
+
+- Gérer les classes utilitaires (espacements, polices, couleurs, etc.)
+- S'adapter à différents contextes (responsive, survol/focus, dark mode, etc.)
 
 Ce que Tailwind fait mal (ou ne fait pas du tout) :
 
@@ -17,17 +27,11 @@ Ce que Tailwind fait mal (ou ne fait pas du tout) :
 - De nombreux pseudo-éléments ou pseudo-classes n'existent pas dans Tailwind
 - Tailwind devient vite une usine à gaz si l'on veut *"tout faire via Tailwind"*. Par exemple, quel être humain normalement constitué est instinctivement à l'aise avec `class="bg-gradient-to-r from-red-500/50/[0.31] via-indigo-700 items-baseline backdrop-invert-0 md:row-start-5 sm:content-around leading-snug dark:tracking-wider placeholder-gray-50::placeholder"` ?
 
-## Pourquoi utilise-t-on Tailwind chez Alsacréations ?
-
 Les classes utilitaires sont une bénédiction sur des gros projets, longs, avec de multiples participants *(notre projet KNACSS, initié en 2012 sous forme de simple fichier Reset.css est devenu de plus en plus cohérent avec la philosophie de Tailwind... en ce qui concerne les classes utilitaires en tout cas)*.
-
-Tailwind, associé à un environnement de travail et un workflow adaptés (VS Code, Intellisense, auto-complétion, coloration syntaxique, etc.) apporte plus de bénéfices que d'inconvénients.
-
-L'extension VSCode [Tailwind CSS intellisense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) offre une auto-complétion ainsi qu'une tooltip au survol des classe bien pratique.
 
 **En bref : utilisons Tailwind pour ses bons côtés et ne nous forçons pas à utiliser Tailwind pour ce qu'il ne fait pas bien.**
 
-## Installation
+## Installation et environnement
 
 De manière générale, sauf exceptions, Tailwind sera installé et configuré à la racine du projet. Il sera donc toujours placé dans le dossier `node_modules`, au même titre que les autres packages potentiels.
 
@@ -39,13 +43,13 @@ De manière générale, sauf exceptions, Tailwind sera installé et configuré �
 4. Dans le fichier `webpack.mix.js` ajouter Tailwind au build postcss.
 5. Enfin dans `resources\styles\app.css`, ajouter Tailwind.
 
-#### _tailwind.config.js_ (pour WordPlate/WordPress)
+#### *tailwind.config.js* (pour WordPlate/WordPress)
 
 ```js
 content: ['public/theme/**/*.php', 'public/theme/**/*.twig', 'public/theme/**/*.js']
 ```
 
-#### _webpack.mix.js_
+#### *webpack.mix.js*
 
 ```js
 mix.postCss("resources/css/app.css", "public/css", [
@@ -71,19 +75,19 @@ mix.postCss("resources/css/app.css", "public/css", [
 4. Ajouter `'@nuxt/postcss8'` aux `buildModules` de Nuxt.
 5. Ajouter les styles `@utilities`, `@base`, `@components` dans le fichier de styles principal.
 
-#### _tailwind.config.js_ (pour Vue/Nuxt)
+#### *tailwind.config.js* (pour Vue/Nuxt)
 
 ```js
 content: ['src/**/*.vue', 'src/**/*.ts', 'src/**/*.js']
 ```
 
-#### _nuxt.config.js_
+#### *nuxt.config.js*
 
 ```js
 buildModules: ['@nuxt/postcss8']
 ```
 
-#### _assets/css/app.css_
+#### *assets/css/app.css*
 
 ```css
 @tailwind base;
@@ -91,13 +95,15 @@ buildModules: ['@nuxt/postcss8']
 @tailwind utilities;
 ```
 
-## Environnement de travail et outils recommandés
+### Environnement de travail et outils recommandés
 
-Nous utilisons VS Code et l'extension VSCode **[Tailwind CSS intellisense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)**. Cette extension permet l'autocomplétion des classes en prenant en compte la configuration.
+Tailwind, pour plus de plaisir, nécessite d'être associé à un environnement de travail et un workflow adaptés (VS Code, Intellisense, auto-complétion, coloration syntaxique, etc.).
+
+Nous utilisons VS Code et l'extension VSCode **[Tailwind CSS intellisense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)**. Cette extension offre une auto-complétion ainsi qu'une tooltip au survol des classe bien pratique.
 
 Tailwind apporte son lot de directives sous forme de règles-at spécifiques (`@apply`, `@layer`, `@screen`, `@variants`, etc.) pouvant être pointées du doigt par les Linters CSS.
 
-Stylelint est notre formatteur (unique) pour les styles CSS et scss du projet. Les Linters natifs CSS et scss de VSCode **doivent être désactivés** dans la configuration VSCode `settings.json` :
+Stylelint est notre formateur (unique) pour les styles CSS et scss du projet. Les Linters natifs CSS et scss de VSCode **doivent être désactivés** dans la configuration VSCode `settings.json` :
 
 ```json
 {
@@ -114,7 +120,7 @@ Stylelint est notre formatteur (unique) pour les styles CSS et scss du projet. L
 }
 ```
 
-De plus, nous configurons spécifiquement Stylelint (dans `stylelint.config.js`) pour ignorer les règles-at inconnues :
+De plus, nous configurons spécifiquement Stylelint (dans [`stylelint.config.js`](https://github.com/alsacreations/guidelines/blob/master/assets/stylelint.config.js)) pour ignorer les règles-at inconnues :
 
 ```json
 'at-rule-no-unknown': [
@@ -127,12 +133,9 @@ De plus, nous configurons spécifiquement Stylelint (dans `stylelint.config.js`)
 
 De cette manière, nos Linters CSS ne déclenchent aucun avertissement ni erreur lorsqu'ils croisent les règles-at de Tailwind, et nous n'avons pas besoin d'utiliser [Tailwind Loves Sass](https://www.npmjs.com/package/tailwind-loves-sass).
 
-Ressources complémentaires :
+## Configuration de Tailwind
 
-- Pour tester Tailwind en ligne : [https://play.tailwindcss.com/](https://play.tailwindcss.com/)
-- La documentation de Tailwind : [https://tailwindcss.com/docs](https://tailwindcss.com/docs)
-
-## Le fichier `tailwind.config.js`
+### Le fichier `tailwind.config.js`
 
 Ce fichier contient toutes les centaines de déclarations de couleurs, de tailles, de polices, etc. du framework Tailwind qu'il est possible d'**étendre** ou d'**écraser**.
 
@@ -265,42 +268,13 @@ zIndex: {
 },
 ```
 
-## Comment appliquer les classes Tailwind ?
+## Usage et bonnes pratiques
 
 Il existe trois manières d'appliquer des styles CSS dans un projet Tailwind :
 
-1. Dans le Template HTML *(Tailwind)*
-2. Dans le (S)CSS via `@apply` *(Tailwind)*
+1. Dans le Template HTML *(Tailwind)* (ex. `<blockquote class="font-comic sm:text-20 md:text-24 md:text-center">`)
+2. Dans le (S)CSS via `@apply` *(Tailwind)* (ex. `@apply sm:grid relative col-start-3 sm:grid-cols-2 gap-5 sm:gap-x-20 sm:gap-y-10 lg:gap-x-40;`)
 3. Dans le (S)CSS via... des propriétés CSS *(pas Tailwind)*
-
-### Dans le HTML
-
-Exemple d'usage dans une classe Tailwind : `<blockquote class="font-comic sm:text-20 md:text-24 md:text-center">`
-
-### Dans le (S)CSS via `@apply`
-
-Exemple d'usage dans un fichier CSS via `@apply` :
-
-```scss
-.layout-2 {
-  @apply sm:grid relative col-start-3 sm:grid-cols-2 gap-5 sm:gap-x-20 sm:gap-y-10 lg:gap-x-40;
-}
-```
-
-### Dans le (S)CSS via... des propriétés CSS
-
-Exemple d'usage dans un fichier CSS ou la partie `<style></style>` d'un fichier `.vue` :
-
-```scss
-@screen md {
-
-  .glass-layer {
-    width: calc(100% - theme("spacing.40"));
-  }
-}
-```
-
-## Privilégier les classes HTML, `@apply` ou des styles CSS "classiques" ?
 
 **Bien que la "philosophie" de Tailwind consiste à écrire tous les styles sous forme de classes au sein du template (HTML, Vue), nous pensons que cela n'est pas toujours pertinent et préconisons de réserver les classes HTML pour les styles purement utilitaires (marges, polices, couleurs, etc.).**
 
@@ -328,87 +302,20 @@ De manière générale la syntaxe via `@apply` est bien moins verbeuse que la ve
 - `clip()`
 - etc.
 
-## Dans le détail : les éléments basiques
-
-Ce sont les éléments que l'on retrouve maintes fois dans les documents (`body`, niveaux de titres, liens, etc.)
-
-**Les styles des éléments basiques sont généralement appliqués via `@apply`** au sein d'un fichier `app.scss` :
-
-```scss
-// La règle @layer ajoute les styles dans la couche Tailwind "base". 
-// Ceci leur permet d'être déclarés en fin des fichiers CSS
-// (ils n'écraseront pas les classes Tailwind utilitaires par exemple)
-@layer base {
-
-  body {
-    // séparer en plusieurs apply selon les groupes de styles
-    @apply text-base leading-relaxed font-body font-medium;
-    @apply text-gray-dark dark:text-white;
-    @apply bg-white dark:bg-gray-dark;
-  }
-
-  a {
-    @apply text-base font-heading font-extrabold;
-    @apply underline;
-
-    &:hover, &:focus {
-      @apply no-underline;
-    }
-  }
-}
-```
-
-## Dans le détail : un élément de Layout
-
-Un élément de Layout désigne une zone dépourvue de "sémantique", uniquement destinée à placer son contenu selon une grille ou un alignement spécifique.
-
-**Les styles des éléments de Layout sont généralement appliqués via CSS "classique"** (car trop complexes pour être pris en compte par Tailwind entièrement) au sein d'un fichier `app.scss` :
-
-Par exemple :
-
-```scss
-// Placer les styles de Layout au niveau des couches de base
-@layer base {
-// Donner un nom différent de la nomenclature Tailwind (pas de "grid-8" par ex.)
-.layout-wrapper {
-
-    @screen lg {
-      grid-template-columns: minmax(theme("spacing.20"), 1fr)
-        theme("spacing.60")
-        minmax(auto, theme("screens.lg"))
-        theme("spacing.60")
-        minmax(theme("spacing.20"), 1fr);
-    }
-  }
-}
-```
-
-Notons sur cet exemple la possibilité d'accéder aux variables Tailwind avec **`theme()`**.
-
-Le principe est d'employer une notation d'objet JavaScript. Ex: `theme('spacing.64')` ou `theme('colors.blue.500')`.
-
-Les valeurs sont séparées par des points (`.`) et non des traits d'union (`-`) dans cette notation.
-
 ## Dans le détail : un Composant
 
 Un Composant est un élément généralement réutilisable à divers endroits du projet. Celui-ci dispose d'une **classe sémantique identique à son nom de fichier** (ex. `class="nav-socials"` pour le composant `NavSocials.vue`)
 
 Il est inséré au sein d'une page via `<NavSocials></NavSocials>`.
 
-### Bonnes pratiques d'intégration des Composants
-
-Selon le projet, le type et la complexité de chaque composant, la méthode de mise en forme (avec/sans classes TW, avec `@apply` ou CSS "classique) est différente et laissé au libre arbitre lors de l'intégration.
-
 Les bonnes pratiques suivantes doivent cependant être respectées tant que possible&nbsp;:
 
 1. Attribuer un nom de classe sémantique au composant (ex. `.nav-socials`).
 2. Lister des classes Tailwind de façon **organisée**, c'est-à-dire regrouper les classes en fonction de leur utilité par ordre d'importance (l'esthétique à la fin).
 3. Attribuer des noms de classes aux éléments à cibler en CSS et **n'utiliser que des sélecteurs de classes** si possible, pas de sélecteurs composés (utiliser `.nav-socials-link` et jamais `.nav-socials a`).
-4. **Un Composant nécessitant des variantes ou modificateurs (marges, padding, gouttières, couleurs, etc.) disposera de classes Tailwind lors de son insertion (`<NavSocials class="mt-60 gap-10 md:gap-20 lg:gap-32"></NavSocials>`)**.
+4. **Un Composant nécessitant des variantes ou modificateurs (marges, padding, gouttières, couleurs, etc.) disposera de classes utilitaires Tailwind lors de son insertion (`<NavSocials class="mt-60 gap-10 md:gap-20 lg:gap-32"></NavSocials>`)**.
 5. **Préciser le langage des styles** quand Sass est employé (`<style lang="scss">`) pour éviter d'affoler les Linters.
 6. Englober les styles de composants au **sein d'un layer** (`@layer components {}`) pour éviter d'écraser les styles utilitaires.
-
-### Version 1 : pas de classes Tailwind dans le template
 
 ```html
 <!-- partie Template du fichier NavSocials.vue -->
@@ -418,12 +325,12 @@ Les bonnes pratiques suivantes doivent cependant être respectées tant que poss
       <a class="nav-socials-link"
         href="">Nos actualités</a>
     </li>
-    <li class="nav-socials-item">
+    <li class="nav-socials-item px-12 sm:px-20 md:px-32">
       <a class="nav-socials-link"
         href="">Facebook</a>
     </li>
-    <li class="nav-socials-item">
-      <a class="nav-socials-link"
+    <li class="nav-socials-item mt-24">
+      <a class="nav-socials-link text-black bg-white dark:text-white dark:bg-black"
         href="">Github</a>
     </li>
   </ul>
@@ -454,43 +361,7 @@ Les bonnes pratiques suivantes doivent cependant être respectées tant que poss
 </style>
 ```
 
-### Version 2 : avec classes Tailwind dans le template
-
-Cette version est très pratique pour des composants simples, avec répétitions.
-
-```html
-<!-- partie Template du fichier NavSocials.vue -->
-<template>
-  <ul class="nav-socials flex justify-center flex-wrap">
-    <li v-for="(link, index) in links"
-      :key="`link-${index}`"
-      class="flex items-center">
-      <a class="font-medium font-body hover:no-underline focus:no-underline"
-        :href="link.href">
-        {{ link.content }}
-      </a>
-    </li>
-  </ul>
-</template>
-```
-
-```html
-<!-- partie <script></script> du fichier NavSocials.vue -->
-<script>
-export default {
-  data() {
-    return {
-      links: [
-        { href: 'http://', content: 'Twitter' },
-        ...
-      ]
-    }
-  }
-}
-</script>
-```
-
-## Importer les styles dans un projet Tailwind
+## Configuration avancée
 
 Le fichier Tailwind se charge d'importer 3 fichiers principaux.
 
@@ -519,24 +390,11 @@ Le fichier [alsa-TW-Reset](assets/vue-nuxt-front-end/alsa-tw-reset.scss) apporte
 }
 ```
 
-## Ajouter une nouvelle valeur
+### Ajouter une nouvelle valeur
 
 -> tailwind.config.js
 
-## Ajouter une nouvelle classe utilitaire
-
-1 - Dans un fichier CSS, "à la Tailwind" :
-
-```scss
-@layer utilities {
-  .visually-hidden {
-    @apply('absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0');
-    clip: rect(0, 0, 0, 0);
-  }
-}
-```
-
-2 - Dans un fichier CSS, en CSS "classique" :
+### Ajouter une nouvelle classe utilitaire
 
 ```css
 @layer utilities {
@@ -554,11 +412,11 @@ Le fichier [alsa-TW-Reset](assets/vue-nuxt-front-end/alsa-tw-reset.scss) apporte
 }
 ```
 
-## Directives Tailwind
+### Directives Tailwind
 
 En plus de `@apply`, Tailwind CSS propose plusieurs directives intéressantes.
 
-### `@layer`
+#### `@layer`
 
 L'ensemble des styles CSS "classiques" sont placés au sein des différentes couches (layer) Tailwind que sont "base", "components" et "utilities".
 
@@ -572,7 +430,7 @@ Ceci a l’avantage de générer des classes au même niveau d'importance que ce
 }
 ```
 
-### `@screen`
+#### `@screen`
 
 La directive `@screen` simplifie significativement la lecture des media queries. Elle est vivement conseillée.
 
@@ -626,7 +484,7 @@ body {
 }
 ```
 
-### `@variants`
+#### `@variants`
 
 Cette directive peut générer toutes les classes `responsive`, `hover`, `focus` pour une classe personnalisée. Elle devient utilisable de la même manière que celles de Tailwind avec les préfixes `md:`, `hover:`, `focus:`.
 
@@ -649,3 +507,8 @@ Le principe général est qu'`une propriété CSS = une fonction`. Donc à parti
 Les préfixes `sm`, `md`, `hover`, `focus`, … sont donc des switchs `on`/`off` pour une seule utilité.
 
 Ex: `sm:text-blue-500 md:text-red-500`
+
+## Ressources complémentaires
+
+- Pour tester Tailwind en ligne : [https://play.tailwindcss.com/](https://play.tailwindcss.com/)
+- La documentation de Tailwind : [https://tailwindcss.com/docs](https://tailwindcss.com/docs)
