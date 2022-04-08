@@ -133,6 +133,12 @@ De plus, nous configurons spécifiquement Stylelint (dans [`stylelint.config.js`
 
 De cette manière, nos Linters CSS ne déclenchent aucun avertissement ni erreur lorsqu'ils croisent les règles-at de Tailwind, et nous n'avons pas besoin d'utiliser [Tailwind Loves Sass](https://www.npmjs.com/package/tailwind-loves-sass).
 
+### Ré-ordonner les classes dans le HTML
+
+Le plugin [ESLint-plugin-tailwindCSS](https://www.npmjs.com/package/eslint-plugin-tailwindcss) permet de configurer finement Tailwind au sein d'un projet. Notamment de pouvoir ré-ordonner les classes pour offrir plus de consistance.
+
+Se référer à la [Documentation d'installation](https://www.npmjs.com/package/eslint-plugin-tailwindcss#installation) du plugin.
+
 ## Configuration de Tailwind
 
 ### Le fichier `tailwind.config.js`
