@@ -1082,6 +1082,18 @@ Lister récursivement tous les fichiers contenant une chaîne sans l'afficher
 grep -lR "quelquechose" *
 ```
 
+Créer une archive tar.gz par sous dossier
+
+```sh
+#!/bin/bash
+
+for dir in */
+do
+  base=$(basename "$dir")
+  tar -czf "${base}.tar.gz" "$dir"
+done
+```
+
 Trouver les robots en excluant ceux connus (-E expression régulière, -i case insensitive, -v inverse)
 (on exclut aussi les requêtes sur robots.txt et la font roboto)
 
