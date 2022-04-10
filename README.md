@@ -33,6 +33,12 @@ Les lignes directives ont pour objectif partagé :
 
 **NOTE : Aucun de ces documents n'est figé, ils sont en constante amélioration et évolution.**
 
+## Architecture globale
+
+Nous voyons ces guidelines comme faisant partie d'un ensemble organisé.
+
+![Schéma global](images/schema-global.png)
+
 ## Ressources et pense-bêtes
 
 - [**Pense-Bête Flexbox (PDF)**](https://github.com/alsacreations/guidelines/blob/master/flexbox-cheatsheet.pdf)
