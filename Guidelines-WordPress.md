@@ -409,7 +409,7 @@ add_filter( 'login_errors', 'no_wordpress_errors' );
 
 👉 On utilise wp-migrate-db pour exporter les contenus en adaptant les URLs développement/recette vers production.
 
-- Autoriser l’indexation par les robots à la mise en production (dans la configuration).
+- Autoriser l’indexation par les robots à la mise en production (dans la configuration) et retirer du fichier .htaccess `Header set X-Robots-Tag "noindex,nofollow"` s'il est présent.
 - Modifier l’adresse e-mail du compte administrateur.
 - Activer le cache.
 - Vérifier que toutes les anciennes URLs de développement ont disparu de la base.
