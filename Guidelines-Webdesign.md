@@ -6,18 +6,18 @@ Cette présente convention rassemble les bonnes pratiques WordPress en productio
 
 ## Définitions, outils, projets
 
-Sont indiquées **en gras** les étapes prioritaires dans notre process.
+Sont indiquées **en gras** les étapes prioritaires dans notre processus.
 
 | Étape                   | Nom                    | Définition                                                                                                                           | Outil préconisé                                         |
 | ----------------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------- |
-| Prospection / Démarrage | **Arborescence**       | Arborescence visuelle qui permet d’identifier les différents modèles de pages                                                        | [Flowmapp](https://www.flowmapp.com/)                   |
-| Prospection / Démarrage | Maquette d’intention   | Maquette de la Home réalisée pour convaincre un client de nos compétences                                                            | Sketch                                                  |
+| Prospection / Démarrage | **Arborescence**       | Arborescence visuelle qui permet d’identifier les différents modèles de pages                                                        | [Octopus](https://octopus.do/)                          |
+| Prospection / Démarrage | Maquette d’intention   | Maquette de la Home réalisée pour convaincre un client de nos compétences                                                            | [Figma](https://figma.com/)                             |
 | Design                  | Moodboard              | Planche de tendances. Type de collage qui peut être composé d'images, de texte et d'objets selon le choix de son créateur            | [Whimsical](https://whimsical.com/)                     |
-| Design                  | Zonings                | Zones fonctionnelles, emplacements du contenu (zone emploi, zone blog)                                                               | Sketch                                                  |
-| Design                  | **Wireframes**         | Zonings fil-de-fer avec texte / composants intégrés (ex. zone emploi avec 3 icônes et 2 zones de texte). Aucun design associé.       | Sketch                                                  |
-| Design                  | Wireframes interactifs | Wireframes avec navigation, actions et animations possibles                                                                          | Sketch, [Create with Flow](https://createwithflow.com/) |
-| Design                  | **Maquettes**          | Wireframe avec couche graphique. Design définitif livrable pour intégration. **Interactives** avec Sketch, Create with Flow.         | Sketch                                                  |
-| Design / Intégration    | **UI Kit**             | Couleurs utilisées, polices, visuel des composants principaux, images et icônes utilisées. Étape préparatrice à l’intégration        | Sketch                                                  |
+| Design                  | Zonings                | Zones fonctionnelles, emplacements du contenu (zone emploi, zone blog)                                                               | [Figma](https://figma.com/) voire Octopus               |
+| Design                  | **Wireframes**         | Zonings fil-de-fer avec texte / composants intégrés (ex. zone emploi avec 3 icônes et 2 zones de texte). Aucun design associé.       | [Figma](https://figma.com/)                             |
+| Design                  | Wireframes interactifs | Wireframes avec navigation, actions et animations possibles                                                                          | [Figma](https://figma.com/), [Flow](https://createwithflow.com/) |
+| Design                  | **Maquettes**          | Couche graphique appliquée aux wireframes. Design définitif livrable pour intégration.                                               | [Figma](https://figma.com/)                             |
+| Design / Intégration    | **UI Kit**             | Couleurs utilisées, polices, visuel des composants principaux, images et icônes utilisées. Étape préparatrice à l’intégration        | [Figma](https://figma.com/)                             |
 | Intégration             | Styleguide             | Liste des composants, avec code HTML / CSS / JS associés. Assure la consistance et la maintenance de l’intégration au cours du temps | [Storybook](https://storybook.js.org/)                  |
 | Toutes                  | Design System          | Ensemble des étapes précédentes + Guidelines (documentation et bonnes pratiques)                                                     |                                                         |
 
@@ -25,12 +25,9 @@ Sont indiquées **en gras** les étapes prioritaires dans notre process.
 
 Les étapes menant de la réalisation des maquettes à l’intégration web sont réalisées sous cette forme et à l’aide des outils suivants :
 
-| Étape                | Objectif                       | Description                                                                                                                   | Outil    |
-| -------------------- | ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------- | -------- |
-| Design               | **Réalisation des maquettes**  | Wireframe avec couche graphique. Design définitif livrable pour intégration. Interactives avec Sketch, Create with Flow.      | Sketch   |
-| Design / Intégration | **Consultation des maquettes** | mode inspection pour les développeurs, mode commentaires pour l’équipe Alsacréations et le client                             | InVision |
-| Design               | **Réalisation de l’UI Kit**    | Couleurs utilisées, polices, visuel des composants principaux, images et icônes utilisées. Étape préparatrice à l’intégration | Sketch   |
-| Design / Intégration | **Consultation de l’UI Kit**   | mode commentaires pour l’équipe Alsacréations et le client                                                                    | InVision |
+- Réalisation avec Figma.
+- Consultation par tous et commentaires à l'aide du partage de Figma (ou option inVision).
+- Inspection pour phase d'intégration à l'aide de Figma.
 
 ## Contenus à vérifier
 
@@ -159,17 +156,6 @@ Attention : ne pas se fier au rendu des couleurs avec les pipettes des navigateu
 - La compression et l’optimisation des Bitmap (Jpeg, png, webp, avif) est à la charge du/de la webdesigneur/euse
 - Option : un style de lien externe, par exemple avec une icône “↗” (accessibilité)
 
-## Transmission des infos
-
-Selon le destinataire (client ou intégrateur), les différentes données (maquettes, arborescence, interactions) sont transmises de manière différente :
-
-| Information              | Destinataire | Méthode                                                   |
-| ------------------------ | ------------ | --------------------------------------------------------- |
-| Arborescence             | Client       | Flowmapp → Gdrive → Cahier des Spécifications             |
-| Wireframes (interactifs) | Client       | Sketch → InVision (**Dossier InVision “Projet client”**)  |
-| Maquettes                | Client       | Sketch → InVision (**Dossier InVision “Projet client”**)  |
-| UI Kit                   | Intégrateur  | Sketch → InVision (**Dossier InVision “Review interne”**) |
-
 ## Validation des livrables
 
 - L’ensemble des livrables présentés dans InVision sont validés directement sur cette plateforme.
@@ -209,7 +195,7 @@ Les formats privilégiés à transmettre à l’Intégrateur :
 - PNG : images bitmap nécessitant de la transparence
 - SVG : iconographie et formats vectoriels
 
-L’intégrateur aura à sa charge l’optimisation du poids des assets (notamment le choix de WEBP si nécessaire).
+L’intégrateur aura à sa charge l’optimisation du poids des assets (notamment le choix du format et de la compression des images).
 
 ### Accessibilité et taux de contraste
 
