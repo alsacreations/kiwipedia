@@ -152,6 +152,10 @@ La structure globale préconisée est celle-ci :
 - `<nav id="navigation" role="navigation">` : navigation principale
 - `<form id="search" role="search">` : recherche principale
 
+### Traductibilité
+
+Utiliser l'attribut `translate="no"` sur toutes les portions de contenu qui **ne doivent pas** être traduites, par exemple noms propres de personnes et d'oeuvres, adresses.
+
 ### Niveaux de titres
 
 Chaque page doit comprendre un élément de titre de premier niveau `<h1>` et la structure des autres niveaux doit suivre un ordre logique (h1 à h6).
