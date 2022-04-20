@@ -9,6 +9,14 @@ RedirectMatch 404 .git
 RedirectMatch 404 /spip/
 ```
 
+## Rediriger HTTP vers HTTPS
+
+```htaccess
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
+```
+
 ## Redirections
 
 ```htaccess
