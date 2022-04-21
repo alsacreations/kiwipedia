@@ -307,8 +307,8 @@ Date du jour
 Calendrier
 `cal`
 
-Rafraîchir une commande toutes les X secondes à l'écran (ex : cat)
-`watch <commande>`
+Rafraîchir une commande toutes les 3 secondes à l'écran (ex : cat, ls)
+`watch -n 3 <commande>`
 
 Uptime du serveur et charge
 `uptime`
