@@ -88,7 +88,11 @@ La grande majorité des commandes Docker ont un équivalent Podman (start, stop,
 
 * Tous les containers `podman ps -a`
 * Processus actifs dans un container `podman top <container>`
+* Poids des fichiers `podman ps --size --sort size`
+
+### Podman compose
+
 * Démarrer à partir d'un fichier compose `podman-compose up -d`
 * Démarrer UN conteneur/service en particulier à partir d'un fichier compose `podman-compose up -d <service>`
-* Poids des fichiers `podman ps --size --sort size`
+* Retirer un service `podman-compose down <db>` (tel que nommé dans le fichier yml, par exemple `db`)
 * Si les ports ne sont pas ouverts pour le service `podman-compose run --service-ports <service>`
