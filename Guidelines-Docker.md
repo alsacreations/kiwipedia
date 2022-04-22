@@ -94,5 +94,5 @@ La grande majorité des commandes Docker ont un équivalent Podman (start, stop,
 
 * Démarrer à partir d'un fichier compose `podman-compose up -d`
 * Démarrer UN conteneur/service en particulier à partir d'un fichier compose `podman-compose up -d <service>`
-* Retirer un service `podman-compose down <db>` (tel que nommé dans le fichier yml, par exemple `db`)
+* Retirer un service `podman-compose down <service>` (tel que nommé dans le fichier yml, par exemple `db`)
 * Si les ports ne sont pas ouverts pour le service `podman-compose run --service-ports <service>`
