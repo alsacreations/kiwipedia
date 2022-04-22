@@ -89,6 +89,7 @@ La grande majorité des commandes Docker ont un équivalent Podman (start, stop,
 * Tous les containers `podman ps -a`
 * Processus actifs dans un container `podman top <container>`
 * Poids des fichiers `podman ps --size --sort size`
+* Exécuter une commande, par ex un backup MySQL vers l'hôte : `podman exec <container-mysql> mysqldump -uroot -p<password> <nom_base> >dump.sql`
 
 ### Podman compose
 
