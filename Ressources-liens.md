@@ -519,6 +519,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://projects.verou.me/animatable/>
 - <https://tobiasahlin.com/spinkit/> Loaders animés (spin)
 - <https://connoratherton.com/loaders> Loaders CSS
+- <https://uiball.com/loaders/> Loaders CSS/SVG
 
 ## SVG
 
