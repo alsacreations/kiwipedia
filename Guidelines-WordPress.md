@@ -80,8 +80,8 @@ Avec [webpackmix](https://github.com/devanandb/webpack-mix/tree/master/docs) (pr
 On privilégie, dans cet ordre, les frameworks CSS suivants :
 
 - [TailwindCSS](https://tailwindcss.com/) (couplé à un mini-fichier reset personnel “alsa-TW-Reset”) (pour la configuration voir [Guidelines Tailwind](https://github.com/alsacreations/guidelines/blob/master/Guidelines-Tailwind.md))
-  - <https://www.paulund.co.uk/using-tailwind-css-in-your-wordpress-theme>
   - <https://github.com/cjkoepke/wp-tailwind>
+  - <https://css-tricks.com/adding-tailwind-css-to-wordpress-themes/>
 - [Bootstrap](https://getbootstrap.com/) (si besoin spécifique ou projet le nécessitant)
 - [KNACSS](https://www.knacss.com/) (si besoin spécifique) (voir [Guidelines CSS](Guidelines-CSS.md))
 
