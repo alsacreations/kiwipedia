@@ -752,7 +752,7 @@ Liste users (espace utilisé, limites...)
 Connexions actives (serveurs et établies)
 `netstat -tap`
 
-Connexions actives (seulement serveurs)
+Connexions actives à l'écoute
 `netstat -tulp`
 
 Connexions et processus liés (combinable avec grep pour le port)
