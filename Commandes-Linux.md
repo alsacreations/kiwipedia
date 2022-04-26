@@ -753,7 +753,7 @@ Connexions actives (serveurs et établies)
 `netstat -tap`
 
 Connexions actives à l'écoute
-`netstat -tulp`
+`netstat -tulp` ou `netstat -tulpn` pour voir les numéros de ports
 
 Connexions et processus liés (combinable avec grep pour le port)
 `netstat -tanpu`
