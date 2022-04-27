@@ -21,11 +21,10 @@ Cette présente convention rassemble les bonnes pratiques d'Accessibilité en pr
 
 Respecter les taux de contraste minimum entre le texte et le fond.
 
-Les outils de mesure de contraste employés sont :
-
 - <https://contrast-finder.tanaguru.com/> (outil en ligne)
 - <https://developer.paciellogroup.com/resources/contrastanalyser/> (Windows, MacOS)
 - <https://app.contrast-finder.org/> (outil en ligne)
+- <https://contrast-grid.eightshapes.com/> (grille comparant de multiples valeurs)
 - WCAG Color contrast checker (extension [Chrome](https://chrome.google.com/webstore/detail/wcag-color-contrast-check/plnahcmalebffmaghcpcmpaciebdhgdf) et [Firefox](https://addons.mozilla.org/fr/firefox/addon/wcag-contrast-checker/)) qui permet de vérifier les contrastes de couleurs directement depuis sa page HTML.
 
 ### Checklist accessibilité Webdesign
