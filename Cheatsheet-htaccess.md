@@ -95,3 +95,9 @@ RewriteRule . /index.php [L]
 </IfModule>
 # END WordPress
 ```
+
+## Robots : empêcher l'indexation
+
+```htaccess
+Header set X-Robots-Tag "noindex, noarchive"
+```
