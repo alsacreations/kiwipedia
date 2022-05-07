@@ -1,4 +1,4 @@
-# Guidelines : Docker
+# Cheatsheet : Docker
 
 Statut : Recommendation (REC)
 
@@ -83,6 +83,8 @@ Liste non exhaustive, voir <https://docs.docker.com/engine/reference/builder/>.
 ---
 
 ## Podman
+
+Interface graphique : <https://iongion.github.io/podman-desktop-companion/>
 
 La grande majorité des commandes Docker ont un équivalent Podman (start, stop, logs, port...).
 
