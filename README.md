@@ -21,7 +21,6 @@ Les lignes directives ont pour objectif partagé :
 - [**Guidelines Sécurité HTTP**](Guidelines-Securite-HTTP.md)
 - [**Guidelines Webdesign**](Guidelines-Webdesign.md)
 - [**Guidelines E-mailing**](Guidelines-E-mailing.md)
-- [**Guidelines Docker**](Guidelines-Docker.md)
 - [**Guidelines Icones**](Guidelines-Icones.md)
 
 ## Selon typologie de projet
@@ -44,6 +43,7 @@ Nous voyons ces guidelines comme faisant partie d'un ensemble organisé.
 - [**Pense-Bête Flexbox (PDF)**](https://github.com/alsacreations/guidelines/blob/master/flexbox-cheatsheet.pdf)
 - [**Pense-Bête Grid Layout (PDF)**](https://github.com/alsacreations/guidelines/blob/master/grid-cheatsheet.pdf)
 - [**Commandes Linux**](Commandes-Linux.md) (Cheatsheet)
+- [**Cheatsheet Docker**](Cheatsheet-Docker.md)
 - [**Cheatsheet htaccess**](Cheatsheet-htaccess.md)
 - [**Cheatsheet git**](Cheatsheet-Git.md)
 - [**Ressources et liens utiles**](Ressources-liens.md)
