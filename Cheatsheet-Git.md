@@ -2,6 +2,8 @@
 
 Statut : Recommendation (REC)
 
+Voir aussi <https://github.com/dictcp/awesome-git>
+
 ## Init
 
 Initialise un dépôt dans un dossier (vide ou non)
