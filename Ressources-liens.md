@@ -388,8 +388,12 @@ Autres listes de ressources et checklists
 ### UX
 
 - <https://uxtools.co/> comparaison des outils
-- <http://goodui.org/>
-- <http://www.nickkolenda.com/user-experience/>
+- <https://goodui.org/>
+- <https://www.nickkolenda.com/user-experience/>
+
+### Design System
+
+- <https://sparkbox.com/foundry/design_system_makeup_design_system_layers_parts_of_a_design_system>
 
 ### Prototypage
 
