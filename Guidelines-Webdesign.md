@@ -158,8 +158,8 @@ Attention : ne pas se fier au rendu des couleurs avec les pipettes des navigateu
 
 ## Validation des livrables
 
-- L’ensemble des livrables présentés dans InVision sont validés directement sur cette plateforme.
-- Les autres livrables sont validés par mail.
+- L’ensemble des livrables présentés sont validés directement par le lien de consultation (Figma, inVision).
+- Les autres livrables sont validés par e-mail.
 
 ## Points de vigilance
 
@@ -178,6 +178,10 @@ Pour des raisons de performance, il est conseillé :
 - Labeur : “system font” par défaut de préférence (ex. system-ui)
 
 Si le nombre de variantes pour une police est supérieur à 3 alors une “Variable Font” devient plus intéressante en termes de poids/requêtes car 1 seul fichier pour toute la famille de police.
+
+### Multilangue
+
+Certains mots peuvent être plus longs dans d'autres langues, il faut les simuler, notamment dans la navigation, les boutons d'action, et dans les titres pour provoquer des retours à la ligne. [Smartcat](https://www.smartcat.com/figma/) permet de la traduction dans Figma.
 
 ### Favicon
 
