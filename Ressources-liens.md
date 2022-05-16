@@ -449,6 +449,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://tinypng.com/> préserve la transparence et applique une compression (avec perte)
 - <https://ezgif.com/resize> Redimensionner/transformer gif animé
 - <https://pageweight.imgix.com/> Diagnostiquer le poids des images
+- <https://www.optimizeimages.com/>
 
 ### Icônes / SVG
 
