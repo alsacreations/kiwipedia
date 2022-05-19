@@ -185,6 +185,8 @@ Manipule les URLs de repos distants.
 ```sh
 # Ajoute une remote
 git remote add <nom> <url>
+# Change la _remote_ (distante)
+git remote set-url origin <url>
 ```
 
 ## Merge
