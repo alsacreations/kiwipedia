@@ -326,25 +326,6 @@ Autres listes de ressources et checklists
 - <https://css-tricks.com/productive-in-react/>
 - <http://reactfordesigners.com/labs/reactjs-introduction-for-people-who-know-just-enough-jquery-to-get-by/>
 
-### jQuery
-
-- <http://www.opentip.org/> (tooltips)
-- <http://qtip2.com/download> (tooltips)
-- <http://antenna.io/demo/jquery-bar-rating/examples/> (ratings)
-- <http://bgrins.github.com/spectrum/> (Color Picker)
-- <http://brianreavis.github.io/selectize.js/> (Tags, autocomplete, sélection d’items...)
-- <http://twitter.github.com/typeahead.js/examples/> (autocomplete)
-- <http://gridster.net/> (grille drag&dropable)
-- <http://dimsemenov.com/plugins/magnific-popup/> (lightbox)
-- <http://jvectormap.com/> (cartes géographiques france/monde/pays en vectoriel, fonctionne sur tactile)
-- <https://ricostacruz.com/nprogress/> (progress à la Youtube)
-- <http://patrickkunka.github.io/easydropdown/> (inputs select stylables)
-- <http://www.croppic.net/> (crop image)
-- <http://leafo.net/sticky-kit/> (créer des éléments sticky de manière avancée - APIs très pratiques)
-- <http://code.octopuscreative.com/fancyselect/> (des selects au design amélioré)
-- <http://parsleyjs.org/> (validation d’un formulaire + message d’erreur, fonctionne même sur une partie d’un formulaire, par étape, etc.)
-- <https://github.com/bfintal/Counter-Up> counter qui s’incrémente
-
 ### Slideshows
 
 - <https://swiperjs.com/>
@@ -384,6 +365,7 @@ Autres listes de ressources et checklists
 - <https://www.mobile-patterns.com> Mobile patterns
 - <https://www.logodesignlove.com/brand-identity-style-guides> (guides de styles)
 - <https://gerireid.com/forms.html> Conception de formulaires (ergo/accessibilité)
+- <https://dopeui.co/>
 
 ### UX
 
@@ -423,11 +405,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 - <https://logomaster.ai/> créateur de logo en ligne
 - <https://www.logopony.com/> génération de logos automatique
-- <http://www.logofi.com/>
-- <http://www.logogala.com/>
 - <http://www.logomoose.com/>
-- <http://www.logospire.com/>
-- <https://logofaves.com/>
 - <https://logopond.com/>
 
 ### Favicon
@@ -583,9 +561,9 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://developers.google.com/maps/?hl=fr> Google Maps
 - <https://mapbuildr.com/buildr> - constructeur de cartes pour Google Maps
 - <https://www.openstreetmap.org/>
-- <http://openlayers.org/> API libre surcouche au choix de GMaps, Bing, OpenStreetMap, etc
-- <http://mapbox.com/>
-- <http://simplemaps.com/> (cartes mondiales Canvas/SVG)
+- <https://openlayers.org/> API libre surcouche au choix de GMaps, Bing, OpenStreetMap, etc
+- <https://mapbox.com/>
+- <https://simplemaps.com/> (cartes mondiales Canvas/SVG)
 
 ---
 
