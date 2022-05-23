@@ -711,6 +711,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 ## SQL et MySQL
 
 - <https://sqlbolt.com/> Apprendre SQL de manière interactive
+- <https://dbdiagram.io/> Éditeur de modèles et diagrammes en ligne
 
 ---
 
