@@ -555,11 +555,12 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://www.paciellogroup.com/blog/2013/12/using-aria-enhance-svg-accessibility/>
 - <https://www.sitepoint.com/tips-accessible-svg/> Rendre SVG accessible
 - <http://ljwatson.github.io/decks/2017/lws/index.html> Making SVG accessible (Paciello)
-- 
+
 ## Cartes géographiques
 
 - <https://developers.google.com/maps/?hl=fr> Google Maps
-- <https://mapbuildr.com/buildr> - constructeur de cartes pour Google Maps
+- <https://mapstyle.withgoogle.com/> Google Maps en personnalisant le style
+- <https://mapbuildr.com/buildr> Constructeur de cartes pour Google Maps
 - <https://www.openstreetmap.org/>
 - <https://openlayers.org/> API libre surcouche au choix de GMaps, Bing, OpenStreetMap, etc
 - <https://mapbox.com/>
