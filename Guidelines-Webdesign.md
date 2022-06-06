@@ -48,12 +48,14 @@ Les pages à ne pas oublier de faire apparaître dans l'arborescence sont :
   - Page de remerciements suite à un téléchargement ou une inscription
   - Page de résultats de recherche
 - Pages annexes
-- mentions légales
-- politique de confidentialité
-- conditions générales d’utilisation / de vente
-- 404
+  - Mentions légales
+  - Politique de confidentialité (pour satisfaire au [RGPD](https://www.cnil.fr/fr/reglement-europeen-protection-donnees))
+  - Politique d'écoconception (pour satisfaire au [RGESN](https://ecoresponsable.numerique.gouv.fr/publications/referentiel-general-ecoconception/))
+  - Conditions générales d’utilisation / de vente (si concerné) 
+  - Déclaration d'accessibilité (si concerné) 
+- Page d'erreur 404 (voire d'erreur 500)
 - Les éléments dépendants. Exemple :
-  - envoi d’un mail automatique après une inscription à la newsletter ou à un événement, ou suite à un téléchargement
+  - Envoi d’un mail automatique après une inscription à la newsletter ou à un événement, ou suite à un téléchargement
 
 ### Wireframe
 
@@ -74,10 +76,13 @@ Les éléments à ne pas oublier de faire apparaître dans les wireframes/maquet
   - Navigation desktop et mobile
   - Barre de recherche
   - Informations de contact (formulaire, adresse, téléphone)
-  - Plan du site
-  - Mentions légales
-  - Politique de confidentialité
-  - Conditions générales (si concerné)
+  - Liens vers
+    - Plan du site
+    - Mentions légales
+    - Politique de confidentialité
+    - Politique d'écoconception
+    - Conditions générales (si concerné)
+    - Déclaration d'accessibilité (si concerné)
   - Mention “alsacréations”
   - Réseaux sociaux
   - Choix de la langue (en toutes lettres, pas de drapeaux)
@@ -118,7 +123,7 @@ L’UI-Kit est un document servant de passerelle entre le designer et l’intég
 Attention : ne pas se fier au rendu des couleurs avec les pipettes des navigateurs ou d’InVision.
 
 - Couleurs utilisées (textes, background, décorations), ainsi que couleurs
-  - survol / hover
+  - hover (survol)
   - focus (pour les éléments pouvant recevoir le focus, liens, boutons, input)
   - active (pour les liens)
   - visited (pour les liens)
@@ -195,12 +200,12 @@ Afin d’optimiser la netteté des images Bitmap (jpg, png) sur écrans Retina e
 
 Les formats privilégiés à transmettre à l’Intégrateur :
 
-- JPG : photos et images bitmap en général
-- PNG : images bitmap nécessitant de la transparence
-- SVG : iconographie et formats vectoriels
+- JPG, WebP, AVIF : photos et images bitmap en général
+- PNG : images bitmap nécessitant de la transparence et une compression non destructrice
+- SVG : iconographie, schémas et images vectorielles
 
-L’intégrateur aura à sa charge l’optimisation du poids des assets (notamment le choix du format et de la compression des images).
+L’intégrateur aura à sa charge l’optimisation du poids des assets (notamment le choix du format et de la compression des images). cf. Guidelines de performance.
 
 ### Accessibilité et taux de contraste
 
-cf. [guidelines Accessibilité Numérique](https://github.com/alsacreations/guidelines/blob/master/Guidelines-Accessibilite.md#checklist-accessibilit%C3%A9-webdesign)
+cf. [Guidelines Accessibilité Numérique](https://github.com/alsacreations/guidelines/blob/master/Guidelines-Accessibilite.md#checklist-accessibilit%C3%A9-webdesign)
