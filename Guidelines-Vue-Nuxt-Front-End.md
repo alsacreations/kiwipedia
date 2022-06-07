@@ -159,8 +159,9 @@ Voir aussi <https://stackoverflow.com/questions/55406055/toggle-between-multiple
 
 ### config.js
 
-config.js
 Les variables de configuration ou globales (activation de fonctionnalités) sont ajoutées dans le fichier config.js dans l'entrée correspondante. Si cette entrée n'existe pas, il convient d'en ajouter une nouvelle.
+
+```js
 const config = {
   isProduction: isMaster,
   app: {
@@ -168,7 +169,7 @@ const config = {
   },
   api: {
     apiUrl: process.env.VUE_APP_API_URL
-...
+```
 
 ## Installation et configuration initiale
 
@@ -189,7 +190,7 @@ On développe avec `npm run dev`, on compile avec `npm run build`
 
 ### Installation de Nuxt
 
-Doc : <https://v3.nuxtjs.org/getting-started/installation>
+Documentation : <https://v3.nuxtjs.org/getting-started/quick-start/>
 
 ```yaml
 npx nuxi init nuxt3-app
@@ -244,6 +245,11 @@ Autres dépendances utiles :
 - On n'utilise pas les attributs `id` car ils peuvent se retrouver dupliqués dans la page si un composant est utilisé plusieurs fois. Si besoin, il faudra générer un id unique avec [uuid](https://www.npmjs.com/package/uuid) par exemple.
 - On utilise un élément `button` ou `input type="button"` plutôt qu'un lien pour des actions ne changeant pas de page.
 - Pour l'ajout d'événements, on utilise `v-on:click="action"` au lieu de `@click="action"` pour rechercher plus facilement les événements de manière globale dans le code source du projet. La méthode est appelée sans parenthèses s'il n'y a pas de paramètre à lui passer. [Pourquoi ?](https://stackoverflow.com/questions/50635404/parentheses-while-calling-a-method-in-vue).
+
+⚠️ On évite au maximum d'utiliser les instructions natives pour privilégier les techniques propres à Vue :
+
+- `ref` pour sélectionner un noeud DOM plutôt que `getElement*` ou `querySelector`
+- classes et styles dynamiques avec `:class`, voire `v-show` plutôt que d'accéder à la propriété de style `style.display = '...'`
 
 ### Props
 
