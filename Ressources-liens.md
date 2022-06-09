@@ -243,25 +243,16 @@ Autres listes de ressources et checklists
 - <https://wesbos.com/javascript> Beginner JavaScript Notes & Reference par Wes Bos
 - <https://auth0.com/blog/a-brief-history-of-javascript/> Une brève histoire de JavaScript
 - <https://github.com/naomihauret/js-stack-from-scratch/> JavaScript Stack from Scratch (traduction fr)
-- <http://jargon.js.org/> Jargon
-- <http://fr.eloquentjavascript.net/>
-- <https://basarat.gitbook.io/typescript/> TypeScript Deep Dive
-- <https://blog.scottlogic.com/2021/09/06/how-to-write-an-es-lint-rule-for-beginners.html> écrire ses propres règles eslint
+- <https://fr.eloquentjavascript.net/>
+- <https://basarat.gitbook.io/typescript/> TypeScript Deep Dive (traduction fr : <https://github.com/HachemiH/typescript-book>)
 
 - Bonnes pratiques et style guides
 
   - <https://molily.de/robust-javascript/> Robust JavaScript
-  - <https://github.com/rwldrn/idiomatic.js/tree/master/translations/fr_FR>
+  - <https://github.com/rwaldron/idiomatic.js/tree/master/translations/fr_FR>
   - <http://jstherightway.org/>
+  - <http://superherojs.com/> 
   - <https://github.com/airbnb/javascript>
-  - <http://superherojs.com/>
-
-- ECMAScript
-
-  - <https://leanpub.com/setting-up-es6/read>
-  - <http://exploringjs.com/es2016-es2017/>
-  - <http://exploringjs.com/es6/index.html>
-  - <http://speakingjs.com/es5/index.html
   - <https://bevacqua.github.io/promisees/> Les promesses expliquées et visualisées en animations
 
 - Libs et frameworks
@@ -269,6 +260,7 @@ Autres listes de ressources et checklists
   - <https://vuejs.org/>
   - <https://facebook.github.io/react/>
   - <https://jquery.com/>
+  - <https://svelte.dev/>
   - <https://angularjs.org/>
   - <https://lodash.com/>
   - <https://github.com/developit/unfetch> Polyfill pour fetch() en 500 octets
@@ -277,6 +269,7 @@ Autres listes de ressources et checklists
 
   - <http://jsbeautifier.org/>
   - <http://www.jslint.com/> et <http://jslinterrors.com/>
+  - <https://blog.scottlogic.com/2021/09/06/how-to-write-an-es-lint-rule-for-beginners.html> écrire ses propres règles eslint
 
 - Scripts divers
 
