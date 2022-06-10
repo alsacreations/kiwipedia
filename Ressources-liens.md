@@ -598,6 +598,8 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 ### Progressive Web Apps (PWA)
 
+- <https://web.dev/learn/pwa/>
+- <https://developer.mozilla.org/fr/docs/Web/Progressive_web_apps>
 - <https://app-manifest.firebaseapp.com/> Générateur de web manifest
 - <https://pwadvent.dev/> PWAdvent 24 bonnes fonctionnalités PWA
 - <https://firt.dev/pwa-2021> PWA en 2021
