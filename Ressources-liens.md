@@ -171,18 +171,12 @@ Autres listes de ressources et checklists
 - <https://w3c.github.io/aria/> La spécification
 - <https://w3c.github.io/aria-practices/>
 - <https://w3c.github.io/using-aria/>
-- <https://www.w3.org/TR/html-aria/> ARIA in HTML
-- <https://www.w3.org/TR/html-aria/> Rôles et états implicites des éléments HTML, et propriétés ARIA applicables selon les rôles
 - <https://w3c.github.io/aria-in-html/>
+- <https://www.w3.org/WAI/ARIA/apg/patterns/> Patterns
+- <https://www.w3.org/TR/html-aria/> Rôles et états implicites des éléments HTML, et propriétés ARIA applicables selon les rôles
 - <https://bitsofco.de/rules-for-using-aria-in-html/>
-- <http://www.oaa-accessibility.org/> Exemples d’usage d’ARIA notamment avec JavaScript/AJAX
-- <http://heydonworks.com/practical_aria_examples/> Quelques exemples
-- <https://www.powermapper.com/tests/screen-readers/aria/> Support WAI-ARIA screen readers
+- <https://www.powermapper.com/tests/screen-readers/aria/> Support WAI-ARIA des lecteurs d'écran
 - <https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA> Très bonne ressource ARIA
-- <http://oaa-accessibility.org/> Plein d’exemples ARIA
-- <http://blog.paciellogroup.com/2013/12/using-aria-enhance-svg-accessibility/> SVG et ARIA
-- <https://blog.atalan.fr/support-des-attributs-aria-par-les-lecteurs-decran/> Caniuse de l’accessibilité
-- <http://accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html> Référentiel AccessiWeb HTML5/ARIA
 
 ### Couleurs
 
