@@ -345,7 +345,7 @@ Trois caractéristiques principales sont définies dans la spécification&nbsp;:
 
 ARIA est aussi recommandé pour les composants complexes pilotés par JavaScript (ex : menus déroulants, sliders, onglets, modales, etc.).
 
-La bibliothèque de plugins jQuery Pepin utilise ARIA pour la plupart des composants <https://github.com/alsacreations/pepin>
+Voir <https://www.w3.org/WAI/ARIA/apg/patterns/>
 
 Voici un exemple d'usage de l'attribut `aria-label` :
 
