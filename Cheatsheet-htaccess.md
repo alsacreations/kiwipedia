@@ -47,6 +47,15 @@ Rediriger un chemin
 RedirectMatch "^\/spip\/(.*)" "/autre/chemin/$1" [L]
 ```
 
+Un domaine (ou un ensemble de domaines) vers un autre
+
+```htaccess
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^alsacreations.fr [OR]
+RewriteCond %{HTTP_HOST} ^www.alsacreations.fr
+RewriteRule ^(.*)$ https://www.alsacreations.com/$1 [R=301,NC,L]
+```
+
 ## Réécriture
 
 ```htaccess
