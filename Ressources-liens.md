@@ -780,6 +780,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 ## Machines virtuelles
 
 - <https://www.virtualbox.org/> VirtualBox (Oracle)
+- <https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/> Virtual Machines IE11 (sous Windows 10) par Microsoft
 - <https://css-tricks.com/an-introduction-to-vagrant/> Vagrant
 
 ## Docker
