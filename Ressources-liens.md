@@ -613,6 +613,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://web.dev/measure>
 - <https://gtmetrix.com/>
 - <https://www.webpagetest.org/>
+- <https://requestmap.webperf.tools/> Request Map
 - <https://tools.pingdom.com/>
 - <https://browserdiet.com/>
 - <http://codepen.io/bradfrost/pen/EPQVBp/> Performance budget builder
