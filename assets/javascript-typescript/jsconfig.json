@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     // Obligatoire pour le typage le plus précis
-   "strict": true,
+    "strict": true,
     "paths": {
       "~/*": ["./*"]
     }
