@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    // Chemin de base du projet
+    "baseUrl": ".",
+    // Dépend des versions de modules (import, require) JS supportés esnext, es6 https://www.typescriptlang.org/tsconfig#module
+    "module": "es6",
+    // Version de JS, es6, es5, esnext https://www.typescriptlang.org/tsconfig#target
+    "target": "es6",
+    // https://www.typescriptlang.org/tsconfig#lib
+    "lib": ["DOM", "ESNext"],
+    // Obligatoire pour le typage le plus précis
+    "strict": true,
+    // Pas obligatoire mais permet d'utiliser les libs qui utilisent le CommonJS
+    "esModuleInterop": true,
+    // https://www.typescriptlang.org/tsconfig#incremental
+    "incremental": false,
+    // Ne pas check les types des libs
+    "skipLibCheck": true,
+    // cherche les node_modules
+    "moduleResolution": "node",
+    // Si besoin d'importer du JSON
+    "resolveJsonModule": true,
+    // Pas de variables inutilisées
+    "noUnusedLocals": true,
+    // https://www.typescriptlang.org/tsconfig#strictNullChecks
+    "strictNullChecks": true,
+    // Nomenclature de nommage
+    "forceConsistentCasingInFileNames": true,
+    // Création de chemins absolus
+    "paths": {
+      "~/*": ["src/*"]
+    }
+  },
+  "exclude": ["dist", "node_modules"]
+}
