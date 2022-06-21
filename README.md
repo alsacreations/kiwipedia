@@ -18,6 +18,7 @@ Les lignes directives ont pour objectif partagé :
 - [**Guidelines CSS**](Guidelines-CSS.md)
 - [**Guidelines TailwindCSS**](Guidelines-Tailwind.md)
 - [**Guidelines JavaScript / jQuery**](Guidelines-JavaScript.md)
+- [**Guidelines TypeScript**](Guidelines-TypeScript.md)
 - [**Guidelines Sécurité HTTP**](Guidelines-Securite-HTTP.md)
 - [**Guidelines Webdesign**](Guidelines-Webdesign.md)
 - [**Guidelines E-mailing**](Guidelines-E-mailing.md)
