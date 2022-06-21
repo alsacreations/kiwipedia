@@ -15,7 +15,7 @@ Cette présente convention rassemble les bonnes pratiques JavaScript en producti
 - Valider le code avec [eslint](https://eslint.org/).
 - Les indentations se font à l’aide de deux espaces, idéalement définies par [EditorConfig](http://editorconfig.org/).
 - Utiliser la syntaxe _lowerCamelCase_ (voir <https://fr.wikipedia.org/wiki/CamelCase>) pour l'écriture des noms de variables, fonctions, objets, etc.
-- Utiliser le mot clé `var` ou `let` ou `const` pour déclarer une variable/constante et maîtriser sa portée.
+- Utiliser le mot clé `let` ou `const` pour déclarer une variable/constante et maîtriser sa portée.
 - Terminer les instructions par un `;` sauf si la configuration eslint du projet le permet autrement.
 - Toujours commenter (même brièvement) le code, les fonctions, les variables (à l’aide de `//` ou `/* */`).
 - Ne jamais laisser un appel à `console.log()` ou `eval()` dans le code en production.
@@ -34,14 +34,14 @@ En bonus, suivre les recommandations de :
 Utiliser les structures littérales simple pour déclarer tableaux et objets.
 
 ```js
-var monTableau = [1,2,3];
-var monObjet = { };
+const monTableau = [1,2,3];
+const monObjet = { };
 ```
 
 De préférence, encapsuler les ensembles de variables utilisés par un même script dans un objet, par exemple :
 
 ```js
-var maConfig = {
+const maConfig = {
   slider_width: 800,
   slider_height: 600
 }
@@ -50,7 +50,7 @@ var maConfig = {
 Ou :
 
 ```js
-var maConfig = {
+const maConfig = {
   slider : {
     width: 800,
     height: 600
@@ -66,14 +66,14 @@ Toujours déclarer les fonctions dans le scope, et pas dans un bloc (if ou autre
 
 ```js
 if (x) {
-  var mafonction = function() {}
+  const mafonction = function() {}
 }
 ```
 
 Sinon, en suivant le principe précédent
 
 ```js
-var maConfig = {
+const maConfig = {
   slider: {
     width: 800,
     height: 600
@@ -121,7 +121,7 @@ Avec jQuery :
 - Préfixer une variable représentant un objet jQuery (résultat d’un sélecteur) par `$`
 
 ```js
-var $el = $('#el');
+const $el = $('#el');
 ```
 
 - Démarrer avec cette syntaxe pour document ready :
