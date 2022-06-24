@@ -651,6 +651,10 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://serversforhackers.com/series>
 - <https://vim.is/> Apprendre VIM avec des exercices interactifs
 
+### Applications web
+
+- <https://www.robinwieruch.de/web-applications/> Applications web, SPA, full-stack, SSR, REST...
+
 ## HTTP
 
 - <https://blog.appcanary.com/2017/http-security-headers.html>
