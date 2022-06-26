@@ -281,18 +281,13 @@ Autres listes de ressources et checklists
   - <http://robertwhurst.github.io/KeyboardJS/> (gestion clavier)
   - <https://pdfme.com/> Générateur de PDF en TypeScript (avec template)
   - <https://parall.ax/products/jspdf> (Générer PDF côté client)
-  - <http://wicky.nillia.ms/headroom.js/> (header disparaissant animé)
+  - <https://wicky.nillia.ms/headroom.js/> (header disparaissant animé)
   - <http://inorganik.github.io/countUp.js/> (défilement de compteur/chiffres)
-  - <http://github.hubspot.com/vex/docs/welcome/> (popups modales efficaces)
-  - <http://draggabilly.desandro.com/> Drag&Drop multi-touch
+  - <https://draggabilly.desandro.com/> Drag&Drop multi-touch
   - <https://github.com/ryanve/verge> (Get viewport dimensions, detect elements in the viewport <http://verge.airve.com>)
   - <http://hammerjs.github.io/> - gestion du touch avancé (multitouch, rotate, double tap, swipe, etc.)
-  - <http://joaopereirawd.github.io/animatedModal.js/> Modales animées
-  - <http://callmecavs.github.io/layzr.js/> Lazy loading d’images
-  - <http://webdesignledger.com/belazy-js-lazy-loading> Lazy loading 1KB
+  - <https://joaopereirawd.github.io/animatedModal.js/> Modales animées
   - <http://callmecavs.com/bricks.js/> Masonry performant
-  - <http://www.resumablejs.com/> (uploads resumables grâce à HTML5 File API)
-  - <http://mozilla.github.io/localForage/> (framework pour mieux utiliser localStorage avec plus de techniques et de types de données)
   - <https://github.com/jwagner/smartcrop.js> Smartcrop intelligent pour les images
 
 - Touch
