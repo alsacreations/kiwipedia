@@ -339,7 +339,6 @@ Autres listes de ressources et checklists
 
 - <https://www.figma.com/> Figma
 - <https://www.sketchapp.com/> Sketch
-- <https://assets.adobe.com/link/b8ecd6b6-94ac-468c-9cfa-b2c666c81a6c?section=extract> Adobe Assets : découpage CSS/PNG en ligne, extraction de codes
 - <https://designer.io/> Gravit designer
 - <https://www.photopea.com/> Ouvre/édite/sauve PSD, Gimp, Sketch en ligne
 
