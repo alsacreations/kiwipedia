@@ -6,10 +6,7 @@ Cette présente convention rassemble les bonnes pratiques E-mailing en productio
 
 ## Ressources et outils
 
-Les clients e-mails sont capricieux, ils interprètent à leur manière, ils redimensionnent s'ils le souhaitent, ils reconnaissent uniquement les styles qui leur conviennent, etc.
-
-Les bonnes pratiques habituelles y sont remplacées par des tableaux de mise en forme,
-de styles inline et une foule de bugs en tout genre.
+Les clients e-mails sont capricieux, ils interprètent à leur manière, ils redimensionnent s'ils le souhaitent, ils reconnaissent uniquement les styles qui leur conviennent, etc. Les bonnes pratiques habituelles y sont remplacées par des tableaux de mise en forme, de styles inline et une foule de bugs en tout genre.
 
 Voici quelques ressources à garder dans ses favoris :
 
