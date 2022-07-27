@@ -790,12 +790,12 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://medium.com/@remyc/comprendre-docker-dockerfile-et-docker-compose-f21fe4ba22cb>
 - <https://github.com/sickcodes/Docker-OSX> macOS dans Docker
 
-## App mobiles/hybrides
+## Applications mobiles/hybrides/desktop
 
-- <https://electron.atom.io/>
+- <https://www.electronjs.org/>
+- <https://tauri.app>
 - <https://ionicframework.com/>
-- <https://www.appgyver.com/> (steroids.js)
-- <https://developer.amazon.com/sdk/webapps.html> Amazon Web Apps
+- <https://www.appgyver.com/>
 
 ---
 
