@@ -73,6 +73,7 @@ Liste non exhaustive, voir <https://docs.docker.com/engine/reference/builder/>.
 
 ## Ressources et bonnes pratiques
 
+* [Recommandations de sécurité relatives au déploiement de conteneurs Docker | Agence nationale de la sécurité des systèmes d'information](https://www.ssi.gouv.fr/guide/recommandations-de-securite-relatives-au-deploiement-de-conteneurs-docker/)
 * <https://www.viget.com/articles/local-docker-best-practices/>
 * <https://betterprogramming.pub/docker-best-practices-and-anti-patterns-e7cbccba4f19>
 * <https://github.com/FuriKuri/docker-best-practices>
