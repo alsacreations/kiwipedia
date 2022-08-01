@@ -280,7 +280,35 @@ La feuille de styles dédiée à l'impression aide aussi à l'export PDF dans le
 - [https://www.alsacreations.com/astuce/lire/1160-Une-feuille-de-styles-de-base-pour-le-media-print.html](Une feuille de styles de base pour le media print)
 - [https://www.alsacreations.com/tuto/lire/586-feuille-style-css-print-impression.html](Faire une feuille de style CSS print pour l'impression)
 
-## Médias (polices, images)
+## Médias (images, polices)
+
+### Images
+
+#### Recommendations générales
+
+Les images de contenu doivent être véhiculées via l'élément `<img>` ou `<picture>` et demeurer fluides quel que soit le périphérique où elles s'affichent.
+
+- Toujours transmettre le texte alternatif `alt` (voir [Guidelines Accessibilité](Guidelines-Accessibilite.md))
+- Toujours indiquer les dimensions initiales de l'image (`width` et `height`) dans le HTML pour que le navigateur puisse calculer le **ratio**.
+- Utiliser des formats d'images modernes (webp, avif)
+- `max-width: 100%` pour que l'image s'adapte en largeur à son conteneur (images fluides)
+- `height: auto` pour que le navigateur applique le ratio systématiquement
+- `background-color` sur l'image pour indiquer visuellement l'espace qui sera occupé quand elle sera chargée (placeholder).
+
+#### Code recommandé
+
+```html
+<!-- Dimensions initiales de l'image -->
+<img src="(chemin)" alt="" width="2000" height="1000">
+```
+
+```css
+img {
+  max-width: 100%; /* largeur fluide */
+  height: auto; /* ratio préservé */
+  background: gray; /* placeholder en attendant */
+}
+```
 
 ### Polices
 
@@ -293,6 +321,7 @@ Autant que possible, privilégier le chargement de polices légères et respectu
 - Limiter à 2 ou 3 fichiers de police au maximum (regular, bold, italic), sinon préférer une [Variable Font](https://v-fonts.com/)
 - Utiliser la directive `<link rel="preload">` pour charger les polices de manière asynchrone.
 - Ajouter `font-display: swap;` au sein de la règle `@font-face` pour éviter les effets de FOIT. Si la police est pré-chargée, `font-display: optional;` est alors recommandé.
+- Héberger la police sur son propre serveur (voir l'outil "Google Webfont Helper")
 
 #### Code recommendé
 
