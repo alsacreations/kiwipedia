@@ -254,7 +254,7 @@ On veillera à respecter des critères communs de performance :
 - Limiter le nombre de ressources différentes exploitées et donc de requêtes HTTP (images, feuilles de styles, scripts, fonts).
 - Minifier les ressources texte (CSS, JavaScript, JSON...)
 - Différer les requêtes moins importantes (lazy loading) (en JavaScript ou avec l'attribut natif `loading`)
-- Utiliser `prefetch` pour donner des indications de pré-chargement
+- Utiliser `prefetch`, `preload` pour donner des indications de pré-chargement <https://www.keycdn.com/blog/resource-hints>
 - Établir [un budget de performance pour Lighthouse](https://bitsofco.de/your-first-performance-budget-with-lighthouse/)
 
 Voir aussi : <https://github.com/thedaviddias/Front-End-Performance-Checklist>
