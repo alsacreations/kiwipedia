@@ -284,7 +284,7 @@ La feuille de styles dédiée à l'impression aide aussi à l'export PDF dans le
 
 ### Images
 
-#### Recommendations générales
+#### Recommandations générales
 
 Les images de contenu doivent être véhiculées via l'élément `<img>` ou `<picture>` et demeurer fluides quel que soit le périphérique où elles s'affichent.
 
@@ -314,7 +314,7 @@ img {
 
 Autant que possible, privilégier le chargement de polices légères et respectueuses des performances, indiquées notamment sur [Google Web Fonts](http://www.google.com/webfonts/v2). Limiter le nombre de ces polices à 2, voire 3 grand maximum.
 
-#### Recommendations générales
+#### Recommandations générales
 
 - Privilégier la police système `system-ui` pour les textes de contenus (raison : performance + UX + Layout Shifts)
 - Privilégier le format `.woff2` (et `.woff` en alternative)
@@ -323,7 +323,7 @@ Autant que possible, privilégier le chargement de polices légères et respectu
 - Ajouter `font-display: swap;` au sein de la règle `@font-face` pour éviter les effets de FOIT. Si la police est pré-chargée, `font-display: optional;` est alors recommandé.
 - Héberger la police sur son propre serveur (voir l'outil "Google Webfont Helper")
 
-#### Code recommendé
+#### Code recommandé
 
 Voici un exemple de chargement de police conseillé (cas de deux fichiers de police regular et bold)&nbsp;:
 
