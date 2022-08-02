@@ -264,6 +264,9 @@ Fin d'un fichier (-n 50 : 50 dernières lignes)
 Monitorer un fichier (lignes ajoutées) / Ctrl+C pour quitter
 `tail -f fichier.log`
 
+Différences entre deux dossiers
+`diff -qr /path/to/app1/ /path/to/app2/`
+
 ### Compression
 
 Lister les contenus d'un fichier zip
