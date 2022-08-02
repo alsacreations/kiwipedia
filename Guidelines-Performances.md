@@ -30,7 +30,14 @@ Les métriques mesurées sont :
 - **First Input Delay (FID)** : mesure l'interactivité. Calcule le temps nécessaire au navigateur pour offrir une première interaction avec le visiteur (clic sur un lien, un bouton, interagir avec un formulaire) L'expérience est considérée réussie si ce délai est inférieur ou égal à 100 millisecondes.
 - **Cumulative Layout Shift (CLS)** : mesure la stabilité visuelle (l'ensemble des repositionnements, redimensionnements, décalages intempestifs des contenus pendant la durée de vie d'une page web). La métrique mesure la quantité de contenu qui se déplace, ainsi que la distance de déplacement. Le CLS doit être égal ou inférieur à 0.1.
 
-TODO:
+Les sections suivantes de ce document indiquent comment améliorer les Web Core Vitals dans le détail&nbsp;:
+
+- Bonnes pratiques générales
+- Modes de positionnement CSS
+- Aides au pré-chargement de ressources
+- Images
+- Polices
+- Icônes
 
 ## Bonnes pratiques générales
 
@@ -47,7 +54,9 @@ Plus de détails sur ces généralités dans les parties détaillées suivantes.
 
 ## Modes de positionnement CSS
 
-## Chargement et Lazy loading
+TODO:
+
+## Aides au pré-chargement de ressources
 
 - [Définition générale du lazy loading par MDN](https://developer.mozilla.org/fr/docs/Web/Performance/Lazy_loading)
 - Attribut `fetchpriority` : <https://www.smashingmagazine.com/2022/04/boost-resource-loading-new-priority-hint-fetchpriority/> et <https://web.dev/priority-hints/>
