@@ -25,7 +25,7 @@ Sauf spécificités contraires :
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
     <title>Titre unique de la page - Nom du site</title>
-
+    <!-- Pas de ressources bloquantes avant le chargement des styles -->
     <link rel="stylesheet" href="/assets/css/styles.css" />
     <link rel="stylesheet" href="/assets/css/print.css" media="print" />
 
