@@ -246,15 +246,3 @@ Il existe un validateur de syntaxe Twitter Card Validator <https://cards-dev.twi
 ### OpenSearch
 
 Si le projet comporte un moteur de recherche efficace et pertinent, il peut être doté d’[OpenSearch](https://www.opensearch.org/).
-
-## Performance
-
-On veillera à respecter des critères communs de performance :
-
-- Limiter le nombre de ressources différentes exploitées et donc de requêtes HTTP (images, feuilles de styles, scripts, fonts).
-- Minifier les ressources texte (CSS, JavaScript, JSON...)
-- Différer les requêtes moins importantes (lazy loading) (en JavaScript ou avec l'attribut natif `loading`)
-- Utiliser `prefetch`, `preload` pour donner des indications de pré-chargement <https://www.keycdn.com/blog/resource-hints>
-- Établir [un budget de performance pour Lighthouse](https://bitsofco.de/your-first-performance-budget-with-lighthouse/)
-
-Voir aussi : <https://github.com/thedaviddias/Front-End-Performance-Checklist>
