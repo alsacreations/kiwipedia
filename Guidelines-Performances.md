@@ -54,7 +54,21 @@ Plus de détails sur ces généralités dans les parties détaillées suivantes.
 
 ## Modes de positionnement CSS
 
-TODO:
+Les modes de positionnement CSS ne sont pas tous égaux en ce qui concerne les Layout Shifts.
+
+- **Flexbox :** Conçu pour s'adapter aux contenus. Designé pour être fluide par défaut. Plus sensible aux Layout Shifts
+- **Grid Layout :** Conçu pour englober les contenus. Grid Layout est designé pour être rigide par défaut. Globalement moins sensible aux Layout Shifts.
+
+De manière générale :
+
+- Nous utilisons Grid Layout en priorité tant que possible, et Flexbox si nécessaire.
+- Nous tentons de limiter les valeurs automatiques, dépendantes du contenu (`auto`, `flex-grow`, `flex-shrink`, `1fr`, `min-content`, `max-content`, `stretch`)
+- `grid-template-columns: 1fr 1fr 1fr;` est conseillé par rapport à `grid-auto-flow: column;`
+- `flex: 1;` est conseillé par rapport à `flex-grow: 1;`
+- `flex: 1; min-width: 0` est conseillé par rapport à `flex: 1;`
+- `grid-template-columns: minmax(0,1fr)` est conseillé par rapport à `grid-template-columns: 1fr`
+
+Plus d'info : <https://http203-playlist.netlify.app/videos/avoiding-layout-shift-by-putting-the-css-in-charge/>​
 
 ## Aides au pré-chargement de ressources
 
