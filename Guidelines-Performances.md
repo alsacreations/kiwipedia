@@ -13,12 +13,9 @@ Valable pour HTTP/1.x, plus forcément pour HTTP/2+
   - WordPress : utiliser une extension
 - Compresser les ressources texte (css, js, html) par exemple avec gzip/deflate
 - Réduire le nombre de requêtes
-
-### Cache
-
-- <https://csswizardry.com/2019/03/cache-control-for-civilians/>
-- Exploiter le cache serveur
-  - WordPress : utiliser une extension
+- Exploiter les en-têtes de cache (Cache-Control, Expires)
+  - [Cache-Control for Civilians - CSS Wizardry](https://csswizardry.com/2019/03/cache-control-for-civilians/)
+  - [Expires - Apache](https://httpd.apache.org/docs/current/fr/mod/mod_expires.html)
 
 ## Core Web Vitals
 
@@ -282,3 +279,7 @@ Voir le document spécifique des [Guidelines Icônes](Guidelines-Icones.md).
 - <https://www.smashingmagazine.com/2021/01/front-end-performance-2021-free-pdf-checklist/>
 - <https://browserdiet.com/>
 - <https://perf.rocks/>
+
+## Cache serveur
+
+- WordPress : utiliser une extension de cache, voir [Guidelines WordPress](Guidelines-WordPress.md)
