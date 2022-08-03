@@ -58,6 +58,45 @@ TODO:
 
 ## Aides au pré-chargement de ressources
 
+Le parseur HTML du navigateur est bloqué par deux types de ressources :
+
+- les éléments `<link>`
+- les éléments `<script>` qui ne disposent pas d'attributs `async` ni `defer`
+
+Depuis 2008, un second mécanisme parallèle entre en jeu sur l'ensemble des navigateurs : celui du **"Preload Scanner"**. Ce second parseur agit lorsque le parseur HTML est bloqué sur une ressource et pré-charge les ressources suivantes indiquées dans le markup HTML.
+
+Cela signifie que certains éléments placés hors HTML ne participeront pas à cette recherche anticipée&nbsp;: c'est le cas des polices et des images de fond appelées dans les fichiers CSS, mais également des liens ou ressources situées dans des scripts.
+
+Ce mécanisme est automatique, mais il est possible de l'influencer en proposant le pré-chargement de certaines ressources en priorité en agissant sur les ["Priority Hints"](https://web.dev/priority-hints/) tels que `async`, `defer`, `rel=preload` ou `fetchpriority`
+
+### `async` et `defer`
+
+Ces attributs sont liés au chargement des scripts. Dans les deux cas, ces attributs rendent le chargement asynchrone et ne bloquent pas le paseur HTML&nbsp;:
+
+- `async` est exécuté dès que le navigateur en a la possibilité, les ressources sont potentiellement chargées dans n'importe quel ordre.
+- `defer` est exécuté lorsque tout le DOM est parsé, les ressources sont chargées dans l'ordre dans lequel elles sont placées dans le DOM.
+
+`async` et prioritaire sur `defer`.
+
+```html
+<script async src="script.js">
+<script defer src="script.js">
+```
+
+### `rel=preload`
+
+Mandatory
+
+### `fetchpriority`
+
+Hint
+
+### `preconnect` et `dns-prefetch`
+
+Hint
+
+<https://www.alsacreations.com/astuce/lire/1567-prefetch-prerender-dns-prefetch-link.html>
+
 - [Définition générale du lazy loading par MDN](https://developer.mozilla.org/fr/docs/Web/Performance/Lazy_loading)
 - Attribut `fetchpriority` : <https://www.smashingmagazine.com/2022/04/boost-resource-loading-new-priority-hint-fetchpriority/> et <https://web.dev/priority-hints/>
 - Attribut `loading="lazy"` pour les images <https://www.alsacreations.com/astuce/lire/1811-chargement-images-differe-loading-lazy.html>
