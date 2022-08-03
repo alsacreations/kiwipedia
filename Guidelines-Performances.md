@@ -85,7 +85,7 @@ Ces attributs sont liés au chargement des scripts. Dans les deux cas, ces attri
 
 ### `rel=preload`
 
-Cette déclaration demande au parseur de découvrir et charger une ressource en priorité avant que le parseur ne les atteigne. Elle est également particulièrement utile pour tous les assets non indiqués dans le markup HTML.
+Cette déclaration demande au navigateur de découvrir et charger une ressource en priorité avant que le parseur ne les atteigne. Elle est également particulièrement utile pour tous les assets non indiqués dans le markup HTML.
 
 Exemple de pré-chargement de police&nbsp;:
 
