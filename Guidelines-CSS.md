@@ -309,57 +309,7 @@ img {
 
 ### Polices
 
-Autant que possible, privilégier le chargement de polices légères et respectueuses des performances, indiquées notamment sur [Google Web Fonts](http://www.google.com/webfonts/v2). Limiter le nombre de ces polices à 2, voire 3 grand maximum.
-
-#### Recommandations générales
-
-- Privilégier la police système `system-ui` pour les textes de contenus (raison : performance + UX + Layout Shifts)
-- Privilégier le format `.woff2` (et `.woff` en alternative)
-- Limiter à 2 ou 3 fichiers de police au maximum (regular, bold, italic), sinon préférer une [Variable Font](https://v-fonts.com/)
-- Utiliser la directive `<link rel="preload">` pour charger les polices de manière asynchrone.
-- Ajouter `font-display: swap;` au sein de la règle `@font-face` pour éviter les effets de FOIT. Si la police est pré-chargée, `font-display: optional;` est alors recommandé.
-- Héberger la police sur son propre serveur (voir l'outil "Google Webfont Helper")
-
-#### Code recommandé
-
-Voici un exemple de chargement de police conseillé (cas de deux fichiers de police regular et bold)&nbsp;:
-
-```html
-<!-- Dans le <head> après
-     la feuille de styles pour ne pas la bloquer -->
-<link rel="preload" as="font" href="kiwi.woff2" 
-      type="font/woff2" crossorigin="anonymous">
-```
-
-```css
-@font-­face {
-  font-­family: 'kiwi';
-  src: url('kiwi.woff2') format('woff2'), 
-    url('kiwi.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: optional;
-}
-@font-­face {
-  font-­family: 'kiwi';
-  src: url('kiwi-bold.woff2') format('woff2'), 
-    url('kiwi-bold.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
-  font-display: optional;
-}
-```
-
-#### Ressource : Google Webfont Helper
-
-L'application web [Google Webfont Helper](https://google-webfonts-helper.herokuapp.com/) est une excellente ressource permettant d'optimiser finement les fichiers :
-
-- choisir le bon subset (latin, latin-ext, etc.)
-- choisir les styles nécessaires au projet (normal, bold, italic, etc.)
-- copier le code CSS prévu pour les navigateurs modernes (woff2 et woff)
-- télécharger les fontes de Google Fonts aux formats woff2 et woff
-
-Il est conseillé de récupérer les fontes via cette ressource si cela est possible.
+(voir [Guidelines Performances](Guidelines-Performances.md.md))
 
 ### Contenus de remplissage
 
