@@ -85,13 +85,32 @@ Ces attributs sont liés au chargement des scripts. Dans les deux cas, ces attri
 
 ### `rel=preload`
 
-Mandatory
+Cette déclaration demande au parseur de découvrir et charger une ressource en priorité avant que le parseur ne les atteigne. Elle est également particulièrement utile pour tous les assets non indiqués dans le markup HTML.
 
-Priorité "Mandatory" (obligatoire) : cette fonctionnalité doit être traitée en priorité par le navigateur.
+Exemple de pré-chargement de police&nbsp;:
+
+```html
+<!-- Dans le <head> après
+     la feuille de styles pour ne pas la bloquer -->
+<link rel="preload" as="font" href="kiwi.woff2" 
+      type="font/woff2" crossorigin="anonymous">
+```
+
+*(Note : ici `crossorigin="anonymous"` n'est utile que si la police n'est pas auto-hébergée)*
+
+Exemple de pré-chargement d'image&nbsp;:
+
+```html
+<link rel="preload" as="image" href="hero.webp">
+```
+
+*Priorité "Mandatory" (obligatoire) : cette fonctionnalité doit être traitée en priorité par le navigateur.*
 
 ### `fetchpriority`
 
-Priorité "Hint" (indice) : cette fonctionnalité est une simple indication pour le navigateur.
+ You can use the attribute with link, img, script, and iframe tags.
+
+*Priorité "Hint" (indice) : cette fonctionnalité est une simple indication pour le navigateur.*
 
 ### `preconnect` et `dns-prefetch`
 
@@ -107,7 +126,7 @@ Ces attributs sont liés au chargement des ressources externes (non hébergées 
 
 Pour en savoir plus sur l'usage de ces attributs : [Optimisation des pré-chargements avec prefetch, dns-prefetch et prerender](https://www.alsacreations.com/astuce/lire/1567-prefetch-prerender-dns-prefetch-link.html)
 
-Priorité "Hint" (indice) : cette fonctionnalité est une simple indication pour le navigateur.
+*Priorité "Hint" (indice) : cette fonctionnalité est une simple indication pour le navigateur.*
 
 ### Lazyloading
 
