@@ -87,15 +87,29 @@ Ces attributs sont liés au chargement des scripts. Dans les deux cas, ces attri
 
 Mandatory
 
+Priorité "Mandatory" (obligatoire) : cette fonctionnalité doit être traitée en priorité par le navigateur.
+
 ### `fetchpriority`
 
-Hint
+Priorité "Hint" (indice) : cette fonctionnalité est une simple indication pour le navigateur.
 
 ### `preconnect` et `dns-prefetch`
 
-Hint
+Ces attributs sont liés au chargement des ressources externes (non hébergées localement).
 
-<https://www.alsacreations.com/astuce/lire/1567-prefetch-prerender-dns-prefetch-link.html>
+- `rel="preconnect"` informe le navigateur que l'on souhaite établir une connexion le plus rapidement possible à une autre plateforme
+- `rel="dns-prefetch"` ne fait que résoudre le nom de domaine sans toutefois atteindre la ressource indiquée.
+
+```html
+<link rel="preconnect" href="https://example.com">
+<link rel="dns-prefetch" href="https://example.com">
+```
+
+Pour en savoir plus sur l'usage de ces attributs : [Optimisation des pré-chargements avec prefetch, dns-prefetch et prerender](https://www.alsacreations.com/astuce/lire/1567-prefetch-prerender-dns-prefetch-link.html)
+
+Priorité "Hint" (indice) : cette fonctionnalité est une simple indication pour le navigateur.
+
+### Lazyloading
 
 - [Définition générale du lazy loading par MDN](https://developer.mozilla.org/fr/docs/Web/Performance/Lazy_loading)
 - Attribut `fetchpriority` : <https://www.smashingmagazine.com/2022/04/boost-resource-loading-new-priority-hint-fetchpriority/> et <https://web.dev/priority-hints/>
