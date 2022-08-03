@@ -2,9 +2,13 @@
 
 Statut : Working Draft (WD)
 
+Cette présente convention rassemble les bonnes pratiques de performances web en production appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/). Elle a pour but d'évoluer dans le temps et de s'adapter à chaque nouveau projet.
+
 ---
 
 ## Bonnes pratiques HTTP
+
+TODO:
 
 Valable pour HTTP/1.x, plus forcément pour HTTP/2+
 
