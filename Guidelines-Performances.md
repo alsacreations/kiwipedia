@@ -47,7 +47,7 @@ On veillera à respecter des critères communs de performance :
 - Minifier les ressources texte (CSS, JavaScript, JSON...)
 - Utiliser des formats de fichiers modernes (WEBP, Avif, WOFF2)
 - Différer les requêtes moins importantes (lazy loading) (en JavaScript ou avec l'attribut natif `loading`)
-- Utiliser `prefetch`, `preload` pour donner des indications de pré-chargement <https://www.keycdn.com/blog/resource-hints>
+- Utiliser les attributs qui confèrent des indications de pré-chargement (`async`, `defer`, `rel=preload` ou `fetchpriority`)
 - Établir [un budget de performance pour Lighthouse](https://bitsofco.de/your-first-performance-budget-with-lighthouse/)
 
 Plus de détails sur ces généralités dans les parties détaillées suivantes.
