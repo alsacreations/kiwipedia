@@ -162,10 +162,22 @@ Pour en savoir plus sur l'usage de ces attributs : [Optimisation des pré-charge
 
 ### Lazyloading
 
+L'attribut `loading` permet de ne charger que les images situées au dessus de la ligne de flottaison. Les autres images ne sont alors chargées que lorsque cela devient nécessaire, au fur et à mesure que l'utilisateur scrolle (défile). On améliore ainsi le temps de chargement initial de la page.
+
+Les valeurs de `loading` sont les suivantes :
+
+- `eager` : l'image est chargée immédiatement, qu'elle soit située dans ou hors de la fenêtre visible (valeur par défaut),
+- `lazy` : le chargement est retardé jusqu'à ce que l'usager scrolle et s'approche du bas de la fenêtre du navigateur.
+
+```html
+<img src="image.webp" loading="lazy" width="" height="" alt="">
+<iframe src="video-player.html" loading="lazy" title=""></iframe>
+```
+
+Quelques ressources :
+
 - [Définition générale du lazy loading par MDN](https://developer.mozilla.org/fr/docs/Web/Performance/Lazy_loading)
-- Attribut `fetchpriority` : <https://www.smashingmagazine.com/2022/04/boost-resource-loading-new-priority-hint-fetchpriority/> et <https://web.dev/priority-hints/>
 - Attribut `loading="lazy"` pour les images <https://www.alsacreations.com/astuce/lire/1811-chargement-images-differe-loading-lazy.html>
-- Ne pas bloquer le preload des script, images <https://web.dev/preload-scanner/>
 
 ## Images
 
