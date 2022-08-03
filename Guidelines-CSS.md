@@ -288,12 +288,9 @@ La feuille de styles dédiée à l'impression aide aussi à l'export PDF dans le
 
 Les images de contenu doivent être véhiculées via l'élément `<img>` ou `<picture>` et demeurer fluides quel que soit le périphérique où elles s'affichent.
 
-- Toujours transmettre le texte alternatif `alt` (voir [Guidelines Accessibilité](Guidelines-Accessibilite.md)).
-- Toujours indiquer les dimensions initiales de l'image (`width` et `height`) dans le HTML pour que le navigateur puisse calculer le **ratio** et éviter des Layout Shifts.
-- Utiliser des formats d'images modernes et plus légers (Webp, Avif) à condition que le processus d'encodage/décodage soit lui-même rapide.
-- `max-width: 100%` pour que l'image s'adapte en largeur à son conteneur (images fluides).
-- `height: auto` pour que le navigateur applique le ratio systématiquement.
-- `background-color` sur l'image pour indiquer visuellement l'espace qui sera occupé quand elle sera chargée (placeholder).
+Toujours transmettre le texte alternatif `alt` (voir [Guidelines Accessibilité](Guidelines-Accessibilite.md)).
+
+Toujours indiquer les dimensions initiales de l'image (`width` et `height`) (voir [Guidelines Performances](Guidelines-Performances.md.md))
 
 #### Code recommandé
 

@@ -76,7 +76,7 @@ Ces attributs sont liés au chargement des scripts. Dans les deux cas, ces attri
 - `async` est exécuté dès que le navigateur en a la possibilité, les ressources sont potentiellement chargées dans n'importe quel ordre.
 - `defer` est exécuté lorsque tout le DOM est parsé, les ressources sont chargées dans l'ordre dans lequel elles sont placées dans le DOM.
 
-`async` et prioritaire sur `defer`.
+`async` est prioritaire sur `defer`.
 
 ```html
 <script async src="script.js">
@@ -85,7 +85,7 @@ Ces attributs sont liés au chargement des scripts. Dans les deux cas, ces attri
 
 ### `rel=preload`
 
-Cette déclaration demande au navigateur de découvrir et charger une ressource en priorité avant que le parseur ne les atteigne. Elle est également particulièrement utile pour tous les assets non indiqués dans le markup HTML.
+Cette déclaration demande au navigateur de découvrir et charger une ressource en priorité avant que le parseur ne l'atteigne. Elle est également particulièrement utile pour tous les assets non indiqués dans le markup HTML.
 
 Exemple de pré-chargement de police&nbsp;:
 
@@ -134,7 +134,7 @@ Quelques exemples :
 
 Ces attributs sont liés au chargement des ressources externes (non hébergées localement).
 
-- `rel="preconnect"` informe le navigateur que l'on souhaite établir une connexion le plus rapidement possible à une autre plateforme
+- `rel="preconnect"` informe le navigateur que l'on souhaite établir une connexion le plus rapidement possible à une autre plateforme.
 - `rel="dns-prefetch"` ne fait que résoudre le nom de domaine sans toutefois atteindre la ressource indiquée.
 
 ```html
@@ -155,6 +155,16 @@ Pour en savoir plus sur l'usage de ces attributs : [Optimisation des pré-charge
 
 ## Images
 
+Voici nos préconisations concernant les performances des images&nbsp;:
+
+- Toujours indiquer les dimensions initiales de l'image (`width` et `height`) dans le HTML pour que le navigateur puisse calculer le **ratio** et éviter des Layout Shifts.
+- Utiliser des formats d'images modernes et plus légers (Webp, Avif) à condition que le processus d'encodage/décodage soit lui-même rapide.
+- `max-width: 100%` pour que l'image s'adapte en largeur à son conteneur (images fluides).
+- `height: auto` pour que le navigateur applique le ratio systématiquement.
+- `background-color` sur l'image pour indiquer visuellement l'espace qui sera occupé quand elle sera chargée (placeholder).
+
+### Outils d'optimisation d'images
+
 - MacOS : <https://github.com/antonreshetov/image-optimizer> très facile par drag&drop et traitement par lot (PNG, JPEG, GIF, SVG)
 - Universel en ligne : <https://squoosh.app/> avec aperçu avant/après, redimensionnement, autres options (PNG, JPEG, WEBP)
 - SVG : <https://jakearchibald.github.io/svgomg/>
@@ -169,7 +179,7 @@ TODO:
 
 Voir le document spécifique des [Guidelines Icônes](Guidelines-Icones.md).
 
-## Outils d'audit
+## Outils d'audit de performance
 
 - <https://web.dev/measure/>
 - <https://gtmetrix.com/>
