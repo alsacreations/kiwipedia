@@ -108,7 +108,7 @@ Exemple de pré-chargement d'image&nbsp;:
 
 ### `fetchpriority`
 
-L'attribut `fetchpriority` informe le navigateur du degré de priorité du pré-chargement d'une ressource. Il est possible de l'appliquer sur l'élément <link> mais aussi directement sur <img>, <script> et `<iframe>`.
+L'attribut `fetchpriority` informe le navigateur du degré de priorité du pré-chargement d'une ressource. Il est possible de l'appliquer sur l'élément `<link>` mais aussi directement sur `<img>`, `<script>` et `<iframe>`.
 
 Les valeurs possibles sont "high" (haute priorité), "low" (basse priorité) et "auto" (valeur par défaut).
 
