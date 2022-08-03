@@ -142,6 +142,19 @@ Quelques exemples :
 <img src="sausage.svg" alt="je ne suis pas importante" fetchpriority="low">
 ```
 
+Avec l'exemple d'images d'un carousel :
+
+```html
+<ul class="carousel">
+  <img src="img/carousel-1.jpg" fetchpriority="high">
+  <img src="img/carousel-2.jpg" fetchpriority="low">
+  <img src="img/carousel-3.jpg" fetchpriority="low">
+  <img src="img/carousel-4.jpg" fetchpriority="low">
+</ul>
+```
+
+(source de l'exemple : <https://web.dev/priority-hints/>)
+
 *Priorité "Hint" (indice) : cette fonctionnalité est une simple indication pour le navigateur.*
 
 ### `preconnect` et `dns-prefetch`
