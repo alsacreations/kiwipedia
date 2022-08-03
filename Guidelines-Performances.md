@@ -108,7 +108,25 @@ Exemple de pré-chargement d'image&nbsp;:
 
 ### `fetchpriority`
 
- You can use the attribute with link, img, script, and iframe tags.
+L'attribut `fetchpriority` informe ne navigateur sur le degré de priorité du pré-chargement d'une ressource. Il est possible de l'appliquer sur l'élément <link> mais aussi directement sur <img>, <script> et `<iframe>`.
+
+Les valeurs possibles sont "high" (haute priorité), "low" (basse priorité) et "auto" (valeur par défaut).
+
+Quelques exemples :
+
+```html
+<!-- Ce script doit être pré-chargé 
+     mais d'autres ressources sont prioritaires -->
+<link rel="preload" href="script.js" as="script" fetchpriority="low">
+
+<!-- Cette image de fond critique 
+     est hautement prioritaire -->
+<link rel="preload" as="image" href="hero.webp" fetchpriority="high">
+
+<!-- Cette image doit être pré-chargée
+     mais n'est pas vraiment critique -->
+<img src="sausage.svg" alt="je ne suis pas importante" fetchpriority="low">
+```
 
 *Priorité "Hint" (indice) : cette fonctionnalité est une simple indication pour le navigateur.*
 
