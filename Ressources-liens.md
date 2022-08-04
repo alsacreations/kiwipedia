@@ -643,7 +643,6 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <http://net.tutsplus.com/tutorials/apache-2-basic-configuration-on-unix-like-systems/> Configuration Apache de base sous Linux (NetTuts)
 - <https://github.com/phanan/htaccess> snippets .htaccess
 - <https://htaccess.madewithlove.be> Tester/simuler les règles de réécriture
-- <https://code.tutsplus.com/tutorials/introduction-to-mailtrap-a-fake-smtp-server-for-pre-production-testing--cms-23279> Mailtrap : fake smtp server
 - <https://serversforhackers.com/series>
 - <https://vim.is/> Apprendre VIM avec des exercices interactifs
 
@@ -679,10 +678,6 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 - <https://ngrok.com/>
 - <https://doc.traefik.io/traefik/>
-
-## E-mails
-
-- <https://www.alexblackie.com/articles/email-authenticity-dkim-spf-dmarc/> DKIM, SPF, DMARC
 
 ---
 
@@ -753,7 +748,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 ---
 
-## Intégration mail et e-mailing
+## Intégration e-mail et e-mailing
 
 - <https://www.smashingmagazine.com/2021/04/complete-guide-html-email-templates-tools/> A Complete Guide To HTML Email
 - <https://explore.reallygoodemails.com/new-to-email-coding-heres-where-to-start-2494422f0bd4> Résumé de quelques pratiques d'intégration
@@ -777,9 +772,13 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 - <https://litmus.com/> (screenshots de mails multi-clients, le plus populaire)
 - <https://www.emailonacid.com/> (screenshots de mails multi-clients)
-- <https://www.mail-tester.com/> indique le niveau de "qualité" d'un e-mail envoyé à une adresse
-- <http://putsmail.com/> (envoi de mail à partir d'un code HTML collé)
 - <https://mailtrap.io/> Capture les mails envoyés pour les inspecter
+- <https://github.com/mailhog/MailHog> SMTP capture
+
+### Sécurité, qualité
+
+- <https://www.alexblackie.com/articles/email-authenticity-dkim-spf-dmarc/> DKIM, SPF, DMARC
+- <https://www.mail-tester.com/> indique le niveau de "qualité" d'un e-mail envoyé à une adresse
 
 ---
 
