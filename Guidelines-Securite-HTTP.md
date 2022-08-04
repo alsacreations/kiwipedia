@@ -21,7 +21,9 @@ Ressources :
 
 **Attention** : Toutes les règles ci-dessous peuvent être renvoyées par n'importe quel serveur HTTP, encapsulées sous Apache par `<IfModule mod_headers.c></IfModule>` pour ne les appliquer que lorsque mod_headers est bien activé. Les en-têtes HTTP peuvent aussi être renvoyées par le back (ex : PHP avec la fonction [header](https://www.php.net/manual/fr/function.header.php))
 
-## Strict-Transport-Security
+## Niveau 1 (base) 🥉
+
+### Strict-Transport-Security
 
 Indique qu'à l'avenir les navigateurs ne pourront plus se connecter au site en HTTP (si le nom de domaine est détourné vers un autre faux site).
 
@@ -34,7 +36,7 @@ Indique qu'à l'avenir les navigateurs ne pourront plus se connecter au site en 
 Header set Strict-Transport-Security "max-age=15768000; preload"
 ```
 
-## X-Content-Type-Options
+### X-Content-Type-Options
 
 Empêche le navigateur d'interpréter des fichiers de ressources (ex : scripts) s'ils ne sont pas livrés avec le bon type MIME.
 
@@ -44,7 +46,7 @@ Empêche le navigateur d'interpréter des fichiers de ressources (ex : scripts) 
 Header set X-Content-Type-Options: nosniff
 ```
 
-## X-Frame-Options
+### X-Frame-Options
 
 Empêche le site d'être embarqué dans une iframe, pour le clickjacking notamment. Est mieux remplacé/contrôlé par frame-ancestors en Content Security Policy, mais cela ne coûte rien de l'ajouter pour les anciens navigateurs.
 
@@ -55,7 +57,7 @@ Empêche le site d'être embarqué dans une iframe, pour le clickjacking notamme
 Header set X-Frame-Options DENY
 ```
 
-## X-Permitted-Cross-Domain-Policies
+### X-Permitted-Cross-Domain-Policies
 
 Empêche des applications Adobe telles que PDF, Flash (old!) d'utiliser du cross-domain.
 
@@ -63,7 +65,7 @@ Empêche des applications Adobe telles que PDF, Flash (old!) d'utiliser du cross
 Header set X-Permitted-Cross-Domain-Policies "none"
 ```
 
-## X-XSS-Protection
+### X-XSS-Protection
 
 Empêche le chargement de la page si le navigateur détecte une attaque XSS (cross-site scripting). N'est pas nécessaire si Content-Security-Policy désactive les scripts avec 'unsafe-inline', mais sert encore aux anciens navigateurs ne supportant pas CSP.
 
@@ -71,7 +73,7 @@ Empêche le chargement de la page si le navigateur détecte une attaque XSS (cro
 Header set X-XSS-Protection "1; mode=block"
 ```
 
-## Referrer Policy
+### Referrer Policy
 
 Définit comment est divulgué le referer du site courant à une page de destination, interne ou externe (= URL communiquée à la page distante dans l'en-tête HTTP Referer).
 
@@ -88,7 +90,7 @@ Header set Referrer-Policy "strict-origin-when-cross-origin"
 
 Voir aussi <https://developer.mozilla.org/fr/docs/Web/HTTP/Headers/Referrer-Policy>
 
-## Permissions Policy
+### Permissions Policy
 
 Remplace _Feature-Policy_, débloque/bloque les API avancées telles que la géolocalisation, le plein écran, le microphone, d'après une [liste de clés](https://github.com/w3c/webappsec-permissions-policy/blob/main/features.md) et de valeurs parmi :
 
@@ -103,7 +105,11 @@ Header set Permissions-Policy "fullscreen=(*), geolocation=(self), autoplay=(sel
 
 Voir aussi <https://www.w3.org/TR/permissions-policy-1/> et <https://github.com/w3c/webappsec-permissions-policy/blob/main/permissions-policy-explainer.md>
 
-## Cookies
+---
+
+## Niveau 2 (étendu) 🥈
+
+### Cookies
 
 Modifie la façon dont les cookies sont créés par le serveur via les en-têtes HTTP en ajoutant ces indications :
 
@@ -119,7 +125,7 @@ Par exemple `Set-Cookie: nomducookie=valeur; Expires=Wed, 30 Oct 2030 13:37:00 G
 * Avec la fonction [setcookie](https://www.php.net/manual/fr/function.setcookie.php) native de PHP, voir la documentation pour ajouter le paramètre.
 * Avec d'autres frameworks, comme CodeIgniter : voir les paramètres de `set_cookie`.
 
-### Set-Cookie et SameSite
+#### Set-Cookie et SameSite
 
 Définit quand envoyer (ou non) un cookie. Avec `SameSite=Strict` le cookie ne sera envoyé que si la requête provient du même site web. Avec `SameSite=Lax` les cookies sont transférables depuis le domaine actuel vers des domaines de niveaux inférieurs et seront envoyés lors de requêtes GET initialisées par des sites tiers. C'est la valeur par défaut des navigateurs les plus récents.
 
@@ -129,7 +135,11 @@ Header always edit Set-Cookie (.*) "$1; SameSite=Lax"
 
 Voir aussi <https://developer.mozilla.org/fr/docs/Web/HTTP/Headers/Set-Cookie/SameSite> et <https://web.dev/samesite-cookies-explained/>
 
-## Subresource Integrity
+---
+
+## Niveau 3 🥇
+
+### Subresource Integrity
 
 Permet au navigateur de vérifier que le fichier externe chargé par `<script>` ou `<link>` (feuille de styles) n'a pas été modifié depuis son hébergement initial. Un hash dérivé du contenu du fichier est calculé une seule fois, doit être ajouté dans l'attribut `integrity`, puis le navigateur vérifie l'adéquation de cette valeur avec celle calculée à la volée pour le contenu du fichier téléchargé.
 
@@ -142,7 +152,7 @@ Permet au navigateur de vérifier que le fichier externe chargé par `<script>` 
 
 Voir aussi <https://developer.mozilla.org/fr/docs/Web/Security/Subresource_Integrity>
 
-## CSP (Content-Security-Policy)
+### CSP (Content-Security-Policy)
 
 Définit précisément quels contenus (images, styles, scripts, etc), peuvent être chargés ou exécutés sur la page en fonction de leur origine/destination. Il est recommandé de partir d'un ensemble restrictif et d'ouvrir aux exceptions.
 
@@ -167,7 +177,7 @@ default-src 'self' *.example.org; script-src 'self'; style-src 'self'; font-src 
 * `form-action 'self'` ne permet la validation de formulaires (attribut `<form action="...">`) que sur l'origine elle-même.
 * Pour les images, `data:` autorise aussi les contenus _inline_ (ex : `src='data:image/jpeg;base64, ...`).
 
-### Script nonce
+#### Script nonce
 
 Définit (dans CSP) que certains scripts _inline_ sont autorisés lorsqu'ils sont équipés de l'attribut `nonce="XXX"` où _XXX_ est une valeur base64 générée par le serveur à usage unique.
 
@@ -181,9 +191,11 @@ console.log('hop')
 </script>
 ```
 
-## Access-Control-Allow-Origin (CORS)
+---
 
-Fait partie de Cross-origin Resource Sharing et indique quelle origine peut accéder aux ressources :
+### Access-Control-Allow-Origin (CORS)
+
+Fait partie de Cross-origin Resource Sharing et indique quelle origine peut accéder aux ressources, notamment pour les API front :
 
 * Soit toutes avec `*`.
 * Soit une seule origine précise (il n'est pas possible d'en indiquer plusieurs, ce qui peut être parfois problématique).
