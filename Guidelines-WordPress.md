@@ -255,7 +255,7 @@ Modèles d’extension à utiliser
 - [Disable comments](https://wordpress.org/plugins/disable-comments/) : désactiver les commentaires sur les articles/pages/médias, au choix (très propre).
 - [ACF](https://www.advancedcustomfields.com/) : ajouter des champs riches aux posts / pages / Custom posts.
 - [Duplicate Post](https://wordpress.org/plugins/duplicate-post/) : créer du contenu rapidement en dupliquant d'un simple clic un article, une page, ou un custom post.
-- [W3-total-cache](https://wordpress.org/plugins/w3-total-cache/) ou [WP Fastest Cache](https://fr.wordpress.org/plugins/wp-fastest-cache/) : cache de contenu pour améliorer les temps de réponse.
+- [W3-total-cache](https://wordpress.org/plugins/w3-total-cache/) ou [WP Fastest Cache](https://fr.wordpress.org/plugins/wp-fastest-cache/) ou [WP Super Cache](https://fr.wordpress.org/plugins/wp-super-cache/) : cache de contenu pour améliorer les temps de réponse.
 - [Ninja Forms](https://fr.wordpress.org/plugins/ninja-forms/) : génération de formulaires. Partiellement accessible.
 - [Polylang](https://fr.wordpress.org/plugins/polylang/) : traduction (remplace WPML).
 - [SEOPress](https://www.seopress.org/fr/) : SEO, ou [Yoast](https://fr.wordpress.org/plugins/wordpress-seo/) (rajoute une grosse surcouche de pub très intrusive dans l'admin).
