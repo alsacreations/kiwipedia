@@ -9,8 +9,8 @@ Cette présente convention rassemble les bonnes pratiques WordPress en productio
 On utilise
 
 - [Composer](https://getcomposer.org/) pour installer WordPress et ses extensions.
-- [WordPlate](https://github.com/wordplate/wordplate) qui fonctionne avec [webpackmix](https://github.com/devanandb/webpack-mix/tree/master/docs).
-- [Tailwind](https://github.com/timber/timber) en tant que framework CSS.
+- [WordPlate](https://github.com/wordplate/wordplate) qui fonctionne avec [viteJs](https://github.com/vitejs/vite).
+- [Tailwind](https://github.com/timber/timber) en tant que framework CSS (facultatif).
 - [Timber](https://github.com/timber/timber) pour utiliser Twig dans les templates (facultatif).
 
 ## Environnement de développement
@@ -38,7 +38,7 @@ On ne versionne **pas** :
 - .env (sauf exception)
 - WordPress lui-même (car installé/mis à jour par composer)
 - les extensions tierces (car installé/mis à jour par composer)
-- les uploads
+- les fichiers uploads, update et vendor
 
 👉 Le fichier README.md à la racine du projet doit contenir toutes les informations pour ré-installer le site rapidement en production.
 
@@ -69,7 +69,7 @@ Les extensions spécifiques WordPress / PHP recommandées sont :
 
 #### Automatisation
 
-Avec [webpackmix](https://github.com/devanandb/webpack-mix/tree/master/docs) (présent dans WordPlate)
+Avec [viteJs](https://github.com/vitejs/vite) (présent dans WordPlate)
 
 #### Moteur de template
 
@@ -296,43 +296,6 @@ Modèles d’extension à utiliser
 - Désactiver l’édition du thème et des plugins en ligne dans wp-config.php `define('DISALLOW_FILE_EDIT', true);`
 - Surveiller si le thème / les extensions utilisées font l’objet d’une faille sur [wpscan](https://wpscan.com/)
 - Ajouter le script pour enlever l'avertissement à la connexion qui permet d’indiquer que l’identifiant est le bon mais pas le mot de passe.
-
-Bloquer xmlrpc (version .htaccess)
-
-```htaccess
-<Files xmlrpc.php>
-order deny,allow
-deny from all
-# allow from 123.123.123.123 (si IP identifiée)
-</Files>
-```
-
-Supprimer les infos utilisateur leakées par l'API REST
-
-```php
-/**
- * kiwi_remove_rest_endpoints
- * Disable default users API endpoints for security.
- * https://www.wp-tweaks.com/hackers-can-find-your-wordpress-username/
- * 
- * @param  mixed $endpoints
- * @return void
- */
-public function kiwi_remove_rest_endpoints($endpoints)
-{
-  if (!is_user_logged_in()) {
-    if (isset($endpoints['/wp/v2/users'])) {
-     unset($endpoints['/wp/v2/users']);
-    }
-
-    if (isset($endpoints['/wp/v2/users/(?P<id>[\d]+)'])) {
-      unset($endpoints['/wp/v2/users/(?P<id>[\d]+)']);
-     }
-   }
-   return $endpoints;
-}
-add_filter('rest_endpoints', [$this, 'kiwi_remove_rest_endpoints']);
-```
 
 ## Développement
 
