@@ -246,8 +246,11 @@ Modèles d’extension à utiliser
 
 ### Obligatoires
 
-- [wp-fail2ban](https://wordpress.org/plugins/wp-fail2ban/) si hébergement interne : permet de signaler les erreurs d’identification à fail2ban+iptables pour bannir les IP tentant du bruteforce ; n’utilisez alors pas d’extension pour changer l’url de wp-admin.
+- [WP fail2ban](https://wordpress.org/plugins/wp-fail2ban/) si hébergement interne : permet de signaler les erreurs d’identification à fail2ban+iptables pour bannir les IP tentant du bruteforce ; n’utilisez alors pas d’extension pour changer l’url de wp-admin.
 - [WP Migrate DB](https://fr.wordpress.org/plugins/wp-migrate-db/) pour migrer les données de local > dev > recette > prod (et inversement), à désinstaller par sécurité après mise en production.
+- [W3 Total Cache](https://wordpress.org/plugins/w3-total-cache/) ou [WP Fastest Cache](https://fr.wordpress.org/plugins/wp-fastest-cache/) ou [WP Super Cache](https://fr.wordpress.org/plugins/wp-super-cache/) : cache/compression de contenu pour améliorer les temps de réponse.
+- [SecuPress](https://fr.wordpress.org/plugins/secupress/) pour améliorer le score global (permissions de fichiers, bonnes pratiques).
+- Notre plugin **[Kiwiplate Setup Theme](assets/wordpress/kiwiplate_setup_theme.php)**, et/ou mettre en place les actions suivantes (extensions + snippets de code).
 
 ### Recommandées selon usage
 
@@ -255,7 +258,6 @@ Modèles d’extension à utiliser
 - [Disable comments](https://wordpress.org/plugins/disable-comments/) : désactiver les commentaires sur les articles/pages/médias, au choix (très propre).
 - [ACF](https://www.advancedcustomfields.com/) : ajouter des champs riches aux posts / pages / Custom posts.
 - [Duplicate Post](https://wordpress.org/plugins/duplicate-post/) : créer du contenu rapidement en dupliquant d'un simple clic un article, une page, ou un custom post.
-- [W3 Total Cache](https://wordpress.org/plugins/w3-total-cache/) ou [WP Fastest Cache](https://fr.wordpress.org/plugins/wp-fastest-cache/) ou [WP Super Cache](https://fr.wordpress.org/plugins/wp-super-cache/) : cache de contenu pour améliorer les temps de réponse.
 - [Ninja Forms](https://fr.wordpress.org/plugins/ninja-forms/) : génération de formulaires. Partiellement accessible.
 - [Polylang](https://fr.wordpress.org/plugins/polylang/) : traduction (remplace WPML).
 - [SEOPress](https://www.seopress.org/fr/) : SEO, ou [Yoast](https://fr.wordpress.org/plugins/wordpress-seo/) (rajoute une grosse surcouche de pub très intrusive dans l'admin).
@@ -285,45 +287,8 @@ Modèles d’extension à utiliser
 
 ## Sécurité
 
-- Utiliser notre plugin **[Kiwiplate Setup Theme](assets/wordpress/kiwiplate_setup_theme.php)**, et/ou mettre en place les actions suivantes (extensions + snippets de code).
-
-- [Disable emojis](https://fr.wordpress.org/plugins/disable-emojis/) : désactiver les appels de scripts externes vers WordPress (RGPD).
-- [Disable comments](https://wordpress.org/plugins/disable-comments/) : désactiver les commentaires sur les articles/pages/médias, au choix (très propre).
 - [User Name Security](https://wordpress.org/plugins/user-name-security/) supprime les mentions de l’utilisateur (id et username) dans `body_class()`, entre autres choses.
 - [SF Author URL control](https://wordpress.org/plugins/sf-author-url-control/) personnalise le “author” et le slug utilisateur pour sécuriser et personnaliser les URL des pages auteur.
-- SecuPress ?
-
-Masquer la version de WordPress (balise meta generator qui apparaît en front) à ajouter dans functions.php :
-
-```php
-function alsa_remove_generators() {
-    add_filter( 'the_generator', '__return_false');
-    // Remove WLW manifest
-    remove_action( 'wp_head', 'wlwmanifest_link');
-    // Display the links to the extra feeds such as category feeds
-    remove_action( 'wp_head', 'feed_links_extra', 3 );
-    // Display the links to the general feeds: Post and Comment Feed
-    remove_action( 'wp_head', 'feed_links', 2 );
-    // Display the link to the Really Simple Discovery service endpoint, EditURI link
-    remove_action( 'wp_head', 'rsd_link' );
-    // index link
-    remove_action( 'wp_head', 'index_rel_link' );
-    // prev link
-    remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 );
-    // start link
-    remove_action( 'wp_head', 'start_post_rel_link', 10, 0 );
-    // Display relational links for the posts adjacent to the current post.
-    remove_action( 'wp_head', 'adjacent_posts_rel_link', 10, 0 );
-    // Display the XHTML generator that is generated on the wp_head hook, WP ver
-    remove_action( 'wp_head', 'wp_generator' );
-    remove_action( 'wp_head', 'wp_shortlink_wp_head' );
-    // Disable XML RPC
-    add_filter('xmlrpc_enabled', '__return_false');
-    // Removes REST API link tag from header
-    remove_action('wp_head', 'rest_output_link_wp_head', 10);
-}
-add_action( 'init', 'alsa_remove_generators' );
-```
 
 - Créer un ou plusieurs utilisateurs de niveau éditeur pour les intervenants (doit être différent du nom de domaine pour des raisons de sécurité), ayant accès juste aux fonctionnalités utiles, **ne pas utiliser de compte admin** par défaut pour toutes les personnes car cela permet l'installation d'extensions.
 - Compléter le fichier `wp-config.php` avec les valeurs de <https://wordplate.github.io/salt/>
@@ -392,7 +357,7 @@ add_filter( 'login_errors', 'no_wordpress_errors' );
 
 ## Performance
 
-👉 Mettre en place un plugin de cache (voir extensions)
+👉 Mettre en place un plugin de cache/compression/minification (voir extensions)
 
 - Identifier les requêtes lentes <https://css-tricks.com/finding-and-fixing-slow-wordpress-database-queries/>
 
