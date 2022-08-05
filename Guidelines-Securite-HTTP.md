@@ -21,7 +21,7 @@ Ressources :
 
 **Attention** : Toutes les règles ci-dessous peuvent être renvoyées par n'importe quel serveur HTTP, encapsulées sous Apache par `<IfModule mod_headers.c></IfModule>` pour ne les appliquer que lorsque mod_headers est bien activé. Les en-têtes HTTP peuvent aussi être renvoyées par le back (ex : PHP avec la fonction [header](https://www.php.net/manual/fr/function.header.php))
 
-## Niveau 1 (base) 🥉
+## Niveau 1 (base) 🥇
 
 ### Strict-Transport-Security
 
@@ -137,7 +137,7 @@ Voir aussi <https://developer.mozilla.org/fr/docs/Web/HTTP/Headers/Set-Cookie/Sa
 
 ---
 
-## Niveau 3 🥇
+## Niveau 3 🥉
 
 ### Subresource Integrity
 
