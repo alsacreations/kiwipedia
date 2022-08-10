@@ -160,28 +160,9 @@ Utiliser l'attribut `translate="no"` sur toutes les portions de contenu qui **ne
 
 Chaque page doit comprendre un élément de titre de premier niveau `<h1>` et la structure des autres niveaux doit suivre un ordre logique (h1 à h6).
 
-## Liens d’évitement
-
-Afin de proposer une navigation alternative au clavier pour certaines déficiences visuelles, des liens d’évitements sont systématiquement intégrés dans la structure HTML :
-
-```html
-<div class="skip-links">
-  <a href="#navigation">Aller au menu</a>
-  <a href="#main">Aller au contenu</a>
-  <a href="#search">Aller à la recherche</a>
-</div>
-```
-
-Afin de rendre automatiquement visibles / audibles les liens d’évitement lors de la navigation au clavier via la touche Tab, nous employons par défaut ces règles de styles CSS :
-
-```html
-.skip-links { position: absolute; } .skip-links a { position: absolute; left: -9999px; padding: 0.5em; background: #000;
-color:#fff; text-decoration: none; } .skip-links a:focus { position: static; }
-```
-
 ## Accessibilité
 
-Une attention toute particulière sera apportée à l’accessibilité des documents afin que chaque utilisateur, quelle que soit sa défaillance, puisse avoir plein accès aux contenus proposés. Voir aussi [Guidelines Accessibilité](Guidelines-Accessibilite.md) et <https://github.com/DISIC/guide-integrateur>.
+Une attention toute particulière sera apportée à l’accessibilité des documents afin que chaque utilisateur, quelle que soit sa défaillance, puisse avoir plein accès aux contenus proposés. Voir aussi [Guidelines Accessibilité](Guidelines-Accessibilite.md).
 
 ## Microdata
 

@@ -4,74 +4,68 @@ Statut : Working Draft (WD)
 
 Cette présente convention rassemble les bonnes pratiques d'Accessibilité en production appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/). Elle a pour but d'évoluer dans le temps et de s'adapter à chaque nouveau projet.
 
-## Généralités
+## Niveau 1 (base) 🥉
 
-- Respecter les standards W3C et [valider son code](https://validator.w3.org/).
+### HTML
+
+- La langue de la page est systématiquement renseignée via un attribut `lang` dans l’élément `<html>`.
+- Le titre `<title>` de la page doit être pertinent.
+- Respecter la hiérarchie des titres `<hX>` (l'extension "Headings Map" (voir détail Généralités).
+- Utiliser les éléments HTML pour leur fonction/sémantique et non pas pour leur forme (voir partie "Sémantique HTML").
+- Utiliser les rôles (landmarks) ARIA (`role=`) quand c'est nécessaire (voir parties "ARIA" et "Sémantique HTML").
+- Masquer correctement les contenus qui ne devraient *pas* être retranscrits par un lecteur d’écran (ex. `aria-hidden=true`, `role=presentation`).
+- Prévoir au moins un lien d'évitement permettant d'accéder directement au contenu principal.
+- Tous les liens doivent avoir un intitulé explicite.
+- Signaler lorsqu’un lien s’ouvre dans une nouvelle fenêtre (voir Détails).
+- Vérifier l'accessibilité des formulaires (voir Détails).
+
+### CSS
+
 - Ne pas fixer de hauteur sur les éléments afin que le contenu reste lisible lorsque le texte est zoomé.
 - Travailler avec des tailles de polices fluides (`em` ou `rem`).
-- Respecter la hiérarchie des titres `<hX>` (l'extension "Headings Map" (extension [Chrome](https://chrome.google.com/webstore/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi) et [Firefox](https://addons.mozilla.org/fr/firefox/addon/headingsmap/)) permet de vérifier que la hiérachie des titres est cohérente).
-- Utiliser les éléments HTML pour leur fonction/sémantique et non pas pour leur forme.
-  - Utiliser les éléments pouvant recevoir le focus (`<a>`, `<input type="button">`, `<button>`) lorsqu'ils sont cliquables/interactifs.
-- Exploiter WAI ARIA <https://www.w3.org/WAI/standards-guidelines/aria/> lorsque c'est pertinent pour aider le navigateur.
-- Exploiter le [Design System du W3C](https://design-system.w3.org/) pour les différents composants
+- Ne pas supprimer l'outline autour des éléments cliquables (pas de `outline: none`) ou utiliser `:focus-visible` (voir Détail ci-dessous)
+- Ne pas employer de contenu généré (`::before`, `::after`) pour véhiculer des informations ou pour afficher des icônes.
+- Masquer correctement les contenus qui devraient être retranscrits par un lecteur d’écran (ex. `.sr-only`)
 
-## Bonnes pratiques Webdesign
+### Médias
 
-### Taux de contraste
+- Chaque image doit avoir un attribut `alt`.
+- Les images décoratives (qui n'apportent rien au contenu) doivent avoir un attribut alt vide `<img ... alt="">`.
+- Lorsqu'un lien renvoie vers un téléchargement de fichier, il faut indiquer : son intitulé, sa taille, son format et l'ouverture dans une nouvelle fenêtre.
+- Rendre les fichiers SVG accessibles : décoratifs ou non, inline ou non, dans un bouton / lien ou non (voir Détails)
 
-Respecter les taux de contraste minimum entre le texte et le fond.
+### Webdesign
 
-- <https://contrast-finder.tanaguru.com/> (outil en ligne)
-- <https://developer.paciellogroup.com/resources/contrastanalyser/> (Windows, MacOS)
-- <https://app.contrast-finder.org/> (outil en ligne)
-- <https://contrast-grid.eightshapes.com/> (grille comparant de multiples valeurs)
-- WCAG Color contrast checker (extension [Chrome](https://chrome.google.com/webstore/detail/wcag-color-contrast-check/plnahcmalebffmaghcpcmpaciebdhgdf) et [Firefox](https://addons.mozilla.org/fr/firefox/addon/wcag-contrast-checker/)) qui permet de vérifier les contrastes de couleurs directement depuis sa page HTML.
+- Respecter les taux de contraste minimum (voir ressources).
+- Les éléments interactifs doivent toujours être perceptibles (clavier ou pointeur)
 
-### Checklist accessibilité Webdesign
+## Niveau 2 (étendu) 🥈
 
-- Respecter le contraste de couleur + gammes de couleurs
-- Ne pas indiquer une information uniquement par la couleur.
-- Respecter une taille minimum de police pour la lisibilité.
-- Tailles des zones de touch en mobile + espacements suffisants entre les zones
-- Présence d’un menu de liens rapides
-- Icônes et/ou images accompagnées d’un texte/intitulé si nécessaire
-- Clarté du/des textes/du langage
-- Mise en contexte des "Call To Action"
-- Indiquer clairement quels libellés correspondent à quels champs de formulaires
-- Les libellés et les champs doivent être accolés
-- Boutons radios/checkboxes : le champ de sélection doit être large et pas seulement sur la box
-- Indication des champs obligatoires
-- Indication des formats de saisie (numérique, …)
-- Validation et affichage des erreurs en temps réel des formulaires (sans actualisation)
-- Indiquer le format et la taille des fichiers en téléchargement
-- Boutons descriptifs (pas de “cliquez ici”)
-- Indiquer l’ouverture d’un lien dans une nouvelle fenêtre (“ce lien s’ouvrira dans une nouvelle fenêtre”)
-- Proposer différents médias de contact (téléphone, mail)
-- Pas de textes trop longs (utiliser les titres, segmenter, aérer, intégrer des images…)
-- Bon espacement des lignes de texte
-- Pas de texte justifié
-- Conserver les accents sur les majuscules
-- Expliciter les abréviations
-- Déclarer les citations
-- Limiter les informations à télécharger et préférer l’incorporation directement dans la page
-- Indication visuelle de la page active
-- Les liens et zones cliquables sont visuellement identifiés
+- Utiliser un lecteur audio/vidéo accessible, par exemple les éléments HTML5 natifs.
+- Vérifier la cohérence de la tabulation, par exemple via `tabindex` (voir Détails).
 
----
+## Niveau 3 (demandes spécifiques) 🥇
 
-## Bonnes pratiques HTML
+- Fournir une piste de sous-titres avec le format webVTT et l'élément `<track>`.
+- Rendre les fichiers PDF accessibles ou fournir une alternative `HTML`, `.doc`, `.odt` structurée.
+Utiliser l'attribut `aria-live` sur les informations provenant de chargements AJAX ou dévoilées par JavaScript dynamiquement (voir "Détails")
+- Rendre l'ensemble des composants accessibles (voir Détails)
 
-### Rôles ARIA
+## À classer 🤷‍♂️
 
-Notre structure HTML type exploite les rôles landmarks ARIA (`role=`). C'est un choix volontaire de notre part bien que les spécifications WAI-ARIA considèrent que c'est inutile. La raison est que le référentiel français RGAA 4 les recommande.
+### Généralités
 
-Pour plus de détails, voir [partie ARIA](#aria) ci-dessous.
+- Respecter les standards W3C et [valider son code](https://validator.w3.org/).
 
-### Menu de navigation
+----
+
+# Accessibilité : dans le détail
+
+## Détail : Menu de navigation
 
 Utiliser des combinaisons `<ul><li>` (liste non ordonnée) pour structurer les menus de navigation dans un élément `<nav role="navigation”>`.
 
-## Éléments sémantiques HTML5
+## Détail : sémantiques HTML5
 
 ### Zone d’en-tête principale
 
@@ -120,8 +114,6 @@ Pour chaque balise `<nav role="navigation">`, ajouter un `aria-label` descriptif
 
 `<nav role="navigation" aria-label="Menu principal">[…]</nav>`
 
-Plus d’informations : <https://www.accede-web.com/notices/html-et-css/structure-generale/structurer-les-menus-de-navigation-principaux-et-secondaires-avec-nav-rolenavigation/>
-
 ### Moteur de recherche
 
 Le rôle `role="search"` doit être ajouté dans l'élément HTML englobant le formulaire de recherche.
@@ -142,12 +134,14 @@ Plus d’informations : <https://developer.mozilla.org/en-US/docs/Web/Accessibil
 
 ### Liens d’évitement ("skip link")
 
-- Il est **obligatoire** d'avoir au moins 1 lien d'évitement permettant d'accéder directement au contenu principal. D'autres liens d'évitement peuvent être ajoutés pour accéder rapidement à la navigation, à la recherche, au pied de page, etc.
+Un lien d'évitement vers le contenu principal est nécessaire.
+D'autres liens d'évitement peuvent être ajoutés pour accéder rapidement à la navigation, à la recherche, au pied de page, etc.
+
 - Il doit être le premier lien de la page.
 - Il peut être masqué (classe Tailwind [`sr-only`](https://tailwindcss.com/docs/screen-readers)) et visible lors du focus.
 - Si le contenu principal est un élément non interactif il faut mettre un `tabindex="-1"` pour rendre cet élément focusable (ex. sur une balise `<main>`). Voir [la partie sur les tabindex.](https://github.com/alsacreations/guidelines/blob/master/Guidelines-Accessibilite.md#tabindex)
 
-À titre indocatif, voici le lien d'évitement employé au sein du [Design System du W3C](https://design-system.w3.org/)&nbsp;:
+À titre indicatif, voici le lien d'évitement employé au sein du [Design System du W3C](https://design-system.w3.org/)&nbsp;:
 
 ```html
 <a href="#main" class="skip-link">Skip to content</a>
@@ -197,7 +191,7 @@ Tous les liens doivent avoir un **intitulé** explicite, un lien "vide" n’est 
 **Exemple :**
 
 ![Liens vers les réseaux sociaux](images/accessibilite02.png)
-_Liens vers les réseaux sociaux_
+*Liens vers les réseaux sociaux*
 
 Ne pas faire :
 
@@ -236,7 +230,7 @@ De plus, il n’est pas sûr à 100% que l’attribut `title` soit correctement 
 }
 ```
 
-→ dans ce cas là, le lecteur d’écran retranscrit bien _"Retrouvez-nous sur Facebook"_.
+→ dans ce cas là, le lecteur d’écran retranscrit bien *"Retrouvez-nous sur Facebook"*.
 
 #### Ouverture dans une nouvelle fenêtre
 
@@ -314,7 +308,7 @@ Faciliter la navigation avec un menu, une recherche ou un plan du site, exploita
 
 #### Tabindex
 
-Il permet de capturer l’ordre du focus selon le chiffre qu’on lui attribue. Un ordre logique est "naturellement" créé selon les éléments interactifs du DOM.  Il comprend tous les chiffres positifs à partir de 0.
+Il permet de capturer l’ordre du focus selon le chiffre qu’on lui attribue. Un ordre logique est "naturellement" créé selon les éléments interactifs du DOM. Il comprend tous les chiffres positifs à partir de 0.
 
 → Il faut éviter de toucher au `tabindex` positif.
 
@@ -330,6 +324,8 @@ Pour en [savoir plus](https://developer.mozilla.org/fr/docs/Web/HTML/Global_attr
 ### Tableaux
 
 N'utiliser les tableaux que pour la présentation de données, et non pour la structure du document ou du design.
+
+TODO: il manque des trucs ici je crois
 
 ---
 
@@ -422,7 +418,7 @@ Utiliser plutôt la classe `.sr-only`, présente dans [Tailwind](https://tailwin
 **Exemple :**
 
 ![Bouton "précédent" d’un slider](images/accessibilite01.png)
-_Bouton "précédent" d’un slider_
+*Bouton "précédent" d’un slider*
 
 Ne pas faire :
 
@@ -452,10 +448,6 @@ Ne pas faire :
 
 ## Bonnes pratiques Images et Médias
 
-Chaque image doit avoir un attribut `alt`. Les images décoratives (qui n'apportent rien au contenu) doivent avoir un attribut alt vide `<img ... alt="">`.
-
-Documentation : [https://www.w3.org/WAI/tutorials/images/](https://www.w3.org/WAI/tutorials/images/)
-
 ### Image porteuse d’information ou cliquable
 
 Une image **porteuse d’information ou cliquable** doit avoir une alternative textuelle, l’attribut `alt` doit reprendre l’information figurant sur l’image.
@@ -466,7 +458,7 @@ Exemple d’une image **cliquable** :
 
 ```html
 <a href="www.knacss.com">
-  <img src="knacss.png" alt="Knacss" />
+  <img src="knacss.png" alt="Knacss">
 </a>
 ```
 
@@ -475,7 +467,7 @@ Exemple d’une image **porteuse d’information** :
 ![4,9 milliards € sont consacrés à la modernisation - 10 millions € - 700km](images/accessibilite04.png)
 
 ```html
-<img src="banner.png" alt="4,9 milliards € sont consacrés à la modernisation […] - 10 millions € […] - 700km" />
+<img src="banner.png" alt="4,9 milliards € sont consacrés à la modernisation […] - 10 millions € […] - 700km">
 ```
 
 **Attention** : inutile de commencer l’attribut `alt=""` par `"Image : …"`, cette information sera retranscrite par les lecteurs d’écrans lors de la lecture de l’élément `<img>`.
@@ -492,41 +484,21 @@ Exemple d’une image de **décoration** :
 <img src="kiwiparty.png" alt="">
 ```
 
-### Vidéos
-
-Utiliser un lecteur audio/vidéo accessible, par exemple les éléments HTML5 natifs.
-
-Fournir une piste de sous-titres avec le format webVTT et l'élément `<track>`.
-
-### PDF
-
-Il faut que le PDF soit lui-même accessible, ou il faut proposer une alternative `HTML`, `.doc`, `.odt` structurés.
-
-Lorsqu'un lien renvoi vers un téléchargement de PDF, il faut spécifier dans le `title`:
-
-- son intitulé
-- sa taille
-- son format
-- et l'ouverture dans une nouvelle fenêtre
-
-**Exemple :**
-`<a href="[url]" title="Intitulé (PDF, 456ko, nouvelle fenêtre)>Intitulé</a>`
-
 ---
 
-## SVG et accessibilité
+### SVG et accessibilité
 
 Les exemples à suivre proviennent du [Design System du W3C](https://design-system.w3.org/styles/svg-icons.html) ainsi que de l'article [Contextually Marking up accessible images and SVGs](https://www.scottohara.me/blog/2019/05/22/contextual-images-svgs-and-a11y.html) et [Les images SVG sont de plus en plus utilisées sur le web mais qu’en est-il de leur accessibilité ?](https://a11y-guidelines.orange.com/fr/articles/svg-accessibles/).
 
 **Important :** Toujours commencer par nettoyer proprement les fichiers SVG (avec [SVGOMG](https://jakearchibald.github.io/svgomg/)) car les éditeurs graphiques ajoutent de nombreux éléments inutiles tels que des `<title>` de type "créé par Sketch".
 
-### SVG porteur d'information
+#### SVG porteur d'information
 
 **Cas d'un SVG inline :**
 
 Ajouter l'attribut `role="img"` pour indiquer aux lecteurs d'écrans de la considérer comme une image et lui éviter de lire tous les nœuds HTML du SVG.
 Il faut ensuite ajouter un `<title>` (ou un `aria-label`) pour expliciter la fonction de l'image.
-Ajouter également `focusable="false"`pour éviter que la touche _Tab_ ne navigue au sein du SVG.
+Ajouter également `focusable="false"`pour éviter que la touche *Tab* ne navigue au sein du SVG.
 
 ```xml
 <svg role="img" focusable="false" aria-labelledby="title">
@@ -552,7 +524,7 @@ Ajouter l'attribut `role="img"`.
 <img src="image.svg" role="img" alt="Nom accessible">
 ```
 
-### SVG décoratif
+#### SVG décoratif
 
 **Cas d'un SVG inline :**
 
@@ -572,9 +544,9 @@ Appliquer `aria-hidden="true"` sur le `svg` afin d'indiquer aux lecteurs d'écra
 <img src="image.svg" alt="" aria-hidden="true">
 ```
 
-### SVG dans lien ou dans un bouton
+#### SVG dans lien ou dans un bouton
 
-La méthode `aria-label="Nom accessible"` est mal supportées par certaines assistances techniques lorsque le SVG est contenu dans un lien ou un bouton.
+La méthode `aria-label="Nom accessible"` est mal supportée par certaines assistances techniques lorsque le SVG est contenu dans un lien ou un bouton.
 
 Il est préférable d'utiliser un `<span>` invisible pour le nom accessible s'il doit être masqué à l'écran, le texte sera alors retranscrit par les lecteurs d’écrans.
 
@@ -618,34 +590,49 @@ On pourra moduler avec `aria-relevant` (`additions`, `removals`, `text`, `all`) 
 
 Pour tous les composants de page agissant sur le contenu, de type swiper, slider, slideshow, accordéon, pagination, onglets, menu déroulant, on privilégiera les scripts "accessibles", y compris ceux utilisant ARIA. Le but étant, entre autres, de ne pas gêner la navigation au clavier et de permettre la lecture de la page avec une synthèse vocale.
 
-La bibliothèque de plugins jQuery Pepin est un départ pour cela <https://github.com/alsacreations/pepin>
-
 Pour les menus déroulants et mega menus, Accessible Mega Menu a fait ses preuves <https://adobe-accessibility.github.io/Accessible-Mega-Menu/>
 
 ---
 
 ## Ressources Générales
 
+- [RGAA](https://www.numerique.gouv.fr/publications/rgaa-accessibilite/)
+- [Outils d'accessibilité du Gouvernement](https://design.numerique.gouv.fr/outils/)
+- [Guide de l'Intégrateur RGAA3](https://disic.github.io/guide-integrateur/)
+- [Guide du Développeur RGAA3](https://disic.github.io/guide-developpeur/)
+- [Notices Accedeweb](https://www.accede-web.com/notices/)
 - [Design System du W3C](https://design-system.w3.org/)
-- Notices Accedeweb <https://www.accede-web.com/notices/>
-- Checklist <https://www.a11yproject.com/checklist/>
-- Patterns accessibles <https://www.w3.org/TR/wai-aria-practices-1.1/>
-- RGAA <https://www.numerique.gouv.fr/publications/rgaa-accessibilite/>
-- Scripts vanilla JS accessibles <https://van11y.net/>
+- [Guidelines Accessibilité Orange](https://a11y-guidelines.orange.com/fr/)
+- [Modèles de conception accessibles](https://www.w3.org/WAI/ARIA/apg/)
+- [SmashingMag : Accessibilité dans les devtools de Chrome](https://www.smashingmagazine.com/2020/08/accessibility-chrome-devtools/)
 
 ## Outils
 
-### Support assistances techniques
+- [Support des Assistances Techniques](https://a11ysupport.io/)
+- [Checklist accessibilité](https://www.a11yproject.com/checklist/)
 
-- <https://a11ysupport.io/>
+### Contraste / Webdesign
+
+- [Contrastes de couleur vs déficiences visuelles](https://whocanuse.com/)
+- [Tanaguru Contrast Finder](https://contrast-finder.tanaguru.com/) : outil en ligne, propose des couleurs proches.
+- [Paciellogroup Color Contrast Checker](https://developer.paciellogroup.com/resources/contrastanalyser/) (Windows, MacOS)
+- [Contrast Grid](https://contrast-grid.eightshapes.com/) : grille comparant de multiples valeurs, ex. test d'une palette de couleur complète.
+- WCAG Color contrast checker (extension [Chrome](https://chrome.google.com/webstore/detail/wcag-color-contrast-check/plnahcmalebffmaghcpcmpaciebdhgdf) et [Firefox](https://addons.mozilla.org/fr/firefox/addon/wcag-contrast-checker/)) qui permet de vérifier les contrastes de couleurs directement depuis sa page HTML.
+
+***à classer***
+
+- <https://app.contrast-finder.org/> (outil en ligne) (pareil que Tanaguru ???)
 
 ### Plugins
 
-- [Wave browser extension](https://wave.webaim.org/extension/) (Firefox et Chrome)
-- Accessibilité dans les devtools de Chrome [https://www.smashingmagazine.com/2020/08/accessibility-chrome-devtools/](https://www.smashingmagazine.com/2020/08/accessibility-chrome-devtools/)
+- [Wave browser extension](https://wave.webaim.org/extension/) (Firefox, Edge et Chrome)
+- [Axe browser extension](https://www.deque.com/axe/) (Firefox, Edge et Chrome)
+- HeadingsMap : Extension [Chrome](https://chrome.google.com/webstore/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi) et [Firefox](https://addons.mozilla.org/fr/firefox/addon/headingsmap/)) permet de vérifier que la hiérachie des titres est cohérente).
 
 ### Synthèses vocales
 
 - [NVDA](https://www.nvda-fr.org/)
 - VoiceOver (natif sur macOS, iOS) (activation : cmd + fn + F5), voir [raccourcis clavier](https://www.apple.com/voiceover/info/guide/_1131.html)
 - [Jaws](https://www.freedomscientific.com/products/software/jaws/)
+
+---

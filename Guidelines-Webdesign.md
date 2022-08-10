@@ -51,8 +51,8 @@ Les pages à ne pas oublier de faire apparaître dans l'arborescence sont :
   - Mentions légales
   - Politique de confidentialité (pour satisfaire au [RGPD](https://www.cnil.fr/fr/reglement-europeen-protection-donnees))
   - Politique d'écoconception (pour satisfaire au [RGESN](https://ecoresponsable.numerique.gouv.fr/publications/referentiel-general-ecoconception/))
-  - Conditions générales d’utilisation / de vente (si concerné) 
-  - Déclaration d'accessibilité (si concerné) 
+  - Conditions générales d’utilisation / de vente (si concerné)
+  - Déclaration d'accessibilité (si concerné)
 - Page d'erreur 404 (voire d'erreur 500)
 - Les éléments dépendants. Exemple :
   - Envoi d’un mail automatique après une inscription à la newsletter ou à un événement, ou suite à un téléchargement
@@ -206,6 +206,32 @@ Les formats privilégiés à transmettre à l’Intégrateur :
 
 L’intégrateur aura à sa charge l’optimisation du poids des assets (notamment le choix du format et de la compression des images). cf. Guidelines de performance.
 
-### Accessibilité et taux de contraste
+### Checklist accessibilité
 
-cf. [Guidelines Accessibilité Numérique](https://github.com/alsacreations/guidelines/blob/master/Guidelines-Accessibilite.md#checklist-accessibilit%C3%A9-webdesign)
+- Respecter le contraste de couleur + gammes de couleurs
+- Ne pas indiquer une information uniquement par la couleur.
+- Respecter une taille minimum de police pour la lisibilité.
+- Tailles des zones de touch en mobile + espacements suffisants entre les zones
+- Présence d’un menu de liens rapides
+- Icônes et/ou images accompagnées d’un texte/intitulé si nécessaire
+- Clarté du/des textes/du langage
+- Mise en contexte des "Call To Action"
+- Indiquer clairement quels libellés correspondent à quels champs de formulaires
+- Les libellés et les champs doivent être accolés
+- Boutons radios/checkboxes : le champ de sélection doit être large et pas seulement sur la box
+- Indication des champs obligatoires
+- Indication des formats de saisie (numérique, …)
+- Validation et affichage des erreurs en temps réel des formulaires (sans actualisation)
+- Indiquer le format et la taille des fichiers en téléchargement
+- Boutons descriptifs (pas de “cliquez ici”)
+- Indiquer l’ouverture d’un lien dans une nouvelle fenêtre (“ce lien s’ouvrira dans une nouvelle fenêtre”)
+- Proposer différents médias de contact (téléphone, mail)
+- Pas de textes trop longs (utiliser les titres, segmenter, aérer, intégrer des images…)
+- Bon espacement des lignes de texte
+- Pas de texte justifié
+- Conserver les accents sur les majuscules
+- Expliciter les abréviations
+- Déclarer les citations
+- Limiter les informations à télécharger et préférer l’incorporation directement dans la page
+- Indication visuelle de la page active
+- Les liens et zones cliquables sont visuellement identifiés
