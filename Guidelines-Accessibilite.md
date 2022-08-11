@@ -6,7 +6,7 @@ Cette présente convention rassemble les bonnes pratiques d'Accessibilité en pr
 
 Ce document est divisé en trois parties :
 
-1. La [Checklist](#checklist-niveau-1-base-) (ensemble des points à respecter dans nos prestations)
+1. La [Checklist](#checklist-niveau-1-base-) (ensemble des points à respecter)
 2. Les [Explications techniques détaillées](#explications-techniques-détaillées) (s'y référer lorsqu'un point de la Checklist n'est pas clair)
 3. Les [Ressources d'accessibilité](#ressources-générales) (liens et outils)
 
@@ -14,13 +14,13 @@ Ce document est divisé en trois parties :
 
 ### HTML
 
-- Le code produit est valide et respecte les standards W3C.
-- La langue de la page est systématiquement renseignée via un attribut `lang` dans l’élément `<html>`.
-- Indiquer via `lang=` les changements de langue au sein d'une page.
-- Le titre `<title>` de la page doit être pertinent.
-- Respecter la hiérarchie des titres `<hX>` (l'extension "Headings Map").
+- Le code produit est valide et respecte les [standards W3C](https://www.w3.org/standards/).
+- Renseigner la langue de la page avec l'attribut `lang` de l’élément `<html>`.
+- Indiquer avec l'attribut `lang` les changements de langue locaux dans les blocs d'une page.
+- Utiliser un titre `<title>` pertinent pour chaque page.
+- Respecter la hiérarchie des titres `<hX>`.
 - Utiliser les éléments HTML pour leur fonction/sémantique et non pas pour leur forme.
-- Utiliser les rôles (landmarks) ARIA (`role=`) quand c'est nécessaire.
+- Utiliser les [landmarks_ ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/landmark_role).
 - Masquer correctement les contenus qui ne devraient *pas* être retranscrits par un lecteur d’écran (ex. `aria-hidden=true`, `role=presentation`).
 - Prévoir au moins un lien d'évitement permettant d'accéder directement au contenu principal.
 - Tous les liens doivent avoir un intitulé explicite.
@@ -42,8 +42,8 @@ Ce document est divisé en trois parties :
 - Toujours associer un `<label>` à son champ respectif.
 - Associer correctement une erreur à son champ respectif.
 - Indiquer clairement les champs obligatoires.
-- Indiquer les formats spécifiques des champs si nécessaire. Ne pas utiliser l'attribut `placeholder` comme seule indication.
-- Associer un `autocomplete` pour les champs demandant une donnée personnelle (nom, prénom, email, adresse, etc.).
+- Indiquer les formats spécifiques des champs si nécessaire. Ne pas utiliser l'attribut `placeholder` comme indication (privilégier `label`).
+- Associer un `autocomplete` pour les champs demandant une donnée personnelle (nom, prénom, e-mail, adresse, etc.).
 
 ### Médias
 
@@ -72,11 +72,11 @@ Utiliser l'attribut `aria-live` sur les informations provenant de chargements AJ
 
 # Explications techniques détaillées
 
-## Menu de navigation
-
-Utiliser des combinaisons `<ul><li>` (liste non ordonnée) pour structurer les menus de navigation dans un élément `<nav role="navigation”>`.
-
 ## Sémantique HTML5
+
+### Titres
+
+La hiérarchie peut être testée avec l'extension [Headings Map pour Chrome](https://chrome.google.com/webstore/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi) ou [Headings Map pour Firefox](https://addons.mozilla.org/fr/firefox/addon/headingsmap/).
 
 ### Zone d’en-tête principale
 
@@ -102,15 +102,9 @@ La balise `<footer>` peut être utilisée plusieurs fois dans la page mais l’a
 
 La balise `<main>` ne peut être utilisée qu’une seule fois dans la page ainsi que l’attribut `role="main"`.
 
-### Système de navigation
+### Navigation
 
-```html
-<nav role="navigation">[…]</nav>
-```
-
-La balise `<nav>` et son attribut `role="navigation"` peuvent être utilisés pour un système de navigation principale ou secondaire, englobant des menus contenant des liens internes au site.
-
-Exemple :
+Utiliser des combinaisons `<ul><li>` (liste non ordonnée) pour structurer les menus de navigation (principale ou secondaire) dans un élément `<nav role="navigation”>` :
 
 - Le menu principal du site (souvent affiché dans l’en-tête)
 - Un menu secondaire affiché dans certaines pages internes (parfois dans une barre latérale)
@@ -127,32 +121,24 @@ Pour chaque balise `<nav role="navigation">`, ajouter un `aria-label` descriptif
 
 ### Moteur de recherche
 
-Le rôle `role="search"` doit être ajouté dans l'élément HTML englobant le formulaire de recherche.
+Le rôle `role="search"` doit être ajouté à l'élément HTML englobant le formulaire de recherche, ajouter un `aria-label` descriptif.
 
 ```html
-<div role="search">
+<div role="search" aria-label="Moteur de recherche principal">
   <form>[…]</form>
 </div>
 ```
-
-Pour chaque balise comprenant un `role="search"`, ajouter un `aria-label` descriptif.
-
-**Exemple :**
-
-`<div role="search" aria-label="Moteur de recherche principal">[…]</div>`
-
 Plus d’informations : <https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Search_role/>
 
 ### Liens d’évitement ("skip link")
 
-Un lien d'évitement vers le contenu principal est nécessaire.
-D'autres liens d'évitement peuvent être ajoutés pour accéder rapidement à la navigation, à la recherche, au pied de page, etc.
+Un lien d'évitement vers le contenu principal est nécessaire. D'autres liens d'évitement peuvent être ajoutés pour accéder rapidement à la navigation, à la recherche, au pied de page, etc.
 
 - Il doit être le premier lien de la page.
 - Il peut être masqué (classe Tailwind [`sr-only`](https://tailwindcss.com/docs/screen-readers)) et visible lors du focus.
 - Si le contenu principal est un élément non interactif il faut mettre un `tabindex="-1"` pour rendre cet élément focusable (ex. sur une balise `<main>`). Voir [la partie sur les tabindex.](https://github.com/alsacreations/guidelines/blob/master/Guidelines-Accessibilite.md#tabindex)
 
-À titre indicatif, voici le lien d'évitement employé au sein du [Design System du W3C](https://design-system.w3.org/)&nbsp;:
+Voici le lien d'évitement employé au sein du [Design System du W3C](https://design-system.w3.org/)&nbsp;:
 
 ```html
 <a href="#main" class="skip-link">Skip to content</a>
@@ -266,7 +252,7 @@ Utiliser l'élément `<fieldset>` associé à `<legend>` pour regrouper les cham
 ```html
 <form>
   <fieldset>
-    <legend>Indiquer vos coordonnées</legend>
+    <legend>Vos coordonnées</legend>
 
     <input type="text" id="name" name="name" autocomplete="family-name">
     <label for="name">Nom</label>
@@ -288,7 +274,7 @@ Si un champ attend un format spécifique, toujours l'indiquer. **Ne pas utiliser
 **Exemple :**
 
 ```html
-<label for="email">Email <span>(nomprenom@mail.com)</label>
+<label for="email">E-mail <span>(nomprenom@mail.com)</label>
 <input type="email" name="email" id="email" autocomplete="email">
 ```
 
@@ -302,7 +288,7 @@ Il est également possible de l'afficher avec `aria-describedby` qui fait réfé
 <p id="hint">Numéro composé de 4 chiffres.</p>
 ```
 
-Associer un `autocomplete` pour les champs demandant une donnée personnelle (nom, prénom, email, adresse, etc.) :
+Associer un `autocomplete` pour les champs demandant une donnée personnelle (nom, prénom, e-mail, adresse, etc.) :
 
 ```html
 <label for="name">Nom</p>
@@ -628,14 +614,10 @@ Pour les menus déroulants et mega menus, Accessible Mega Menu a fait ses preuve
 ### Contraste / Webdesign
 
 - [Contrastes de couleur vs déficiences visuelles](https://whocanuse.com/)
-- [Tanaguru Contrast Finder](https://contrast-finder.tanaguru.com/) : outil en ligne, propose des couleurs proches
+- [Tanaguru Contrast Finder](https://contrast-finder.tanaguru.com/) ou [Contrast Finder](https://app.contrast-finder.org) : outil en ligne, propose des couleurs proches
 - [Paciellogroup Color Contrast Checker](https://developer.paciellogroup.com/resources/contrastanalyser/) (Windows, MacOS)
 - [Contrast Grid](https://contrast-grid.eightshapes.com/) : grille comparant de multiples valeurs, ex. test d'une palette de couleur complète
 - WCAG Color contrast checker (extension [Chrome](https://chrome.google.com/webstore/detail/wcag-color-contrast-check/plnahcmalebffmaghcpcmpaciebdhgdf) et [Firefox](https://addons.mozilla.org/fr/firefox/addon/wcag-contrast-checker/)) qui permet de vérifier les contrastes de couleurs directement depuis sa page HTML
-
-***à classer***
-
-- <https://app.contrast-finder.org/> (outil en ligne) (pareil que Tanaguru ???)
 
 ### Plugins
 
