@@ -31,42 +31,41 @@ Ce document est divisé en trois parties :
 
 - Ne pas fixer de hauteur sur les éléments afin que le contenu reste lisible lorsque le texte est zoomé.
 - Travailler avec des tailles de polices fluides (`em` ou `rem`).
-- Ne pas supprimer l'outline autour des éléments cliquables (pas de `outline: none`) ou utiliser `:focus-visible`.
+- Ne pas supprimer l'outline autour des éléments cliquables/focusables (pas de `outline: none`) ou utiliser `:focus-visible`.
 - Ne pas employer de contenu généré (`::before`, `::after`) pour véhiculer des informations ou pour afficher des icônes.
 - Masquer correctement les contenus qui devraient être retranscrits par un lecteur d’écran (ex. `.sr-only`)
 
 ### Formulaires
 
-- Vérifier l'accessibilité des formulaires.
-- Utiliser l'élément `<fieldset>` associé à `<legend>` pour regrouper les champs ayant trait à la même thématique.
-- Toujours associer un `<label>` à son champ respectif.
-- Associer correctement une erreur à son champ respectif.
+- Vérifier l'accessibilité des formulaires notamment au clavier.
 - Indiquer clairement les champs obligatoires.
-- Indiquer les formats spécifiques des champs si nécessaire. Ne pas utiliser l'attribut `placeholder` comme indication (privilégier `label`).
+- Utiliser l'élément `<fieldset>` associé à `<legend>` pour regrouper les champs ayant trait à la même thématique.
+- Toujours associer un `<label>` à son champ respectif (avec `for` et `id`).
+- Indiquer les formats spécifiques des champs lorsqu'il y en a ; ne pas utiliser l'attribut `placeholder` comme indication (privilégier `label`).
+- Associer correctement une erreur à son champ.
 - Associer un `autocomplete` pour les champs demandant une donnée personnelle (nom, prénom, e-mail, adresse, etc.).
 
 ### Médias
 
-- Chaque image doit avoir un attribut `alt`.
-- Les images décoratives (qui n'apportent rien au contenu) doivent avoir un attribut alt vide `<img ... alt="">`.
-- Lorsqu'un lien renvoie vers un téléchargement de fichier, il faut indiquer : son intitulé, sa taille, son format et l'ouverture dans une nouvelle fenêtre.
+- Toutes les images doivent comporter un attribut `alt` ; il doit être vide `alt=""` pour les images décoratives et renseigné pour les images apportant du contenu.
+- Lorsqu'un lien renvoie vers un téléchargement de fichier, il faut indiquer : son intitulé, son poids, son format et l'ouverture dans une nouvelle fenêtre.
 - Rendre les fichiers SVG accessibles : décoratifs ou non, inline ou non, dans un bouton / lien ou non.
 
 ## Checklist Niveau 2 (étendue) 🥈
 
 - Tester l'affichage des pages avec un niveau de zoom de 200%.
 - Utiliser un lecteur audio/vidéo accessible, par exemple les éléments HTML5 natifs.
-- Vérifier la cohérence de la tabulation, par exemple via `tabindex`.
+- Vérifier la cohérence de la tabulation et adapter si nécessaire avec `tabindex`.
 
 ## Checklist Niveau 3 (demandes spécifiques) 🥇
 
 - Tester avec un lecteur d'écran.
-- Fournir une piste de sous-titres avec le format webVTT et l'élément `<track>`.
-- Fournir une alternative textuelle aux formats audio.
+- Fournir une piste de sous-titres avec le format webVTT et l'élément `<track>` pour les vidéos.
+- Fournir une alternative textuelle (une retranscription) aux formats audio.
 - Rendre les fichiers PDF accessibles ou fournir une alternative `HTML`, `.doc`, `.odt` structurée.
-Utiliser l'attribut `aria-live` sur les informations provenant de chargements AJAX ou dévoilées par JavaScript dynamiquement.
-- Ajouter une modale de personnalisation d'affichage telle que l'outil AccessConfig (ou autre) sur le site web.
-- Rendre chaque script compatible avec les technologies d'assistance (TODO: attendre un Design System interne).
+- Utiliser l'attribut `aria-live` judicieusement sur les informations provenant de chargements AJAX ou dévoilées dynamiquement par JavaScript.
+- Ajouter une modale de personnalisation d'affichage telle que l'outil [AccessConfig](https://accessconfig.a11y.fr/) (ou autre).
+- Rendre chaque script compatible avec les technologies d'assistance.
 
 ----
 
