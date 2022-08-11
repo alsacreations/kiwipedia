@@ -15,17 +15,16 @@ Ce document est divisé en trois parties :
 ### HTML
 
 - Le code produit est valide et respecte les [standards W3C](https://www.w3.org/standards/).
+- Utiliser les éléments HTML pour leur fonction/sémantique et non pas pour leur forme.
 - Renseigner la langue de la page avec l'attribut `lang` de l’élément `<html>`.
 - Indiquer avec l'attribut `lang` les changements de langue locaux dans les blocs d'une page.
 - Utiliser un titre `<title>` pertinent pour chaque page.
 - Respecter la hiérarchie des titres `<hX>`.
-- Utiliser les éléments HTML pour leur fonction/sémantique et non pas pour leur forme.
 - Utiliser les [landmarks ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/landmark_role).
 - Masquer correctement les contenus qui ne devraient *pas* être retranscrits par un lecteur d’écran (ex. `aria-hidden=true`, `role=presentation`).
 - Prévoir au moins un lien d'évitement permettant d'accéder directement au contenu principal.
-- Tous les liens doivent avoir un intitulé explicite.
+- Donner un intitulé explicite à tous les liens.
 - Signaler lorsqu’un lien s’ouvre dans une nouvelle fenêtre.
-- Structurer correctement les listes (`ul`, `ol`, `dl`).
 
 ### CSS
 
