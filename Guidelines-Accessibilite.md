@@ -16,9 +16,9 @@ Ce document est divisé en trois parties :
 
 - La langue de la page est systématiquement renseignée via un attribut `lang` dans l’élément `<html>`.
 - Le titre `<title>` de la page doit être pertinent.
-- Respecter la hiérarchie des titres `<hX>` (l'extension "Headings Map" (voir détail Généralités).
-- Utiliser les éléments HTML pour leur fonction/sémantique et non pas pour leur forme (voir partie "Sémantique HTML").
-- Utiliser les rôles (landmarks) ARIA (`role=`) quand c'est nécessaire (voir parties "ARIA" et "Sémantique HTML").
+- Respecter la hiérarchie des titres `<hX>` (l'extension "Headings Map".
+- Utiliser les éléments HTML pour leur fonction/sémantique et non pas pour leur forme.
+- Utiliser les rôles (landmarks) ARIA (`role=`) quand c'est nécessaire.
 - Masquer correctement les contenus qui ne devraient *pas* être retranscrits par un lecteur d’écran (ex. `aria-hidden=true`, `role=presentation`).
 - Prévoir au moins un lien d'évitement permettant d'accéder directement au contenu principal.
 - Tous les liens doivent avoir un intitulé explicite.
