@@ -208,21 +208,24 @@ L’intégrateur aura à sa charge l’optimisation du poids des assets (notamme
 
 ### Checklist accessibilité
 
-- Respecter le contraste de couleur + gammes de couleurs
-- Ne pas indiquer une information uniquement par la couleur.
-- Respecter une taille minimum de police pour la lisibilité.
+#### Généralités
+
 - Tailles des zones de touch en mobile + espacements suffisants entre les zones
 - Présence d’un menu de liens rapides
-- Icônes et/ou images accompagnées d’un texte/intitulé si nécessaire
+- Indication visuelle de la page active
+- Les liens et zones cliquables sont visuellement identifiés (ex. soulignement d'un lien)
+- Les éléments interactifs doivent toujours être perceptibles (ex. navigation clavier ou pointeur)
+
+#### Couleurs
+
+- Respecter le contraste de couleur + gammes de couleurs
+- Ne pas indiquer une information uniquement par la couleur.
+
+#### Contenus
+
+- Respecter une taille minimum de police pour la lisibilité.
 - Clarté du/des textes/du langage
 - Mise en contexte des "Call To Action"
-- Indiquer clairement quels libellés correspondent à quels champs de formulaires
-- Les libellés et les champs doivent être accolés
-- Boutons radios/checkboxes : le champ de sélection doit être large et pas seulement sur la box
-- Indication des champs obligatoires
-- Indication des formats de saisie (numérique, …)
-- Validation et affichage des erreurs en temps réel des formulaires (sans actualisation)
-- Indiquer le format et la taille des fichiers en téléchargement
 - Boutons descriptifs (pas de “cliquez ici”)
 - Indiquer l’ouverture d’un lien dans une nouvelle fenêtre (“ce lien s’ouvrira dans une nouvelle fenêtre”)
 - Proposer différents médias de contact (téléphone, mail)
@@ -233,5 +236,17 @@ L’intégrateur aura à sa charge l’optimisation du poids des assets (notamme
 - Expliciter les abréviations
 - Déclarer les citations
 - Limiter les informations à télécharger et préférer l’incorporation directement dans la page
-- Indication visuelle de la page active
-- Les liens et zones cliquables sont visuellement identifiés
+
+#### Formulaires
+
+- Indiquer clairement quels libellés correspondent à quels champs de formulaires
+- Les libellés et les champs doivent être accolés
+- Boutons radios/checkboxes : le champ de sélection doit être large et pas seulement sur la box
+- Indication des champs obligatoires
+- Indication des formats de saisie (numérique, …)
+- Validation et affichage des erreurs en temps réel des formulaires (sans actualisation)
+- Indiquer le format et la taille des fichiers en téléchargement
+
+#### Médias
+
+- Icônes et/ou images accompagnées d’un texte/intitulé si nécessaire

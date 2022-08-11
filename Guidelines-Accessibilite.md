@@ -14,16 +14,18 @@ Ce document est divisé en trois parties :
 
 ### HTML
 
+- Le code produit est valide et respecte les standards W3C.
 - La langue de la page est systématiquement renseignée via un attribut `lang` dans l’élément `<html>`.
+- Indiquer via `lang=` les changements de langue au sein d'une page.
 - Le titre `<title>` de la page doit être pertinent.
-- Respecter la hiérarchie des titres `<hX>` (l'extension "Headings Map".
+- Respecter la hiérarchie des titres `<hX>` (l'extension "Headings Map").
 - Utiliser les éléments HTML pour leur fonction/sémantique et non pas pour leur forme.
 - Utiliser les rôles (landmarks) ARIA (`role=`) quand c'est nécessaire.
 - Masquer correctement les contenus qui ne devraient *pas* être retranscrits par un lecteur d’écran (ex. `aria-hidden=true`, `role=presentation`).
 - Prévoir au moins un lien d'évitement permettant d'accéder directement au contenu principal.
 - Tous les liens doivent avoir un intitulé explicite.
 - Signaler lorsqu’un lien s’ouvre dans une nouvelle fenêtre.
-- Vérifier l'accessibilité des formulaires.
+- Structurer correctement les listes (`ul`, `ol`, `dl`).
 
 ### CSS
 
@@ -33,35 +35,38 @@ Ce document est divisé en trois parties :
 - Ne pas employer de contenu généré (`::before`, `::after`) pour véhiculer des informations ou pour afficher des icônes.
 - Masquer correctement les contenus qui devraient être retranscrits par un lecteur d’écran (ex. `.sr-only`)
 
+### Formulaires
+
+- Vérifier l'accessibilité des formulaires.
+- Utiliser l'élément `<fieldset>` associé à `<legend>` pour regrouper les champs ayant trait à la même thématique.
+- Toujours associer un `<label>` à son champ respectif.
+- Associer correctement une erreur à son champ respectif.
+- Indiquer clairement les champs obligatoires.
+- Indiquer les formats spécifiques des champs si nécessaire. Ne pas utiliser l'attribut `placeholder` comme seule indication.
+- Associer un `autocomplete` pour les champs demandant une donnée personnelle (nom, prénom, email, adresse, etc.).
+
 ### Médias
 
 - Chaque image doit avoir un attribut `alt`.
 - Les images décoratives (qui n'apportent rien au contenu) doivent avoir un attribut alt vide `<img ... alt="">`.
 - Lorsqu'un lien renvoie vers un téléchargement de fichier, il faut indiquer : son intitulé, sa taille, son format et l'ouverture dans une nouvelle fenêtre.
-- Rendre les fichiers SVG accessibles : décoratifs ou non, inline ou non, dans un bouton / lien ou non
-
-### Webdesign
-
-- Respecter les taux de contraste minimum.
-- Les éléments interactifs doivent toujours être perceptibles (clavier ou pointeur)
+- Rendre les fichiers SVG accessibles : décoratifs ou non, inline ou non, dans un bouton / lien ou non.
 
 ## Checklist Niveau 2 (étendue) 🥈
 
+- Tester l'affichage des pages avec un niveau de zoom de 200%.
 - Utiliser un lecteur audio/vidéo accessible, par exemple les éléments HTML5 natifs.
 - Vérifier la cohérence de la tabulation, par exemple via `tabindex`.
 
 ## Checklist Niveau 3 (demandes spécifiques) 🥇
 
+- Tester avec un lecteur d'écran.
 - Fournir une piste de sous-titres avec le format webVTT et l'élément `<track>`.
+- Fournir une alternative textuelle aux formats audio.
 - Rendre les fichiers PDF accessibles ou fournir une alternative `HTML`, `.doc`, `.odt` structurée.
 Utiliser l'attribut `aria-live` sur les informations provenant de chargements AJAX ou dévoilées par JavaScript dynamiquement.
-- Rendre l'ensemble des composants accessibles.
-
-## À classer 🤷‍♂️
-
-### Généralités
-
-- Respecter les standards W3C et [valider son code](https://validator.w3.org/).
+- Ajouter une modale de personnalisation d'affichage telle que l'outil AccessConfig (ou autre) sur le site web.
+- Rendre chaque script compatible avec les technologies d'assistance (TODO: attendre un Design System interne).
 
 ----
 
@@ -71,7 +76,7 @@ Utiliser l'attribut `aria-live` sur les informations provenant de chargements AJ
 
 Utiliser des combinaisons `<ul><li>` (liste non ordonnée) pour structurer les menus de navigation dans un élément `<nav role="navigation”>`.
 
-## sémantiques HTML5
+## Sémantique HTML5
 
 ### Zone d’en-tête principale
 
@@ -272,13 +277,13 @@ Utiliser l'élément `<fieldset>` associé à `<legend>` pour regrouper les cham
 </form>
 ```
 
-Toujours associer un `<label>` à un élément de formulaire `<input>` ou `<textarea>` pour définir son intitulé. Ne pas utiliser l'attribut `placeholder` comme seule indication.
+Toujours associer un `<label>` à un élément de formulaire `<input>` ou `<textarea>` pour définir son intitulé.
 
 Ne pas enlever les styles au focus pour toujours savoir quel est le champ actif.
 
 Indiquer de manière claire les champs obligatoires, soit en l'indiquant dans le label ou bien en ajoutant une phrase en début de formulaire. Compléter si besoin par `aria-required="true"`.
-  
-Si un champ attend un format spécifique, toujours l'indiquer.
+
+Si un champ attend un format spécifique, toujours l'indiquer. **Ne pas utiliser l'attribut `placeholder` comme seule indication.**
 
 **Exemple :**
 
@@ -304,7 +309,9 @@ Associer un `autocomplete` pour les champs demandant une donnée personnelle (no
 <input type="text" id="name" name="name" autocomplete="family-name">
 ```
 
-Voir [la liste complète des `autocomplete`.](https://www.w3.org/TR/WCAG21/#input-purposes)
+Voir [la liste complète des `autocomplete`.](https://www.w3.org/TR/WCAG21/#input-purposes).
+
+TODO: gestion des erreurs
 
 ### Navigation
 
@@ -615,15 +622,16 @@ Pour les menus déroulants et mega menus, Accessible Mega Menu a fait ses preuve
 ## Outils
 
 - [Support des Assistances Techniques](https://a11ysupport.io/)
+- [AccessConfig](https://accessconfig.a11y.fr/) : Modale de personnalisation d'affichage
 - [Checklist accessibilité](https://www.a11yproject.com/checklist/)
 
 ### Contraste / Webdesign
 
 - [Contrastes de couleur vs déficiences visuelles](https://whocanuse.com/)
-- [Tanaguru Contrast Finder](https://contrast-finder.tanaguru.com/) : outil en ligne, propose des couleurs proches.
+- [Tanaguru Contrast Finder](https://contrast-finder.tanaguru.com/) : outil en ligne, propose des couleurs proches
 - [Paciellogroup Color Contrast Checker](https://developer.paciellogroup.com/resources/contrastanalyser/) (Windows, MacOS)
-- [Contrast Grid](https://contrast-grid.eightshapes.com/) : grille comparant de multiples valeurs, ex. test d'une palette de couleur complète.
-- WCAG Color contrast checker (extension [Chrome](https://chrome.google.com/webstore/detail/wcag-color-contrast-check/plnahcmalebffmaghcpcmpaciebdhgdf) et [Firefox](https://addons.mozilla.org/fr/firefox/addon/wcag-contrast-checker/)) qui permet de vérifier les contrastes de couleurs directement depuis sa page HTML.
+- [Contrast Grid](https://contrast-grid.eightshapes.com/) : grille comparant de multiples valeurs, ex. test d'une palette de couleur complète
+- WCAG Color contrast checker (extension [Chrome](https://chrome.google.com/webstore/detail/wcag-color-contrast-check/plnahcmalebffmaghcpcmpaciebdhgdf) et [Firefox](https://addons.mozilla.org/fr/firefox/addon/wcag-contrast-checker/)) qui permet de vérifier les contrastes de couleurs directement depuis sa page HTML
 
 ***à classer***
 
