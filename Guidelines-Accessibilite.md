@@ -4,7 +4,13 @@ Statut : Working Draft (WD)
 
 Cette présente convention rassemble les bonnes pratiques d'Accessibilité en production appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/). Elle a pour but d'évoluer dans le temps et de s'adapter à chaque nouveau projet.
 
-## Niveau 1 (base) 🥉
+Ce document est divisé en trois parties :
+
+1. La Checklist (ensemble des points à respecter dans nos prestations)
+2. Les Explications techniques détaillées (s'y référer lorsqu'un point de la Checklist n'est pas clair)
+3. Les Ressources d'accessibilité (liens et outils)
+
+## Checklist Niveau 1 (base) 🥉
 
 ### HTML
 
@@ -16,14 +22,14 @@ Cette présente convention rassemble les bonnes pratiques d'Accessibilité en pr
 - Masquer correctement les contenus qui ne devraient *pas* être retranscrits par un lecteur d’écran (ex. `aria-hidden=true`, `role=presentation`).
 - Prévoir au moins un lien d'évitement permettant d'accéder directement au contenu principal.
 - Tous les liens doivent avoir un intitulé explicite.
-- Signaler lorsqu’un lien s’ouvre dans une nouvelle fenêtre (voir Détails).
-- Vérifier l'accessibilité des formulaires (voir Détails).
+- Signaler lorsqu’un lien s’ouvre dans une nouvelle fenêtre.
+- Vérifier l'accessibilité des formulaires.
 
 ### CSS
 
 - Ne pas fixer de hauteur sur les éléments afin que le contenu reste lisible lorsque le texte est zoomé.
 - Travailler avec des tailles de polices fluides (`em` ou `rem`).
-- Ne pas supprimer l'outline autour des éléments cliquables (pas de `outline: none`) ou utiliser `:focus-visible` (voir Détail ci-dessous)
+- Ne pas supprimer l'outline autour des éléments cliquables (pas de `outline: none`) ou utiliser `:focus-visible`.
 - Ne pas employer de contenu généré (`::before`, `::after`) pour véhiculer des informations ou pour afficher des icônes.
 - Masquer correctement les contenus qui devraient être retranscrits par un lecteur d’écran (ex. `.sr-only`)
 
@@ -32,24 +38,24 @@ Cette présente convention rassemble les bonnes pratiques d'Accessibilité en pr
 - Chaque image doit avoir un attribut `alt`.
 - Les images décoratives (qui n'apportent rien au contenu) doivent avoir un attribut alt vide `<img ... alt="">`.
 - Lorsqu'un lien renvoie vers un téléchargement de fichier, il faut indiquer : son intitulé, sa taille, son format et l'ouverture dans une nouvelle fenêtre.
-- Rendre les fichiers SVG accessibles : décoratifs ou non, inline ou non, dans un bouton / lien ou non (voir Détails)
+- Rendre les fichiers SVG accessibles : décoratifs ou non, inline ou non, dans un bouton / lien ou non
 
 ### Webdesign
 
-- Respecter les taux de contraste minimum (voir ressources).
+- Respecter les taux de contraste minimum.
 - Les éléments interactifs doivent toujours être perceptibles (clavier ou pointeur)
 
-## Niveau 2 (étendu) 🥈
+## Checklist Niveau 2 (étendue) 🥈
 
 - Utiliser un lecteur audio/vidéo accessible, par exemple les éléments HTML5 natifs.
-- Vérifier la cohérence de la tabulation, par exemple via `tabindex` (voir Détails).
+- Vérifier la cohérence de la tabulation, par exemple via `tabindex`.
 
-## Niveau 3 (demandes spécifiques) 🥇
+## Checklist Niveau 3 (demandes spécifiques) 🥇
 
 - Fournir une piste de sous-titres avec le format webVTT et l'élément `<track>`.
 - Rendre les fichiers PDF accessibles ou fournir une alternative `HTML`, `.doc`, `.odt` structurée.
-Utiliser l'attribut `aria-live` sur les informations provenant de chargements AJAX ou dévoilées par JavaScript dynamiquement (voir "Détails")
-- Rendre l'ensemble des composants accessibles (voir Détails)
+Utiliser l'attribut `aria-live` sur les informations provenant de chargements AJAX ou dévoilées par JavaScript dynamiquement.
+- Rendre l'ensemble des composants accessibles.
 
 ## À classer 🤷‍♂️
 
@@ -59,13 +65,13 @@ Utiliser l'attribut `aria-live` sur les informations provenant de chargements AJ
 
 ----
 
-# Accessibilité : dans le détail
+# Explications techniques détaillées
 
-## Détail : Menu de navigation
+## Menu de navigation
 
 Utiliser des combinaisons `<ul><li>` (liste non ordonnée) pour structurer les menus de navigation dans un élément `<nav role="navigation”>`.
 
-## Détail : sémantiques HTML5
+## sémantiques HTML5
 
 ### Zone d’en-tête principale
 
