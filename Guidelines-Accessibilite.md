@@ -20,7 +20,7 @@ Ce document est divisé en trois parties :
 - Utiliser un titre `<title>` pertinent pour chaque page.
 - Respecter la hiérarchie des titres `<hX>`.
 - Utiliser les éléments HTML pour leur fonction/sémantique et non pas pour leur forme.
-- Utiliser les [landmarks_ ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/landmark_role).
+- Utiliser les [landmarks ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/landmark_role).
 - Masquer correctement les contenus qui ne devraient *pas* être retranscrits par un lecteur d’écran (ex. `aria-hidden=true`, `role=presentation`).
 - Prévoir au moins un lien d'évitement permettant d'accéder directement au contenu principal.
 - Tous les liens doivent avoir un intitulé explicite.
