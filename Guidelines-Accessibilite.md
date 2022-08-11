@@ -6,9 +6,9 @@ Cette présente convention rassemble les bonnes pratiques d'Accessibilité en pr
 
 Ce document est divisé en trois parties :
 
-1. La Checklist (ensemble des points à respecter dans nos prestations)
-2. Les Explications techniques détaillées (s'y référer lorsqu'un point de la Checklist n'est pas clair)
-3. Les Ressources d'accessibilité (liens et outils)
+1. La [Checklist](#checklist-niveau-1-base-) (ensemble des points à respecter dans nos prestations)
+2. Les [Explications techniques détaillées](#explications-techniques-détaillées) (s'y référer lorsqu'un point de la Checklist n'est pas clair)
+3. Les [Ressources d'accessibilité](#ressources-générales) (liens et outils)
 
 ## Checklist Niveau 1 (base) 🥉
 
