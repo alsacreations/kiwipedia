@@ -3,10 +3,7 @@
 
 Liste de bonnes pratiques et points à prendre en compte avant/durant/après l'élaboration d'un projet web.
 
-Voir aussi comme autres références :
-
-* Les check-lists Opquast <http://checklists.opquast.com/fr/>
-* La checklist Pidila pour les sites publics et gouvernementaux <https://pidila.gitlab.io/checklist-pidila/>
+Voir aussi les check-lists Opquast <https://checklists.opquast.com/fr/assurance-qualite-web/>
 
 Les priorités indiquées sont purement indicatives à et moduler selon chaque projet. Tout critère pouvant être déterminant ou sensible à chaque phase, il est difficile de pondérer efficacement une telle liste.
 
@@ -78,7 +75,7 @@ ___
 |Critère|Priorité|
 | ------------- | ------------- |
 | Le nom de domaine est fonctionnel | *** |
-| Le projet est versionné (idéalement Git) | *** |
+| Le projet est versionné (Git) | *** |
 | La documentation est à jour | *** |
 | Les permissions des fichiers en production sont correctes | ** |
 
@@ -90,7 +87,6 @@ ___
 | Le site fait appel à des technologies open-source et interopérables | ** |
 | La disponibilité du site est monitorée (selon l’hébergement choisi) | ** |
 | Une icône favicon est présente à la racine du site | ** |
-| La qualité du code HTML, CSS et JavaScript est vérifiée à l’aide d’outils automatiques (linters) | ** |
 | Les pages sont testées sur les navigateurs bureau et mobiles principaux | ** |
 | L'orthographe et la grammaire sont vérifiées | * |
 
@@ -100,6 +96,7 @@ ___
 | ------------- | ------------- |
 | Une nomenclature constante et internationale est adoptée | ** |
 | L'indentation des fichiers est conventionnée (.editorconfig) | *** |
+| La syntaxe du code source est validée par les outils appropriés (eslint) | *** |
 
 ## Sécurité
 
