@@ -43,7 +43,7 @@ Nous voyons ces guidelines comme faisant partie d'un ensemble organisé.
 
 - [**Pense-Bête Flexbox (PDF)**](https://github.com/alsacreations/guidelines/blob/master/flexbox-cheatsheet.pdf)
 - [**Pense-Bête Grid Layout (PDF)**](https://github.com/alsacreations/guidelines/blob/master/grid-cheatsheet.pdf)
-- [**Commandes Linux**](Commandes-Linux.md) (Cheatsheet)
+- [**Cheatsheet Linux**](Cheatsheet-Linux.md) (Cheatsheet)
 - [**Cheatsheet Docker**](Cheatsheet-Docker.md)
 - [**Cheatsheet htaccess**](Cheatsheet-htaccess.md)
 - [**Cheatsheet git**](Cheatsheet-Git.md)
