@@ -614,6 +614,10 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://browserdiet.com/>
 - <http://codepen.io/bradfrost/pen/EPQVBp/> Performance budget builder
 
+### Compression des images
+
+- <https://chromium.googlesource.com/codecs/libwebp2/> WebP 2
+
 ---
 
 ## Node.js / npm
@@ -625,10 +629,10 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 ### Gulp
 
-- <http://quenchjs.com/> Générateur de gulpfile
-- <http://www.smashingmagazine.com/2014/06/11/building-with-gulp/>
-- <http://alistapart.com/blog/post/getting-started-with-gulp>
-- <http://www.sitepoint.com/introduction-gulp-js/>
+- <https://quenchjs.com/> Générateur de gulpfile
+- <https://www.smashingmagazine.com/2014/06/11/building-with-gulp/>
+- <https://alistapart.com/blog/post/getting-started-with-gulp>
+- <https://www.sitepoint.com/introduction-gulp-js/>
 
 ### Webpack
 
