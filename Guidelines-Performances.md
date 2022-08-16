@@ -210,6 +210,7 @@ Voici nos préconisations concernant les performances des images&nbsp;:
 - SVG : <https://jakearchibald.github.io/svgomg/>
 - AVIF : <https://avif.io> en ligne ou <https://github.com/lovell/avif-cli> en ligne de commande
 - <https://sharp.pixelplumbing.com>
+- <https://www.smashingmagazine.com/2022/07/powerful-image-optimization-tools/>
 
 ## Polices
 
