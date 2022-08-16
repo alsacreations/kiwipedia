@@ -112,6 +112,7 @@ Autres listes de ressources et checklists
 - <https://tailwindui.com/>
 - <https://tailwindcomponents.com/>
 - <https://preline.co/>
+- <https://web.dev/patterns/>
 
 ### RWD Responsive Web Design
 
