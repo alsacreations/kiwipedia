@@ -269,6 +269,10 @@ Il est conseillé de récupérer les fontes via cette ressource si cela est poss
 
 Voir le document spécifique des [Guidelines Icônes](Guidelines-Icones.md).
 
+## Hébergement
+
+- [AWS Cloudfront supporte HTTP/3](https://aws.amazon.com/fr/blogs/aws/new-http-3-support-for-amazon-cloudfront/)
+
 ## Outils d'audit de performance
 
 - <https://web.dev/measure/>
