@@ -322,7 +322,67 @@ Pour en [savoir plus](https://developer.mozilla.org/fr/docs/Web/HTML/Global_attr
 
 N'utiliser les tableaux que pour la présentation de données, et non pour la structure du document ou du design.
 
-TODO: il manque des trucs ici je crois
+Définir un titre pertinent avec la balise `<caption>`. Elle doit être placée juste après la balise d’ouverture `<table>`.
+
+Les cellules d’en-têtes doivent être déclarées avec la balise `<th>`. Et les cellules de données avec `<td>`.
+
+Sur les cellules d’en-tête il est nécessaire d’ajouter l’attribut `scope` afin de les lier aux cellules de données. Il prend pour valeur :
+
+- `col` : s’applique à toutes les cellules de la colonne.
+- `row` : s’applique à toutes les cellules de la ligne.
+
+```html
+<table>
+ <caption>Quantité de fruits mangés par jour</caption>
+  <thead>
+   <tr>
+      <th scope="col">Kiwi</th>
+      <th scope="col">Orange</th>
+      <th scope="col">Myrtille</th>
+   </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>10</td>
+      <td>30</td>
+      <td>42</td>
+     </tr>
+  </tbody>
+</table>
+```
+
+
+#### Tableaux complexes
+
+Dans le cas des tableaux complexes, `scope` ne suffit pas pour lier l’en-tête à ses cellules de données.
+
+Il faut ajouter l’attribut `id` sur la cellule d'en-tête, et `headers` avec la valeur de l’id sur la cellule de donnée :
+
+```html
+<table>
+	<caption>Nombre de fruits avec pépins, et avec noyau. Et nombre de légumes avec ou sans peau</caption>
+	<thead>
+		<tr>
+			<th id="fruits" colspan="2">Fruits</th>
+			<th id="legumes" colspan="2">Légumes</th>
+		</tr>
+		<tr>
+			<th id="data1" headers="fruits">avec pépins</th>
+			<th id="data2" headers="fruits">avec noyau</th>
+			<th id="data3" headers="legumes">avec peau</th>
+			<th id="data4" headers="legumes">sans peau</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td headers="fruits data1">14</td>
+			<td headers="fruits data2">25</td>
+			<td headers="legumes data3">33</td>
+			<td headers="legumes data4">30</td>
+		</tr>
+	</tbody>
+</table>
+```
 
 ---
 
