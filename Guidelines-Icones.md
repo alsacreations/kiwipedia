@@ -5,6 +5,7 @@ Statut : Working Draft (WD)
 Voir aussi
 
 - <https://css-tricks.com/tools-for-optimizing-svg/>
+- <https://uxdesign.cc/8-tricks-for-svg-optimization-c2c519c10c1e>
 
 ## Optimisation
 
