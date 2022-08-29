@@ -654,6 +654,7 @@ Pour les menus déroulants et mega menus, Accessible Mega Menu a fait ses preuve
 ## Ressources Générales
 
 - [RGAA](https://www.numerique.gouv.fr/publications/rgaa-accessibilite/)
+- [Décret n° 2019-768 du 24 juillet 2019 relatif à l'accessibilité...](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000038811937)
 - [Outils d'accessibilité du Gouvernement](https://design.numerique.gouv.fr/outils/)
 - [Guide de l'Intégrateur RGAA3](https://disic.github.io/guide-integrateur/)
 - [Guide du Développeur RGAA3](https://disic.github.io/guide-developpeur/)
