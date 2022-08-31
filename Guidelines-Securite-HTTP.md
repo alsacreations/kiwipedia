@@ -13,6 +13,7 @@ Outils de test :
 
 Ressources :
 
+* <https://www.ssi.gouv.fr/entreprise/guide/recommandations-pour-la-securisation-des-sites-web/>
 * <https://www.alsacreations.com/article/lire/1723-tour-horizon-https-et-en-tetes-de-securite.html>
 * <https://blog.appcanary.com/2017/http-security-headers.html>
 * <https://content-security-policy.com/>
