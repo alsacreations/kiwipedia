@@ -844,6 +844,14 @@ Stopper un jail
 Tester une regex
 `fail2ban-regex /var/log/apache2/other_vhosts_access.log /etc/fail2ban/filter.d/apache-wp-login.conf`
 
+### UFW
+
+Lister les règles actives
+`ufw status`
+
+Autoriser un port en écoute (TCP et UDP)
+`ufw allow 1337`
+
 ### Netcat
 
 Savoir si un port distant est ouvert en TCP `nc -vz lehostname 80`, en UDP `nc -vz -u lehostname 53`
