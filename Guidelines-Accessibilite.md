@@ -662,6 +662,7 @@ Pour les menus déroulants et mega menus, Accessible Mega Menu a fait ses preuve
 - [Design System du W3C](https://design-system.w3.org/)
 - [Guidelines Accessibilité Orange](https://a11y-guidelines.orange.com/fr/)
 - [Modèles de conception accessibles](https://www.w3.org/WAI/ARIA/apg/)
+- [My accessibility toolbox](https://gitlab.com/accessfirst.fr/my-accessibility-toolbox)
 - [SmashingMag : Accessibilité dans les devtools de Chrome](https://www.smashingmagazine.com/2020/08/accessibility-chrome-devtools/)
 
 ## Outils
@@ -689,5 +690,3 @@ Pour les menus déroulants et mega menus, Accessible Mega Menu a fait ses preuve
 - [NVDA](https://www.nvda-fr.org/)
 - VoiceOver (natif sur macOS, iOS) (activation : cmd + fn + F5), voir [raccourcis clavier](https://www.apple.com/voiceover/info/guide/_1131.html)
 - [Jaws](https://www.freedomscientific.com/products/software/jaws/)
-
----
