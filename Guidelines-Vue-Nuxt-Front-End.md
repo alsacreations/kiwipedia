@@ -10,7 +10,7 @@ L'Éditeur de code recommandé pour HTML, CSS, PHP, JS est [Visual Studio Code](
 
 ## Extensions Visual Studio Code recommandées
 
-Pour les projets de type Vue et Nuxt, la liste des extensions VScode utile est composée de : Editorconfig, ESlint, Stylelint, Markdownlint, Vetur, SCSS Intellisense, Tailwind CSS IntelliSense, todo-highlight.
+Pour les projets de type Vue et Nuxt, la liste des extensions VScode utile est composée de : Editorconfig, ESlint, Stylelint, Markdownlint, Volar, SCSS Intellisense, Tailwind CSS IntelliSense, todo-highlight.
 
 Fichier d'extensions `extensions.json` à placer à la racine du projet au sein d'un dossier `/.vscode` ([afficher/télécharger ce fichier](assets/vue-nuxt-front-end/.vscode/extensions.json))
 
@@ -22,7 +22,7 @@ Fichier d'extensions `extensions.json` à placer à la racine du projet au sein 
     "stylelint.vscode-stylelint",
     "DavidAnson.vscode-markdownlint",
     "mrmlnc.vscode-scss",
-    "johnsoncodehk.volar",
+    "vue.volar",
     "mikestead.dotenv",
     "bradlc.vscode-tailwindcss",
     "wayou.vscode-todo-highlight"
@@ -35,8 +35,8 @@ Fichier d'extensions `extensions.json` à placer à la racine du projet au sein 
 Les différents fichiers de configuration des Linters sont :
 
 - EditorConfig : cf. `.editorconfig`
-- ESLint : cf. `.eslintrc.js`
-- Stylelint : cf. `.stylelintrc` (voir détails plus loin)
+- [ESLint](https://eslint.org/docs/latest/user-guide/configuring/configuration-files) : cf. `.eslintrc.js`
+- [Stylelint](https://stylelint.io/user-guide/configure) : cf. `.stylelintrc` (voir détails plus loin)
 - *Note : Prettier crée des conflits avec ESLint (ex. sauts de ligne dans les balises). Il est donc recommandé de le désactiver sur les projets Vue/Nuxt.*
 
 La configuration fournie dans le fichier `/.vscode/settings.json` permet de :
@@ -47,7 +47,7 @@ La configuration fournie dans le fichier `/.vscode/settings.json` permet de :
 
 ([Afficher/télécharger le fichier `settings.json`](assets/vue-nuxt-front-end/.vscode/settings.json))
 
-```yaml
+```json
 {
   "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "editor.formatOnSave": true,
@@ -78,20 +78,18 @@ La configuration de Editorconfig se fait via un fichier `.editorconfig` à la ra
 
 ESLint est un analyseur de code pour identifier les problématiques du code JavaScript (Vue, React, etc.) et les résoudre automatiquement. ESlint est configuré via un fichier `.eslintrc.js`.
 
-Via le plugin eslint-plugin-vue on applique [les groupes de règles](https://eslint.vuejs.org/rules/) dans le fichier `.eslintrc.js` avec le tableau extends : *Priority A: Essential (plugin:vue/essential)*, *Priority B: Strongly Recommended (plugin:vue/strongly-recommended)*, *Eslint recommended : eslint:recommended*. Pour Nuxt : *plugin:nuxt/recommended*.
-
-Modification de *Priority B* : on veut des `v-on:click` plutôt que `@click` : `'vue/v-on-style': ['warn', 'longform'],`. On peut aussi vouloir harmoniser l'ordre des déclarations dans les composants avec `'vue/order-in-components': 'warn'`.
+Via le plugin [eslint-plugin-vue](https://www.npmjs.com/package/eslint-plugin-vue) on applique [les groupes de règles](https://eslint.vuejs.org/rules/) dans le fichier `.eslintrc.js` avec le tableau extends : *Priority A: Essential (plugin:vue/essential)*, *Priority B: Strongly Recommended (plugin:vue/strongly-recommended)*, *Eslint recommended : eslint:recommended*. Pour Nuxt : *plugin:nuxt/recommended*.
 
 ([Afficher/télécharger le fichier complet recommandé `.eslintrc.js`](assets/vue-nuxt-front-end/.eslintrc.js)).
 
 ### Stylelint
 
-Stylelint est l'unique formatteur pour les styles CSS et scss du projet. Les Linters natifs CSS et scss de VSCode **doivent être désactivés** (voir précédemment).
+Stylelint est l'unique formatteur pour les styles CSS et SCSS du projet. Les Linters natifs CSS et SCSS de VSCode **doivent être désactivés** (voir précédemment).
 
 La procédure d'installation de Stylelint est la suivante :
 
 - Installer l'extension [Stylelint pour VSCode](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint),
-- Installer le package Stylelint via `npm install stylelint --save-dev` *(ceci étant généralement déjà prévu dans le `package.json` du projet)*,
+- Installer le package Stylelint via `npm install stylelint --save-dev`,
 - Installer la configuration recommandée de Stylelint via `npm install stylelint-config-recommended --save-dev`
 - Créer un fichier `stylelint.config.js` contenant les règles à appliquer.
 
@@ -147,28 +145,26 @@ On utilise des fichiers `.env` multiples pour définir les grandes constantes de
 
 Avec Nuxt l'environnement peut être :
 
-- `development` en mode `npm run dev` ou `npm run generate`
-- `production` en mode `npm run build` ou `npm run start`
+- `development` en mode `npm run dev`
+- `production` en mode `npm run build` et `npm run generate`
 
-Dans Nuxt, nécessite l’installation de [dotenv-module](https://github.com/nuxt-community/dotenv-module) :
-
-- les variables doivent être préfixées de `VUE_APP_`, exemple `VUE_APP_API_URL=https://api.example.org:80` pour être utilisées dans les scripts avec `process.env.VUE_APP_API_URL`
 - dans les composants ou dans nuxt.config.js on pourra utiliser `process.env.NODE_ENV` par exemple `if (process.env.NODE_ENV === 'development')`
 
 Voir aussi <https://stackoverflow.com/questions/55406055/toggle-between-multiple-env-files-like-env-development-with-node-js>.
 
-### config.js
+### config.{js,ts}
 
-Les variables de configuration ou globales (activation de fonctionnalités) sont ajoutées dans le fichier config.js dans l'entrée correspondante. Si cette entrée n'existe pas, il convient d'en ajouter une nouvelle.
+Les variables de configuration ou globales (activation de fonctionnalités) sont ajoutées dans le fichier config.{js,ts} dans l'entrée correspondante. Si cette entrée n'existe pas, il convient d'en ajouter une nouvelle.
 
 ```js
 const config = {
-  isProduction: isMaster,
+  isProduction: process.env.NODE_ENV === 'production',
   app: {
     title: 'MonApp',
   },
   api: {
-    apiUrl: process.env.VUE_APP_API_URL
+    apiUrl: process.env.APP_API_URL
+  }
 ```
 
 ## Installation et configuration initiale
@@ -184,7 +180,7 @@ Options recommandées :
 - vue
 - vue ou vue-ts
 
-On développe avec `npm run dev`, on compile avec `npm run build` 
+On développe avec `npm run dev`, on compile avec `npm run build`
 
 **Template déjà prêt**: <https://github.com/antfu/vitesse>
 
@@ -193,12 +189,8 @@ On développe avec `npm run dev`, on compile avec `npm run build`
 Documentation : <https://v3.nuxtjs.org/getting-started/quick-start/>
 
 ```yaml
-npx nuxi init nuxt3-app
+npx nuxi init nuxt-app
 ```
-
-### Tailwind
-
-On utilise la méthode officielle proposée par Tailwind <https://tailwindcss.com/docs/guides/nuxtjs> et **non** le module [nuxt/tailwind](https://tailwindcss.nuxtjs.org/) car il injecte Tailwind lui même à un moment où on n'a pas le contrôle, ce qui rend la gestion des @apply en scss très compliquée.
 
 ## Dépendances
 
@@ -224,7 +216,7 @@ Autres dépendances utiles :
 - [vue-gtag](https://github.com/MatteoGabriele/vue-gtag) : G. Analytics.
 - [date-fns](https://date-fns.org/) : Dates.
 - [day.js](https://day.js.org/) : Dates
-- [vueuse/head](https://github.com/vueuse/head : Balises meta, SEO.
+- [vueuse/head](<https://github.com/vueuse/head> : Balises meta, SEO.
 - [vueuse](https://vueuse.org/): Utilités composition API (debounce, click-outside, etc.)
 - [vue-toasted](https://github.com/shakee93/vue-toasted) : Notifications/toasts.
 - [vue-infinite-loading](https://peachscript.github.io/vue-infinite-loading/) : Infinite loading.
@@ -233,8 +225,15 @@ Autres dépendances utiles :
 ## Composants : conventions et nommage
 
 - On classe les composants dans des sous-dossiers selon leur usage (ex : ui/, profile/, modals/).
-- Tous les composants ont une propriété name de la même syntaxe que l'on retrouve dans les autres `<template>`. Si `name: 'MonComposant'` alors on écrira `<MonComposant>` ; si `name: 'mon-composant'` alors on écrira `<mon-composant>`.
+- Tous les composants ont une propriété `name` de la même syntaxe que l'on retrouve dans les autres `<template>`. Si `name: 'MonComposant'` alors on écrira `<MonComposant>` ; si `name: 'mon-composant'` alors on écrira `<mon-composant>`.
 - Les noms de fichiers et de classes sont en anglais-américain (en-US).
+- Lors de l'import d'un composant l'extension `.vue` est obligatoire.
+
+```vue
+<script setup lang="ts">
+import MyComponent from './MyComponent.vue'
+</script>
+```
 
 ### Template
 
@@ -288,27 +287,15 @@ On privilégie l’écriture de [Composables](https://v3.nuxtjs.org/docs/directo
 
 ### Composants globaux
 
-Dans Vue, pour éviter d'avoir à importer des composants très fréquemment utilisés on peut initialiser un chargement de composants globaux. Le fichier `globalComponentLoader.js` est à ajouter aux plugins (dans le fichier `vue.config.js` ou `nuxt.config.js`) :
+Dans Vue, pour éviter d'avoir à importer des composants très fréquemment utilisés on peut initialiser un chargement de composants globaux.
 
 ```js
-export default
-  plugins: [
-    {
-      // Loader de composants globaux
-      src: '~plugins/globalComponentLoader.js'
-    },
-```
+import { createApp } from 'vue'
+import Icon from '@/components/global/Icon.vue'
 
-Exemple de contenu du fichier globalComponentLoader.js
+const app = createApp({})
 
-```js
-import Vue from 'vue'
-import Icon from '@/components/global/Icon'
-import ButtonSimple from '@/components/global/ButtonSimple'
-import Alert from '@/components/ui/Alert'
-Vue.component('icon', Icon)
-Vue.component('button-simple', ButtonSimple)
-Vue.component('alert', Alert)
+app.component('icon', Icon)
 ```
 
 ## Routage
@@ -462,12 +449,12 @@ this.$nextTick(() => {
 
 ### Lazy-loading de routes
 
-- Lazy-loading de routes pour les pages les moins consultées : on utilise <https://www.digitalocean.com/community/tutorials/vuejs-lazy-loading-vue-cli-3-webpack>
+- Lazy-loading de routes pour les pages les moins consultées : on utilise <https://vuejs.org/api/general.html#defineasynccomponent>
 
 ```js
 const routes = [
-  { path: '/', component: () => import('./Home.vue') }
-  { path: '/apropos', component: () => import('./Apropos.vue') }
+  { path: '/', component: defineAsyncComponent(() => import('./Home.vue')) }
+  { path: '/apropos', component: defineAsyncComponent(() => import('./Apropos.vue')) }
 ]
 ```
 
@@ -476,11 +463,11 @@ const routes = [
 - Lazy-loading import à l’interaction : on utilise <https://calendar.perfplanet.com/2020/optimizing-performance-with-the-import-on-interaction-pattern/>
 
 ```vue
-<script>
+<script setup>
 defineComponent({
   name: 'xxx',
   components: {
-    LeComposant: () => import('~/components/component.vue')
+    LeComposant: defineAsyncComponent(() => import('~/components/component.vue'))
   }
 })
 
