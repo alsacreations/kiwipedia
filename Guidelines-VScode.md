@@ -42,14 +42,13 @@ Lister les extensions : `code --list-extensions`
 - [Project Manager](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager) (si vous jonglez entre plusieurs projets, c'est un must)
 - [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) (autocomplétion des classes Tailwind)
 - [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense) (autocomplétion des chemins)
-- [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur) (extension indispensable pour tout projet pour Vuejs / Nuxt)
+- [Volar](https://marketplace.visualstudio.com/items?itemName=vue.volar) (extension indispensable pour tout projet pour Vuejs / Nuxt)
 - [HTML CSS Support](https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css) (autocomplétion et documentation des balises+attributs)
 - [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) (fonctions avancées Git dans VS Code)
 - [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) (affiche les erreurs des linters directement dans la fenêtre de code)
 
 ### Extensions suggérées 👍
 
-- [Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify) (remise en forme, à la demande, d'un code mal indenté/formaté)
 - [DotENV](https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv) (support de la syntaxe des fichiers .env)
 - [Auto Close Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag) (fermeture automatiques des balises)
 - [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) (très pratique pour JS / React / Vue)
@@ -139,20 +138,3 @@ Les détails de configuration des Extensions et Linters sont décrits au sein de
 
 - `editor.minimap.renderCharacters = false`, et la minimap devient plus belle
 - `explorer.openEditors.visible = false`, car on voit déjà les fichiers ouverts dans les onglets
-
-## Créer un snippet personnalisé (ex. “schnapsit”)
-
-1. Dans le menu : `Code -> Preferences -> User Snippets` (ou `Fichier -> Préférences -> Extraits Utilisateur`)
-2. Choisir l’option `"New Global Snippets File"` (sauf s’il y a déjà un fichier de snippets global)
-3. Donner un nom au fichier, par exemple `"schnapsum"`
-4. Récupérer le code source (cliquer sur “raw”) de ce Gist : <https://gist.github.com/raphaelgoetter/152a21e85c5310bcb5eec132983fce27>
-5. Le coller dans le fichier (remplacer tout le code déjà existant par le Gist)
-6. Enregistrer
-
-Usage :
-
-- Aller dans n’importe quel fichier.
-- Taper “sch” ou “schnaps” puis Tabulation.
-- 3 choix sont proposés : version courte, moyenne ou longue.
-- Valider le choix avec Entrée.
-- Enjoy !
