@@ -92,11 +92,12 @@ Voir [Guidelines HTML et CSS](https://github.com/alsacreations/guidelines)
 - Ne pas utiliser les classes CSS générées par WordPress qui sont spécifiques à une installation précise et ne sont pas réutilisables.
 - Les classes spécifiques des wrapper des menus du type `.menu-nom-de-mon-menu`
 - La majorité des classse générées par `body_class()` ou `post_class()`
-- Pour le chargement de fichiers CSS et JavaScript on utilise les fonctions [wp_enqueue_script](https://developer.wordpress.org/reference/functions/wp_enqueue_script/) et [wp_enqueue_style](https://developer.wordpress.org/reference/functions/wp_enqueue_style/).
+- Pour le chargement des fichiers CSS et JavaScript on utilise la configuration de [WordPlate](https://github.com/vinkla/wordplate) avec [Vite.js](https://vitejs.dev/)
 - Placer `add_action()` et `add_filter()` après la fonction liée.
-- Utiliser la dernière notation pour les tableaux PHP `$array = []; et non $array = array();`.
+- Utiliser la dernière notation pour les tableaux PHP `$array = [];` et non `$array = array();`.
 - Toutes les chaînes de caractères d’un thème doivent pouvoir être traduites. Il faut donc les entourer dans la bonne fonction gettext ( `__()`, `_n()`, `_x()` ), couplées à un text-domain cohérent en fonction du contexte (thème, thème enfant, extension, ...)
 - Découper le thème de manière cohérente (boucles à part, etc.) pour pouvoir utiliser `get_template_part()` correctement
+- Tout ce qui ne fait pas partie intégrante du thème et/ou optionnel doit être décliné sous forme d'extension
 
 ### Hiérarchie de fichiers et documentation
 
