@@ -316,7 +316,7 @@ On peut utiliser :
 
 → Les éléments pouvant recevoir le focus autres que nativement `<a>`, `<input>` ou `<button>` pourront être équipés de `tabindex="0"`.
 
-Pour en [The details and summary elements, again par Scott O'hara](https://developer.mozilla.org/fr/docs/Web/HTML/Global_attributes/tabindex)
+Pour en savoir plus : [MDN : tabindex](https://developer.mozilla.org/fr/docs/Web/HTML/Global_attributes/tabindex)
 
 ### Details et summary
 
