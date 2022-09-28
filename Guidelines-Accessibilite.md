@@ -2,7 +2,7 @@
 
 Statut : Working Draft (WD)
 
-Cette présente convention rassemble les bonnes pratiques d'Accessibilité en production appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/). Elle a pour but d'évoluer dans le temps et de s'adapter à chaque nouveau projet.
+Cette présente convention rassemble les bonnes pratiques d'Accessibilité en production appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/) lors de nos développements. Elle a pour but d'évoluer dans le temps et de s'adapter à chaque nouveau projet.
 
 Ce document est divisé en trois parties :
 
@@ -15,40 +15,40 @@ Ce document est divisé en trois parties :
 ### HTML
 
 - Le code produit est valide et respecte les [standards W3C](https://www.w3.org/standards/).
-- Utiliser les éléments HTML pour leur fonction/sémantique et non pas pour leur forme.
+- [Utiliser les éléments HTML pour leur fonction/sémantique](#s%C3%A9mantique-html5) et non pas pour leur forme.
 - Renseigner la langue de la page avec l'attribut `lang` de l’élément `<html>`.
 - Indiquer avec l'attribut `lang` les changements de langue locaux dans les blocs d'une page.
-- Utiliser un titre `<title>` pertinent pour chaque page.
+- Utiliser un [titre `<title>` pertinent](#titres-de-page) pour chaque page.
 - Respecter la hiérarchie des titres `<hX>`.
-- Utiliser les [landmarks ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/landmark_role).
-- Masquer correctement les contenus qui ne devraient *pas* être retranscrits par un lecteur d’écran (ex. `aria-hidden=true`, `role=presentation`).
-- Prévoir au moins un lien d'évitement permettant d'accéder directement au contenu principal.
-- Donner un intitulé explicite à tous les liens.
-- Signaler lorsqu’un lien s’ouvre dans une nouvelle fenêtre.
+- Utiliser les [landmarks ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/landmark_role) avec leur rôles explicites (ex: `<main role="main">`, demandé par RGAA)
+- Cacher correctement les contenus qui ne devraient *pas* être retranscrits par un lecteur d’écran (ex. `aria-hidden=true`).
+- Prévoir au moins [un lien d'évitement](#liens-dévitement-skip-link) permettant d'accéder directement au contenu principal.
+- Donner [un intitulé explicite à tous les liens](#liens).
+- Signaler lorsqu’un lien [s’ouvre dans une nouvelle fenêtre](#ouverture-dans-une-nouvelle-fenêtre).
 
 ### CSS
 
 - Ne pas fixer de hauteur sur les éléments afin que le contenu reste lisible lorsque le texte est zoomé.
 - Travailler avec des tailles de polices fluides (`em` ou `rem`).
-- Ne pas supprimer l'outline autour des éléments cliquables/focusables (pas de `outline: none`) ou utiliser `:focus-visible`.
-- Ne pas employer de contenu généré (`::before`, `::after`) pour véhiculer des informations ou pour afficher des icônes.
-- Masquer correctement les contenus qui devraient être retranscrits par un lecteur d’écran (ex. `.sr-only`)
+- Ne pas supprimer l'outline autour des éléments cliquables/focusables (pas de `outline: none`) [ou utiliser `:focus-visible`](#outline-et-focus).
+- Ne pas employer de contenu généré (`::before`, `::after`) pour [véhiculer des informations ou pour afficher des icônes](#css-generated-content).
+- Masquer correctement [les contenus qui devraient être lus par un lecteur d’écran](#contenu-lu-mais-masqué-à-lécran) (ex. `.visually-hidden`)
 
 ### Formulaires
 
 - Vérifier l'accessibilité des formulaires notamment au clavier.
 - Indiquer clairement les champs obligatoires.
-- Utiliser l'élément `<fieldset>` associé à `<legend>` pour regrouper les champs ayant trait à la même thématique.
+- Utiliser [l'élément `<fieldset>` associé à `<legend>`](#formulaires-1) pour regrouper les champs ayant trait à la même thématique.
 - Toujours associer un `<label>` à son champ respectif (avec `for` et `id`).
-- Indiquer les formats spécifiques des champs lorsqu'il y en a ; ne pas utiliser l'attribut `placeholder` comme indication (privilégier `label`).
+- Indiquer les formats spécifiques des champs lorsqu'il y en a ; ne pas utiliser l'attribut `placeholder` comme indication (privilégier `label`), il ne doit fournir qu'un exemple d'usage.
 - Associer correctement une erreur à son champ.
-- Associer un `autocomplete` pour les champs demandant une donnée personnelle (nom, prénom, e-mail, adresse, etc.).
+- Associer [un `autocomplete`](#formulaires-1) pour les champs demandant une donnée personnelle (nom, prénom, e-mail, adresse, etc.).
 
 ### Médias
 
-- Toutes les images doivent comporter un attribut `alt` ; il doit être vide `alt=""` pour les images décoratives et renseigné pour les images apportant du contenu.
+- Toutes les images [doivent comporter un attribut `alt`](#image-porteuse-dinformation-ou-cliquable) ; il doit être vide `alt=""` pour les images décoratives et renseigné pour les images apportant du contenu.
 - Lorsqu'un lien renvoie vers un téléchargement de fichier, il faut indiquer : son intitulé, son poids, son format et l'ouverture dans une nouvelle fenêtre.
-- Rendre les fichiers SVG accessibles : décoratifs ou non, inline ou non, dans un bouton / lien ou non.
+- [Rendre les fichiers SVG accessibles](#svg-et-accessibilité) : décoratifs ou non, inline ou non, dans un bouton / lien ou non.
 
 ## Checklist Niveau 2 (étendue) 🥈
 
