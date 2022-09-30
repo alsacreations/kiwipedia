@@ -10,6 +10,7 @@ Outils de test :
 * <https://www.immuniweb.com/websec/>
 * <https://csp-evaluator.withgoogle.com/>
 * SSL : <https://www.ssllabs.com/ssltest/analyze.html>
+* SSL : <https://badssl.com/>
 
 Ressources :
 
