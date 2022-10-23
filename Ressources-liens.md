@@ -119,15 +119,15 @@ Autres listes de ressources et checklists
 
 - <https://www.mydevice.io/> (made by Alsacréations)
 - <https://www.screensizemap.com/> dimensions de la plupart des écrans
-- <https://screensiz.es/>
+- <https://screensiz.es/> tableau comparatif de la plupart des écrans
 - <https://www.paintcodeapp.com/news/ultimate-guide-to-iphone-resolutions> Ultimate guide to iPhone resolutions
 - <https://ishadeed.com/article/responsive-design-height/> design responsive en vertical
 - <https://gionkunz.github.io/chartist-js/> Graphiques responsive
 - Tableau responsive
-  - <http://css-tricks.com/responsive-data-table-roundup/>
-  - <http://elvery.net/demo/responsive-tables/>
-  - <http://jquerymobile.com/branches/tables/docs/tables/>
-- <http://codyhouse.co/gem/mega-dropdown> Responsive Mega Menu
+  - <https://css-tricks.com/responsive-data-table-roundup/>
+  - <https://elvery.net/demo/responsive-tables/>
+- <https://codyhouse.co/gem/mega-dropdown> Responsive Mega Menu
+- <https://github.com/GoogleChromeLabs/container-query-polyfill> Container Query Polyfill
 
 ### Retina et hdpi
 
