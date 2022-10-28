@@ -2,7 +2,7 @@
 
 Statut : Recommendation (REC)
 
-Voir aussi <https://www.alsacreations.com/tuto/lire/1836-Docker--decouverte-et-environnement-LAMP-pour-WordPress.html>
+Voir aussi <https://www.alsacreations.com/tuto/lire/1836-Docker--decouverte-et-environnement-LAMP-pour-WordPress.html> et <https://www.alsacreations.com/tuto/lire/1838-Docker-compose.html>
 
 ## Commandes utiles
 
