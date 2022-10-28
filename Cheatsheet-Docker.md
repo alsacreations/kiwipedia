@@ -88,14 +88,31 @@ Liste non exhaustive, voir <https://docs.docker.com/engine/reference/builder/>.
 
 ---
 
+## Docker-compose
+
+* Compiler et démarrer tous les conteneurs `docker-compose up -d` (`-d` : en background)
+* Compiler sans démarrer les conteneurs `docker-compose build` (en option ajouter le nom du service)
+* Tout arrêter, supprimer les conteneurs, volumes et réseaux `docker-compose down`
+* Journaux `docker-compose logs`
+* Statut des conteneurs `docker-compose ps`
+* Liste des images utilisées `docker-compose images`
+* Exécute une commande dans un conteneur `docker-compose exec <service> <command>`
+* Arrêter et supprimer `docker-compose rm --stop`
+* Arrêter `docker-compose stop <service>`
+* Démarrer `docker-compose start <service>`
+* Mettre en pause `docker-compose pause <service>`
+* Reprendre `docker-compose unpause <service>`
+
+---
+
 ## Podman
 
 Interface graphique : <https://iongion.github.io/podman-desktop-companion/>
 
 La grande majorité des commandes Docker ont un équivalent Podman (start, stop, logs, port...).
 
-* Tous les containers `podman ps -a`
-* Processus actifs dans un container `podman top <container>`
+* Tous les conteneurs `podman ps -a`
+* Processus actifs dans un conteneur `podman top <container>`
 * Poids des fichiers `podman ps --size --sort size`
 * Exécuter une commande, par ex un backup MySQL vers l'hôte : `podman exec <container-mysql> mysqldump -uroot -p<password> <nom_base> >dump.sql`
 
