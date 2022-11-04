@@ -818,6 +818,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 ## Analytics (alternatives)
 
+- <https://github.com/matomo-org/matomo>
 - <https://github.com/plausible/analytics>
 - <https://github.com/milesmcc/shynet>
 - <https://github.com/PostHog/posthog>
