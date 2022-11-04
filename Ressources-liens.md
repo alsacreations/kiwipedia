@@ -813,3 +813,13 @@ Maquettes / story-boards / wireframes / mockups / zoning
 ## Réseaux sociaux
 
 - <https://github.com/bradvin/social-share-urls> Liens de partage vers les différents réseaux sociaux
+
+---
+
+## Analytics (alternatives
+
+- <https://github.com/plausible/analytics>
+- <https://github.com/milesmcc/shynet>
+- <https://usefathom.com/>
+- <https://github.com/PostHog/posthog>
+- <https://umami.is/>
