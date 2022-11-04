@@ -816,10 +816,10 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 ---
 
-## Analytics (alternatives
+## Analytics (alternatives)
 
 - <https://github.com/plausible/analytics>
 - <https://github.com/milesmcc/shynet>
-- <https://usefathom.com/>
 - <https://github.com/PostHog/posthog>
-- <https://umami.is/>
+- <https://github.com/umami-software/umami>
+- <https://usefathom.com/> (payant, non-opensource)
