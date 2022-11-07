@@ -307,6 +307,8 @@ Autres listes de ressources et checklists
 - Pour faire du drag &amp; drop : [Vue.Draggable](https://github.com/SortableJS/Vue.Draggable)
 - Accessibilité avec Vue [vue-a11y.com](https://vue-a11y.com/)
 - Plugin eslint pour vérifier certaines règles d'accessibilité : [eslint-plugin-vue-a11y](https://www.npmjs.com/package/eslint-plugin-vue-a11y)
+- <https://valgeirb.github.io/vue3-popper/>
+- <https://vcalendar.io/>
 
 ### React
 
