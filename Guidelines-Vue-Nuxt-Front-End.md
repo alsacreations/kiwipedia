@@ -251,18 +251,18 @@ import MyComponent from './MyComponent.vue'
 
 ### Styles
 
-Les styles des composants sont écris dans le fichier `.vue` du composant lui-même.
+Les styles des composants sont écrits dans le fichier `.vue` du composant lui-même.
 
 - Si des styles sont réutilisés entres plusieurs composants (ex: checkbox et radio), ces styles seronts placés dans un fichier de mixins ou variables `sass`,
 et importés dans le fichier `.vue` avec `@use`.
 
 - Les styles sont de préférences scopés (attribut `scoped`) pour ne pas affecter les autres composants.
 
-Cette méthode permet d'avoir le JS, HTML, et CSS au même endroit et d'éviter le code mort une fois le composant supprimé. Nous évitons aussi une arborescence de fichier trop volumineuse dès que le projet commence à grossir.
+Cette méthode permet d'avoir le JS, HTML, et CSS au même endroit et d'éviter le code mort une fois le composant supprimé. Nous évitons aussi une arborescence de fichiers trop volumineuse dès que le projet commence à grossir.
 
 En plus de cela, inclure les styles directement dans le composant facilite le lazy-loading des styles le jour où nous en aurions besoin.
 
-Attention cependant, les composants doivent rester lisibles, il ne faut donc pas hésiter à sous découper le template en plusieurs composants (sans en abuser évidement).
+Attention : les composants doivent rester lisibles, il ne faut donc pas hésiter à sous découper le template en plusieurs composants (sans en abuser évidement).
 
 ```vue
 <script setup lang="ts"></script>
