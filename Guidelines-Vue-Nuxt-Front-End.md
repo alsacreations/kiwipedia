@@ -188,7 +188,7 @@ On développe avec `npm run dev`, on compile avec `npm run build`
 
 Documentation : <https://v3.nuxtjs.org/getting-started/quick-start/>
 
-```yaml
+```sh
 npx nuxi init nuxt-app
 ```
 
@@ -196,8 +196,7 @@ npx nuxi init nuxt-app
 
 Les dépendances fortement recommandées sont :
 
-- [vuex](https://vuex.vuejs.org/) (store) ⚠️ Uniquement si @^5.x
-- [pinia](https://pinia.vuejs.org/) (store) ⚠️ Si Vuex n'est pas en @5.x
+- [pinia](https://pinia.vuejs.org/) (store)
 - [vue-router](https://router.vuejs.org/) (routage)
 - [vue-i18n](https://kazupon.github.io/vue-i18n/) (traduction) et [vue-i18n-loader](https://www.npmjs.com/package/@intlify/vue-i18n-loader)
 - [axios](https://www.npmjs.com/package/axios) s'il y a usage d'une API
@@ -250,9 +249,85 @@ import MyComponent from './MyComponent.vue'
 - `ref` pour sélectionner un noeud DOM plutôt que `getElement*` ou `querySelector`
 - classes et styles dynamiques avec `:class`, voire `v-show` plutôt que d'accéder à la propriété de style `style.display = '...'`
 
+### Styles
+
+Les styles des composants sont écris dans le fichier `.vue` du composant lui-même.
+
+- Si des styles sont réutilisés entres plusieurs composants (ex: checkbox et radio), ces styles seronts placés dans un fichier de mixins ou variables `sass`,
+et importés dans le fichier `.vue` avec `@use`.
+
+- Les styles sont de préférences scopés (attribut `scoped`) pour ne pas affecter les autres composants.
+
+Cette méthode permet d'avoir le JS, HTML, et CSS au même endroit et d'éviter le code mort une fois le composant supprimé. Nous évitons aussi une arborescence de fichier trop volumineuse dès que le projet commence à grossir.
+
+En plus de cela, inclure les styles directement dans le composant facilite le lazy-loading des styles le jour où nous en aurions besoin.
+
+Attention cependant, les composants doivent rester lisibles, il ne faut donc pas hésiter à sous découper le template en plusieurs composants (sans en abuser évidement).
+
+```vue
+<script setup lang="ts"></script>
+
+<template>
+  <button>
+    <span>Contenu du bouton</span>
+  </button>
+</template>
+
+<style lang="scss" scoped>
+@use "~/assets/scss/colors";
+
+button {
+  color: colors.hotpink;
+}
+
+span {
+  color: red; // Super contraste !
+}
+</style>
+```
+
 ### Props
 
-Toutes les props ont une valeur par défaut. Les variables d'état sont préfixées par `is` (ex : `isLoading`, `isDoingThis` , `isReady`).
+Toutes les props ont une valeur par défaut (sauf si la prop est requise). Les variables d'état sont préfixées par `is` (ex : `isLoading`, `isDoingThis` , `isReady`).
+
+Nous préfererons passer des objets complets plutôt que des props seules: Exemple:
+
+```vue
+<script setup lang="ts">
+// ✅
+defineProps({
+  person: {
+    /** @type {Vue.PropType<Person>} */
+    type: Object as Vue.PropType<Person>, // Nous typons obligatoirement ces objets avec TS **ou** JSDoc (dans du JS)
+    required: true
+  }
+})
+
+// ❌ trop verbeux
+defineProps({
+  firstname: {
+    type: String,
+    required: true
+  },
+  lastname: {
+    type: String,
+    required: true
+  },
+  age: {
+    type: Number
+    required: true
+  }
+})
+</script>
+
+<template>
+  <button>
+    <span>Contenu du bouton</span>
+  </button>
+</template>
+```
+
+ℹ️ Ne pas hésiter à utiliser le commentaire spécial `// @ts-check` ou la prop `checkJs` dans tsconfig.json quand nous sommes dans un projet JavaScript.
 
 ### Data
 
@@ -306,7 +381,7 @@ En cas de redirection à faire dans une fonction, on utilise router.push avec un
 
 ## Store
 
-Le store Vuex / Pinia est toujours découpé en modules par type d'usage (ce qui permet de nommer également les mutations par module).
+Le store Pinia est toujours découpé en modules par type d'usage.
 
 Nommage de clés :
 
@@ -320,19 +395,22 @@ Nommage de clés :
 
 ## API
 
-Les appels API sont gérés dans les stores correspondants, ou encore mieux via des fichiers spécifiques importés par les stores (~ `api.js`) pour ne pas surcharger l'écriture des composants. On utilise [Axios](https://axios.nuxtjs.org/). Voir aussi <https://www.smashingmagazine.com/2020/05/getting-started-axios-nuxt/>.
+Les appels API sont gérés dans les stores correspondants, ou encore mieux via des fichiers spécifiques importés par les stores/composants (~ `api.js`) pour ne pas surcharger l'écriture des composants.
 
-On utilise les promesses avec async/await et les blocs try/catch.
+On utilise [Axios](https://axios.nuxtjs.org/).
+
+On utilise les promesses avec `async`/`await` et les blocs `try`/`catch`.
 
 ```js
 async function getData() {
   try {
     const response = await axios.get('/api/data')
+    // const response = await axios.get<{ ... }>('/api/data') // Avec TypeScript, nous donnons le type attendu.
     return response.data
-    // ou return await axios.$get('/api/data')
+    // ou return await axios.get('/api/data')
   } catch (error) {
     console.log(error) // Ou autre variante
-    throw error
+    throw error // Si besoin de la remonter d'un niveau, sinon on s'arrête
   }
 }
 ```
@@ -529,15 +607,15 @@ plugins: [
 
 ### Accéder au store ou à un autre plugin injecté
 
-On ajoute par exemple `{ src: '~/plugins/init', mode: 'client' },` aux plugins de `nuxt.config.js` (attention à l’ordre de chargement dans nuxt.config), avec cet exemple d'usage :
+Nous utilisons les [plugins](https://v3.nuxtjs.org/guide/directory-structure/plugins) Nuxt pour faire des opérations au niveau global.
 
 ```js
-export default function({ store }) {
-  // Si la session n'est pas établie...
-  if (!store.getters['session/isLogged']) {
-    store.dispatch('session/getConnectedUser')
-  }
-}
+/**
+ * @see https://v3.nuxtjs.org/api/composables/use-nuxt-app
+ */
+export default defineNuxtPlugin(nuxtApp => {
+  // Faire des choses sur l'objet `nuxtApp`
+})
 ```
 
 ---
