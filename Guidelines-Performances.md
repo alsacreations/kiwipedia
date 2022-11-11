@@ -236,19 +236,21 @@ Voici un exemple de chargement de police conseillé (cas de deux fichiers de pol
       type="font/woff2" crossorigin="anonymous">
 ```
 
+**⚠️ Noter ci-dessous que le nom de la font-family est toujours le même ("kiwi") et qu'il ne faut pas confondre avec le nom du fichier**
+
 ```css
 @font-­face {
-  font-­family: 'kiwi';
-  src: url('kiwi.woff2') format('woff2'), 
-    url('kiwi.woff') format('woff');
+  font-­family: "kiwi";
+  src: url("kiwi.woff2") format("woff2"), 
+    url("kiwi.woff") format("woff"); /* dans cet ordre */
   font-weight: normal;
   font-style: normal;
-  font-display: optional;
+  font-display: optional; /* on évite les layout shifts */
 }
 @font-­face {
-  font-­family: 'kiwi';
-  src: url('kiwi-bold.woff2') format('woff2'), 
-    url('kiwi-bold.woff') format('woff');
+  font-­family: "kiwi";
+  src: url("kiwi-bold.woff2") format("woff2"), 
+    url("kiwi-bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: optional;
