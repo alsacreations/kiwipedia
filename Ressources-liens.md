@@ -74,6 +74,7 @@ Autres listes de ressources et checklists
 
 - <https://www.smashingmagazine.com/2021/09/interactive-learning-tools-front-end-developers/> Jeux pour apprendre flexbox, grid
 - <https://web.dev/learn/css/>
+- <https://www.projectwallace.com/css-code-quality> Outil d'évaluation de la qualité du code CSS
 
 ### Grids
 
