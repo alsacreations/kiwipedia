@@ -773,11 +773,10 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 ### Outils et ressources
 
-- <https://topol.io/> Outil de conception en ligne
-- <https://htmlemail.io/> Responsive HTML Email Templates
 - <https://www.mrtemplates.com/premailer/> Préformate un mail - son code - pour optimiser sa compatibilité (utilise API Campaign Monitor)
 - <https://templates.mailchimp.com/resources/> Ressources Mailchimp
 - <https://www.campaignmonitor.com/resources/> Ressources Campaign Monitor
+- <https://topol.io/> <https://www.mailmodo.com/features/wysiwyg-email-editor/> <https://stripo.email/> Outils de conception en ligne
 
 ### Aperçus de rendu client mail et tests
 
