@@ -773,7 +773,6 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 ### Outils et ressources
 
-- <https://www.mrtemplates.com/premailer/> Préformate un mail - son code - pour optimiser sa compatibilité (utilise API Campaign Monitor)
 - <https://templates.mailchimp.com/resources/> Ressources Mailchimp
 - <https://www.campaignmonitor.com/resources/> Ressources Campaign Monitor
 - <https://topol.io/> <https://www.mailmodo.com/features/wysiwyg-email-editor/> <https://stripo.email/> Outils de conception en ligne
