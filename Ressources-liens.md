@@ -243,7 +243,7 @@ Autres listes de ressources et checklists
 - <https://wesbos.com/javascript> Beginner JavaScript Notes & Reference par Wes Bos
 - <https://auth0.com/blog/a-brief-history-of-javascript/> Une brève histoire de JavaScript
 - <https://github.com/naomihauret/js-stack-from-scratch/> JavaScript Stack from Scratch (traduction fr)
-- <https://fr.eloquentjavascript.net/>
+- <https://github.com/denysdovhan/wtfjs/blob/master/README-fr-fr.md> Une liste d'exemples JavaScript drôles et délicats
 - <https://basarat.gitbook.io/typescript/> TypeScript Deep Dive (traduction fr : <https://github.com/HachemiH/typescript-book>)
 
 - Bonnes pratiques et style guides
