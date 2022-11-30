@@ -37,36 +37,16 @@ Les différents fichiers de configuration des Linters sont :
 - EditorConfig : cf. `.editorconfig`
 - [ESLint](https://eslint.org/docs/latest/user-guide/configuring/configuration-files) : cf. `.eslintrc.js`
 - [Stylelint](https://stylelint.io/user-guide/configure) : cf. `.stylelintrc` (voir détails plus loin)
-- *Note : Prettier crée des conflits avec ESLint (ex. sauts de ligne dans les balises). Il est donc recommandé de le désactiver sur les projets Vue/Nuxt.*
 
-La configuration fournie dans le fichier `/.vscode/settings.json` permet de :
+Nous utilisons la configuration ESLint <https://github.com/alsacreations/eslint>.
 
-- Définir ESLint comme linter/formateur par défaut
+Nous recommandons également:
+
+- De définir ESLint comme linter/formateur par défaut
 - De corriger automatiquement les erreurs ESLint lors de la sauvegarde du fichier
 - De désactiver les linters natifs VSCode CSS et scss et d'activer Stylelint uniquement pour éviter certains conflits.
 
-([Afficher/télécharger le fichier `settings.json`](assets/vue-nuxt-front-end/.vscode/settings.json))
-
-```json
-{
-  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-  "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true,
-    "source.fixAll.stylelint": true
-  },
-  "stylelint.enable": true,
-  "css.validate": false,
-  "scss.validate": false,
-  "stylelint.validate": [
-    "css",
-    "less",
-    "postcss",
-    "scss",
-    "sass"
-  ],
-}
-```
+[Afficher/télécharger le fichier `settings.json`](assets/vue-nuxt-front-end/.vscode/settings.json)
 
 ### Editorconfig
 
@@ -78,9 +58,7 @@ La configuration de Editorconfig se fait via un fichier `.editorconfig` à la ra
 
 ESLint est un analyseur de code pour identifier les problématiques du code JavaScript (Vue, React, etc.) et les résoudre automatiquement. ESlint est configuré via un fichier `.eslintrc.js`.
 
-Via le plugin [eslint-plugin-vue](https://www.npmjs.com/package/eslint-plugin-vue) on applique [les groupes de règles](https://eslint.vuejs.org/rules/) dans le fichier `.eslintrc.js` avec le tableau extends : *Priority A: Essential (plugin:vue/essential)*, *Priority B: Strongly Recommended (plugin:vue/strongly-recommended)*, *Eslint recommended : eslint:recommended*. Pour Nuxt : *plugin:nuxt/recommended*.
-
-([Afficher/télécharger le fichier complet recommandé `.eslintrc.js`](assets/vue-nuxt-front-end/.eslintrc.js)).
+Nous utilisons la configuration ESLint <https://github.com/alsacreations/eslint>.
 
 ### Stylelint
 
@@ -99,7 +77,7 @@ La procédure d'installation de Stylelint est la suivante :
 
 Prettier est un formateur de syntaxe permettant d'assurer une consistance tout au long du projet (sauts de ligne, guillemets simples ou doubles, etc.).
 
-**Note : Prettier crée des conflits avec ESLint (ex. sauts de ligne dans les balises). Il est donc recommandé de le désactiver sur les projets nécessitant ESlint.**
+Prettier peut être utlisé sur les projets dans le but de formatter le code (sans rentrer en conflit avec ESLint), il est cependant obligatoirement utilisé avec notre [preset ESLint](https://github.com/alsacreations/eslint).
 
 ### Markdownlint
 
@@ -107,22 +85,7 @@ Markdownlint est un linter pour langage Markdown et prend en compte toutes les r
 
 ### Volar
 
-Ensemble d'outils Vue pour VSCode (coloration, linter). Volar nécessite un fichier `jsconfig.json` ou `tsconfig.json` (normalement générés par défaut) dont voici un exemple :
-
-```yaml
-{
-"compilerOptions": {
-  "baseUrl": ".",
-  "paths": {
-    "~/*": ["./*"],
-    "@/*": ["./*"],
-    "~~/*": ["./*"],
-    "@@/*": ["./*"]
-  }
-},
-"exclude": ["node_modules", ".nuxt", "dist"]
-}
-```
+Ensemble d'outils Vue pour VSCode (coloration, linter). Volar nécessite un fichier `jsconfig.json` ou `tsconfig.json` (normalement générés par défaut).
 
 ## Environnements et fichiers .env
 
@@ -148,7 +111,7 @@ Avec Nuxt l'environnement peut être :
 - `development` en mode `npm run dev`
 - `production` en mode `npm run build` et `npm run generate`
 
-- dans les composants ou dans nuxt.config.js on pourra utiliser `process.env.NODE_ENV` par exemple `if (process.env.NODE_ENV === 'development')`
+- dans les composants ou dans nuxt.config.ts on pourra utiliser `process.env.NODE_ENV` par exemple `if (process.env.NODE_ENV === 'development')`
 
 Voir aussi <https://stackoverflow.com/questions/55406055/toggle-between-multiple-env-files-like-env-development-with-node-js>.
 
@@ -171,26 +134,11 @@ const config = {
 
 ### Installation de Vue
 
-L'installation d’un nouveau projet se fait à l’aide de [Vite](https://vitejs.dev/).
-
-- Par ligne de commande `npm create vite@latest`
-
-Options recommandées :
-
-- vue
-- vue ou vue-ts
-
-On développe avec `npm run dev`, on compile avec `npm run build`
-
-**Template déjà prêt**: <https://github.com/antfu/vitesse>
+Documentation: <https://vuejs.org/guide/quick-start.html>
 
 ### Installation de Nuxt
 
 Documentation : <https://v3.nuxtjs.org/getting-started/quick-start/>
-
-```sh
-npx nuxi init nuxt-app
-```
 
 ## Dépendances
 
@@ -295,13 +243,19 @@ Nous préfererons passer des objets complets plutôt que des props seules: Exemp
 ```vue
 <script setup lang="ts">
 // ✅
-defineProps({
-  person: {
-    /** @type {Vue.PropType<Person>} */
-    type: Object as Vue.PropType<Person>, // Nous typons obligatoirement ces objets avec TS **ou** JSDoc (dans du JS)
-    required: true
+defineProps<{
+  person: Person
+}>()
+
+// ✅ (si besoin de valeur par défaut)
+withDefaults(
+  defineProps<{
+    person?: Person
+  }>(),
+  {
+    person: { /* */ }
   }
-})
+)
 
 // ❌ trop verbeux
 defineProps({
@@ -355,6 +309,17 @@ On privilégie un nommage bien parlant. Les méthodes sont appelées sans parent
 Voir <https://vuejs.org/guide/essentials/event-handling.html#event-handling>
 
 Pour *debounce* des événements (limiter leur nombre d'appels toutes les *n* millisecondes) voir <https://www.npmjs.com/package/lodash.debounce>
+
+La définitions des `emits` se fera de cette manière:
+
+```vue
+<script setup lang="ts">
+defineEmits<{
+  (event: 'change' /* ou autre */, param: string /* ou autre */): void
+  (event: 'update' /* ou autre */, param: number /* ou autre */): void
+}>()
+</script>
+```
 
 ### Composables
 
@@ -446,9 +411,9 @@ Permet d'utiliser la balise `<i18n>` en fin de fichier et de ne pas faire grossi
 
 ### Écrire les routes en fonction de la locale
 
-Dans `nuxt.config.js`, `i18n`, `pages` utiliser la structure
+Dans `nuxt.config.ts`, `i18n`, `pages` utiliser la structure
 
-```js
+```ts
 'tunnel/my-cart': {
   fr: '/panier',
   en: '/cart'
@@ -591,7 +556,7 @@ Exécution du code en front ou en back (SSR) : vérifier `process.client` ou `pr
 
 ### Distinction exécution client (navigateur) / serveur (SSR, node)
 
-Dans la liste des plugins de `nuxt.config.js` on distingue ceux destinés au côté client et ceux destinés au côté serveur, ou les deux.
+Dans la liste des plugins de `nuxt.config.ts` on distingue ceux destinés au côté client et ceux destinés au côté serveur, ou les deux.
 
 ```js
 plugins: [
