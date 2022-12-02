@@ -121,7 +121,7 @@ Documentation : [https://www.alsacreations.com/article/lire/1490-comprendre-le-v
 
 ### Favicon
 
-L’icône de favori (favicon) est utilisée de différentes manières par les navigateurs et systèmes. Le format ICO est ancien, le format PNG permet une meilleure définition avec un poids plus léger, et le [format SVG](https://css-tricks.com/svg-favicons-and-all-the-fun-things-we-can-do-with-them/) se voit [désormais supporté](https://caniuse.com/link-icon-svg).
+L’icône de favori (favicon) est utilisée de différentes manières par les navigateurs (onglets, favoris), systèmes et moteurs de recherche (affichage dans les résultats). Le format ICO est ancien, le format PNG permet une meilleure définition (carré multiple de 48x48) avec un poids plus léger, et le [format SVG](https://css-tricks.com/svg-favicons-and-all-the-fun-things-we-can-do-with-them/) se voit [progressivement supporté](https://caniuse.com/link-icon-svg).
 
 La syntaxe recommandée pour les navigateurs modernes est celle-ci :
 
@@ -133,8 +133,9 @@ La syntaxe recommandée pour les navigateurs modernes est celle-ci :
 
 Les navigateurs ne supportant pas le format `svg` vont ignorer la première instruction.
 
+- [Google : favicon à afficher dans les résultats de recherche](https://developers.google.com/search/docs/appearance/favicon-in-search)
 - Générateur de favicon SVG (avec dark thème) : [https://realfavicongenerator.net/svg-favicon/](https://realfavicongenerator.net/svg-favicon/)
-- [https://github.com/audreyr/favicon-cheat-sheet](https://github.com/audreyr/favicon-cheat-sheet)
+- [favicon-cheat-sheet](https://github.com/audreyfeldroy/favicon-cheat-sheet)
 
 ## Sémantique globale
 

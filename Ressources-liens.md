@@ -74,6 +74,7 @@ Autres listes de ressources et checklists
 
 - <https://www.smashingmagazine.com/2021/09/interactive-learning-tools-front-end-developers/> Jeux pour apprendre flexbox, grid
 - <https://web.dev/learn/css/>
+- <https://www.projectwallace.com/css-code-quality> Outil d'évaluation de la qualité du code CSS
 
 ### Grids
 
@@ -119,15 +120,15 @@ Autres listes de ressources et checklists
 
 - <https://www.mydevice.io/> (made by Alsacréations)
 - <https://www.screensizemap.com/> dimensions de la plupart des écrans
-- <https://screensiz.es/>
+- <https://screensiz.es/> tableau comparatif de la plupart des écrans
 - <https://www.paintcodeapp.com/news/ultimate-guide-to-iphone-resolutions> Ultimate guide to iPhone resolutions
 - <https://ishadeed.com/article/responsive-design-height/> design responsive en vertical
 - <https://gionkunz.github.io/chartist-js/> Graphiques responsive
 - Tableau responsive
-  - <http://css-tricks.com/responsive-data-table-roundup/>
-  - <http://elvery.net/demo/responsive-tables/>
-  - <http://jquerymobile.com/branches/tables/docs/tables/>
-- <http://codyhouse.co/gem/mega-dropdown> Responsive Mega Menu
+  - <https://css-tricks.com/responsive-data-table-roundup/>
+  - <https://elvery.net/demo/responsive-tables/>
+- <https://codyhouse.co/gem/mega-dropdown> Responsive Mega Menu
+- <https://github.com/GoogleChromeLabs/container-query-polyfill> Container Query Polyfill
 
 ### Retina et hdpi
 
@@ -242,7 +243,7 @@ Autres listes de ressources et checklists
 - <https://wesbos.com/javascript> Beginner JavaScript Notes & Reference par Wes Bos
 - <https://auth0.com/blog/a-brief-history-of-javascript/> Une brève histoire de JavaScript
 - <https://github.com/naomihauret/js-stack-from-scratch/> JavaScript Stack from Scratch (traduction fr)
-- <https://fr.eloquentjavascript.net/>
+- <https://github.com/denysdovhan/wtfjs/blob/master/README-fr-fr.md> Une liste d'exemples JavaScript drôles et délicats
 - <https://basarat.gitbook.io/typescript/> TypeScript Deep Dive (traduction fr : <https://github.com/HachemiH/typescript-book>)
 
 - Bonnes pratiques et style guides
@@ -307,6 +308,8 @@ Autres listes de ressources et checklists
 - Pour faire du drag &amp; drop : [Vue.Draggable](https://github.com/SortableJS/Vue.Draggable)
 - Accessibilité avec Vue [vue-a11y.com](https://vue-a11y.com/)
 - Plugin eslint pour vérifier certaines règles d'accessibilité : [eslint-plugin-vue-a11y](https://www.npmjs.com/package/eslint-plugin-vue-a11y)
+- <https://valgeirb.github.io/vue3-popper/>
+- <https://vcalendar.io/>
 
 ### React
 
@@ -369,6 +372,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 - <https://whimsical.com/>
 - <https://octopus.do/>
+- <https://wireflow.co>
 - <https://www.mindmeister.com/fr>
 - <https://moqups.com/>
 - <https://wireframe.cc/>
@@ -427,6 +431,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://findicons.com/>
 - <https://www.svgrepo.com/>
 - <https://www.flaticon.com/fr/>
+- <https://lucide.dev/>
 - <https://github.com/paulirish/browser-logos> Logos de navigateurs
 
 ### Images libres (ou pas)
@@ -768,11 +773,9 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 ### Outils et ressources
 
-- <https://topol.io/> Outil de conception en ligne
-- <https://htmlemail.io/> Responsive HTML Email Templates
-- <https://www.mrtemplates.com/premailer/> Préformate un mail - son code - pour optimiser sa compatibilité (utilise API Campaign Monitor)
 - <https://templates.mailchimp.com/resources/> Ressources Mailchimp
 - <https://www.campaignmonitor.com/resources/> Ressources Campaign Monitor
+- <https://topol.io/> <https://www.mailmodo.com/features/wysiwyg-email-editor/> <https://stripo.email/> Outils de conception en ligne
 
 ### Aperçus de rendu client mail et tests
 
@@ -812,3 +815,14 @@ Maquettes / story-boards / wireframes / mockups / zoning
 ## Réseaux sociaux
 
 - <https://github.com/bradvin/social-share-urls> Liens de partage vers les différents réseaux sociaux
+
+---
+
+## Analytics (alternatives)
+
+- <https://github.com/matomo-org/matomo>
+- <https://github.com/plausible/analytics>
+- <https://github.com/milesmcc/shynet>
+- <https://github.com/PostHog/posthog>
+- <https://github.com/umami-software/umami>
+- <https://usefathom.com/> (payant, non-opensource)

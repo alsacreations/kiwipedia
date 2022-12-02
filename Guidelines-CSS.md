@@ -290,7 +290,7 @@ Les images de contenu doivent être véhiculées via l'élément `<img>` ou `<pi
 
 Toujours transmettre le texte alternatif `alt` (voir [Guidelines Accessibilité](Guidelines-Accessibilite.md)).
 
-Toujours indiquer les dimensions initiales de l'image (`width` et `height`) (voir [Guidelines Performances](Guidelines-Performances.md.md))
+Toujours indiquer les dimensions initiales de l'image (`width` et `height`) (voir [Guidelines Performances](Guidelines-Performances.md))
 
 #### Code recommandé
 
@@ -309,7 +309,7 @@ img {
 
 ### Polices
 
-(voir [Guidelines Performances](Guidelines-Performances.md.md))
+(voir [Guidelines Performances](Guidelines-Performances.md))
 
 ### Contenus de remplissage
 

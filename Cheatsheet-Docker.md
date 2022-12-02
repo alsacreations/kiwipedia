@@ -2,30 +2,34 @@
 
 Statut : Recommendation (REC)
 
-Voir aussi <https://www.alsacreations.com/tuto/lire/1836-Docker--decouverte-et-environnement-LAMP-pour-WordPress.html>
+Voir aussi <https://www.alsacreations.com/tuto/lire/1836-Docker--decouverte-et-environnement-LAMP-pour-WordPress.html> et <https://www.alsacreations.com/tuto/lire/1838-Docker-compose.html>
 
 ## Commandes utiles
 
-* Compiler un Dockerfile dans le dossier courant pour créer une image `docker build -t <nomimage:tag> .`
-* Compiler une image en conteneur et l'exécuter `docker run --name <nomducontainer> <nomimage:tag>` (+ voir autres options)
+* Compiler un Dockerfile dans le dossier courant pour créer une image `docker build -t <image:tag> .`
+* Compiler une image en conteneur et l'exécuter `docker run --name <nomducontainer> <image:tag>` (+ voir autres options)
 * Démarrer ou arrêter un conteneur s'il est déjà existant : `docker start <nomducontainer>` (ou `stop`)
+* Arrêter tous les conteneurs actifs `docker stop $(docker ps -aq)`
 * Exécuter une commande dans le conteneur : `docker container exec -it <nomducontainer> <lacommande>` (par exemple `bash` pour ouvrir un shell)
 * Lister tous les conteneurs : `docker container ls` ou `docker ps -a`
 * Lister toutes les images : `docker image ls`
-* Supprimer un conteneur : `docker container rm <nomducontainer>`
-* Supprimer une image : `docker image rm <nomdelimage>`
+* Supprimer un conteneur : `docker container rm <nomducontainer>` (`-f` force)
+* Supprimer une image : `docker image rm <image>`
 * Utiliser le chemin courant dans une commande docker : `$PWD`
 * Créer un network : `docker network create my-custom-net` et l'utiliser au run : `--network=my-custom-net`
 * Copier un fichier dans un conteneur actif `docker cp .\fichier.sql.gz 133713371337:/root` où 133713371337 est l'ID du conteneur obtenu par `docker container list` et `/root` le chemin de destination.
-* Nettoyer les images/volumes inutilisés `docker image prune` / `docker volume prune`
+* Nettoyer les images/volumes inutilisés `docker image prune` / `docker volume prune` voire `docker system prune`
 * Redémarrer tous les conteneurs arrêtés `docker restart $(docker ps -a -q)`
+* Renommer une image `docker tag <old> <new>`
 
 ### Inspection
 
 * Statistiques : `docker stats`
+* Informations système : `docker info`
 * Logs : `docker logs <nomducontainer>` (ajouter `-f` pour suivre en continu)
 * Ports ouverts : `docker port <nomducontainer>`
 * Processus : `docker top <nomducontainer>`
+* Informations techniques : `docker inspect <nomducontainer>`
 * Différences appliquées : `docker diff <nomducontainer>`
 
 ## Options Docker run
@@ -53,7 +57,7 @@ Le fichier `Dockerfile` est compilé en image à l'aide de `docker build -t test
 
 <https://hadolint.github.io/hadolint/> est un Dockerfile Linter.
 
-* `FROM` Définit l'image source (`FROM php:7.4-cli`).
+* `FROM` Définit l'image source (`FROM php:8.1-cli-alpine`).
 * `ENV` Définit une variable d'environnement à la compilation et à l'exécution (`ENV MY_VAR=kiwi`).
 * `LABEL` Ajoute une métadonnée à l'image.
 * `WORKDIR` Définit le dossier de travail pour les commandes suivantes (`WORKDIR /var/www/html`).
@@ -84,20 +88,38 @@ Liste non exhaustive, voir <https://docs.docker.com/engine/reference/builder/>.
 
 ---
 
+## Docker-compose
+
+* Compiler et démarrer tous les conteneurs `docker-compose up -d` (`-d` : en background)
+* Compiler sans démarrer les conteneurs `docker-compose build` (en option ajouter le nom du service)
+* Tout arrêter, supprimer les conteneurs, volumes et réseaux `docker-compose down`
+* Journaux `docker-compose logs`
+* Statut des conteneurs `docker-compose ps`
+* Liste des images utilisées `docker-compose images`
+* Exécute une commande dans un conteneur `docker-compose exec <service> <command>`
+* Arrêter et supprimer `docker-compose rm --stop`
+* Arrêter `docker-compose stop <service>`
+* Démarrer `docker-compose start <service>`
+* Mettre en pause `docker-compose pause <service>`
+* Reprendre `docker-compose unpause <service>`
+
+---
+
 ## Podman
 
 Interface graphique : <https://iongion.github.io/podman-desktop-companion/>
 
 La grande majorité des commandes Docker ont un équivalent Podman (start, stop, logs, port...).
 
-* Tous les containers `podman ps -a`
-* Processus actifs dans un container `podman top <container>`
+* Tous les conteneurs `podman ps -a`
+* Processus actifs dans un conteneur `podman top <container>`
 * Poids des fichiers `podman ps --size --sort size`
 * Exécuter une commande, par ex un backup MySQL vers l'hôte : `podman exec <container-mysql> mysqldump -uroot -p<password> <nom_base> >dump.sql`
 
 ### Podman compose
 
-* Démarrer à partir d'un fichier compose `podman-compose up -d`
+* Démarrer à partir d'un fichier docker-compose.yml local `podman-compose up -d`
+* Démarrer à partir d'un fichier compose spécifique `podman-compose -f path/to/compose.yml up -d`
 * Démarrer UN conteneur/service en particulier à partir d'un fichier compose `podman-compose up -d <service>`
 * Retirer un service `podman-compose down <service>` (tel que nommé dans le fichier yml, par exemple `db`)
 * Si les ports ne sont pas ouverts pour le service `podman-compose run --service-ports <service>`
