@@ -2,6 +2,8 @@
 
 Statut : Recommendation (REC)
 
+▶️ On respecte les Conventional Commits <https://www.conventionalcommits.org/fr/v1.0.0/>
+
 Voir aussi <https://github.com/dictcp/awesome-git>
 
 ## Init
