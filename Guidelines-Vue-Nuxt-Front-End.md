@@ -294,7 +294,11 @@ const form = reactive({
 })
 ```
 
-Lors d'un développement avec données partielles/de remplissage, on peut préfixer les données temporaires par `TEMP`, `TODO`, etc, ou les charger depuis un fichier externe pour éviter la surcharge du composant `import('demodata.js')`.
+👉 Lors d'un développement avec données partielles/de remplissage :
+
+- On préfixe par `TEMP` autant que possible (afin que ce soit clairement identifiable dans le code).
+- On charge ces données depuis un fichier externe pour éviter la surcharge du composant `import('temp-products.js')`.
+- On classe les fichiers statiques (images _placeholder_) dans un dossier `temp/` également.
 
 ### Computed
 
