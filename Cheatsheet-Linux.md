@@ -1006,6 +1006,9 @@ Télécharger récursivement un dossier FTP avec wget
 wget -r ftp://login:password@example.org:port/path/to/folder/
 ```
 
+Extraire toutes les urls d'une page avec curl
+`curl "https://example.com/" | grep -oP '(https*://|www\.)[^ ]*'`
+
 ---
 
 ## Cron
