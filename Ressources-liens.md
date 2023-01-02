@@ -431,6 +431,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://findicons.com/>
 - <https://www.svgrepo.com/>
 - <https://www.flaticon.com/fr/>
+- <https://simpleicons.org/>
 - <https://lucide.dev/>
 - <https://github.com/paulirish/browser-logos> Logos de navigateurs
 
