@@ -248,7 +248,7 @@ Modèles d’extension à utiliser
 ### Obligatoires
 
 - [WP fail2ban](https://wordpress.org/plugins/wp-fail2ban/) si hébergement interne : permet de signaler les erreurs d’identification à fail2ban+iptables pour bannir les IP tentant du bruteforce ; n’utilisez alors pas d’extension pour changer l’url de wp-admin.
-- [WP Migrate DB](https://fr.wordpress.org/plugins/wp-migrate-db/) pour migrer les données de local > dev > recette > prod (et inversement), à désinstaller par sécurité après mise en production.
+- [WP Migrate Lite](https://fr.wordpress.org/plugins/wp-migrate-db/) pour migrer les données de local > dev > recette > prod (et inversement), à désinstaller par sécurité après mise en production.
 - [W3 Total Cache](https://wordpress.org/plugins/w3-total-cache/) ou [WP Fastest Cache](https://fr.wordpress.org/plugins/wp-fastest-cache/) ou [WP Super Cache](https://fr.wordpress.org/plugins/wp-super-cache/) : cache/compression de contenu pour améliorer les temps de réponse.
 - [SecuPress](https://fr.wordpress.org/plugins/secupress/) pour améliorer le score global (permissions de fichiers, bonnes pratiques).
 - Notre plugin **[Kiwiplate Setup Theme](assets/wordpress/kiwiplate_setup_theme.php)**, et/ou mettre en place les actions suivantes (extensions + snippets de code).
