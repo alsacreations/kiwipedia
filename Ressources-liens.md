@@ -458,6 +458,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://jaymantri.com/> (CC0 photographe)
 - <https://nos.twnsnd.co/> (vintage)
 - <http://thestocks.im/> (meta-moteur)
+- <https://standardebooks.org/manual/1.7.0/10-art-and-images#10.3.3.7.4> Musées avec images en CC0
 
 ### Templates/modèles de slides
 
