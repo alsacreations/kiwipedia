@@ -67,7 +67,7 @@ selecteur {
 
 **_Note : La démarche de réordonnement est manuelle, en se servant de cette liste comme référence.**
 
-### Méthodologie : Cube CSS
+## Méthodologie : Cube CSS
 
 Cube CSS est une Méthodologie d'intégration CSS conçue par Andy Bell en 2019 ([Documentation officielle](https://cube.fyi/)).
 
@@ -79,14 +79,14 @@ Les styles sont progressivement hérités de la page gobale, vers des compositio
 
 **Cube CSS est une méthodologie et non un framework, donc s'adapte à Sass, BEM, Bootstrap, WordPress, VueJS, etc.**
 
-#### Pré-requis de Cube
+### Pré-requis de Cube
 
 Tout projet Cube CSS nécessite en amont au minimum :
 
 - Un fichier **["Reset CSS"](https://github.com/alsacreations/bretzel/tree/main/_base)** : ce fichier est maintenu en interne chez nous et mis à jour régulièrement.
 - Une **feuille de styles basique** pour définir les styles des éléments de générique : html, body (taille de base, couleur, police), liens (+ survol et focus), titres, listes, etc.
 
-#### Compositions (Layouts)
+### Compositions (Layouts)
 
 Le "C" de "CUBE" signifie "Compositions". _Note : nous les appelons **"Layouts"** chez nous pour éviter de faire la confusion avec "Composants"._
 
@@ -98,13 +98,13 @@ _(exemples de Layouts rassemblés sur [Bretzel](http://bretzel.alsacreations.com
 
 Toutes les pages web comportent l'un ou plusieurs de ces Layouts, souvent répétés. Il s'agit donc dans un premier temps de faire la liste des Layout nécessaires pour les maquettes.
 
-#### Utilities (classes utilitaires)
+### Utilities (classes utilitaires)
 
 Le "U" de "CUBE" signifie "Utilities" et désigne les classes utilitaires (également appelées atomiques) dont le principe est qu'à chaque classe correspond une action et une seule.
 
 Les classes utilitaires sont à rédiger dans le HTML directement (ex. `<p class="mt-20 text-pink"></p>`) et on devrait se limiter aux informations de **Couleurs**, **Espacements** et **Typographie**, tant que possible.
 
-##### Générateur de classes utilitaires&nbsp;: Tailwind
+#### Générateur de classes utilitaires&nbsp;: Tailwind
 
 Nous utilisons [Tailwind CSS](https://tailwindcss.com) comme générateur de classes utilitaires (uniquement la partie `@utilities`).
 
@@ -113,7 +113,7 @@ Le fichier de config de Tailwind, qu'il est indispensable d'adapter à chaque pr
 - d'utiliser directement les classes utilitaires dans le HTML (ex. `<p class="mt-20 text-pink"></p>`)
 - d'utiliser les variables au sein de CSS (ex. `p {margin-top: theme(clé.clé)`)
 
-#### Blocks (Composants)
+### Blocks (Composants)
 
 Le "B" de "CUBE" signifie "Blocks". _Note : nous les appelons **"Components"** chez nous... parce que ce sont des "Composants" card, button, carrousel, progressbar, ...)_
 
@@ -125,7 +125,7 @@ Exemple :
 }
 ```
 
-#### Exceptions (Variantes)
+### Exceptions (Variantes)
 
 Le "E" de "CUBE" signifie "Exceptions", ce sont les variantes d'un composant ou d'un layout.
 
@@ -150,7 +150,7 @@ a[aria-current="page"] {...}
 .label[aria-hidden="true"] {...}
 ```
 
-#### Groupement des classes dans Cube CSS
+### Groupement des classes dans Cube CSS
 
 Les noms de classes sont regroupés par fonctions, entre crochets (symboles `[` et `]`, ne pas oublier l'espace) et dans cet ordre&nbsp;:
 
