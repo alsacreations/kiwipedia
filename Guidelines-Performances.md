@@ -203,6 +203,21 @@ Voici nos préconisations concernant les performances des images&nbsp;:
 - `height: auto` pour que le navigateur applique le ratio systématiquement.
 - `background-color` sur l'image pour indiquer visuellement l'espace qui sera occupé quand elle sera chargée (placeholder).
 
+### Code recommandé
+
+```html
+<!-- Dimensions initiales de l'image -->
+<img src="(chemin)" alt="" width="2000" height="1000">
+```
+
+```css
+img {
+  max-width: 100%; /* largeur fluide */
+  height: auto; /* ratio préservé */
+  background: gray; /* placeholder en attendant */
+}
+```
+
 ### Outils d'optimisation d'images
 
 - MacOS : <https://github.com/antonreshetov/image-optimizer> très facile par drag&drop et traitement par lot (PNG, JPEG, GIF, SVG)

@@ -1,61 +1,197 @@
 # Guidelines : CSS
 
-Statut : Recommendation (REC)
+Statut : Working Draft (WD)
 
-Cette présente convention rassemble les bonnes pratiques CSS (et SCSS) en production appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/). Elle a pour but d'évoluer dans le temps et de s'adapter à chaque nouveau projet.
+Cette présente convention rassemble les bonnes pratiques appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/) concernant **CSS**. Elle a pour but d'évoluer dans le temps et de s'adapter au fur et à mesure de nos expériences et projets.
 
-## Généralités
+## Résumé
 
-### Éditeur, Formatage et Qualité
+De manière générale et sauf projets d'intégration spécifiques, nous privilégions les méthodologies, langages et outils suivants&nbsp;:
 
-- L'éditeur de code recommandé pour HTML, CSS, PHP, JavaScript est [Visual Studio Code](https://code.visualstudio.com/) (voir [Guidelines VS Code](Guidelines-VScode.md)).
-- [EditorConfig](http://editorconfig.org/) et [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) imposent un formatage (UTF-8, espace vs tabs, guillemets) et des règles de syntaxe directement dans l'éditeur, ainsi ce dernier s'adapte à chaque projet.
-- [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint) et [eslint](https://eslint.org/) sont des linters apportant une configuration qui vient s'ajouter aux outils natifs de Visual Studio Code.
+- Méthodologie CSS : **Cube CSS**
+- Langage : **Sass** (syntaxe `.scss`)
+- Constructeur de classes utilitaires : **Tailwind CSS**
 
-### Configuration des extensions et linters
+Tous les détails et bonnes pratiques internes concernant ces technologies sont détaillés au sein de ce présent document.
 
-Tous les détails et configuration des Extensions et Linters sont décrits au sein des Guidelines selon la typologie de projet :
+## Bonnes pratiques CSS globales
 
-- [Guidelines Vue-Nuxt-Front-End](Guidelines-Vue-Nuxt-Front-End.md)
-- [Guidelines Vue-WordPress](Guidelines-Vue-WordPress.md)
-- [Guidelines WordPress](Guidelines-WordPress.md)
+### Points généraux
 
-### Langage : Scss
+- Opter pour des tailles de polices fluides (de préférence en `rem`), éviter les tailles de police de taille fixe (`px` ou `pt`) car inaccessible aux personnes nécessitant d’agrandir les contenus textuels.
+- Éviter d’écraser une règle par une autre.
+- La règle `!important` doit être éradiquée si possible du fait de son poids extrêmement important (certaines parties des styles peuvent toutefois exceptionnellement employer à juste titre `!important`).
+- Durant la phase de développement l'intégration se fait sur plusieurs fichiers CSS (composants, layout, etc.) que l'on rassemble (`@import`) dans un fichier unique.
+- Les fichiers CSS doivent être minifiés pour économiser du poids de chargement.
+- Toujours préciser quelle(s) propriété(s) doit être animée dans une transition ou animation.
+- Éviter d’animer des propriétés autres que **transform** ou **opacity** ou **filter** (ou alors ajouter la propriété `will-change` au cas par cas).
 
-Le pré-processeur [Sass](https://sass-lang.com/) (syntaxe `.scss`) apporte des fonctionnalités CSS indispensables&nbsp;: variables, notation imbriquée, mixins, etc. La méthode de compilation de Sass vers CSS dépend du type de projet (voir partie ["Méthodologies et conventions de nommage"](#méthodologies-et-conventions-de-nommage-css)).
+### Sélection des éléments
 
-### Compatibilité navigateurs
+La maintenabilité des feuilles de styles est une priorité. Il est nécessaire de favoriser les sélecteurs ayant le moins de spécificité (poids) possible afin de faciliter les modifications ultérieures ou dans des contextes différents (Responsive).
 
-L'ensemble des recommandations de ce document est prévu pour être compatible avec tous les navigateurs représentant plus de 1.5% de la population, ce qui représente notamment tous les navigateurs modernes supportant [CSS Grid Layout](https://caniuse.com/css-grid). **Cela ne concerne donc pas Internet Explorer.**
+- Privilégier au maximum l'usage de [**classes**](http://www.drinchev.com/blog/css-with-only-class-names/) plutôt que d'écrire des sélecteurs basés sur le type des éléments ou leur `id`.
+- Le sélecteur CSS doit être _unique_ si cela est possible (une seule classe). Éviter les _sélecteurs composés_ tels que `.modal span` ou `.modal .date` mais plutôt `.modal-date` pour conserver un poids minimal.
+- Prévoir dès le départ un nom de classe pour chaque élément HTML (même anodin tels que `<span>`, `<p>` ou `<a>`) afin de pouvoir être ciblés sans avoir à faire à leur hiérarchie.
 
-La liste des navigateurs supportés est définie au sein du fichier [browserslist](https://github.com/browserslist/browserslist) que l'on retrouve dans `package.json` et dont la valeur est&nbsp;:
+### Ordre des déclarations
 
-```json
-"browserslist": [
-    ">1.5%",
-    "not op_mini all"
-  ]
+Les déclarations au sein d'une règle CSS sont ordonnées de façon à faire apparaître les propriétés importantes en tête de liste.
+
+Voici dans quel ordre nous déclarons nos propriétés :
+
+1. Propriété **`display`** : tout ce qui affecte le rendu par défaut de l’élément
+2. **Positionnement** : tout ce qui détermine la position de l’élément
+3. **Modèle de boîte** : tout ce qui influe sur les dimensions de l’élément
+4. **Transformations** et **transitions**
+5. **Typographie** : tout ce qui détermine les caractéristiques de la police de caractères
+6. **Décoration** : les propriétés purement ornementales
+
+Exemple :
+
+```css
+selecteur {
+  display: inline-block;
+  position: relative;
+  top: -1em;
+  z-index: 1337;
+  max-width: 50%;
+  margin: 1em;
+  padding: 0;
+  overflow: hidden;
+  text-align: right;
+  font: bold 1.5em/1.3 arial, verdana, sans-serif;
+  background: rgba(0, 0, 0, 0.5);
+}
 ```
 
-### Fichier CSS de base ("Reset")
+**_Note : La démarche de réordonnement est manuelle, en se servant de cette liste comme référence.**
 
-Un "reset" CSS permettant d'harmoniser les styles par défaut des navigateurs est systématiquement appliqué en début de projet.
+### Méthodologie : Cube CSS
 
-Normalize, Sanitize et Reboot sont des fichiers de base courants. **Nous privilégions les fichiers de base de KNACSS** qui est un récapitulatif de ces ressources.
+Cube CSS est une Méthodologie d'intégration CSS conçue par Andy Bell en 2019 ([Documentation officielle](https://cube.fyi/)).
 
-Documentation : [fichiers reset de KNACSS](https://github.com/alsacreations/KNACSS/tree/master/sass/base)
+**CUBE est un acronyme qui signifie Compositions, Utilities, Blocks, Exceptions** (détails ci-après).
 
-## Sélection des éléments
+Le grand principe de la méthodologie Cube CSS est - contrairement à beaucoup d'autres - "d'embrasser la Cascade CSS plutôt que d'essayer de la contrer".
 
-La maintenabilité des feuilles de styles est une priorité. Il est nécessaire de prioriser les sélecteurs ayant le moins de spécificité (poids) possible afin de faciliter les modifications ultérieures ou dans des contextes différents (Responsive).
+Les styles sont progressivement hérités de la page gobale, vers des compositions, puis vers les différents composants.
 
-Privilégier au maximum l'usage de [**classes**](http://www.drinchev.com/blog/css-with-only-class-names/) plutôt que d'écrire des sélecteurs basés sur le type des éléments ou leur `id`.
+**Cube CSS est une méthodologie et non un framework, donc s'adapte à Sass, BEM, Bootstrap, WordPress, VueJS, etc.**
 
-Le sélecteur CSS doit être _unique_ si cela est possible (une seule classe). Éviter les _sélecteurs composés_ tels que `.modal span` ou `.modal .date` mais plutôt `.modal-date` pour conserver un poids minimal.
+#### Pré-requis de Cube
 
-Cela implique que chaque élément HTML, même anodin tels que des `<span>`, de `<p>` ou des `<a>` disposent d'attributs de classe afin de pouvoir être ciblés sans avoir à faire à leur hiérarchie.
+Tout projet Cube CSS nécessite en amont au minimum :
 
-## Notation imbriquée Scss
+- Un fichier **["Reset CSS"](https://github.com/alsacreations/bretzel/tree/main/_base)** : ce fichier est maintenu en interne chez nous et mis à jour régulièrement.
+- Une **feuille de styles basique** pour définir les styles des éléments de générique : html, body (taille de base, couleur, police), liens (+ survol et focus), titres, listes, etc.
+
+#### Compositions (Layouts)
+
+Le "C" de "CUBE" signifie "Compositions". _Note : nous les appelons **"Layouts"** chez nous pour éviter de faire la confusion avec "Composants"._
+
+![galerie de Layouts visibles sur Bretzel](images/layouts.png)
+
+_(exemples de Layouts rassemblés sur [Bretzel](http://bretzel.alsacreations.com/#layouts))_
+
+**Les Layouts constituent l'un des principaux apports de la méthodologie CubeCSS&nbsp;: il s'agit de zones d'affichages neutres et flexibles réutilisables un peu partout et destinées à recueillir les composants.**
+
+Toutes les pages web comportent l'un ou plusieurs de ces Layouts, souvent répétés. Il s'agit donc dans un premier temps de faire la liste des Layout nécessaires pour les maquettes.
+
+#### Utilities (classes utilitaires)
+
+Le "U" de "CUBE" signifie "Utilities" et désigne les classes utilitaires (également appelées atomiques) dont le principe est qu'à chaque classe correspond une action et une seule.
+
+Les classes utilitaires sont à rédiger dans le HTML directement (ex. `<p class="mt-20 text-pink"></p>`) et on devrait se limiter aux informations de **Couleurs**, **Espacements** et **Typographie**, tant que possible.
+
+##### Générateur de classes utilitaires&nbsp;: Tailwind
+
+Nous utilisons [Tailwind CSS](https://tailwindcss.com) comme générateur de classes utilitaires (uniquement la partie `@utilities`).
+
+Le fichier de config de Tailwind, qu'il est indispensable d'adapter à chaque projet, permet :
+
+- d'utiliser directement les classes utilitaires dans le HTML (ex. `<p class="mt-20 text-pink"></p>`)
+- d'utiliser les variables au sein de CSS (ex. `p {margin-top: theme(clé.clé)`)
+
+#### Blocks (Composants)
+
+Le "B" de "CUBE" signifie "Blocks". _Note : nous les appelons **"Components"** chez nous... parce que ce sont des "Composants" card, button, carrousel, progressbar, ...)_
+
+Exemple :
+
+```css
+.card {
+  /* ici des styles qui ne seraient ni apportés par le Layout ni par les Utilities */
+}
+```
+
+#### Exceptions (Variantes)
+
+Le "E" de "CUBE" signifie "Exceptions", ce sont les variantes d'un composant ou d'un layout.
+
+Cube CSS utilise les attributs `data-` en HTML et le sélecteur d'attributs en CSS pour cibler les Exceptions ([pourquoi ?](https://www.aleksandrhovhannisyan.com/blog/represent-state-with-html-attributes-not-class-names/))&nbsp;:
+
+```html
+<!-- exemple de variante de card -->
+<div class="[ card ]" data-variant="reversed"></div>
+```
+
+```css
+.card[data-variant="reversed"] {
+  flex-direction: row-reverse;
+}
+```
+
+Lorsqu'ils sont présents, utiliser autant que possible les **attributs ARIA** pour cibler les variantes d'un élément&nbsp;:
+
+```css
+a[aria-current="page"] {...}
+.toggle-btn[aria-expanded="true"] {...}
+.label[aria-hidden="true"] {...}
+```
+
+#### Groupement des classes dans Cube CSS
+
+Les noms de classes sont regroupés par fonctions, entre crochets (symboles `[` et `]`, ne pas oublier l'espace) et dans cet ordre&nbsp;:
+
+1. Le **nom primaire** ("sémantique") du Block
+2. Les **noms des Layouts** si nécessaires
+3. Les **classes utilitaires** (core + design tokens)
+
+```html
+<!-- exemple de nommage groupé -->
+<article class="[ card ] [ section box ] [ bg-base color-primary ]" data-variant="reversed">
+</article>
+```
+
+```html
+<!-- autre exemple de nommage -->
+<section class="[ card-group ] [ auto-grid ]" role="group">
+  <div class="[ card ] [ sidebar ] [ mx-8 text-hotpink ]"></div>
+</section>
+```
+
+## Guidelines Sass
+
+Nous employons le pré-processeur [Sass](https://sass-lang.com/) (syntaxe `.scss`) dans nos projets d'intégration.
+
+Sass apporte des fonctionnalités CSS indispensables&nbsp;: concaténation, variables, notation imbriquée, mixins, etc. La méthode de compilation de Sass vers CSS dépend du type de projet (statique, Vue, Gulp, etc.).
+
+### Variables
+
+Utiliser systématiquement les variables Sass (`$variable`) pour éviter les répétitions de code et favoriser la maintenance du projet.
+
+Cette consigne concerne principalement :
+
+- les couleurs de texte
+- les couleurs de fond
+- les tailles de police
+- les breakpoints des Media Queries en Responsive
+- les margin et les padding
+
+**Aucune de ces valeurs ne devraient apparaître dans les styles de développement sans être associées à des variables.**
+
+### Notation imbriquée
 
 La [Notation imbriquée](https://sass-lang.com/guide#topic-3) (nesting) de Sass offre une vision sur la "hiérarchie" du composant et facilite la lecture du code.
 
@@ -101,142 +237,6 @@ Les inconvénients majeurs de cette notation sont :
 
 **Exception : le sélecteur de parent `&` est parfaitement préconisé dans le cas d'événements tels que `&:hover`, `&:focus` ou `&:active`.**
 
-## Commentaires
-
-Les commentaires CSS et l'usage de mots-clés informatifs au sein de commentaires importants sont appréciés, sous la forme :
-
-- `TODO:` → point à finir / corriger avant de livrer
-
-Cette syntaxe est préconisée car correspond au réglage par défaut de l'extension VSCode [TODO Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight).
-
-D'autres mots-clés peuvent être additionels selon les cas (ne pas en abuser) :
-
-- `TODO:RG` → tâche à réaliser par Raphaël
-- `TODO:URL` → URL manquante
-
-## Ordre des déclarations
-
-Les déclarations au sein d'une règle CSS sont ordonnées de façon à faire apparaître les propriétés importantes en tête de liste.
-
-Voici dans quel ordre nous déclarons nos propriétés :
-
-1. Propriété display : tout ce qui affecte le rendu par défaut de l’élément
-2. Positionnement : tout ce qui détermine la position de l’élément
-3. Modèle de boîte : tout ce qui influe sur les dimensions de l’élément
-4. Transformations et transitions
-5. Typographie : tout ce qui détermine les caractéristiques de la police de caractères
-6. Décoration : les propriétés purement ornementales
-
-Exemple :
-
-```css
-selecteur {
-  display: inline-block;
-  position: relative;
-  top: -1em;
-  z-index: 1337;
-  max-width: 50%;
-  margin: 1em;
-  padding: 0;
-  overflow: hidden;
-  text-align: right;
-  font: bold 1.5em/1.3 arial, verdana, sans-serif;
-  background: rgba(0, 0, 0, 0.5);
-}
-```
-
-**_Note : La démarche de réordonnement est généralement manuelle, en se servant de cette liste comme référence. Si un projet le nécessite, l'outil "Stylelint" intégré au Workflow sous forme de tâche Gulp permet de réordonner automatiquement les déclarations CSS grâce au plugin [stylelint-order](https://www.npmjs.com/package/stylelint-order)_**
-
-## Méthodologies et Conventions de nommage CSS
-
-### Workflow = "ça dépend"
-
-Notre Workflow varie selon les types de projets, la maturité des navigateurs web et l'obsolescence des technologies.
-
-Notre rôle est de nous adapter constamment à ces évolutions, et nos solutions techniques sont à ce jour&nbsp;: NPM, Vue, React, Webpaxmix, WordPress, Gulp, site statique ("pas de workflow").
-
-Les [méthodologies et conventions de nommage CSS](https://speakerdeck.com/goetter/conventions-de-nommage-en-css) que nous préconisons selon les projets sont&nbsp;:
-
-- Tailwind
-- ou KNACSS
-- ou Bootstrap
-
-### Tailwind
-
-_Source : <https://tailwindcss.com/>_
-
-TailwindCSS correspond à une approche "atomique" de CSS, comprendre qu'à chaque classe correspond une action et une seule.
-
-La méthodologie et les conventions de Tailwind sont très spécifiques car toutes les classes sont déjà existantes dans les fichiers CSS, il suffit donc de les appliquer au sein des fichiers HTML. Il n'est nécessaire d'écrire des styles que sporadiquement au cours du projet.
-
-**Ce framework CSS "Utility First" est notre choix prioritaire et préconisé dans la plupart des projets (WordPress, PHP, VueJS, Webpackmix) (pour la configuration voir [_Guidelines Tailwind_](Guidelines-Tailwind.md))**
-
-Notre workflow Tailwind comporte :
-
-- Un mini fichier CSS "Alsa-TW-reset" dédié (voir [_Guidelines Tailwind_](Guidelines-Tailwind.md)
-- Une [Convention de nommage "Utility first"](Guidelines-Tailwind.md)
-- PurgeCSS (tâche permettant de supprimer les styles inutilisés)
-
-### KNACSS
-
-_Source : <https://www.knacss.com/doc.html>_
-
-KNACSS est un micro-framework CSS constitué au fur et à mesure au sein d'Alsacréations pour répondre à nos besoins de conventions et de bonnes pratiques, notamment en terme d'Accessibilité.
-
-**Ce micro-framework CSS sera choisi principalement pour des sites statiques (intégration simple), voire sans Workflow particuliers.**
-
-Notre workflow KNACSS comporte :
-
-- Fichiers "reset" KNACSS avec un condensé de bonnes pratiques
-- Une compatibilité Sass
-- Une Architecture et imports des fichiers KNACSS
-- Un Mixin `respond-to`
-- Une Convention de nommage : "sémantique" (se rapproche de [BEM](http://getbem.com/))
-
-### Bootstrap
-
-_Source : <https://getbootstrap.com/>_
-
-**Ce framework HTML/CSS sera choisi lorsque le client est déjà familier avec ce Framework ou nous l'impose.**
-
-Notre workflow Bootstrap comporte :
-
-- Fichiers "reset" KNACSS avec un condensé de bonnes pratiques
-- Une compatibilité Sass
-- Convention de nommage : "sémantique" (se rapproche de BEM)
-- Composants préfabriqués (modales, navigation, etc.)
-- Grille de mise en forme --> préférer l'usage de Grid Layout plutôt que la grille de Bootstrap nécessitant des imbrications HTML
-
-## Divers
-
-- L'outil [Autoprefixer](https://autoprefixer.github.io/) est employé lorsque des préfixes navigateurs sont nécessaires pour un projet (dépend du Workflow / Framework).
-- Les "hacks" ou détournements de propriétés ou valeurs sont vivement déconseillés. En dernier ressort, employer la ressource [Browserhacks](http://browserhacks.com/)
-- La règle `!important` doit être éradiquée si possible du fait de son poids extrêmement important (certaines parties des styles peuvent toutefois exceptionnellement employer à juste titre `!important`).
-- Opter pour des tailles de polices fluides (de préférence en `rem`), éviter les tailles de police de taille fixe (`px` ou `pt`) car inaccessible aux personnes nécessitant d’agrandir les contenus textuels.
-- Opter pour le modèle de boîte CSS3 (`box-sizing: border-box`) en début de la feuille de style. Cela permet de connaître la taille de tous les éléments sans avoir à faire le calcul de `taille+padding+border`.
-- Éviter d’écraser une règle par une autre.
-- Durant la phase de développement l'intégration se fait sur plusieurs fichiers CSS (composants, layout, etc.) que l'on rassemble (`@import`) dans un fichier unique.
-- Les fichiers CSS doivent être minifiés pour économiser du poids de chargement.
-- Toujours préciser quelle(s) propriété(s) doit être animée dans transition ou animation
-- Éviter d’animer des propriétés autres que **transform** ou **opacity** ou **filter** (ou alors ajouter la propriété `will-change` et/ou le hack de `translateZ()`.) Source : [https://tzi.github.io/presentation-CSS-perfs/](https://tzi.github.io/presentation-CSS-perfs/)
-- `@font-face` : Privilégiez `.woff2`. Pour le détail, voir la partie ["medias / polices"](#polices)
-
-## Guidelines Sass
-
-### Variables
-
-Utiliser systématiquement les variables Sass (`$variable`) pour éviter les répétitions de code et favoriser la maintenance du projet.
-
-Cette consigne concerne principalement :
-
-- les couleurs de texte
-- les couleurs de fond
-- les tailles de police
-- les breakpoints des Media Queries en Responsive
-- les margin et les padding
-
-**Aucune de ces valeurs ne devraient apparaître dans les styles de développement sans être associées à des variables.**
-
 ### Breakpoints et Media Queries
 
 La liste de points de rupture (breakpoints) recommandée est proposée sous forme de couple "clé:valeur" et peut bien entendu être élargie&nbsp;:
@@ -273,50 +273,11 @@ Les valeurs prévues dans notre mixin sont (privilégier les premières, respect
 - `'large'` : correspond à `(max-width: $large - 1)`
 - `'extra-large'` : correspond à `(max-width: $extra-large - 1)`
 
-## Media print (impression)
+## Bonus : Media print (impression)
+
+Nous proposons une feuille de styles "Print" dans nos projets d'intégration web.
 
 La feuille de styles dédiée à l'impression aide aussi à l'export PDF dans le navigateur. La plupart du temps il s'agira en priorité de masquer les éléments inutiles dans un document statique ou papier (ex : navigation) et de retirer les décorations superflues.
 
 - [Une feuille de styles de base pour le media print](https://www.alsacreations.com/astuce/lire/1160-Une-feuille-de-styles-de-base-pour-le-media-print.html)
 - [Faire une feuille de style CSS print pour l'impression](https://www.alsacreations.com/tuto/lire/586-feuille-style-css-print-impression.html)
-
-## Médias (images, polices)
-
-### Images
-
-#### Recommandations générales
-
-Les images de contenu doivent être véhiculées via l'élément `<img>` ou `<picture>` et demeurer fluides quel que soit le périphérique où elles s'affichent.
-
-Toujours transmettre le texte alternatif `alt` (voir [Guidelines Accessibilité](Guidelines-Accessibilite.md)).
-
-Toujours indiquer les dimensions initiales de l'image (`width` et `height`) (voir [Guidelines Performances](Guidelines-Performances.md))
-
-#### Code recommandé
-
-```html
-<!-- Dimensions initiales de l'image -->
-<img src="(chemin)" alt="" width="2000" height="1000">
-```
-
-```css
-img {
-  max-width: 100%; /* largeur fluide */
-  height: auto; /* ratio préservé */
-  background: gray; /* placeholder en attendant */
-}
-```
-
-### Polices
-
-(voir [Guidelines Performances](Guidelines-Performances.md))
-
-### Contenus de remplissage
-
-Le remplissage par du contenu temporaire peut faire appel à _Lorem Ipsum_.
-
-- Pour le texte :
-  - [https://schnaps.it/](https://schnaps.it/)
-  - [https://loripsum.net/](https://loripsum.net/)
-- Pour les images :
-  - Voir <https://github.com/alsacreations/guidelines/blob/master/Ressources-liens.md#placeholders-images-de-remplissage>
