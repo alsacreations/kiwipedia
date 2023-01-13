@@ -111,7 +111,7 @@ Nous utilisons [Tailwind CSS](https://tailwindcss.com) comme générateur de cla
 Le fichier de config de Tailwind, qu'il est indispensable d'adapter à chaque projet, permet :
 
 - d'utiliser directement les classes utilitaires dans le HTML (ex. `<p class="mt-20 text-pink"></p>`)
-- d'utiliser les variables au sein de CSS (ex. `p {margin-top: theme(clé.clé)`)
+- d'utiliser les variables au sein de CSS (ex. `p {margin-top: theme("clé.clé")`)
 
 ### Blocks (Composants)
 
@@ -175,21 +175,26 @@ Les noms de classes sont regroupés par fonctions, entre crochets (symboles `[` 
 
 Nous employons le pré-processeur [Sass](https://sass-lang.com/) (syntaxe `.scss`) dans nos projets d'intégration.
 
-Sass apporte des fonctionnalités CSS indispensables&nbsp;: concaténation, variables, notation imbriquée, mixins, etc. La méthode de compilation de Sass vers CSS dépend du type de projet (statique, Vue, Gulp, etc.).
+Sass apporte des fonctionnalités CSS indispensables&nbsp;: concaténation, variables, notation imbriquée, mixins, etc. La méthode de compilation de Sass vers CSS dépend du type de projet (statique, Vue, Vite, Webpack, etc.).
 
 ### Variables
 
-Utiliser systématiquement les variables Sass (`$variable`) pour éviter les répétitions de code et favoriser la maintenance du projet.
+Les variables Sass sont à éviter au profit des variables présentes dans la configuration du contructeur de classes utilitaires (ex. `font-size: theme('fontSize.18');` pour Tailwind).
 
-Cette consigne concerne principalement :
+**Aucune valeur numérique ne devrait apparaître dans les styles de développement sans être associée à une variable.**
 
-- les couleurs de texte
-- les couleurs de fond
-- les tailles de police
-- les breakpoints des Media Queries en Responsive
-- les margin et les padding
+### Breakpoints et Media Queries
 
-**Aucune de ces valeurs ne devraient apparaître dans les styles de développement sans être associées à des variables.**
+La liste de points de rupture (breakpoints) figure dans la configuration du contructeur de classes utilitaires (ex. `@screen valeur {}` pour Tailwind).
+
+```scss
+// composant card sur écran "lg" ou plus
+@screen lg {
+  .card {
+    display: flex;
+  }
+}
+```
 
 ### Notation imbriquée
 
@@ -236,42 +241,6 @@ Les inconvénients majeurs de cette notation sont :
 ```
 
 **Exception : le sélecteur de parent `&` est parfaitement préconisé dans le cas d'événements tels que `&:hover`, `&:focus` ou `&:active`.**
-
-### Breakpoints et Media Queries
-
-La liste de points de rupture (breakpoints) recommandée est proposée sous forme de couple "clé:valeur" et peut bien entendu être élargie&nbsp;:
-
-```scss
-$breakpoints : (
-  sm: 576px,
-  md: 992px,
-  lg: 1400px
-);
-```
-
-Conformément à la démarche "Mobile First", ces valeurs correspondent à des jalons minimum : `sm: '576px'` correspond au Media Query `@media (min-width: 576px) {...}`.
-
-Pour éviter les intervalles qui se chevauchent, ou des Media Queries trop variés, nous préconisons d'appliquer un [mixin Sass "respond-to"](https://github.com/alsacreations/KNACSS/blob/master/sass/abstracts/_mixins-sass.scss) pour appliquer des styles Responsive&nbsp;:
-
-```scss
-.modal {
-  background: $hotpink;
-  @include respond-to('medium-up') {
-    background: $tomato;
-  }
-}
-```
-
-Les valeurs prévues dans notre mixin sont (privilégier les premières, respectueuses de la méthodologie "Mobile First") :
-
-- `'small-up'` : correspond à `(min-width: $small)`
-- `'medium-up'` : correspond à `(min-width: $medium)`
-- `'large-up'` : correspond à `(min-width: $large)`
-- `'extra-large-up'` : correspond à `(min-width: $extra-large)`
-- `'small'` : correspond à `(max-width: $small - 1)`
-- `'medium'` : correspond à `(max-width: $medium - 1)`
-- `'large'` : correspond à `(max-width: $large - 1)`
-- `'extra-large'` : correspond à `(max-width: $extra-large - 1)`
 
 ## Bonus : Media print (impression)
 
