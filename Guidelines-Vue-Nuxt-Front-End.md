@@ -297,7 +297,7 @@ const form = reactive({
 👉 Lors d'un développement avec données partielles/de remplissage :
 
 - On préfixe par `TEMP` autant que possible (afin que ce soit clairement identifiable dans le code).
-- On charge ces données depuis un fichier externe pour éviter la surcharge du composant `import('temp-products.js')`.
+- On charge ces données depuis un fichier externe pour éviter la surcharge du composant `import('temp-products')`.
 - On classe les fichiers statiques (images _placeholder_) dans un dossier `temp/` également.
 
 ### Computed
