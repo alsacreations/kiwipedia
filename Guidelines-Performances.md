@@ -274,7 +274,7 @@ Voici un exemple de chargement de police conseillé (cas de deux fichiers de pol
 
 ### Ressource : Google Webfont Helper
 
-L'application web [Google Webfont Helper](https://google-webfonts-helper.herokuapp.com/) est une excellente ressource permettant d'optimiser finement les fichiers :
+L'application web [Google Webfont Helper](https://gwfh.mranftl.com/fonts) est une excellente ressource permettant d'optimiser finement les fichiers :
 
 - choisir le bon subset (latin, latin-ext, etc.)
 - choisir les styles nécessaires au projet (normal, bold, italic, etc.)
