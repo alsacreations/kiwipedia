@@ -250,3 +250,7 @@ L’intégrateur aura à sa charge l’optimisation du poids des assets (notamme
 #### Médias
 
 - Icônes et/ou images accompagnées d’un texte/intitulé si nécessaire
+
+## Autres ressources et bonnes pratiques
+
+- [Visual design rules you can safely follow every time](https://anthonyhobday.com/sideprojects/saferules/)
