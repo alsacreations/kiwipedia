@@ -254,3 +254,4 @@ L’intégrateur aura à sa charge l’optimisation du poids des assets (notamme
 ## Autres ressources et bonnes pratiques
 
 - [Visual design rules you can safely follow every time](https://anthonyhobday.com/sideprojects/saferules/)
+- [Building Better UI Designs With Layout Grids](https://www.smashingmagazine.com/2017/12/building-better-ui-designs-layout-grids/)
