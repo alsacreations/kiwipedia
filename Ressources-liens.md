@@ -434,6 +434,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://www.flaticon.com/fr/>
 - <https://simpleicons.org/>
 - <https://lucide.dev/>
+- <https://www.mingcute.com/>
 - <https://github.com/paulirish/browser-logos> Logos de navigateurs
 
 ### Images libres (ou pas)
