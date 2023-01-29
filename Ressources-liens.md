@@ -95,6 +95,22 @@ Autres listes de ressources et checklists
 
 - <https://ishadeed.com/article/css-vars-101/>
 
+### Typographie, @font-face et polices
+
+- <https://google-webfonts-helper.herokuapp.com/> Télécharger les Google fonts en zip
+- <https://font-display.glitch.me/> Explication de font-display
+- <https://type-scale.com/>
+- <https://prowebtype.com/> E-book (gratuit) Professionnal web typography (très bon, à lire)
+- <http://fontfamily.io/> Tester la présence des polices sur les OS
+- <https://icomoon.io/app/> (font-icons)
+- <http://fontastic.me/> (font-icons)
+- <https://fontello.com/> (font-icons)
+- <http://www.fontsquirrel.com/tools/webfont-generator>
+- <http://www.losttype.com/browse/>
+- <http://www.shapecatcher.com/>
+- <https://fontcombiner.com/> Combiner des glyphes
+- <http://www.freefontconverter.com/> Convertir formats
+
 ### Frameworks CSS
 
 - <https://knacss.com/> KNACSS !
@@ -325,24 +341,6 @@ Autres listes de ressources et checklists
 
 ---
 
-## Typographie, @font-face et polices
-
-- <https://google-webfonts-helper.herokuapp.com/> Télécharger les Google fonts en zip
-- <https://font-display.glitch.me/> Explication de font-display
-- <https://type-scale.com/>
-- <https://prowebtype.com/> E-book (gratuit) Professionnal web typography (très bon, à lire)
-- <http://fontfamily.io/> Tester la présence des polices sur les OS
-- <https://icomoon.io/app/> (font-icons)
-- <http://fontastic.me/> (font-icons)
-- <https://fontello.com/> (font-icons)
-- <http://www.fontsquirrel.com/tools/webfont-generator>
-- <http://www.losttype.com/browse/>
-- <http://www.shapecatcher.com/>
-- <https://fontcombiner.com/> Combiner des glyphes
-- <http://www.freefontconverter.com/> Convertir formats
-
----
-
 ## Design et graphisme
 
 - <https://www.figma.com/> Figma
@@ -484,9 +482,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <http://www.cutestockfootage.com/>
 - <https://pixabay.com/videos/>
 - <https://vimeo.com/groups/freehd/>
-- <http://www.coverr.co/>
-
----
+- <https://www.coverr.co/>
 
 ## Animations JS/CSS
 
@@ -550,7 +546,12 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://css-tricks.com/accessible-svgs/>
 - <https://www.paciellogroup.com/blog/2013/12/using-aria-enhance-svg-accessibility/>
 - <https://www.sitepoint.com/tips-accessible-svg/> Rendre SVG accessible
-- <http://ljwatson.github.io/decks/2017/lws/index.html> Making SVG accessible (Paciello)
+
+## Formats d'images
+
+- <https://www.da.vidbuchanan.co.uk/blog/hello-png.html> PNG
+
+---
 
 ## Cartes géographiques
 
@@ -584,10 +585,9 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 ### Vidéo
 
+- <https://plyr.io/>
+- <https://www.videojs.com/> Lecteur configurable
 - <https://rishabhp.github.io/bideo.js/> Vidéo en fond de page full-viewport
-- <http://www.mirovideoconverter.com/> Convertit vers les formats les plus courants
-- <http://plyr.io/>
-- <http://www.videojs.com/> Lecteur configurable
 
 ### Canvas et WebGL
 
