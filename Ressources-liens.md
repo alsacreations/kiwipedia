@@ -105,6 +105,7 @@ Autres listes de ressources et checklists
 - <https://icomoon.io/app/> (font-icons)
 - <http://fontastic.me/> (font-icons)
 - <https://fontello.com/> (font-icons)
+- <https://transfonter.org/>
 - <http://www.fontsquirrel.com/tools/webfont-generator>
 - <http://www.losttype.com/browse/>
 - <http://www.shapecatcher.com/>
