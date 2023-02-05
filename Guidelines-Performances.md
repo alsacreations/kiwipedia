@@ -8,15 +8,13 @@ Cette présente convention rassemble les bonnes pratiques de performances web en
 
 ## Bonnes pratiques HTTP
 
-TODO:
-
-Valable pour HTTP/1.x, plus forcément pour HTTP/2+
+Valable pour HTTP/1.x, plus forcément pour HTTP/2 et HTTP/2 qui permettent le multiplexing et diverses optimisations natives.
 
 - Minifier les ressources texte (css, js, html)
-  - Vue/Nuxt : déjà optimisé de base
+  - Vue/Nuxt/React : déjà optimisé de base
   - WordPress : utiliser une extension
 - Compresser les ressources texte (css, js, html) par exemple avec gzip/deflate
-- Réduire le nombre de requêtes
+- Réduire le nombre de requêtes HTTP
 - Exploiter les en-têtes de cache (Cache-Control, Expires)
   - [Cache-Control for Civilians - CSS Wizardry](https://csswizardry.com/2019/03/cache-control-for-civilians/)
   - [Expires - Apache](https://httpd.apache.org/docs/current/fr/mod/mod_expires.html)
@@ -39,6 +37,8 @@ Les sections suivantes de ce document indiquent comment améliorer les Web Core 
 - Images
 - Polices
 - Icônes
+
+Voir aussi [Our top Core Web Vitals recommendations for 2023](https://web.dev/top-cwv-2023/)
 
 ## Bonnes pratiques générales
 
