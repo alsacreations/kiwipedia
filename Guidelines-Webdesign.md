@@ -201,8 +201,8 @@ Afin d’optimiser la netteté des images Bitmap (jpg, png) sur écrans Retina e
 Les formats privilégiés à transmettre à l’Intégrateur :
 
 - JPG, WebP, AVIF : photos et images bitmap en général
-- PNG : images bitmap nécessitant de la transparence et une compression non destructrice
-- SVG : iconographie, schémas et images vectorielles
+- PNG, WebP : images bitmap sans compression destructrice, pouvant nécessiter de la transparence
+- SVG : icônes, schémas et images vectorielles
 
 L’intégrateur aura à sa charge l’optimisation du poids des assets (notamment le choix du format et de la compression des images). cf. Guidelines de performance.
 
