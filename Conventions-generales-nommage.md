@@ -128,7 +128,11 @@ Si nécessaire, il est possible d'indiquer quels types de fichiers sont à surve
   ]
 ```
 
-**En fin de phase de développement, avant la livraison du projet, il est fondamental de vérifier la présence indésirable de ces tags au sein du code. L'idéal étant qu'un projet soit livré au client avec zéro tag `TODO:`.**
+**En fin de phase de développement, avant la livraison du projet, il est fondamental de vérifier la présence indésirable de ces tags au sein du code. L'idéal étant qu'un projet soit livré sans aucun tag `TODO:`.**
+
+### Remplissage et données d'exemple
+
+Pour les URLs vers des domaines fictifs, on privilégie `https://example.org/` ou `https://example.com/` qui sont réservés à cet usage.
 
 ## Convention pour Langages spécifiques et Frameworks
 
