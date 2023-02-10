@@ -7,6 +7,7 @@ Commandes utiles pour un serveur de développement ou un serveur web/mail/ftp, n
 - Voir aussi <https://github.com/donnemartin/awesome-aws> pour AWS
 - MiniVim <https://github.com/sd65/MiniVim>
 - Commandline challenge <https://cmdchallenge.com/>
+- [Vidéos Youtube de Yves Rougy](https://www.youtube.com/@yrougy/playlists)
 
 Rechercher rapidement dans les précédentes commandes : `Ctrl+R`
 
