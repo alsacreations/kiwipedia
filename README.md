@@ -14,6 +14,8 @@ Les lignes directives ont pour objectif partagé :
 - [**Guidelines Readme**](Guidelines-Readme.md)
 - [**Guidelines Visual Studio Code**](Guidelines-VScode.md)
 - [**Guidelines Accessibilité**](Guidelines-Accessibilite.md)
+- [**Guidelines Interopérabilité**](Guidelines-Interoperabilite.md)
+- [**Guidelines RGPD**](Guidelines-RGPD.md)
 - [**Guidelines HTML**](Guidelines-HTML.md)
 - [**Guidelines CSS**](Guidelines-CSS.md)
 - [**Guidelines TailwindCSS**](Guidelines-Tailwind.md)
