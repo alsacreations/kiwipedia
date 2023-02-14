@@ -32,6 +32,10 @@ Voir aussi <https://www.alsacreations.com/tuto/lire/1836-Docker--decouverte-et-e
 * Informations techniques : `docker inspect <nomducontainer>`
 * Différences appliquées : `docker diff <nomducontainer>`
 
+### Sauvetage d'un volume égaré
+
+`docker volume ls -f 'dangling=true'` pour lister les volumes détachés et leur hash, `docker volume inspect <volume_hash>` pour localiser l'emplacement sur le disque (par exemple `/var/lib/docker/volumes/...`), examiner pour chacun le dossier `/_data`
+
 ## Options Docker run
 
 * `-d` : permet de détacher l'exécution du conteneur du terminal courant
