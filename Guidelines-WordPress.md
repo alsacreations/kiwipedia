@@ -382,6 +382,10 @@ function hide_update_notice_to_all_but_admin_users()
 add_action( 'admin_head', 'hide_update_notice_to_all_but_admin_users', 1 );
 ```
 
+## Dépannage
+
+Réinitialiser un mot de passe admin en ayant accès à la base MySQL (ex : via phpmyadmin) : modifier la table `wp_users` et remplacer `user_pass` par une nouvelle valeur générée <https://codebeautify.org/wordpress-password-hash-generator>
+
 ## Environnement sans Docker
 
 ### Installer PHP
