@@ -15,7 +15,7 @@ Ce document est divisé en trois parties :
 ### HTML
 
 - Le code produit est valide et respecte les [standards W3C](https://www.w3.org/standards/).
-- [Utiliser les éléments HTML pour leur fonction/sémantique](#s%C3%A9mantique-html5) et non pas pour leur forme.
+- [Utiliser les éléments HTML pour leur fonction/sémantique](#s%C3%A9mantique-html) et non pas pour leur forme.
 - Renseigner la langue de la page avec l'attribut `lang` de l’élément `<html>`.
 - Indiquer avec l'attribut `lang` les changements de langue locaux dans les blocs d'une page.
 - Utiliser un [titre `<title>` pertinent](#titres-de-page) pour chaque page.
@@ -36,13 +36,13 @@ Ce document est divisé en trois parties :
 
 ### Formulaires
 
-- Vérifier l'accessibilité des formulaires notamment au clavier.
+- Vérifier l'accessibilité des formulaires notamment l'usage au clavier.
 - Indiquer clairement les champs obligatoires.
-- Utiliser [l'élément `<fieldset>` associé à `<legend>`](#formulaires-1) pour regrouper les champs ayant trait à la même thématique.
-- Toujours associer un `<label>` à son champ respectif (avec `for` et `id`).
-- Indiquer les formats spécifiques des champs lorsqu'il y en a ; ne pas utiliser l'attribut `placeholder` comme indication (privilégier `label`), il ne doit fournir qu'un exemple d'usage.
+- Toujours associer une étiquette `<label>` à son champ respectif (avec `for` et `id`).
+- Utiliser [l'élément `<fieldset>` associé à `<legend>`](#formulaires-et-champs) pour regrouper les champs par thématique.
+- Indiquer les formats attendus lorsqu'il y en a ; ne pas utiliser l'attribut `placeholder` comme indication (privilégier `label`), il ne doit fournir qu'un exemple d'usage.
 - Associer correctement une erreur à son champ.
-- Associer [un `autocomplete`](#formulaires-1) pour les champs demandant une donnée personnelle (nom, prénom, e-mail, adresse, etc.).
+- Associer [un `autocomplete`](#formulaires-et-champs) pour les champs demandant une donnée personnelle (nom, prénom, e-mail, adresse, etc.).
 
 ### Médias
 
@@ -70,7 +70,7 @@ Ce document est divisé en trois parties :
 
 # Explications techniques détaillées
 
-## Sémantique HTML5
+## Sémantique HTML
 
 ### Titres
 
@@ -102,6 +102,8 @@ La balise `<main>` ne peut être utilisée qu’une seule fois dans la page ains
 
 ### Navigation
 
+Faciliter la navigation avec un menu, une recherche ou un plan du site, exploitables au clavier.
+
 Utiliser des combinaisons `<ul><li>` (liste non ordonnée) pour structurer les menus de navigation (principale ou secondaire) dans un élément `<nav role="navigation”>` :
 
 - Le menu principal du site (souvent affiché dans l’en-tête)
@@ -116,6 +118,21 @@ Pour chaque balise `<nav role="navigation">`, ajouter un `aria-label` descriptif
 **Exemple :**
 
 `<nav role="navigation" aria-label="Menu principal">[…]</nav>`
+
+### Tabulation et tabindex
+
+L'attribut `tabindex` permet de capturer l’ordre du focus selon le nombre qu’on lui attribue (permettant de passer d'un élément *focusable* à l'autre avec la touche `tab`). Un ordre logique est "naturellement" créé en suivant les éléments interactifs du DOM (liens, boutons, champs...). Il comprend tous les nombres positifs à partir de 0.
+
+→ Il faut éviter de toucher aux valeurs positives de `tabindex` cela pourrait aller à l'encontre de l'ordre "naturel" dans le document.
+
+On peut utiliser :
+
+- `-1` : rend un élément *focusable* sans le rendre navigable au clavier ; s'il est ajouté sur un élément interactif, celui-ci perdra le focus.
+- `0` : l'élément peut capturer le focus et être atteint via la navigation au clavier.
+
+→ Les éléments pouvant recevoir le focus autres que nativement `<a>`, `<input>`, `<button>`, `<select>`, `<textarea>` (entre autres) pourront être équipés de `tabindex="0"`.
+
+Pour en savoir plus : [MDN : tabindex](https://developer.mozilla.org/fr/docs/Web/HTML/Global_attributes/tabindex)
 
 ### Moteur de recherche
 
@@ -180,7 +197,7 @@ Pour une page de résultats de recherche, il faut indiquer dans le titre le mot 
 
 ### Liens
 
-#### Les intitulés des liens
+#### Intitulés des liens
 
 Tous les liens doivent avoir un **intitulé** explicite, un lien "vide" n’est pas accessible.
 
@@ -204,7 +221,7 @@ Ne pas faire :
 }
 ```
 
-→ dans ce cas là, le lecteur d’écran retranscrit l’intégralité de l’URL.
+→ dans ce cas, le lecteur d’écran retranscrit l’intégralité de l’URL.
 
 Même en ajoutant un attribut `title="Retrouvez-nous sur Facebook"` sur le lien, celui-ci reste considéré comme vide.
 De plus, il n’est pas sûr à 100% que l’attribut `title` soit correctement restitué par le lecteur d’écran (tout dépend de la configuration de l’utilisateur).
@@ -226,7 +243,7 @@ De plus, il n’est pas sûr à 100% que l’attribut `title` soit correctement 
 }
 ```
 
-→ dans ce cas là, le lecteur d’écran retranscrit bien *"Retrouvez-nous sur Facebook"*.
+→ dans ce cas, le lecteur d’écran retranscrit bien *"Retrouvez-nous sur Facebook"*.
 
 #### Ouverture dans une nouvelle fenêtre
 
@@ -296,28 +313,7 @@ Associer un `autocomplete` pour les champs demandant une donnée personnelle (no
 
 Voir [la liste complète des `autocomplete`.](https://www.w3.org/TR/WCAG21/#input-purposes).
 
-TODO: gestion des erreurs
-
-### Navigation
-
-#### Navigation cohérente
-
-Faciliter la navigation avec un menu, une recherche ou un plan du site, exploitables au clavier.
-
-#### Tabindex
-
-Il permet de capturer l’ordre du focus selon le chiffre qu’on lui attribue. Un ordre logique est "naturellement" créé selon les éléments interactifs du DOM. Il comprend tous les chiffres positifs à partir de 0.
-
-→ Il faut éviter de toucher au `tabindex` positif.
-
-On peut utiliser :
-
-- `-1` : permet de rendre un élément focusable sans le rendre navigable au clavier. S'il est ajouté sur un élément interactif, celui-ci perdra le focus.
-- `0` : l'élément peut capturer le focus et être atteint via la navigation au clavier.
-
-→ Les éléments pouvant recevoir le focus autres que nativement `<a>`, `<input>` ou `<button>` pourront être équipés de `tabindex="0"`.
-
-Pour en savoir plus : [MDN : tabindex](https://developer.mozilla.org/fr/docs/Web/HTML/Global_attributes/tabindex)
+Bien associer les erreurs aux champs, voir [WebAIM : Usable and Accessible Form Validation and Error Recovery](https://webaim.org/techniques/formvalidation/).
 
 ### Details et summary
 
@@ -325,9 +321,9 @@ Les éléments `details` et `summary` sont accessibles dans la pupart des cas en
 
 ### Tableaux
 
-N'utiliser les tableaux que pour la présentation de données, et non pour la structure du document ou du design.
+N'utiliser les tableaux que pour la présentation de données, et non pour la structure du document ou de la mise en page (design).
 
-Définir un titre pertinent avec la balise `<caption>`. Elle doit être placée juste après la balise d’ouverture `<table>`.
+Définir un titre pertinent avec `<caption>` placée juste après la balise d’ouverture `<table>`.
 
 Les cellules d’en-têtes doivent être déclarées avec la balise `<th>`. Et les cellules de données avec `<td>`.
 
@@ -364,27 +360,27 @@ Il faut ajouter l’attribut `id` sur la cellule d'en-tête, et `headers` avec l
 
 ```html
 <table>
-	<caption>Nombre de fruits avec pépins, et avec noyau. Et nombre de légumes avec ou sans peau</caption>
-	<thead>
-		<tr>
-			<th id="fruits" colspan="2">Fruits</th>
-			<th id="legumes" colspan="2">Légumes</th>
-		</tr>
-		<tr>
-			<th id="data1" headers="fruits">avec pépins</th>
-			<th id="data2" headers="fruits">avec noyau</th>
-			<th id="data3" headers="legumes">avec peau</th>
-			<th id="data4" headers="legumes">sans peau</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td headers="fruits data1">14</td>
-			<td headers="fruits data2">25</td>
-			<td headers="legumes data3">33</td>
-			<td headers="legumes data4">30</td>
-		</tr>
-	</tbody>
+  <caption>Nombre de fruits avec pépins, et avec noyau. Et nombre de légumes avec ou sans peau</caption>
+  <thead>
+    <tr>
+      <th id="fruits" colspan="2">Fruits</th>
+      <th id="legumes" colspan="2">Légumes</th>
+    </tr>
+    <tr>
+      <th id="data1" headers="fruits">avec pépins</th>
+      <th id="data2" headers="fruits">avec noyau</th>
+      <th id="data3" headers="legumes">avec peau</th>
+      <th id="data4" headers="legumes">sans peau</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td headers="fruits data1">14</td>
+      <td headers="fruits data2">25</td>
+      <td headers="legumes data3">33</td>
+      <td headers="legumes data4">30</td>
+    </tr>
+  </tbody>
 </table>
 ```
 
@@ -425,7 +421,7 @@ Ce contour correspond à la propriété CSS `outline` (ce n'est pas une `border`
 
 L'ensemble des navigateurs appliquent par défaut un `outline` visible lors de l'événement `:focus` et, même si nous pourrions trouver cela disgracieux, il est important de ne pas le supprimer autour des éléments cliquables (pas de `outline: none`) car il a été conçu pour rendre ces éléments accessibles à tous (= se repérer lors d'une navigation au clavier).
 
-Grâce à la pseudo-classe `:focus-visible` il est possible de masquer le contour (focus) lors du clic ou d'un touch tout en le préservant lors d'un focus au clavier _(Note : à ce jour, Safari et Internet Explorer ne reconnaissent ni `:focus-visible` ni `@supports selector()` et appliqueront leur outline par défaut lors du focus sur cet exemple)_.:
+Grâce à la pseudo-classe `:focus-visible` il est possible de masquer le contour (focus) lors du clic ou d'un touch, tout en le préservant lors d'un focus au clavier.:
 
 ```css
 @supports selector(div:focus-visible) {
@@ -440,7 +436,7 @@ Grâce à la pseudo-classe `:focus-visible` il est possible de masquer le contou
 }
 ```
 
-Voir en ligne et tester [sur CodePen](https://codepen.io/alsacreations/pen/MWbzYJQ?editors=1100)
+Voir [le support](https://caniuse.com/css-focus-visible) et tester [sur CodePen](https://codepen.io/alsacreations/pen/MWbzYJQ?editors=1100)
 
 ### CSS generated content
 
