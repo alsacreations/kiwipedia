@@ -66,7 +66,7 @@ Ce document est divisé en trois parties :
 - Ajouter une modale de personnalisation d'affichage telle que l'outil [AccessConfig](https://accessconfig.a11y.fr/) (ou autre).
 - Rendre chaque script compatible avec les technologies d'assistance.
 
-----
+---
 
 # Explications techniques détaillées
 
@@ -126,6 +126,7 @@ Le rôle `role="search"` doit être ajouté à l'élément HTML englobant le for
   <form>[…]</form>
 </div>
 ```
+
 Plus d’informations : <https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Search_role/>
 
 ### Liens d’évitement ("skip link")
@@ -243,7 +244,7 @@ Signaler lorsqu’un lien s’ouvre dans une nouvelle fenêtre :
 <a href="URL" target="_blank" title="Lire l’article (nouvelle fenêtre)">Lire l’article</a>
 ```
 
-### Formulaires
+### Formulaires et champs
 
 Utiliser l'élément `<fieldset>` associé à `<legend>` pour regrouper les champs ayant trait à la même thématique. Exemple : coordonnées du visiteur lors d'une commande en ligne :
 
@@ -355,7 +356,6 @@ Sur les cellules d’en-tête il est nécessaire d’ajouter l’attribut `scope
 </table>
 ```
 
-
 #### Tableaux complexes
 
 Dans le cas des tableaux complexes, `scope` ne suffit pas pour lier l’en-tête à ses cellules de données.
@@ -396,7 +396,7 @@ Il faut ajouter l’attribut `id` sur la cellule d'en-tête, et `headers` avec l
 
 Trois caractéristiques principales sont définies dans la spécification&nbsp;:
 
-- les **attributs** `role` (landmarks), voir la [Matrice des rôles ARIA](http://whatsock.com/training/matrices/)
+- les **attributs** `role` (landmarks), voir la [Matrice des rôles ARIA](https://whatsock.com/training/matrices/)
 - les **propriétés**, par exemple `aria-label` ou `aria-required`.
 - les **états**, par exemple `aria-disabled`
 
