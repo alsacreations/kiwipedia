@@ -100,6 +100,7 @@ Autres listes de ressources et checklists
 - <https://google-webfonts-helper.herokuapp.com/> Télécharger les Google fonts en zip
 - <https://font-display.glitch.me/> Explication de font-display
 - <https://type-scale.com/>
+- <https://www.fontspace.com/> Polices à télécharger et à générer en ligne
 - <https://prowebtype.com/> E-book (gratuit) Professionnal web typography (très bon, à lire)
 - <http://fontfamily.io/> Tester la présence des polices sur les OS
 - <https://icomoon.io/app/> (font-icons)
