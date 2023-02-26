@@ -176,7 +176,6 @@ Autres listes de ressources et checklists
 ## Accessibilité
 
 - <https://accessibilite.public.lu/fr/tools/decla.html> Générer une déclaration d'accessibilité
-- <http://www.html5accessibility.com/>
 - <https://www.accede-web.com/notices/> Notices AccedeWeb
 - <https://bitsofco.de/the-accessibility-cheatsheet/> Cheatsheet résumée
 - <https://github.com/UKHomeOffice/posters/tree/master/accessibility/posters_fr> Posters recommandations UK Home Office en français
@@ -230,28 +229,21 @@ Autres listes de ressources et checklists
 
 ### JavaScript et composants
 
+- <https://smashingmagazine.com/2023/02/guide-building-accessible-carousels/> Construire des carousels accessibles
 - <https://github.com/alphagov/accessible-typeahead> Typeahead accessible
-- <http://files.paciellogroup.com/blogmisc/samples/aria/slider/> Sliders accessibles
 - <https://frend.co/> Quelques composants JS avec ARIA
 - <https://a11y.nicolas-hoffmann.net/> Quelques plugins jQuery accessibles
-- <http://www.humaan.com/modaal/> Modale accessible (vue sur css-tricks)
-- <http://accessibility.oit.ncsu.edu/training/aria/modal-window/> modale accessible #a11y
-- <http://allyjs.io/tutorials/accessible-dialog.html> dialog/modale accessible avec ally.js (bonnes idées)
-- <http://basicmodal.electerious.com/> Petites modales basiques
-- <http://alertifyjs.com/> Alertes/modales
-- <http://hanshillen.github.io/jqtest/#goto_slider> jQuery UI accessible
-- <http://filamentgroup.com/lab/jquery_ui_selectmenu_an_aria_accessible_plugin_for_styling_a_html_select/> Select menu
-- <http://files.paciellogroup.com/training/commonsamples/tpglibsamples/aria/slider/index.html> Slider accessible
-- <https://www.filamentgroup.com/examples/slider_v2/index3.php> Slider accessible (2)
-- <http://www.deque.com/blog/building-accessible-tab-panel-aria/> Tab panel
-- <http://tympanus.net/Development/NotificationStyles/bar-exploader.html> Notifications
-- <http://accessibility.oit.ncsu.edu/training/aria/modal-window/> modale accessible #a11y
+- <https://www.humaan.com/modaal/> Modale accessible (vue sur css-tricks)
+- <https://allyjs.io/tutorials/accessible-dialog.html> dialog/modale accessible avec ally.js (bonnes idées)
+- <https://alertifyjs.com/> Alertes/modales
+- <https://files.paciellogroup.com/blogmisc/samples/aria/slider/> Sliders accessibles
+- <https://files.paciellogroup.com/training/commonsamples/tpglibsamples/aria/slider/index.html> Slider accessible
 
 ### Divers
 
 - <http://filamentgroup.com/lab/bulletproof_icon_fonts/> L’accessibilité des font-icon
 - <http://www.nczonline.net/blog/2013/04/01/making-accessible-icon-buttons/> Boutons accessibles
-- <http://www.traduction.cc/traduction/Creer-des-tableaux-de-donnees-accessibles-1.html> Créer des tableaux accessibles
+- <https://www.traduction.cc/traduction/Creer-des-tableaux-de-donnees-accessibles-1.html> Créer des tableaux accessibles
 - <http://www.last-child.com/legend-aria-describedby/> Fieldset, aria et radiogroup
 - <http://accessiblehtmlheadings.com/> Section & heading
 
