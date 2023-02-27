@@ -16,7 +16,7 @@ Ce document est divisé en trois parties :
 
 - Le code produit est valide et respecte les [standards W3C](https://www.w3.org/standards/).
 - [Utiliser les éléments HTML pour leur fonction/sémantique](#s%C3%A9mantique-html) et non pas pour leur forme.
-- Renseigner la langue de la page avec l'attribut `lang` de l’élément `<html>`.
+- Renseigner la langue avec l'attribut `lang` sur `<html>` (et dans le contenu le cas échéant).
 - Indiquer avec l'attribut `lang` les changements de langue locaux dans les blocs d'une page.
 - Utiliser un [titre `<title>` pertinent](#titres-de-page) pour chaque page.
 - Respecter la hiérarchie des titres `<hX>`.
@@ -32,7 +32,7 @@ Ce document est divisé en trois parties :
 - Travailler avec des tailles de polices fluides (`em` ou `rem`).
 - Ne pas supprimer l'outline autour des éléments cliquables/focusables (pas de `outline: none`) [ou utiliser `:focus-visible`](#outline-et-focus).
 - Ne pas employer de contenu généré (`::before`, `::after`) pour [véhiculer des informations ou pour afficher des icônes](#css-generated-content).
-- Masquer correctement [les contenus qui devraient être lus par un lecteur d’écran](#contenu-lu-mais-masqué-à-lécran) (ex. `.visually-hidden`)
+- Masquer correctement [les contenus qui devraient être lus par un lecteur d’écran](#contenu-lu-mais-masqué-à-lécran) (ex. `.visually-hidden` ou `.sr-only` au lieu de `display: none`)
 
 ### Formulaires
 
@@ -70,9 +70,31 @@ Ce document est divisé en trois parties :
 
 # Explications techniques détaillées
 
+## Structure générale
+
+Chaque page doit être correctement structurée afin de définir des zones aussi appelées [regions](https://www.w3.org/WAI/tutorials/page-structure/regions/) (en-tête, pied de page, contenu principal, navigation et moteur de recherche).
+
 ## Sémantique HTML
 
+Chaque page doit avoir déclaré le type de document ainsi que la langue principale du contenu.
+
+```html
+<!DOCTYPE html>
+<html lang="fr">
+    ...
+</html>
+```
+
 ### Titres
+
+Chaque page doit être organisée selon une structure de titres et de sous-titres hiérarchisés.
+
+Chaque titre doit être balisé avec un élément HTML `<hx>` allant du niveau 1 (`<h1>`) au niveau 6 (`<h6>`), `<h1>` étant le niveau le plus important.
+
+Nous conseillons :
+
+- d'avoir toujours un titre de niveau 1 `<h1>` et que celui-ci ne structure pas le titre du site commun à toutes les pages mais plutôt le titre du contenu courant
+- d'éviter les sauts dans les niveaux de titres : pas de titre `<h4>` après un titre `<h2>`
 
 La hiérarchie peut être testée avec l'extension [Headings Map pour Chrome](https://chrome.google.com/webstore/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi) ou [Headings Map pour Firefox](https://addons.mozilla.org/fr/firefox/addon/headingsmap/).
 
@@ -102,7 +124,13 @@ La balise `<main>` ne peut être utilisée qu’une seule fois dans la page ains
 
 ### Navigation
 
-Faciliter la navigation avec un menu, une recherche ou un plan du site, exploitables au clavier.
+Chaque ensemble de pages doit proposer au moins deux moyens de navigation différents parmi la liste suivante :
+
+- Un menu de navigation
+- Un plan du site
+- Un moteur de recherche interne
+
+Le menu de navigation, les barres de navigation (fil d'ariane par exemple) et le moteur de recherche (si existant) doivent toujours être affichés et atteignables de la même manière y compris au clavier.
 
 Utiliser des combinaisons `<ul><li>` (liste non ordonnée) pour structurer les menus de navigation (principale ou secondaire) dans un élément `<nav role="navigation”>` :
 
@@ -113,11 +141,13 @@ Utiliser des combinaisons `<ul><li>` (liste non ordonnée) pour structurer les m
 - Une pagination
 - Une table des matières
 
-Pour chaque balise `<nav role="navigation">`, ajouter un `aria-label` descriptif.
+La balise `<nav>` peut-être utilisée plusieurs fois, avec l'attribut `role="navigation"`. Dans le cas où plusieurs navigations sont utilisées au sein d'une page, elles doivent être différenciées en précisant un nom à chacune des zones avec l'attribut `aria-label`.
 
 **Exemple :**
 
-`<nav role="navigation" aria-label="Menu principal">[…]</nav>`
+```html
+<nav role="navigation" aria-label="Menu principal">[…]</nav>
+```
 
 ### Tabulation et tabindex
 
@@ -136,7 +166,7 @@ Pour en savoir plus : [MDN : tabindex](https://developer.mozilla.org/fr/docs/Web
 
 ### Moteur de recherche
 
-Le rôle `role="search"` doit être ajouté à l'élément HTML englobant le formulaire de recherche, ajouter un `aria-label` descriptif.
+Le rôle `role="search"` doit être ajouté à l'élément HTML englobant le formulaire de recherche. Dans le cas où plusieurs recherches se trouvent au sein d'une page, elles doivent être différenciées en précisant un nom à chacune des zones via l'attribut `aria-label`.
 
 ```html
 <div role="search" aria-label="Moteur de recherche principal">
@@ -151,13 +181,16 @@ Plus d’informations : <https://developer.mozilla.org/en-US/docs/Web/Accessibil
 Un lien d'évitement vers le contenu principal est nécessaire. D'autres liens d'évitement peuvent être ajoutés pour accéder rapidement à la navigation, à la recherche, au pied de page, etc.
 
 - Il doit être le premier lien de la page.
-- Il peut être masqué (classe Tailwind [`sr-only`](https://tailwindcss.com/docs/screen-readers)) et visible lors du focus.
-- Si le contenu principal est un élément non interactif il faut mettre un `tabindex="-1"` pour rendre cet élément focusable (ex. sur une balise `<main>`). Voir [la partie sur les tabindex.](https://github.com/alsacreations/guidelines/blob/master/Guidelines-Accessibilite.md#tabindex)
+- Il peut être masqué par défaut (classe Tailwind [`sr-only`](https://tailwindcss.com/docs/screen-readers)) mais doit devenir visible lors du focus.
+- Si le contenu principal est un élément non interactif il faut mettre un `tabindex="-1"` pour rendre cet élément *focusable* (ex. sur une balise `<main>`). Voir [la partie sur les tabindex.](#tabulation-et-tabindex)
 
 Voici le lien d'évitement employé au sein du [Design System du W3C](https://design-system.w3.org/)&nbsp;:
 
 ```html
-<a href="#main" class="skip-link">Skip to content</a>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  […]
+  <main role="main" id="main" tabindex="-1">
 ```
 
 ```css
@@ -195,11 +228,49 @@ Le titre de la page doit être pertinent et de préférence unique pour chaque p
 Pour une page de résultats de recherche, il faut indiquer dans le titre le mot recherché ainsi que la page actuelle si une pagination est présente :
 "Vous avez recherché le mot : xxx - page 2"
 
+### Listes
+
+Les listes doivent être correctement structurées dans le code. Il existe 3 types de listes :
+
+- ordonnée (numérotée)
+- non ordonnée (à puces)
+- de définitions
+
+Liste ordonnée :
+
+```html
+<ol>
+    <li>Étape 1</li> 
+    <li>Étape 2</li>
+    <li>Étape 3</li>
+</ol>
+```
+
+Liste non ordonnée :
+
+```html
+<ul>
+    <li>100g de farine</li>
+    <li>30cl d'eau</li>
+</ul>
+```
+
+Liste de définitions (ex : glossaire) :
+
+```html
+<dl>
+    <dt>Terme</dt>
+    <dd>Définition</dd>
+</dl>
+```
+
 ### Liens
+
+Un lien `<a>` a pour fonction de mener vers une nouvelle page, un nouveau contexte de navigation. À ne pas confondre avec un bouton `<button>` qui sert à déclencher une action sans nécessairement changer de page (ex : déployer un menu, révéler un bloc).
 
 #### Intitulés des liens
 
-Tous les liens doivent avoir un **intitulé** explicite, un lien "vide" n’est pas accessible.
+Tous les liens doivent avoir un **intitulé explicite**, un lien "vide" n’est pas accessible.
 
 **Exemple :**
 
@@ -223,8 +294,7 @@ Ne pas faire :
 
 → dans ce cas, le lecteur d’écran retranscrit l’intégralité de l’URL.
 
-Même en ajoutant un attribut `title="Retrouvez-nous sur Facebook"` sur le lien, celui-ci reste considéré comme vide.
-De plus, il n’est pas sûr à 100% que l’attribut `title` soit correctement restitué par le lecteur d’écran (tout dépend de la configuration de l’utilisateur).
+Même en ajoutant un attribut `title="Retrouvez-nous sur Facebook"` sur le lien, celui-ci reste considéré comme vide. De plus, il n’est pas sûr à 100% que l’attribut `title` soit correctement restitué par le lecteur d’écran (tout dépend de la configuration de l’utilisateur).
 
 À faire :
 
@@ -249,19 +319,98 @@ De plus, il n’est pas sûr à 100% que l’attribut `title` soit correctement 
 
 Signaler lorsqu’un lien s’ouvre dans une nouvelle fenêtre :
 
-##### Première méthode
-
 ```html
 <a href="URL" target="_blank" aria-label="Lire l’article (nouvelle fenêtre)">Lire l’article</a>
-```
-
-##### Deuxième méthode
-
-```html
+<!-- ou -->
 <a href="URL" target="_blank" title="Lire l’article (nouvelle fenêtre)">Lire l’article</a>
 ```
 
+#### Lien explicite
+
+Un lien explicite permet de comprendre facilement sa fonction. L'intitulé doit être réfléchi en amont dans les phases de design / conception, ou de contribution.
+
+Exemple : "GO", ou "OK" ne correspondent pas à des intitulés explicites.
+
+Un lien peut devenir explicite grâce à son contexte. Par exemple :
+
+- Le contenu de la phrase dans laquelle le lien texte est présent ;
+- Le contenu du paragraphe (balise `<p>`) dans lequel le lien texte est présent ;
+- Le contenu de l'item de liste (balise `<li>`) ou le contenu d'un item de liste parent (balise `<li>`) dans lequel le lien texte est présent ;
+- Le contenu du titre (balise `<hx>`) précédent le lien texte ;
+- Le contenu de la ou les cellule(s) d'en-tête de tableau (balise(s) `<th>`) associée(s) à la cellule de donnée (balise `<td>`) dans laquelle le lien texte est présent ;
+- Le contenu de la cellule de donnée (balise `<td>`) dans laquelle le lien texte est présent.
+
+```html
+
+<!-- Contexte du contenu de la phrase / paragraphe  -->
+<p>Le document RGAA 4.1 a été mis à jour. <a href="#">En savoir plus</a></p>
+
+<!-- Contexte du titre -->
+<article>
+    <h2>Document RGAA 4.1</h2>
+    <p>Le document RGAA 4.1 a été mis à jour</p>
+    <a href="#">Lire l'article</a>
+</article>
+```
+
+#### Attribut `title`
+
+L'attribut `title` permet d'ajouter une infobulle native qui apparaît au survol. Cet attribut doit être utilisé uniquement pour apporter une information complémentaire.
+
+Pour utiliser correctement `title`, il faut reprendre l'intitulé du lien :
+
+```html
+<a href="#" target="_blank" title="En savoir plus (ouvre une nouvelle fenêtre)">En savoir plus</a>
+```
+
+Nous recommandons d'utiliser cette méthode lorsque les liens ouvrent une nouvelle fenêtre (`target="_blank"`). Il ne fonctionne cependant pas sur écrans tactiles pour lesquels il n'existe pas de survol avec un curseur.
+
+#### Lien image
+
+Lorsqu'un lien n'est composé que d'une image, c'est le texte alternatif de l'image qui devient l'intitulé du lien.
+
+```html
+<a href="#"><img src="logo.png" alt="Retour à l'accueil"></a>
+```
+
+#### Lien icône
+
+Lorsqu'un lien n'est composé que d'une icône générée en CSS (les font-icon par exemple), il est important de :
+
+- Rendre explicite le lien avec un texte masqué (classe CSS `.visually-hidden`)
+- Masquer l'icône aux lecteurs d'écran
+- (optionnel si l'icône n'est pas parlante) Ajouter un attribut `title` sur le lien.
+
+```html
+<a href="#">
+    <span class="icone" aria-hidden="true"></span>
+    <span class="visually-hidden">Retour à l'accueil</span>
+</a>
+```
+
+#### Lien composite
+
+Un lien composite est un lien composé d'un texte et d'une image. Dans ce cas, si le texte est explicite : l'image est décorative.
+
+Dans le cas où l'image apporte une information, le texte alternatif peut être renseigné.
+
+```html
+<!-- Texte explicite -->
+<a href="#">Retour à l'accueil <img src="home.png" alt=""></a>
+
+<!-- Lien avec une image porteuse d'informations -->
+<a href="#">Statut : <img src="loading.png" alt="en cours"></a>
+
+<!-- Lien icône générée en CSS -->
+<a href="#">Statut :
+    <span class="icone" aria-hidden="true"></span>
+    <span class="visually-hidden">En cours</span>
+</a>
+```
+
 ### Formulaires et champs
+
+Ne pas enlever les styles au focus pour toujours savoir quel est le champ actif.
 
 Utiliser l'élément `<fieldset>` associé à `<legend>` pour regrouper les champs ayant trait à la même thématique. Exemple : coordonnées du visiteur lors d'une commande en ligne :
 
@@ -279,41 +428,94 @@ Utiliser l'élément `<fieldset>` associé à `<legend>` pour regrouper les cham
 </form>
 ```
 
-Toujours associer un `<label>` à un élément de formulaire `<input>` ou `<textarea>` pour définir son intitulé.
+#### Lier correctement un champ à son étiquette
 
-Ne pas enlever les styles au focus pour toujours savoir quel est le champ actif.
+Chaque champ d'entrée (`input`, `textarea`, etc) doit être correctement visuellement accolé à son étiquette.
 
-Indiquer de manière claire les champs obligatoires, soit en l'indiquant dans le label ou bien en ajoutant une phrase en début de formulaire. Compléter si besoin par `aria-required="true"`.
-
-Si un champ attend un format spécifique, toujours l'indiquer. **Ne pas utiliser l'attribut `placeholder` comme seule indication.**
-
-**Exemple :**
+Tous les champs doivent être correctement liés à leur étiquette associée (`<label>`). Pour cela, chaque étiquette doit avoir un attribut `for` qui a pour valeur l'identifiant (`id`) du champ correspondant.
 
 ```html
-<label for="email">E-mail <span>(nomprenom@mail.com)</label>
-<input type="email" name="email" id="email" autocomplete="email">
+<form>
+
+    <label for="city">Ville</label>
+    <input type="text" id="city" name="ville_personne">
+
+</form>
 ```
 
-Il est également possible de l'afficher avec `aria-describedby` qui fait référence à un élément comprenant une description.
-  
-**Exemple :**
+#### Mention obligatoire
+
+Lorsqu'un champ est obligatoire, il doit être :
+
+- indiqué de manière visuelle : en ajoutant la mention obligatoire dans chaque étiquette, soit avec une indication qui est explicitée en début de formulaire (avant le premier champ).
+- indiqué dans le code : par un attribut `required` ou `aria-required="true"`.
 
 ```html
-<label for="numero-m">Numéro de membre</label>
-<input type="text" id="numero-m" name="numero-m" aria-describedby="hint">
-<p id="hint">Numéro composé de 4 chiffres.</p>
+<form>
+    <!-- mention obligatoire dans chaque étiquette -->
+    <label for="name">Nom (obligatoire)</label>
+    <input type="text" id="name" name="name" required>
+</form>
+
+<form>
+    <!-- indication qui est explicitée en début de formulaire -->
+    <p>Les champs signalés par l'indication (*) sont obligatoires</p>
+    <label for="name">Nom (*)</label>
+    <input type="text" id="name" name="name" required>
+</form>
 ```
 
-Associer un `autocomplete` pour les champs demandant une donnée personnelle (nom, prénom, e-mail, adresse, etc.) :
+#### Aide à la saisie
+
+Lorsqu'un champ attend un format particulier ou possède une limite de caractères entrés, il est nécessaire de l'indiquer pour aider l'internaute à renseigner le formulaire.
+
+L'indication doit être correctement lié à son champ, et peut être placée soit :
+
+- dans l'étiquette (`<label>`),
+- dans le passage de texte (les attributs suivants ont pour valeur l'identifiant (`id`) de l'indication) :
+  - Soit dans l'intitulé (lié avec un attribut `aria-labelledby`)
+  - Soit en tant que description du champ (lié avec un attribut `aria-describedby` qui a pour valeur l'identifiant (`id`) de l'indication).
+
+```html
+<form>
+    <!-- Indication dans l'étiquette -->
+    <label for="name">E-mail (format attendu : john@example.org)</label>
+    <input type="text" id="name" name="name">
+
+    <!-- Indication dans la description du champ -->
+    <label for="name">E-mail</label>
+    <input type="text" id="name" name="name" aria-describedby="format-email">
+    <p id="format-email">format attendu : john@example.org</p>
+</form>
+```
+
+À noter, que les *placeholders* (attribut `placeholder`) ne constituent pas une technique correcte pour nommer ou donner des précisions à un champ. Premièrement à cause d'un contraste souvent insuffisant et d'autre part car cette indication disparaît pendant la saisie puis une fois que le champ est renseigné.
+
+Associer un `autocomplete` pour les champs demandant une donnée personnelle (nom, prénom, e-mail, adresse, etc.). Voir [la liste complète des valeurs de `autocomplete`.](https://www.w3.org/TR/WCAG21/#input-purposes).
 
 ```html
 <label for="name">Nom</p>
 <input type="text" id="name" name="name" autocomplete="family-name">
 ```
 
-Voir [la liste complète des `autocomplete`.](https://www.w3.org/TR/WCAG21/#input-purposes).
+### Erreur de saisie
 
-Bien associer les erreurs aux champs, voir [WebAIM : Usable and Accessible Form Validation and Error Recovery](https://webaim.org/techniques/formvalidation/).
+Lorsqu'un formulaire retourne des erreurs, les champs erronés doivent être indiqués dans le code, et de manière visuelle. Les messages d'erreurs doivent être explicites et placés de manière à identifier nommément le champ concerné.
+
+Le message d'erreur d'un champ doit être lié soit :
+
+- dans l'étiquette (`<label>`),
+- dans le passage de texte (les attributs suivants ont pour valeur l'identifiant (`id`) de l'indication) :
+  - Soit dans l'intitulé (lié avec un attribut `aria-labelledby`).
+  - Soit en tant que description du champ (lié avec un attribut `aria-describedby`).
+
+```html
+    <label for="name">E-mail (format attendu : john@example.org)</label>
+    <input type="text" id="name" name="name" aria-invalid="true" aria-labelledby="erreur-email">
+    <p id="erreur-email">Le format attendu n'est pas correct.</p>
+```
+
+Voir aussi [WebAIM : Usable and Accessible Form Validation and Error Recovery](https://webaim.org/techniques/formvalidation/).
 
 ### Details et summary
 
@@ -384,7 +586,39 @@ Il faut ajouter l’attribut `id` sur la cellule d'en-tête, et `headers` avec l
 </table>
 ```
 
+### Changement de langue
+
+Pour tout changement de langue dans le contenu, il est nécessaire de les indiquer avec un attribut `lang`. Ce changement ne s'applique pas pour les noms propres ni les noms communs de langue étrangère présent dans le dictionnaire officiel de la langue (ex: *week-end* pour le dictionnaire Français).
+
+L'attribut `lang` prend pour valeur le code langue selon la norme [ISO 693-1](https://fr.wikipedia.org/wiki/Liste_des_codes_ISO_639-1).
+
+```html
+<a href="#">Voir le document en anglais (<span lang="en">english</span>)</a>
+<a href="#">Voir le document en allemand (<span lang="de">deutsch</span>)</a>
+```
+
+### Changement de sens de lecture
+
+Dans le cas où le sens de lecture change, il faut l'indiquer avec un attribut `dir` qui peut avoir 2 valeurs :
+
+- `ltr` (*left to right*) indique un sens de lecture de gauche à droite
+- `rtl` (*right to left*) indique un sens de lecture de droite à gauche
+
+```html
+<p lang="ar" dir="rtl">شكرا جزيلا</p>
+```
+
+Sans indication, le sens de lecture est par défaut de gauche à droite (`ltr`).
+
 ---
+
+## Navigation au clavier
+
+La navigation au clavier se fait via la tabulation (touche *Tab* du clavier ; *Shift+Tab* en arrière) sur tous les éléments interactifs *focusables* : boutons, liens, champs de formulaire, sélecteur, etc. Ce *focus* est indiqué par un contour visuel (propriété `outline` en CSS qu'il est impératif de conserver, ou proposer une alternative avec `focus-visible`).
+
+- Le site doit être intégralement utilisable au clavier.
+- L'ordre de tabulation doit être cohérent.
+- Il ne doit pas y avoir de piège au clavier (si l'internaute ne peut atteindre ni l'élément *focusable* suivant, ni l'élément *focusable* précédent).
 
 ## Bonnes pratiques ARIA
 
@@ -454,9 +688,7 @@ Exemple :
 
 ### Contenu lu mais masqué à l’écran
 
-Ne **jamais** utiliser `display: none` pour masquer visuellement du texte qui devrait être retranscrit par un lecteur d’écran.
-
-Utiliser plutôt la classe `.sr-only`, présente dans [Tailwind](https://tailwindcss.com/docs/screen-readers). Cette astuce CSS permet de cacher visuellement du contenu texte mais tout en restant accessible aux lecteurs d’écrans.
+Ne **jamais** utiliser `display: none` pour masquer visuellement du texte qui devrait être retranscrit par un lecteur d’écran. Utiliser plutôt la classe `.sr-only`, présente dans [Tailwind](https://tailwindcss.com/docs/screen-readers). Cette astuce CSS permet de cacher visuellement du contenu texte mais tout en restant accessible aux lecteurs d’écrans. Lire aussi [Accessibilité Numérique Orange : Exemple masquage accessible et aria-hidden](https://a11y-guidelines.orange.com/fr/articles/masquage-accessible/).
 
 ```css
 .sr-only {
@@ -503,7 +735,9 @@ Ne pas faire :
 
 ---
 
-## Bonnes pratiques Images et Médias
+## Bonnes pratiques Images
+
+Dans tous les cas, les images (`<img>`) doivent obligatoirement posséder un attribut `alt`.
 
 ### Image porteuse d’information ou cliquable
 
@@ -527,11 +761,11 @@ Exemple d’une image **porteuse d’information** :
 <img src="banner.png" alt="4,9 milliards € sont consacrés à la modernisation […] - 10 millions € […] - 700km">
 ```
 
-**Attention** : inutile de commencer l’attribut `alt=""` par `"Image : …"`, cette information sera retranscrite par les lecteurs d’écrans lors de la lecture de l’élément `<img>`.
+**Attention** : inutile de débuter l’attribut `alt="Image : …"`, cette information sera retranscrite par les lecteurs d’écrans lors de la lecture de l’élément `<img>`.
 
 ### Image décorative
 
-Une image de **décoration** doit avoir un `alt` vide afin que l’image ne soit pas retranscrite par les lecteurs d’écrans.
+Une image décorative doit avoir un attribut `alt` vide afin que l’image ne soit pas retranscrite par les lecteurs d’écrans.
 
 Exemple d’une image de **décoration** :
 
@@ -541,15 +775,13 @@ Exemple d’une image de **décoration** :
 <img src="kiwiparty.png" alt="">
 ```
 
----
-
-### SVG et accessibilité
+### Images SVG et accessibilité
 
 Les exemples à suivre proviennent du [Design System du W3C](https://design-system.w3.org/styles/svg-icons.html) ainsi que de l'article [Contextually Marking up accessible images and SVGs](https://www.scottohara.me/blog/2019/05/22/contextual-images-svgs-and-a11y.html) et [Les images SVG sont de plus en plus utilisées sur le web mais qu’en est-il de leur accessibilité ?](https://a11y-guidelines.orange.com/fr/articles/svg-accessibles/).
 
 **Important :** Toujours commencer par nettoyer proprement les fichiers SVG (avec [SVGOMG](https://jakearchibald.github.io/svgomg/)) car les éditeurs graphiques ajoutent de nombreux éléments inutiles tels que des `<title>` de type "créé par Sketch".
 
-#### SVG porteur d'information
+#### Image SVG porteuse d'information
 
 **Cas d'un SVG inline :**
 
@@ -581,24 +813,35 @@ Ajouter l'attribut `role="img"`.
 <img src="image.svg" role="img" alt="Nom accessible">
 ```
 
-#### SVG décoratif
+#### Image SVG décorative
 
-**Cas d'un SVG inline :**
+Les images au format SVG qui sont décoratives doivent être correctement ignorées. Pour cela, l'élément `<svg>` :
 
-Appliquer `aria-hidden="true"` sur le `svg` afin d'indiquer aux lecteurs d'écran de ne pas le restituer, ainsi que `focusable="false"`.
-
-```xml
-<svg aria-hidden="true" focusable="false">
-  <!-- contenu du SVG -->
-</svg>
-```
-
-**Cas d'une image SVG :**
-
-`alt` vide, `aria-hidden="true"`.
+- doit avoir l'attribut `aria-hidden="true"`
+- ne doit pas contenir d'éléments `<title>` ni `<desc>`
+- ne doit pas contenir d'attribut `title`, `aria-label`, `aria-labelledby`, `role="img"`
+- avoir un attribut `focusable="false"` pour éviter de naviguer au sein du SVG.
 
 ```html
+<svg aria-hidden="true" focusable="false"><!-- contenu du SVG --></svg>
+<!-- ou -->
 <img src="image.svg" alt="" aria-hidden="true">
+```
+
+Dans le cas d'une image SVG à portée informative, l'élément `<svg>` doit avoir :
+
+- un attribut `role="img"`
+- un intitulé avec soit l'attribut `aria-label`, soit avec un élément `<title>` (lié avec l'attribut `aria-labelledby` qui reprend l'identifiant (`id`) de l'élément `<title>`.)
+- avoir un attribut `focusable="false"` pour éviter de naviguer au sein du SVG.
+
+```html
+<!-- Le SVG a un intitulé avec l'attribut aria-label -->
+<svg role="img" aria-label="Démarche en cours" focusable="false"></svg>
+
+<!-- Le SVG a un intitulé avec l'élément <title> -->
+<svg role="img" aria-labelledby="title-svg" focusable="false">
+  <title id="title-svg">Démarche en cours</title>
+</svg>
 ```
 
 #### SVG dans lien ou dans un bouton
@@ -627,6 +870,69 @@ Il est préférable d'utiliser un `<span>` invisible pour le nom accessible s'il
 </a>
 ```
 
+### Image complexe
+
+Une image complexe est une image contenant beaucoup d'informations, comme un graphique par exemple.
+Dans ce cas, il est nécessaire de décrire toute l'image dans une description détaillée qui peut se trouver soit :
+
+- sur la page en elle-même : en dessous ou à côté de l'image
+- ou sur une autre page
+
+Le texte alternatif de l'image (`alt`) doit être renseigné.
+
+#### Description détaillée sur la page
+
+```html
+<img src="graphique.jpg" alt="Données numériques (description détaillée ci-dessous)">
+<p>Description détaillée
+    …
+</p>
+```
+
+Si la description est trop longue, elle peut être masquée de manière accessible avec un [accordéon](https://developer.mozilla.org/fr/docs/Web/HTML/Element/details), par exemple.
+
+Sinon, il est possible d'avoir une description détaillée n'importe où sur la page, et peut être liée via l'attribut `longdesc` sur l'image. L'attribut a pour valeur l'identifiant (`id`) de la description détaillée.
+
+```html
+<img src="image.url" alt="Données numérique" longdesc="#description">
+<div>
+    …
+</div>
+<div id="description">
+    <p>Description détaillée
+        …
+    </p>
+</div>
+```
+
+#### Description détaillée sur une autre page
+
+Pour cela, il faut ajouter un attribut `longdesc` sur l'image (`<img>`) qui a pour valeur l'adresse (URL) de la page regroupant la description détaillée.
+
+```html
+<!-- La page page-de-la-description-detaillee.html regroupera la description détaillée de l'image.-->
+<img src="image.url" alt="Données numérique" longdesc="https://example.org/page-de-la-description-detaillee.html">
+```
+
+---
+
+## Bonnes pratiques médias
+
+Les multimédias (vidéos, sons) nécessitent des précautions :
+
+- Chaque média doit être identifiable : un titre ou un paragraphe le précède afin de comprendre le contenu présenté.
+- Les médias ne doivent pas être déclenchés automatiquement.
+- Ils doivent être contrôlables :
+  - Au minimum dotés des boutons de pause, lecture et stop.
+  - Si le média est sonore, un contrôle pour activer / désactiver le son.
+  - Si le média a des sous-titres, un contrôle pour activer / désactiver les sous-titres.
+  - Si le média a une audiodescription, un contrôle pour activer / désactiver l'audiodescription.
+- Le média doit proposer une alternative accessible. Selon le média, il doit proposer :
+  - soit une audiodescription synchronisée (ou disponible via un lien ou bouton adjacent) pour les médias vidéos ou synchronisés.
+  - soit une alternative audio (ou disponible via un lien ou bouton adjacent) seulement pour les médias vidéos.
+  - soit des sous-titres synchronisés, si nécessaire, pour les médias synchronisés.
+  - soit une transcription textuelle (adjacente ou disponible via un lien ou bouton adjacent) pour tous les types de médias.
+
 ---
 
 ## Bonnes pratiques Javascript
@@ -647,20 +953,20 @@ On pourra moduler avec `aria-relevant` (`additions`, `removals`, `text`, `all`) 
 
 Pour tous les composants de page agissant sur le contenu, de type swiper, slider, slideshow, accordéon, pagination, onglets, menu déroulant, on privilégiera les scripts "accessibles", y compris ceux utilisant ARIA. Le but étant, entre autres, de ne pas gêner la navigation au clavier et de permettre la lecture de la page avec une synthèse vocale.
 
-Pour les menus déroulants et mega menus, Accessible Mega Menu a fait ses preuves <https://adobe-accessibility.github.io/Accessible-Mega-Menu/>
+Pour les menus déroulants et mega menus, [Accessible Mega Menu](https://adobe-accessibility.github.io/Accessible-Mega-Menu/) a fait ses preuves.
 
 ---
 
 ## Ressources Générales
 
 - [RGAA](https://www.numerique.gouv.fr/publications/rgaa-accessibilite/)
+- [Glossaire RGAA](https://accessibilite.numerique.gouv.fr/methode/glossaire/)
 - [Décret n° 2019-768 du 24 juillet 2019 relatif à l'accessibilité...](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000038811937)
 - [Outils d'accessibilité du Gouvernement](https://design.numerique.gouv.fr/outils/)
-- [Guide de l'Intégrateur RGAA3](https://disic.github.io/guide-integrateur/)
-- [Guide du Développeur RGAA3](https://disic.github.io/guide-developpeur/)
 - [Notices Accedeweb](https://www.accede-web.com/notices/)
 - [Design System du W3C](https://design-system.w3.org/)
 - [Guidelines Accessibilité Orange](https://a11y-guidelines.orange.com/fr/)
+- [Articles d'Alsacréations sur l'accessibilité](https://www.alsacreations.com/tuto/liste/3-accessibilite.html)
 - [Modèles de conception accessibles](https://www.w3.org/WAI/ARIA/apg/)
 - [My accessibility toolbox](https://gitlab.com/accessfirst.fr/my-accessibility-toolbox)
 - [SmashingMag : Accessibilité dans les devtools de Chrome](https://www.smashingmagazine.com/2020/08/accessibility-chrome-devtools/)
@@ -690,3 +996,43 @@ Pour les menus déroulants et mega menus, Accessible Mega Menu a fait ses preuve
 - [NVDA](https://www.nvda-fr.org/)
 - VoiceOver (natif sur macOS, iOS) (activation : cmd + fn + F5), voir [raccourcis clavier](https://www.apple.com/voiceover/info/guide/_1131.html)
 - [Jaws](https://www.freedomscientific.com/products/software/jaws/)
+
+---
+
+---
+
+## Checklist contribution
+
+Bonnes pratiques à respecter lorsqu'on contribue au contenu, notamment à l'aide d'un éditeur visuel dans un CMS (Content Management System) tel que WordPress, Drupal, Joomla ou équivalent :
+
+- Ne pas justifier le texte.
+- Utiliser une taille de police suffisante.
+- Ne pas gérer l'espacement avec des sauts de ligne.
+- Expliciter les abréviations et acronymes, au moins pour la première occurence dans la page à l'aide de [abbr](https://developer.mozilla.org/fr/docs/Web/HTML/Element/abbr).
+- Rédiger les dates dans des formats explicites (le mois en toutes lettres, l'année complète sur 4 chiffres).
+- Déclarer les changements de langue.
+
+### Liens dans le contenu
+
+- Rédiger des liens explicites.
+- Indiquer le titre / format / poids / langue (si différente du document) des fichiers en téléchargement (par exemple documents PDF).
+- Prévenir l'ouverture d'un lien dans une nouvelle fenêtre.
+- Un élément cliquable doit être de taille suffisante.
+
+### Structuration
+
+- Utiliser correctement la hiérarchie des titres.
+- Utiliser des listes à puces (ordonnées et non ordonnées).
+- Utiliser [les citations](https://www.alsacreations.com/article/lire/1908-Les-citations-en-HTML-avec-blockquote-cite-et-q.html) (bloc de citation et en incise).
+- Utiliser des tableaux pour présenter des données.
+
+### Images
+
+- Ajouter ou non une alternative textuelle aux images.
+- Images informatives complexes : rédiger une description détaillée.
+
+### Couleurs & présentations
+
+- Utiliser des contrastes de couleurs suffisants (entre le texte et le fond).
+- Ne pas véhiculer d'information uniquement par la couleur.
+- Ne pas faire référence à un élément en se basant sur sa position, sa couleur ou sa forme.
