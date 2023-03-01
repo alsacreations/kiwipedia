@@ -33,6 +33,7 @@ La maintenabilité des feuilles de styles est une priorité. Il est nécessaire 
 - Privilégier au maximum l'usage de [**classes**](http://www.drinchev.com/blog/css-with-only-class-names/) plutôt que d'écrire des sélecteurs basés sur le type des éléments ou leur `id`.
 - Le sélecteur CSS doit être _unique_ si cela est possible (une seule classe). Éviter les _sélecteurs composés_ tels que `.modal span` ou `.modal .date` mais plutôt `.modal-date` pour conserver un poids minimal.
 - Prévoir dès le départ un nom de classe pour chaque élément HTML (même anodin tels que `<span>`, `<p>` ou `<a>`) afin de pouvoir être ciblés sans avoir à faire à leur hiérarchie.
+- Faire attention à la performance des sélecteurs : [The truth about CSS selector performance](https://blogs.windows.com/msedgedev/2023/01/17/the-truth-about-css-selector-performance/)
 
 ### Ordre des déclarations
 
