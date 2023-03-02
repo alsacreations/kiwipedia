@@ -588,6 +588,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://threejs.org/> 2D et 3D
 - <https://www.babylonjs.com/> WebGL
 - <http://paperjs.org/> 2D
+- <https://webgl2fundamentals.org> Fondamentaux de WebGL2
 - <http://www.createjs.com/easeljs>
 - <http://fabricjs.com/>
 - <https://visitmix.com/labs/ai2canvas/> Ai to Canvas
