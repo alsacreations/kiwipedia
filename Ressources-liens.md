@@ -135,6 +135,15 @@ Autres listes de ressources et checklists
 - <https://web.dev/patterns/>
 - <https://postsrc.com/components>
 
+### Composants Vue
+
+- <https://primevue.org>
+- <https://quasar.dev>
+- <https://vuetifyjs.com/en/>
+- <https://vuestic.dev>
+- <https://www.naiveui.com/>
+- <https://vant-contrib.gitee.io/vant/>
+
 ### RWD Responsive Web Design
 
 - <https://mediaquery.style/> Cheatsheet Media Queries
