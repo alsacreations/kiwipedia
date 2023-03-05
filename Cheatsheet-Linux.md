@@ -101,6 +101,9 @@ Déplacer un fichier
 Supprimer un fichier
 `rm lefichier.txt` ou récursivement `rm -rf ledossier/`
 
+Supprimer un dossier (vide, sinon utiliser _rm -rf_)
+`rmdir ledossier`
+
 Supprimer un fichier et le rendre irrécupérable en écrasant son contenu par de l'aléatoire
 `shred -u lefichier.txt`
 
@@ -142,15 +145,6 @@ Espace occupé en suivant les liens symboliques
 
 Espace occupé par dossier, classé par taille (humaine)
 `du -skh * | sort -h`
-
-Supprimer un fichier
-`rm fichier1.txt`
-
-Supprimer un dossier (vide)
-`rmdir ledossier`
-
-Suppression récursive
-`rm -rf`
 
 Déplacer/renommer un fichier ou un dossier
 `mv fichier1.txt fichier2.txt` ou `mv fichier1.txt /tmp/fichier2.txt`
