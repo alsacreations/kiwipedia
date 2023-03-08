@@ -123,14 +123,14 @@ Autres listes de ressources et checklists
 - <http://purecss.io/> Pure (Yahoo)
 - <http://designmodo.github.io/Flat-UI/> Flat UI
 
-### Composants UI intégrés (souvent tailwind)
+### Composants UI intégrés (souvent Tailwind)
 
 - <https://hyperui.dev/>
 - <https://www.tailwind-kit.com/>
-- <https://headlessui.dev/>
-- <https://tailwindui.com/>
+- <https://headlessui.dev/> (React, Vue)
+- <https://tailwindui.com/> (React, Vue, HTML)
 - <https://tailwindcomponents.com/>
-- <https://preline.co/>
+- <https://preline.co/> (React, Vue, HTML)
 - <https://merakiui.com/>
 - <https://web.dev/patterns/>
 - <https://postsrc.com/components>
