@@ -999,8 +999,6 @@ Pour les menus déroulants et mega menus, [Accessible Mega Menu](https://adobe-a
 
 ---
 
----
-
 ## Checklist contribution
 
 Bonnes pratiques à respecter lorsqu'on contribue au contenu, notamment à l'aide d'un éditeur visuel dans un CMS (Content Management System) tel que WordPress, Drupal, Joomla ou équivalent :
