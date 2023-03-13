@@ -976,6 +976,7 @@ Pour les menus déroulants et mega menus, [Accessible Mega Menu](https://adobe-a
 - [Support des Assistances Techniques](https://a11ysupport.io/)
 - [AccessConfig](https://accessconfig.a11y.fr/) : Modale de personnalisation d'affichage
 - [Checklist accessibilité](https://www.a11yproject.com/checklist/)
+- [Tanaguru Webextension](https://github.com/Tanaguru/webextension)
 
 ### Contraste / Webdesign
 
