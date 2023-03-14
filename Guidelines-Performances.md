@@ -220,12 +220,16 @@ img {
 
 ### Outils d'optimisation d'images
 
-- MacOS : <https://github.com/antonreshetov/image-optimizer> très facile par drag&drop et traitement par lot (PNG, JPEG, GIF, SVG)
+- MacOS : <https://github.com/antonreshetov/image-optimizer> très facile par drag&drop et traitement par lot (PNG, JPEG, GIF, SVG) ou <https://imageoptim.com/fr>
 - Universel en ligne : <https://squoosh.app/> avec aperçu avant/après, redimensionnement, autres options (PNG, JPEG, WEBP)
 - SVG : <https://jakearchibald.github.io/svgomg/>
 - AVIF : <https://avif.io> en ligne ou <https://github.com/lovell/avif-cli> en ligne de commande
 - <https://sharp.pixelplumbing.com>
 - <https://www.smashingmagazine.com/2022/07/powerful-image-optimization-tools/>
+
+### Outils d'optimisation vidéo
+
+- [Handbrake](https://handbrake.fr/)
 
 ## Polices
 
