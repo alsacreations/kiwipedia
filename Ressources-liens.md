@@ -134,6 +134,8 @@ Autres listes de ressources et checklists
 - <https://merakiui.com/>
 - <https://web.dev/patterns/>
 - <https://postsrc.com/components>
+- <https://a17t.miles.land/>
+- <https://flowbite.com/>
 
 ### Composants Vue
 
@@ -143,6 +145,12 @@ Autres listes de ressources et checklists
 - <https://vuestic.dev>
 - <https://www.naiveui.com/>
 - <https://vant-contrib.gitee.io/vant/>
+
+### Générateurs d'UI / de pages intégrées
+
+- <https://uigenerator.org/>
+- <https://shuffle.dev/>
+
 
 ### RWD Responsive Web Design
 
