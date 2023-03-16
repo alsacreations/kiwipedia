@@ -160,7 +160,6 @@ Autres dépendances utiles :
 - [vue-the-mask](https://vuejs-tips.github.io/vue-the-mask/) : masques de saisie (téléphone, date, code postal, carte bancaire...).
 - [vee-validate](https://logaretm.github.io/vee-validate/overview.html) : validation de formulaires.
 - [v-calendar](https://vcalendar.io/) : calendrier, datepicker.
-- [vue-gtag](https://github.com/MatteoGabriele/vue-gtag) : G. Analytics.
 - [date-fns](https://date-fns.org/) : Dates.
 - [day.js](https://day.js.org/) : Dates
 - [vueuse/head](<https://github.com/vueuse/head> : Balises meta, SEO.

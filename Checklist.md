@@ -49,7 +49,7 @@ ___
 |Critère|Priorité|
 | ------------- | ------------- |
 | Chaque page comporte une section `<head>` avec des balises `<meta>` description et keywords et autres indications pertinentes | * |
-| Un tag de suivi des statistiques (Google Analytics ou équivalent) est inséré | * |
+| Un tag de suivi des statistiques est inséré | * |
 | Le site est enregistré sur Google Search Console (compte Google requis) | * |
 | Le fichier robots.txt est présent | ** |
 | Un sitemap XML est généré | * |

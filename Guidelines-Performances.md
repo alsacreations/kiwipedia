@@ -227,9 +227,10 @@ img {
 - <https://sharp.pixelplumbing.com>
 - <https://www.smashingmagazine.com/2022/07/powerful-image-optimization-tools/>
 
-### Outils d'optimisation vidéo
+### Outils d'optimisation vidéo et audio
 
 - [Handbrake](https://handbrake.fr/)
+- [Audacity](https://www.audacityteam.org/)
 
 ## Polices
 
