@@ -97,6 +97,7 @@ Liste non exhaustive, voir <https://docs.docker.com/engine/reference/builder/>.
 * Compiler et démarrer tous les conteneurs `docker-compose up -d` (`-d` : en background)
 * Compiler sans démarrer les conteneurs `docker-compose build` (en option ajouter le nom du service)
 * Tout arrêter, supprimer les conteneurs, volumes et réseaux `docker-compose down`
+* Stopper un service, le supprimer ainsi que ses volumes anonymes `docker-compose rm -s -v <nom_du_service>`
 * Journaux `docker-compose logs`
 * Statut des conteneurs `docker-compose ps`
 * Liste des images utilisées `docker-compose images`
