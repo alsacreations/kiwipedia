@@ -39,7 +39,8 @@ Voir aussi <https://www.alsacreations.com/tuto/lire/1836-Docker--decouverte-et-e
 ## Options Docker run
 
 * `-d` : permet de détacher l'exécution du conteneur du terminal courant
-* `-p` : permet de lier un port (local:container `-p 8080:80`)
+* `
+` : permet de lier un port (local:container `-p 8080:80`)
 * `-u` : permet de spécifier l'utilisateur+groupe d'exécution
 * `-v` : permet de déclarer un volume (local:container `-v /var/path/to/mydata/mysql:/var/lib/mysql`)
 * `-e` : permet de passer/spécifier une variable d'environnement
@@ -94,12 +95,12 @@ Liste non exhaustive, voir <https://docs.docker.com/engine/reference/builder/>.
 
 ## Docker-compose
 
-* Compiler et démarrer tous les conteneurs `docker-compose up -d` (`-d` : en background)
+* Compiler et démarrer tous les conteneurs `docker-compose -p <projet> up -d` (`-d` : en background, `-p` : nom du projet sinon il utilise le nom du dossier courant)
 * Compiler sans démarrer les conteneurs `docker-compose build` (en option ajouter le nom du service)
-* Tout arrêter, supprimer les conteneurs, volumes et réseaux `docker-compose down`
+* Tout arrêter, supprimer les conteneurs, volumes et réseaux `docker-compose -p <projet> down`
 * Stopper un service, le supprimer ainsi que ses volumes anonymes `docker-compose rm -s -v <nom_du_service>`
 * Journaux `docker-compose logs`
-* Statut des conteneurs `docker-compose ps`
+* Statut des conteneurs `docker-compose -p <projet> ps`
 * Liste des images utilisées `docker-compose images`
 * Exécute une commande dans un conteneur `docker-compose exec <service> <command>`
 * Arrêter et supprimer `docker-compose rm --stop`
