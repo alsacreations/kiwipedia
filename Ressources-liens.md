@@ -432,19 +432,17 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 ### Icônes / SVG
 
+- <https://icones.js.org/>
 - <https://iconoir.com/>
-- <https://tablericons.com/>
 - <https://iconmonstr.com/>
 - <https://iconduck.com/>
-- <https://icones.js.org/>
-- <https://www.iconsdb.com/>
 - <https://www.iconfinder.com/>
-- <https://findicons.com/>
 - <https://www.svgrepo.com/>
 - <https://www.flaticon.com/fr/>
-- <https://simpleicons.org/>
-- <https://lucide.dev/>
-- <https://www.mingcute.com/>
+- <https://tablericons.com/> (1 lib personnalisable)
+- <https://lucide.dev/> (1 lib)
+- <https://www.mingcute.com/> (1 lib)
+- <https://simpleicons.org/> (1 lib de logos de marques)
 - <https://github.com/paulirish/browser-logos> Logos de navigateurs
 
 ### Images libres (ou pas)
