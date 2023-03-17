@@ -24,6 +24,7 @@ Voir aussi <https://www.alsacreations.com/tuto/lire/1836-Docker--decouverte-et-e
 
 ### Inspection
 
+* Savoir quel dossier a initialisé un container `docker inspect <nomducontainer> | grep "com.docker.compose.project.working_dir"`
 * Statistiques : `docker stats`
 * Informations système : `docker info`
 * Logs : `docker logs <nomducontainer>` (ajouter `-f` pour suivre en continu)
@@ -108,6 +109,7 @@ Liste non exhaustive, voir <https://docs.docker.com/engine/reference/builder/>.
 * Démarrer `docker-compose start <service>`
 * Mettre en pause `docker-compose pause <service>`
 * Reprendre `docker-compose unpause <service>`
+* Visualiser la conf intégrant les variables d'env `docker compose convert`
 
 ---
 
