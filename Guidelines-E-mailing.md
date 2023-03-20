@@ -15,6 +15,20 @@ Voici quelques ressources à garder dans ses favoris :
 - <https://www.hteumeuleu.com/>
 - [Fixing bugs with Outlook specific CSS](https://cm.engineering/fixing-bugs-with-outlook-specific-css-f4b8ae5be4f4)
 
+## Supprimer les détections automatiques d'e-mails, de téléphone, etc
+
+Lorsqu'elles sont lues par un device sur iOS, certaines données sont automatiquement détectées et interprétées. Cela concerne les numéros de téléphones, les adresses, les dates et parfois même quelques mots-clés spécifiques tels que "aujourd'hui".
+
+Cette détection automatique est parfois gênante car elle est associée à des styles graphiques non désirés voire inaccessibles.
+
+Un moyen de s'en affranchir est d'appliquer les `meta` suivantes :
+
+```html
+<meta name="format-detection" content="date=no">
+<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="address=no">
+```
+
 ## Utiliser un Framework de construction : Maizzle
 
 Un framework spécialisé dans l'e-mailing, tel que **[Maizzle](https://maizzle.com)**, est une aide précieuse pour les raisons suivantes&nbsp;:
