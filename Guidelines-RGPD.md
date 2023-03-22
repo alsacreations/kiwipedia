@@ -148,6 +148,7 @@ Attention, toutefois, le cadre juridique en France impose de conserver les pièc
 
 * [reCAPTCHA de Google : doit être soumis au consentement](https://twitter.com/DavidLibeau/status/1516041376542208012)
 * YouTube : utiliser `https://youtube-nocookie.com/embed/` pour les vidéos, y compris [Use cookie-less domain for YouTube embeds in WordPress](https://rickylee.com/2018/03/26/youtube-nocookie-gdpr-wordpress/)
+* Le simple usage de Google Fonts peut être considéré illégal, voir <https://gdprhub.eu/index.php?title=LG_München_-_3_O_17493/20>
 
 ## En cas de fuite
 
