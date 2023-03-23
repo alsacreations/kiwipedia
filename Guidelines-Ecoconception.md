@@ -1,7 +1,10 @@
 # Ecoconception
 
-* Actions mises en place par Alsacréations pour répondre au [Référentiel général d'écoconception de services numériques (RGESN)](https://ecoresponsable.numerique.gouv.fr/publications/referentiel-general-ecoconception/)
-* Voir aussi [Les 115 bonnes pratiques](https://github.com/cnumr/best-practices)
+Actions mises en place par Alsacréations pour répondre au [Référentiel général d'écoconception de services numériques (RGESN)](https://ecoresponsable.numerique.gouv.fr/publications/referentiel-general-ecoconception/)
+
+Voir aussi :
+
+* [Les 115 bonnes pratiques](https://github.com/cnumr/best-practices)
 * Empreinte carbone des appareils <https://impactco2.fr/numerique> (ADEME)
 
 ---
@@ -271,7 +274,7 @@ Avec les frameworks front-end (Vue, Nuxt, React), le code inutile est automatiqu
 
 ---
 
-En résumé
+## En résumé
 
 * Phase définition/spécification
   1. Mettre en place la démarche et la communiquer aux fournisseurs/interlocuteurs s'il y en a.
