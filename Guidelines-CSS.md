@@ -2,7 +2,7 @@
 
 Statut : Working Draft (WD)
 
-Cette présente convention rassemble les bonnes pratiques appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/) concernant **CSS**. Elle a pour but d'évoluer dans le temps et de s'adapter au fur et à mesure de nos expériences et projets.
+Bonnes pratiques CSS appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/), évoluant dans le temps et adaptées à chaque nouveau projet.
 
 ## Résumé
 

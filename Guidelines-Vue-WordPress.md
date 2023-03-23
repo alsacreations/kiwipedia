@@ -2,7 +2,7 @@
 
 Statut : Candidate Recommendation (CR)
 
-Cette présente convention rassemble les bonnes pratiques "Vue dans WordPress" en production appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/). Elle a pour but d'évoluer dans le temps et de s'adapter à chaque nouveau projet.
+Bonnes pratiques de développement Vue dans WordPress appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/), évoluant dans le temps et adaptées à chaque nouveau projet.
 
 ## Structure de projet
 
@@ -103,7 +103,7 @@ data() {
 },
 ```
 
-Nous aurons toujours une méthode à part, qui se charge de récupérer les informations. Cette méthode sera toujours *async* pour pouvoir récupérer le résultat dans les hooks mounted / created.
+Nous aurons toujours une méthode à part, qui se charge de récupérer les informations. Cette méthode sera toujours _async_ pour pouvoir récupérer le résultat dans les hooks mounted / created.
 
 ```js
 methods: {

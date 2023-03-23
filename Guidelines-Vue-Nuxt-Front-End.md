@@ -2,7 +2,7 @@
 
 Statut : Working Draft (WD)
 
-Cette présente convention rassemble les bonnes pratiques "Vue.js, Nuxt et Front-End" en production appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/). Elle a pour but d'évoluer dans le temps et de s'adapter à chaque nouveau projet.
+Bonnes pratiques de développement appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/), évoluant dans le temps et adaptées à chaque nouveau projet.
 
 ## Environnement de code HTML, CSS, JavaScript
 

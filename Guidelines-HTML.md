@@ -2,7 +2,7 @@
 
 Statut : Recommendation (REC)
 
-Cette présente convention rassemble les bonnes pratiques HTML en production appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/). Elle a pour but d'évoluer dans le temps et de s'adapter à chaque nouveau projet.
+Bonnes pratiques HTML appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/), évoluant dans le temps et adaptées à chaque nouveau projet.
 
 ## Généralités
 
