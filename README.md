@@ -1,17 +1,16 @@
 # Guidelines Alsacréations 🥝
 
-Les lignes directives ont pour objectif partagé :
+Les lignes directrices ont pour objectif partagé :
 
 - d'uniformiser et d’harmoniser les processus de conception de l’agence web [Alsacreations.fr](https://www.alsacreations.fr/)
 - de favoriser l’intervention de profils de compétences variés au sein d'une équipe
 - de faciliter la maintenance des projets
 
-💬 Le web est un métier de plus en plus vaste, comportant une foule de détails qui vont avoir un impact sur la qualité, l'ergonomie, la performance, le référencement (SEO), la maintenabilité et au final sur le succès auprès de l'utilisateur. Tous les critères ne seront pas toujours applicables et le seront bien souvent en fonction du temps alloué.
+💬 Le web est un métier de plus en plus vaste, comportant une foule de détails qui vont avoir un impact sur la qualité, l'ergonomie, la performance, le référencement (SEO), la maintenabilité et au final sur le succès auprès de l'internaute. Tous les critères ne seront pas toujours applicables et le seront bien souvent en fonction du temps alloué.
 
 ## Guidelines transversales
 
 - [**Conventions Générales de Nommage**](Conventions-generales-nommage.md)
-- [**Guidelines Readme**](Guidelines-Readme.md)
 - [**Guidelines Visual Studio Code**](Guidelines-VScode.md)
 - [**Guidelines Accessibilité**](Guidelines-Accessibilite.md)
 - [**Guidelines Interopérabilité**](Guidelines-Interoperabilite.md)
