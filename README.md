@@ -50,6 +50,7 @@ Nous voyons ces guidelines comme faisant partie d'un ensemble organisé.
 - [**Cheatsheet Docker**](Cheatsheet-Docker.md)
 - [**Cheatsheet htaccess**](Cheatsheet-htaccess.md)
 - [**Cheatsheet git**](Cheatsheet-Git.md)
+- [**Cheatsheet NPM**](Cheatsheet-npm.md)
 - [**Ressources et liens utiles**](Ressources-liens.md)
 - [**Checklist**](Checklist.md)
 
