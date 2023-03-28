@@ -847,6 +847,14 @@ Lister les règles actives
 Autoriser un port en écoute (TCP et UDP)
 `ufw allow 1337`
 
+Supprimer une règle (en TCP)
+`ufw delete allow 1337/tcp`
+
+### htpasswd
+
+Générer un couple login/mot de passe (utiliser `-c` pour générer un fichier)
+`htpasswd -n <login>`
+
 ### Netcat
 
 Savoir si un port distant est ouvert en TCP `nc -vz lehostname 80`, en UDP `nc -vz -u lehostname 53`
