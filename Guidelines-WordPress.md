@@ -6,18 +6,19 @@ Bonnes pratiques WordPress appliquées par l'agence web [Alsacreations.fr](https
 
 ## Structure de projet
 
-On utilise
+On utilise :
 
 - [Composer](https://getcomposer.org/) pour installer WordPress et ses extensions.
-- [WordPlate](https://github.com/wordplate/wordplate) qui fonctionne avec [viteJs](https://github.com/vitejs/vite).
+- [WordPlate](https://github.com/wordplate/wordplate) qui fonctionne avec [Vite](https://github.com/vitejs/vite).
 - [Tailwind](https://github.com/timber/timber) en tant que framework CSS (facultatif).
-- [Timber](https://github.com/timber/timber) pour utiliser Twig dans les templates (facultatif).
+- [Timber](https://github.com/timber/timber) pour la syntaxe Twig dans les templates (facultatif).
+- Les CPT (Custom Post Types) et ACF (Advanced Custom Fields) pour structurer le contenu.
 
 ## Environnement de développement
 
 👉 On utilise [Docker](https://www.docker.com/)
 
-- Par défaut, on part d’une base MySQL locale. Il est possible d’utiliser une base MySQL “partagée” accessible à distance, attention cependant à la synchronisation d’informations et de fichiers (options, réglages de plugins activés…).
+- Par défaut, on part d’une base MySQL locale. Il est possible d’utiliser une base MySQL “partagée” accessible à distance, attention cependant à la synchronisation d’informations et de fichiers (options, réglages d'extensions activées…).
 - Utiliser `define('WP_ENVIRONMENT_TYPE','staging');` puis [wp_get_environment_type()](https://make.wordpress.org/core/2020/07/24/new-wp_get_environment_type-function-in-wordpress-5-5/)
 - Utiliser `define('WP_DEBUG',true);` pour activer le mode debug
 
@@ -40,14 +41,7 @@ On ne versionne **pas** :
 - les extensions tierces (car installé/mis à jour par composer)
 - les fichiers uploads, update et vendor
 
-👉 Le fichier README.md à la racine du projet doit contenir toutes les informations pour ré-installer le site rapidement en production.
-
-## Configuration de base
-
-### Sécurité, utilisateurs
-
-- 👉 Supprimer l’utilisateur **admin** et l’utilisateur avec l’ID 1. Créer un utilisateur de niveau administrateur avec identifiant spécifique différent de “admin”.
-- Créer un ou plusieurs utilisateurs de niveau **éditeur** pour les intervenants (doit être différent du nom de domaine pour des raisons de sécurité), ayant accès juste aux fonctionnalités utiles.
+👉 Le fichier `README.md` à la racine du projet doit contenir toutes les informations pour ré-installer le site rapidement en production.
 
 ## Thème
 
@@ -69,7 +63,7 @@ Les extensions spécifiques WordPress / PHP recommandées sont :
 
 #### Automatisation
 
-Avec [viteJs](https://github.com/vitejs/vite) (présent dans WordPlate)
+Avec [Vite](https://github.com/vitejs/vite) (présent dans WordPlate)
 
 #### Moteur de template
 
@@ -89,21 +83,19 @@ On privilégie, dans cet ordre, les frameworks CSS suivants :
 
 Voir [Guidelines HTML et CSS](https://github.com/alsacreations/guidelines)
 
-- Ne pas utiliser les classes CSS générées par WordPress qui sont spécifiques à une installation précise et ne sont pas réutilisables.
-- Les classes spécifiques des wrapper des menus du type `.menu-nom-de-mon-menu`
-- La majorité des classse générées par `body_class()` ou `post_class()`
-- Pour le chargement des fichiers CSS et JavaScript on utilise la configuration de [WordPlate](https://github.com/vinkla/wordplate) avec [Vite.js](https://vitejs.dev/)
+- Suivre les [PHP Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/php/) de WordPress.
+- Ne pas utiliser les classes CSS générées par WordPress qui sont spécifiques à une installation précise et ne sont pas réutilisables : classes spécifiques des _wrappers_ des menus du type `.menu-nom-de-mon-menu` et la majorité des classes générées par `body_class()` ou `post_class()`.
+- Pour le chargement des fichiers CSS et JavaScript on utilise la configuration de [WordPlate](https://github.com/vinkla/wordplate) avec [Vite](https://vitejs.dev/)
 - Placer `add_action()` et `add_filter()` après la fonction liée.
-- Utiliser la dernière notation pour les tableaux PHP `$array = [];` et non `$array = array();`.
-- Toutes les chaînes de caractères d’un thème doivent pouvoir être traduites. Il faut donc les entourer dans la bonne fonction gettext ( `__()`, `_n()`, `_x()` ), couplées à un text-domain cohérent en fonction du contexte (thème, thème enfant, extension, ...)
-- Découper le thème de manière cohérente (boucles à part, etc.) pour pouvoir utiliser `get_template_part()` correctement
-- Tout ce qui ne fait pas partie intégrante du thème et/ou optionnel doit être décliné sous forme d'extension
+- Toutes les chaînes de caractères d’un thème doivent pouvoir être traduites. Il faut donc les entourer dans la bonne fonction gettext ( `__()`, `_n()`, `_x()` ), couplées à un text-domain cohérent en fonction du contexte (thème, thème enfant, extension, ...).
+- Découper le thème de manière cohérente (boucles à part, etc.) pour pouvoir utiliser `get_template_part()` correctement.
+- Tout ce qui ne fait pas partie intégrante du thème et/ou optionnel doit être réalisé sous forme d'extension.
 
 ### Hiérarchie de fichiers et documentation
 
-👉 Utiliser l’auto-chargement des fichiers PHP du thème par WordPress (selon slug de la catégorie, du Custom Post Type, etc).
+👉 Utiliser l'auto-chargement des fichiers PHP du thème par WordPress (selon slug de la catégorie, du Custom Post Type, etc).
 
-- Connaître / visualiser la hiérarchie de templates : <https://wphierarchy.com/> <https://developer.wordpress.org/themes/basics/template-hierarchy/>
+- Connaître / visualiser la [hiérarchie de templates](https://developer.wordpress.org/themes/basics/template-hierarchy/) ([explications](https://wpshout.com/wordpress-template-hierarchy/))
 - Documentation officielle <https://developer.wordpress.org/themes/>
 - Fonctions <https://codex.wordpress.org/Function_Reference>
 - Hooks <https://adambrown.info/p/wp_hooks>
@@ -165,7 +157,7 @@ Voir <https://www.alsacreations.com/article/lire/1837-wordpress-theme-internatio
 
 ### functions.php
 
-⚠️ Le fichier functions.php fonctionne différemment des autres fichiers “template”, lors de la création d’un thème enfant par exemple, il n’est pas simplement écrasé, mais chargé avant le thème parent. Les deux fichiers déclarant des fonctions cohabitent, et il serait dommage de ne pas pouvoir écraser une fonctionnalité, ou de tomber sur une erreur PHP car une fonction est déclarée deux fois.
+⚠️ Le fichier `functions.php` fonctionne différemment des autres fichiers “template”, lors de la création d’un thème enfant par exemple, il n’est pas simplement écrasé, mais chargé avant le thème parent. Les deux fichiers déclarant des fonctions cohabitent, et il serait dommage de ne pas pouvoir écraser une fonctionnalité, ou de tomber sur une erreur PHP car une fonction est déclarée deux fois.
 Il faut donc prendre l’habitude de déclarer TOUTES les fonctions ainsi :
 
 ```php
@@ -177,7 +169,7 @@ if ( ! function_exists( 'nomdutheme_nom_de_la_fonction' )  {
 add_filter('filter_name', 'nomdutheme_nom_de_la_fonction');
 ```
 
-👉 Idéalement le fichier functions.php du thème inclut d’autres scripts PHP dédiés pour organiser le code :
+👉 Idéalement le fichier `functions.php` du thème inclut d'autres scripts PHP dédiés pour organiser le code :
 
 - actions.php
 - filters.php
@@ -185,7 +177,7 @@ add_filter('filter_name', 'nomdutheme_nom_de_la_fonction');
 - theme-setup.php
 - etc.
 
-Exemple de fichier functions.php
+Exemple de fichier `functions.php`
 
 ```php
 /**
@@ -222,14 +214,16 @@ Voir <https://capitainewp.io/formations/developper-theme-wordpress/shortcode/> e
 - Palette de couleurs <https://speckyboy.com/custom-color-palette-wordpress-gutenberg-editor/>
 
 #### Blocs sur-mesure
-Nous utilisons les [blocs ACF](https://www.advancedcustomfields.com/resources/blocks/). Cette technique permet de ne rendre modifiable que des champs spécifiques (champ texte, image, colorpicker, etc.) et avoir les fonctionnalités d'ACF (champ [relationnel](https://www.advancedcustomfields.com/resources/relationship/), [taxonomies](https://www.advancedcustomfields.com/resources/taxonomy/), etc.).
 
-Dans le cas où on utilise un thème acheté et que les fichiers php ne sont pas utilisables, on se tournera vers une [extension](https://fr.wordpress.org/plugins/blockmeister/) afin de générer des ["patterns" Gutenberg](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-patterns/) sur-mesure.
+Utiliser les [blocs ACF](https://www.advancedcustomfields.com/resources/blocks/) pour ne rendre modifiables que des champs spécifiques (champ texte, image, colorpicker, etc.) et avoir les fonctionnalités d'ACF (champ [relationnel](https://www.advancedcustomfields.com/resources/relationship/), [taxonomies](https://www.advancedcustomfields.com/resources/taxonomy/), etc.).
+
+Dans le cas où on utilise un thème acheté et que les fichiers PHP ne sont pas utilisables, on se tournera vers une [extension](https://fr.wordpress.org/plugins/blockmeister/) afin de générer des ["patterns" Gutenberg](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-patterns/) sur-mesure.
 
 ### Formulaires
 
-- Valider les données avec les méthodes natives <https://codex.wordpress.org/Data_Validation>
-- Un formulaire = un nonce <https://codex.wordpress.org/WordPress_Nonces>
+- Suivre les bonnes pratiques : [Best Practices](https://developer.wordpress.org/plugins/plugin-basics/best-practices/)
+- Valider les données avec les méthodes natives : [Validating Data](https://developer.wordpress.org/apis/security/data-validation/)
+- Un formulaire = un nonce : [Nonces](https://developer.wordpress.org/apis/security/nonces/)
 
 ## Extensions
 
@@ -237,17 +231,16 @@ Dans le cas où on utilise un thème acheté et que les fichiers php ne sont pas
 
 👉 Toute fonctionnalité développée sur-mesure pour le projet se fait dans le cadre d’une extension propre à activer/désactiver.
 
-- Documentation officielle <https://developer.wordpress.org/plugins/>
+- Documentation officielle : [Plugin Handbook](https://developer.wordpress.org/plugins/)
 
 Modèles d’extension à utiliser
 
 - [WordPress Plugin Template](https://github.com/hlashbrooke/WordPress-Plugin-Template)
 - [WordPress Plugin Boilerplate Generator](https://wppb.me/)
-- [WordPress Plugin Boilerplate](https://wppb.io/)
 
 ### Obligatoires
 
-- [WP fail2ban](https://wordpress.org/plugins/wp-fail2ban/) si hébergement interne : permet de signaler les erreurs d’identification à fail2ban+iptables pour bannir les IP tentant du bruteforce ; n’utilisez alors pas d’extension pour changer l’url de wp-admin.
+- [WP fail2ban](https://wordpress.org/plugins/wp-fail2ban/) si hébergement interne équipé de [fail2ban](https://github.com/fail2ban/fail2ban/) permettant de signaler les erreurs d’identification pour bannir les adresses IP tentant du bruteforce ; n’utilisez alors pas d’extension pour changer l’url de wp-admin.
 - [WP Migrate Lite](https://fr.wordpress.org/plugins/wp-migrate-db/) pour migrer les données de local > dev > recette > prod (et inversement), à désinstaller par sécurité après mise en production.
 - [W3 Total Cache](https://wordpress.org/plugins/w3-total-cache/) ou [WP Fastest Cache](https://fr.wordpress.org/plugins/wp-fastest-cache/) ou [WP Super Cache](https://fr.wordpress.org/plugins/wp-super-cache/) : cache/compression de contenu pour améliorer les temps de réponse.
 - [SecuPress](https://fr.wordpress.org/plugins/secupress/) pour améliorer le score global (permissions de fichiers, bonnes pratiques).
@@ -270,7 +263,7 @@ Modèles d’extension à utiliser
 - [Tarteaucitron](https://fr.wordpress.org/plugins/tarteaucitronjs/) || [Cookie Notice](https://fr.wordpress.org/plugins/cookie-notice/) : bannières cookies, code non accessible (boutons qui n’en sont pas, etc.).
 - [Adminimize](https://wordpress.org/plugins/adminimize/) : personnaliser l’aspect de l’admin en fonction des niveaux des utilisateurs. || [Hook natif](https://developer.wordpress.org/reference/functions/remove_menu_page/) : supprimer les items du menu (pour un rôle spécifique, vérifier le rôle avec fonction [current_user_can](https://developer.wordpress.org/reference/functions/current_user_can/)).
 - [Peters-login-redirect](https://wordpress.org/plugins/peters-login-redirect/) : redirection des utilisateurs après connexion. || [Hook natif](https://developer.wordpress.org/reference/hooks/login_redirect/)
-- [Relevanssi](http://wordpress.org/extend/plugins/relevanssi/) : améliore les résultats de recherche par critères de pertinence.
+- [Relevanssi](https://wordpress.org/plugins/relevanssi/) : améliore les résultats de recherche par critères de pertinence.
 - [User Switching](https://wordpress.org/plugins/user-switching/) : switcher facilement d’utilisateur.
 - [Simple Page Ordering](https://wordpress.org/plugins/simple-page-ordering/) : ordonner les pages, et autres CPT ordonnés, par simple glisser/déposer, sans avoir besoin de rentrer dans chaque page.
 - [Multiple Domain Mapping on Single Site](https://fr.wordpress.org/plugins/multiple-domain-mapping-on-single-site/) pour faire correspondre différentes Pages (d’accueil) à plusieurs domaines ou sous-domaines.
@@ -287,13 +280,13 @@ Modèles d’extension à utiliser
 
 ## Sécurité
 
+- 👉 Supprimer l’utilisateur **admin** et l’utilisateur avec l’ID 1. Créer un utilisateur de niveau administrateur avec identifiant spécifique différent de “admin”.
+- Créer un ou plusieurs utilisateurs de niveau **éditeur** pour les intervenants (doit être différent du nom de domaine pour des raisons de sécurité), ayant accès juste aux fonctionnalités utiles : ne pas utiliser de compte admin par défaut pour toutes les personnes car cela permet l'installation d'extensions.
+- Compléter le fichier `wp-config.php` avec les valeurs de <https://vinkla.github.io/salts/>
+- Désactiver l’édition du thème et des plugins en ligne dans wp-config.php `define('DISALLOW_FILE_EDIT', true);`
 - [User Name Security](https://wordpress.org/plugins/user-name-security/) supprime les mentions de l’utilisateur (id et username) dans `body_class()`, entre autres choses.
 - [SF Author URL control](https://wordpress.org/plugins/sf-author-url-control/) personnalise le “author” et le slug utilisateur pour sécuriser et personnaliser les URL des pages auteur.
-
-- Créer un ou plusieurs utilisateurs de niveau éditeur pour les intervenants (doit être différent du nom de domaine pour des raisons de sécurité), ayant accès juste aux fonctionnalités utiles, **ne pas utiliser de compte admin** par défaut pour toutes les personnes car cela permet l'installation d'extensions.
-- Compléter le fichier `wp-config.php` avec les valeurs de <https://wordplate.github.io/salt/>
 - Toujours utiliser [les nonces](https://css-tricks.com/wordpress-front-end-security-csrf-and-nonces/) pour éviter les [CSRF](https://fr.wikipedia.org/wiki/Cross-site_request_forgery), s’il faut développer des modules admin et/ou pour les utilisateurs identifiés sur le site.
-- Désactiver l’édition du thème et des plugins en ligne dans wp-config.php `define('DISALLOW_FILE_EDIT', true);`
 - Surveiller si le thème / les extensions utilisées font l’objet d’une faille sur [wpscan](https://wpscan.com/)
 - Ajouter le script pour enlever l'avertissement à la connexion qui permet d’indiquer que l’identifiant est le bon mais pas le mot de passe.
 
@@ -320,22 +313,21 @@ add_filter( 'login_errors', 'no_wordpress_errors' );
 
 ## Performance
 
-👉 Mettre en place un plugin de cache/compression/minification (voir extensions)
+👉 Mettre en place une extension de cache/compression/minification (voir extensions).
 
 - Identifier les requêtes lentes <https://css-tricks.com/finding-and-fixing-slow-wordpress-database-queries/>
 
 ## Recette
 
-👉 On utilise wp-migrate-db pour exporter les contenus en adaptant les URLs développement vers recette.
+👉 Utiliser [wp-migrate-db](https://fr.wordpress.org/plugins/wp-migrate-db/) pour exporter les contenus en adaptant correctement les URLs vers le nouveau domaine.
 
-👉 Ne pas laisser indexer ce site par Google, en ajoutant une identification HTTP (par exemple avec .htaccess).
+👉 Ne pas laisser indexer ce site par les robots, en ajoutant une authentification HTTP (par exemple avec .htaccess).
 
-- Mise en place d’un webhook Gitlab possible pour auto-pull les derniers commits git.
 - Checklist de qualité <https://wpaudit.site>
 
 ## Mise en ligne
 
-👉 On utilise wp-migrate-db pour exporter les contenus en adaptant les URLs développement/recette vers production.
+👉 Utiliser [wp-migrate-db](https://fr.wordpress.org/plugins/wp-migrate-db/) pour exporter les contenus en adaptant correctement les URLs vers le nouveau domaine.
 
 - Autoriser l’indexation par les robots à la mise en production (dans la configuration) et retirer du fichier .htaccess `Header set X-Robots-Tag "noindex,nofollow"` s'il est présent.
 - Modifier l’adresse e-mail du compte administrateur.
@@ -343,7 +335,7 @@ add_filter( 'login_errors', 'no_wordpress_errors' );
 - Vérifier que toutes les anciennes URLs de développement ont disparu de la base.
 - Modifier les constantes `WP_ENVIRONMENT_TYPE` à `production` et `WP_DEBUG` à `false`.
 
-Si l'hébergement est mutualisé et ne permet de pointer dans le dossier /public, activer la réécriture avec un fichier .htaccess à la racine :
+Si l'hébergement est mutualisé et ne permet de pointer dans le dossier `/public`, activer la réécriture avec un fichier `.htaccess` à la racine :
 
 ```htaccess
 RewriteEngine on
@@ -390,13 +382,13 @@ Réinitialiser un mot de passe admin en ayant accès à la base MySQL (ex : via 
 
 ### Installer PHP
 
-Pour pouvoir exécuter composer en ligne de commande <https://www.php.net/downloads.php>
+Pour pouvoir exécuter `composer` en ligne de commande <https://www.php.net/downloads.php>
 
 ### Installer Composer
 
 Suivre les instructions de <https://getcomposer.org/download/>
 
-Sur macOS pour faire en sorte que la commande composer soit disponible partout :
+Sur macOS pour faire en sorte que la commande `composer` soit disponible partout :
 
 ```sh
 mkdir -p /usr/local/bin
@@ -419,7 +411,7 @@ Utiliser `composer` avec le nom du plugin, préfixé par “wpackagist-plugin”
 
 ### Développer le thème
 
-Exploiter webpackmix intégré : `npm install`
+Exploiter webpackmix intégré : `npm install` (ou pnpm)
 
 Optionnel: `npm i concurrently -D`
 
