@@ -25,9 +25,9 @@ On utilise :
 
 On versionne les fichiers :
 
-- .env.example
-- composer.lock
-- package.json
+- `.env.example`
+- `composer.lock`
+- `package.json`
 - le thème développé pour le projet
 - les extensions développées pour le projet
 - les fichiers de configuration
@@ -35,12 +35,12 @@ On versionne les fichiers :
 
 On ne versionne **pas** :
 
-- .env (sauf exception)
+- `.env` (sauf exception)
 - WordPress lui-même (car installé/mis à jour par composer)
 - les extensions tierces (car installé/mis à jour par composer)
-- les fichiers uploads, update et vendor
+- les fichiers uploads (stockés à part), update et vendor
 
-👉 Le fichier `README.md` à la racine du projet doit contenir toutes les informations pour ré-installer le site rapidement en production.
+👉 Le fichier `README.md` à la racine du projet doit contenir toutes les informations pour prendre en main le développement et ré-installer le site rapidement en production.
 
 ## Thème
 
@@ -112,7 +112,7 @@ Voir aussi
 
 ### À prévoir dans le thème
 
-👉On ne nomme/préfixe pas le thème ou ses classes/fonctions par alsa_ mais plutôt par le nom du projet.
+👉 On ne nomme/préfixe pas le thème ou ses classes/fonctions par alsa_ mais plutôt par le nom du projet.
 
 La [structure standard](https://developer.wordpress.org/themes/basics/organizing-theme-files/) est :
 
@@ -345,11 +345,11 @@ add_filter( 'login_errors', 'no_wordpress_errors' );
 
 👉 Utiliser [wp-migrate-db](https://fr.wordpress.org/plugins/wp-migrate-db/) pour exporter les contenus en adaptant correctement les URLs vers le nouveau domaine.
 
-- Autoriser l’indexation par les robots à la mise en production (dans la configuration) et retirer du fichier .htaccess `Header set X-Robots-Tag "noindex,nofollow"` s'il est présent.
+- Modifier `WP_ENVIRONMENT_TYPE`/`WP_ENV` à `production` et `WP_DEBUG` à `false`.
+- Autoriser l’indexation par les robots (dans la configuration) et retirer du fichier .htaccess `Header set X-Robots-Tag "noindex,nofollow"` s'il est présent.
 - Modifier l’adresse e-mail du compte administrateur.
-- Activer le cache.
 - Vérifier que toutes les anciennes URLs de développement ont disparu de la base.
-- Modifier les constantes `WP_ENVIRONMENT_TYPE` à `production` et `WP_DEBUG` à `false`.
+- Activer le cache.
 
 Si l'hébergement est mutualisé et ne permet de pointer dans le dossier `/public`, activer la réécriture avec un fichier `.htaccess` à la racine :
 
