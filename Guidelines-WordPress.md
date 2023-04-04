@@ -12,7 +12,6 @@ On utilise :
 - [WordPlate](https://github.com/wordplate/wordplate) qui fonctionne avec [Vite](https://github.com/vitejs/vite).
 - [Tailwind](https://github.com/timber/timber) en tant que framework CSS (facultatif).
 - [Timber](https://github.com/timber/timber) pour la syntaxe Twig dans les templates (facultatif).
-- Les CPT (Custom Post Types) et ACF (Advanced Custom Fields) pour structurer le contenu.
 
 ## Environnement de développement
 
@@ -48,8 +47,7 @@ On ne versionne **pas** :
 - 👉 On privilégie de démarrer avec un starter thème épuré <https://underscores.me/> ou <https://github.com/timber/starter-theme> lorsque l’on utilise Timber.
 - 👉 Supprimer les autres thèmes livrés par défaut.
 - Il est plus rapide de développer le thème dans WordPress plutôt que de passer par une phase d’intégration statique.
-- On évite d’utiliser un thème acheté car cela sous-entend qu’on ne pourra pas tout mettre en place dans ces guidelines et qu’on ne maîtrise pas son contenu (code, extensions, évolutions). Si toutefois cela arrive, utiliser le principe de thème enfant pour ne pas modifier le thème parent, qui pourrait être mis à jour par la suite.
-- Modifier le logo sur le formulaire de connexion admin (voir snippets).
+- On évite d’utiliser un thème acheté car cela sous-entend qu’on ne pourra pas tout mettre en place dans ces guidelines et qu’on ne maîtrise pas son contenu (code, extensions, évolutions). Si toutefois cela arrive, utiliser le principe de [thème enfant](https://developer.wordpress.org/themes/advanced-topics/child-themes/) pour ne pas modifier le thème parent, qui pourrait être mis à jour par la suite.
 
 ### Intégration du thème
 
@@ -149,8 +147,6 @@ single.php
 style.css
 ```
 
-[Theme Check](https://wordpress.org/plugins/theme-check/) permet de vérifier si le thème correspond aux standards (ne fonctionne pas avec Timber).
-
 ### Traductions
 
 Voir <https://www.alsacreations.com/article/lire/1837-wordpress-theme-internationalisation.html>
@@ -225,6 +221,11 @@ Dans le cas où on utilise un thème acheté et que les fichiers PHP ne sont pas
 - Valider les données avec les méthodes natives : [Validating Data](https://developer.wordpress.org/apis/security/data-validation/)
 - Un formulaire = un nonce : [Nonces](https://developer.wordpress.org/apis/security/nonces/)
 
+### Admin
+
+- [Modifier le logo](https://wpmarmite.com/snippet/modifier-logo-connexion-wordpress/) sur la page de connexion admin.
+- [Retirer l'accès aux pages inutiles](https://wpthinker.com/hide-wordpress-admin-menu-items/) selon le rôle.
+
 ## Extensions
 
 👉 Installation : utiliser composer avec le nom du plugin, préfixé par “wpackagist-plugin”, par exemple `composer require wpackagist-plugin/wp-migrate-db`
@@ -274,9 +275,9 @@ Modèles d’extension à utiliser
 
 ### E-commerce
 
-- [WooCommerce](https://woocommerce.com/) est le plugin le plus actif (communauté, support) à l’heure actuelle. Il propose des feuilles de style par défaut, un système de coupon, gestion des stocks automatisé, gestion des e-mails client avancés, plein de hooks partout.
+- [WooCommerce](https://woocommerce.com/) : la solution idéale (communauté, support) avec feuilles de style par défaut, un système de coupon, gestion des stocks automatisé, gestion des e-mails client avancés, plein de hooks.
 - [WOOF](https://fr.wordpress.org/plugins/woocommerce-products-filter/) : Filtres plus riche en fonctionnalités que ceux de WooCommerce natif
-- [Tickera](https://tickera.com/) Vente de billets, compatible avec WooCommerce.
+- [Tickera](https://tickera.com/) : Vente de billets, compatible avec WooCommerce.
 
 ## Sécurité
 
@@ -292,7 +293,21 @@ Modèles d’extension à utiliser
 
 ## Développement
 
-- [Query Monitor](https://wordpress.org/plugins/query-monitor/) affiche les requêtes SQL exécutées et leur performance ainsi que les fichiers templates utilisés.
+### CPT (Custom Post Types)
+
+On utilise des CPT pour toute entité de données allant au-delà des Pages et Posts.
+
+- <https://wpchannel.com/wordpress/tutoriels-wordpress/creer-custom-post-types-wordpress/>
+- <https://salferrarello.com/cpt-best-practices/>
+- <https://kinsta.com/fr/blog/types-publications-personnalises-wordpress/>
+
+### ACF (Advanced Custom Fields)
+
+On utilise ACF pour ajouter des champs personnalisés à certains types de données.
+
+- <https://newslang.ch/blog/tutoriel-acf-advanced-custom-fields-le-guide-complet/>
+- <https://www.advancedcustomfields.com/blog/best-practices-designing-custom-fields/>
+- <https://kinsta.com/fr/blog/advanced-custom-fields/>
 
 ### Ajouter le support de Gutenberg pour les CPT
 
@@ -316,6 +331,7 @@ add_filter( 'login_errors', 'no_wordpress_errors' );
 👉 Mettre en place une extension de cache/compression/minification (voir extensions).
 
 - Identifier les requêtes lentes <https://css-tricks.com/finding-and-fixing-slow-wordpress-database-queries/>
+- [Query Monitor](https://wordpress.org/plugins/query-monitor/) affiche les requêtes SQL exécutées et leur performance ainsi que les fichiers templates utilisés.
 
 ## Recette
 
@@ -348,7 +364,7 @@ On peut utiliser [WP-CLI](https://www.smashingmagazine.com/2015/09/wordpress-man
 
 Forcer la mise à jour par téléchargement direct dans wp-config.php `define('FS_METHOD' 'direct');`
 
-Désactiver le warning d'update WordPress pour les non-administrateurs
+Désactiver le warning d'update WordPress pour les non-admins :
 
 ```php
 if ( !current_user_can( 'edit_users' ) ) {
@@ -359,7 +375,7 @@ if ( !current_user_can( 'edit_users' ) ) {
 }
 ```
 
-Désactiver les notifications de mise à jour pour les non-admins
+Désactiver les notifications de mise à jour pour les non-admins :
 
 ```php
 function hide_update_notice_to_all_but_admin_users()
