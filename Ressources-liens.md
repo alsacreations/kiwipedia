@@ -97,7 +97,6 @@ Autres listes de ressources et checklists
 
 ### Typographie, @font-face et polices
 
-- <https://google-webfonts-helper.herokuapp.com/> Télécharger les Google fonts en zip
 - <https://font-display.glitch.me/> Explication de font-display
 - <https://type-scale.com/>
 - <https://www.fontspace.com/> Polices à télécharger et à générer en ligne
