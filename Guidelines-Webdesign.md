@@ -100,7 +100,7 @@ Les éléments à ne pas oublier de faire apparaître dans les wireframes/maquet
 
 Il peut être réalisé au stade des Wireframes ou des Maquettes, et permet de :
 
-- comprendre le parcours utilisateur et tout le flux des liens pour savoir quel est le contenu ciblé. 
+- comprendre le parcours utilisateur et tout le flux des liens pour savoir quel est le contenu ciblé.
 - visualiser les différents états (au survol d’un bouton par exemple), et les différentes animations.
 
 ### Maquette
@@ -144,7 +144,7 @@ Attention : ne pas se fier au rendu des couleurs avec les pipettes des navigateu
 - Composants présents dans la maquette (boîtes, alertes, pagination, navigation, …)
 - Une barre de séparation horizontale : `<hr>` (si présente)
 
-#### Formulaires
+#### Composants de formulaires
 
 - Les états d’avertissement/[erreur](https://medium.com/nextux/forms-need-validation-2ecbccbacea1)/info sur certains éléments (si présents)
 - Les champs obligatoires des formulaires
@@ -262,13 +262,13 @@ L’intégrateur aura à sa charge l’optimisation du poids des assets (notamme
 - [Visual design rules you can safely follow every time](https://anthonyhobday.com/sideprojects/saferules/)
 - [Building Better UI Designs With Layout Grids](https://www.smashingmagazine.com/2017/12/building-better-ui-designs-layout-grids/)
 
-### Parcours utilisateur 
+### Parcours utilisateur
 
-C’est l’ensemble des étapes et interactions qu’un utilisateur peut accomplir ; afin de l'optimiser il est fortement conseillé de : 
+C’est l’ensemble des étapes et interactions qu’un utilisateur peut accomplir ; afin de l'optimiser il est fortement conseillé de :
 
 - Diminuer le nombre d’étapes et d’actions
 - Concevoir un design clair en supprimant les fonctionnalités non essentielles
 - Identifier les cas d'échec
-- Adapter le contenu sur toutes les technologies (mobile, tablette…) 
+- Adapter le contenu sur toutes les technologies (mobile, tablette…)
 
 Le nombre de points de frictions - situations ou interactions qui contribuent à dégrader l'expérience utilisateur et à ralentir son parcours - doit être égal à 0.
