@@ -11,11 +11,10 @@ Sont indiquées **en gras** les étapes prioritaires dans notre processus.
 | Étape                   | Nom                    | Définition                                                                                                                           | Outil préconisé                                         |
 | ----------------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------- |
 | Prospection / Démarrage | **Arborescence**       | Arborescence visuelle qui permet d’identifier les différents modèles de pages                                                        | [Octopus](https://octopus.do/), [miro](https://miro.com/) |
-| Prospection / Démarrage | Maquette d’intention   | Maquette de la Home réalisée pour convaincre un client de nos compétences                                                            | [Figma](https://figma.com/)                             |
 | Design                  | Moodboard              | Planche de tendances. Type de collage qui peut être composé d'images, de texte et d'objets selon le choix de son créateur            | [Whimsical](https://whimsical.com/)                     |
 | Design                  | Zonings                | Zones fonctionnelles, emplacements du contenu (zone emploi, zone blog)                                                               | [Figma](https://figma.com/) voire Octopus               |
 | Design                  | **Wireframes**         | Zonings fil-de-fer avec texte / composants intégrés (ex. zone emploi avec 3 icônes et 2 zones de texte). Aucun design associé.       | [Figma](https://figma.com/)                             |
-| Design                  | Wireframes interactifs | Wireframes avec navigation, actions et animations possibles                                                                          | [Figma](https://figma.com/), [Flow](https://createwithflow.com/) |
+| Design                  | Prototypage, wireframes interactifs | Wireframes avec navigation, actions et animations possibles                                                                          | [Figma](https://figma.com/), [Flow](https://createwithflow.com/) |
 | Design                  | **Maquettes**          | Couche graphique appliquée aux wireframes. Design définitif livrable pour intégration.                                               | [Figma](https://figma.com/)                             |
 | Design / Intégration    | **UI Kit**             | Couleurs utilisées, polices, visuel des composants principaux, images et icônes utilisées. Étape préparatrice à l’intégration        | [Figma](https://figma.com/)                             |
 | Intégration             | Styleguide             | Liste des composants, avec code HTML / CSS / JS associés. Assure la consistance et la maintenance de l’intégration au cours du temps | [Storybook](https://storybook.js.org/)                  |
@@ -102,13 +101,7 @@ Les éléments à ne pas oublier de faire apparaître dans les wireframes/maquet
 Il peut être réalisé au stade des Wireframes ou des Maquettes, et permet de :
 
 - comprendre le parcours utilisateur et tout le flux des liens pour savoir quel est le contenu ciblé. 
-- visualiser les différents états (au survol d’un bouton par exemple), et les différentes animations. 
-
-Ainsi :
-
-- Tous les liens doivent renvoyer vers les bonnes pages.
-- La navigation du menu doit être respectée en fonction de l’arborescence.
-- Les boutons doivent pouvoir s’animer.
+- visualiser les différents états (au survol d’un bouton par exemple), et les différentes animations.
 
 ### Maquette
 
