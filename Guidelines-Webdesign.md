@@ -10,7 +10,7 @@ Sont indiquées **en gras** les étapes prioritaires dans notre processus.
 
 | Étape                   | Nom                    | Définition                                                                                                                           | Outil préconisé                                         |
 | ----------------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------- |
-| Prospection / Démarrage | **Arborescence**       | Arborescence visuelle qui permet d’identifier les différents modèles de pages                                                        | [Octopus](https://octopus.do/)                          |
+| Prospection / Démarrage | **Arborescence**       | Arborescence visuelle qui permet d’identifier les différents modèles de pages                                                        | [Octopus](https://octopus.do/), [miro](https://miro.com/) |
 | Prospection / Démarrage | Maquette d’intention   | Maquette de la Home réalisée pour convaincre un client de nos compétences                                                            | [Figma](https://figma.com/)                             |
 | Design                  | Moodboard              | Planche de tendances. Type de collage qui peut être composé d'images, de texte et d'objets selon le choix de son créateur            | [Whimsical](https://whimsical.com/)                     |
 | Design                  | Zonings                | Zones fonctionnelles, emplacements du contenu (zone emploi, zone blog)                                                               | [Figma](https://figma.com/) voire Octopus               |
@@ -96,6 +96,19 @@ Les éléments à ne pas oublier de faire apparaître dans les wireframes/maquet
     - J'accepte d’être informé•e des bons plans des partenaires de NOM DU CLIENT
     - J'accepte de recevoir la newsletter mensuelle
     - J'accepte les conditions générales d’utilisation (+URL)
+
+### Prototypage
+
+Il peut être réalisé au stade des Wireframes ou des Maquettes, et permet de :
+
+- comprendre le parcours utilisateur et tout le flux des liens pour savoir quel est le contenu ciblé. 
+- visualiser les différents états (au survol d’un bouton par exemple), et les différentes animations. 
+
+Ainsi :
+
+- Tous les liens doivent renvoyer vers les bonnes pages.
+- La navigation du menu doit être respectée en fonction de l’arborescence.
+- Les boutons doivent pouvoir s’animer.
 
 ### Maquette
 
@@ -255,3 +268,14 @@ L’intégrateur aura à sa charge l’optimisation du poids des assets (notamme
 
 - [Visual design rules you can safely follow every time](https://anthonyhobday.com/sideprojects/saferules/)
 - [Building Better UI Designs With Layout Grids](https://www.smashingmagazine.com/2017/12/building-better-ui-designs-layout-grids/)
+
+### Parcours utilisateur 
+
+C’est l’ensemble des étapes et interactions qu’un utilisateur peut accomplir ; afin de l'optimiser il est fortement conseillé de : 
+
+- Diminuer le nombre d’étapes et d’actions
+- Concevoir un design clair en supprimant les fonctionnalités non essentielles
+- Identifier les cas d'échec
+- Adapter le contenu sur toutes les technologies (mobile, tablette…) 
+
+Le nombre de points de frictions - situations ou interactions qui contribuent à dégrader l'expérience utilisateur et à ralentir son parcours - doit être égal à 0.
