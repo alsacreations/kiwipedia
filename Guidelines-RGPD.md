@@ -10,6 +10,7 @@ Guidelines pour respecter au mieux [Le règlement général sur la protection de
 * [CNIL : RGPD : de quoi parle-t-on ?](https://www.cnil.fr/fr/rgpd-de-quoi-parle-t-on)
 * [Wikipédia : Règlement général sur la protection des données](https://fr.wikipedia.org/wiki/R%C3%A8glement_g%C3%A9n%C3%A9ral_sur_la_protection_des_donn%C3%A9es)
 * [2gdpr.com : Check cookies and data transfer for GDPR compliance](https://2gdpr.com/)
+* [Report of the work undertaken by the Cookie Banner Taskforce](https://edpb.europa.eu/system/files/2023-01/edpb_20230118_report_cookie_banner_taskforce_en.pdf) (European Data Protection Board)
 
 ## Droits ⚖️
 
