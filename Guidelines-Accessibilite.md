@@ -280,7 +280,7 @@ Tous les liens doivent avoir un **intitulé explicite**, un lien "vide" n’est 
 Ne pas faire :
 
 ```html
-<a href="URL" class="link-facebook"></a>
+<a href="#" class="link-facebook"></a>
 ```
 
 ```css
@@ -299,7 +299,7 @@ Même en ajoutant un attribut `title="Retrouvez-nous sur Facebook"` sur le lien,
 À faire :
 
 ```html
-<a href="URL" class="link-facebook">
+<a href="#" class="link-facebook">
   <span class="sr-only">Retrouvez-nous sur Facebook</span>
 </a>
 ```
@@ -315,14 +315,20 @@ Même en ajoutant un attribut `title="Retrouvez-nous sur Facebook"` sur le lien,
 
 → dans ce cas, le lecteur d’écran retranscrit bien *"Retrouvez-nous sur Facebook"*.
 
-#### Ouverture dans une nouvelle fenêtre
+#### Ouverture dans une nouvelle fenêtre (lien externe)
 
 Signaler lorsqu’un lien s’ouvre dans une nouvelle fenêtre :
 
 ```html
-<a href="URL" target="_blank" aria-label="Lire l’article (nouvelle fenêtre)">Lire l’article</a>
+<a href="#" target="_blank" aria-label="Lire l’article (nouvelle fenêtre)">Lire l’article</a>
 <!-- ou -->
-<a href="URL" target="_blank" title="Lire l’article (nouvelle fenêtre)">Lire l’article</a>
+<a href="#" target="_blank" title="Lire l’article (nouvelle fenêtre)">Lire l’article</a>
+<!-- ou -->
+<a href="#" target="_blank" title="Lire l’article (nouvelle fenêtre)">Lire l’article 
+    <img src="picto.svg" alt="nouvelle fenêtre">
+    <!-- ou -->
+    <span class="sr-only">nouvelle fenêtre</span>
+</a>
 ```
 
 #### Lien explicite
@@ -683,7 +689,7 @@ Pour éviter cela, il est préférable d’insérer l’attribut `aria-hidden=tr
 Exemple :
 
 ```html
-<a href="URL" class="btn"> <i class="icon-kiwi" aria-hidden="true"></i> KiwiParty </a>
+<a href="#" class="btn"> <i class="icon-kiwi" aria-hidden="true"></i> KiwiParty </a>
 ```
 
 ### Contenu lu mais masqué à l’écran
