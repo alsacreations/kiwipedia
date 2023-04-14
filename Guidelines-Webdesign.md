@@ -128,7 +128,7 @@ L’UI-Kit est un document servant de passerelle entre le designer et l’intég
 
 Attention : ne pas se fier au rendu des couleurs avec les pipettes des navigateurs ou d’InVision.
 
-- Couleurs utilisées (textes, background, décorations), ainsi que couleurs
+- Couleurs utilisées (textes, background, décorations), ainsi que couleurs d'interaction
   - hover (survol)
   - focus (pour les éléments pouvant recevoir le focus, liens, boutons, input)
   - active (pour les liens)
@@ -140,7 +140,7 @@ Attention : ne pas se fier au rendu des couleurs avec les pipettes des navigateu
 
 #### Éléments
 
-- Les éléments HTML “classiques” (titres, paragraphes, listes, boutons, formulaires, tableaux)
+- Les éléments HTML “classiques” (titres, paragraphes, listes, liens, [liens externes](Guidelines-Accessibilite.md#ouverture-dans-une-nouvelle-fenêtre), boutons, formulaires, tableaux)
 - Composants présents dans la maquette (boîtes, alertes, pagination, navigation, …)
 - Une barre de séparation horizontale : `<hr>` (si présente)
 
@@ -150,12 +150,11 @@ Attention : ne pas se fier au rendu des couleurs avec les pipettes des navigateu
 - Les champs obligatoires des formulaires
 - Les champs disabled des formulaires
 - Les messages d’erreur des formulaires
-- Les [boutons primaires et secondaires](https://uxplanet.org/primary-secondary-action-buttons-c16df9b36150) (un exemple de bouton qui n'est pas un submit, par exemple un "annuler")
+- Les [boutons primaires et secondaires](https://uxplanet.org/primary-secondary-action-buttons-c16df9b36150) (un exemple de bouton qui n'est pas un _submit_, par exemple un "annuler")
 - Les cases à cocher button/checkbox (avec leurs différents états)
 
 #### Interactions utilisateur
 
-- Les états de survol / focus (liens, formulaires, boutons, etc.)
 - Les exemples de transitions ou animations (faire des liens vers des démos)
 - Les Liens d’évitement masqués au départ et déclenchés avec la touche Tab (cf. nos [Guidelines HTML](https://www.alsacreations.com/outils/guidelines/Guidelines-HTML.md))
 
@@ -165,7 +164,6 @@ Attention : ne pas se fier au rendu des couleurs avec les pipettes des navigateu
 - Liens vers les banques d’images utilisées
 - La compression et l’optimisation des SVG/fonts est à la charge de l’intégrateur
 - La compression et l’optimisation des Bitmap (Jpeg, png, webp, avif) est à la charge du/de la webdesigneur/euse
-- Option : un style de lien externe, par exemple avec une icône “↗” ([accessibilité](Guidelines-Accessibilite.md#ouverture-dans-une-nouvelle-fenêtre))
 
 ## Validation des livrables
 
@@ -233,7 +231,7 @@ L’intégrateur aura à sa charge l’optimisation du poids des assets (notamme
 - Clarté du/des textes/du langage
 - Mise en contexte des "Call To Action"
 - Boutons descriptifs (pas de “cliquez ici”)
-- Indiquer l’ouverture d’un lien dans une nouvelle fenêtre (“ce lien s’ouvrira dans une nouvelle fenêtre”)
+- Indiquer [l’ouverture d’un lien dans une nouvelle fenêtre](Guidelines-Accessibilite.md#ouverture-dans-une-nouvelle-fenêtre)
 - Proposer différents médias de contact (téléphone, mail)
 - Pas de textes trop longs (utiliser les titres, segmenter, aérer, intégrer des images…)
 - Bon espacement des lignes de texte
