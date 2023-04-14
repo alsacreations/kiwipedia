@@ -165,7 +165,7 @@ Attention : ne pas se fier au rendu des couleurs avec les pipettes des navigateu
 - Liens vers les banques d’images utilisées
 - La compression et l’optimisation des SVG/fonts est à la charge de l’intégrateur
 - La compression et l’optimisation des Bitmap (Jpeg, png, webp, avif) est à la charge du/de la webdesigneur/euse
-- Option : un style de lien externe, par exemple avec une icône “↗” (accessibilité)
+- Option : un style de lien externe, par exemple avec une icône “↗” ([accessibilité](Guidelines-Accessibilite.md#ouverture-dans-une-nouvelle-fenêtre))
 
 ## Validation des livrables
 
