@@ -8,7 +8,7 @@ Bonnes pratiques de Performance Web appliquées par l'agence web [Alsacreations.
 
 ## Bonnes pratiques HTTP
 
-Valable pour HTTP/1.x, plus forcément pour HTTP/2 et HTTP/2 qui permettent le multiplexing et diverses optimisations natives.
+Valable pour HTTP/1.x, plus forcément pour HTTP/2 et HTTP/3 qui permettent le multiplexing et diverses optimisations natives.
 
 - Minifier les ressources texte (css, js, html)
   - Vue/Nuxt/React : déjà optimisé de base
@@ -21,22 +21,13 @@ Valable pour HTTP/1.x, plus forcément pour HTTP/2 et HTTP/2 qui permettent le m
 
 ## Core Web Vitals
 
-Les [Core Web Vitals](https://web.dev/vitals/) regroupent des mesures de performance et d'expérience utilisateur. **Google considère que ces indices sont essentiels pour la performance et l'expérience utilisateur** et les intègre dans son algorithme de Ranking depuis 2021.
+Les [Core Web Vitals](https://web.dev/vitals/) regroupent des mesures de performance et d'expérience utilisateur. Google considère que ces indices sont essentiels pour la performance et l'expérience utilisateur et les intègre dans son algorithme de Ranking depuis 2021.
 
 Les métriques mesurées sont :
 
 - **Largest Contentful Paint (LCP)** : mesure la vitesse de chargement de page. L'indice porte sur le temps de chargement et d'affichage de la plus grande image ou du plus grand bloc de contenu visible dans le viewport. Le critère est "Good" lorsque ce temps est inférieur ou égal à 2.5 secondes.
 - **First Input Delay (FID)** : mesure l'interactivité. Calcule le temps nécessaire au navigateur pour offrir une première interaction avec le visiteur (clic sur un lien, un bouton, interagir avec un formulaire) L'expérience est considérée réussie si ce délai est inférieur ou égal à 100 millisecondes.
 - **Cumulative Layout Shift (CLS)** : mesure la stabilité visuelle (l'ensemble des repositionnements, redimensionnements, décalages intempestifs des contenus pendant la durée de vie d'une page web). La métrique mesure la quantité de contenu qui se déplace, ainsi que la distance de déplacement. Le CLS doit être égal ou inférieur à 0.1.
-
-Les sections suivantes de ce document indiquent comment améliorer les Web Core Vitals dans le détail&nbsp;:
-
-- Bonnes pratiques générales
-- Modes de positionnement CSS
-- Aides au pré-chargement de ressources
-- Images
-- Polices
-- Icônes
 
 Voir aussi [Our top Core Web Vitals recommendations for 2023](https://web.dev/top-cwv-2023/)
 
@@ -55,28 +46,28 @@ Plus de détails sur ces généralités dans les parties détaillées suivantes.
 
 ## Modes de positionnement CSS
 
-Les modes de positionnement CSS ne sont pas tous égaux en ce qui concerne les Layout Shifts.
+Les modes de positionnement CSS ne sont pas tous égaux en ce qui concerne les [Layout Shifts](https://www.paris-web.fr/2022/conferences/tu-fais-du-web-et-tu-ne-connais-pas-les-layout-shifts-nan-mais.php).
 
-- **Flexbox :** Conçu pour s'adapter aux contenus. Designé pour être fluide par défaut. Plus sensible aux Layout Shifts
-- **Grid Layout :** Conçu pour englober les contenus. Grid Layout est designé pour être rigide par défaut. Globalement moins sensible aux Layout Shifts.
+- **Flexbox :** Conçu pour s'adapter aux contenus. Designé pour être fluide par défaut. Plus sensible aux *Layout Shifts*.
+- **Grid Layout :** Conçu pour englober les contenus. Grid Layout est designé pour être rigide par défaut. Globalement moins sensible aux *Layout Shifts*.
 
 De manière générale :
 
-- Nous utilisons Grid Layout en priorité tant que possible, et Flexbox si nécessaire.
-- Nous tentons de limiter les valeurs automatiques, dépendantes du contenu (`auto`, `flex-grow`, `flex-shrink`, `1fr`, `min-content`, `max-content`, `stretch`)
+- Utiliser *Grid Layout* en priorité tant que possible, et *Flexbox* si nécessaire.
+- Limiter les valeurs automatiques, dépendantes du contenu (`auto`, `flex-grow`, `flex-shrink`, `1fr`, `min-content`, `max-content`, `stretch`)
 - `grid-template-columns: 1fr 1fr 1fr;` est conseillé par rapport à `grid-auto-flow: column;`
 - `flex: 1;` est conseillé par rapport à `flex-grow: 1;`
 - `flex: 1; min-width: 0` est conseillé par rapport à `flex: 1;`
-- `grid-template-columns: minmax(0,1fr)` est conseillé par rapport à `grid-template-columns: 1fr`
+- `grid-template-columns: minmax(0,1fr);` est conseillé par rapport à `grid-template-columns: 1fr;`
 
 Plus d'info : <https://http203-playlist.netlify.app/videos/avoiding-layout-shift-by-putting-the-css-in-charge/>​
 
 ## Aides au pré-chargement de ressources
 
-Le parseur HTML du navigateur est bloqué par deux types de ressources :
+Le parseur HTML du navigateur est souvent bloqué par deux types de ressources :
 
-- les éléments `<link>`
-- les éléments `<script>` qui ne disposent pas d'attributs `async` ni `defer`
+- les éléments `<link>` qui établissent notamment un lien vers une feuille de styles.
+- les éléments `<script>` qui ne disposent pas d'attributs `async` ni `defer`.
 
 Depuis 2008, un second mécanisme parallèle entre en jeu sur l'ensemble des navigateurs : celui du **"Preload Scanner"**. Ce second parseur agit lorsque le parseur HTML est bloqué sur une ressource et pré-charge les ressources suivantes indiquées dans le markup HTML.
 
@@ -88,10 +79,10 @@ Ce mécanisme est automatique, mais il est possible de l'influencer en proposant
 
 Ces attributs sont liés au chargement des scripts. Dans les deux cas, ces attributs rendent le chargement asynchrone et ne bloquent pas le paseur HTML&nbsp;:
 
-- `async` est exécuté dès que le navigateur en a la possibilité, les ressources sont potentiellement chargées dans n'importe quel ordre.
+- `async` est exécuté dès que le navigateur en a la possibilité, les différentes ressources en *async* sont potentiellement chargées dans n'importe quel ordre.
 - `defer` est exécuté lorsque tout le DOM est parsé, les ressources sont chargées dans l'ordre dans lequel elles sont placées dans le DOM.
 
-`async` est prioritaire sur `defer`.
+`async` est "prioritaire" sur `defer`.
 
 ```html
 <script async src="script.js">
@@ -178,10 +169,8 @@ Pour en savoir plus sur l'usage de ces attributs : [Optimisation des pré-charge
 
 L'attribut `loading` permet de ne charger que les images situées au dessus de la ligne de flottaison. Les autres images ne sont alors chargées que lorsque cela devient nécessaire, au fur et à mesure que l'utilisateur scrolle (défile). On améliore ainsi le temps de chargement initial de la page.
 
-Les valeurs de `loading` sont les suivantes :
-
-- `eager` : l'image est chargée immédiatement, qu'elle soit située dans ou hors de la fenêtre visible (valeur par défaut),
-- `lazy` : le chargement est retardé jusqu'à ce que l'usager scrolle et s'approche du bas de la fenêtre du navigateur.
+- `loading="eager"` : l'image est chargée immédiatement, qu'elle soit située dans ou hors de la fenêtre visible (valeur par défaut).
+- `loading="lazy"` : le chargement est retardé jusqu'à ce que l'usager scrolle et s'approche du bas de la fenêtre du navigateur.
 
 ```html
 <img src="image.webp" loading="lazy" width="" height="" alt="">
@@ -195,8 +184,6 @@ Quelques ressources :
 
 ## Images
 
-Voici nos préconisations concernant les performances des images&nbsp;:
-
 - Toujours indiquer les dimensions initiales de l'image (`width` et `height`) dans le HTML pour que le navigateur puisse calculer le **ratio** et éviter des Layout Shifts.
 - Utiliser des formats d'images modernes et plus légers (Webp, Avif) à condition que le processus d'encodage/décodage soit lui-même rapide.
 - `max-width: 100%` pour que l'image s'adapte en largeur à son conteneur (images fluides).
@@ -207,7 +194,7 @@ Voici nos préconisations concernant les performances des images&nbsp;:
 
 ```html
 <!-- Dimensions initiales de l'image -->
-<img src="(chemin)" alt="" width="2000" height="1000">
+<img src="image.webp" alt="" width="2000" height="1000">
 ```
 
 ```css
@@ -234,16 +221,16 @@ img {
 
 ## Polices
 
-Autant que possible, privilégier le chargement de polices légères et respectueuses des performances, indiquées notamment sur [Google Web Fonts](http://www.google.com/webfonts/v2). Limiter le nombre de ces polices à 2, voire 3 grand maximum.
+Autant que possible, privilégier le chargement de polices légères et respectueuses des performances. Limiter le nombre de ces polices à 2, voire 3 grand maximum.
 
 ### Recommandations générales
 
-- Privilégier la police système `system-ui` pour les textes de contenus (raison : performance + UX + Layout Shifts)
-- Privilégier le format `.woff2` (et `.woff` en alternative)
+- Privilégier la police système `system-ui` pour les textes de contenus (raison : performance + UX + Layout Shifts).
+- Privilégier le format `.woff2` (et `.woff` en alternative).
 - Limiter à 2 ou 3 fichiers de police au maximum (regular, bold, italic), sinon préférer une [Variable Font](https://v-fonts.com/)
 - Utiliser la directive `<link rel="preload">` pour charger les polices de manière asynchrone.
 - Ajouter `font-display: swap;` au sein de la règle `@font-face` pour éviter les effets de FOIT. Si la police est pré-chargée, `font-display: optional;` est alors recommandé.
-- Héberger la police sur son propre serveur (voir l'outil "Google Webfont Helper")
+- Héberger la police sur son propre serveur (voir l'outil "Google Webfont Helper").
 
 ### Code recommandé
 
@@ -256,7 +243,7 @@ Voici un exemple de chargement de police conseillé (cas de deux fichiers de pol
       type="font/woff2" crossorigin="anonymous">
 ```
 
-**⚠️ Noter ci-dessous que le nom de la font-family est toujours le même ("kiwi") et qu'il ne faut pas confondre avec le nom du fichier**
+⚠️ Noter ci-dessous que le nom de la font-family est toujours le même ("kiwi") et qu'il ne faut pas confondre avec le nom du fichier.
 
 ```css
 @font-­face {
@@ -277,16 +264,14 @@ Voici un exemple de chargement de police conseillé (cas de deux fichiers de pol
 }
 ```
 
-### Ressource : Google Webfont Helper
+### Google Webfont Helper
 
-L'application web [Google Webfont Helper](https://gwfh.mranftl.com/fonts) est une excellente ressource permettant d'optimiser finement les fichiers :
+L'application web [Google Webfont Helper](https://gwfh.mranftl.com/fonts) permet d'optimiser finement les fichiers, il est conseillé de récupérer les fontes via cette ressource si cela est possible :
 
 - choisir le bon subset (latin, latin-ext, etc.)
 - choisir les styles nécessaires au projet (normal, bold, italic, etc.)
 - copier le code CSS prévu pour les navigateurs modernes (woff2 et woff)
 - télécharger les fontes de Google Fonts aux formats woff2 et woff
-
-Il est conseillé de récupérer les fontes via cette ressource si cela est possible.
 
 ## Icônes
 
@@ -314,3 +299,5 @@ Voir le document spécifique des [Guidelines Icônes](Guidelines-Icones.md).
 ## Cache serveur
 
 - WordPress : utiliser une extension de cache, voir [Guidelines WordPress](Guidelines-WordPress.md)
+- PHP : [Tutoriel : Comprendre et utiliser un système de cache PHP](http://sdz.tdct.org/sdz/comprendre-et-utiliser-un-systeme-de-cache-php.html) ou [PHP Cache](https://www.php-cache.com/)
+- [Varnish](https://varnish-cache.org/)
