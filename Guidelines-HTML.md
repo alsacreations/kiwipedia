@@ -165,6 +165,13 @@ Chaque page doit comprendre un élément de titre de premier niveau `<h1>` et la
 
 Une attention toute particulière sera apportée à l’accessibilité des documents afin que chaque utilisateur, quelle que soit sa défaillance, puisse avoir plein accès aux contenus proposés. Voir aussi [Guidelines Accessibilité](Guidelines-Accessibilite.md).
 
+## Formulaires
+
+Privilégier au maximum la conception propre et ergonomique de formulaires avec les champs et éléments dédiés :
+
+- Les étiquettes `<label>` reliées à chaque `<input>`, `<textarea>`, etc. grâce aux attributs `for`/`id`.
+- L'attribut [autocomplete](https://web.dev/learn/forms/autofill/) pour faciliter la saisie.
+
 ## Microdata
 
 Dans la mesure du possible, et selon le type de site, les microformats les plus courants seront ajoutés.
