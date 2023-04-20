@@ -226,6 +226,12 @@ Dans le cas où on utilise un thème acheté et que les fichiers PHP ne sont pas
 - [Modifier le logo](https://wpmarmite.com/snippet/modifier-logo-connexion-wordpress/) sur la page de connexion admin.
 - [Retirer l'accès aux pages inutiles](https://wpthinker.com/hide-wordpress-admin-menu-items/) selon le rôle.
 
+## Accessibilité
+
+- [Vidéos de WordPress Accessibility Day](https://www.youtube.com/channel/UCes9XCUZd51CAigbBEGlfNg)
+- [Articles d'Access42 autour de WordPress](https://access42.net/wordpress)
+- [WordPress : Accessibilité](https://fr.wordpress.org/about/accessibility/)
+
 ## Extensions
 
 👉 Installation : utiliser composer avec le nom du plugin, préfixé par “wpackagist-plugin”, par exemple `composer require wpackagist-plugin/wp-migrate-db`
