@@ -456,3 +456,7 @@ Tâches :
 Optionnel : démarrage des deux en même temps: `npm run devstart`
 
 Si cross-env n'est pas installé `npm install cross-env -g`
+
+## Autres ressources
+
+- Beaucoup de cours chez [Capitaine WP](https://capitainewp.io/)
