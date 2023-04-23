@@ -199,6 +199,10 @@ require_once 'includes/inc-pages-functions-updated.php';
 require_once 'includes/cnrs-functions.php';
 ```
 
+###
+
+L'[API Customize](https://developer.wordpress.org/themes/customize-api/) permet d'ajouter des options de personnaliastion au thème, apparaissant dans l'interface d'administration, notamment avec le hook [customize_register](https://developer.wordpress.org/reference/hooks/customize_register/).
+
 ### Shortcodes
 
 Lors de la création d’un [shortcode](https://codex.wordpress.org/fr:Shortcode) avec paramètres, il est conseillé de ne plus utiliser la fonction extract (voir <https://core.trac.wordpress.org/ticket/22400>). Tout shortcode ajouté doit faire l’objet d’un guide écrit pour l’utilisateur final.
