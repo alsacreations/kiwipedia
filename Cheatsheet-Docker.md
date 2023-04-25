@@ -91,6 +91,7 @@ Liste non exhaustive, voir <https://docs.docker.com/engine/reference/builder/>.
 * <http://docs.projectatomic.io/container-best-practices/>
 * <https://quickref.me/docker>
 * <https://enix.io/fr/blog/cherie-j-ai-retreci-docker-part1/>
+* <https://code.visualstudio.com/remote/advancedcontainers/develop-remote-host#_connect-using-docker-contexts> Développer en remote avec vscode dans un container
 
 ---
 
