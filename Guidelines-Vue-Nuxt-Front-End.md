@@ -111,9 +111,9 @@ Avec Nuxt l'environnement peut être :
 - `development` en mode `npm run dev`
 - `production` en mode `npm run build` et `npm run generate`
 
-- dans les composants ou dans nuxt.config.ts on pourra utiliser `process.env.NODE_ENV` par exemple `if (process.env.NODE_ENV === 'development')`
+Dans les composants ou dans nuxt.config.ts on pourra utiliser `process.env.NODE_ENV` par exemple `if (process.env.NODE_ENV === 'development')`. Avec Vite, on utilise `import.meta.env.*`
 
-Voir aussi <https://stackoverflow.com/questions/55406055/toggle-between-multiple-env-files-like-env-development-with-node-js>.
+Voir aussi [Environment Variables in JavaScript: process.env](https://dmitripavlutin.com/environment-variables-javascript/) et <https://stackoverflow.com/questions/55406055/toggle-between-multiple-env-files-like-env-development-with-node-js>.
 
 ### config.{js,ts}
 
