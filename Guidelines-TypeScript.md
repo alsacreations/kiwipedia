@@ -6,7 +6,7 @@ Bonnes pratiques TypeScript appliquées par l'agence web [Alsacreations.fr](http
 
 ## Généralités
 
-Les règles des guidelines JavaScript s'appliquent également ici.
+Les règles des [guidelines JavaScript](Guidelines-JavaScript.md) s'appliquent également ici.
 
 ### Syntaxe et nommage
 
@@ -14,9 +14,9 @@ Les règles des guidelines JavaScript s'appliquent également ici.
 
 ## Types et interfaces
 
-Il conviendra de d'utiliser des types plutôt que d'interfaces **quand cela est possible**, cela permet de réduire au maximum l'utilisation de deux mots clés différents sachant que `type` est plus versatile.
+Utiliser des types plutôt que des interfaces **quand cela est possible** pour réduire au maximum l'utilisation de deux mots clés différents, sachant que `type` est plus versatile.
 
-Il est également requis de commencer chaque type par une majuscule.
+Commencer chaque type par une majuscule.
 
 ```ts
 type MaybeDate = Date | String
@@ -32,9 +32,11 @@ type GetPost = () => Promise<Post>
 
 ## Fonctions
 
-Il faudra obligatoirement typer les paramètres d'une fonction, et au **maximum du possible** typer le retour des fonctions.
+Typer les paramètres d'une fonction, et au **maximum du possible** typer le retour des fonctions.
 
-Il conviendra également d'utiliser JSDoc pour expliquer le role de la fonction et de ses paramètres. Il ne faudra cependant pas indiquer les types avec JSDoc mais TS uniquement.
+Lire [TypeScript Function Types: A Beginner's Guide](https://dmitripavlutin.com/typescript-function-type/)
+
+Utiliser JSDoc pour expliquer le role de la fonction et de ses paramètres. Il ne faudra cependant pas indiquer les types avec JSDoc mais TS uniquement.
 
 ```ts
 /**
@@ -56,9 +58,7 @@ const obj = {
 }
 ```
 
-Il faut également écrire les fonctions de manière à ce qu'elles soient le plus "type safe".
-
-EX:
+Écrire les fonctions de manière à ce qu'elles soient le plus "type safe".
 
 ```ts
 type ExampleFn = <
@@ -67,4 +67,4 @@ type ExampleFn = <
 >(obj: T, key: K) => T[K]
 ```
 
-De cette façon il n'y a aucune marge d'erreur possible et `K` est obligé d'exister dans les clés de `T` (en plus de proposer une autocomplétion).
+De cette façon, il n'y a aucune marge d'erreur possible et `K` est obligé d'exister dans les clés de `T` (en plus de proposer une autocomplétion).
