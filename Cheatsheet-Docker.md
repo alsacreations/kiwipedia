@@ -33,6 +33,10 @@ Voir aussi <https://www.alsacreations.com/tuto/lire/1836-Docker--decouverte-et-e
 * Informations techniques : `docker inspect <nomducontainer>`
 * Différences appliquées : `docker diff <nomducontainer>`
 
+### Ignorer des fichiers
+
+Utiliser un fichier [.dockerignore](https://shisho.dev/blog/posts/how-to-use-dockerignore/) pour exclure fichiers et dossiers lors d'une étape de _build_ (notamment commandes ADD, COPY).
+
 ### Sauvetage d'un volume égaré
 
 `docker volume ls -f 'dangling=true'` pour lister les volumes détachés et leur hash, `docker volume inspect <volume_hash>` pour localiser l'emplacement sur le disque (par exemple `/var/lib/docker/volumes/...`), examiner pour chacun le dossier `/_data`
