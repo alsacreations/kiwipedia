@@ -44,10 +44,9 @@ On ne versionne **pas** :
 
 ## Thème
 
-- 👉 On privilégie de démarrer avec un starter thème épuré <https://underscores.me/> ou <https://github.com/timber/starter-theme> lorsque l’on utilise Timber.
-- 👉 Supprimer les autres thèmes livrés par défaut.
-- Il est plus rapide de développer le thème dans WordPress plutôt que de passer par une phase d’intégration statique.
-- On évite d’utiliser un thème acheté car cela sous-entend qu’on ne pourra pas tout mettre en place dans ces guidelines et qu’on ne maîtrise pas son contenu (code, extensions, évolutions). Si toutefois cela arrive, utiliser le principe de [thème enfant](https://developer.wordpress.org/themes/advanced-topics/child-themes/) pour ne pas modifier le thème parent, qui pourrait être mis à jour par la suite.
+- On privilégie de démarrer avec un starter thème épuré <https://underscores.me/> ou <https://github.com/timber/starter-theme> lorsque l’on utilise Timber.
+- Supprimer les autres thèmes livrés par défaut.
+- On évite d’utiliser un thème acheté car cela implique qu’on ne pourra pas tout mettre en place dans ces guidelines et qu’on ne maîtrise pas son contenu (code, extensions, évolutions). Si toutefois cela arrive, utiliser le principe de [thème enfant](https://developer.wordpress.org/themes/advanced-topics/child-themes/) pour ne pas modifier le thème parent, qui pourrait être mis à jour par la suite.
 
 ### Intégration du thème
 
@@ -165,15 +164,7 @@ if ( ! function_exists( 'nomdutheme_nom_de_la_fonction' )  {
 add_filter('filter_name', 'nomdutheme_nom_de_la_fonction');
 ```
 
-👉 Idéalement le fichier `functions.php` du thème inclut d'autres scripts PHP dédiés pour organiser le code :
-
-- actions.php
-- filters.php
-- menu.php
-- theme-setup.php
-- etc.
-
-Exemple de fichier `functions.php`
+👉 Idéalement le fichier `functions.php` du thème inclut d'autres scripts PHP dédiés pour organiser le code (ex : actions.php, filters.php, menu.php, theme-setup.php, etc). Exemple de fichier `functions.php` :
 
 ```php
 /**
@@ -199,15 +190,23 @@ require_once 'includes/inc-pages-functions-updated.php';
 require_once 'includes/cnrs-functions.php';
 ```
 
-###
+### Personnalisation du thème
 
-L'[API Customize](https://developer.wordpress.org/themes/customize-api/) permet d'ajouter des options de personnaliastion au thème, apparaissant dans l'interface d'administration, notamment avec le hook [customize_register](https://developer.wordpress.org/reference/hooks/customize_register/).
+L'[API Customize](https://developer.wordpress.org/themes/customize-api/) permet d'ajouter des options de personnalisation au thème, apparaissant dans l'interface d'administration, notamment avec le hook [customize_register](https://developer.wordpress.org/reference/hooks/customize_register/).
+
+### Menus de navigation
+
+On se repose sur un [Bloc Navigation](https://fr.wordpress.org/support/article/navigation-block/)
+ou
+la fonctionnalité classique native de [menu éditable (dans Apparence > Menus)](https://wordpress.org/documentation/article/appearance-menus-screen/) en réservant un emplacement.
+
+🔖 Voir <https://wpmarmite.com/menu-wordpress/>
 
 ### Shortcodes
 
-Lors de la création d’un [shortcode](https://codex.wordpress.org/fr:Shortcode) avec paramètres, il est conseillé de ne plus utiliser la fonction extract (voir <https://core.trac.wordpress.org/ticket/22400>). Tout shortcode ajouté doit faire l’objet d’un guide écrit pour l’utilisateur final.
+Lors de la création d’un [shortcode](https://codex.wordpress.org/fr:Shortcode) avec paramètres, il est conseillé de ne plus utiliser la fonction extract (voir <https://core.trac.wordpress.org/ticket/22400>).
 
-Voir <https://capitainewp.io/formations/developper-theme-wordpress/shortcode/> et <https://kinsta.com/fr/blog/shortcodes-wordpress/>
+🔖 Voir <https://capitainewp.io/formations/developper-theme-wordpress/shortcode/> et <https://kinsta.com/fr/blog/shortcodes-wordpress/>
 
 ### Gutenberg / éditeur wysiwyg
 
@@ -238,16 +237,12 @@ Dans le cas où on utilise un thème acheté et que les fichiers PHP ne sont pas
 
 ## Extensions
 
-👉 Installation : utiliser composer avec le nom du plugin, préfixé par “wpackagist-plugin”, par exemple `composer require wpackagist-plugin/wp-migrate-db`
+👉 Installation : utiliser `composer` avec le nom du plugin, préfixé par “wpackagist-plugin”, par exemple `composer require wpackagist-plugin/wp-migrate-db`
 
 👉 Toute fonctionnalité développée sur-mesure pour le projet se fait dans le cadre d’une extension propre à activer/désactiver.
 
 - Documentation officielle : [Plugin Handbook](https://developer.wordpress.org/plugins/)
-
-Modèles d’extension à utiliser
-
-- [WordPress Plugin Template](https://github.com/hlashbrooke/WordPress-Plugin-Template)
-- [WordPress Plugin Boilerplate Generator](https://wppb.me/)
+- Modèles : [WordPress Plugin Template](https://github.com/hlashbrooke/WordPress-Plugin-Template) ou [WordPress Plugin Boilerplate Generator](https://wppb.me/)
 
 ### Obligatoires
 
@@ -422,8 +417,6 @@ mv composer.phar /usr/local/bin/composer
 ```
 
 ### Installer WordPlate avec Composer
-
-WordPlate <https://github.com/wordplate/wordplate>
 
 ```sh
 composer create-project --prefer-dist wordplate/wordplate superprojet
