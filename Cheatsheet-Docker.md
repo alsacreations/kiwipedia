@@ -22,6 +22,14 @@ Voir aussi <https://www.alsacreations.com/tuto/lire/1836-Docker--decouverte-et-e
 * Redémarrer tous les conteneurs arrêtés `docker restart $(docker ps -a -q)`
 * Renommer une image `docker tag <old> <new>`
 
+### Lancer un shell minimaliste
+
+Télécharge et exécute immédiatement un shell dans un container "alpine" super-léger :
+
+```sh
+docker run -it alpine /bin/sh
+```
+
 ### Inspection
 
 * Savoir quel dossier a initialisé un container `docker inspect <nomducontainer> | grep "com.docker.compose.project.working_dir"`
