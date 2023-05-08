@@ -305,6 +305,7 @@ On utilise des CPT pour toute entité de données allant au-delà des Pages et P
 - <https://wpchannel.com/wordpress/tutoriels-wordpress/creer-custom-post-types-wordpress/>
 - <https://salferrarello.com/cpt-best-practices/>
 - <https://kinsta.com/fr/blog/types-publications-personnalises-wordpress/>
+- Générateur de CPT en plugin <https://wpturbo.dev/generators/post-type/>
 
 ### ACF (Advanced Custom Fields)
 
