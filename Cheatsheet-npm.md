@@ -34,3 +34,7 @@
 ## Packages globaux utiles
 
 * `npm install -g serve` puis `serve` dans un dossier local pour instancier un mini serveur HTTP
+
+## Sécurité
+
+Sous Windows 11, le système peut refuser d'exécuter `pnpm`, dans ce cas on peut assouplir les restrictions avec un shell administrateur `Set-ExecutionPolicy Unrestricted`.
