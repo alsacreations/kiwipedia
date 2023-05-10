@@ -196,3 +196,9 @@ Voir aussi sur le dépôt Github [https://github.com/alsacreations/pepin](https:
 - Simplifier au maximum le code en découpant par actions simples.
 
 Ne pas hésiter à utiliser des plugins éprouvés mais toujours tester s’ils peuvent être multiples sur une même page.
+
+## Ressources
+
+- <https://developer.mozilla.org/fr/docs/Learn/Getting_started_with_the_web/JavaScript_basics>
+- <https://grafikart.fr/tutoriels/javascript>
+- <https://eloquentjavascript.net/>
