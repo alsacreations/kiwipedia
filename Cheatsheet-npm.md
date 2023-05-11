@@ -38,3 +38,7 @@
 ## Sécurité
 
 Sous Windows 11, le système peut refuser d'exécuter `pnpm`, dans ce cas on peut assouplir les restrictions avec un shell administrateur `Set-ExecutionPolicy Unrestricted`.
+
+## Versions de Node
+
+Utiliser [nvm linux/macos](https://github.com/nvm-sh/nvm) / [nvm windows](https://github.com/coreybutler/nvm-windows) avec les commandes `nvm install 18.14.2` puis `nvm use 18.14.2`
