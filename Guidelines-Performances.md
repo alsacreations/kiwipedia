@@ -296,8 +296,9 @@ Voir le document spécifique des [Guidelines Icônes](Guidelines-Icones.md).
 - <https://browserdiet.com/>
 - <https://perf.rocks/>
 
-## Cache serveur
+## Performance côté serveur (back-end) et cache
 
 - WordPress : utiliser une extension de cache, voir [Guidelines WordPress](Guidelines-WordPress.md)
 - PHP : [Tutoriel : Comprendre et utiliser un système de cache PHP](http://sdz.tdct.org/sdz/comprendre-et-utiliser-un-systeme-de-cache-php.html) ou [PHP Cache](https://www.php-cache.com/)
 - [Varnish](https://varnish-cache.org/)
+- [k6](https://k6.io/) pour les tests de charge
