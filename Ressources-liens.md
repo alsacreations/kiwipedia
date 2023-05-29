@@ -751,6 +751,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 ## Documents / Office
 
+- <https://github.com/24eme/signaturepdf> Signature/tampon de PDF
 - <https://kinopio.club> Brainstorming / mindmap
 - <https://www.markdowntutorial.com/fr/> Apprendre markdown
 
@@ -768,6 +769,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 ## CMS et outils headless/API
 
 - <https://wordpress.org/>
+- <https://directus.io/>
 - <https://strapi.io/> Strapi
 - <https://github.com/strapi/awesome-strapi> Ressources Strapi
 
