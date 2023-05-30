@@ -10,8 +10,8 @@ On utilise :
 
 - [Composer](https://getcomposer.org/) pour installer WordPress et ses extensions.
 - [WordPlate](https://github.com/wordplate/wordplate) qui fonctionne avec [Vite](https://github.com/vitejs/vite).
-- [Tailwind](https://github.com/timber/timber) en tant que framework CSS (facultatif).
-- [Timber](https://github.com/timber/timber) pour la syntaxe Twig dans les templates (facultatif).
+- [Tailwind](https://github.com/timber/timber) en tant que framework CSS (optionnel).
+- [Timber](https://github.com/timber/timber) pour la syntaxe Twig dans les templates (optionnel).
 
 ## Environnement de développement
 
@@ -33,12 +33,13 @@ On versionne les fichiers :
 - les fichiers de configuration
 - les fichiers de traduction du thème (dossier /languages) ou de l’extension (dossier de l’extension)
 
-On ne versionne **pas** :
+On ne versionne **pas** (voir fichiers .gitignore) :
 
 - `.env` (sauf exception)
-- WordPress lui-même (car installé/mis à jour par composer)
-- les extensions tierces (car installé/mis à jour par composer)
-- les fichiers uploads (stockés à part), update et vendor
+- le dossier public/wordpress (car installé/mis à jour par composer)
+- les extensions tierces (car installées/mises à jour par composer)
+- les dossiers public/uploads/ (stockés à part car binaires occupant beaucoup de place), public/upgrade/, vendor/
+- les thèmes installés "par défaut" (_Twenty*_)
 
 👉 Le fichier `README.md` à la racine du projet doit contenir toutes les informations pour prendre en main le développement et ré-installer le site rapidement en production.
 
@@ -64,11 +65,11 @@ Avec [Vite](https://github.com/vitejs/vite) (présent dans WordPlate)
 
 #### Moteur de template
 
-[Timber](https://www.alsacreations.com/tuto/lire/1813-Timber-pourquoi-ecrire-du-Twig-dans-WordPress-.html) (présent dans notre structure-type avec Docker)
+🔖 [Timber](https://www.alsacreations.com/tuto/lire/1813-Timber-pourquoi-ecrire-du-Twig-dans-WordPress-.html) (optionnel, présent dans notre structure-type avec Docker)
 
 #### Framework CSS
 
-On privilégie, dans cet ordre, les frameworks CSS suivants :
+On privilégie, dans cet ordre et **seulement s'il y en a besoin** (sinon Sass), les frameworks CSS suivants :
 
 - [TailwindCSS](https://tailwindcss.com/) (couplé à un mini-fichier reset personnel “alsa-TW-Reset”) (pour la configuration voir [Guidelines Tailwind](Guidelines-Tailwind.md))
   - <https://github.com/cjkoepke/wp-tailwind>
@@ -116,39 +117,39 @@ Voir aussi
 La [structure standard](https://developer.wordpress.org/themes/basics/organizing-theme-files/) est :
 
 ```text
-assets (dir)
-      - css (dir)
-      - images (dir)
-      - js (dir)
-inc (dir)
-template-parts (dir)
-      - footer (dir)
-      - header (dir)
-      - navigation (dir)
-      - page (dir)
-      - post (dir)
-404.php
-archive.php
-comments.php
-footer.php
-front-page.php
-functions.php
-header.php
-index.php
-page.php
-README.txt
-rtl.css
-screenshot.png
-search.php
-searchform.php
-sidebar.php
-single.php
-style.css
+├── assets (dir)/
+│   ├── css (dir)
+│   ├── images (dir)
+│   └── js (dir)
+├── inc (dir)
+├── template-parts (dir)/
+│   ├── footer (dir)
+│   ├── header (dir)
+│   ├── navigation (dir)
+│   ├── page (dir)
+│   └── post (dir)
+├── 404.php
+├── archive.php
+├── comments.php
+├── footer.php
+├── front-page.php
+├── functions.php
+├── header.php
+├── index.php
+├── page.php
+├── README.txt
+├── rtl.css
+├── screenshot.png
+├── search.php
+├── searchform.php
+├── sidebar.php
+├── single.php
+└── style.css
 ```
 
 ### Traductions
 
-Voir <https://www.alsacreations.com/article/lire/1837-wordpress-theme-internationalisation.html>
+🔖 Voir <https://www.alsacreations.com/article/lire/1837-wordpress-theme-internationalisation.html>
 
 ### functions.php
 
@@ -194,6 +195,19 @@ require_once 'includes/cnrs-functions.php';
 
 L'[API Customize](https://developer.wordpress.org/themes/customize-api/) permet d'ajouter des options de personnalisation au thème, apparaissant dans l'interface d'administration, notamment avec le hook [customize_register](https://developer.wordpress.org/reference/hooks/customize_register/).
 
+### Formulaires
+
+- Suivre les bonnes pratiques : [Best Practices](https://developer.wordpress.org/plugins/plugin-basics/best-practices/)
+- Valider les données avec les méthodes natives : [Validating Data](https://developer.wordpress.org/apis/security/data-validation/)
+- Un formulaire = un nonce : [Nonces](https://developer.wordpress.org/apis/security/nonces/)
+
+### Admin
+
+- [Modifier le logo](https://wpmarmite.com/snippet/modifier-logo-connexion-wordpress/) sur la page de connexion admin.
+- [Retirer l'accès aux pages inutiles](https://wpthinker.com/hide-wordpress-admin-menu-items/) selon le rôle.
+
+## Développement des contenus éditables
+
 ### Menus de navigation
 
 On se repose sur un [Bloc Navigation](https://fr.wordpress.org/support/article/navigation-block/)
@@ -217,86 +231,6 @@ Lors de la création d’un [shortcode](https://codex.wordpress.org/fr:Shortcode
 Utiliser les [blocs ACF](https://www.advancedcustomfields.com/resources/blocks/) pour ne rendre modifiables que des champs spécifiques (champ texte, image, colorpicker, etc.) et avoir les fonctionnalités d'ACF (champ [relationnel](https://www.advancedcustomfields.com/resources/relationship/), [taxonomies](https://www.advancedcustomfields.com/resources/taxonomy/), etc.).
 
 Dans le cas où on utilise un thème acheté et que les fichiers PHP ne sont pas utilisables, on se tournera vers une [extension](https://fr.wordpress.org/plugins/blockmeister/) afin de générer des ["patterns" Gutenberg](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-patterns/) sur-mesure.
-
-### Formulaires
-
-- Suivre les bonnes pratiques : [Best Practices](https://developer.wordpress.org/plugins/plugin-basics/best-practices/)
-- Valider les données avec les méthodes natives : [Validating Data](https://developer.wordpress.org/apis/security/data-validation/)
-- Un formulaire = un nonce : [Nonces](https://developer.wordpress.org/apis/security/nonces/)
-
-### Admin
-
-- [Modifier le logo](https://wpmarmite.com/snippet/modifier-logo-connexion-wordpress/) sur la page de connexion admin.
-- [Retirer l'accès aux pages inutiles](https://wpthinker.com/hide-wordpress-admin-menu-items/) selon le rôle.
-
-## Accessibilité
-
-- [Vidéos de WordPress Accessibility Day](https://www.youtube.com/channel/UCes9XCUZd51CAigbBEGlfNg)
-- [Articles d'Access42 autour de WordPress](https://access42.net/wordpress)
-- [WordPress : Accessibilité](https://fr.wordpress.org/about/accessibility/)
-
-## Extensions
-
-👉 Installation : utiliser `composer` avec le nom du plugin, préfixé par “wpackagist-plugin”, par exemple `composer require wpackagist-plugin/wp-migrate-db`
-
-👉 Toute fonctionnalité développée sur-mesure pour le projet se fait dans le cadre d’une extension propre à activer/désactiver.
-
-- Documentation officielle : [Plugin Handbook](https://developer.wordpress.org/plugins/)
-- Modèles : [WordPress Plugin Template](https://github.com/hlashbrooke/WordPress-Plugin-Template) ou [WordPress Plugin Boilerplate Generator](https://wppb.me/)
-
-### Obligatoires
-
-- [WP fail2ban](https://wordpress.org/plugins/wp-fail2ban/) si hébergement interne équipé de [fail2ban](https://github.com/fail2ban/fail2ban/) permettant de signaler les erreurs d’identification pour bannir les adresses IP tentant du bruteforce ; n’utilisez alors pas d’extension pour changer l’url de wp-admin.
-- [WP Migrate Lite](https://fr.wordpress.org/plugins/wp-migrate-db/) pour migrer les données de local > dev > recette > prod (et inversement), à désinstaller par sécurité après mise en production.
-- [W3 Total Cache](https://wordpress.org/plugins/w3-total-cache/) ou [WP Fastest Cache](https://fr.wordpress.org/plugins/wp-fastest-cache/) ou [WP Super Cache](https://fr.wordpress.org/plugins/wp-super-cache/) : cache/compression de contenu pour améliorer les temps de réponse.
-- [SecuPress](https://fr.wordpress.org/plugins/secupress/) pour améliorer le score global (permissions de fichiers, bonnes pratiques).
-- Notre plugin **[Kiwiplate Setup Theme](assets/wordpress/kiwiplate_setup_theme.php)**, et/ou mettre en place les actions suivantes (extensions + snippets de code).
-
-### Recommandées selon usage
-
-- [Disable emojis](https://fr.wordpress.org/plugins/disable-emojis/) : désactiver les appels de scripts externes vers WordPress (RGPD).
-- [Disable comments](https://wordpress.org/plugins/disable-comments/) : désactiver les commentaires sur les articles/pages/médias, au choix (très propre).
-- [ACF](https://www.advancedcustomfields.com/) : ajouter des champs riches aux posts / pages / Custom posts.
-- [Duplicate Post](https://wordpress.org/plugins/duplicate-post/) : créer du contenu rapidement en dupliquant d'un simple clic un article, une page, ou un custom post.
-- [Ninja Forms](https://fr.wordpress.org/plugins/ninja-forms/) : génération de formulaires. Partiellement accessible.
-- [Polylang](https://fr.wordpress.org/plugins/polylang/) : traduction (remplace WPML).
-- [SEOPress](https://www.seopress.org/fr/) : SEO, ou [Yoast](https://fr.wordpress.org/plugins/wordpress-seo/) (rajoute une grosse surcouche de pub très intrusive dans l'admin).
-- [Filebird](https://wordpress.org/plugins/filebird/) : File Manager (s’ajoute dans la galerie de médias) : créer des dossiers. Attention, il faut prendre la version premium pour créer des dossiers illimités.
-- [Photo gallery](https://fr.wordpress.org/plugins/photo-gallery/) (Galerie de médias, photos et vidéos) + riche en fonctionnalités que la galerie native (img s’ouvrent dans une popup, slider, bouton de téléchargement, création de groupes de galeries, etc…). N’est pas accessible : fenêtre modale qui ne prend pas le focus, pas d’attributs aria, bouton de fermeture non accessible.
-- [Job Manager](https://fr.wordpress.org/plugins/wp-job-manager/) : Offres d’emploi.
-- [Members](https://wordpress.org/plugins/members/) : Droits et utilisateurs.
-- [Megamenu](https://fr.wordpress.org/plugins/wp-megamenu/) : Menu de navigation.
-- [Tarteaucitron](https://fr.wordpress.org/plugins/tarteaucitronjs/) || [Cookie Notice](https://fr.wordpress.org/plugins/cookie-notice/) : bannières cookies, code non accessible (boutons qui n’en sont pas, etc.).
-- [Adminimize](https://wordpress.org/plugins/adminimize/) : personnaliser l’aspect de l’admin en fonction des niveaux des utilisateurs. || [Hook natif](https://developer.wordpress.org/reference/functions/remove_menu_page/) : supprimer les items du menu (pour un rôle spécifique, vérifier le rôle avec fonction [current_user_can](https://developer.wordpress.org/reference/functions/current_user_can/)).
-- [Peters-login-redirect](https://wordpress.org/plugins/peters-login-redirect/) : redirection des utilisateurs après connexion. || [Hook natif](https://developer.wordpress.org/reference/hooks/login_redirect/)
-- [Relevanssi](https://wordpress.org/plugins/relevanssi/) : améliore les résultats de recherche par critères de pertinence.
-- [User Switching](https://wordpress.org/plugins/user-switching/) : switcher facilement d’utilisateur.
-- [Simple Page Ordering](https://wordpress.org/plugins/simple-page-ordering/) : ordonner les pages, et autres CPT ordonnés, par simple glisser/déposer, sans avoir besoin de rentrer dans chaque page.
-- [Multiple Domain Mapping on Single Site](https://fr.wordpress.org/plugins/multiple-domain-mapping-on-single-site/) pour faire correspondre différentes Pages (d’accueil) à plusieurs domaines ou sous-domaines.
-- [Custom Login](https://wordpress.org/plugins/custom-login/) : personnaliser la page de login. || [Tuto avec Hooks natifs](https://codex.wordpress.org/Customizing_the_Login_Form)
-- [WP All Export](https://wordpress.org/plugins/wp-all-export/) : exporter les données au format CSV/XML (fonctionne avec ACF, The Events Calendar) fonctionne aussi pour l’import avec [WP All Import](https://wordpress.org/plugins/wp-all-import/)
-- [Admin Columns](https://wordpress.org/plugins/codepress-admin-columns/) : ajouter/modifier des colonnes dans l'interface d'administration
-- [Utiliser SVG dans WordPress - 2 extensions](https://css-tricks.com/using-svg-in-wordpress/)
-
-### E-commerce
-
-- [WooCommerce](https://woocommerce.com/) : la solution idéale (communauté, support) avec feuilles de style par défaut, un système de coupon, gestion des stocks automatisé, gestion des e-mails client avancés, plein de hooks.
-- [WOOF](https://fr.wordpress.org/plugins/woocommerce-products-filter/) : Filtres plus riche en fonctionnalités que ceux de WooCommerce natif
-- [Tickera](https://tickera.com/) : Vente de billets, compatible avec WooCommerce.
-
-## Sécurité
-
-- 👉 Supprimer l’utilisateur **admin** et l’utilisateur avec l’ID 1. Créer un utilisateur de niveau administrateur avec identifiant spécifique différent de “admin”.
-- Créer un ou plusieurs utilisateurs de niveau **éditeur** pour les intervenants (doit être différent du nom de domaine pour des raisons de sécurité), ayant accès juste aux fonctionnalités utiles : ne pas utiliser de compte admin par défaut pour toutes les personnes car cela permet l'installation d'extensions.
-- Compléter le fichier `wp-config.php` avec les valeurs de <https://vinkla.github.io/salts/>
-- Désactiver l’édition du thème et des plugins en ligne dans wp-config.php `define('DISALLOW_FILE_EDIT', true);`
-- [User Name Security](https://wordpress.org/plugins/user-name-security/) supprime les mentions de l’utilisateur (id et username) dans `body_class()`, entre autres choses.
-- [SF Author URL control](https://wordpress.org/plugins/sf-author-url-control/) personnalise le “author” et le slug utilisateur pour sécuriser et personnaliser les URL des pages auteur.
-- Toujours utiliser [les nonces](https://css-tricks.com/wordpress-front-end-security-csrf-and-nonces/) pour éviter les [CSRF](https://fr.wikipedia.org/wiki/Cross-site_request_forgery), s’il faut développer des modules admin et/ou pour les utilisateurs identifiés sur le site.
-- Surveiller si le thème / les extensions utilisées font l’objet d’une faille sur [wpscan](https://wpscan.com/)
-- Ajouter le script pour enlever l'avertissement à la connexion qui permet d’indiquer que l’identifiant est le bon mais pas le mot de passe.
-
-## Développement
 
 ### CPT (Custom Post Types)
 
@@ -331,6 +265,72 @@ function no_wordpress_errors() {
 }
 add_filter( 'login_errors', 'no_wordpress_errors' );
 ```
+
+## Accessibilité
+
+- [Vidéos de WordPress Accessibility Day](https://www.youtube.com/channel/UCes9XCUZd51CAigbBEGlfNg)
+- [Articles d'Access42 autour de WordPress](https://access42.net/wordpress)
+- [WordPress.org : Accessibilité](https://fr.wordpress.org/about/accessibility/)
+
+## Extensions
+
+👉 Installation : utiliser `composer` avec le nom du plugin, préfixé par “wpackagist-plugin”, par exemple `composer require wpackagist-plugin/wp-migrate-db`
+
+👉 Toute fonctionnalité développée sur-mesure pour le projet se fait dans le cadre d’une extension propre à activer/désactiver.
+
+- Documentation officielle : [Plugin Handbook](https://developer.wordpress.org/plugins/)
+- Modèles : [WordPress Plugin Template](https://github.com/hlashbrooke/WordPress-Plugin-Template) ou [WordPress Plugin Boilerplate Generator](https://wppb.me/)
+
+### Obligatoires
+
+- [WP fail2ban](https://wordpress.org/plugins/wp-fail2ban/) si hébergement interne équipé de [fail2ban](https://github.com/fail2ban/fail2ban/) permettant de signaler les erreurs d’identification pour bannir les adresses IP tentant du bruteforce ; n’utilisez alors pas d’extension pour changer l’url de wp-admin.
+- [WP Migrate Lite](https://fr.wordpress.org/plugins/wp-migrate-db/) pour migrer les données de local > dev > recette > prod (et inversement), à désinstaller par sécurité après mise en production.
+- [W3 Total Cache](https://wordpress.org/plugins/w3-total-cache/) ou [WP Fastest Cache](https://fr.wordpress.org/plugins/wp-fastest-cache/) ou [WP Super Cache](https://fr.wordpress.org/plugins/wp-super-cache/) : cache/compression de contenu pour améliorer les temps de réponse.
+- [SecuPress](https://fr.wordpress.org/plugins/secupress/) pour améliorer le score global (permissions de fichiers, bonnes pratiques).
+- Notre plugin **[Kiwiplate Setup Theme](assets/wordpress/kiwiplate_setup_theme.php)**, et/ou mettre en place les actions suivantes (extensions + snippets de code).
+
+### Recommandées selon usage
+
+- [Disable emojis](https://fr.wordpress.org/plugins/disable-emojis/) : désactiver les appels de scripts externes vers WordPress (RGPD).
+- [Disable comments](https://wordpress.org/plugins/disable-comments/) : désactiver les commentaires sur les posts/pages/médias, au choix (très propre).
+- [ACF](https://www.advancedcustomfields.com/) : ajouter des champs riches aux posts / pages / CPT.
+- [Duplicate Post](https://wordpress.org/plugins/duplicate-post/) : créer du contenu rapidement en dupliquant d'un simple clic un post, une page, ou un custom post.
+- [Ninja Forms](https://fr.wordpress.org/plugins/ninja-forms/) : génération de formulaires. Partiellement accessible.
+- [Polylang](https://fr.wordpress.org/plugins/polylang/) : traduction (remplace WPML).
+- [SEOPress](https://www.seopress.org/fr/) : SEO, ou [Yoast](https://fr.wordpress.org/plugins/wordpress-seo/) (rajoute une grosse surcouche de pub très intrusive dans l'admin).
+- [Filebird](https://wordpress.org/plugins/filebird/) : File Manager (s’ajoute dans la galerie de médias) : créer des dossiers. Attention, il faut prendre la version premium pour créer des dossiers illimités.
+- [Photo gallery](https://fr.wordpress.org/plugins/photo-gallery/) (Galerie de médias, photos et vidéos) + riche en fonctionnalités que la galerie native (img s’ouvrent dans une popup, slider, bouton de téléchargement, création de groupes de galeries, etc…). N’est pas accessible : fenêtre modale qui ne prend pas le focus, pas d’attributs aria, bouton de fermeture non accessible.
+- [Job Manager](https://fr.wordpress.org/plugins/wp-job-manager/) : Offres d’emploi.
+- [Members](https://wordpress.org/plugins/members/) : Droits et utilisateurs.
+- [Tarteaucitron](https://fr.wordpress.org/plugins/tarteaucitronjs/) || [Cookie Notice](https://fr.wordpress.org/plugins/cookie-notice/) : bannières cookies, code non accessible (boutons qui n’en sont pas, etc.).
+- [Adminimize](https://wordpress.org/plugins/adminimize/) : personnaliser l’aspect de l’admin en fonction des niveaux des utilisateurs. || [Hook natif](https://developer.wordpress.org/reference/functions/remove_menu_page/) : supprimer les items du menu (pour un rôle spécifique, vérifier le rôle avec fonction [current_user_can](https://developer.wordpress.org/reference/functions/current_user_can/)).
+- [Peters-login-redirect](https://wordpress.org/plugins/peters-login-redirect/) : redirection des utilisateurs après connexion. || [Hook natif](https://developer.wordpress.org/reference/hooks/login_redirect/)
+- [Relevanssi](https://wordpress.org/plugins/relevanssi/) : améliore les résultats de recherche par critères de pertinence.
+- [User Switching](https://wordpress.org/plugins/user-switching/) : switcher facilement d’utilisateur.
+- [Simple Page Ordering](https://wordpress.org/plugins/simple-page-ordering/) : ordonner les pages, et autres CPT ordonnés, par simple glisser/déposer, sans avoir besoin de rentrer dans chaque page.
+- [Multiple Domain Mapping on Single Site](https://fr.wordpress.org/plugins/multiple-domain-mapping-on-single-site/) pour faire correspondre différentes Pages (d’accueil) à plusieurs domaines ou sous-domaines.
+- [Custom Login](https://wordpress.org/plugins/custom-login/) : personnaliser la page de login. || [Tuto avec Hooks natifs](https://codex.wordpress.org/Customizing_the_Login_Form)
+- [WP All Export](https://wordpress.org/plugins/wp-all-export/) : exporter les données au format CSV/XML (fonctionne avec ACF, The Events Calendar) fonctionne aussi pour l’import avec [WP All Import](https://wordpress.org/plugins/wp-all-import/)
+- [Admin Columns](https://wordpress.org/plugins/codepress-admin-columns/) : ajouter/modifier des colonnes dans l'interface d'administration
+- [Utiliser SVG dans WordPress - 2 extensions](https://css-tricks.com/using-svg-in-wordpress/)
+
+### E-commerce
+
+- [WooCommerce](https://woocommerce.com/) : la solution idéale (communauté, support) avec feuilles de style par défaut, un système de coupon, gestion des stocks automatisé, gestion des e-mails client avancés, plein de hooks.
+- [WOOF](https://fr.wordpress.org/plugins/woocommerce-products-filter/) : Filtres plus riche en fonctionnalités que ceux de WooCommerce natif
+- [Tickera](https://tickera.com/) : Vente de billets, compatible avec WooCommerce.
+
+## Sécurité
+
+- 👉 Supprimer l’utilisateur **admin** et l’utilisateur avec l’ID 1. Créer un utilisateur de niveau administrateur avec identifiant spécifique différent de “admin”.
+- Créer un ou plusieurs utilisateurs de niveau **éditeur** pour les intervenants (doit être différent du nom de domaine pour des raisons de sécurité), ayant accès juste aux fonctionnalités utiles : ne pas utiliser de compte admin par défaut pour toutes les personnes car cela permet l'installation d'extensions.
+- Compléter le fichier `wp-config.php` avec les valeurs de <https://vinkla.github.io/salts/>
+- Désactiver l’édition du thème et des plugins en ligne dans wp-config.php `define('DISALLOW_FILE_EDIT', true);`
+- [User Name Security](https://wordpress.org/plugins/user-name-security/) supprime les mentions de l’utilisateur (id et username) dans `body_class()`, entre autres choses.
+- [SF Author URL control](https://wordpress.org/plugins/sf-author-url-control/) personnalise le “author” et le slug utilisateur pour sécuriser et personnaliser les URL des pages auteur.
+- Toujours utiliser [les nonces](https://css-tricks.com/wordpress-front-end-security-csrf-and-nonces/) pour éviter les [CSRF](https://fr.wikipedia.org/wiki/Cross-site_request_forgery), s’il faut développer des modules admin et/ou pour les utilisateurs identifiés sur le site.
+- Surveiller si le thème / les extensions utilisées font l’objet d’une faille sur [wpscan](https://wpscan.com/)
+- Ajouter le script pour enlever l'avertissement à la connexion qui permet d’indiquer que l’identifiant est le bon mais pas le mot de passe.
 
 ## Performance
 
