@@ -52,7 +52,7 @@ On ne versionne **pas** :
 
 #### Outils de vérification (linters)
 
-La liste des linters recommandés est décrite par les [guidelines Visual Studio Code](https://github.com/alsacreations/guidelines/blob/master/Guidelines-VScode.md).
+La liste des linters recommandés est décrite par les [guidelines Visual Studio Code](Guidelines-VScode.md).
 Les extensions spécifiques WordPress / PHP recommandées sont :  
 
 - [PHP Intelephense](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client)
@@ -70,7 +70,7 @@ Avec [Vite](https://github.com/vitejs/vite) (présent dans WordPlate)
 
 On privilégie, dans cet ordre, les frameworks CSS suivants :
 
-- [TailwindCSS](https://tailwindcss.com/) (couplé à un mini-fichier reset personnel “alsa-TW-Reset”) (pour la configuration voir [Guidelines Tailwind](https://github.com/alsacreations/guidelines/blob/master/Guidelines-Tailwind.md))
+- [TailwindCSS](https://tailwindcss.com/) (couplé à un mini-fichier reset personnel “alsa-TW-Reset”) (pour la configuration voir [Guidelines Tailwind](Guidelines-Tailwind.md))
   - <https://github.com/cjkoepke/wp-tailwind>
   - <https://css-tricks.com/adding-tailwind-css-to-wordpress-themes/>
 - [Bootstrap](https://getbootstrap.com/) (si besoin spécifique ou projet le nécessitant)
@@ -78,7 +78,7 @@ On privilégie, dans cet ordre, les frameworks CSS suivants :
 
 #### Nommage HTML, CSS et PHP
 
-Voir [Guidelines HTML et CSS](https://github.com/alsacreations/guidelines)
+Voir Guidelines [HTML](Guidelines-HTML.md) et [CSS](Guidelines-CSS.md)
 
 - Suivre les [PHP Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/php/) de WordPress.
 - Ne pas utiliser les classes CSS générées par WordPress qui sont spécifiques à une installation précise et ne sont pas réutilisables : classes spécifiques des _wrappers_ des menus du type `.menu-nom-de-mon-menu` et la majorité des classes générées par `body_class()` ou `post_class()`.
