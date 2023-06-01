@@ -130,6 +130,16 @@ Exemple de fichier `.vscode/settings.json` recommandé :
 }
 ```
 
+Tuning
+
+```js
+{
+  "editor.renderWhitespace": "boundary",
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorSmoothCaretAnimation": "on"
+}
+```
+
 Les détails de configuration des Extensions et Linters sont décrits dans les autres Guidelines :
 
 - [Guidelines Vue-Nuxt-Front-End](Guidelines-Vue-Nuxt-Front-End.md)
