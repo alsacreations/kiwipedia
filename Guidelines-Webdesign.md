@@ -192,6 +192,8 @@ Si le nombre de variantes pour une police est supérieur à 3 alors une “Varia
 
 Certains mots peuvent être plus longs dans d'autres langues, il faut les simuler, notamment dans la navigation, les boutons d'action, et dans les titres pour provoquer des retours à la ligne. [Smartcat](https://www.smartcat.com/figma/) permet de la traduction dans Figma.
 
+Le choix de langue se fait à l'aide du mot désignant la langue et non pas d'un drapeau (qui désigne un pays) <https://www.flagsarenotlanguages.com/>.
+
 ### Favicon
 
 L'icône à fournir à l’intégrateur est au format SVG et PNG à la taille 1024x1024px, si possible.
