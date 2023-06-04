@@ -754,6 +754,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://github.com/24eme/signaturepdf> Signature/tampon de PDF
 - <https://kinopio.club> Brainstorming / mindmap
 - <https://www.markdowntutorial.com/fr/> Apprendre markdown
+- <https://mermaid.js.org/> Générer des graphiques/diagrammes divers à partir de markdown
 
 ## Explication et relation client
 
