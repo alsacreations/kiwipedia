@@ -8,6 +8,7 @@ Autres listes de ressources et checklists
 - <https://free-for.dev/> Plein de ressources pour développeurs
 - <https://github.com/thedaviddias/Front-End-Checklist>
 - <https://github.com/thedaviddias/Front-End-Performance-Checklist>
+- <https://github.com/awesome-selfhosted/awesome-selfhosted> Awesome-Selfhosted : liste d'applications que l'on peut héberger soi-même
 
 ## Sites d'actualités, tutoriels
 
