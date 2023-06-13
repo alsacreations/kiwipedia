@@ -75,9 +75,15 @@ Confort visuel :
 - [i18n Ally](lokalise.i18n-ally) pour les projets Vue/Nuxt avec internationalisation
 - [Partial Diff](https://marketplace.visualstudio.com/items?itemName=ryu1kn.partial-diff)
 - [Git History](https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory)
+
+### PHP
+
+Configurer le chemin vers l'exécutable PHP `php.validate.executablePath` dans les paramètres.
+
 - [PHP Debug](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug)
 - [PHP Intellisense](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-intellisense) ou [PHP Intelephense](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client)
 - [phpcs](https://marketplace.visualstudio.com/items?itemName=ikappas.phpcs)
+- [PHPDoc Comment](https://marketplace.visualstudio.com/items?itemName=rexshi.phpdoc-comment-vscode-plugin)
 
 ## Configuration des extensions et linters
 
@@ -130,16 +136,6 @@ Exemple de fichier `.vscode/settings.json` recommandé :
 }
 ```
 
-Tuning
-
-```js
-{
-  "editor.renderWhitespace": "boundary",
-  "editor.cursorBlinking": "smooth",
-  "editor.cursorSmoothCaretAnimation": "on"
-}
-```
-
 Les détails de configuration des Extensions et Linters sont décrits dans les autres Guidelines :
 
 - [Guidelines Vue-Nuxt-Front-End](Guidelines-Vue-Nuxt-Front-End.md)
@@ -150,3 +146,6 @@ Les détails de configuration des Extensions et Linters sont décrits dans les a
 
 - `editor.minimap.renderCharacters = false`, et la minimap devient plus belle
 - `explorer.openEditors.visible = false`, car on voit déjà les fichiers ouverts dans les onglets
+- `"editor.renderWhitespace": "boundary"` n'affiche que les espaces pertinents
+- `"editor.cursorBlinking": "smooth"` tuning du clignotement du curseur
+- `"editor.cursorSmoothCaretAnimation": "on"` tuning des transitions du curseur
