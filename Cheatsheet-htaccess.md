@@ -19,6 +19,12 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
 
 ## Redirections
 
+On utilise 
+- `Redirect` ou `RedirectTemp` pour une redirection temporaire = code HTTP 302
+- `RedirectPermament` pour une redirection définitive (SEO) = code HTTP 301
+
+ℹ️ Ces instructions n'acceptent pas d'expression régulière, pour cela il faut utiliser à la place `RedirectMatch` ou `RewriteRule` avec le flag `R=301`
+
 ```htaccess
 RedirectPermanent /home /?lang=en [L]
 ```
@@ -69,16 +75,18 @@ RewriteRule "^spip.php$" /home/www/spip/spip.php [L]
 # Va aussi répondre à spip.php?article3 ou spip.php?page=truc
 ```
 
-Un chemin
+Un chemin, dossier, tout ce qui commence par...
 
 ```htaccess
 RewriteRule ^img/(.*)$ /home/www/autre/chemin/img/$1 [L]
 ```
 
-Une url
+Une url précise
 
 ```htaccess
 RewriteRule ^notre-societe$ /home/www/autre/spip/notre-societe [L]
+# L'équivalent avec une redirection HTTP permanente
+RewriteRule ^notre-societe$ /home/www/autre/spip/notre-societe [L, R=301]
 ```
 
 Tout réécrire sauf une condition

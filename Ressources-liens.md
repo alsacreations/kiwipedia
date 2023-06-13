@@ -8,6 +8,7 @@ Autres listes de ressources et checklists
 - <https://free-for.dev/> Plein de ressources pour développeurs
 - <https://github.com/thedaviddias/Front-End-Checklist>
 - <https://github.com/thedaviddias/Front-End-Performance-Checklist>
+- <https://github.com/awesome-selfhosted/awesome-selfhosted> Awesome-Selfhosted : liste d'applications que l'on peut héberger soi-même
 
 ## Sites d'actualités, tutoriels
 
@@ -754,6 +755,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://github.com/24eme/signaturepdf> Signature/tampon de PDF
 - <https://kinopio.club> Brainstorming / mindmap
 - <https://www.markdowntutorial.com/fr/> Apprendre markdown
+- <https://mermaid.js.org/> Générer des graphiques/diagrammes divers à partir de markdown
 
 ## Explication et relation client
 
