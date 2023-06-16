@@ -151,6 +151,8 @@ La [structure standard](https://developer.wordpress.org/themes/basics/organizing
 
 🔖 Voir <https://www.alsacreations.com/article/lire/1837-wordpress-theme-internationalisation.html>
 
+🪛 Convertir les fichiers .po en .mo en ligne : <https://po2mo.net/>
+
 ### functions.php
 
 ⚠️ Le fichier `functions.php` fonctionne différemment des autres fichiers “template”, lors de la création d’un thème enfant par exemple, il n’est pas simplement écrasé, mais chargé avant le thème parent. Les deux fichiers déclarant des fonctions cohabitent, et il serait dommage de ne pas pouvoir écraser une fonctionnalité, ou de tomber sur une erreur PHP car une fonction est déclarée deux fois.
