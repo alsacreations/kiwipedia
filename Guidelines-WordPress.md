@@ -48,6 +48,8 @@ On ne versionne **pas** (voir fichiers .gitignore) :
 - On privilégie de démarrer avec un starter thème épuré <https://underscores.me/> ou <https://github.com/timber/starter-theme> lorsque l’on utilise Timber.
 - Supprimer les autres thèmes livrés par défaut.
 - On évite d’utiliser un thème acheté car cela implique qu’on ne pourra pas tout mettre en place dans ces guidelines et qu’on ne maîtrise pas son contenu (code, extensions, évolutions). Si toutefois cela arrive, utiliser le principe de [thème enfant](https://developer.wordpress.org/themes/advanced-topics/child-themes/) pour ne pas modifier le thème parent, qui pourrait être mis à jour par la suite.
+- Documentation officielle <https://developer.wordpress.org/themes/>
+- Documentation des fonctions <https://codex.wordpress.org/Function_Reference>
 
 ### Intégration du thème
 
@@ -91,19 +93,9 @@ Voir Guidelines [HTML](Guidelines-HTML.md) et [CSS](Guidelines-CSS.md)
 
 ### Hiérarchie de fichiers et documentation
 
-👉 Utiliser l'auto-chargement des fichiers PHP du thème par WordPress (selon slug de la catégorie, du Custom Post Type, etc).
+👉 Utiliser l'auto-chargement des fichiers PHP du thème par WordPress (selon slug de la catégorie, du Custom Post Type, etc) en suivant la [hiérarchie de templates](https://developer.wordpress.org/themes/basics/template-hierarchy/) ([explications](https://wpshout.com/wordpress-template-hierarchy/)).
 
-- Connaître / visualiser la [hiérarchie de templates](https://developer.wordpress.org/themes/basics/template-hierarchy/) ([explications](https://wpshout.com/wordpress-template-hierarchy/))
-- Documentation officielle <https://developer.wordpress.org/themes/>
-- Fonctions <https://codex.wordpress.org/Function_Reference>
-- Hooks <https://adambrown.info/p/wp_hooks>
-- WP_Query <https://www.smashingmagazine.com/2013/01/using-wp_query-wordpress/>
-- WP_Query, query_posts, get_posts, etc <https://www.rarst.net/wordpress/wordpress-query-functions/>
-- Custom Post Type <https://developer.wordpress.org/reference/functions/register_post_type/>
-- Ou générateur de Custom Post Type <https://generatewp.com/post-type/> (à noter avec Gutenberg: il faut obligatoirement renseigner le champ "parent_item_colon" pour voir apparaître le sélecteur de pages parentes pour un CPT hiérarchique).
-- Taxonomies <https://developer.wordpress.org/reference/functions/register_taxonomy/>
-
-Voir aussi
+🔖 Voir aussi :
 
 - [Vie d’une requête](https://roots.io/routing-wp-requests/)
 - [Cheatsheet template map](https://cdn.tutsplus.com/wp/uploads/legacy/090_WPCheatSheets/WP_CheatSheet_TemplateMap.pdf)
@@ -146,6 +138,8 @@ La [structure standard](https://developer.wordpress.org/themes/basics/organizing
 ├── single.php
 └── style.css
 ```
+
+On utilisera des fonctions telles que [get_header](https://developer.wordpress.org/reference/functions/get_header/), [get_footer](https://developer.wordpress.org/reference/functions/get_footer/) pour construire les pages.
 
 ### Traductions
 
@@ -218,6 +212,17 @@ la fonctionnalité classique native de [menu éditable (dans Apparence > Menus)]
 
 🔖 Voir <https://wpmarmite.com/menu-wordpress/>
 
+### Requêtes et boucles
+
+Le [Loop](https://codex.wordpress.org/The_Loop) est la boucle native de WordPress pour générer des affichages de posts et utiliser des [template tags](https://codex.wordpress.org/Template_Tags) tels que `the_title`, `the_content`, `the_author`, etc. On peut créer ses propres requêtes avec [WP_Query](https://developer.wordpress.org/reference/classes/wp_query/). 🔖 Voir <https://www.smashingmagazine.com/2013/01/using-wp_query-wordpress/> et <https://www.rarst.net/wordpress/wordpress-query-functions/>.
+
+### Hooks
+
+Les [hooks](https://developer.wordpress.org/plugins/hooks/) permettent de brancher du code à des moments précis du cycle de génération des pages, et recouvrent :
+
+- Les _actions_ ([add_action](https://developer.wordpress.org/reference/functions/add_action/)) qui ajoutent ou modifient des données ; voir [référence des actions](https://codex.wordpress.org/Plugin_API/Action_Reference).
+- Les _filtres_ ([add_filter](https://developer.wordpress.org/reference/functions/add_filter/)) qui changent les données durant l'exécution de WordPress ; voir [référence des filtres](https://codex.wordpress.org/Plugin_API/Filter_Reference).
+
 ### Shortcodes
 
 Lors de la création d’un [shortcode](https://codex.wordpress.org/fr:Shortcode) avec paramètres, il est conseillé de ne plus utiliser la fonction extract (voir <https://core.trac.wordpress.org/ticket/22400>).
@@ -234,14 +239,24 @@ Utiliser les [blocs ACF](https://www.advancedcustomfields.com/resources/blocks/)
 
 Dans le cas où on utilise un thème acheté et que les fichiers PHP ne sont pas utilisables, on se tournera vers une [extension](https://fr.wordpress.org/plugins/blockmeister/) afin de générer des ["patterns" Gutenberg](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-patterns/) sur-mesure.
 
+### Taxonomies
+
+Les [taxonomies](https://kinsta.com/fr/base-de-connaissances/qu-est-ce-qu-une-taxonomie/) gèrent nativement les catégories et tags mais on peut en déclarer avec [register_taxonomy](https://developer.wordpress.org/reference/functions/register_taxonomy/) et les associer à un ou plusieurs CPT.
+
+```php
+register_post_type($cpt_name, $args_cpt);
+register_taxonomy($taxo_name, $cpt_name, $args_taxo);
+```
+
 ### CPT (Custom Post Types)
 
 On utilise des CPT pour toute entité de données allant au-delà des Pages et Posts.
 
-- <https://wpchannel.com/wordpress/tutoriels-wordpress/creer-custom-post-types-wordpress/>
-- <https://salferrarello.com/cpt-best-practices/>
-- <https://kinsta.com/fr/blog/types-publications-personnalises-wordpress/>
-- Générateur de CPT en plugin <https://wpturbo.dev/generators/post-type/>
+- Déclarer un Custom Post Type avec [register_post_type](https://developer.wordpress.org/reference/functions/register_post_type/)
+- [WordPress CPT Best Practices](https://salferrarello.com/cpt-best-practices/)
+- Générateur de CPT en plugin <https://wpturbo.dev/generators/post-type/> ou autre générateur <https://generatewp.com/post-type/> (à noter avec Gutenberg: il faut obligatoirement renseigner le champ "parent_item_colon" pour voir apparaître le sélecteur de pages parentes pour un CPT hiérarchique).
+
+🔖 Voir [Tutoriel : Créer des Custom Post Types avec WordPress](https://wpchannel.com/wordpress/tutoriels-wordpress/creer-custom-post-types-wordpress/) et [Types de publications personnalisés WordPress : Le guide tout-en-un pour les créer et les utiliser (Kinsta)](https://kinsta.com/fr/blog/types-publications-personnalises-wordpress/).
 
 ### ACF (Advanced Custom Fields)
 
@@ -250,6 +265,8 @@ On utilise ACF pour ajouter des champs personnalisés à certains types de donn�
 - <https://newslang.ch/blog/tutoriel-acf-advanced-custom-fields-le-guide-complet/>
 - <https://www.advancedcustomfields.com/blog/best-practices-designing-custom-fields/>
 - <https://kinsta.com/fr/blog/advanced-custom-fields/>
+
+Pour filtrer à l'aide de ces valeurs, on utilisera une [Meta Query](https://rudrastyh.com/wordpress/meta_query.html) dans la requête [WP_Query](https://developer.wordpress.org/reference/classes/wp_query/).
 
 ### Ajouter le support de Gutenberg pour les CPT
 
@@ -306,7 +323,7 @@ add_filter( 'login_errors', 'no_wordpress_errors' );
 - [Members](https://wordpress.org/plugins/members/) : Droits et utilisateurs.
 - [Tarteaucitron](https://fr.wordpress.org/plugins/tarteaucitronjs/) || [Cookie Notice](https://fr.wordpress.org/plugins/cookie-notice/) : bannières cookies, code non accessible (boutons qui n’en sont pas, etc.).
 - [Adminimize](https://wordpress.org/plugins/adminimize/) : personnaliser l’aspect de l’admin en fonction des niveaux des utilisateurs. || [Hook natif](https://developer.wordpress.org/reference/functions/remove_menu_page/) : supprimer les items du menu (pour un rôle spécifique, vérifier le rôle avec fonction [current_user_can](https://developer.wordpress.org/reference/functions/current_user_can/)).
-- [Peters-login-redirect](https://wordpress.org/plugins/peters-login-redirect/) : redirection des utilisateurs après connexion. || [Hook natif](https://developer.wordpress.org/reference/hooks/login_redirect/)
+- [Peters-login-redirect](https://wordpress.org/plugins/peters-login-redirect/) : redirection des utilisateurs après connexion, ou [Hook natif](https://developer.wordpress.org/reference/hooks/login_redirect/).
 - [Relevanssi](https://wordpress.org/plugins/relevanssi/) : améliore les résultats de recherche par critères de pertinence.
 - [User Switching](https://wordpress.org/plugins/user-switching/) : switcher facilement d’utilisateur.
 - [Simple Page Ordering](https://wordpress.org/plugins/simple-page-ordering/) : ordonner les pages, et autres CPT ordonnés, par simple glisser/déposer, sans avoir besoin de rentrer dans chaque page.
