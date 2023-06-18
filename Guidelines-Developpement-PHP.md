@@ -139,7 +139,8 @@ function kaki($val1, $val2 = FALSE)
 Quelques critères essentiels sont à observer (parmi d’autres, la liste est non exhaustive) :
 
 - Suivre les recommandations de l'OWASP pour éviter les failles XSS (Cross Site Scripting) <https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet>
-- Utiliser les fonctions d’échappement pour valider les données utilisateur, avant traitement ou insertion dans la base de données.
+- Utiliser les fonctions d’échappement et de filtre pour valider les données utilisateur, avant traitement ou insertion dans la base de données.
+  - [filter_var](https://www.php.net/manual/fr/function.filter-var.php)
   - MySQL : [mysql_real_escape_string](http://php.net/manual/fr/function.mysql-real-escape-string.php) pour les chaînes de texte.
   - [preg_quote](http://php.net/manual/fr/function.preg-quote.php) pour les expressions régulières.
   - MySQL : Utiliser les fonctions de PDO quand c’est possible pour [échapper](http://www.php.net/manual/fr/pdostatement.bindparam.php) ou [préparer une requête](http://www.php.net/manual/fr/pdo.prepare.php).
@@ -152,19 +153,26 @@ Quelques critères essentiels sont à observer (parmi d’autres, la liste est n
 
 - Tester et valider les expressions régulières (regexp) avec <https://regex101.com/> (entre autres).
 
+### Syntaxe et raccourcis syntaxiques
+
+- [Shorthand comparisons in PHP](https://stitcher.io/blog/shorthand-comparisons-in-php)
+
 ## Composer
 
 Utilisation de <https://getcomposer.org/> pour la gestion des dépendances PHP.
 
-Fichier de configuration : `composer.json`
+- Fichier de configuration : `composer.json`
+- Initialiser de manière interactive le projet `composer init`
+- Installer un paquet et le sauvegarde dans le fichier de configuration `composer require [nom du paquet]`
+- Désinstalle la dépendance `composer remove [nom du paquet]`
+- Met à jour les dépendances `composer update`
 
-Initialiser de manière interactive le projet `composer init`
+## Visual Studio Code
 
-Installer un paquet et le sauvegarde dans le fichier de configuration `composer require [nom du paquet]`
+Lire <https://code.visualstudio.com/docs/languages/php>
 
-Désinstalle la dépendance `composer remove [nom du paquet]`
-
-Met à jour les dépendances `composer update`
+- Installer PHP sur la machine pour renseigner le chemin dans `php.validate.executablePath`. Sur macOS, utiliser [brew](https://brew.sh/).
+- Extension [PHP Intelephense](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client)
 
 ## MySQL
 
@@ -172,12 +180,7 @@ Met à jour les dépendances `composer update`
 
 Les noms des tables doivent être explicites. Les noms des champs associés doivent être préfixés par le nom de la table pour faciliter la lecture et l'écriture de requêtes avec jointures, s'ils ne sont pas assortis du nom de table.
 
-Table users :
-
-- user_id
-- user_email
-- user_email_archive
-- user_status
+Par exemple pour la table `users` on utilisera `user_id`, `user_email`, `user_email_archive`, `user_status`...
 
 ### Types de champs
 
