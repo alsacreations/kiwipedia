@@ -504,7 +504,7 @@ Associer un `autocomplete` pour les champs demandant une donnée personnelle (no
 <input type="text" id="name" name="name" autocomplete="family-name">
 ```
 
-### Erreur de saisie
+#### Erreur de saisie
 
 Lorsqu'un formulaire retourne des erreurs, les champs erronés doivent être indiqués dans le code, et de manière visuelle. Les messages d'erreurs doivent être explicites et placés de manière à identifier nommément le champ concerné.
 
