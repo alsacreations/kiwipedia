@@ -68,6 +68,7 @@ Astuces :
 * ajouter `-m 256m` pour limiter la mémoire à 256 Mo
 * ajouter`--read-only` pour que le filesystem soit en lecture seule
 * suffixer un volume par`:ro` pour qu'il soit en lecture seule
+* afficher les _restart policies_ de tous les conteneurs existants `docker inspect --format "{{.HostConfig.RestartPolicy.Name}}, {{.Name}}, {{.Id}}" $(docker ps -qf status=running) | sort -t, -k1 |column -s, -t`
 
 ## Dockerfile
 
