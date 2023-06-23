@@ -52,8 +52,7 @@ Utiliser un fichier [.dockerignore](https://shisho.dev/blog/posts/how-to-use-doc
 ## Options Docker run
 
 * `-d` : permet de détacher l'exécution du conteneur du terminal courant
-* `
-` : permet de lier un port (local:container `-p 8080:80`)
+* `-p` : permet de lier un port (local:container `-p 8080:80`)
 * `-u` : permet de spécifier l'utilisateur+groupe d'exécution
 * `-v` : permet de déclarer un volume (local:container `-v /var/path/to/mydata/mysql:/var/lib/mysql`)
 * `-e` : permet de passer/spécifier une variable d'environnement
@@ -69,6 +68,7 @@ Astuces :
 * ajouter`--read-only` pour que le filesystem soit en lecture seule
 * suffixer un volume par`:ro` pour qu'il soit en lecture seule
 * afficher les _restart policies_ de tous les conteneurs existants `docker inspect --format "{{.HostConfig.RestartPolicy.Name}}, {{.Name}}, {{.Id}}" $(docker ps -qf status=running) | sort -t, -k1 |column -s, -t`
+* après compilation de l'image,si le conteneur ne se lance pas, on peut tout de même l'utiliser/analyser avec `docker run -it <nomdelimage> <commande>` par exemple `docker run -it alpine ls` ou `docker run -it alpine /bin/bash -c "echo $HOME"`
 
 ## Dockerfile
 
