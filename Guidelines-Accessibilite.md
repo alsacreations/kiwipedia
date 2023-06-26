@@ -44,6 +44,10 @@ Ce document est divisé en trois parties :
 - Associer correctement une erreur à son champ.
 - Associer [un `autocomplete`](#formulaires-et-champs) pour les champs demandant une donnée personnelle (nom, prénom, e-mail, adresse, etc.).
 
+### Design
+
+- Les contrastes et tailles de texte/liens/boutons sont suffisants.
+
 ### Médias
 
 - Toutes les images [doivent comporter un attribut `alt`](#image-porteuse-dinformation-ou-cliquable) ; il doit être vide `alt=""` pour les images décoratives et renseigné pour les images apportant du contenu.
@@ -919,6 +923,12 @@ Pour cela, il faut ajouter un attribut `longdesc` sur l'image (`<img>`) qui a po
 <!-- La page page-de-la-description-detaillee.html regroupera la description détaillée de l'image.-->
 <img src="image.url" alt="Données numérique" longdesc="https://example.org/page-de-la-description-detaillee.html">
 ```
+
+---
+
+## Bonnes pratiques design
+
+Voir [Design : checklist accessibilité](Guidelines-Webdesign.md#checklist-accessibilité)
 
 ---
 
