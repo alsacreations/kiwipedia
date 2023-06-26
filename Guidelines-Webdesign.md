@@ -224,7 +224,7 @@ L’intégrateur aura à sa charge l’optimisation du poids des assets (notamme
 
 #### Couleurs
 
-- Respecter le contraste de couleur + gammes de couleurs
+- Respecter le [contraste de couleur](Guidelines-Accessibilite.md#contraste--webdesign) + gammes de couleurs
 - Ne pas indiquer une information uniquement par la couleur.
 
 #### Contenus
