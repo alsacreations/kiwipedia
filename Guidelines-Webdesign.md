@@ -11,7 +11,7 @@ Sont indiquées **en gras** les étapes prioritaires dans notre processus.
 | Étape                   | Nom                    | Définition                                                                                                                           | Outil préconisé                                         |
 | ----------------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------- |
 | Prospection / Démarrage | **Arborescence**       | Arborescence visuelle qui permet d’identifier les différents modèles de pages                                                        | [Octopus](https://octopus.do/), [miro](https://miro.com/) |
-| Design                  | Moodboard              | Planche de tendances. Type de collage qui peut être composé d'images, de texte et d'objets selon le choix de son créateur            | [Whimsical](https://whimsical.com/)                     |
+| Design                  | Moodboard              | Planche de tendances. Type de collage qui peut être composé d'images, de texte et d'objets selon le choix de son créateur            | [Figma](https://figma.com/) ou [Whimsical](https://whimsical.com/)                     |
 | Design                  | Zonings                | Zones fonctionnelles, emplacements du contenu (zone emploi, zone blog)                                                               | [Figma](https://figma.com/) voire Octopus               |
 | Design                  | **Wireframes**         | Zonings fil-de-fer avec texte / composants intégrés (ex. zone emploi avec 3 icônes et 2 zones de texte). Aucun design associé.       | [Figma](https://figma.com/)                             |
 | Design                  | Prototypage, wireframes interactifs | Wireframes avec navigation, actions et animations possibles                                                                          | [Figma](https://figma.com/), [Flow](https://createwithflow.com/) |
@@ -182,9 +182,9 @@ L’Intégrateur, lui, va raisonner en “composants” plutôt qu’en mise en 
 
 Pour des raisons de performance, il est conseillé :
 
-- Titrages : se limiter à deux Familles de police au maximum (ex. Merryweather et Roboto)
-- Titrages : se limiter à 3-4 Variantes de police au maximum (ex. Merryweather bold, Roboto regular, Roboto bold, Roboto italic)
-- Labeur : “system font” par défaut de préférence (ex. system-ui)
+- Titrages : se limiter à deux Familles de police au maximum (ex. Merryweather et Roboto).
+- Titrages : se limiter à 3-4 Variantes de police au maximum (ex. Merryweather bold, Roboto regular, Roboto bold, Roboto italic).
+- Labeur : “system font” par défaut de préférence (ex. system-ui).
 
 Si le nombre de variantes pour une police est supérieur à 3 alors une “Variable Font” devient plus intéressante en termes de poids/requêtes car 1 seul fichier pour toute la famille de police.
 
@@ -206,9 +206,9 @@ Afin d’optimiser la netteté des images Bitmap (jpg, png) sur écrans Retina e
 
 Les formats privilégiés à transmettre à l’Intégrateur :
 
-- JPG, WebP, AVIF : photos et images bitmap en général
-- PNG, WebP : images bitmap sans compression destructrice, pouvant nécessiter de la transparence
-- SVG : icônes, schémas et images vectorielles
+- JPG, WebP, AVIF : photos et images bitmap en général.
+- PNG, WebP : images bitmap sans compression destructrice, pouvant nécessiter de la transparence.
+- SVG : icônes, schémas et images vectorielles.
 
 L’intégrateur aura à sa charge l’optimisation du poids des assets (notamment le choix du format et de la compression des images). cf. Guidelines de performance.
 
@@ -216,11 +216,11 @@ L’intégrateur aura à sa charge l’optimisation du poids des assets (notamme
 
 #### Généralités
 
-- Tailles des zones de touch en mobile + espacements suffisants entre les zones
-- Présence d’un menu de liens rapides
-- Indication visuelle de la page active
-- Les liens et zones cliquables sont visuellement identifiés (ex. soulignement d'un lien)
-- Les éléments interactifs doivent toujours être perceptibles (ex. navigation clavier ou pointeur)
+- Tailles des zones de touch en mobile + espacements suffisants entre les zones.
+- Présence d’un menu de liens rapides.
+- Indication visuelle de la page active.
+- Les liens et zones cliquables sont visuellement identifiés (ex. soulignement d'un lien).
+- Les éléments interactifs doivent toujours être perceptibles (ex. navigation clavier ou pointeur).
 
 #### Couleurs
 
@@ -230,32 +230,31 @@ L’intégrateur aura à sa charge l’optimisation du poids des assets (notamme
 #### Contenus
 
 - Respecter une taille minimum de police pour la lisibilité.
-- Clarté du/des textes/du langage
-- Mise en contexte des "Call To Action"
-- Boutons descriptifs (pas de “cliquez ici”)
-- Indiquer [l’ouverture d’un lien dans une nouvelle fenêtre](Guidelines-Accessibilite.md#ouverture-dans-une-nouvelle-fenêtre)
-- Proposer différents médias de contact (téléphone, mail)
+- Privilégier la clarté du/des textes/du langage.
+- Pas de texte justifié, et bon espacement des lignes.
 - Pas de textes trop longs (utiliser les titres, segmenter, aérer, intégrer des images…)
-- Bon espacement des lignes de texte
-- Pas de texte justifié
-- Conserver les accents sur les majuscules
-- Expliciter les abréviations
-- Déclarer les citations
+- Conserver les accents sur les majuscules.
+- Expliciter les abréviations.
+- Déclarer les citations.
+- Mettre en contexte les _Call To Action_.
+- Utiliser des boutons et liens explicites (pas de _cliquez ici_).
+- Indiquer [l’ouverture d’un lien dans une nouvelle fenêtre](Guidelines-Accessibilite.md#ouverture-dans-une-nouvelle-fenêtre)
 - Limiter les informations à télécharger et préférer l’incorporation directement dans la page
+- Proposer différents moyens de contact (téléphone, e-mail).
 
 #### Formulaires
 
-- Indiquer clairement quels libellés correspondent à quels champs de formulaires
-- Les libellés et les champs doivent être accolés
-- Boutons radios/checkboxes : le champ de sélection doit être large et pas seulement sur la box
-- Indication des champs obligatoires
-- Indication des formats de saisie (numérique, …)
-- Validation et affichage des erreurs en temps réel des formulaires (sans actualisation)
-- Indiquer le format et la taille des fichiers en téléchargement
+- Indiquer clairement quels libellés correspondent à quels champs de formulaires.
+- Les libellés et les champs doivent être accolés.
+- Boutons radios/checkboxes : le champ de sélection doit être large et pas seulement sur la _box_.
+- Indication des champs obligatoires.
+- Indication des formats de saisie (numérique, …).
+- Validation et affichage des erreurs en temps réel des formulaires (sans actualisation).
+- Indiquer le format et la taille des fichiers en téléchargement.
 
 #### Médias
 
-- Icônes et/ou images accompagnées d’un texte/intitulé si nécessaire
+- Icônes et/ou images accompagnées d’un texte/intitulé si nécessaire.
 
 ## Autres ressources et bonnes pratiques
 
@@ -266,9 +265,9 @@ L’intégrateur aura à sa charge l’optimisation du poids des assets (notamme
 
 C’est l’ensemble des étapes et interactions qu’un utilisateur peut accomplir ; afin de l'optimiser il est fortement conseillé de :
 
-- Diminuer le nombre d’étapes et d’actions
-- Concevoir un design clair en supprimant les fonctionnalités non essentielles
-- Identifier les cas d'échec
-- Adapter le contenu sur toutes les technologies (mobile, tablette…)
+- Diminuer le nombre d’étapes et d’actions.
+- Concevoir un design clair en supprimant les fonctionnalités non essentielles.
+- Identifier les cas d'échec.
+- Adapter le contenu sur toutes les technologies (mobile, tablette…).
 
 Le nombre de points de frictions - situations ou interactions qui contribuent à dégrader l'expérience utilisateur et à ralentir son parcours - doit être égal à 0.
