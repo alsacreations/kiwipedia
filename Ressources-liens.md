@@ -98,6 +98,7 @@ Autres listes de ressources et checklists
 
 ### Typographie, @font-face et polices
 
+- <https://systemfontstack.com/> Font stack système native
 - <https://gwfh.mranftl.com/fonts> google-webfonts-helper : Héberger soi-même les polices Google Fonts
 - <https://www.fontspace.com/> Polices à télécharger et à générer en ligne
 - <https://prowebtype.com/> E-book (gratuit) Professionnal web typography (très bon, à lire)
@@ -154,7 +155,6 @@ Autres listes de ressources et checklists
 
 - <https://uigenerator.org/>
 - <https://shuffle.dev/>
-
 
 ### RWD Responsive Web Design
 
@@ -284,7 +284,7 @@ Autres listes de ressources et checklists
   - <https://molily.de/robust-javascript/> Robust JavaScript
   - <https://github.com/rwaldron/idiomatic.js/tree/master/translations/fr_FR>
   - <http://jstherightway.org/>
-  - <http://superherojs.com/> 
+  - <http://superherojs.com/>
   - <https://github.com/airbnb/javascript>
   - <https://bevacqua.github.io/promisees/> Les promesses expliquées et visualisées en animations
 
