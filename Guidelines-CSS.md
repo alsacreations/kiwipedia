@@ -243,6 +243,10 @@ Les inconvénients majeurs de cette notation sont :
 
 **Exception : le sélecteur de parent `&` est parfaitement préconisé dans le cas d'événements tels que `&:hover`, `&:focus` ou `&:active`.**
 
+## Fonts, polices
+
+On privilégie l'auto-hébergement des fichiers de police, sans passer par Google Fonts <https://gwfh.mranftl.com/fonts>
+
 ## Bonus : Media print (impression)
 
 Nous proposons une feuille de styles "Print" dans nos projets d'intégration web.
