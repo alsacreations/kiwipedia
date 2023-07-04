@@ -98,19 +98,23 @@ Autres listes de ressources et checklists
 
 ### Typographie, @font-face et polices
 
-- <https://type-scale.com/>
+- <https://gwfh.mranftl.com/fonts> google-webfonts-helper : Héberger soi-même les polices Google Fonts
 - <https://www.fontspace.com/> Polices à télécharger et à générer en ligne
 - <https://prowebtype.com/> E-book (gratuit) Professionnal web typography (très bon, à lire)
 - <http://fontfamily.io/> Tester la présence des polices sur les OS
-- <https://icomoon.io/app/> (font-icons)
-- <http://fontastic.me/> (font-icons)
-- <https://fontello.com/> (font-icons)
-- <https://transfonter.org/>
+- <https://transfonter.org/> @font-face generator
+- <https://type-scale.com/>
 - <http://www.fontsquirrel.com/tools/webfont-generator>
 - <http://www.losttype.com/browse/>
-- <http://www.shapecatcher.com/>
 - <https://fontcombiner.com/> Combiner des glyphes
 - <http://www.freefontconverter.com/> Convertir formats
+- <http://www.shapecatcher.com/>
+
+#### Font-icons
+
+- <https://icomoon.io/app/>
+- <http://fontastic.me/>
+- <https://fontello.com/>
 
 ### Frameworks CSS
 
