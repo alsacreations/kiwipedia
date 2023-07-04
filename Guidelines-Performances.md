@@ -266,16 +266,11 @@ Voici un exemple de chargement de police conseillé (cas de deux fichiers de pol
 
 ### Google Webfont Helper
 
-L'application web [Google Webfont Helper](https://gwfh.mranftl.com/fonts) permet d'optimiser finement les fichiers, il est conseillé de récupérer les fontes via cette ressource si cela est possible :
-
-- choisir le bon subset (latin, latin-ext, etc.)
-- choisir les styles nécessaires au projet (normal, bold, italic, etc.)
-- copier le code CSS prévu pour les navigateurs modernes (woff2 et woff)
-- télécharger les fontes de Google Fonts aux formats woff2 et woff
+[Google Webfont Helper](https://gwfh.mranftl.com/fonts) génère le code CSS nécessaire, optimise finement les fichiers et permet de les héberger sans faire appel à Google en choisissant le bon subset (latin, latin-ext, etc.), les variantes (normal, bold, italic, etc.)
 
 ## Icônes
 
-Voir le document spécifique des [Guidelines Icônes](Guidelines-Icones.md).
+Voir [Guidelines Icônes](Guidelines-Icones.md).
 
 ## Hébergement
 

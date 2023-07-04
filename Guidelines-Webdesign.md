@@ -182,9 +182,9 @@ L’Intégrateur, lui, va raisonner en “composants” plutôt qu’en mise en 
 
 Pour des raisons de performance, il est conseillé :
 
-- Titrages : se limiter à deux Familles de police au maximum (ex. Merryweather et Roboto).
-- Titrages : se limiter à 3-4 Variantes de police au maximum (ex. Merryweather bold, Roboto regular, Roboto bold, Roboto italic).
-- Labeur : “system font” par défaut de préférence (ex. system-ui).
+- Titrages : se limiter à deux familles de police au maximum (ex. Merryweather et Roboto).
+- Titrages : se limiter à 3-4 variantes de police au maximum (ex. Merryweather bold, Roboto regular, Roboto bold, Roboto italic).
+- Labeur : privilégier la [stack system](https://systemfontstack.com/) par défaut.
 
 Si le nombre de variantes pour une police est supérieur à 3 alors une “Variable Font” devient plus intéressante en termes de poids/requêtes car 1 seul fichier pour toute la famille de police.
 
