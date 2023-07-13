@@ -219,7 +219,7 @@ img {
 - [Handbrake](https://handbrake.fr/)
 - [Audacity](https://www.audacityteam.org/)
 
-## Polices
+## Polices (fonts)
 
 Autant que possible, privilégier le chargement de polices légères et respectueuses des performances. Limiter le nombre de ces polices à 2, voire 3 grand maximum.
 
