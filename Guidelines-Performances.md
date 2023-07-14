@@ -270,7 +270,7 @@ Voici un exemple de chargement de police conseillé (cas de deux fichiers de pol
 
 ### Cas des Variable Fonts
 
-Les variable fonts sont des familles de polices intégrants diverses variantes (dites "axis") au sein d'un même fichier. Il peut s'agir de graisses, italique, stretch voire de toute autre variante personnalisée par l'auteur de la fonte.
+Les variable fonts sont des familles de polices intégrant diverses variantes (dites "axis") au sein d'un même fichier. Il peut s'agir de graisses, italique, stretch voire de toute autre variante personnalisée par l'auteur de la fonte.
 
 Une variable font est systématiquement recommandée dès lors qu'un projet nécessite plus de 3 variantes parmi celles-ci : regular, italic, light, semi-bold, bold, bold italic, etc. Cette fonctionnalité est aujourd'hui reconnue par plus de 95% des navigateurs.
 
