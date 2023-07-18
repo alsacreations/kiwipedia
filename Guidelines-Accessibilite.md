@@ -32,7 +32,7 @@ Ce document est divisé en trois parties :
 - Travailler avec des tailles de polices fluides (`em` ou `rem`) pour permettre l'agrandissement.
 - Ne pas supprimer l'outline autour des éléments cliquables/focusables (pas de `outline: none`) [ou utiliser `:focus-visible`](#outline-et-focus).
 - Ne pas employer de contenu généré (`::before`, `::after`) pour [véhiculer des informations ou pour afficher des icônes](#css-generated-content).
-- Masquer correctement [les contenus qui devraient être lus par un lecteur d’écran](#contenu-lu-mais-masqué-à-lécran) (ex. `.visually-hidden` ou `.sr-only` au lieu de `display: none`)
+- Masquer correctement [les contenus qui devraient être lus par un lecteur d’écran](#contenu-lu-mais-masqué-à-lécran) (ex. `.visually-hidden` ou `.sr-only` au lieu de `display: none`).
 
 ### Formulaires
 
@@ -157,14 +157,14 @@ La balise `<nav>` peut-être utilisée plusieurs fois, avec l'attribut `role="na
 
 L'attribut `tabindex` permet de capturer l’ordre du focus selon le nombre qu’on lui attribue (permettant de passer d'un élément *focusable* à l'autre avec la touche `tab`). Un ordre logique est "naturellement" créé en suivant les éléments interactifs du DOM (liens, boutons, champs...). Il comprend tous les nombres positifs à partir de 0.
 
-→ Il faut éviter de toucher aux valeurs positives de `tabindex` cela pourrait aller à l'encontre de l'ordre "naturel" dans le document.
+Il faut éviter de toucher aux valeurs positives de `tabindex` cela pourrait aller à l'encontre de l'ordre "naturel" dans le document.
 
 On peut utiliser :
 
 - `-1` : rend un élément *focusable* sans le rendre navigable au clavier ; s'il est ajouté sur un élément interactif, celui-ci perdra le focus.
 - `0` : l'élément peut capturer le focus et être atteint via la navigation au clavier.
 
-→ Les éléments pouvant recevoir le focus autres que nativement `<a>`, `<input>`, `<button>`, `<select>`, `<textarea>` (entre autres) pourront être équipés de `tabindex="0"`.
+Les éléments pouvant recevoir le focus autres que nativement `<a>`, `<input>`, `<button>`, `<select>`, `<textarea>` (entre autres) pourront être équipés de `tabindex="0"`.
 
 Pour en savoir plus : [MDN : tabindex](https://developer.mozilla.org/fr/docs/Web/HTML/Global_attributes/tabindex)
 
@@ -186,9 +186,9 @@ Un lien d'évitement vers le contenu principal est nécessaire. D'autres liens d
 
 - Il doit être le premier lien de la page.
 - Il peut être masqué par défaut (classe Tailwind [`sr-only`](https://tailwindcss.com/docs/screen-readers)) mais doit devenir visible lors du focus.
-- Si le contenu principal est un élément non interactif il faut mettre un `tabindex="-1"` pour rendre cet élément *focusable* (ex. sur une balise `<main>`). Voir [la partie sur les tabindex.](#tabulation-et-tabindex)
+- Si le contenu principal est un élément non interactif il faut ajouter `tabindex="-1"` pour rendre cet élément *focusable* (ex. sur une balise `<main>`). Voir [la partie sur les tabindex.](#tabulation-et-tabindex)
 
-Voici le lien d'évitement employé au sein du [Design System du W3C](https://design-system.w3.org/)&nbsp;:
+Voici le lien d'évitement employé au sein du [Design System du W3C](https://design-system.w3.org/) :
 
 ```html
 <body>
@@ -634,7 +634,7 @@ La navigation au clavier se fait via la tabulation (touche *Tab* du clavier ; *S
 
 [WAI-ARIA](https://developer.mozilla.org/fr/docs/Web/Accessibility/ARIA) est une technologie permettant de donner des indications d'accessibilité supplémentaires par rapport aux comportements natifs déjà prévus par les navigateurs pour les éléments HTML de base.
 
-Trois caractéristiques principales sont définies dans la spécification&nbsp;:
+Trois caractéristiques principales sont définies dans la spécification :
 
 - les **attributs** `role` (landmarks), voir la [Matrice des rôles ARIA](https://whatsock.com/training/matrices/)
 - les **propriétés**, par exemple `aria-label` ou `aria-required`.
@@ -807,7 +807,7 @@ Ajouter également `focusable="false"`pour éviter que la touche *Tab* ne navigu
 </svg>
 ```
 
-ou bien (si l'infobulle au survol n'est pas souhaitée)&nbsp;:
+ou bien (si l'infobulle au survol n'est pas souhaitée) :
 
 ```xml
 <svg role="img" aria-label="Nom accessible" focusable="false">
