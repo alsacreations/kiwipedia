@@ -21,7 +21,7 @@ Ce document est divisé en trois parties :
 - Utiliser un [titre `<title>` pertinent](#titres-de-page) pour chaque page.
 - Respecter la hiérarchie des titres `<hX>`.
 - Utiliser les [landmarks ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/landmark_role) avec leur rôles explicites (ex: `<main role="main">`, demandé par RGAA)
-- Cacher correctement les contenus qui ne devraient *pas* être retranscrits par un lecteur d’écran (ex. `aria-hidden=true`).
+- Cacher correctement les contenus qui ne devraient *pas* être retranscrits par un lecteur d’écran (ex. `aria-hidden="true"`).
 - Prévoir au moins [un lien d'évitement](#liens-dévitement-skip-link) permettant d'accéder directement au contenu principal.
 - Donner [un intitulé explicite à tous les liens](#liens).
 - Signaler lorsqu’un lien [s’ouvre dans une nouvelle fenêtre](#ouverture-dans-une-nouvelle-fenêtre-lien-externe).
@@ -499,7 +499,7 @@ L'indication doit être correctement lié à son champ, et peut être placée so
 </form>
 ```
 
-À noter, que les *placeholders* (attribut `placeholder`) ne constituent pas une technique correcte pour nommer ou donner des précisions à un champ. Premièrement à cause d'un contraste souvent insuffisant et d'autre part car cette indication disparaît pendant la saisie puis une fois que le champ est renseigné.
+Les *placeholders* (attribut `placeholder`) ne constituent pas une technique correcte pour nommer ou donner des précisions à un champ. Premièrement à cause d'un contraste souvent insuffisant et d'autre part car cette indication disparaît pendant la saisie puis une fois que le champ est renseigné.
 
 Associer un `autocomplete` pour les champs demandant une donnée personnelle (nom, prénom, e-mail, adresse, etc.). Voir [la liste complète des valeurs de `autocomplete`.](https://www.w3.org/TR/WCAG21/#input-purposes).
 
@@ -535,14 +535,11 @@ Les éléments `details` et `summary` sont accessibles dans la pupart des cas en
 
 N'utiliser les tableaux que pour la présentation de données, et non pour la structure du document ou de la mise en page (design).
 
-Définir un titre pertinent avec `<caption>` placée juste après la balise d’ouverture `<table>`.
-
-Les cellules d’en-têtes doivent être déclarées avec la balise `<th>`. Et les cellules de données avec `<td>`.
-
-Sur les cellules d’en-tête il est nécessaire d’ajouter l’attribut `scope` afin de les lier aux cellules de données. Il prend pour valeur :
-
-- `col` : s’applique à toutes les cellules de la colonne.
-- `row` : s’applique à toutes les cellules de la ligne.
+- Définir un titre pertinent avec `<caption>` placée juste après la balise d’ouverture `<table>`.
+- Les cellules d’en-têtes doivent être déclarées avec la balise `<th>`. Et les cellules de données avec `<td>`.
+- Sur les cellules d’en-tête il est nécessaire d’ajouter l’attribut `scope` afin de les lier aux cellules de données. Il prend pour valeur :
+  - `col` : s’applique à toutes les cellules de la colonne.
+  - `row` : s’applique à toutes les cellules de la ligne.
 
 ```html
 <table>
@@ -688,7 +685,7 @@ On peut générer du contenu en CSS à l’aide de `::before` et `::after` et la
 
 Mais la plupart des lecteurs d’écrans actuels peuvent retranscrire ce contenu, ce qui peut provoquer une gêne (voir <https://tink.uk/accessibility-support-for-css-generated-content>).
 
-Pour éviter cela, il est préférable d’insérer l’attribut `aria-hidden=true` sur l’élément.
+Pour éviter cela, il est préférable d’insérer l’attribut `aria-hidden="true"` sur l’élément.
 
 Exemple :
 
