@@ -270,7 +270,7 @@ Liste de définitions (ex : glossaire) :
 
 ### Liens
 
-Un lien `<a>` a pour fonction de mener vers une nouvelle page, un nouveau contexte de navigation. À ne pas confondre avec un bouton `<button>` qui sert à déclencher une action sans nécessairement changer de page (ex : déployer un menu, révéler un bloc).
+Un lien `<a>` mène vers une nouvelle page, un nouveau contexte de navigation. À ne pas confondre avec un bouton `<button>` ou `<input type="button">` qui déclenche une action sans nécessairement changer de page (ex : déployer un menu, révéler un bloc).
 
 #### Intitulés des liens
 
@@ -387,14 +387,14 @@ Lorsqu'un lien n'est composé que d'une image, c'est le texte alternatif de l'im
 
 Lorsqu'un lien n'est composé que d'une icône générée en CSS (les font-icon par exemple), il est important de :
 
-- Rendre explicite le lien avec un texte masqué (classe CSS `.visually-hidden`)
+- Rendre explicite le lien avec un texte masqué (classe CSS `.sr-only`)
 - Masquer l'icône aux lecteurs d'écran
 - (optionnel si l'icône n'est pas parlante) Ajouter un attribut `title` sur le lien.
 
 ```html
 <a href="#">
     <span class="icone" aria-hidden="true"></span>
-    <span class="visually-hidden">Retour à l'accueil</span>
+    <span class="sr-only">Retour à l'accueil</span>
 </a>
 ```
 
@@ -414,7 +414,7 @@ Dans le cas où l'image apporte une information, le texte alternatif peut être 
 <!-- Lien icône générée en CSS -->
 <a href="#">Statut :
     <span class="icone" aria-hidden="true"></span>
-    <span class="visually-hidden">En cours</span>
+    <span class="sr-only">En cours</span>
 </a>
 ```
 
@@ -695,7 +695,7 @@ Exemple :
 
 ### Contenu lu mais masqué à l’écran
 
-Ne **jamais** utiliser `display: none` pour masquer visuellement du texte qui devrait être retranscrit par un lecteur d’écran. Utiliser plutôt la classe `.sr-only`, présente dans [Tailwind](https://tailwindcss.com/docs/screen-readers). Cette astuce CSS permet de cacher visuellement du contenu texte mais tout en restant accessible aux lecteurs d’écrans. Lire aussi [Accessibilité Numérique Orange : Exemple masquage accessible et aria-hidden](https://a11y-guidelines.orange.com/fr/articles/masquage-accessible/).
+Ne **jamais** utiliser `display: none` pour masquer visuellement du texte qui devrait être retranscrit par un lecteur d’écran. Utiliser plutôt la classe `.sr-only`, présente dans [Tailwind](https://tailwindcss.com/docs/screen-readers) ou `.visually-hidden`, présente dans [Bootstrap](https://getbootstrap.com/docs/5.0/helpers/visually-hidden/). Cette astuce CSS permet de cacher visuellement du contenu texte mais tout en restant accessible aux lecteurs d’écrans. Lire aussi [Accessibilité Numérique Orange : Exemple masquage accessible et aria-hidden](https://a11y-guidelines.orange.com/fr/articles/masquage-accessible/).
 
 ```css
 .sr-only {
@@ -896,9 +896,7 @@ Le texte alternatif de l'image (`alt`) doit être renseigné.
 </p>
 ```
 
-Si la description est trop longue, elle peut être masquée de manière accessible avec un [accordéon](https://developer.mozilla.org/fr/docs/Web/HTML/Element/details), par exemple.
-
-Sinon, il est possible d'avoir une description détaillée n'importe où sur la page, et peut être liée via l'attribut `longdesc` sur l'image. L'attribut a pour valeur l'identifiant (`id`) de la description détaillée.
+Si la description est trop longue, elle peut être masquée de manière accessible avec un [accordéon](https://developer.mozilla.org/fr/docs/Web/HTML/Element/details). Sinon, il est possible d'utiliser une description détaillée n'importe où sur la page via l'attribut `longdesc` sur l'image avec pour valeur l'identifiant (`id`) de cette description détaillée.
 
 ```html
 <img src="image.url" alt="Données numérique" longdesc="#description">
@@ -914,7 +912,7 @@ Sinon, il est possible d'avoir une description détaillée n'importe où sur la 
 
 #### Description détaillée sur une autre page
 
-Pour cela, il faut ajouter un attribut `longdesc` sur l'image (`<img>`) qui a pour valeur l'adresse (URL) de la page regroupant la description détaillée.
+Pour cela, il faut utiliser un attribut `longdesc` sur l'image (`<img>`) ayant pour valeur l'adresse (URL) de la page contenant la description détaillée.
 
 ```html
 <!-- La page page-de-la-description-detaillee.html regroupera la description détaillée de l'image.-->
