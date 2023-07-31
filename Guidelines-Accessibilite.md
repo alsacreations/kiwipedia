@@ -525,7 +525,7 @@ Le message d'erreur d'un champ doit être lié soit :
     <p id="erreur-email">Le format attendu n'est pas correct.</p>
 ```
 
-Voir aussi [WebAIM : Usable and Accessible Form Validation and Error Recovery](https://webaim.org/techniques/formvalidation/).
+Voir [WebAIM : Usable and Accessible Form Validation and Error Recovery](https://webaim.org/techniques/formvalidation/).
 
 ### Details et summary
 
@@ -947,6 +947,19 @@ Les multimédias (vidéos, sons) nécessitent des précautions :
 ---
 
 ## Bonnes pratiques Javascript
+
+## ARIA
+
+Si WCAG concerne plutôt le contenu web "statique", [WAI-ARIA](https://developer.mozilla.org/fr/docs/Web/Accessibility/ARIA) est une technologie améliorant l'accessibilité supplémentaires par rapport aux comportements natifs déjà prévus par les navigateurs pour les éléments HTML de base. Trois caractéristiques principales sont définies dans la spécification :
+
+- les **attributs** `role` (landmarks), voir la [Matrice des rôles ARIA](https://whatsock.com/training/matrices/)
+- les **propriétés**, par exemple `aria-label` ou `aria-required`.
+- les **états**, par exemple `aria-disabled` souvent géré par JavaScript.
+
+Pour tous les composants de page agissant sur le contenu, de type swiper, slider, slideshow, accordéon, pagination, onglets, menu déroulant, on privilégiera les scripts "accessibles", y compris ceux utilisant ARIA. Le but étant, entre autres, de ne pas gêner la navigation au clavier et de permettre la lecture de la page avec une synthèse vocale.
+
+- <https://www.w3.org/WAI/ARIA/apg/patterns/>
+- <https://la-cascade.io/articles/comprendre-wai-aria-un-guide-complet>
 
 ### ARIA live
 
