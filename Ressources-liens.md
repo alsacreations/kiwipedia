@@ -681,7 +681,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 - <https://www.robinwieruch.de/web-applications/> Applications web, SPA, full-stack, SSR, REST...
 
-## HTTP
+### HTTP
 
 - <https://blog.appcanary.com/2017/http-security-headers.html>
 - <https://hookbin.com/> Capture and inspect HTTP requests
@@ -709,6 +709,11 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 - <https://ngrok.com/>
 - <https://doc.traefik.io/traefik/>
+
+### DNS
+
+- <https://messwithdns.net/> expérimenter en ligne
+- <https://howdns.works/> How DNS works
 
 ---
 
