@@ -1102,13 +1102,18 @@ grep -lR "quelquechose" *
 Créer une archive tar.gz par sous dossier
 
 ```sh
-#!/bin/bash
-
 for dir in */
 do
   base=$(basename "$dir")
   tar -czf "${base}.tar.gz" "$dir"
 done
+```
+
+Créer une archive tar.gz incluant la date du jour et excluant des dossiers + fichiers git
+
+```sh
+today=$(date +%Y-%m-%d)
+tar --exclude-vcs --exclude="db-data" -czf "../backups/$today-project.tar.gz" project/
 ```
 
 Trouver les robots en excluant ceux connus (-E expression régulière, -i case insensitive, -v inverse)
