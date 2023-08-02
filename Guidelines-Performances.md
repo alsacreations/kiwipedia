@@ -219,7 +219,7 @@ img {
 - [Handbrake](https://handbrake.fr/)
 - [Audacity](https://www.audacityteam.org/)
 
-## Polices
+## Polices (fonts)
 
 Autant que possible, privilégier le chargement de polices légères et respectueuses des performances. Limiter le nombre de ces polices à 2, voire 3 grand maximum.
 
@@ -227,7 +227,7 @@ Autant que possible, privilégier le chargement de polices légères et respectu
 
 - Privilégier la police système `system-ui` pour les textes de contenus (raison : performance + UX + Layout Shifts).
 - Privilégier le format `.woff2` (et `.woff` en alternative).
-- Limiter à 2 ou 3 fichiers de police au maximum (regular, bold, italic), sinon préférer une [Variable Font](https://v-fonts.com/)
+- Limiter à 2 ou 3 fichiers de police au maximum (regular, bold, italic), sinon préférer une [Variable Font](https://v-fonts.com/) (voir la partie dédiée ci-dessous)
 - Utiliser la directive `<link rel="preload">` pour charger les polices de manière asynchrone.
 - Ajouter `font-display: swap;` au sein de la règle `@font-face` pour éviter les effets de FOIT. Si la police est pré-chargée, `font-display: optional;` est alors recommandé.
 - Héberger la police sur son propre serveur (voir l'outil "Google Webfont Helper").
@@ -266,16 +266,46 @@ Voici un exemple de chargement de police conseillé (cas de deux fichiers de pol
 
 ### Google Webfont Helper
 
-L'application web [Google Webfont Helper](https://gwfh.mranftl.com/fonts) permet d'optimiser finement les fichiers, il est conseillé de récupérer les fontes via cette ressource si cela est possible :
+[Google Webfont Helper](https://gwfh.mranftl.com/fonts) génère le code CSS nécessaire, optimise finement les fichiers et permet de les héberger sans faire appel à Google en choisissant le bon subset (latin, latin-ext, etc.), les variantes (normal, bold, italic, etc.)
 
-- choisir le bon subset (latin, latin-ext, etc.)
-- choisir les styles nécessaires au projet (normal, bold, italic, etc.)
-- copier le code CSS prévu pour les navigateurs modernes (woff2 et woff)
-- télécharger les fontes de Google Fonts aux formats woff2 et woff
+### Cas des Variable Fonts
+
+Les variable fonts sont des familles de polices intégrant diverses variantes (dites "axis") au sein d'un même fichier. Il peut s'agir de graisses, italique, stretch voire de toute autre variante personnalisée par l'auteur de la fonte.
+
+Une variable font est systématiquement recommandée dès lors qu'un projet nécessite plus de 3 variantes parmi celles-ci : regular, italic, light, semi-bold, bold, bold italic, etc. Cette fonctionnalité est aujourd'hui reconnue par plus de 95% des navigateurs.
+
+Comme pour les fontes classiques, le format `.woff2` ainsi que l'hébergement de la fonte sont préconisés (les fontes variables peuvent être trouvées sur [Google Fonts](https://fonts.google.com/?vfonly=true) en activant la case "show only variable fonts" puis téléchargées en `.ttf` via le bouton "Download family". Un convertisseur tel que [Cloud converter](https://cloudconvert.com/ttf-to-woff2) pourra produire la version `.woff2`.
+
+#### Code recommandé
+
+Voici un exemple de chargement de variable font conseillé&nbsp;:
+
+```css
+@font-face {
+  font-family: 'Work Sans';
+  src: url('./fonts/WorkSans-VariableFont_wght.woff2') format('woff2-variations');
+  font-display: swap;
+  font-weight: 100 900;
+}
+```
+
+#### Modification des axis
+
+Toutes les variantes d'une fonte variable sont modifiables via la propriété `font-variation-settings`. Certains de ces axis sont normalisés et disposent d'un équivalent en propriété CSS :
+
+| Axe 	    | Propriété CSS  	|
+|---	    |---	            |
+| "wght" 	| `font-weight`  	|
+| "wdth"	| `font-stretch`  	|
+| "slnt" 	| `font-style` oblique + angle  	|
+| "ital" 	| `font-style: italic`  	|
+| "opsz" 	| `font-optical-sizing`  	|
+
+Ainsi, pour modifier la graisse d'une police, les deux syntaxes sont possibles : `font-variation-settings: 'wght' 625;` ou `font-weight: 625;`. Il est même possible de passer par une variable CSS ainsi `font-variation-settings: 'wght' var(--text-axis);`
 
 ## Icônes
 
-Voir le document spécifique des [Guidelines Icônes](Guidelines-Icones.md).
+Voir [Guidelines Icônes](Guidelines-Icones.md).
 
 ## Hébergement
 

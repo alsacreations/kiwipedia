@@ -21,7 +21,7 @@ Ce document est divisé en trois parties :
 - Utiliser un [titre `<title>` pertinent](#titres-de-page) pour chaque page.
 - Respecter la hiérarchie des titres `<hX>`.
 - Utiliser les [landmarks ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/landmark_role) avec leur rôles explicites (ex: `<main role="main">`, demandé par RGAA)
-- Cacher correctement les contenus qui ne devraient *pas* être retranscrits par un lecteur d’écran (ex. `aria-hidden=true`).
+- Cacher correctement les contenus qui ne devraient *pas* être retranscrits par un lecteur d’écran (ex. `aria-hidden="true"`).
 - Prévoir au moins [un lien d'évitement](#liens-dévitement-skip-link) permettant d'accéder directement au contenu principal.
 - Donner [un intitulé explicite à tous les liens](#liens).
 - Signaler lorsqu’un lien [s’ouvre dans une nouvelle fenêtre](#ouverture-dans-une-nouvelle-fenêtre-lien-externe).
@@ -29,10 +29,10 @@ Ce document est divisé en trois parties :
 ### CSS
 
 - Ne pas fixer de hauteur sur les éléments afin que le contenu reste lisible lorsque le texte est zoomé.
-- Travailler avec des tailles de polices fluides (`em` ou `rem`).
+- Travailler avec des tailles de polices fluides (`em` ou `rem`) pour permettre l'agrandissement.
 - Ne pas supprimer l'outline autour des éléments cliquables/focusables (pas de `outline: none`) [ou utiliser `:focus-visible`](#outline-et-focus).
 - Ne pas employer de contenu généré (`::before`, `::after`) pour [véhiculer des informations ou pour afficher des icônes](#css-generated-content).
-- Masquer correctement [les contenus qui devraient être lus par un lecteur d’écran](#contenu-lu-mais-masqué-à-lécran) (ex. `.visually-hidden` ou `.sr-only` au lieu de `display: none`)
+- Masquer correctement [les contenus qui devraient être lus par un lecteur d’écran](#contenu-lu-mais-masqué-à-lécran) (ex. `.visually-hidden` ou `.sr-only` au lieu de `display: none`).
 
 ### Formulaires
 
@@ -157,14 +157,14 @@ La balise `<nav>` peut-être utilisée plusieurs fois, avec l'attribut `role="na
 
 L'attribut `tabindex` permet de capturer l’ordre du focus selon le nombre qu’on lui attribue (permettant de passer d'un élément *focusable* à l'autre avec la touche `tab`). Un ordre logique est "naturellement" créé en suivant les éléments interactifs du DOM (liens, boutons, champs...). Il comprend tous les nombres positifs à partir de 0.
 
-→ Il faut éviter de toucher aux valeurs positives de `tabindex` cela pourrait aller à l'encontre de l'ordre "naturel" dans le document.
+Il faut éviter de toucher aux valeurs positives de `tabindex` cela pourrait aller à l'encontre de l'ordre "naturel" dans le document.
 
 On peut utiliser :
 
 - `-1` : rend un élément *focusable* sans le rendre navigable au clavier ; s'il est ajouté sur un élément interactif, celui-ci perdra le focus.
 - `0` : l'élément peut capturer le focus et être atteint via la navigation au clavier.
 
-→ Les éléments pouvant recevoir le focus autres que nativement `<a>`, `<input>`, `<button>`, `<select>`, `<textarea>` (entre autres) pourront être équipés de `tabindex="0"`.
+Les éléments pouvant recevoir le focus autres que nativement `<a>`, `<input>`, `<button>`, `<select>`, `<textarea>` (entre autres) pourront être équipés de `tabindex="0"`.
 
 Pour en savoir plus : [MDN : tabindex](https://developer.mozilla.org/fr/docs/Web/HTML/Global_attributes/tabindex)
 
@@ -186,9 +186,9 @@ Un lien d'évitement vers le contenu principal est nécessaire. D'autres liens d
 
 - Il doit être le premier lien de la page.
 - Il peut être masqué par défaut (classe Tailwind [`sr-only`](https://tailwindcss.com/docs/screen-readers)) mais doit devenir visible lors du focus.
-- Si le contenu principal est un élément non interactif il faut mettre un `tabindex="-1"` pour rendre cet élément *focusable* (ex. sur une balise `<main>`). Voir [la partie sur les tabindex.](#tabulation-et-tabindex)
+- Si le contenu principal est un élément non interactif il faut ajouter `tabindex="-1"` pour rendre cet élément *focusable* (ex. sur une balise `<main>`). Voir [la partie sur les tabindex.](#tabulation-et-tabindex)
 
-Voici le lien d'évitement employé au sein du [Design System du W3C](https://design-system.w3.org/)&nbsp;:
+Voici le lien d'évitement employé au sein du [Design System du W3C](https://design-system.w3.org/) :
 
 ```html
 <body>
@@ -270,7 +270,7 @@ Liste de définitions (ex : glossaire) :
 
 ### Liens
 
-Un lien `<a>` a pour fonction de mener vers une nouvelle page, un nouveau contexte de navigation. À ne pas confondre avec un bouton `<button>` qui sert à déclencher une action sans nécessairement changer de page (ex : déployer un menu, révéler un bloc).
+Un lien `<a>` mène vers une nouvelle page, un nouveau contexte de navigation. À ne pas confondre avec un bouton `<button>` ou `<input type="button">` qui déclenche une action sans nécessairement changer de page (ex : déployer un menu, révéler un bloc).
 
 #### Intitulés des liens
 
@@ -387,14 +387,14 @@ Lorsqu'un lien n'est composé que d'une image, c'est le texte alternatif de l'im
 
 Lorsqu'un lien n'est composé que d'une icône générée en CSS (les font-icon par exemple), il est important de :
 
-- Rendre explicite le lien avec un texte masqué (classe CSS `.visually-hidden`)
+- Rendre explicite le lien avec un texte masqué (classe CSS `.sr-only`)
 - Masquer l'icône aux lecteurs d'écran
 - (optionnel si l'icône n'est pas parlante) Ajouter un attribut `title` sur le lien.
 
 ```html
 <a href="#">
     <span class="icone" aria-hidden="true"></span>
-    <span class="visually-hidden">Retour à l'accueil</span>
+    <span class="sr-only">Retour à l'accueil</span>
 </a>
 ```
 
@@ -414,7 +414,7 @@ Dans le cas où l'image apporte une information, le texte alternatif peut être 
 <!-- Lien icône générée en CSS -->
 <a href="#">Statut :
     <span class="icone" aria-hidden="true"></span>
-    <span class="visually-hidden">En cours</span>
+    <span class="sr-only">En cours</span>
 </a>
 ```
 
@@ -499,7 +499,7 @@ L'indication doit être correctement lié à son champ, et peut être placée so
 </form>
 ```
 
-À noter, que les *placeholders* (attribut `placeholder`) ne constituent pas une technique correcte pour nommer ou donner des précisions à un champ. Premièrement à cause d'un contraste souvent insuffisant et d'autre part car cette indication disparaît pendant la saisie puis une fois que le champ est renseigné.
+Les *placeholders* (attribut `placeholder`) ne constituent pas une technique correcte pour nommer ou donner des précisions à un champ. Premièrement à cause d'un contraste souvent insuffisant et d'autre part car cette indication disparaît pendant la saisie puis une fois que le champ est renseigné.
 
 Associer un `autocomplete` pour les champs demandant une donnée personnelle (nom, prénom, e-mail, adresse, etc.). Voir [la liste complète des valeurs de `autocomplete`.](https://www.w3.org/TR/WCAG21/#input-purposes).
 
@@ -525,7 +525,7 @@ Le message d'erreur d'un champ doit être lié soit :
     <p id="erreur-email">Le format attendu n'est pas correct.</p>
 ```
 
-Voir aussi [WebAIM : Usable and Accessible Form Validation and Error Recovery](https://webaim.org/techniques/formvalidation/).
+Voir [WebAIM : Usable and Accessible Form Validation and Error Recovery](https://webaim.org/techniques/formvalidation/).
 
 ### Details et summary
 
@@ -535,14 +535,11 @@ Les éléments `details` et `summary` sont accessibles dans la pupart des cas en
 
 N'utiliser les tableaux que pour la présentation de données, et non pour la structure du document ou de la mise en page (design).
 
-Définir un titre pertinent avec `<caption>` placée juste après la balise d’ouverture `<table>`.
-
-Les cellules d’en-têtes doivent être déclarées avec la balise `<th>`. Et les cellules de données avec `<td>`.
-
-Sur les cellules d’en-tête il est nécessaire d’ajouter l’attribut `scope` afin de les lier aux cellules de données. Il prend pour valeur :
-
-- `col` : s’applique à toutes les cellules de la colonne.
-- `row` : s’applique à toutes les cellules de la ligne.
+- Définir un titre pertinent avec `<caption>` placée juste après la balise d’ouverture `<table>`.
+- Les cellules d’en-têtes doivent être déclarées avec la balise `<th>`. Et les cellules de données avec `<td>`.
+- Sur les cellules d’en-tête il est nécessaire d’ajouter l’attribut `scope` afin de les lier aux cellules de données. Il prend pour valeur :
+  - `col` : s’applique à toutes les cellules de la colonne.
+  - `row` : s’applique à toutes les cellules de la ligne.
 
 ```html
 <table>
@@ -634,7 +631,7 @@ La navigation au clavier se fait via la tabulation (touche *Tab* du clavier ; *S
 
 [WAI-ARIA](https://developer.mozilla.org/fr/docs/Web/Accessibility/ARIA) est une technologie permettant de donner des indications d'accessibilité supplémentaires par rapport aux comportements natifs déjà prévus par les navigateurs pour les éléments HTML de base.
 
-Trois caractéristiques principales sont définies dans la spécification&nbsp;:
+Trois caractéristiques principales sont définies dans la spécification :
 
 - les **attributs** `role` (landmarks), voir la [Matrice des rôles ARIA](https://whatsock.com/training/matrices/)
 - les **propriétés**, par exemple `aria-label` ou `aria-required`.
@@ -688,7 +685,7 @@ On peut générer du contenu en CSS à l’aide de `::before` et `::after` et la
 
 Mais la plupart des lecteurs d’écrans actuels peuvent retranscrire ce contenu, ce qui peut provoquer une gêne (voir <https://tink.uk/accessibility-support-for-css-generated-content>).
 
-Pour éviter cela, il est préférable d’insérer l’attribut `aria-hidden=true` sur l’élément.
+Pour éviter cela, il est préférable d’insérer l’attribut `aria-hidden="true"` sur l’élément.
 
 Exemple :
 
@@ -698,7 +695,7 @@ Exemple :
 
 ### Contenu lu mais masqué à l’écran
 
-Ne **jamais** utiliser `display: none` pour masquer visuellement du texte qui devrait être retranscrit par un lecteur d’écran. Utiliser plutôt la classe `.sr-only`, présente dans [Tailwind](https://tailwindcss.com/docs/screen-readers). Cette astuce CSS permet de cacher visuellement du contenu texte mais tout en restant accessible aux lecteurs d’écrans. Lire aussi [Accessibilité Numérique Orange : Exemple masquage accessible et aria-hidden](https://a11y-guidelines.orange.com/fr/articles/masquage-accessible/).
+Ne **jamais** utiliser `display: none` pour masquer visuellement du texte qui devrait être retranscrit par un lecteur d’écran. Utiliser plutôt la classe `.sr-only`, présente dans [Tailwind](https://tailwindcss.com/docs/screen-readers) ou `.visually-hidden`, présente dans [Bootstrap](https://getbootstrap.com/docs/5.0/helpers/visually-hidden/). Cette astuce CSS permet de cacher visuellement du contenu texte mais tout en restant accessible aux lecteurs d’écrans. Lire aussi [Accessibilité Numérique Orange : Exemple masquage accessible et aria-hidden](https://a11y-guidelines.orange.com/fr/articles/masquage-accessible/).
 
 ```css
 .sr-only {
@@ -807,7 +804,7 @@ Ajouter également `focusable="false"`pour éviter que la touche *Tab* ne navigu
 </svg>
 ```
 
-ou bien (si l'infobulle au survol n'est pas souhaitée)&nbsp;:
+ou bien (si l'infobulle au survol n'est pas souhaitée) :
 
 ```xml
 <svg role="img" aria-label="Nom accessible" focusable="false">
@@ -899,9 +896,7 @@ Le texte alternatif de l'image (`alt`) doit être renseigné.
 </p>
 ```
 
-Si la description est trop longue, elle peut être masquée de manière accessible avec un [accordéon](https://developer.mozilla.org/fr/docs/Web/HTML/Element/details), par exemple.
-
-Sinon, il est possible d'avoir une description détaillée n'importe où sur la page, et peut être liée via l'attribut `longdesc` sur l'image. L'attribut a pour valeur l'identifiant (`id`) de la description détaillée.
+Si la description est trop longue, elle peut être masquée de manière accessible avec un [accordéon](https://developer.mozilla.org/fr/docs/Web/HTML/Element/details). Sinon, il est possible d'utiliser une description détaillée n'importe où sur la page via l'attribut `longdesc` sur l'image avec pour valeur l'identifiant (`id`) de cette description détaillée.
 
 ```html
 <img src="image.url" alt="Données numérique" longdesc="#description">
@@ -917,7 +912,7 @@ Sinon, il est possible d'avoir une description détaillée n'importe où sur la 
 
 #### Description détaillée sur une autre page
 
-Pour cela, il faut ajouter un attribut `longdesc` sur l'image (`<img>`) qui a pour valeur l'adresse (URL) de la page regroupant la description détaillée.
+Pour cela, il faut utiliser un attribut `longdesc` sur l'image (`<img>`) ayant pour valeur l'adresse (URL) de la page contenant la description détaillée.
 
 ```html
 <!-- La page page-de-la-description-detaillee.html regroupera la description détaillée de l'image.-->
@@ -952,6 +947,19 @@ Les multimédias (vidéos, sons) nécessitent des précautions :
 ---
 
 ## Bonnes pratiques Javascript
+
+## ARIA
+
+Si WCAG concerne plutôt le contenu web "statique", [WAI-ARIA](https://developer.mozilla.org/fr/docs/Web/Accessibility/ARIA) est une technologie améliorant l'accessibilité supplémentaires par rapport aux comportements natifs déjà prévus par les navigateurs pour les éléments HTML de base. Trois caractéristiques principales sont définies dans la spécification :
+
+- les **attributs** `role` (landmarks), voir la [Matrice des rôles ARIA](https://whatsock.com/training/matrices/)
+- les **propriétés**, par exemple `aria-label` ou `aria-required`.
+- les **états**, par exemple `aria-disabled` souvent géré par JavaScript.
+
+Pour tous les composants de page agissant sur le contenu, de type swiper, slider, slideshow, accordéon, pagination, onglets, menu déroulant, on privilégiera les scripts "accessibles", y compris ceux utilisant ARIA. Le but étant, entre autres, de ne pas gêner la navigation au clavier et de permettre la lecture de la page avec une synthèse vocale.
+
+- <https://www.w3.org/WAI/ARIA/apg/patterns/>
+- <https://la-cascade.io/articles/comprendre-wai-aria-un-guide-complet>
 
 ### ARIA live
 

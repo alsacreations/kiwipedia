@@ -209,20 +209,19 @@ Autres listes de ressources et checklists
 
 ### Outils de test/évaluations
 
-- <https://blog.sapegin.me/all/accessibility-testing/>
+- <https://sapegin.me/blog/accessibility-testing/>
 - <https://www.accessify.com/tools-and-wizards/> Pas mal d’outils
 
 ### ARIA
 
 - <https://w3c.github.io/aria/> La spécification
-- <https://w3c.github.io/aria-practices/>
-- <https://w3c.github.io/using-aria/>
-- <https://w3c.github.io/aria-in-html/>
 - <https://www.w3.org/WAI/ARIA/apg/patterns/> Patterns
+- <https://w3c.github.io/using-aria/>
 - <https://www.w3.org/TR/html-aria/> Rôles et états implicites des éléments HTML, et propriétés ARIA applicables selon les rôles
 - <https://bitsofco.de/rules-for-using-aria-in-html/>
 - <https://www.powermapper.com/tests/screen-readers/aria/> Support WAI-ARIA des lecteurs d'écran
-- <https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA> Très bonne ressource ARIA
+- <https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA>
+- <https://la-cascade.io/articles/comprendre-wai-aria-un-guide-complet> Comprendre WAI-ARIA, un guide complet
 
 ### Couleurs
 
@@ -681,7 +680,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 - <https://www.robinwieruch.de/web-applications/> Applications web, SPA, full-stack, SSR, REST...
 
-## HTTP
+### HTTP
 
 - <https://blog.appcanary.com/2017/http-security-headers.html>
 - <https://hookbin.com/> Capture and inspect HTTP requests
@@ -709,6 +708,11 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 - <https://ngrok.com/>
 - <https://doc.traefik.io/traefik/>
+
+### DNS
+
+- <https://messwithdns.net/> expérimenter en ligne
+- <https://howdns.works/> How DNS works
 
 ---
 
