@@ -21,7 +21,7 @@ La langue anglaise demeure préconisée pour :
 
 ## Formatage
 
-La règle d’indentation appliquée par défaut est de **2 espaces** pour l’ensemble des langages. Les conventions spécifiques à certains langages ou technologies (PHP, WordPress) sont prioritaires sur cette règle générale au cas par cas.
+La règle d’indentation appliquée par défaut est de **2 espaces** pour l’ensemble des langages. Les conventions spécifiques à certains langages ou technologies (PHP avec 4 espaces) sont prioritaires sur cette règle générale au cas par cas.
 
 Par exemple :
 
@@ -98,7 +98,11 @@ Suggestions et raisons :
 - États : `is` ou `has` (ex : _isOpened_, _hasItems_)
 - Précédent/suivant : `prev`/`next`
 
-Voir aussi [Coding like Shakespeare: Practical Function Naming Conventions](https://dmitripavlutin.com/coding-like-shakespeare-practical-function-naming-conventions/) et [Naming cheatsheet](https://github.com/kettanaito/naming-cheatsheet)
+🔖 Voir aussi :
+
+- [Coding like Shakespeare: Practical Function Naming Conventions](https://dmitripavlutin.com/coding-like-shakespeare-practical-function-naming-conventions/)
+- [Naming cheatsheet](https://github.com/kettanaito/naming-cheatsheet)
+- [Naming Things in Code](https://www.youtube.com/watch?v=-J3wNP6u5YU) (vidéo YouTube 7 minutes)
 
 ## Nommage pour code en attente
 
