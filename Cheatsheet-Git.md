@@ -249,17 +249,16 @@ Edition de toute la configuration : `git config --global --edit`
 
 ## Ignorer des fichiers avec .gitignore
 
-Le fichier .gitignore permet d’ignorer des fichiers à versionner. Ils ne seront pas stockés sur le repo. Il faut le placer au choix
-
-- à la racine du projet (concerne tout le projet)
-- dans des répertoires spécifiques (ne concerne que le sous-répertoire)
+Le fichier `.gitignore` placé à la racine **ou** dans un sous-dossier permet d’ignorer des fichiers à versionner, par exemple logs, fichiers de configuration, dossiers _uploads_.
 
 Exemple :
 
 ```text
+.env             # ignore tous les fichiers .env, où qu'ils soient
 /.htaccess       # ignore le fichier .htaccess à la racine
-.htaccess        # ignore tous les fichiers .htaccess
 /node_modules/   # ignore le dossier node_modules à la racine
 node_modules/    # ignore tous les dossiers nommés “node_modules”
 *.txt            # ignore tous les fichiers txt
 ```
+
+🎬 [YouTube : Ignorer des fichiers avec Git, par Delicious Insights](https://www.youtube.com/watch?v=gkzBzBomYyI)
