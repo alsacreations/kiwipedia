@@ -690,7 +690,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 ### Sécurité
 
-- <https://letsencrypt.org/> Let’s Encrypt (certificats HTTPS gratuits avec certbot)
+- <https://permission.site> Tester les permissions du navigateur selon le protocole http/https
 - <https://blog.appcanary.com/2017/http-security-headers.html> Tout sur les en-têtes HTTP de sécurité
 - <https://movingtohttps.com/> Migrer vers HTTPS, techniques et outils
 - <https://wiki.mozilla.org/Security/Server_Side_TLS> la référence pour configurer
