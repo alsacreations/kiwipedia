@@ -923,7 +923,7 @@ Pour cela, il faut utiliser un attribut `longdesc` sur l'image (`<img>`) ayant p
 
 ## Bonnes pratiques design
 
-Voir [Design : checklist accessibilité](Guidelines-Webdesign.md#checklist-accessibilité)
+Voir [Guidelines Design : checklist accessibilité](Guidelines-Webdesign.md#checklist-accessibilité)
 
 ---
 

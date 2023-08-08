@@ -207,8 +207,8 @@ img {
 
 ### Outils d'optimisation d'images
 
-- MacOS : <https://github.com/antonreshetov/image-optimizer> très facile par drag&drop et traitement par lot (PNG, JPEG, GIF, SVG) ou <https://imageoptim.com/fr>
 - Universel en ligne : <https://squoosh.app/> avec aperçu avant/après, redimensionnement, autres options (PNG, JPEG, WEBP)
+- MacOS : <https://github.com/antonreshetov/image-optimizer> très facile par drag&drop et traitement par lot (PNG, JPEG, GIF, SVG) ou <https://imageoptim.com/fr>
 - SVG : <https://jakearchibald.github.io/svgomg/>
 - AVIF : <https://avif.io> en ligne ou <https://github.com/lovell/avif-cli> en ligne de commande
 - <https://sharp.pixelplumbing.com>
