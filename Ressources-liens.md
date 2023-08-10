@@ -694,6 +694,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://blog.appcanary.com/2017/http-security-headers.html> Tout sur les en-têtes HTTP de sécurité
 - <https://movingtohttps.com/> Migrer vers HTTPS, techniques et outils
 - <https://wiki.mozilla.org/Security/Server_Side_TLS> la référence pour configurer
+- <https://www.privacytools.io/> Meilleurs outils de sécurité/confidentialité
 
 - Tests
   - <https://observatory.mozilla.org/> Mozilla Observatory
