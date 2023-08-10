@@ -840,6 +840,12 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 ---
 
+## Culture générale
+
+- <https://cpu.land/> Comment fonctionne un processeur, la mémoire, un ordinateur pour exécuter un programme
+
+---
+
 ## Réseaux sociaux
 
 - <https://github.com/bradvin/social-share-urls> Liens de partage vers les différents réseaux sociaux
