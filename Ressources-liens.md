@@ -846,6 +846,12 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 ---
 
+## Outils divers
+
+- <https://speed.cloudflare.com/> Test de débit
+
+---
+
 ## Réseaux sociaux
 
 - <https://github.com/bradvin/social-share-urls> Liens de partage vers les différents réseaux sociaux
