@@ -1045,6 +1045,8 @@ Backup SQL quotidien
 
 ## Scripts utiles et shell
 
+🔖 voir aussi <https://github.com/dylanaraps/pure-bash-bible>
+
 Date
 
 ```sh
