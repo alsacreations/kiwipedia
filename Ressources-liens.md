@@ -9,6 +9,7 @@ Autres listes de ressources et checklists
 - <https://github.com/thedaviddias/Front-End-Checklist>
 - <https://github.com/thedaviddias/Front-End-Performance-Checklist>
 - <https://github.com/awesome-selfhosted/awesome-selfhosted> Awesome-Selfhosted : liste d'applications que l'on peut héberger soi-même
+- <https://github.com/kdeldycke/awesome-falsehood> Inventaire des fausses idées auxquelles on peut croire lorsqu'on fait du développement
 
 ## Sites d'actualités, tutoriels
 
@@ -25,10 +26,6 @@ Autres listes de ressources et checklists
 - <http://html5index.org/>
 - <https://platform.html5.org/>
 - <https://cssvalues.com/> dictionnaire des propriétés et valeurs
-
-### Écrire ou générer une documentation
-
-- <https://www.gitbook.com/>
 
 ## Compatibilité navigateur
 
@@ -313,7 +310,7 @@ Autres listes de ressources et checklists
   - <http://rainsoft.io/gentle-explanation-of-this-in-javascript/> Explication de this
   - <http://thenewcode.com/82/Recipes-for-Randomness-in-JavaScript> Randomness
   - <https://www.lullabot.com/blog/article/importing-css-breakpoints-javascript> Responsive (importer les breakpoints css en js)
-  - <https://github.com/dbushell/Pikaday> (datepicker, aussi en plugin jQuery)
+  - <https://github.com/Pikaday/Pikaday> (datepicker, aussi en plugin jQuery)
   - <http://robertwhurst.github.io/KeyboardJS/> (gestion clavier)
   - <https://pdfme.com/> Générateur de PDF en TypeScript (avec template)
   - <https://parall.ax/products/jspdf> (Générer PDF côté client)
