@@ -618,6 +618,14 @@ Espace disque libre
 Espace disque occupé dans les sous-dossiers classés par taille
 `du -skh * | sort -h`
 
+Espace disque visualisé avec [duc](https://manpages.ubuntu.com/manpages/lunar/en/man1/duc.1.html)
+
+```sh
+apt-get install duc
+duc index /var/vmail
+duc ui /var/vmail
+```
+
 ### Entretien, montage, partitions
 
 Checkdisk ext4
