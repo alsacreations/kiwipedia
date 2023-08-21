@@ -1055,6 +1055,8 @@ Backup SQL quotidien
 
 🔖 voir aussi <https://github.com/dylanaraps/pure-bash-bible>
 
+Outil de production de scripts esthétiques <https://github.com/charmbracelet/gum>
+
 Date
 
 ```sh
