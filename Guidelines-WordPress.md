@@ -140,7 +140,7 @@ La [structure standard](https://developer.wordpress.org/themes/basics/organizing
 └── style.css
 ```
 
-On utilisera des fonctions telles que [get_header](https://developer.wordpress.org/reference/functions/get_header/), [get_footer](https://developer.wordpress.org/reference/functions/get_footer/) pour construire les pages.
+On utilisera des fonctions telles que [get_header](https://developer.wordpress.org/reference/functions/get_header/), [get_footer](https://developer.wordpress.org/reference/functions/get_footer/) pour construire les pages, et [get_template_directory_uri](https://developer.wordpress.org/reference/functions/get_template_directory_uri/) pour générer les chemins d'accès.
 
 ### Traductions
 
