@@ -272,7 +272,7 @@ Voici un exemple de chargement de police conseillé (cas de deux fichiers de pol
 
 Les variable fonts sont des familles de polices intégrant diverses variantes (dites "axis") au sein d'un même fichier. Il peut s'agir de graisses, italique, stretch voire de toute autre variante personnalisée par l'auteur de la fonte.
 
-Une variable font est systématiquement recommandée dès lors qu'un projet nécessite plus de 3 variantes parmi celles-ci : regular, italic, light, semi-bold, bold, bold italic, etc. Cette fonctionnalité est aujourd'hui reconnue par plus de 95% des navigateurs.
+Une variable font est systématiquement recommandée dès lors qu'un projet nécessite plus de 3 ou 4 variantes parmi celles-ci : regular, italic, light, semi-bold, bold, bold italic, etc. Cette fonctionnalité est aujourd'hui reconnue par plus de 95% des navigateurs.
 
 Comme pour les fontes classiques, le format `.woff2` ainsi que l'hébergement de la fonte sont préconisés (les fontes variables peuvent être trouvées sur [Google Fonts](https://fonts.google.com/?vfonly=true) en activant la case "show only variable fonts" puis téléchargées en `.ttf` via le bouton "Download family". Un convertisseur tel que [Cloud converter](https://cloudconvert.com/ttf-to-woff2) pourra produire la version `.woff2`.
 
@@ -282,14 +282,16 @@ Voici un exemple de chargement de variable font conseillé&nbsp;:
 
 ```css
 @font-face {
-  font-family: 'Work Sans';
-  src: url('./fonts/WorkSans-VariableFont_wght.woff2') format('woff2-variations');
+  font-family: "variable";
+  src:
+    url("variable.woff2") format("woff2") tech("variations"),
+    url("variable.woff2") format("woff2-variations");
   font-display: swap;
   font-weight: 100 900;
 }
 ```
 
-#### Modification des axis
+#### Modification des variantes (axis)
 
 Toutes les variantes d'une fonte variable sont modifiables via la propriété `font-variation-settings`. Certains de ces axis sont normalisés et disposent d'un équivalent en propriété CSS :
 
