@@ -4,6 +4,18 @@ Statut : Working Draft (WD)
 
 Bonnes pratiques de Performance Web appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/), évoluant dans le temps et adaptées à chaque nouveau projet.
 
+## Checklist Niveau 1 (base) 🥉
+
+Minification, compression, réduction des ressources (ex : poids des images) et des requêtes.
+
+## Checklist Niveau 2 (étendue) 🥈
+
+Mise en cache front, mise en cache back (dans le cas d'un CMS), headers HTTP, instructions preload/prefetch, formats d'images et optimisation SVG, [lazy-loading](#lazyloading) natif.
+
+## Checklist Niveau 3 (demandes spécifiques) 🥇
+
+Lazy-loading via JavaScript, usage de CDN, HTTP/2 ou HTTP/3, *critical path*, analyse complète via outils de mesure, indicateurs [LCP, FID, CLS, INP](https://support.google.com/webmasters/answer/9205520?hl=fr)...
+
 ---
 
 ## Bonnes pratiques HTTP
@@ -26,7 +38,7 @@ Les [Core Web Vitals](https://web.dev/vitals/) regroupent des mesures de perform
 Les métriques mesurées sont :
 
 - **Largest Contentful Paint (LCP)** : mesure la vitesse de chargement de page. L'indice porte sur le temps de chargement et d'affichage de la plus grande image ou du plus grand bloc de contenu visible dans le viewport. Le critère est "Good" lorsque ce temps est inférieur ou égal à 2.5 secondes.
-- **First Input Delay (FID)** : mesure l'interactivité. Calcule le temps nécessaire au navigateur pour offrir une première interaction avec le visiteur (clic sur un lien, un bouton, interagir avec un formulaire) L'expérience est considérée réussie si ce délai est inférieur ou égal à 100 millisecondes.
+- **First Input Delay (FID)** remplacé par **Interaction to Next Paint (INP)** en 2024 : mesure l'interactivité. Calcule le temps nécessaire au navigateur pour offrir une première interaction avec le visiteur (clic sur un lien, un bouton, interagir avec un formulaire) L'expérience est considérée réussie si ce délai est inférieur ou égal à 100 millisecondes.
 - **Cumulative Layout Shift (CLS)** : mesure la stabilité visuelle (l'ensemble des repositionnements, redimensionnements, décalages intempestifs des contenus pendant la durée de vie d'une page web). La métrique mesure la quantité de contenu qui se déplace, ainsi que la distance de déplacement. Le CLS doit être égal ou inférieur à 0.1.
 
 Voir aussi [Our top Core Web Vitals recommendations for 2023](https://web.dev/top-cwv-2023/)
@@ -295,13 +307,13 @@ Voici un exemple de chargement de variable font conseillé&nbsp;:
 
 Toutes les variantes d'une fonte variable sont modifiables via la propriété `font-variation-settings`. Certains de ces axis sont normalisés et disposent d'un équivalent en propriété CSS :
 
-| Axe 	    | Propriété CSS  	|
-|---	    |---	            |
-| "wght" 	| `font-weight`  	|
-| "wdth"	| `font-stretch`  	|
-| "slnt" 	| `font-style` oblique + angle  	|
-| "ital" 	| `font-style: italic`  	|
-| "opsz" 	| `font-optical-sizing`  	|
+| Axe      | Propriété CSS   |
+|---     |---             |
+| "wght"  | `font-weight`   |
+| "wdth" | `font-stretch`   |
+| "slnt"  | `font-style` oblique + angle   |
+| "ital"  | `font-style: italic`   |
+| "opsz"  | `font-optical-sizing`   |
 
 Ainsi, pour modifier la graisse d'une police, les deux syntaxes sont possibles : `font-variation-settings: 'wght' 625;` ou `font-weight: 625;`. Il est même possible de passer par une variable CSS ainsi `font-variation-settings: 'wght' var(--text-axis);`
 
