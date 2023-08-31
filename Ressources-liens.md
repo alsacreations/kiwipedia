@@ -52,7 +52,7 @@ Autres listes de ressources et checklists
 
 ### Microdata et sémantique
 
-- <http://schema.org/>
+- <https://schema.org/>
 - Outil de test des résultats enrichis <https://search.google.com/test/rich-results>
 - <http://www.opensearch.org/Home> Opensearch
 
@@ -767,6 +767,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 ## Explication et relation client
 
 - <https://recordscreen.io/> Enregistrer une portion de l'écran
+- <https://screenrec.com/> Enregistrement d'écran/son/webcam (gratuit)
 - <https://small.chat/> Intégrer Slack en chat sur le site
 - <http://warpspire.com/posts/url-design/> URL design (~cool uri)
 - <https://medium.com/@ImpalaWebstudio/pourquoi-nous-ne-livrons-pas-de-maquettes-au-moment-du-devis-36a242479a71> Maquettes gratuites
