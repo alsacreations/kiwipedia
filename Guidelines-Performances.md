@@ -244,6 +244,13 @@ Autant que possible, privilégier le chargement de polices légères et respectu
 - Ajouter `font-display: swap;` au sein de la règle `@font-face` pour éviter les effets de FOIT. Si la police est pré-chargée, `font-display: optional;` est alors recommandé.
 - Héberger la police sur son propre serveur (voir l'outil "Google Webfont Helper").
 
+### Outils d'optimisation et de tests de polices
+
+- FontSquirrel webfont generator : https://www.fontsquirrel.com/tools/webfont-generator
+- Transfonter : https://transfonter.org/
+- Wakamai Fondue : https://wakamaifondue.com/
+- Glyphhanger (NPM) : https://github.com/zachleat/glyphhanger
+
 ### Code recommandé
 
 Voici un exemple de chargement de police conseillé (cas de deux fichiers de police regular et bold)&nbsp;:
