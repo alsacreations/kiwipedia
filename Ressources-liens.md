@@ -242,7 +242,6 @@ Autres listes de ressources et checklists
 
 - <https://github.com/jonathantneal/media-player> Player media accessible
 - <http://www.accessibilityoz.com/ozplayer/> Player html5 accessible
-- <https://youdescribe.org/> Audio desc avec Youtube
 - <https://521dimensions.com/open-source/amplitudejs>
 
 ### JavaScript et composants
@@ -487,7 +486,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 ### Vidéos libres/gratuites
 
-- <https://videos.pexels.com/>
+- <https://www.pexels.com/videos/>
 - <https://www.videvo.net/>
 - <http://www.cutestockfootage.com/>
 - <https://pixabay.com/videos/>
@@ -595,6 +594,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 ### Vidéo
 
+- <https://lafibre.info/tv-numerique-hd-3d/comparer-h-264-vp9-av1/> Codecs et support par les navigateurs
 - <https://plyr.io/>
 - <https://www.videojs.com/> Lecteur configurable
 - <https://rishabhp.github.io/bideo.js/> Vidéo en fond de page full-viewport
