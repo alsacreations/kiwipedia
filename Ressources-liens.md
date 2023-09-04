@@ -2,6 +2,7 @@
 
 Autres listes de ressources et checklists
 
+- <https://github.com/trimstray/the-book-of-secret-knowledge>
 - <https://github.com/sdmg15/Best-websites-a-programmer-should-visit/blob/master/README.md>
 - <https://github.com/dypsilon/frontend-dev-bookmarks>
 - <https://frontendmasters.com/books/front-end-handbook/2019/>
