@@ -19,10 +19,11 @@ Bonnes pratiques de développement appliquées par l'agence web [Alsacreations.f
 - DRY : Don't Repeat Yourself : Utiliser au maximum des fonctions (même très simples) pour stocker le code exécuté à différents endroits
 - KISS : Keep it simple, stupid : Penser simple
 - Modulaire : Quand on développe une feature : pouvoir la désactiver (= option)
-- Commenter son code
+- Commenter son code au maximum
 - Vérifier s’il n’y a pas déjà un code existant qui fait déjà le travail
-- Ne pas modifier le noyau des cms/extensions pour supporter les mises à jour
+- Ne pas modifier le noyau des cms/extensions pour supporter les futures mises à jour
 - Toujours penser à la sécurité !
+- [Limitez votre PHP : optimisations pour une meilleure gestion des ressources](https://bearstech.com/societe/blog/limitez-votre-php/)
 
 ![faites simple](images/php01.png)
 
