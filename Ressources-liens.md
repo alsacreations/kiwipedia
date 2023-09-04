@@ -587,6 +587,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 ### Audio
 
 - <https://github.com/goldfire/howler.js>
+- <https://wavacity.com/> Audacity dans le navigateur
 
 ### WebRTC, MediaCapture
 
@@ -685,6 +686,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://kinsta.com/learn/what-is-http2/> HTTP/2
 - <https://tools.keycdn.com/http2-test> Tester HTTP/2
 - <https://http3-explained.haxx.se/fr> HTTP/3
+- <https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP> Les bases de HTTP (MDN)
 
 ### Sécurité
 
