@@ -6,6 +6,19 @@ Statut : Recommendation (REC)
 
 Voir aussi <https://github.com/dictcp/awesome-git>
 
+Les _shorts_ de [DeliciousInsights](https://www.youtube.com/c/DeliciousInsights) :
+
+- [Les 5 zones Git](https://www.youtube.com/shorts/ENZSc-aY-rc)
+- [Le chaînage des commits](https://www.youtube.com/shorts/eIKjcZ3fYis)
+- [Les branches Git sont des étiquettes](https://www.youtube.com/shorts/zkdB8wLbyyA)
+- [Défaire et refaire des commits](https://www.youtube.com/shorts/uEfvzPc4D7c)
+- [Les fusions classiques](https://www.youtube.com/shorts/i9Ax1XF37Wo)
+- [Les fusions en "fast forward"](https://www.youtube.com/shorts/UEvjD5KcCcE)
+- [Annuler une fusion classique](https://www.youtube.com/shorts/bkt4IZn83yY)
+- [Annuler une fusion en "fast forward"](https://www.youtube.com/shorts/Vgo0vR-rmBE)
+- [Mettre à jour une branche avec Git rebase](https://www.youtube.com/shorts/vUhrINofUA0)
+- [Les étapes du rebase](https://www.youtube.com/shorts/pkYa8BjPmCo)
+
 ## Conventional Commits
 
 - **build**: Changements relatifs au processus de <span lang="en">build</span> ou dépendances comme vite, ou npm.
