@@ -11,12 +11,12 @@ Autres listes de ressources et checklists
 - <https://github.com/thedaviddias/Front-End-Performance-Checklist>
 - <https://github.com/awesome-selfhosted/awesome-selfhosted> Awesome-Selfhosted : liste d'applications que l'on peut héberger soi-même
 - <https://github.com/kdeldycke/awesome-falsehood> Inventaire des fausses idées auxquelles on peut croire lorsqu'on fait du développement
+- <https://developers.google.com/search/blog/2023/08/where-art-thou-error?hl=fr> La Comédie des erreurs
 
 ## Sites d'actualités, tutoriels
 
 - <https://css-tricks.com/>
 - <https://www.smashingmagazine.com/>
-- <https://freefrontend.com/> Collections de démos et ressources
 
 ## Documentations générales rapides
 
@@ -27,18 +27,15 @@ Autres listes de ressources et checklists
 - <http://html5index.org/>
 - <https://platform.html5.org/>
 - <https://cssvalues.com/> dictionnaire des propriétés et valeurs
-
-## Compatibilité navigateur
-
-- <http://caniuse.com/> (tableaux de support)
-- <http://console.maban.co.uk/> (consoles)
-- <http://browserhacks.com/> Hacks par navigateur
+- <https://caniuse.com/> (tableaux de support)
 
 ### Tests, émulation, devices
 
 - <https://www.lambdatest.com/>
 - <https://appetize.io/>
 - <https://www.browserstack.com/>
+
+---
 
 ## HTML et HTML5
 
@@ -55,16 +52,15 @@ Autres listes de ressources et checklists
 
 - <https://schema.org/>
 - Outil de test des résultats enrichis <https://search.google.com/test/rich-results>
-- <http://www.opensearch.org/Home> Opensearch
+- <https://www.opensearch.org/> Opensearch
 
 #### Open Graph
 
-- <http://ogp.me/> Opengraph
+- <https://ogp.me/> Opengraph
 - <https://metatags.io> Génération des meta tags
 - <https://dev.twitter.com/cards/overview> Twitter Cards
-- <http://opengraphcheck.com/> Outil de vérification Open Graph
 - <https://cards-dev.twitter.com/validator> Validateur Twitter Open Graph
-- <http://iframely.com/debug> Comment les autres sites/apps voient le vôtre
+- <https://debug.iframely.com/> Comment les autres sites/apps voient le vôtre
 - <https://developers.facebook.com/tools/debug> Outil de test Open Graph de Facebook
 
 ---
@@ -74,6 +70,7 @@ Autres listes de ressources et checklists
 - <https://www.smashingmagazine.com/2021/09/interactive-learning-tools-front-end-developers/> Jeux pour apprendre flexbox, grid
 - <https://web.dev/learn/css/>
 - <https://www.projectwallace.com/css-code-quality> Outil d'évaluation de la qualité du code CSS
+- <https://ishadeed.com/article/css-vars-101/> Variables CSS
 
 ### Grids
 
@@ -89,10 +86,6 @@ Autres listes de ressources et checklists
 
 - <http://www.vincent-valentin.name/articles/le-petit-flexbox-illustre> Flexbox
 - <http://www.flexboxpatterns.com/> Patterns flexbox
-
-### Variables CSS
-
-- <https://ishadeed.com/article/css-vars-101/>
 
 ### Typographie, @font-face et polices
 

@@ -3,7 +3,7 @@
 
 Liste de bonnes pratiques et points à prendre en compte avant/durant/après l'élaboration d'un projet web.
 
-Voir aussi 
+Voir aussi
 
 - [La check-list Opquast](https://checklists.opquast.com/fr/assurance-qualite-web/)
 - [La checklist PiDila](https://design.numerique.gouv.fr/outils/checklist-pidila/)
