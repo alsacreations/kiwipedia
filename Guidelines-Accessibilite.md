@@ -91,14 +91,12 @@ Chaque page doit avoir déclaré le type de document ainsi que la langue princip
 
 ### Titres
 
-Chaque page doit être organisée selon une structure de titres et de sous-titres hiérarchisés.
-
-Chaque titre doit être balisé avec un élément HTML `<hx>` allant du niveau 1 (`<h1>`) au niveau 6 (`<h6>`), `<h1>` étant le niveau le plus important.
-
-Nous conseillons :
+Chaque page doit être organisée selon une structure de titres et de sous-titres hiérarchisés. Chaque titre doit être balisé avec un élément HTML `<hx>` allant du niveau 1 (`<h1>`) au niveau 6 (`<h6>`), `<h1>` étant le niveau le plus important. Nous conseillons :
 
 - d'avoir toujours un titre de niveau 1 `<h1>` et que celui-ci ne structure pas le titre du site commun à toutes les pages mais plutôt le titre du contenu courant
 - d'éviter les sauts dans les niveaux de titres : pas de titre `<h4>` après un titre `<h2>`
+
+Voir aussi <https://access42.net/en-tetes-non-conformite-wcag-clarification-titre/>
 
 La hiérarchie peut être testée avec l'extension [Headings Map pour Chrome](https://chrome.google.com/webstore/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi) ou [Headings Map pour Firefox](https://addons.mozilla.org/fr/firefox/addon/headingsmap/).
 
