@@ -4,6 +4,13 @@ Statut : Recommendation (REC)
 
 Bonnes pratiques JavaScript appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/), évoluant dans le temps et adaptées à chaque nouveau projet.
 
+## Ressources
+
+- [MDN : Les bases de JavaScript](https://developer.mozilla.org/fr/docs/Learn/Getting_started_with_the_web/JavaScript_basics)
+- [Pause your code with breakpoints](https://developer.chrome.com/docs/devtools/javascript/breakpoints/)
+- <https://grafikart.fr/tutoriels/javascript>
+- <https://eloquentjavascript.net/>
+
 ## Généralités
 
 - Dans la mesure du possible sur de petits scripts d'agrément (ex: visuel) JavaScript apporte une amélioration progressive, c’est-à-dire qu’il se produit une dégradation gracieuse lorsqu’il est désactivé (on peut toujours accéder au contenu). Ces scripts doivent être placés de préférence en fin de document, avant la balise `</body>` (ceci n’est plus extrêmement significatif suite aux optimisations des navigateurs mais permet d’éviter les écueils majeurs et de visualiser l’ordre de chargement au même endroit). Les attributs `defer` et `async` seront utilisés à bon escient pour réduire la latence (voir [Article](http://www.alsacreations.com/astuce/lire/1562-script-attribut-async-defer.html)).
@@ -196,9 +203,3 @@ Voir aussi sur le dépôt Github [https://github.com/alsacreations/pepin](https:
 - Simplifier au maximum le code en découpant par actions simples.
 
 Ne pas hésiter à utiliser des plugins éprouvés mais toujours tester s’ils peuvent être multiples sur une même page.
-
-## Ressources
-
-- <https://developer.mozilla.org/fr/docs/Learn/Getting_started_with_the_web/JavaScript_basics>
-- <https://grafikart.fr/tutoriels/javascript>
-- <https://eloquentjavascript.net/>
