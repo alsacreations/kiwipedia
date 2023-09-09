@@ -652,6 +652,8 @@ Cet exemple est issu d'un article des Guidelines Accessibilité de Orange nommé
 
 ## Bonnes pratiques CSS
 
+Exploiter les [préférences en CSS](https://www.smashingmagazine.com/2023/08/css-accessibility-inclusion-user-choice/) avec [CSS Media Features](https://developer.mozilla.org/en-US/docs/Web/CSS/@media#media_features) : `prefers-color-scheme`, `forced-colors`, `inverted-colors`, `prefers-contrast`, `prefers-reduced-transparency`, `prefers-reduced-motion`, `prefers-reduced-data`.
+
 ### outline et focus
 
 Les éléments interactifs (liens, champs, boutons) affichent un contour lorsqu'ils réagissent au `:focus`, c'est à dire au clic, au touch ou à la navigation clavier (les 3).

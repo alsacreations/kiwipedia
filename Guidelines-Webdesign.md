@@ -203,6 +203,7 @@ Les formats privilégiés à transmettre à l'intégrateur/trice :
 - Indication visuelle de la page active.
 - Les liens et zones cliquables sont visuellement identifiés (ex. soulignement d'un lien).
 - Les éléments interactifs doivent toujours être perceptibles (ex. navigation clavier ou pointeur).
+- Exploiter les [préférences en CSS](https://www.smashingmagazine.com/2023/08/css-accessibility-inclusion-user-choice/) avec [CSS Media Features](https://developer.mozilla.org/en-US/docs/Web/CSS/@media#media_features) : `prefers-color-scheme`, `forced-colors`, `inverted-colors`, `prefers-contrast`, `prefers-reduced-transparency`, `prefers-reduced-motion`, `prefers-reduced-data`.
 
 #### Couleurs
 
