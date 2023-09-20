@@ -318,11 +318,11 @@ Dans le cas où on utilise un thème acheté et que les fichiers PHP ne sont pas
 
 ### Recommandées selon usage
 
-- [Disable emojis](https://fr.wordpress.org/plugins/disable-emojis/) : désactiver les appels de scripts externes vers WordPress (RGPD).
+- [Disable emojis](https://fr.wordpress.org/plugins/disable-emojis/) : désactiver les appels de scripts externes vers WordPress (RGPD) ou [ajouter à functions.php ce snippet](https://www.wpbeginner.com/plugins/how-to-disable-emojis-in-wordpress-4-2/).
 - [Disable comments](https://wordpress.org/plugins/disable-comments/) : désactiver les commentaires sur les posts/pages/médias, au choix (très propre).
 - [ACF](https://www.advancedcustomfields.com/) : ajouter des champs riches aux posts / pages / CPT.
 - [Duplicate Post](https://wordpress.org/plugins/duplicate-post/) : créer du contenu rapidement en dupliquant d'un simple clic un post, une page, ou un custom post.
-- [Ninja Forms](https://fr.wordpress.org/plugins/ninja-forms/) : génération de formulaires. Partiellement accessible.
+- [Ninja Forms](https://fr.wordpress.org/plugins/ninja-forms/) : génération de formulaires, partiellement accessible.
 - [Polylang](https://fr.wordpress.org/plugins/polylang/) : traduction (remplace WPML).
 - [SEOPress](https://www.seopress.org/fr/) : SEO, ou [Yoast](https://fr.wordpress.org/plugins/wordpress-seo/) (rajoute une grosse surcouche de pub très intrusive dans l'admin).
 - [Filebird](https://wordpress.org/plugins/filebird/) : File Manager (s'ajoute dans la galerie de médias) : créer des dossiers. Attention, il faut prendre la version premium pour créer des dossiers illimités.
