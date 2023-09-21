@@ -142,6 +142,19 @@ La [structure standard](https://developer.wordpress.org/themes/basics/organizing
 
 On utilisera des fonctions telles que [get_header](https://developer.wordpress.org/reference/functions/get_header/), [get_footer](https://developer.wordpress.org/reference/functions/get_footer/) pour construire les pages, et [get_template_directory_uri](https://developer.wordpress.org/reference/functions/get_template_directory_uri/) pour générer les chemins d'accès.
 
+### Ajout des fonctionnalités essentielles dans des mu-plugins
+
+Toutes les fonctions de base, sur lesquelles un non-administrateur ne doit pas avoir la main doivent passer par des extensions indispensables, ou _mu-plugins_ (mu = _must use_). Elles ne peuvent être désactivées par l'interface web. C'est le cas notamment du renommage de fichiers dès l'upload dans la bibliothèque de médias, mais également du retrait des indices lors des erreurs de connexion au back-office (admin).
+
+Quelques MU Plugins bien utiles : <https://gitlab.com/ArmandPhilippot/mu-plugins>
+
+```php
+function no_wordpress_errors() {
+    return __( 'Something is wrong !', 'text-domain' );
+}
+add_filter( 'login_errors', 'no_wordpress_errors' );
+```
+
 ### Traductions
 
 🔖 Voir <https://www.alsacreations.com/article/lire/1837-wordpress-theme-internationalisation.html>
@@ -226,19 +239,9 @@ Les [hooks](https://developer.wordpress.org/plugins/hooks/) permettent de branch
 
 ### Shortcodes
 
-Lors de la création d'un [shortcode](https://codex.wordpress.org/fr:Shortcode) avec paramètres, il est conseillé de ne plus utiliser la fonction extract (voir <https://core.trac.wordpress.org/ticket/22400>).
+Un [shortcode](https://codex.wordpress.org/fr:Shortcode) est approprié pour insérer rapidement une portion de contenu simple dans tout éditeur, mais non éditable en détails directement, avec passage de quelques paramètres (ex: emplacement de formulaire de contact, carte géographique...).
 
 🔖 Voir <https://capitainewp.io/formations/developper-theme-wordpress/shortcode/> et <https://kinsta.com/fr/blog/shortcodes-wordpress/>
-
-### Gutenberg / éditeur wysiwyg
-
-- Palette de couleurs <https://speckyboy.com/custom-color-palette-wordpress-gutenberg-editor/>
-
-#### Blocs sur-mesure
-
-Utiliser les [blocs ACF](https://www.advancedcustomfields.com/resources/blocks/) pour ne rendre modifiables que des champs spécifiques (champ texte, image, colorpicker, etc.) et avoir les fonctionnalités d'ACF (champ [relationnel](https://www.advancedcustomfields.com/resources/relationship/), [taxonomies](https://www.advancedcustomfields.com/resources/taxonomy/), etc.).
-
-Dans le cas où on utilise un thème acheté et que les fichiers PHP ne sont pas utilisables, on se tournera vers une [extension](https://fr.wordpress.org/plugins/blockmeister/) afin de générer des ["patterns" Gutenberg](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-patterns/) sur-mesure.
 
 ### Taxonomies
 
@@ -253,7 +256,7 @@ register_taxonomy($taxo_name, $cpt_name, $args_taxo);
 
 On utilise des CPT pour toute entité de données allant au-delà des Pages et Posts.
 
-ACF permet de créer une structure de CPT via son interface, puis d'exporter le code PHP correspondant (ou import/export en JSON) via son onglet _Outils_.
+👉 ACF permet de créer une structure de CPT via son interface visuelle, puis d'exporter le code PHP correspondant (ou import/export en JSON) via son onglet _Outils_ ce qui facilite les opérations.
 
 ![Ajout de CPT dans ACF](images/wordpress-acf-cpt.png)
 
@@ -263,30 +266,32 @@ ACF permet de créer une structure de CPT via son interface, puis d'exporter le 
 
 🔖 Voir [Tutoriel : Créer des Custom Post Types avec WordPress](https://wpchannel.com/wordpress/tutoriels-wordpress/creer-custom-post-types-wordpress/) et [Types de publications personnalisés WordPress : Le guide tout-en-un pour les créer et les utiliser (Kinsta)](https://kinsta.com/fr/blog/types-publications-personnalises-wordpress/).
 
+Si le projet nécessite d'utiliser **Gutenberg**, penser à ajouter `"show_in_rest" => true` et `"supports" => ['editor']` dans la déclaration des CPT.
+
 ### ACF (Advanced Custom Fields)
 
 On utilise ACF pour ajouter des champs personnalisés à des Pages, Articles, CPT ou d'autres [conditions spécifiques](https://www.advancedcustomfields.com/resources/custom-location-rules/).
+
+👉 On utilise un dossier `acf-json/` à la racine du thème <https://www.advancedcustomfields.com/resources/local-json/> permettant de versionner et synchroniser automatiquement les ajouts/modifications ACF en développant à plusieurs.
 
 🔖 Voir [Tutoriel ACF : Advanced Custom Fields – Le guide complet](https://newslang.ch/blog/tutoriel-acf-advanced-custom-fields-le-guide-complet/), [Best Practices when Designing Custom Fields](https://www.advancedcustomfields.com/blog/best-practices-designing-custom-fields/) et [Tutoriel sur Advanced Custom Fields : Votre guide ultime](https://kinsta.com/fr/blog/advanced-custom-fields/)
 
 Pour filtrer à l'aide de ces valeurs, on utilisera une [Meta Query](https://rudrastyh.com/wordpress/meta_query.html) dans la requête [WP_Query](https://developer.wordpress.org/reference/classes/wp_query/).
 
-### Ajouter le support de Gutenberg pour les CPT
+### Gutenberg / éditeur wysiwyg
 
-Si le projet nécessite d'utiliser Gutenberg, penser à ajouter `"show_in_rest" => true` et `"supports" => ['editor']` dans la déclaration des CPT.
+- Palette de couleurs <https://speckyboy.com/custom-color-palette-wordpress-gutenberg-editor/>
 
-### Ajout des fonctionnalités essentielles dans des mu-plugins
+#### Blocs sur-mesure
 
-Toutes les fonctions de base, sur lesquelles un non-administrateur ne doit pas avoir la main doivent passer par des extensions indispensables, ou _mu-plugins_ (mu = _must use_). Elles ne peuvent être désactivées par l'interface web. C'est le cas notamment du renommage de fichiers dès l'upload dans la bibliothèque de médias, mais également du retrait des indices lors des erreurs de connexion au back-office (admin).
+Utiliser les [blocs ACF](https://www.advancedcustomfields.com/resources/blocks/) pour ne rendre modifiables que des champs spécifiques (champ texte, image, colorpicker, etc.) et avoir les fonctionnalités d'ACF (champ [relationnel](https://www.advancedcustomfields.com/resources/relationship/), [taxonomies](https://www.advancedcustomfields.com/resources/taxonomy/), etc.). Un bloc ACF est mis en place ainsi :
 
-Quelques MU Plugins bien utiles : <https://gitlab.com/ArmandPhilippot/mu-plugins>
+- Préparation du bloc via l'interface d'administration : définition des champs éditables.
+- Préparation du template PHP de rendu.
+- Association avec [acf_register_block_type](https://www.advancedcustomfields.com/resources/acf_register_block_type/).
+- Usage dans l'éditeur Gutenberg : le bloc devrait apparaître dans le menu ➕
 
-```php
-function no_wordpress_errors() {
-    return __( 'Something is wrong !', 'text-domain' );
-}
-add_filter( 'login_errors', 'no_wordpress_errors' );
-```
+Dans le cas où on utilise un thème acheté et que les fichiers PHP ne sont pas utilisables, on se tournera vers une [extension](https://fr.wordpress.org/plugins/blockmeister/) afin de générer des ["patterns" Gutenberg](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-patterns/) sur-mesure.
 
 ## Accessibilité
 
@@ -313,11 +318,11 @@ add_filter( 'login_errors', 'no_wordpress_errors' );
 
 ### Recommandées selon usage
 
-- [Disable emojis](https://fr.wordpress.org/plugins/disable-emojis/) : désactiver les appels de scripts externes vers WordPress (RGPD).
+- [Disable emojis](https://fr.wordpress.org/plugins/disable-emojis/) : désactiver les appels de scripts externes vers WordPress (RGPD) ou [ajouter à functions.php ce snippet](https://www.wpbeginner.com/plugins/how-to-disable-emojis-in-wordpress-4-2/).
 - [Disable comments](https://wordpress.org/plugins/disable-comments/) : désactiver les commentaires sur les posts/pages/médias, au choix (très propre).
 - [ACF](https://www.advancedcustomfields.com/) : ajouter des champs riches aux posts / pages / CPT.
 - [Duplicate Post](https://wordpress.org/plugins/duplicate-post/) : créer du contenu rapidement en dupliquant d'un simple clic un post, une page, ou un custom post.
-- [Ninja Forms](https://fr.wordpress.org/plugins/ninja-forms/) : génération de formulaires. Partiellement accessible.
+- [Ninja Forms](https://fr.wordpress.org/plugins/ninja-forms/) : génération de formulaires, partiellement accessible.
 - [Polylang](https://fr.wordpress.org/plugins/polylang/) : traduction (remplace WPML).
 - [SEOPress](https://www.seopress.org/fr/) : SEO, ou [Yoast](https://fr.wordpress.org/plugins/wordpress-seo/) (rajoute une grosse surcouche de pub très intrusive dans l'admin).
 - [Filebird](https://wordpress.org/plugins/filebird/) : File Manager (s'ajoute dans la galerie de médias) : créer des dossiers. Attention, il faut prendre la version premium pour créer des dossiers illimités.
