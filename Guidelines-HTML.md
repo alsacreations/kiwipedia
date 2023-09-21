@@ -8,6 +8,7 @@ Bonnes pratiques HTML appliquées par l'agence web [Alsacreations.fr](https://ww
 
 Sauf spécificités contraires :
 
+- Le code HTML est valide <https://whatwg.org/validator/>
 - L’encodage des fichiers et des bases de données doit se faire en `UTF-8` (sans `BOM`).
 - Les noms d'éléments et attributs HTML sont rédigés en minuscules, les attributs utilisent les double quotes (ex. `class="fruit"`). Les valeurs identiques aux attributs ne sont pas renseignées sauf nécessité (ex. en HTML5 pas de `checked="checked"`).
 - Les éléments disposants d’id (à limiter autant que possible) doivent disposer d’une classe dupliquée (pour CSS).

@@ -42,7 +42,7 @@ ___
 | Critère | Priorité |
 | ------------- | ------------- |
 | Chaque page comporte une section `<head>` avec des balises `<meta>` description et keywords et autres indications pertinentes | * |
-| Le fichier robots.txt est présent | ** |
+| Le fichier [robots.txt](https://fr.wikipedia.org/wiki/Protocole_d%27exclusion_des_robots) est présent | ** |
 | Un sitemap XML est généré | * |
 | Des microdonnées/microformats sont utilisés (Schema.org, JSON-LD) | * |
 
@@ -79,6 +79,7 @@ ___
 | Les pages sont testées sur les navigateurs bureau et mobiles principaux | ** |
 | L'orthographe et la grammaire sont vérifiées | * |
 | Une page d'erreur 404 est présente | ** |
+| Des fichiers [humans.txt](https://fr.wikipedia.org/wiki/Humans.txt) et [security.txt](https://fr.wikipedia.org/wiki/Security.txt) existent | * |
 
 ## Sécurité
 

@@ -193,6 +193,7 @@ Quelques ressources :
 
 - [Définition générale du lazy loading par MDN](https://developer.mozilla.org/fr/docs/Web/Performance/Lazy_loading)
 - Attribut `loading="lazy"` pour les images <https://www.alsacreations.com/astuce/lire/1811-chargement-images-differe-loading-lazy.html>
+- [Stop Lazy Loading Product and Hero Images](https://cloudfour.com/thinks/stop-lazy-loading-product-and-hero-images/)
 
 ## Images
 
