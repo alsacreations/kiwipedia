@@ -89,52 +89,8 @@ Configurer le chemin vers l'exécutable PHP `php.validate.executablePath` dans l
 
 Pour tous les types de projets, ajouter un dossier `.vscode/` à la racine, contenant :
 
-- un fichier `.vscode/extensions.json` listant les extensions recommandées pour le projet
-- un fichier `.vscode/settings.json` contenant les réglages pour activer les linters
-
-Exemple de fichier `.vscode/extensions.json` recommandé :
-
-```js
-{
-  "recommendations": [
-    "EditorConfig.EditorConfig",
-    "dbaeumer.vscode-eslint",
-    "stylelint.vscode-stylelint",
-    "mrmlnc.vscode-scss",
-    "mikestead.dotenv",
-    "bradlc.vscode-tailwindcss",
-    "wayou.vscode-todo-highlight"
-  ]
-}
-```
-
-Exemple de fichier `.vscode/settings.json` recommandé :
-
-```js
-{
-  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-  "editor.linkedEditing": true,
-  "editor.formatOnSave": true,
-  "editor.formatOnPaste": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true,
-    "source.fixAll.stylelint": true
-  },
-  "stylelint.enable": true,
-  "css.validate": false,
-  "scss.validate": false,
-  "stylelint.validate": [
-    "css",
-    "less",
-    "postcss",
-    "scss",
-    "sass"
-  ],
-  "css.lint.unknownAtRules": "ignore",
-  "less.lint.unknownAtRules": "ignore",
-  "scss.lint.unknownAtRules": "ignore"
-}
-```
+- un fichier [.vscode/extensions.json](assets/.vscode/extensions.json) listant les extensions recommandées pour le projet
+- un fichier [.vscode/settings.json](assets/.vscode/settings.json) contenant les réglages pour activer les linters
 
 Les détails de configuration des Extensions et Linters sont décrits dans les autres Guidelines :
 

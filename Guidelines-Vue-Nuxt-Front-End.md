@@ -10,25 +10,7 @@ L'Éditeur de code recommandé pour HTML, CSS, PHP, JS est [Visual Studio Code](
 
 ## Extensions Visual Studio Code recommandées
 
-Pour les projets de type Vue et Nuxt, la liste des extensions VScode utile est composée de : Editorconfig, ESlint, Stylelint, Markdownlint, Volar, SCSS Intellisense, Tailwind CSS IntelliSense, todo-highlight.
-
-Fichier d'extensions `extensions.json` à placer à la racine du projet au sein d'un dossier `/.vscode` ([afficher/télécharger ce fichier](assets/vue-nuxt-front-end/.vscode/extensions.json))
-
-```yaml
-{
-  "recommendations": [
-    "EditorConfig.EditorConfig",
-    "dbaeumer.vscode-eslint",
-    "stylelint.vscode-stylelint",
-    "DavidAnson.vscode-markdownlint",
-    "mrmlnc.vscode-scss",
-    "vue.volar",
-    "mikestead.dotenv",
-    "bradlc.vscode-tailwindcss",
-    "wayou.vscode-todo-highlight"
-  ]
-}
-```
+Pour les projets de type Vue et Nuxt, on ajoute `vue.volar` à [.vscode/extensions.json](assets/.vscode/extensions.json).
 
 ## Linters
 
