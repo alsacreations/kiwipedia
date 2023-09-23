@@ -111,26 +111,7 @@ En phase de développement d'un projet, les notes de modifications et améliorat
 - `TODO:` Partie de code **non finalisée**, non mis en oeuvre (par exemple `TODO: implémenter les données`, `<a href="TODO:">`)
 - `FIXME:` Partie de code **à améliorer**, à modifier pour être plus performant, plus maintenable, etc. (par exemple : `FIXME: mieux gérer le responsive`, `FIXME: refactoring`)
 
-L'extension VSCode **[TODO Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight)** permet de mettre en exergue les tags `TODO:` (en jaune par défaut) et `FIXME:` (en rose par défaut).
-
-TODO Highlight propose également de lister l'ensemble des tags par fichier via `ctrl/cmd + maj + p` > `List highlighted annotations` (liste les tags dans le document en cours).
-
-Si nécessaire, il est possible d'indiquer quels types de fichiers sont à surveiller par TODO Highlight au sein de `settings.json` (par exemple, les fichiers `.vue` et `.md` ne sont pas surveillés par défaut).
-
-```json
-"todohighlight.include": [
-    "**/*.js",
-    "**/*.jsx",
-    "**/*.ts",
-    "**/*.tsx",
-    "**/*.html",
-    "**/*.vue",
-    "**/*.php",
-    "**/*.md",
-    "**/*.css",
-    "**/*.scss"
-  ]
-```
+L'extension **[Todo Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree)** permet de mettre en exergue les tags `TODO`, `FIXME`, `HACK`... ainsi que les lister dans un arbre. On active les couleurs avec le paramètre `"todo-tree.highlights.useColourScheme": true`.
 
 **En fin de phase de développement, avant la livraison du projet, il est fondamental de vérifier la présence indésirable de ces tags au sein du code. L'idéal étant qu'un projet soit livré sans aucun tag `TODO:`.**
 
