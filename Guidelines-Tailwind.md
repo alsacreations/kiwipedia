@@ -4,6 +4,9 @@ Statut : Candidate Recommendation (CR)
 
 Tailwind est un framework CSS qui adopte une approche "atomique" de CSS, comprendre qu'à chaque classe correspond une action et une seule.
 
+- Pour tester Tailwind en ligne : [https://play.tailwindcss.com/](https://play.tailwindcss.com/)
+- La documentation de Tailwind : [https://tailwindcss.com/docs](https://tailwindcss.com/docs)
+
 **Sommaire :**
 
 - [Introduction](#introduction)
@@ -40,7 +43,7 @@ De manière générale, sauf exceptions, Tailwind sera installé et configuré �
 1. Installer les dépendances NPM `npm install -D tailwindcss postcss autoprefixer`.
 2. Créer un fichier de config avec `npx tailwindcss init` vierge si possible.
 3. Configurer les fichiers qui seront à observer dans la configuration JS.
-4. Dans le fichier `webpack.mix.js` ajouter Tailwind au build postcss.
+4. Dans le fichier `webpack.mix.js` ajouter Tailwind au build postcss. TODO: nous utilisons Vite désormais.
 5. Enfin dans `resources\styles\app.css`, ajouter Tailwind.
 
 #### *tailwind.config.js* (pour WordPlate/WordPress)
@@ -97,41 +100,9 @@ buildModules: ['@nuxt/postcss8']
 
 ### Environnement de travail et outils recommandés
 
-Tailwind, pour plus de plaisir, nécessite d'être associé à un environnement de travail et un workflow adaptés (VS Code, Intellisense, auto-complétion, coloration syntaxique, etc.).
+Tailwind, pour plus de plaisir, nécessite d'être associé à un environnement de travail et un workflow adaptés. Nous utilisons Visual Studio Code et **[Tailwind CSS intellisense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)** offrant une auto-complétion ainsi qu'une *tooltip* au survol des classes.
 
-Nous utilisons VS Code et l'extension VSCode **[Tailwind CSS intellisense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)**. Cette extension offre une auto-complétion ainsi qu'une tooltip au survol des classe bien pratique.
-
-Tailwind apporte son lot de directives sous forme de règles-at spécifiques (`@apply`, `@layer`, `@screen`, `@variants`, etc.) pouvant être pointées du doigt par les Linters CSS.
-
-Stylelint est notre formateur (unique) pour les styles CSS et scss du projet. Les Linters natifs CSS et scss de VSCode **doivent être désactivés** dans la configuration VSCode `settings.json` :
-
-```json
-{
-  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-  "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true,
-    "source.fixAll.markdownlint": true,
-    "source.fixAll.stylelint": true
-  },
-  "stylelint.enable": true,
-  "css.validate": false,
-  "scss.validate": false
-}
-```
-
-De plus, nous configurons spécifiquement Stylelint (dans [`stylelint.config.js`](https://github.com/alsacreations/guidelines/blob/master/assets/stylelint.config.js)) pour ignorer les règles-at inconnues :
-
-```json
-'at-rule-no-unknown': [
-  true,
-  {
-    'ignoreAtRules': ['function', 'if', 'each', 'include', 'mixin', 'layer', 'extends', 'apply', 'tailwind', 'screen']
-  }
-]
-```
-
-De cette manière, nos Linters CSS ne déclenchent aucun avertissement ni erreur lorsqu'ils croisent les règles-at de Tailwind, et nous n'avons pas besoin d'utiliser [Tailwind Loves Sass](https://www.npmjs.com/package/tailwind-loves-sass).
+⚠️ Tailwind apporte son lot de directives sous forme de règles-at spécifiques (`@apply`, `@layer`, `@screen`, `@variants`, etc.) pouvant être pointées du doigt par les Linters CSS. Stylelint est notre formateur (unique) : les linters natifs CSS (css.validate) et scss (scss.validate) **doivent être désactivés** dans [.vscode/settings.json](assets/.vscode/settings.json). Nous configurons spécifiquement Stylelint (dans [`stylelint.config.js`](assets/stylelint.config.js)) pour ignorer les règles-at inconnues avec `at-rule-no-unknown`. De cette manière, nos Linters CSS ne déclenchent aucun avertissement ni erreur lorsqu'ils croisent les règles-at de Tailwind, et nous n'avons pas besoin d'utiliser [Tailwind Loves Sass](https://www.npmjs.com/package/tailwind-loves-sass).
 
 ### Ré-ordonner les classes dans le HTML
 
@@ -513,8 +484,3 @@ Le principe général est qu'`une propriété CSS = une fonction`. Donc à parti
 Les préfixes `sm`, `md`, `hover`, `focus`, … sont donc des switchs `on`/`off` pour une seule utilité.
 
 Ex: `sm:text-blue-500 md:text-red-500`
-
-## Ressources complémentaires
-
-- Pour tester Tailwind en ligne : [https://play.tailwindcss.com/](https://play.tailwindcss.com/)
-- La documentation de Tailwind : [https://tailwindcss.com/docs](https://tailwindcss.com/docs)
