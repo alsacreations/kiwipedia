@@ -4,7 +4,8 @@
   "editor.formatOnPaste": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
-    "source.fixAll.stylelint": true
+    "source.fixAll.stylelint": true,
+    "source.fixAll.markdownlint": true
   },
   "stylelint.enable": true,
   "css.validate": false,
