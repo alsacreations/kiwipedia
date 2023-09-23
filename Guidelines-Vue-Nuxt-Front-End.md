@@ -32,37 +32,25 @@ Fichier d'extensions `extensions.json` à placer à la racine du projet au sein 
 
 ## Linters
 
-Les différents fichiers de configuration des Linters sont :
-
-- EditorConfig : cf. `.editorconfig`
-- [ESLint](https://eslint.org/docs/latest/user-guide/configuring/configuration-files) : cf. `.eslintrc.js`
-- [Stylelint](https://stylelint.io/user-guide/configure) : cf. `.stylelintrc` (voir détails plus loin)
-
-Nous utilisons la configuration ESLint <https://github.com/alsacreations/eslint>.
-
-Nous recommandons également:
+Grâce à [.vscode/settings.json](assets/.vscode/settings.json) nous recommandons :
 
 - De définir ESLint comme linter/formateur par défaut
 - De corriger automatiquement les erreurs ESLint lors de la sauvegarde du fichier
-- De désactiver les linters natifs VSCode CSS et scss et d'activer Stylelint uniquement pour éviter certains conflits.
-
-[Afficher/télécharger le fichier `settings.json`](assets/vue-nuxt-front-end/.vscode/settings.json)
+- De désactiver les linters natifs CSS et scss et d'activer Stylelint uniquement pour éviter certains conflits.
 
 ### Editorconfig
 
-Editorconfig impose un formatage (espace vs tabs) et des règles de syntaxe directement dans l'éditeur, ainsi ce dernier s'adapte à chaque projet.
+[Editorconfig](https://editorconfig.org/) impose un formatage (espace vs tabs) et des règles de syntaxe directement dans l'éditeur, ainsi ce dernier s'adapte à chaque projet.
 
 La configuration de Editorconfig se fait via un fichier `.editorconfig` à la racine du projet. ([Afficher/télécharger ce fichier](assets/vue-nuxt-front-end/.editorconfig))
 
 ### ESlint
 
-ESLint est un analyseur de code pour identifier les problématiques du code JavaScript (Vue, React, etc.) et les résoudre automatiquement. ESlint est configuré via un fichier `.eslintrc.js`.
-
-Nous utilisons la configuration ESLint <https://github.com/alsacreations/eslint>.
+[ESLint](https://eslint.org/docs/latest/user-guide/configuring/configuration-files) est un analyseur de code pour identifier les problématiques du code JavaScript (Vue, React, etc.) et les résoudre automatiquement. ESlint est configuré via un fichier `.eslintrc.js`, nous utilisons la configuration ESLint <https://github.com/alsacreations/eslint>.
 
 ### Stylelint
 
-Stylelint est l'unique formatteur pour les styles CSS et SCSS du projet. Les Linters natifs CSS et SCSS de VSCode **doivent être désactivés** (voir précédemment).
+[Stylelint](https://stylelint.io/user-guide/configure) est l'unique formatteur pour les styles CSS et SCSS du projet. Les Linters natifs CSS et SCSS de VSCode **doivent être désactivés** (voir précédemment).
 
 La procédure d'installation de Stylelint est la suivante :
 
@@ -85,7 +73,7 @@ Markdownlint est un linter pour langage Markdown et prend en compte toutes les r
 
 ### Volar
 
-Ensemble d'outils Vue pour VSCode (coloration, linter). Volar nécessite un fichier `jsconfig.json` ou `tsconfig.json` (normalement générés par défaut).
+[Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) est un ensemble d'outils (coloration, linter) nécessitant un fichier `jsconfig.json` ou `tsconfig.json` (normalement générés par défaut).
 
 ## Environnements et fichiers .env
 
@@ -311,7 +299,7 @@ On privilégie un nommage bien parlant. Les méthodes sont appelées sans parent
 
 Voir <https://vuejs.org/guide/essentials/event-handling.html#event-handling>
 
-Pour *debounce* des événements (limiter leur nombre d'appels toutes les *n* millisecondes) voir <https://www.npmjs.com/package/lodash.debounce>
+Pour _debounce_ des événements (limiter leur nombre d'appels toutes les _n_ millisecondes) voir <https://www.npmjs.com/package/lodash.debounce>
 
 La définitions des `emits` se fera de cette manière:
 
@@ -393,7 +381,7 @@ Usage de <https://github.com/intlify/vue-i18n-next> avec fichiers de configurati
 - En tant que condition : `v-if="$i18n.locale == 'fr'"`
 - Lien racine : `<nuxt-link :to="localePath('/')">`
 
-On formate les nombres/prix avec `$n(13.37, 'currency')` ou `$n(13.37, { currency: 'EUR' })`. Voir aussi <https://vue-i18n.intlify.dev/guide/essentials/number.html#basic-usage> pour importer *numberFormats* dans le fichier de configuration (vueI18n).
+On formate les nombres/prix avec `$n(13.37, 'currency')` ou `$n(13.37, { currency: 'EUR' })`. Voir aussi <https://vue-i18n.intlify.dev/guide/essentials/number.html#basic-usage> pour importer _numberFormats_ dans le fichier de configuration (vueI18n).
 
 Pour des formatages plus complexes voir <https://kazupon.github.io/vue-i18n/guide/formatting.html#html-formatting>
 
@@ -429,7 +417,7 @@ Dans un fichier, pour créer la route dynamiquement en fonction de la locale, il
 
 Par l'usage de [VeeValidate](https://vee-validate.logaretm.com/) on n'utilise pas d'attribut HTML natif `required` sur les `<input>` texte ou équivalent qui sont assortis d'un message de validation texte (on le tolère pour les checkbox/radio qui en sont dépourvus dans certains cas).
 
-1. Exploiter `<ValidationProvider v-slot="v" rules="required|autre_regle" slim>` *autour* du conteneur `<p class="form-group" :class="v.classes">`. Voir les [règles](https://logaretm.github.io/vee-validate/guide/rules.html#rules).
+1. Exploiter `<ValidationProvider v-slot="v" rules="required|autre_regle" slim>` _autour_ du conteneur `<p class="form-group" :class="v.classes">`. Voir les [règles](https://logaretm.github.io/vee-validate/guide/rules.html#rules).
 2. Les classes ajoutées sont définies dans `plugins\vee-validate.js` [Afficher/télécharger un exemple du fichier `vee-validate.js`](assets/vue-nuxt-front-end/vee-validate.js).
 3. Il doit encapsuler un input avec `v-model`, par ex `<input v-model="currentIban" type="text">`.
 4. Affichage du message d'erreur dans ce même bloc `<span class="form-label-error">{{ v.errors[0] }}</span>`.
