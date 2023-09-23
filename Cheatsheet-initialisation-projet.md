@@ -2,7 +2,7 @@
 
 - Ajouter un fichier `.gitignore` (contenant notamment `node_modules`)
 - Ajouter `README.md`
-- Ajouter `.editorconfig`, `.vscode/settings.json`, `.vscode/extensions.json` 
+- Ajouter `.editorconfig`, `.vscode/settings.json`, `.vscode/extensions.json`
 
 1. Installation d'[ESLint](https://eslint.org/docs/latest/user-guide/getting-started)
     - [Configuration Alsacréations](https://www.npmjs.com/package/eslint-config-alsacreations)
