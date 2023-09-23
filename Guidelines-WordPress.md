@@ -452,32 +452,6 @@ composer create-project --prefer-dist wordplate/wordplate superprojet
 
 Modifier le fichier `.env` avec les coordonnées de la base de données MySQL.
 
-### Développer le thème
-
-Exploiter webpackmix intégré : `npm install` (ou pnpm)
-
-Optionnel: `npm i concurrently -D`
-
-```json
-// Package.json
-"scripts": {
-    "serve": "php -S localhost:8000 -t public/",
-    "build": "...",
-    "dev": "...",
-    "devstart": "concurrently \"npm run serve\" \"npm run dev\""
-  },
-```
-
-Tâches :
-
-- Démarrage du serveur php : `npm run serve`
-- Démarrage du serveur dev (browsersync, css, js) : `npm run dev`
-- Minification/compilation : `npm run build`
-
-Optionnel : démarrage des deux en même temps: `npm run devstart`
-
-Si cross-env n'est pas installé `npm install cross-env -g`
-
 ## Autres ressources
 
-🔖 Beaucoup de cours chez [Capitaine WP](https://capitainewp.io/)
+🔖 Beaucoup de cours chez [Capitaine WP](https://capitainewp.io/) et [Grafikart](https://grafikart.fr/tutoriels/wordpress)
