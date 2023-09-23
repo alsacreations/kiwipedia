@@ -3,6 +3,7 @@
     "EditorConfig.EditorConfig",
     "dbaeumer.vscode-eslint",
     "stylelint.vscode-stylelint",
+    "DavidAnson.vscode-markdownlint",
     "mrmlnc.vscode-scss",
     "mikestead.dotenv",
     "bradlc.vscode-tailwindcss",
