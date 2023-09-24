@@ -106,7 +106,7 @@ Remplace _Feature-Policy_, débloque/bloque les API avancées telles que la géo
 * `()` : interdit la fonctionnalité
 
 ```apache
-Header set Permissions-Policy "fullscreen=(*), geolocation=(self), autoplay=(self), display-capture=(self), accelerometer=(), battery=(), camera=()"
+Header set Permissions-Policy "fullscreen=(*), geolocation=(self), autoplay=(self), display-capture=(self), accelerometer=(), battery=(), camera=(), web-share=()"
 ```
 
 Voir aussi <https://www.w3.org/TR/permissions-policy-1/> et <https://github.com/w3c/webappsec-permissions-policy/blob/main/permissions-policy-explainer.md>
