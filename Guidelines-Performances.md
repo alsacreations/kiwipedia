@@ -247,14 +247,14 @@ Autant que possible, privilégier le chargement de polices légères et respectu
 
 ### Outils d'optimisation et de tests de polices
 
-- FontSquirrel webfont generator : https://www.fontsquirrel.com/tools/webfont-generator
-- Transfonter : https://transfonter.org/
-- Wakamai Fondue : https://wakamaifondue.com/
-- Glyphhanger (NPM) : https://github.com/zachleat/glyphhanger
+- FontSquirrel webfont generator : <https://www.fontsquirrel.com/tools/webfont-generator>
+- Transfonter : <https://transfonter.org/>
+- Wakamai Fondue : <https://wakamaifondue.com/>
+- Glyphhanger (NPM) : <https://github.com/zachleat/glyphhanger>
 
-### Code recommandé
+### Code recommandé pour les polices
 
-Voici un exemple de chargement de police conseillé (cas de deux fichiers de police regular et bold)&nbsp;:
+Voici un exemple de chargement de police conseillé (cas de deux fichiers de police regular et bold) :
 
 ```html
 <!-- Dans le <head> après
@@ -296,9 +296,7 @@ Une variable font est systématiquement recommandée dès lors qu'un projet néc
 
 Comme pour les fontes classiques, le format `.woff2` ainsi que l'hébergement de la fonte sont préconisés (les fontes variables peuvent être trouvées sur [Google Fonts](https://fonts.google.com/?vfonly=true) en activant la case "show only variable fonts" puis téléchargées en `.ttf` via le bouton "Download family". Un convertisseur tel que [Cloud converter](https://cloudconvert.com/ttf-to-woff2) pourra produire la version `.woff2`.
 
-#### Code recommandé
-
-Voici un exemple de chargement de variable font conseillé&nbsp;:
+#### Code recommandé pour les variable fonts
 
 ```css
 @font-face {
@@ -343,6 +341,7 @@ Voir [Guidelines Icônes](Guidelines-Icones.md).
 
 ## Autres checklists et ressources
 
+- [HTTP/3 expliqué](https://http3-explained.haxx.se/fr/)
 - <https://github.com/thedaviddias/Front-End-Performance-Checklist>
 - <https://www.smashingmagazine.com/2021/01/front-end-performance-2021-free-pdf-checklist/>
 - <https://browserdiet.com/>
@@ -351,6 +350,6 @@ Voir [Guidelines Icônes](Guidelines-Icones.md).
 ## Performance côté serveur (back-end) et cache
 
 - WordPress : utiliser une extension de cache, voir [Guidelines WordPress](Guidelines-WordPress.md)
-- PHP : [Tutoriel : Comprendre et utiliser un système de cache PHP](http://sdz.tdct.org/sdz/comprendre-et-utiliser-un-systeme-de-cache-php.html) ou [PHP Cache](https://www.php-cache.com/)
+- PHP : [PHP Cache](https://www.php-cache.com/)
 - [Varnish](https://varnish-cache.org/)
 - [k6](https://k6.io/) pour les tests de charge
