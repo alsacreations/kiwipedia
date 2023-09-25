@@ -10,6 +10,7 @@
   "stylelint.enable": true,
   "css.validate": false,
   "scss.validate": false,
+  "less.validate": false,
   "stylelint.validate": [
     "css",
     "less",

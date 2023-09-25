@@ -18,7 +18,7 @@ Grâce à [.vscode/settings.json](assets/.vscode/settings.json) nous recommandon
 
 - De définir ESLint comme linter/formateur par défaut
 - De corriger automatiquement les erreurs ESLint lors de la sauvegarde du fichier
-- De désactiver les linters natifs CSS et scss et d'activer Stylelint uniquement pour éviter certains conflits.
+- De désactiver les linters natifs CSS/Less/Scss et d'activer Stylelint uniquement pour éviter certains conflits.
 
 ### Editorconfig
 
@@ -37,11 +37,8 @@ La configuration de Editorconfig se fait via un fichier `.editorconfig` à la ra
 La procédure d'installation de Stylelint est la suivante :
 
 - Installer l'extension [Stylelint pour VSCode](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint),
-- Installer le package Stylelint via `npm install stylelint --save-dev`,
-- Installer la configuration recommandée de Stylelint via `npm install stylelint-config-recommended --save-dev`
-- Créer un fichier `stylelint.config.js` contenant les règles à appliquer.
-
-([Afficher/télécharger le fichier `stylelint.config.js` recommandé](assets/vue-nuxt-front-end/stylelint.config.js)).
+- Installer le package Stylelint via `npm install --save-dev stylelint stylelint-config-recommended`,
+- Ajouter le fichier [stylelint.config.js](assets/stylelint.config.js) recommandé.
 
 ### Prettier
 

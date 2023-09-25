@@ -32,7 +32,7 @@ Lister les extensions : `code --list-extensions`
 
 - [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) (respect configuration tabs vs spaces à l'insertion, encodage, eol, etc)
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) (vérification syntaxe JavaScript)
-- [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint) (vérifie la syntaxe CSS d'après un ensemble de règles)
+- [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint) (vérifie la syntaxe CSS d'après un ensemble de règles, nécessite une installation de stylelint locale ou globale)
 - [SCSS Intellisense](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-scss) (autocomplétion SCSS : classes, variables, etc.)
 - [Markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) (vérification syntaxe Markdown)
 - **Note : Prettier crée des conflits avec ESLint (ex. sauts de ligne dans les balises). Il n'est donc généralement pas recommandé au sein de nos projets nécessitant ESlint.**
@@ -90,7 +90,7 @@ Configurer le chemin vers l'exécutable PHP `php.validate.executablePath` dans l
 Pour tous les types de projets, ajouter un dossier `.vscode/` à la racine, contenant :
 
 - un fichier [.vscode/extensions.json](assets/.vscode/extensions.json) listant les extensions recommandées pour le projet
-- un fichier [.vscode/settings.json](assets/.vscode/settings.json) contenant les réglages pour activer les linters
+- un fichier [.vscode/settings.json](assets/.vscode/settings.json) contenant les réglages pour (dés)activer les linters
 
 Les détails de configuration des Extensions et Linters sont décrits dans les autres Guidelines :
 
