@@ -7,8 +7,7 @@ Outils de test :
 * <https://observatory.mozilla.org/>
 * <https://securityheaders.com/>
 * <https://www.serpworx.com/check-security-headers/>
-* <https://www.immuniweb.com/websec/>
-* <https://csp-evaluator.withgoogle.com/>
+* CSP : <https://csp-evaluator.withgoogle.com/>
 * SSL : <https://www.ssllabs.com/ssltest/analyze.html>
 * SSL : <https://badssl.com/>
 
@@ -23,9 +22,9 @@ Ressources :
 
 ▶️ Les règles ci-dessous peuvent être renvoyées par n'importe quel serveur HTTP
 
-- encapsulées sous Apache par `<IfModule mod_headers.c></IfModule>` pour ne les appliquer que lorsque le module mod_headers est bien activé
-- renvoyées par le langage back (ex : PHP avec la fonction [header](https://www.php.net/manual/fr/function.header.php))
-- par un CMS (ex : WordPress avec l'extension [GD Security Headers](https://wordpress.org/plugins/gd-security-headers/), mentionnée par l'ANSSI)
+* encapsulées sous Apache par `<IfModule mod_headers.c></IfModule>` pour ne les appliquer que lorsque le module mod_headers est bien activé
+* renvoyées par le langage back (ex : PHP avec la fonction [header](https://www.php.net/manual/fr/function.header.php))
+* par un CMS (ex : WordPress avec l'extension [GD Security Headers](https://wordpress.org/plugins/gd-security-headers/), mentionnée par l'ANSSI)
 
 ## Niveau 1 (base) 🥇
 
@@ -173,7 +172,7 @@ Header set Content-Security-Policy "default-src 'self' *.example.org *.gstatic.c
 Exemple plus restrictif
 
 ```apache
-default-src 'self' *.example.org; script-src 'self'; style-src 'self'; font-src 'self'; img-src * data:; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+Header set Content-Security-Policy "default-src 'self' *.example.org; script-src 'self'; style-src 'self'; font-src 'self'; img-src * data:; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
 ```
 
 * `default-src` est la règle s'appliquant par défaut si rien n'est spécifié pour `style-src`, `script-src`, `font-src`, `media-src`...
