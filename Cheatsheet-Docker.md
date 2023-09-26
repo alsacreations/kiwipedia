@@ -148,3 +148,14 @@ La grande majorité des commandes Docker ont un équivalent Podman (start, stop,
 * Démarrer UN conteneur/service en particulier à partir d'un fichier compose `podman-compose up -d <service>`
 * Retirer un service `podman-compose down <service>` (tel que nommé dans le fichier yml, par exemple `db`)
 * Si les ports ne sont pas ouverts pour le service `podman-compose run --service-ports <service>`
+
+---
+
+## Docker et performance sous Windows
+
+Les volumes limitent les performances, notamment lors de développements WordPress/PHP. Technique :
+
+* [Installer WSL2](https://learn.microsoft.com/fr-fr/windows/wsl/install)
+* Installer Ubuntu ou autre distribution via le Microsoft Store intégré
+* Activer l'option dans Docker _Use the WSL 2 based engine_
+* Désormais `git clone` les projets "dans" la vm WSL et y accéder avec Visual Studio Code pour développer
