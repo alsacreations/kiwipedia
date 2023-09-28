@@ -81,15 +81,15 @@ module.exports = {
     'value-list-comma-newline-before': 'never-multi-line',
     'value-list-comma-space-after': 'always',
     'value-no-vendor-prefix': true,
-    "rule-empty-line-before": [
-      "always",
+    'rule-empty-line-before': [
+      'always',
       {
-        "except": [
-          "after-single-line-comment",
-          "first-nested"
+        'except': [
+          'after-single-line-comment',
+          'first-nested'
         ],
-        "ignore": [
-          "after-comment"
+        'ignore': [
+          'after-comment'
         ]
       }], // ligne vide entre deux blocs
     'at-rule-no-unknown': [
