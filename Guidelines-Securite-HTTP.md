@@ -1,4 +1,4 @@
-# Sécurité
+# Sécurité front-end (HTTP)
 
 Statut : Recommendation (REC)
 
@@ -17,6 +17,7 @@ Ressources :
 * <https://www.alsacreations.com/article/lire/1723-tour-horizon-https-et-en-tetes-de-securite.html>
 * <https://blog.appcanary.com/2017/http-security-headers.html>
 * <https://content-security-policy.com/>
+* <https://www.numerique.gouv.fr/publications/referentiel-general-de-securite/>
 
 **Définition** : La notion d'origine (ou _same-origin_) indique qu'il a correspondance du protocole (http, https), du port (80) et du nom de domaine complet (avec ses sous domaines).
 
