@@ -272,7 +272,7 @@ Si le projet nécessite d'utiliser **Gutenberg**, penser à ajouter `"show_in_re
 
 On utilise ACF pour ajouter des champs personnalisés à des Pages, Articles, CPT ou d'autres [conditions spécifiques](https://www.advancedcustomfields.com/resources/custom-location-rules/).
 
-👉 On utilise un dossier `acf-json/` à la racine du thème <https://www.advancedcustomfields.com/resources/local-json/> permettant de versionner et synchroniser automatiquement les ajouts/modifications ACF en développant à plusieurs.
+👉 On utilise un dossier `acf-json/` (qui doit être autorisé en écriture) à la racine du thème <https://www.advancedcustomfields.com/resources/local-json/> permettant de versionner et synchroniser automatiquement les ajouts/modifications ACF en développant à plusieurs. Chaque modification de groupe génère un fichier JSON qui peut être importé ailleurs via l'onglet _Sync_.
 
 🔖 Voir [Tutoriel ACF : Advanced Custom Fields – Le guide complet](https://newslang.ch/blog/tutoriel-acf-advanced-custom-fields-le-guide-complet/), [Best Practices when Designing Custom Fields](https://www.advancedcustomfields.com/blog/best-practices-designing-custom-fields/) et [Tutoriel sur Advanced Custom Fields : Votre guide ultime](https://kinsta.com/fr/blog/advanced-custom-fields/)
 
