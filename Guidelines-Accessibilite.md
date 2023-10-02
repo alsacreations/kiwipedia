@@ -963,7 +963,7 @@ Pour tous les composants de page agissant sur le contenu, de type swiper, slider
 
 ### ARIA live
 
-Utiliser l'attribut `aria-live` sur les informations provenant de chargements AJAX ou dévoilées par JavaScript dynamiquement (ex : non présentes naturellement dans le flux de la page comme des alertes).
+Utiliser l'attribut `aria-live` sur les informations provenant de chargements asynchrones (API, fetch, XHR) ou générées par JavaScript dynamiquement, non présentes naturellement dans le flux de la page comme des alertes, par exemples les rôles [log, status, alert, progressbar, marquee, timer](https://developer.mozilla.org/fr/docs/Web/Accessibility/ARIA/ARIA_Live_Regions#pr%C3%A9f%C3%A9rences_de_r%C3%B4les_pour_les_zones_%C2%AB_live_%C2%BB_sp%C3%A9cialis%C3%A9es).
 
 ```html
 <div role="alert" aria-live="assertive" aria-atomic="true">
@@ -971,7 +971,7 @@ Utiliser l'attribut `aria-live` sur les informations provenant de chargements AJ
 </div>
 ```
 
-On pourra moduler avec `aria-relevant` (`additions`, `removals`, `text`, `all`) selon qu'on ajoute le contenu au conteneur ou que c'est lui-même qui se voit inséré dans le corps de la page.
+On pourra moduler avec `aria-atomic` et `aria-relevant` (`additions`, `removals`, `text`, `all`) selon qu'on ajoute le contenu au conteneur ou que c'est lui-même qui se voit inséré dans le corps de la page.
 
 ### Autres composants
 
