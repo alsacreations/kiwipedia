@@ -9,7 +9,7 @@ Bonnes pratiques CSS appliquées par l'agence web [Alsacreations.fr](https://www
 De manière générale et sauf projets d'intégration spécifiques, nous privilégions les méthodologies, langages et outils suivants&nbsp;:
 
 - Méthodologie CSS : **Cube CSS**
-- Langage : **Sass** (syntaxe `.scss`)
+- Préprocesseur **Sass** (syntaxe `.scss`) *ou* Post-processeur (postCSS)
 - Constructeur de classes utilitaires : **Tailwind CSS**
 
 Tous les détails et bonnes pratiques internes concernant ces technologies sont détaillés au sein de ce présent document.
@@ -18,22 +18,19 @@ Tous les détails et bonnes pratiques internes concernant ces technologies sont 
 
 ### Points généraux
 
-- Opter pour des tailles de polices fluides (de préférence en `rem`), éviter les tailles de police de taille fixe (`px` ou `pt`) car inaccessible aux personnes nécessitant d’agrandir les contenus textuels.
-- Éviter d’écraser une règle par une autre.
-- La règle `!important` doit être éradiquée si possible du fait de son poids extrêmement important (certaines parties des styles peuvent toutefois exceptionnellement employer à juste titre `!important`).
-- Durant la phase de développement l'intégration se fait sur plusieurs fichiers CSS (composants, layout, etc.) que l'on rassemble (`@import`) dans un fichier unique.
-- Les fichiers CSS doivent être minifiés pour économiser du poids de chargement.
-- Toujours préciser quelle(s) propriété(s) doit être animée dans une transition ou animation.
-- Éviter d’animer des propriétés autres que **transform** ou **opacity** ou **filter** (ou alors ajouter la propriété `will-change` au cas par cas).
-
-### Sélection des éléments
-
-La maintenabilité des feuilles de styles est une priorité. Il est nécessaire de favoriser les sélecteurs ayant le moins de spécificité (poids) possible afin de faciliter les modifications ultérieures ou dans des contextes différents (Responsive).
-
-- Privilégier au maximum l'usage de [**classes**](http://www.drinchev.com/blog/css-with-only-class-names/) plutôt que d'écrire des sélecteurs basés sur le type des éléments ou leur `id`.
-- Le sélecteur CSS doit être _unique_ si cela est possible (une seule classe). Éviter les _sélecteurs composés_ tels que `.modal span` ou `.modal .date` mais plutôt `.modal-date` pour conserver un poids minimal.
-- Prévoir dès le départ un nom de classe pour chaque élément HTML (même anodin tels que `<span>`, `<p>` ou `<a>`) afin de pouvoir être ciblés sans avoir à faire à leur hiérarchie.
-- Faire attention à la performance des sélecteurs : [The truth about CSS selector performance](https://blogs.windows.com/msedgedev/2023/01/17/the-truth-about-css-selector-performance/)
+- Accessibilité
+  - Opter pour des tailles de polices fluides (de préférence en `rem`), éviter les tailles de police de taille fixe (`px` ou `pt`) car inaccessibles aux personnes nécessitant d’agrandir les contenus textuels.
+- Maintenabilité
+  - Privilégier systématiquement l'usage de sélecteurs de **class** plutôt que les sélecteurs d'éléments (`li`, `span`, `p`) et ne jamais cibler via un sélecteur `#id`.
+  - Éviter les *sélecteurs composés* tels que `.modal span` ou `.modal .date` mais plutôt `.modal-date` pour conserver une spécificité minimale.
+  - Prévoir dès le départ un nom de classe pour chaque élément HTML (même anodin tels que `<span>`, `<p>` ou `<a>`) afin qu'il puisse être ciblés sans avoir à faire à sa hiérarchie.
+  - Éviter d’écraser une règle CSS par une autre.
+  - La règle `!important` doit être éradiquée si possible du fait de son poids extrêmement important (certaines parties des styles peuvent toutefois exceptionnellement employer à juste titre `!important`).
+- Performances
+  - Durant la phase de développement l'intégration se fait sur plusieurs fichiers CSS (composants, layout, etc.) que l'on rassemble (`@import`) dans un fichier unique.
+  - Les fichiers CSS doivent être minifiés pour économiser du poids de chargement.
+  - Toujours préciser quelle(s) propriété(s) doit être animée dans une transition ou animation.
+  - Éviter d’animer des propriétés autres que `transform` (`translate`, `rotate`, `scale`) ou `opacity` ou `filter` (ou alors ajouter la propriété `will-change` au cas par cas).
 
 ### Ordre des déclarations
 
@@ -84,18 +81,18 @@ Les styles sont progressivement hérités de la page gobale, vers des compositio
 
 Tout projet Cube CSS nécessite en amont au minimum :
 
-- Un fichier **["Reset CSS"](https://github.com/alsacreations/bretzel/tree/main/_base)** : ce fichier est maintenu en interne chez nous et mis à jour régulièrement.
+- Un fichier **["Reset CSS"](https://github.com/alsacreations/bretzel/blob/main/public/bretzel-reset.css)** : ce fichier est maintenu en interne chez nous et mis à jour régulièrement.
 - Une **feuille de styles basique** pour définir les styles des éléments de générique : html, body (taille de base, couleur, police), liens (+ survol et focus), titres, listes, etc.
 
 ### Compositions (Layouts)
 
-Le "C" de "CUBE" signifie "Compositions". _Note : nous les appelons **"Layouts"** chez nous pour éviter de faire la confusion avec "Composants"._
+Le "C" de "CUBE" signifie "Compositions". *Note : nous les appelons **"Layouts"** chez nous pour éviter de faire la confusion avec "Composants".*
 
 ![galerie de Layouts visibles sur Bretzel](images/layouts.png)
 
-_(exemples de Layouts rassemblés sur [Bretzel](http://bretzel.alsacreations.com/#layouts))_
+*(exemples de Layouts rassemblés sur [Bretzel](http://bretzel.alsacreations.com/#layouts))*
 
-**Les Layouts constituent l'un des principaux apports de la méthodologie CubeCSS&nbsp;: il s'agit de zones d'affichages neutres et flexibles réutilisables un peu partout et destinées à recueillir les composants.**
+**Les Layouts constituent l'un des principaux apports de la méthodologie CubeCSS&nbsp;: il s'agit de zones d'affichages neutres et flexibles concues en Flexbox ou Grid Layout réutilisables un peu partout et destinées à recueillir les composants.**
 
 Toutes les pages web comportent l'un ou plusieurs de ces Layouts, souvent répétés. Il s'agit donc dans un premier temps de faire la liste des Layout nécessaires pour les maquettes.
 
@@ -116,7 +113,7 @@ Le fichier de config de Tailwind, qu'il est indispensable d'adapter à chaque pr
 
 ### Blocks (Composants)
 
-Le "B" de "CUBE" signifie "Blocks". _Note : nous les appelons **"Components"** chez nous... parce que ce sont des "Composants" card, button, carrousel, progressbar, ...)_
+Le "B" de "CUBE" signifie "Blocks". *Note : nous les appelons **"Components"** chez nous... parce que ce sont des "Composants" card, button, carrousel, progressbar, ...*
 
 Exemple :
 
@@ -130,7 +127,7 @@ Exemple :
 
 Le "E" de "CUBE" signifie "Exceptions", ce sont les variantes d'un composant ou d'un layout.
 
-Cube CSS utilise les attributs `data-` en HTML et le sélecteur d'attributs en CSS pour cibler les Exceptions ([pourquoi ?](https://www.aleksandrhovhannisyan.com/blog/represent-state-with-html-attributes-not-class-names/))&nbsp;:
+Cube CSS se sert des attributs `aria-` ou `data-` en HTML et le sélecteur d'attributs en CSS pour cibler les Exceptions ([pourquoi ?](https://www.aleksandrhovhannisyan.com/blog/represent-state-with-html-attributes-not-class-names/))&nbsp;:
 
 ```html
 <!-- exemple de variante de card -->
@@ -153,7 +150,12 @@ a[aria-current="page"] {...}
 
 ### Groupement des classes dans Cube CSS
 
-Les noms de classes sont regroupés par fonctions, entre crochets (symboles `[` et `]`, ne pas oublier l'espace) et dans cet ordre&nbsp;:
+Les noms de classes sont regroupés par fonctions :
+
+- Soit entre crochets (symboles `[` et `]`, ne pas oublier l'espace)
+- Soit séparés par un "pipe" (symbole `|`, ne pas oublier l'espace)
+
+ et dans cet ordre&nbsp;:
 
 1. Le **nom primaire** ("sémantique") du Block
 2. Les **noms des Layouts** si nécessaires
@@ -161,32 +163,59 @@ Les noms de classes sont regroupés par fonctions, entre crochets (symboles `[` 
 
 ```html
 <!-- exemple de nommage groupé -->
-<article class="[ card ] [ section box ] [ bg-base color-primary ]" data-variant="reversed">
+<article class="[ card card--primary ] [ l-media ] [ bg-base color-primary ]" data-variant="reversed">
 </article>
 ```
 
 ```html
 <!-- autre exemple de nommage -->
-<section class="[ card-group ] [ auto-grid ]" role="group">
-  <div class="[ card ] [ sidebar ] [ mx-8 text-hotpink ]"></div>
+<section class="[ card-group ] [ l-autogrid ]" role="group">
+  <div class="[ card ] [ l-media ] [ mx-8 text-hotpink ]"></div>
 </section>
 ```
 
-## Guidelines Sass
+```html
+<!-- autre exemple de nommage (avec pipe) -->
+<section class="card-group | l-autogrid" role="group">
+  <div class="card | l-media | mx-8 text-hotpink"></div>
+</section>
+```
 
-Nous employons le pré-processeur [Sass](https://sass-lang.com/) (syntaxe `.scss`) dans nos projets d'intégration.
+## Guidelines Sass / postCSS
 
-Sass apporte des fonctionnalités CSS indispensables&nbsp;: concaténation, variables, notation imbriquée, mixins, etc. La méthode de compilation de Sass vers CSS dépend du type de projet (statique, Vue, Vite, Webpack, etc.).
+Certaines fonctionnalités CSS indispensables ne sont actuellement pas réalisables en CSS natif&nbsp;:
+
+- Concaténation des fichiers lors d'un `@import`
+- Variables et constantes
+- Mixins
+- Custom Media (Media Queries contenant une variable)
+- (Imbrications de sélecteurs)
+- etc.
+
+Selon les projets, deux options sont envisagées pour bénéficier de ces fonctionnalités&nbsp;:
+
+- Le pré-processeur [Sass](https://sass-lang.com/) (syntaxe `.scss`) dans nos projets d'intégration.
+- Le post-processeur [PostCSS](https://postcss.org/)
+
+Quelle que soit la solution choisie, la méthode de compilation vers CSS dépend du type de projet (statique, Vue, Vite, Webpack, etc.).
 
 ### Variables
 
-Les variables Sass sont à éviter au profit des variables présentes dans la configuration du contructeur de classes utilitaires (ex. `font-size: theme('fontSize.18');` pour Tailwind).
+Les variables Sass sont généralement à éviter au profit des variables présentes dans la configuration du contructeur de classes utilitaires (ex. `font-size: theme('fontSize.18');` pour Tailwind).
+
+Le Constructeur de classes utilitaires propose un fichier de configuration contenant les "variables" de l'ensemble du projet (couleurs, tailles, breakpoints, etc.). Ces variables sont à utiliser en priorité (ex. `font-size: theme('fontSize.18');` pour Tailwind), et nous n'utilisons pas de variables Sass dans nos projets.
 
 **Aucune valeur numérique ne devrait apparaître dans les styles de développement sans être associée à une variable.**
 
 ### Breakpoints et Media Queries
 
 La liste de points de rupture (breakpoints) figure dans la configuration du contructeur de classes utilitaires (ex. `@screen valeur {}` pour Tailwind).
+
+Sauf contre-indication selon projet, les valeurs des breakpoints sont :
+
+- `sm: 576px`
+- `md: 992px`
+- `lg: 1400px`
 
 ```scss
 // composant card sur écran "lg" ou plus
@@ -199,7 +228,7 @@ La liste de points de rupture (breakpoints) figure dans la configuration du cont
 
 ### Notation imbriquée
 
-La [Notation imbriquée](https://sass-lang.com/guide#topic-3) (nesting) de Sass offre une vision sur la "hiérarchie" du composant et facilite la lecture du code.
+La [Notation imbriquée](https://sass-lang.com/guide#topic-3) (nesting) de Sass ou de CSS natif offre une vision sur la "hiérarchie" du composant et facilite la lecture du code.
 
 Les inconvénients majeurs de cette notation sont :
 
