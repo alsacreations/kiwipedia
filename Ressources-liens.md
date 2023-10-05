@@ -667,7 +667,8 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://github.com/phanan/htaccess> snippets .htaccess
 - <https://htaccess.madewithlove.be> Tester/simuler les règles de réécriture
 - <https://serversforhackers.com/series>
-- <https://vim.is/> Apprendre VIM avec des exercices interactifs
+- <https://vim.is/> Apprendre Vim avec des exercices interactifs
+- <https://vim-adventures.com/> Apprendre Vim en jouant
 
 ### Applications web
 

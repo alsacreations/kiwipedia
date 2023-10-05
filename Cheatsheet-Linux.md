@@ -6,6 +6,7 @@ Commandes utiles pour un serveur de développement ou un serveur web/mail/ftp, n
 - Voir aussi <http://samrowe.com/wordpress/advancing-in-the-bash-shell/>
 - Voir aussi <https://github.com/donnemartin/awesome-aws> pour AWS
 - MiniVim <https://github.com/sd65/MiniVim>
+- Apprendre Vim en jouant <https://vim-adventures.com/>
 - Commandline challenge <https://cmdchallenge.com/>
 - [Vidéos Youtube de Yves Rougy](https://www.youtube.com/@yrougy/playlists)
 
