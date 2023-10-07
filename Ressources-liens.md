@@ -203,6 +203,7 @@ Autres listes de ressources et checklists
 
 - <https://sapegin.me/blog/accessibility-testing/>
 - <https://www.accessify.com/tools-and-wizards/> Pas mal d’outils
+- <https://validator.w3.org/checklink> Vérifie si les liens sont valides
 
 ### ARIA
 
