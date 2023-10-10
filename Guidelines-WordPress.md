@@ -334,7 +334,7 @@ Dans le cas où on utilise un thème acheté et que les fichiers PHP ne sont pas
 
 ### Interface d'administration
 
-- [Utiliser SVG dans WordPress - 2 extensions](https://css-tricks.com/using-svg-in-wordpress/)
+- [Utiliser SVG dans WordPress](https://wordpress.org/plugins/svg-support/)
 - [Filebird](https://wordpress.org/plugins/filebird/) : File Manager (s'ajoute dans la galerie de médias) : créer des dossiers. Attention, il faut prendre la version premium pour créer des dossiers illimités.
 - [Duplicate Post](https://wordpress.org/plugins/duplicate-post/) : créer du contenu rapidement en dupliquant d'un simple clic un post, une page, ou un custom post.
 - [Adminimize](https://wordpress.org/plugins/adminimize/) : personnaliser l'aspect de l'admin en fonction des niveaux des utilisateurs. || [Hook natif](https://developer.wordpress.org/reference/functions/remove_menu_page/) : supprimer les items du menu (pour un rôle spécifique, vérifier le rôle avec fonction [current_user_can](https://developer.wordpress.org/reference/functions/current_user_can/)).
