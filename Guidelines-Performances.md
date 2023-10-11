@@ -333,7 +333,7 @@ Voir [Guidelines Icônes](Guidelines-Icones.md).
 
 ## Outils d'audit de performance
 
-- <https://web.dev/measure/>
+- <https://pagespeed.web.dev/?hl=fr> PageSpeed Insights
 - <https://gtmetrix.com/>
 - <https://www.webpagetest.org/>
 - <https://tools.pingdom.com/>
