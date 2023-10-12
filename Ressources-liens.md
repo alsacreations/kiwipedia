@@ -188,16 +188,21 @@ Autres listes de ressources et checklists
 
 ## Accessibilité
 
-- <https://accessibilite.public.lu/fr/tools/decla.html> Générer une déclaration d'accessibilité
+- <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/> Critères du RGAA
 - <https://www.accede-web.com/notices/> Notices AccedeWeb
+- <https://accessibilite.public.lu/fr/tools/decla.html> Générer une déclaration d'accessibilité
+
+### Bonnes pratiques et ressources
+
 - <https://bitsofco.de/the-accessibility-cheatsheet/> Cheatsheet résumée
-- <https://github.com/UKHomeOffice/posters/tree/master/accessibility/posters_fr> Posters recommandations UK Home Office en français
-- <http://a11y-style-guide.com/style-guide/>
-- <https://cehfisher.github.io/a11y-style-guide/style-guide/> Styleguide A11y
-- <https://uxdesign.cc/designing-accessible-products-e8aa79b55ebc>
-- <https://ibma.github.io/Va11yS/> Va11yS: Verified Accessibility Code Samples (IBM)
+- <https://github.com/UKHomeOffice/posters/tree/master/accessibility/dos-donts/posters_fr> Posters recommandations UK Home Office en français
+- <http://a11y-style-guide.com/style-guide/> Styleguide A11y
 - <http://www.d.umn.edu/itss/training/online/webdesign/accessibility.html> Grande liste en vrac
-- <https://matthiasott.com/notes/focus-visible-is-here> Gestion du focus avec :focus et :focus-visible
+
+### S'entraîner
+
+- <https://a11yphant.com/>
+- <https://trivia11y.com/>
 
 ### Outils de test/évaluations
 
@@ -208,7 +213,7 @@ Autres listes de ressources et checklists
 ### ARIA
 
 - <https://w3c.github.io/aria/> La spécification
-- <https://www.w3.org/WAI/ARIA/apg/patterns/> Patterns
+- <https://www.w3.org/WAI/ARIA/apg/patterns/> Patterns ARIA
 - <https://w3c.github.io/using-aria/>
 - <https://www.w3.org/TR/html-aria/> Rôles et états implicites des éléments HTML, et propriétés ARIA applicables selon les rôles
 - <https://bitsofco.de/rules-for-using-aria-in-html/>
@@ -253,11 +258,11 @@ Autres listes de ressources et checklists
 
 ### Divers
 
+- <https://matthiasott.com/notes/focus-visible-is-here> Gestion du focus avec :focus et :focus-visible
 - <http://filamentgroup.com/lab/bulletproof_icon_fonts/> L’accessibilité des font-icon
-- <http://www.nczonline.net/blog/2013/04/01/making-accessible-icon-buttons/> Boutons accessibles
 - <https://www.traduction.cc/traduction/Creer-des-tableaux-de-donnees-accessibles-1.html> Créer des tableaux accessibles
-- <http://www.last-child.com/legend-aria-describedby/> Fieldset, aria et radiogroup
 - <http://accessiblehtmlheadings.com/> Section & heading
+- <https://stevefaulkner.github.io/HTML5accessibility/>
 
 ---
 
