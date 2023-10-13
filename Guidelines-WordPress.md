@@ -474,7 +474,8 @@ Modifier le fichier `.env` avec les coordonnées de la base de données MySQL.
 
 🔖 Beaucoup de cours chez [Capitaine WP](https://capitainewp.io/) et [Grafikart](https://grafikart.fr/tutoriels/wordpress)
 
-###
+### Divers
 
+- Ajouter l'affichage des champs personnalisés dans l'éditeur <https://css-tricks.com/use-custom-fields-in-wordpress/>
 - theme.json
 - <https://make.wordpress.org/core/2023/07/14/configuring-development-mode-in-6-3/>
