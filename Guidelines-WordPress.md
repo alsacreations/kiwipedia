@@ -140,7 +140,9 @@ La [structure standard](https://developer.wordpress.org/themes/basics/organizing
 └── style.css
 ```
 
-On utilisera des fonctions telles que [get_header](https://developer.wordpress.org/reference/functions/get_header/), [get_footer](https://developer.wordpress.org/reference/functions/get_footer/) pour construire les pages, et [get_template_directory_uri](https://developer.wordpress.org/reference/functions/get_template_directory_uri/) pour générer les chemins d'accès.
+On utilise des fonctions telles que [get_header](https://developer.wordpress.org/reference/functions/get_header/), [get_footer](https://developer.wordpress.org/reference/functions/get_footer/) pour construire les pages, et [get_template_directory_uri](https://developer.wordpress.org/reference/functions/get_template_directory_uri/) pour générer les chemins d'accès.
+
+On charge les ressources dans le thème avec [wp_enqueue_style()](https://developer.wordpress.org/reference/functions/wp_enqueue_style/) et [wp_enqueue_script()](https://developer.wordpress.org/reference/functions/wp_enqueue_script/), et en modulant avec [strategy](https://make.wordpress.org/core/2023/07/14/registering-scripts-with-async-and-defer-attributes-in-wordpress-6-3/) pour defer/async.
 
 ### Ajout des fonctionnalités essentielles dans des mu-plugins
 
@@ -471,3 +473,8 @@ Modifier le fichier `.env` avec les coordonnées de la base de données MySQL.
 ## Autres ressources
 
 🔖 Beaucoup de cours chez [Capitaine WP](https://capitainewp.io/) et [Grafikart](https://grafikart.fr/tutoriels/wordpress)
+
+###
+
+- theme.json
+- <https://make.wordpress.org/core/2023/07/14/configuring-development-mode-in-6-3/>
