@@ -325,6 +325,27 @@ Par contre les inconvénients majeurs de Flexbox sont :
 
 **Lorsqu'aucune des deux méthodes ne sort clairement du lot, alors Grid Layout sera notre choix par défaut.**
 
+## Mode d'apparence (Light Mode, Dark Mode)
+
+Le mode d'apparence est un paramètre que l'utilisateur peut définir via ses réglages systèmes ainsi que via son navigateur.
+
+Les techniques CSS modernes permettent de gérer finement ces modes :
+
+- Couleurs système (ex. Canvas, CanvasText)
+- `@prefers-color-scheme` : Teste le Mode d'apparence utilisateur (OS ou navigateur) et permet de s'y adapter
+- `color-scheme` : Force le navigateur à adapter l'UI à un Mode d'apparence (couleurs système, scrollbars, boutons,...)
+- `light-dark()` : Fonction permettant d'alterner deux couleurs selon le Mode d'apparence. Expérimental
+
+Dans nos projets, **les classes utilitaires de Tailwind sont idéales pour gèrer les modes d'apparence** à partir du moment où le dark mode est indiqué dans le fichier de config : `darkMode: 'class', // 'false' or 'media' or 'class'` (`class` = une classe est ajoutée sur `html`, `media` = c'est `@prefers-color-scheme` qui s'en charge).
+
+Ainsi, un exemple de bouton qui s'adapte automatiquement aux modes light ou dark pourrait s'écrire ainsi :
+
+```html
+<button class="
+  btn btn-icon | text-gray-90 dark:text-gray-10  bg-fairytale dark:bg-gray-90"
+>Hey !</button>
+```
+
 ## Fonts, polices de caractère
 
 On privilégie l'auto-hébergement des fichiers de police, sans passer par Google Fonts <https://gwfh.mranftl.com/fonts>
