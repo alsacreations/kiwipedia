@@ -287,6 +287,44 @@ Les inconvénients majeurs de cette notation imbriquée (nesting) sont qu'elle g
 }
 ```
 
+## Méthodes de positionnement
+
+De nombreuses méthodes de positionnement existent en CSS. Les méthodes modernes offrent de meilleures performances, une meilleure flexibilité et une maintenabilité améliorée.
+
+Nous privilégions **Flexbox et Grid Layout** de manière générale en tenant compte de certains points d'attention.
+
+### Grid Layout
+
+Grid Layout sera choisi en priorité pour les avantages suivants :
+
+- Gère parfaitement les deux axes à la fois
+- Place très précisément les éléments
+- Permet de cibler uniquement le parent
+- A peu de comportements contre-intuitifs
+- Les areas offrent une représentation visuelle idéale
+- Gère très bien le Responsive via Media Queries
+
+Par contre les inconvénients majeurs de Grid Layout sont :
+
+- Gère moins bien le Responsive via taille du contenu ou Container Queries
+
+### Flexbox
+
+Flexbox sera choisi en priorité pour les avantages suivants :
+
+- Passage à la ligne (wrap) d'enfants de tailles différentes
+- Centrage simple de rangées multiples
+- Grande liberté donnée aux enfants (grow, shrink)
+- Prévoit un affichage inversé (*-reverse)
+- Permet de se passer de Media / Container Queries
+
+Par contre les inconvénients majeurs de Flexbox sont :
+
+- Ne gère pas bien les deux axes en même temps
+- De nombreux comportements contre-intuitifs (alignements, shrink, min-width)
+
+**Lorsqu'aucune des deux méthodes ne sort clairement du lot, alors Grid Layout sera notre choix par défaut.**
+
 ## Fonts, polices de caractère
 
 On privilégie l'auto-hébergement des fichiers de police, sans passer par Google Fonts <https://gwfh.mranftl.com/fonts>
