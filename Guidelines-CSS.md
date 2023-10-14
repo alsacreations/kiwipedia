@@ -295,7 +295,7 @@ Nous privilégions **Flexbox et Grid Layout** de manière générale en tenant c
 
 ### Grid Layout
 
-Grid Layout sera choisi en priorité pour les avantages suivants :
+[Grid Layout](https://developer.mozilla.org/fr/docs/Web/CSS/CSS_grid_layout/Basic_concepts_of_grid_layout) sera choisi en priorité pour les avantages suivants :
 
 - Gère parfaitement les deux axes à la fois
 - Place très précisément les éléments
@@ -310,7 +310,7 @@ Par contre les inconvénients majeurs de Grid Layout sont :
 
 ### Flexbox
 
-Flexbox sera choisi en priorité pour les avantages suivants :
+[Flexbox](https://developer.mozilla.org/fr/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox) sera choisi en priorité pour les avantages suivants :
 
 - Passage à la ligne (wrap) d'enfants de tailles différentes
 - Centrage simple de rangées multiples
