@@ -306,7 +306,7 @@ Nous privilégions **Flexbox et Grid Layout** de manière générale en tenant c
 
 Par contre les inconvénients majeurs de Grid Layout sont :
 
-- Gère moins bien le Responsive via taille du contenu ou Container Queries
+- Gère moins bien le Responsive via taille du contenu ou [Container Queries](https://www.alsacreations.com/article/lire/1915-Les-Container-Queries-en-CSS.html)
 
 ### Flexbox
 
