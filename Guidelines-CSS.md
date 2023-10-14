@@ -3,53 +3,6 @@
 Statut : Working Draft (WD)
 
 Bonnes pratiques CSS appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/), évoluant dans le temps et adaptées à chaque nouveau projet.
-<style>
-    .sommaire {
-        border-left: 2px solid #f5f7ff;
-    }
-    @media (min-width: 1200px) {
-        .sommaire {
-            width: 256px;
-            position: fixed;
-            top: 3rem;
-            right: 3rem;
-            background: #fff;
-            padding: 0.5rem;
-        }
-    }
-    .sommaire p {
-        padding-left: 1rem;
-        margin-bottom: 0.3rem;
-        line-height: 1.75;
-    }
-    .sommaire-list {
-        overflow: hidden;
-        padding-left: 0 !important;
-        font-size: 0.8125rem;
-        list-style: none;
-    }
-    .sommaire .text-link {
-        display: inline-block;
-        padding: 0.3rem 0 0.3rem 1rem;
-        color: #262527;
-        text-decoration: none;
-    }
-    .sommaire .text-link:where(:hover, :focus) {
-    background-image: linear-gradient(#0058b2, #0058b2);
-    background-size: 4px 100%;
-    background-position: left;
-    background-repeat: no-repeat;
-}
-</style>
-<div class="sommaire">
-  <p>Sommaire :</p>
-  <ol class="sommaire-list">
-    <li class="sommaire-list-item"><a class="text-link" href="#bonnes-pratiques-css-globales">Bonnes pratiques CSS globales</a></li>
-    <li class="sommaire-list-item"><a class="text-link" href="#méthodologie--cube-css">Méthodologie CubeCSS</a></li>
-    <li class="sommaire-list-item"><a class="text-link" href="#guidelines-sass--postcss">Guidelines Sass / PostCSS</a></li>
-    <li class="sommaire-list-item"><a class="text-link" href="#fonts-polices">Fonts, polices de caractères</a></li>
-  </ol>
-</div>
 
 ## Résumé
 
@@ -273,53 +226,68 @@ Sauf contre-indication selon projet, les valeurs des breakpoints sont :
 }
 ```
 
-### Notation imbriquée
+### Notation imbriquée (nesting)
 
-La [Notation imbriquée](https://sass-lang.com/guide#topic-3) (nesting) de Sass ou de CSS natif offre une vision sur la "hiérarchie" du composant et facilite la lecture du code.
+La [Notation imbriquée](https://sass-lang.com/guide#topic-3) (nesting) de Sass ou de CSS natif facilite la lecture et la maintenabilité du code en évitant de répéter les occurences de chaque sélecteur.
 
-Les inconvénients majeurs de cette notation sont :
+Le nesting est particulièrement préconisé :
 
-- Qu'elle génère des sélecteurs CSS composés (donc avec un poids qui augmente).
-- Qu'elle impose une structure au sélecteur. L'élément n'est ciblé que s'il est descendant d'un autre élément. On ne peut plus réutiliser l'élément ailleurs, au sein d'une autre structure.
+- Pour les événements tels que `&:hover`, `&:focus`, `&:active`.
+- Pour les pseudo-classes telles que `&:first-child`, `&:empty`, etc.
+- Pour les pseudo-éléments tels que `&::before`, `&::after`.
+- Pour les media queries `@media ()`.
+
+**À éviter** *(duplication du sélecteur .wrapper, rend difficile de trouver, renommer, déplacer, supprimer ces sélecteurs) :*
+
+```scss
+.wrapper {}
+
+.wrapper:hover,
+.wrapper:focus {}
+
+.wrapper::before, 
+.wrapper::after {}
+
+@media (width > 640px) {
+  .wrapper {}
+  .wrapper::before {}
+}
+```
+
+**À privilégier** *(le nesting permet de réduire les duplications de sélecteurs) :*
+
+```scss
+.wrapper {
+  
+  &:hover,
+  &:focus {}
+  
+  &::before,
+  &::after {}
+  
+  @media (width > 640px) {
+
+    &::before {}
+  }
+}
+```
+
+Les inconvénients majeurs de cette notation imbriquée (nesting) sont qu'elle génère des sélecteurs CSS composés (donc avec une spécificité qui augmente).
 
 **Il est conseillé d'éviter les sélecteurs imbriqués, ou au pire de limiter la syntaxe à un seul niveau d'imbrication.**
-
-**À éviter** (car génère des sélecteurs composés de 3 niveaux `.home .home-first .home-spotlights { … }`) :
-
-```scss
-.home {
-  .home-first {
-    .home-spotlights {
-    }
-  }
-}
-```
-
-**À éviter** (génère un sélecteur simple `.home-first-spotlights { … }`, mais rend difficile la lecture du code et la recherche dans les fichiers) :
-
-```scss
-.home {
-  &-first {
-    &-spotlights {
-    }
-  }
-}
-```
 
 **À conseiller si vraiment nécessaire** (un seul niveau d'imbrication génère des sélecteurs composés de 2 niveaux au maximum `.home .home-first { … }`) :
 
 ```scss
 .home {
-  .home-first {
+  & .home-first {
   }
-  .home-spotlights {
+  & .home-spotlights {
   }
 }
 ```
 
-**Exception : le sélecteur de parent `&` est parfaitement préconisé dans le cas d'événements tels que `&:hover`, `&:focus` ou `&:active`.**
-
-## Fonts, polices
+## Fonts, polices de caractère
 
 On privilégie l'auto-hébergement des fichiers de police, sans passer par Google Fonts <https://gwfh.mranftl.com/fonts>
 
