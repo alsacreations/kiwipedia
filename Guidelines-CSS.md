@@ -3,6 +3,53 @@
 Statut : Working Draft (WD)
 
 Bonnes pratiques CSS appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/), évoluant dans le temps et adaptées à chaque nouveau projet.
+<style>
+    .sommaire {
+        border-left: 2px solid #f5f7ff;
+    }
+    @media (min-width: 1200px) {
+        .sommaire {
+            width: 256px;
+            position: fixed;
+            top: 3rem;
+            right: 3rem;
+            background: #fff;
+            padding: 0.5rem;
+        }
+    }
+    .sommaire p {
+        padding-left: 1rem;
+        margin-bottom: 0.3rem;
+        line-height: 1.75;
+    }
+    .sommaire-list {
+        overflow: hidden;
+        padding-left: 0 !important;
+        font-size: 0.8125rem;
+        list-style: none;
+    }
+    .sommaire .text-link {
+        display: inline-block;
+        padding: 0.3rem 0 0.3rem 1rem;
+        color: #262527;
+        text-decoration: none;
+    }
+    .sommaire .text-link:where(:hover, :focus) {
+    background-image: linear-gradient(#0058b2, #0058b2);
+    background-size: 4px 100%;
+    background-position: left;
+    background-repeat: no-repeat;
+}
+</style>
+<div class="sommaire">
+  <p>Sommaire :</p>
+  <ol class="sommaire-list">
+    <li class="sommaire-list-item"><a class="text-link" href="#bonnes-pratiques-css-globales">Bonnes pratiques CSS globales</a></li>
+    <li class="sommaire-list-item"><a class="text-link" href="#méthodologie--cube-css">Méthodologie CubeCSS</a></li>
+    <li class="sommaire-list-item"><a class="text-link" href="#guidelines-sass--postcss">Guidelines Sass / PostCSS</a></li>
+    <li class="sommaire-list-item"><a class="text-link" href="#fonts-polices">Fonts, polices de caractères</a></li>
+  </ol>
+</div>
 
 ## Résumé
 
