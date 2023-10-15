@@ -287,6 +287,8 @@ Les inconvénients majeurs de cette notation imbriquée (nesting) sont qu'elle g
 }
 ```
 
+📖 **Ressource complémentaire : ["When to nest?"](https://cloudfour.com/thinks/when-to-nest-css/)**
+
 ## Méthodes de positionnement
 
 De nombreuses méthodes de positionnement existent en CSS. Les méthodes modernes offrent de meilleures performances, une meilleure flexibilité et une maintenabilité améliorée.
@@ -324,6 +326,8 @@ Par contre les inconvénients majeurs de Flexbox sont :
 - De nombreux comportements contre-intuitifs (alignements, shrink, min-width)
 
 **Lorsqu'aucune des deux méthodes ne sort clairement du lot, alors Grid Layout sera notre choix par défaut.**
+
+📖 **Ressource complémentaire : ["When to use Flexbox and when to use CSS Grid"](https://blog.logrocket.com/css-flexbox-vs-css-grid/)**
 
 ## Mode d'apparence (Light Mode, Dark Mode)
 
