@@ -274,6 +274,9 @@ Compression du dossier www dans www.zip
 Déompression de www.zip
 `gunzip www.zip`
 
+Tarer une archive
+`tar -czf backup.tar.gz dossier/`
+
 Détarer une archive
 `tar -xvf backup_complet.tar`
 
