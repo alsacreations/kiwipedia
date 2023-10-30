@@ -272,7 +272,7 @@ Le nesting est particulièrement préconisé :
 }
 ```
 
-Les inconvénients majeurs de cette notation imbriquée (nesting) sont qu'elle génère des sélecteurs CSS composés (donc avec une spécificité qui augmente).
+L'inconvénient de la notation imbriquée (nesting) est qu'elle génère des sélecteurs CSS composés donc avec une spécificité qui augmente.
 
 **Il est conseillé d'éviter les sélecteurs imbriqués, ou au pire de limiter la syntaxe à un seul niveau d'imbrication.**
 
@@ -291,8 +291,6 @@ Les inconvénients majeurs de cette notation imbriquée (nesting) sont qu'elle g
 
 ## Méthodes de positionnement
 
-De nombreuses méthodes de positionnement existent en CSS. Les méthodes modernes offrent de meilleures performances, une meilleure flexibilité et une maintenabilité améliorée.
-
 Nous privilégions **Flexbox et Grid Layout** de manière générale en tenant compte de certains points d'attention.
 
 ### Grid Layout
@@ -306,7 +304,7 @@ Nous privilégions **Flexbox et Grid Layout** de manière générale en tenant c
 - Les areas offrent une représentation visuelle idéale
 - Gère très bien le Responsive via Media Queries
 
-Par contre les inconvénients majeurs de Grid Layout sont :
+Les inconvénients majeurs de Grid Layout sont :
 
 - Gère moins bien le Responsive via taille du contenu ou [Container Queries](https://www.alsacreations.com/article/lire/1915-Les-Container-Queries-en-CSS.html)
 
@@ -320,12 +318,12 @@ Par contre les inconvénients majeurs de Grid Layout sont :
 - Prévoit un affichage inversé (*-reverse)
 - Permet de se passer de Media / Container Queries
 
-Par contre les inconvénients majeurs de Flexbox sont :
+Les inconvénients majeurs de Flexbox sont :
 
 - Ne gère pas bien les deux axes en même temps
 - De nombreux comportements contre-intuitifs (alignements, shrink, min-width)
 
-**Lorsqu'aucune des deux méthodes ne sort clairement du lot, alors Grid Layout sera notre choix par défaut.**
+👉 **Lorsqu'aucune des deux méthodes ne sort clairement du lot, alors Grid Layout sera notre choix par défaut.**
 
 📖 **Ressource complémentaire : ["When to use Flexbox and when to use CSS Grid"](https://blog.logrocket.com/css-flexbox-vs-css-grid/)**
 
@@ -336,7 +334,7 @@ Le mode d'apparence est un paramètre que l'utilisateur peut définir via ses r�
 Les techniques CSS modernes permettent de gérer finement ces modes :
 
 - Couleurs système (ex. Canvas, CanvasText)
-- `@prefers-color-scheme` : Teste le Mode d'apparence utilisateur (OS ou navigateur) et permet de s'y adapter
+- `@prefers-color-scheme` : Teste le Mode d'apparence utilisateur (système ou navigateur) et permet de s'y adapter
 - `color-scheme` : Force le navigateur à adapter l'UI à un Mode d'apparence (couleurs système, scrollbars, boutons,...)
 - `light-dark()` : Fonction permettant d'alterner deux couleurs selon le Mode d'apparence. Expérimental
 
