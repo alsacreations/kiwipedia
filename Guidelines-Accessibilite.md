@@ -995,12 +995,13 @@ Pour les menus déroulants et mega menus, [Accessible Mega Menu](https://adobe-a
 - [My accessibility toolbox](https://gitlab.com/accessfirst.fr/my-accessibility-toolbox)
 - [SmashingMag : Accessibilité dans les devtools de Chrome](https://www.smashingmagazine.com/2020/08/accessibility-chrome-devtools/)
 
-## Outils
+## Outils / tests
 
 - [Support des Assistances Techniques](https://a11ysupport.io/)
 - [AccessConfig](https://accessconfig.a11y.fr/) : Modale de personnalisation d'affichage
 - [Checklist accessibilité](https://www.a11yproject.com/checklist/)
 - [Tanaguru Webextension](https://github.com/Tanaguru/webextension)
+- [Accessibility Acceptance Criteria (MagentaA11y)](https://www.magentaa11y.com/)
 
 ### Contraste / Webdesign
 
