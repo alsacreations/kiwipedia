@@ -852,6 +852,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 - <https://speed.cloudflare.com/> Test de débit
 - <https://grahamhelton.com/blog/ssh-cheatsheet/> An Excruciatingly Detailed Guide To SSH
+- <https://github.com/Genymobile/scrcpy> Screen copy (miroir d'écran) des devices Android vers win/linux/macos
 
 ---
 
