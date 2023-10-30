@@ -973,6 +973,8 @@ Utiliser l'attribut `aria-live` sur les informations provenant de chargements as
 
 On pourra moduler avec `aria-atomic` et `aria-relevant` (`additions`, `removals`, `text`, `all`) selon qu'on ajoute le contenu au conteneur ou que c'est lui-même qui se voit inséré dans le corps de la page.
 
+🔖 <https://blog.atalan.fr/publications/live-regions/explications.html>
+
 ### Autres composants
 
 Pour tous les composants de page agissant sur le contenu, de type swiper, slider, slideshow, accordéon, pagination, onglets, menu déroulant, on privilégiera les scripts "accessibles", y compris ceux utilisant ARIA. Le but étant, entre autres, de ne pas gêner la navigation au clavier et de permettre la lecture de la page avec une synthèse vocale.
