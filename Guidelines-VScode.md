@@ -67,6 +67,7 @@ Confort visuel :
 - [highlight-matching-tag](https://marketplace.visualstudio.com/items?itemName=vincaslt.highlight-matching-tag) (mise en avant de la balise fermante correspondante en HTML)
 - [Statusbar Error](https://marketplace.visualstudio.com/items?itemName=JoeBerria.statusbarerror) (affiche les erreurs des linters dans la barre basse et/ou dans la gouttière)
 - [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph) (version graphique des branches Git)
+- [Rainbow CSV](https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv) (visualisation et édition SQL-like fichiers CSV)
 
 ### Extensions spécifiques
 
