@@ -6,7 +6,7 @@ Bonnes pratiques WordPress appliquées par l'agence web [Alsacreations.fr](https
 
 ## Structure de projet
 
-On utilise :
+On utilise [Docker](https://www.docker.com/) avec une structure-type déjà éprouvée construite avec :
 
 - [Composer](https://getcomposer.org/) pour installer WordPress et ses extensions.
 - [WordPlate](https://github.com/wordplate/wordplate) qui fonctionne avec [Vite](https://github.com/vitejs/vite).
@@ -15,9 +15,6 @@ On utilise :
 
 ## Environnement de développement
 
-👉 On utilise [Docker](https://www.docker.com/)
-
-- Par défaut, on part d'une base MySQL locale. Il est possible d'utiliser une base MySQL “partagée” accessible à distance, attention cependant à la synchronisation d'informations et de fichiers (options, réglages d'extensions activées…).
 - Utiliser `define('WP_ENVIRONMENT_TYPE','staging');` puis [wp_get_environment_type()](https://make.wordpress.org/core/2020/07/24/new-wp_get_environment_type-function-in-wordpress-5-5/)
 - Utiliser `define('WP_DEBUG',true);` pour activer le mode debug
 
@@ -45,11 +42,13 @@ On ne versionne **pas** (voir fichiers .gitignore) :
 
 ## Thème
 
-- On privilégie de démarrer avec un starter thème épuré <https://underscores.me/> ou <https://github.com/timber/starter-theme> lorsque l'on utilise Timber.
-- Supprimer les autres thèmes livrés par défaut.
+👉 On dévelope au maximum à l'aide de techniques natives WordPress (Posts, boucles, CPT, etc).
+
+- On privilégie de démarrer avec un thème _starter_ épuré <https://underscores.me/> ou <https://github.com/timber/starter-theme> lorsque l'on utilise Timber.
+- On supprime les autres thèmes livrés par défaut.
 - On évite d'utiliser un thème acheté car cela implique qu'on ne pourra pas tout mettre en place dans ces guidelines et qu'on ne maîtrise pas son contenu (code, extensions, évolutions). Si toutefois cela arrive, utiliser le principe de [thème enfant](https://developer.wordpress.org/themes/advanced-topics/child-themes/) pour ne pas modifier le thème parent, qui pourrait être mis à jour par la suite.
-- Documentation officielle <https://developer.wordpress.org/themes/>
-- Documentation des fonctions <https://codex.wordpress.org/Function_Reference>
+
+🔖 Documentation officielle <https://developer.wordpress.org/themes/> et documentation des fonctions <https://codex.wordpress.org/Function_Reference>
 
 ### Intégration du thème
 
