@@ -323,6 +323,10 @@ Toutes les variantes d'une fonte variable sont modifiables via la propriété `f
 
 Ainsi, pour modifier la graisse d'une police, les deux syntaxes sont possibles : `font-variation-settings: 'wght' 625;` ou `font-weight: 625;`. Il est même possible de passer par une variable CSS ainsi `font-variation-settings: 'wght' var(--text-axis);`
 
+## JavaScript
+
+🔖 Voir <https://www.julienpradet.fr/tutoriels/comment-alleger-son-javascript/>
+
 ## Icônes
 
 Voir [Guidelines Icônes](Guidelines-Icones.md).
