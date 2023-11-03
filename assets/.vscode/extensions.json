@@ -7,6 +7,7 @@
     "mrmlnc.vscode-scss",
     "mikestead.dotenv",
     "bradlc.vscode-tailwindcss",
-    "Gruntfuggly.todo-tree"
+    "Gruntfuggly.todo-tree",
+    "esbenp.prettier-vscode",
   ]
 }
