@@ -31,11 +31,11 @@ Lister les extensions : `code --list-extensions`
 ### Extensions indispensables ❤️
 
 - [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) (respect configuration tabs vs spaces à l'insertion, encodage, eol, etc)
-- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) (vérification syntaxe JavaScript)
+- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) (vérification syntaxe JavaScript, TypeScript et frameworks)
 - [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint) (vérifie la syntaxe CSS d'après un ensemble de règles, nécessite une installation de stylelint locale ou globale)
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) (formatage automatique des fichiers à la sauvegarde)
 - [SCSS Intellisense](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-scss) (autocomplétion SCSS : classes, variables, etc.)
 - [Markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) (vérification syntaxe Markdown)
-- **Note : Prettier crée des conflits avec ESLint (ex. sauts de ligne dans les balises). Il n'est donc généralement pas recommandé au sein de nos projets nécessitant ESlint.**
 
 ### Extensions fortement recommandées ⭐
 
@@ -45,6 +45,7 @@ Lister les extensions : `code --list-extensions`
 - [Volar](https://marketplace.visualstudio.com/items?itemName=vue.volar) (extension indispensable pour tout projet pour Vuejs / Nuxt)
 - [HTML CSS Support](https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css) (autocomplétion et documentation des balises+attributs)
 - [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) (fonctions avancées Git dans VS Code)
+- [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph) (affichage de l'arbre de commits git)
 - [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) (affiche les erreurs des linters directement dans la fenêtre de code)
 - [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) (commandes Docker facilitées et sidebar affichant containers/images/volumes/networks...)
 - [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) (pour connexion SSH entre autres, contient déjà [Remote SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) et [Remote Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers))
@@ -66,7 +67,6 @@ Confort visuel :
 - [Indent Rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow) (coloration des niveaux d'indentation)
 - [highlight-matching-tag](https://marketplace.visualstudio.com/items?itemName=vincaslt.highlight-matching-tag) (mise en avant de la balise fermante correspondante en HTML)
 - [Statusbar Error](https://marketplace.visualstudio.com/items?itemName=JoeBerria.statusbarerror) (affiche les erreurs des linters dans la barre basse et/ou dans la gouttière)
-- [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph) (version graphique des branches Git)
 - [Rainbow CSV](https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv) (visualisation et édition SQL-like fichiers CSV)
 
 ### Extensions spécifiques
