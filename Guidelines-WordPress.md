@@ -305,7 +305,7 @@ Dans le cas où on utilise un thème acheté et que les fichiers PHP ne sont pas
 
 ## Extensions
 
-👉 Installation : utiliser `composer` avec le nom du plugin, préfixé par “wpackagist-plugin”, par exemple `composer require wpackagist-plugin/wp-migrate-db`
+👉 Installation : utiliser `composer require` avec le nom du plugin préfixé par _wpackagist-plugin/_ : par exemple `composer require wpackagist-plugin/wp-migrate-db`
 
 👉 Toute fonctionnalité développée sur-mesure pour le projet se fait dans le cadre d'une extension propre à activer/désactiver.
 

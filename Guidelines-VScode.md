@@ -16,6 +16,8 @@ Cette présente convention rassemble les bonnes pratiques VS Code en production 
 - `⌥⌘F` (`Ctrl+H`) : _Replace_ : remplacer dans le projet
 - `⌘,` (`Ctrl+,`) : _Settings_ : paramètres
 
+🔖 Autres astuces <https://developer.mozilla.org/en-US/blog/vs-code-tips-tricks/>
+
 ## Extensions Visual Studio Code
 
 Des outils automatiques permettant de vérifier la qualité du code produit de manière continue sont nécessaires dans une équipe&nbsp;:
@@ -99,10 +101,9 @@ Les détails de configuration des Extensions et Linters sont décrits dans les a
 - [Guidelines Vue-WordPress](Guidelines-Vue-WordPress.md)
 - [Guidelines WordPress](Guidelines-WordPress.md)
 
-## Astuces
+## Astuces de configuration
 
-- `editor.minimap.renderCharacters = false`, et la minimap devient plus belle
-- `explorer.openEditors.visible = false`, car on voit déjà les fichiers ouverts dans les onglets
+- `"editor.minimap.renderCharacters": false`, et la minimap devient plus belle
 - `"editor.renderWhitespace": "boundary"` n'affiche que les espaces pertinents
 - `"editor.cursorBlinking": "smooth"` tuning du clignotement du curseur
 - `"editor.cursorSmoothCaretAnimation": "on"` tuning des transitions du curseur
