@@ -271,13 +271,16 @@ Si le projet nécessite d'utiliser **Gutenberg**, penser à ajouter `"show_in_re
 
 ### ACF (Advanced Custom Fields)
 
-On utilise ACF pour ajouter des champs personnalisés à des Pages, Articles, CPT ou d'autres [conditions spécifiques](https://www.advancedcustomfields.com/resources/custom-location-rules/).
+On utilise ACF pour
 
-👉 On utilise un dossier `acf-json/` (qui doit être autorisé en écriture) à la racine du thème <https://www.advancedcustomfields.com/resources/local-json/> permettant de versionner et synchroniser automatiquement les ajouts/modifications ACF en développant à plusieurs. Chaque modification de groupe génère un fichier JSON qui peut être importé ailleurs via l'onglet _Sync_.
+- ajouter des champs personnalisés à des Pages, Articles, CPT ou d'autres [conditions spécifiques](https://www.advancedcustomfields.com/resources/custom-location-rules/).
+- ajouter des options globales au thème / au site avec [Options Page](https://www.advancedcustomfields.com/resources/options-page/).
+
+Pour filtrer des requêtes à l'aide de ces valeurs, on utilisera une [Meta Query](https://rudrastyh.com/wordpress/meta_query.html) dans [WP_Query](https://developer.wordpress.org/reference/classes/wp_query/).
+
+👉 Le dossier `acf-json/` doit être présent à la racine du thème et autorisé en écriture permettant de versionner et synchroniser automatiquement les ajouts/modifications ACF en développant à plusieurs. Chaque modification de groupe génère un fichier JSON qui peut être importé ailleurs via l'onglet _Sync_. Voir <https://www.advancedcustomfields.com/resources/local-json/>.
 
 🔖 Voir [Tutoriel ACF : Advanced Custom Fields – Le guide complet](https://newslang.ch/blog/tutoriel-acf-advanced-custom-fields-le-guide-complet/), [Best Practices when Designing Custom Fields](https://www.advancedcustomfields.com/blog/best-practices-designing-custom-fields/) et [Tutoriel sur Advanced Custom Fields : Votre guide ultime](https://kinsta.com/fr/blog/advanced-custom-fields/)
-
-Pour filtrer à l'aide de ces valeurs, on utilisera une [Meta Query](https://rudrastyh.com/wordpress/meta_query.html) dans la requête [WP_Query](https://developer.wordpress.org/reference/classes/wp_query/).
 
 ### Gutenberg / éditeur wysiwyg
 
