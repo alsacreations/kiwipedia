@@ -154,6 +154,10 @@ Quelques critères essentiels sont à observer (parmi d’autres, la liste est n
 
 - Tester et valider les expressions régulières (regexp) avec <https://regex101.com/> (entre autres).
 
+### Performance
+
+- [Limitez votre PHP : optimisations pour une meilleure gestion des ressources](https://bearstech.com/societe/blog/limitez-votre-php/)
+
 ### Syntaxe et raccourcis syntaxiques
 
 - [Shorthand comparisons in PHP](https://stitcher.io/blog/shorthand-comparisons-in-php)
