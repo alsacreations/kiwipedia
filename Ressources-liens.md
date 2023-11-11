@@ -94,19 +94,16 @@ Autres listes de ressources et checklists
 - <https://gwfh.mranftl.com/fonts> google-webfonts-helper : Héberger soi-même les polices Google Fonts
 - <https://www.fontspace.com/> Polices à télécharger et à générer en ligne
 - <https://prowebtype.com/> E-book (gratuit) Professionnal web typography (très bon, à lire)
-- <http://fontfamily.io/> Tester la présence des polices sur les OS
 - <https://transfonter.org/> @font-face generator
 - <https://type-scale.com/>
-- <http://www.fontsquirrel.com/tools/webfont-generator>
-- <http://www.losttype.com/browse/>
+- <https://www.fontsquirrel.com/tools/webfont-generator>
 - <https://fontcombiner.com/> Combiner des glyphes
-- <http://www.freefontconverter.com/> Convertir formats
-- <http://www.shapecatcher.com/>
+- <https://www.shapecatcher.com/> Devine des glyphes à partir d'un dessin
 
 #### Font-icons
 
 - <https://icomoon.io/app/>
-- <http://fontastic.me/>
+- <https://fontastic.me/>
 - <https://fontello.com/>
 
 ### Frameworks CSS
@@ -115,9 +112,9 @@ Autres listes de ressources et checklists
 - <https://tailwindcss.com/> Tailwind
 - <https://flowbite.com/tools/tailwind-cheat-sheet/> Cheatsheet Tailwind
 - <https://nerdcave.com/tailwind-cheat-sheet> Cheatsheet Tailwind
-- <http://twitter.github.io/bootstrap/> Bootstrap (par Twitter)
-- <http://purecss.io/> Pure (Yahoo)
-- <http://designmodo.github.io/Flat-UI/> Flat UI
+- <https://getbootstrap.com/> Bootstrap (par Twitter)
+- <https://purecss.io/> Pure (Yahoo)
+- <https://designmodo.github.io/Flat-UI/> Flat UI
 
 ### Composants UI intégrés (souvent Tailwind)
 
@@ -165,9 +162,8 @@ Autres listes de ressources et checklists
 
 ### Retina et hdpi
 
-- <http://net.tutsplus.com/tutorials/html-css-techniques/the-right-way-to-retinafy-your-websites/>
-- <http://screensiz.es/>
-- <http://dev.opera.com/articles/responsive-images/> Responsive images use cases sippets
+- <https://screensiz.es/>
+- <https://dev.opera.com/articles/responsive-images/> Responsive images use cases sippets
 
 ### Autres techniques et modules CSS
 
@@ -196,8 +192,8 @@ Autres listes de ressources et checklists
 
 - <https://bitsofco.de/the-accessibility-cheatsheet/> Cheatsheet résumée
 - <https://github.com/UKHomeOffice/posters/tree/master/accessibility/dos-donts/posters_fr> Posters recommandations UK Home Office en français
-- <http://a11y-style-guide.com/style-guide/> Styleguide A11y
-- <http://www.d.umn.edu/itss/training/online/webdesign/accessibility.html> Grande liste en vrac
+- <https://a11y-style-guide.com/style-guide/> Styleguide A11y
+- <https://www.d.umn.edu/itss/training/online/webdesign/accessibility.html> Grande liste en vrac
 
 ### S'entraîner
 
@@ -223,25 +219,19 @@ Autres listes de ressources et checklists
 
 ### Couleurs
 
-- <https://color.adobe.com/create/color-wheel/>
-- <http://chromelens.xyz/> Extension pour visualiser en daltonisme
-- <http://www.dasplankton.de/ContrastA/> Accessibilité des couleurs
-- <http://webaim.org/blog/wcag-2-0-and-link-colors/> Accessibilité des textes/liens
-- <http://colorsafe.co/>
-- <http://contrast-finder.tanaguru.com/form.html> Trouve les bons contrastes couleurs
-- <http://gmazzocato.altervista.org/fr/colorwheel/wheel.php> Visualiser le rendu des couleurs choisies selon le type de daltonisme
+- <https://webaim.org/blog/wcag-2-0-and-link-colors/> Accessibilité des textes/liens
+- <https://contrast-finder.tanaguru.com/form.html> Trouve les bons contrastes couleurs
 - <https://toolness.github.io/accessible-color-matrix/> Accessible Color matrix
+- <http://colorsafe.co/>
 
 ### Menu
 
-- <http://adobe-accessibility.github.io/Accessible-Mega-Menu/> Méga-menu accessible
-- <http://terrillthompson.com/tests/menus/accessible-mega-menu/test.html> Méga-menu accessible (bis)
-- <http://khan.github.io/tota11y/?r=1>
+- <https://adobe-accessibility.github.io/Accessible-Mega-Menu/> Méga-menu accessible
 
 ### Player vidéo / audio
 
-- <https://github.com/jonathantneal/media-player> Player media accessible
-- <http://www.accessibilityoz.com/ozplayer/> Player html5 accessible
+- <https://www.accessibilityoz.com/ozplayer/> Player accessible
+- <https://github.com/jonathantneal/media-player> Player accessible
 - <https://521dimensions.com/open-source/amplitudejs>
 
 ### JavaScript et composants
@@ -259,9 +249,8 @@ Autres listes de ressources et checklists
 ### Divers
 
 - <https://matthiasott.com/notes/focus-visible-is-here> Gestion du focus avec :focus et :focus-visible
-- <http://filamentgroup.com/lab/bulletproof_icon_fonts/> L’accessibilité des font-icon
+- <https://www.filamentgroup.com/lab/bulletproof_icon_fonts> L’accessibilité des font-icon
 - <https://www.traduction.cc/traduction/Creer-des-tableaux-de-donnees-accessibles-1.html> Créer des tableaux accessibles
-- <http://accessiblehtmlheadings.com/> Section & heading
 - <https://stevefaulkner.github.io/HTML5accessibility/>
 
 ---
@@ -279,8 +268,7 @@ Autres listes de ressources et checklists
 
   - <https://molily.de/robust-javascript/> Robust JavaScript
   - <https://github.com/rwaldron/idiomatic.js/tree/master/translations/fr_FR>
-  - <http://jstherightway.org/>
-  - <http://superherojs.com/>
+  - <https://jstherightway.org/>
   - <https://github.com/airbnb/javascript>
   - <https://bevacqua.github.io/promisees/> Les promesses expliquées et visualisées en animations
 
@@ -296,8 +284,7 @@ Autres listes de ressources et checklists
 
 - Outils d'écriture de code
 
-  - <http://jsbeautifier.org/>
-  - <http://www.jslint.com/> et <http://jslinterrors.com/>
+  - <https://beautifier.io/> Beautifier en ligne
   - <https://blog.scottlogic.com/2021/09/06/how-to-write-an-es-lint-rule-for-beginners.html> écrire ses propres règles eslint
 
 - Scripts divers
@@ -307,27 +294,25 @@ Autres listes de ressources et checklists
   - <https://orejime.empreintedigitale.fr/> bannière cookies accessible
   - <https://plainjs.com/> Sélection de scripts et plugins sans framework (Vanilla)
   - <https://docs.slatejs.org> Editeurs wysiwyg
-  - <http://rainsoft.io/gentle-explanation-of-this-in-javascript/> Explication de this
-  - <http://thenewcode.com/82/Recipes-for-Randomness-in-JavaScript> Randomness
+  - <https://thenewcode.com/82/Recipes-for-Randomness-in-JavaScript> Randomness
   - <https://www.lullabot.com/blog/article/importing-css-breakpoints-javascript> Responsive (importer les breakpoints css en js)
   - <https://github.com/Pikaday/Pikaday> (datepicker, aussi en plugin jQuery)
-  - <http://robertwhurst.github.io/KeyboardJS/> (gestion clavier)
+  - <https://robertwhurst.github.io/KeyboardJS/> (gestion clavier)
   - <https://pdfme.com/> Générateur de PDF en TypeScript (avec template)
   - <https://parall.ax/products/jspdf> (Générer PDF côté client)
   - <https://wicky.nillia.ms/headroom.js/> (header disparaissant animé)
-  - <http://inorganik.github.io/countUp.js/> (défilement de compteur/chiffres)
+  - <https://inorganik.github.io/countUp.js/> (défilement de compteur/chiffres)
   - <https://draggabilly.desandro.com/> Drag&Drop multi-touch
   - <https://github.com/ryanve/verge> (Get viewport dimensions, detect elements in the viewport <http://verge.airve.com>)
-  - <http://hammerjs.github.io/> - gestion du touch avancé (multitouch, rotate, double tap, swipe, etc.)
   - <https://joaopereirawd.github.io/animatedModal.js/> Modales animées
   - <http://callmecavs.com/bricks.js/> Masonry performant
   - <https://github.com/jwagner/smartcrop.js> Smartcrop intelligent pour les images
 
 - Touch
-  - <http://deeptissuejs.com/>
-  - <http://interactjs.io/>
-  - <http://eightmedia.github.com/hammer.js/>
-  - <https://github.com/jairajs89/Touchy.js>
+
+  - <https://deeptissuejs.com/>
+  - <https://interactjs.io/>
+  - <https://hammerjs.github.io/>
   - <http://pressurejs.com/>
 
 ### Vue / Nuxt
@@ -339,11 +324,6 @@ Autres listes de ressources et checklists
 - Plugin eslint pour vérifier certaines règles d'accessibilité : [eslint-plugin-vue-a11y](https://www.npmjs.com/package/eslint-plugin-vue-a11y)
 - <https://valgeirb.github.io/vue3-popper/>
 - <https://vcalendar.io/>
-
-### React
-
-- <https://css-tricks.com/productive-in-react/>
-- <http://reactfordesigners.com/labs/reactjs-introduction-for-people-who-know-just-enough-jquery-to-get-by/>
 
 ### Slideshows
 
@@ -388,12 +368,11 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://moqups.com/>
 - <https://wireframe.cc/>
 - <https://gomockingbird.com/mockingbird/> online, no Flash, payant
-- <http://pencil.evolus.vn/> libre et gratuit (extension Firefox ou standalone en XUL)
 - <https://mockflow.com/>
 - <https://balsamiq.com/>
 - <https://www.draw.io/>
 - <https://www.invisionapp.com/>
-- <http://www.bounceapp.com/>
+- <https://bounceapp.com/>
 - <https://redpen.io/>
 - <https://uigenerator.org/> Générer des mockups PNG d'interfaces (desktop/mobile)
 
@@ -406,7 +385,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 - <https://logomaster.ai/> créateur de logo en ligne
 - <https://www.logopony.com/> génération de logos automatique
-- <http://www.logomoose.com/>
+- <https://www.logomoose.com/>
 - <https://logopond.com/>
 
 ### Favicon
@@ -467,7 +446,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://freenaturestock.com/>
 - <https://jaymantri.com/> (CC0 photographe)
 - <https://nos.twnsnd.co/> (vintage)
-- <http://thestocks.im/> (meta-moteur)
+- <https://thestocks.im/> (meta-moteur)
 - <https://standardebooks.org/manual/1.7.0/10-art-and-images#10.3.3.7.4> Musées avec images en CC0
 
 ### Templates/modèles de slides
@@ -477,7 +456,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 ### Placeholders (images de remplissage)
 
 - <https://picsum.photos/images>
-- <http://www.diverseui.com/> Personnes diverses
+- <https://www.diverseui.com/> Personnes diverses
 - <https://tinyfac.es/> Avatars
 - <https://uifaces.co/> Visages de remplissage
 - <https://picsum.photos/> Photos
@@ -532,7 +511,6 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 ### Optimisation SVG et astuces
 
-- <http://petercollingridge.appspot.com/svg-optimiser>
 - <https://github.com/svg/svgo> Optimisation
 - <https://jakearchibald.github.io/svgomg/> Optimisation en ligne
 - <https://css-tricks.com/understanding-and-manually-improving-svg-optimization/>
@@ -544,7 +522,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://www.svgator.com/>
 - <https://svgjs.com/> Animations de SVG via JavaScript
 - <http://snapsvg.io/> (animation SVG via JS)
-- <http://maxwellito.github.io/vivus/> Animation SVG filaire
+- <https://maxwellito.github.io/vivus/> Animation SVG filaire
 - <https://css-tricks.com/animating-svg-css/> (animation via CSS)
 - <http://sozi.baierouge.fr/pages/10-about.html> Présentations animées avec zoom/dézoom
 
@@ -718,6 +696,12 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 ---
 
+## Formats, encodage
+
+- <https://www.writesoftwarewell.com/base64-encoding-explained/> base64 expliqué
+
+---
+
 ## API
 
 - <https://insomnia.rest/> Tester/inspecter une API REST, GraphQL...
@@ -728,12 +712,14 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 ## PHP
 
-- <http://www.phpliveregex.com/> Tester les regexp en live
+- <https://phpbestpractices.org/> Best pratices PHP
+
+### Expressions régulières
+
+- <https://www.phpliveregex.com/> Tester les regexp en live
 - <https://regex101.com/> Tester les regexp en live
 - <https://extendsclass.com/regex-tester.html> Tester les regexp en live
 - <https://ihateregex.io/> Visualiser les regexp en live
-- <http://www.sitepoint.com/horizontal-scaling-php-apps/>
-- <https://phpbestpractices.org/> Best pratices PHP
 
 ---
 
@@ -773,10 +759,9 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://recordscreen.io/> Enregistrer une portion de l'écran
 - <https://screenrec.com/> Enregistrement d'écran/son/webcam (gratuit)
 - <https://small.chat/> Intégrer Slack en chat sur le site
-- <http://warpspire.com/posts/url-design/> URL design (~cool uri)
+- <https://warpspire.com/posts/url-design/> URL design (~cool uri)
 - <https://medium.com/@ImpalaWebstudio/pourquoi-nous-ne-livrons-pas-de-maquettes-au-moment-du-devis-36a242479a71> Maquettes gratuites
-- <http://kitdesurvie.metiers-graphiques.fr/articles/comment-gerer-un-impaye> Comment gérer un impayé
-- <http://www.slidescarnival.com/> Modèles de Google Slides gratuits
+- <https://www.slidescarnival.com/> Modèles de Google Slides gratuits
 
 ---
 
