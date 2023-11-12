@@ -9,6 +9,7 @@ Commandes utiles pour un serveur de développement ou un serveur web/mail/ftp, n
 - Apprendre Vim en jouant <https://vim-adventures.com/>
 - Commandline challenge <https://cmdchallenge.com/>
 - Défis <https://unixgame.io/>
+- Défis sur serveur <https://sadservers.com/scenarios>
 - [Vidéos Youtube de Yves Rougy](https://www.youtube.com/@yrougy/playlists)
 
 Rechercher rapidement dans les précédentes commandes : `Ctrl+R`
