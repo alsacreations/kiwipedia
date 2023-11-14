@@ -10,7 +10,7 @@ On utilise [Docker](https://www.docker.com/) avec une structure-type déjà épr
 
 - [Composer](https://getcomposer.org/) pour installer WordPress et ses extensions.
 - [WordPlate](https://github.com/wordplate/wordplate) qui fonctionne avec [Vite](https://github.com/vitejs/vite).
-- [Tailwind](https://github.com/timber/timber) en tant que framework CSS (optionnel).
+- [Tailwind](https://tailwindcss.com/) en tant que framework CSS (optionnel).
 - [Timber](https://github.com/timber/timber) pour la syntaxe Twig dans les templates (optionnel).
 
 ## Environnement de développement
@@ -62,7 +62,7 @@ Les extensions spécifiques WordPress / PHP recommandées sont :
 
 #### Automatisation
 
-Avec [Vite](https://github.com/vitejs/vite) (présent dans WordPlate) on compile CSS et JavaScript depuis le dossier `resources`. Pour ajouter le support de Sass : `npm install sass --save-dev`.
+Avec [Vite](https://github.com/vitejs/vite) (présent dans WordPlate) on compile CSS et JavaScript depuis le dossier `resources`, avec Hot Module Reloading durant la tâche de développement. Pour ajouter le support de Sass : `npm install sass --save-dev`.
 
 #### Moteur de template (optionnel)
 
@@ -443,42 +443,14 @@ function hide_update_notice_to_all_but_admin_users()
 add_action( 'admin_head', 'hide_update_notice_to_all_but_admin_users', 1 );
 ```
 
-## Dépannage
+## Divers, dépannage et astuces
 
-Réinitialiser un mot de passe admin en ayant accès à la base MySQL (ex : via phpmyadmin) : modifier la table `wp_users` et remplacer `user_pass` par une nouvelle valeur générée <https://codebeautify.org/wordpress-password-hash-generator>
-
-## Environnement sans Docker
-
-### Installer PHP
-
-Pour pouvoir exécuter `composer` en ligne de commande <https://www.php.net/downloads.php>
-
-### Installer Composer
-
-Suivre les instructions de <https://getcomposer.org/download/>.
-
-Sur macOS pour faire en sorte que la commande `composer` soit disponible partout :
-
-```sh
-mkdir -p /usr/local/bin
-mv composer.phar /usr/local/bin/composer
-```
-
-### Installer WordPlate avec Composer
-
-```sh
-composer create-project --prefer-dist wordplate/wordplate superprojet
-```
-
-Modifier le fichier `.env` avec les coordonnées de la base de données MySQL.
+- Ajouter l'affichage des champs personnalisés dans l'éditeur <https://css-tricks.com/use-custom-fields-in-wordpress/>
+- Réinitialiser un mot de passe admin en ayant accès à la base MySQL (ex : via phpmyadmin) : modifier la table `wp_users` et remplacer `user_pass` par une nouvelle valeur générée <https://codebeautify.org/wordpress-password-hash-generator>
+- [Ajouter les catégories et étiquettes aux Pages](assets/wordpress/snippet_add_taxonomies_to_pages.php)
+- [Comprendre le fichier theme.json](https://vincentdubroeucq.com/comprendre-le-fichier-theme-json/)
+- Configurer le mode développement <https://make.wordpress.org/core/2023/07/14/configuring-development-mode-in-6-3/>
 
 ## Autres ressources
 
 🔖 Beaucoup de cours chez [Capitaine WP](https://capitainewp.io/) et [Grafikart](https://grafikart.fr/tutoriels/wordpress)
-
-### Divers et snippets
-
-- [Ajouter les catégories et étiquettes aux Pages](assets/wordpress/snippet_add_taxonomies_to_pages.php)
-- Ajouter l'affichage des champs personnalisés dans l'éditeur <https://css-tricks.com/use-custom-fields-in-wordpress/>
-- theme.json
-- <https://make.wordpress.org/core/2023/07/14/configuring-development-mode-in-6-3/>
