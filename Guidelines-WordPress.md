@@ -278,7 +278,7 @@ On utilise ACF pour
 
 Pour filtrer des requêtes à l'aide de ces valeurs, on utilisera une [Meta Query](https://rudrastyh.com/wordpress/meta_query.html) dans [WP_Query](https://developer.wordpress.org/reference/classes/wp_query/).
 
-👉 Le dossier `acf-json/` doit être présent à la racine du thème et autorisé en écriture permettant de versionner et synchroniser automatiquement les ajouts/modifications ACF en développant à plusieurs. Chaque modification de groupe génère un fichier JSON qui peut être importé ailleurs via l'onglet _Sync_. Voir <https://www.advancedcustomfields.com/resources/local-json/>.
+👉 Le dossier `acf-json/` doit être présent à la racine du thème et autorisé en écriture permettant de versionner et synchroniser automatiquement les ajouts/modifications ACF par des fichiers JSON. On peut se servir de l'onglet _Sync_ ou utiliser la _Bulk action_ "Activer" après avoir coché toutes les cases pour forcer la génération de ces fichiers JSON. Voir <https://www.advancedcustomfields.com/resources/local-json/>.
 
 🔖 Voir [Tutoriel ACF : Advanced Custom Fields – Le guide complet](https://newslang.ch/blog/tutoriel-acf-advanced-custom-fields-le-guide-complet/), [Best Practices when Designing Custom Fields](https://www.advancedcustomfields.com/blog/best-practices-designing-custom-fields/) et [Tutoriel sur Advanced Custom Fields : Votre guide ultime](https://kinsta.com/fr/blog/advanced-custom-fields/)
 
