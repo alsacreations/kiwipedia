@@ -275,12 +275,23 @@ Autres listes de ressources et checklists
 - Libs et frameworks
 
   - <https://vuejs.org/>
-  - <https://facebook.github.io/react/>
+  - <https://github.com/facebook/react>
   - <https://jquery.com/>
   - <https://svelte.dev/>
+  - <https://alpinejs.dev/> - Permet d'ajouter de la réactivité et de simplifier l'utilisation de JS dans des projets sans frameworks, comme du Wordpress
+  - <https://www.solidjs.com/> - Alternative à React sans Virtual DOM
   - <https://angularjs.org/>
   - <https://lodash.com/>
-  - <https://github.com/developit/unfetch> Polyfill pour fetch() en 500 octets
+  - <https://radash-docs.vercel.app> - Alternative moderne de lodash qui n'inclu que ce qui n'existe pas nativement en JS
+  - <https://github.com/developit/unfetch> - Polyfill pour `fetch` en 500 octets
+  - <https://github.com/unjs/ofetch> - Wrapper autour de `fetch` qui facilite grandement son utilisation
+  - <https://trpc.io/> - Création d'API complètement typées
+  - <https://github.com/gvergnaud/ts-pattern> - Permet d'écrire des enchainements de `if` en étant sûr que l'on oubli aucun cas
+  - <https://www.npmjs.com/package/tsx> - Permet d'executer du TypeScript comme si c'était nativement supporté par Node
+  - <https://github.com/sindresorhus/type-fest> - Catalogue de types utilitaires bien pratiques, le Lodash pour TypeScript
+  - <https://www.npmjs.com/package/fast-glob> - Pour écrire des globs
+  - <https://www.npmjs.com/package/clsx> - Permet de fusionner des classes de la même manière que Vue
+  - <https://www.prisma.io/> - ORM pour communiquer avec une base de données
 
 - Outils d'écriture de code
 
