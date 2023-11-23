@@ -12,6 +12,7 @@ Voici quelques ressources à garder dans ses favoris :
 
 - [CanIEmail](https://www.caniemail.com/) pour tester la compatibilité des clients mails
 - [Maizzle](https://maizzle.com/) : framework d'intégration d'e-mails via Tailwind
+- [React email](https://react.email/) : création d'emails en utilisant "React" (du JSX)
 - <https://www.hteumeuleu.com/>
 - [Fixing bugs with Outlook specific CSS](https://cm.engineering/fixing-bugs-with-outlook-specific-css-f4b8ae5be4f4)
 
