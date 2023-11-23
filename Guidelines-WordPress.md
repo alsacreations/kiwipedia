@@ -42,7 +42,7 @@ On ne versionne **pas** (voir fichiers .gitignore) :
 
 ## Thème
 
-👉 On dévelope au maximum à l'aide de techniques natives WordPress (Posts, boucles, CPT, etc).
+👉 On dévelope au maximum à l'aide de techniques natives WordPress (Posts, boucles, CPT, etc), voir <https://codex.wordpress.org/Theme_Development>.
 
 - On privilégie de démarrer avec un thème _starter_ épuré <https://underscores.me/> ou <https://github.com/timber/starter-theme> lorsque l'on utilise Timber.
 - On supprime les autres thèmes livrés par défaut.
