@@ -2,7 +2,7 @@
 
 1. Créer le bucket, et le nommer comme le host CNAME (l’adresse du site), par exemple "www.example.org"
 2. Dans les propriétés du bucket > _Website hosting_ > _Enabled_ (donner un _Index Document_ par défaut : index.html en général)
-3. Côté zone DNS (ex : sur le manager OVH) faire pointer à l'aide d'un CNAME www.example.org sur l'endpoint (trouvable dans les propriétés du bucket S3) par exemple `www.example.org.s3-website-eu-west-1.amazonaws.com`
+3. Côté zone DNS (ex : sur le manager OVH) faire pointer à l'aide d'un CNAME `www.example.org` sur l'endpoint (trouvable dans les propriétés du bucket S3) par exemple `www.example.org.s3-website-eu-west-1.amazonaws.com`
 
 ## Héberger Nuxt en statique sur S3
 

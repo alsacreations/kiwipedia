@@ -4,7 +4,7 @@ Statut : Working Draft (WD)
 
 Bonnes pratiques TypeScript appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/), évoluant dans le temps et adaptées à chaque nouveau projet.
 
-Pour s'entraîner : <https://github.com/type-challenges/type-challenges>
+🕹️ Pour s'entraîner : <https://github.com/type-challenges/type-challenges>
 
 ## Généralités
 

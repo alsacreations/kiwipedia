@@ -104,7 +104,7 @@ Déplacer un fichier
 Supprimer un fichier
 `rm lefichier.txt` ou récursivement `rm -rf ledossier/`
 
-Supprimer un dossier (vide, sinon utiliser _rm -rf_)
+Supprimer un dossier (vide, sinon utiliser *rm -rf*)
 `rmdir ledossier`
 
 Supprimer un fichier et le rendre irrécupérable en écrasant son contenu par de l'aléatoire
@@ -270,10 +270,10 @@ Différences entre deux dossiers
 Lister les contenus d'un fichier zip
 `unzip -l <fichier.zip>`
 
-Compression du dossier www dans www.zip
+Compression du dossier www dans `www.zip`
 `gzip -rc www >www.zip`
 
-Déompression de www.zip
+Déompression de `www.zip`
 `gunzip www.zip`
 
 Tarer une archive

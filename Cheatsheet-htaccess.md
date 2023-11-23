@@ -19,7 +19,8 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
 
 ## Redirections
 
-On utilise 
+On utilise
+
 - `Redirect` ou `RedirectTemp` pour une redirection temporaire = code HTTP 302
 - `RedirectPermament` pour une redirection définitive (SEO) = code HTTP 301
 
