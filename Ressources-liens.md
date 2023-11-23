@@ -771,6 +771,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://screenrec.com/> Enregistrement d'écran/son/webcam (gratuit)
 - <https://small.chat/> Intégrer Slack en chat sur le site
 - <https://warpspire.com/posts/url-design/> URL design (~cool uri)
+- <https://ittavern.com/url-explained-the-fundamentals/> Les fondamentaux des URLs
 - <https://medium.com/@ImpalaWebstudio/pourquoi-nous-ne-livrons-pas-de-maquettes-au-moment-du-devis-36a242479a71> Maquettes gratuites
 - <https://www.slidescarnival.com/> Modèles de Google Slides gratuits
 
