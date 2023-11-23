@@ -323,9 +323,10 @@ Dans le cas où on utilise un thème acheté et que les fichiers PHP ne sont pas
 - [Disable comments](https://wordpress.org/plugins/disable-comments/) : désactiver les commentaires sur les posts/pages/médias, au choix (très propre).
 - [ACF](https://www.advancedcustomfields.com/) : ajouter des champs riches aux posts / pages / CPT.
 
-### Formulaires
+### Formulaires (extensions)
 
 - [Ninja Forms](https://fr.wordpress.org/plugins/ninja-forms/) : génération de formulaires, partiellement accessible.
+- [Contact Form 7 par Julie Moynat](https://github.com/juliemoynat/contact-form-7/releases), fork accessible de [Contact Form 7](https://fr.wordpress.org/plugins/contact-form-7/).
 - [hCaptcha](https://fr.wordpress.org/plugins/hcaptcha-for-forms-and-more/) s'intègre très bien à de nombreuses autres extensions (dont WooCommerce, WpForms, NinjaForms)
 
 ### Multilangue
