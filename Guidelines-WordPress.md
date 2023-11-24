@@ -216,6 +216,7 @@ L'[API Customize](https://developer.wordpress.org/themes/customize-api/) permet 
 
 - [Modifier le logo](https://wpmarmite.com/snippet/modifier-logo-connexion-wordpress/) sur la page de connexion admin.
 - [Retirer l'accès aux pages inutiles](https://wpthinker.com/hide-wordpress-admin-menu-items/) selon le rôle.
+- [Afficher un message dans l'interface d'admin](https://developer.wordpress.org/reference/hooks/admin_notices/) par exemple avec `if (!class_exists('ACF'))`.
 
 ## Développement des contenus éditables
 
