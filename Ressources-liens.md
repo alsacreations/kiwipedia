@@ -710,6 +710,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 ## Formats, encodage
 
 - <https://www.writesoftwarewell.com/base64-encoding-explained/> base64 expliqué
+- <https://www.outofpluto.com/blog/nikita-prokopov-must-read-article-about-utf-8/> Le minimum à savoir à propos d'Unicode (traduction de [cet article](https://tonsky.me/blog/unicode/))
 
 ---
 
