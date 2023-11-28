@@ -292,6 +292,30 @@ L'inconvénient de la notation imbriquée (nesting) est qu'elle génère des sé
 - Éviter d’animer des propriétés autres que `transform` (`translate`, `rotate`, `scale`) ou `opacity` ou `filter` (ou alors ajouter la propriété `will-change` au cas par cas).
 - Toujours préciser quelle(s) propriété(s) doit être animée dans une transition ou animation. Par exemple `transition: 0.5s scale`.
 
+### Animer du SVG
+
+Quelques précautions sont à prendre concernant les SVG :
+
+- Compresser le fichier à l'aide de SVGOMG
+- donner des noms de classe à chaque `path` qui doit être animé
+- appliquer les styles CSS suivants&hellip;
+
+```css
+svg {
+  /* Par défaut les navigateurs masquent ce qui dépasse du Viewbox */
+  /* ressource : https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/overflow */
+  overflow: visible;
+}
+```
+
+```css
+svg * {
+  /* Par défaut le référent pour transform-origin est l'ensemble du SVG (view-box) */
+  /* ressource : https://developer.mozilla.org/en-US/docs/Web/CSS/transform-box#svg_transform-origin_scoping */
+  transform-box: fill-box;
+}
+```
+
 ## Méthodes de positionnement
 
 Nous privilégions **Flexbox et Grid Layout** de manière générale en tenant compte de certains points d'attention.
