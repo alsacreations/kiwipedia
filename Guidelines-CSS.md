@@ -29,8 +29,6 @@ Tous les détails et bonnes pratiques internes concernant ces technologies sont 
 - Performances
   - Durant la phase de développement l'intégration se fait sur plusieurs fichiers CSS (composants, layout, etc.) que l'on rassemble (`@import`) dans un fichier unique.
   - Les fichiers CSS doivent être minifiés pour économiser du poids de chargement.
-  - Toujours préciser quelle(s) propriété(s) doit être animée dans une transition ou animation.
-  - Éviter d’animer des propriétés autres que `transform` (`translate`, `rotate`, `scale`) ou `opacity` ou `filter` (ou alors ajouter la propriété `will-change` au cas par cas).
 
 ### Ordre des déclarations
 
@@ -288,6 +286,11 @@ L'inconvénient de la notation imbriquée (nesting) est qu'elle génère des sé
 ```
 
 📖 **Ressource complémentaire : ["When to nest?"](https://cloudfour.com/thinks/when-to-nest-css/)**
+
+## Transitions et animations
+
+- Éviter d’animer des propriétés autres que `transform` (`translate`, `rotate`, `scale`) ou `opacity` ou `filter` (ou alors ajouter la propriété `will-change` au cas par cas).
+- Toujours préciser quelle(s) propriété(s) doit être animée dans une transition ou animation. Par exemple `transition: 0.5s scale`.
 
 ## Méthodes de positionnement
 
