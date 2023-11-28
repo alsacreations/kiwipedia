@@ -158,6 +158,7 @@ Autres listes de ressources et checklists
   - <https://css-tricks.com/responsive-data-table-roundup/>
   - <https://elvery.net/demo/responsive-tables/>
 - <https://codyhouse.co/gem/mega-dropdown> Responsive Mega Menu
+- <https://developer.mozilla.org/en-US/blog/getting-started-with-css-container-queries/> Container Queries
 - <https://github.com/GoogleChromeLabs/container-query-polyfill> Container Query Polyfill
 
 ### Retina et hdpi
