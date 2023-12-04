@@ -486,15 +486,14 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 ## Animations JS/CSS
 
-- <https://anime-js.com/>
-- <http://bouncejs.com/>
-- <http://julian.com/research/velocity/>
-- <https://docs.theatrejs.com/> outil d'animation DOM, code et visuel
-- <http://paperjs.org/> librairie d'animation Canvas
-- <https://projects.verou.me/animatable/>
+- <https://animotion.dev/> outil d'animation sans code
+- <https://www.theatrejs.com/> outil d'animation DOM, code et visuel
+
+### Exemples
+
+- <https://projects.verou.me/animatable/> Exemples d'animations
 - <https://tobiasahlin.com/spinkit/> Loaders animés (spin)
-- <https://connoratherton.com/loaders> Loaders CSS
-- <https://uiball.com/loaders/> Loaders CSS/SVG
+- <https://uiball.com/ldrs/> Loaders CSS/SVG
 
 ## SVG
 
