@@ -8,6 +8,7 @@ Commandes utiles pour un serveur de développement ou un serveur web/mail/ftp, n
 - MiniVim <https://github.com/sd65/MiniVim>
 - Apprendre Vim en jouant <https://vim-adventures.com/>
 - Commandline challenge <https://cmdchallenge.com/>
+- Full Bash Guide <https://mywiki.wooledge.org/FullBashGuide>
 - Défis <https://unixgame.io/>
 - Défis sur serveur <https://sadservers.com/scenarios>
 - [Vidéos Youtube de Yves Rougy](https://www.youtube.com/@yrougy/playlists)
