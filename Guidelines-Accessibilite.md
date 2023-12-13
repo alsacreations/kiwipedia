@@ -29,7 +29,7 @@ Ce document est divisé en trois parties :
 ### CSS
 
 - Ne pas fixer de hauteur sur les éléments afin que le contenu reste lisible lorsque le texte est zoomé.
-- Travailler avec des tailles de polices fluides (`em` ou `rem`) pour permettre l'agrandissement.
+- Travailler avec des tailles de polices fluides `rem` ou `em` pour permettre l'agrandissement.
 - Ne pas supprimer l'outline autour des éléments cliquables/focusables (pas de `outline: none`) [ou utiliser `:focus-visible`](#outline-et-focus).
 - Ne pas employer de contenu généré (`::before`, `::after`) pour [véhiculer des informations ou pour afficher des icônes](#css-generated-content).
 - Masquer correctement [les contenus qui devraient être lus par un lecteur d’écran](#contenu-lu-mais-masqué-à-lécran) (ex. `.visually-hidden` ou `.sr-only` au lieu de `display: none`).

@@ -19,7 +19,7 @@ Tous les détails et bonnes pratiques internes concernant ces technologies sont 
 ### Points généraux
 
 - Accessibilité
-  - Opter pour des tailles de polices fluides (de préférence en `rem`), éviter les tailles de police de taille fixe (`px` ou `pt`) car inaccessibles aux personnes nécessitant d’agrandir les contenus textuels.
+  - Utiliser des unités fluides (`rem`) pour le texte, éviter les unités fixes (`px` ou `pt`) empêchant d’agrandir correctement : ([How browsers zoom text](https://www.matuzo.at/blog/2023/how-browsers-zoom-text)).
 - Maintenabilité
   - Privilégier systématiquement l'usage de sélecteurs de **class** plutôt que les sélecteurs d'éléments (`li`, `span`, `p`) et ne jamais cibler via un sélecteur `#id`.
   - Éviter les *sélecteurs composés* tels que `.modal span` ou `.modal .date` mais plutôt `.modal-date` pour conserver une spécificité minimale.
