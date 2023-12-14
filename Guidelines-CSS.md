@@ -27,7 +27,7 @@ Tous les détails et bonnes pratiques internes concernant ces technologies sont 
   - Éviter d’écraser une règle CSS par une autre.
   - La règle `!important` doit être éradiquée si possible du fait de son poids extrêmement important (certaines parties des styles peuvent toutefois exceptionnellement employer à juste titre `!important`).
 - Performances
-  - Durant la phase de développement l'intégration se fait sur plusieurs fichiers CSS (composants, layout, etc.) que l'on rassemble (`@import`) dans un fichier unique.
+  - Durant la phase de développement l'intégration se fait sur plusieurs fichiers CSS (composants, layout, etc.) que l'on rassemble (via `@use` qui [remplace progressivement `@import` dans Sass](https://sass-lang.com/documentation/at-rules/import/)) dans un fichier unique.
   - Les fichiers CSS doivent être minifiés pour économiser du poids de chargement.
 
 ### Ordre des déclarations
@@ -183,7 +183,7 @@ Les noms de classes sont regroupés par fonctions :
 
 Certaines fonctionnalités CSS indispensables ne sont actuellement pas réalisables en CSS natif&nbsp;:
 
-- Concaténation des fichiers lors d'un `@import`
+- Concaténation des fichiers lors d'un `@use` (successeur de `@import`)
 - Variables et constantes
 - Mixins
 - Custom Media (Media Queries contenant une variable)
