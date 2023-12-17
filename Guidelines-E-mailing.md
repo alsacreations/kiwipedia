@@ -6,23 +6,19 @@ Bonnes pratiques e-mail appliquées par l'agence web [Alsacreations.fr](https://
 
 ## Ressources et outils
 
-Les clients e-mails sont capricieux, ils interprètent à leur manière, ils redimensionnent s'ils le souhaitent, ils reconnaissent uniquement les styles qui leur conviennent, etc. Les bonnes pratiques habituelles y sont remplacées par des tableaux de mise en forme, de styles inline et une foule de bugs en tout genre.
-
-Voici quelques ressources à garder dans ses favoris :
+Les clients e-mails sont capricieux, interprètent le code à leur manière, ils redimensionnent s'ils le souhaitent, ils reconnaissent uniquement les styles qui leur conviennent, etc. Les bonnes pratiques habituelles y sont remplacées par des tableaux de mise en forme, de styles inline et une foule de bugs en tout genre.
 
 - [CanIEmail](https://www.caniemail.com/) pour tester la compatibilité des clients mails
 - [Maizzle](https://maizzle.com/) : framework d'intégration d'e-mails via Tailwind
 - [React email](https://react.email/) : création d'emails en utilisant "React" (du JSX)
-- <https://www.hteumeuleu.com/>
 - [Fixing bugs with Outlook specific CSS](https://cm.engineering/fixing-bugs-with-outlook-specific-css-f4b8ae5be4f4)
+- [Ne faites pas à vos e-mails ce que vous ne feriez pas à votre projet web](https://www.24joursdeweb.fr/2023/ne-faites-pas-a-vos-emails-ce-que-vous-ne-feriez-pas-a-votre-projet-web/)
 
 ## Supprimer les détections automatiques d'e-mails, de téléphone, etc
 
 Lorsqu'elles sont lues par un device sur iOS, certaines données sont automatiquement détectées et interprétées. Cela concerne les numéros de téléphones, les adresses, les dates et parfois même quelques mots-clés spécifiques tels que "aujourd'hui".
 
-Cette détection automatique est parfois gênante car elle est associée à des styles graphiques non désirés voire inaccessibles.
-
-Un moyen de s'en affranchir est d'appliquer les `meta` suivantes :
+Cette détection automatique est parfois gênante car elle est associée à des styles graphiques non désirés voire inaccessibles. Un moyen de s'en affranchir est d'appliquer ces balises `meta` :
 
 ```html
 <meta name="format-detection" content="date=no">
@@ -32,7 +28,7 @@ Un moyen de s'en affranchir est d'appliquer les `meta` suivantes :
 
 ## Utiliser un Framework de construction : Maizzle
 
-Un framework spécialisé dans l'e-mailing, tel que **[Maizzle](https://maizzle.com)**, est une aide précieuse pour les raisons suivantes&nbsp;:
+Un framework spécialisé dans l'e-mailing, tel que **[Maizzle](https://maizzle.com)**, est une aide précieuse :
 
 - **Moteur de template** (gabarits réutilisables, inclusion de fichiers partiels, transmission de variables, ajout de conditions, de boucles, etc.)
 - **Logique "email" respectée**, fichiers de configuration et de variables, prise en compte native du Responsive Webdesign
@@ -149,9 +145,7 @@ Ceci fonctionne :
 <img src="https://picsum.photos/600/600" width="300" style="width: 300px; max-width: 100%;" />
 ```
 
-Et la version Maizzle :
-
-Ceci fonctionne :
+Et la version Maizzle qui fonctionne :
 
 ```html
 <img src="https://picsum.photos/600/600" width="300" class="w-300; max-w-full;" />
