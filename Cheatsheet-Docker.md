@@ -6,10 +6,10 @@ Voir aussi <https://www.alsacreations.com/tuto/lire/1836-Docker--decouverte-et-e
 
 ## Commandes utiles
 
-* Compiler un Dockerfile dans le dossier courant pour créer une image `docker build -t <image:tag> .`
-* Compiler une image en conteneur et l'exécuter `docker run --name <nomducontainer> <image:tag>` (+ voir autres options)
+* Compiler un Dockerfile dans le dossier courant pour créer une image : `docker build -t <image:tag> .`
+* Compiler une image en conteneur et l'exécuter : `docker run --name <nomducontainer> <image:tag>` (+ voir autres options)
 * Démarrer ou arrêter un conteneur s'il est déjà existant : `docker start <nomducontainer>` (ou `stop`)
-* Arrêter tous les conteneurs actifs `docker stop $(docker ps -aq)`
+* Arrêter tous les conteneurs actifs : `docker stop $(docker ps -aq)`
 * Exécuter une commande dans le conteneur : `docker container exec -it <nomducontainer> <lacommande>` (par exemple `bash` pour ouvrir un shell)
 * Lister tous les conteneurs : `docker container ls` ou `docker ps -a`
 * Lister toutes les images : `docker image ls`
@@ -17,11 +17,18 @@ Voir aussi <https://www.alsacreations.com/tuto/lire/1836-Docker--decouverte-et-e
 * Supprimer une image : `docker image rm <image>`
 * Utiliser le chemin courant dans une commande docker : `$PWD`
 * Créer un network : `docker network create my-custom-net` et l'utiliser au run : `--network=my-custom-net`
-* Copier un fichier dans un conteneur actif `docker cp .\fichier.sql.gz 133713371337:/root` où 133713371337 est l'ID du conteneur obtenu par `docker container list` et `/root` le chemin de destination.
-* Nettoyer les images/volumes inutilisés `docker image prune` / `docker volume prune` voire `docker system prune` ou `docker builder prune`  pour nettoyer le _build cache_
-* Visualiser l'espace occupé `docker system df` ou encore pour les processus `docker ps --size`
-* Redémarrer tous les conteneurs arrêtés `docker restart $(docker ps -a -q)`
-* Renommer une image `docker tag <old> <new>`
+* Copier un fichier dans un conteneur actif : `docker cp .\fichier.sql.gz 133713371337:/root` où 133713371337 est l'ID du conteneur obtenu par `docker container list` et `/root` le chemin de destination.
+* Redémarrer tous les conteneurs arrêtés : `docker restart $(docker ps -a -q)`
+* Renommer une image : `docker tag <old> <new>`
+
+### Ressources / espace disque / statistiques
+
+* Statistiques cpu/ram temps réel `docker stats`
+* Visualiser l'espace occupé `docker system df`
+* Ressources pour les processus/conteneurs `docker ps --size`
+* Nettoyer les images/volumes inutilisés `docker image prune` / `docker volume prune`
+* Nettoyer le _build cache_ `docker builder prune`
+* Nettoyer toutes les ressources système inutilisées `docker system prune`
 
 ### Lancer un shell minimaliste
 
@@ -33,9 +40,8 @@ docker run -it alpine /bin/sh
 
 ### Inspection
 
-* Savoir quel dossier a initialisé un container `docker inspect <nomducontainer> | grep "com.docker.compose.project.working_dir"`
-* Statistiques : `docker stats`
 * Informations système : `docker info`
+* Savoir quel dossier a initialisé un container : `docker inspect <nomducontainer> | grep "com.docker.compose.project.working_dir"`
 * Logs : `docker logs <nomducontainer>` (ajouter `-f` pour suivre en continu)
 * Ports ouverts : `docker port <nomducontainer>`
 * Processus : `docker top <nomducontainer>`
