@@ -15,8 +15,10 @@ Autres listes de ressources et checklists
 
 ## Sites d'actualités, tutoriels
 
-- <https://css-tricks.com/>
 - <https://www.smashingmagazine.com/>
+- <https://developer.mozilla.org/en-US/blog/> MDN
+- <https://web.dev/blog/>
+- <https://css-tricks.com/>
 
 ## Documentations générales rapides
 
@@ -27,7 +29,7 @@ Autres listes de ressources et checklists
 - <http://html5index.org/>
 - <https://platform.html5.org/>
 - <https://cssvalues.com/> dictionnaire des propriétés et valeurs
-- <https://caniuse.com/> (tableaux de support)
+- <https://caniuse.com/> (tableaux de support navigateurs)
 
 ### Tests, émulation, devices
 
@@ -42,11 +44,8 @@ Autres listes de ressources et checklists
 - <https://html.spec.whatwg.org/multipage/> Spécification HTML WhatWG
 - <https://w3c.github.io/html/> Spécification HTML5 W3C
 - <https://htmlparser.info/introduction/> Idiosyncrasies of the HTML parser (Simon Pieters)
-
-### Templates et boilerplates
-
-- <https://uisual.com/> Templates neutres pour startups
 - <https://schnaps.it/> Templates HTML5 avec KNACSS
+- <https://uisual.com/> Templates neutres pour startups
 
 ### Microdata et sémantique
 
@@ -533,11 +532,8 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 - <https://svgartista.net/>
 - <https://www.svgator.com/>
-- <https://svgjs.com/> Animations de SVG via JavaScript
-- <http://snapsvg.io/> (animation SVG via JS)
 - <https://maxwellito.github.io/vivus/> Animation SVG filaire
 - <https://css-tricks.com/animating-svg-css/> (animation via CSS)
-- <http://sozi.baierouge.fr/pages/10-about.html> Présentations animées avec zoom/dézoom
 
 ### Accessibilité des SVG
 
@@ -546,10 +542,6 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://css-tricks.com/accessible-svgs/>
 - <https://www.paciellogroup.com/blog/2013/12/using-aria-enhance-svg-accessibility/>
 - <https://www.sitepoint.com/tips-accessible-svg/> Rendre SVG accessible
-
-## Formats d'images
-
-- <https://www.da.vidbuchanan.co.uk/blog/hello-png.html> PNG
 
 ---
 
@@ -562,14 +554,6 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://openlayers.org/> API libre surcouche au choix de GMaps, Bing, OpenStreetMap, etc
 - <https://mapbox.com/>
 - <https://simplemaps.com/> (cartes mondiales Canvas/SVG)
-
----
-
-## Référencement / SEO
-
-- <https://goralewicz.com/blog/javascript-seo-experiment/> Référencement et JavaScript
-- <https://backlinko.com/google-ranking-factors> La liste des facteurs de référencement
-- <https://www.screamingfrog.co.uk/seo-spider/> Outil de crawl et diagnostic SEO
 
 ---
 
@@ -821,35 +805,24 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 ---
 
-## Machines virtuelles
-
-- <https://www.virtualbox.org/> VirtualBox (Oracle)
-- <https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/> Virtual Machines IE11 (sous Windows 10) par Microsoft
-- <https://css-tricks.com/an-introduction-to-vagrant/> Vagrant
-
-## Docker
-
-- <https://www.docker.com/>
-- <https://medium.com/@remyc/comprendre-docker-dockerfile-et-docker-compose-f21fe4ba22cb>
-- <https://github.com/sickcodes/Docker-OSX> macOS dans Docker
-
 ## Applications mobiles/hybrides/desktop
 
 - <https://www.electronjs.org/>
 - <https://tauri.app>
 - <https://ionicframework.com/>
-- <https://www.appgyver.com/>
 
 ---
 
 ## Culture générale
 
 - <https://cpu.land/> Comment fonctionne un processeur, la mémoire, un ordinateur pour exécuter un programme
+- <https://www.da.vidbuchanan.co.uk/blog/hello-png.html> Le format d'image PNG
 
 ---
 
 ## Outils divers
 
+- <https://www.virtualbox.org/> Machines virtuelles VirtualBox (Oracle)
 - <https://speed.cloudflare.com/> Test de débit
 - <https://grahamhelton.com/blog/ssh-cheatsheet/> An Excruciatingly Detailed Guide To SSH
 - <https://github.com/Genymobile/scrcpy> Screen copy (miroir d'écran) des devices Android vers win/linux/macos

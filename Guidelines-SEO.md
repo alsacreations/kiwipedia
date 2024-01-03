@@ -89,6 +89,8 @@ Imbrication de deux types
 
 ## Références
 
+* <https://backlinko.com/google-ranking-factors> Liste des facteurs de référencement
+* [Google Search Central](https://developers.google.com/search/docs?hl=fr)
 * [Google Search Essentials](https://developers.google.com/search/docs/essentials?hl=fr)
 * [Google : Mises à jour du classement dans les résultats de recherche](https://developers.google.com/search/updates/ranking)
 * [Google : Dynamic rendering](https://developers.google.com/search/docs/advanced/javascript/dynamic-rendering)
