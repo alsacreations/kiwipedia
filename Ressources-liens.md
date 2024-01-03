@@ -81,13 +81,14 @@ Autres listes de ressources et checklists
 - <https://yoksel.github.io/grid-cheatsheet/> Cheatsheet CSS Grid
 - <https://alialaa.github.io/css-grid-cheat-sheet/> Cheatsheet CSS Grid
 - <https://developer.mozilla.org/fr/docs/Learn/CSS/CSS_layout/Grids> Documentation MDN : Grilles avec CSS Grid Layout
-- <https://www.joshwcomeau.com/css/interactive-guide-to-grid/> Guide interactif
+- <https://www.joshwcomeau.com/css/interactive-guide-to-grid/> Guide interactif à Grid
 
 ### Flexbox
 
 - <https://flexboxfroggy.com/#fr> Apprendre Flexbox de manière interactive
 - <https://www.vincent-valentin.name/articles/le-petit-flexbox-illustre> Flexbox illustré
 - <https://flexboxpatterns.com/> Patterns flexbox
+- <https://www.joshwcomeau.com/css/interactive-guide-to-flexbox/> Guide interactif à Flexbox
 
 ### Typographie, @font-face et polices
 
