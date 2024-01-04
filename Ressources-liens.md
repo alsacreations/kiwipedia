@@ -266,70 +266,67 @@ Autres listes de ressources et checklists
 - <https://github.com/denysdovhan/wtfjs/blob/master/README-fr-fr.md> Une liste d'exemples JavaScript drôles et délicats
 - <https://basarat.gitbook.io/typescript/> TypeScript Deep Dive (traduction fr : <https://github.com/HachemiH/typescript-book>)
 
-- Bonnes pratiques et style guides
+### Bonnes pratiques et guides
 
-  - <https://molily.de/robust-javascript/> Robust JavaScript
-  - <https://github.com/rwaldron/idiomatic.js/tree/master/translations/fr_FR>
-  - <https://jstherightway.org/>
-  - <https://github.com/airbnb/javascript>
-  - <https://bevacqua.github.io/promisees/> Les promesses expliquées et visualisées en animations
+- <https://molily.de/robust-javascript/> Robust JavaScript
+- <https://github.com/rwaldron/idiomatic.js/tree/master/translations/fr_FR>
+- <https://jstherightway.org/>
+- <https://github.com/airbnb/javascript>
+- <https://bevacqua.github.io/promisees/> Les promesses expliquées et visualisées en animations
+- <https://beautifier.io/> Beautifier en ligne
+- <https://blog.scottlogic.com/2021/09/06/how-to-write-an-es-lint-rule-for-beginners.html> écrire ses propres règles eslint
 
-- Libs et frameworks
+### Libs et frameworks
 
-  - <https://vuejs.org/>
-  - <https://github.com/facebook/react>
-  - <https://jquery.com/>
-  - <https://svelte.dev/>
-  - <https://alpinejs.dev/> - Permet d'ajouter de la réactivité et de simplifier l'utilisation de JS dans des projets sans frameworks, comme du Wordpress
-  - <https://www.solidjs.com/> - Alternative à React sans Virtual DOM
-  - <https://angularjs.org/>
-  - <https://lodash.com/>
-  - <https://radash-docs.vercel.app> - Alternative moderne de lodash qui n'inclu que ce qui n'existe pas nativement en JS
-  - <https://github.com/developit/unfetch> - Polyfill pour `fetch` en 500 octets
-  - <https://github.com/unjs/ofetch> - Wrapper autour de `fetch` qui facilite grandement son utilisation
-  - <https://trpc.io/> - Création d'API complètement typées
-  - <https://github.com/gvergnaud/ts-pattern> - Permet d'écrire des enchainements de `if` en étant sûr que l'on oubli aucun cas
-  - <https://www.npmjs.com/package/tsx> - Permet d'executer du TypeScript comme si c'était nativement supporté par Node
-  - <https://github.com/sindresorhus/type-fest> - Catalogue de types utilitaires bien pratiques, le Lodash pour TypeScript
-  - <https://www.npmjs.com/package/fast-glob> - Pour écrire des globs
-  - <https://www.npmjs.com/package/clsx> - Permet de fusionner des classes de la même manière que Vue
-  - <https://www.prisma.io/> - ORM pour communiquer avec une base de données
+#### Autres bibliothèques JavaScript
 
-- Outils d'écriture de code
+- <https://jquery.com/>
+- <https://svelte.dev/>
+- <https://alpinejs.dev/> - Permet d'ajouter de la réactivité et de simplifier l'utilisation de JS dans des projets sans frameworks, comme du Wordpress
+- <https://www.solidjs.com/> - Alternative à React sans Virtual DOM
+- <https://angularjs.org/>
+- <https://lodash.com/>
+- <https://radash-docs.vercel.app> - Alternative moderne de lodash qui n'inclu que ce qui n'existe pas nativement en JS
+- <https://github.com/developit/unfetch> - Polyfill pour `fetch` en 500 octets
+- <https://github.com/unjs/ofetch> - Wrapper autour de `fetch` qui facilite grandement son utilisation
+- <https://trpc.io/> - Création d'API complètement typées
+- <https://github.com/gvergnaud/ts-pattern> - Permet d'écrire des enchainements de `if` en étant sûr que l'on oubli aucun cas
+- <https://www.npmjs.com/package/tsx> - Permet d'executer du TypeScript comme si c'était nativement supporté par Node
+- <https://github.com/sindresorhus/type-fest> - Catalogue de types utilitaires bien pratiques, le Lodash pour TypeScript
+- <https://www.npmjs.com/package/fast-glob> - Pour écrire des globs
+- <https://www.npmjs.com/package/clsx> - Permet de fusionner des classes de la même manière que Vue
+- <https://www.prisma.io/> - ORM pour communiquer avec une base de données
 
-  - <https://beautifier.io/> Beautifier en ligne
-  - <https://blog.scottlogic.com/2021/09/06/how-to-write-an-es-lint-rule-for-beginners.html> écrire ses propres règles eslint
+#### Scripts
 
-- Scripts divers
-
-  - <https://github.com/kochrt/cascade.page> Générer une timeline
-  - <https://github.com/jekuer/add-to-calendar-button> Bouton d'ajout au calendrier
-  - <https://orejime.empreintedigitale.fr/> bannière cookies accessible
-  - <https://plainjs.com/> Sélection de scripts et plugins sans framework (Vanilla)
-  - <https://docs.slatejs.org> Editeurs wysiwyg
-  - <https://thenewcode.com/82/Recipes-for-Randomness-in-JavaScript> Randomness
-  - <https://www.lullabot.com/blog/article/importing-css-breakpoints-javascript> Responsive (importer les breakpoints css en js)
-  - <https://github.com/Pikaday/Pikaday> (datepicker, aussi en plugin jQuery)
-  - <https://robertwhurst.github.io/KeyboardJS/> (gestion clavier)
-  - <https://pdfme.com/> Générateur de PDF en TypeScript (avec template)
-  - <https://parall.ax/products/jspdf> (Générer PDF côté client)
-  - <https://wicky.nillia.ms/headroom.js/> (header disparaissant animé)
-  - <https://inorganik.github.io/countUp.js/> (défilement de compteur/chiffres)
-  - <https://draggabilly.desandro.com/> Drag&Drop multi-touch
-  - <https://github.com/ryanve/verge> (Get viewport dimensions, detect elements in the viewport <http://verge.airve.com>)
-  - <https://joaopereirawd.github.io/animatedModal.js/> Modales animées
-  - <http://callmecavs.com/bricks.js/> Masonry performant
-  - <https://github.com/jwagner/smartcrop.js> Smartcrop intelligent pour les images
-
-- Touch
-
-  - <https://deeptissuejs.com/>
-  - <https://interactjs.io/>
-  - <https://hammerjs.github.io/>
-  - <http://pressurejs.com/>
+- <https://github.com/kochrt/cascade.page> Générer une timeline
+- <https://github.com/jekuer/add-to-calendar-button> Bouton d'ajout au calendrier
+- <https://orejime.empreintedigitale.fr/> bannière cookies accessible
+- <https://plainjs.com/> Sélection de scripts et plugins sans framework (Vanilla)
+- <https://docs.slatejs.org> Editeurs wysiwyg
+- <https://thenewcode.com/82/Recipes-for-Randomness-in-JavaScript> Randomness
+- <https://www.lullabot.com/blog/article/importing-css-breakpoints-javascript> Responsive (importer les breakpoints css en js)
+- <https://github.com/Pikaday/Pikaday> (datepicker, aussi en plugin jQuery)
+- <https://robertwhurst.github.io/KeyboardJS/> (gestion clavier)
+- <https://pdfme.com/> Générateur de PDF en TypeScript (avec template)
+- <https://parall.ax/products/jspdf> (Générer PDF côté client)
+- <https://wicky.nillia.ms/headroom.js/> (header disparaissant animé)
+- <https://inorganik.github.io/countUp.js/> (défilement de compteur/chiffres)
+- <https://draggabilly.desandro.com/> Drag&Drop multi-touch
+- <https://github.com/ryanve/verge> (Get viewport dimensions, detect elements in the viewport <http://verge.airve.com>)
+- <https://joaopereirawd.github.io/animatedModal.js/> Modales animées
+- <http://callmecavs.com/bricks.js/> Masonry performant
+- <https://github.com/jwagner/smartcrop.js> Smartcrop intelligent pour les images
+- <https://swiperjs.com/> Slideshow
+- <https://github.com/nolimits4web/Swiper> Swiper JS vanilla très extensible et flexible (fonctionne sous Windows Phone)
+- <https://deeptissuejs.com/> Abstraction pointer et touch
+- <https://interactjs.io/> drag and drop, resize, multi-touch
+- <https://hammerjs.github.io/> Gestion du touch
+- <https://pressurejs.com/> Gestion de la pression
 
 ### Vue / Nuxt
 
+- <https://vuejs.org/>
 - Le repo [awesome-vue](https://github.com/vuejs/awesome-vue) sur Github avec plein de ressources
 - Plein d'exemples : [vuejsexamples.com](https://vuejsexamples.com/)
 - Pour faire du drag &amp; drop : [Vue.Draggable](https://github.com/SortableJS/Vue.Draggable)
@@ -338,10 +335,10 @@ Autres listes de ressources et checklists
 - <https://valgeirb.github.io/vue3-popper/>
 - <https://vcalendar.io/>
 
-### Slideshows
+#### React
 
-- <https://swiperjs.com/>
-- <https://github.com/nolimits4web/Swiper> - un swiper JS vanilla très extensible et flexible (fonctionne sous Windows Phone)
+- <https://github.com/facebook/react>
+- <https://ui.dev/why-react-renders>
 
 ---
 
