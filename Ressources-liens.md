@@ -661,19 +661,6 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://http3-explained.haxx.se/fr> HTTP/3
 - <https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP> Les bases de HTTP (MDN)
 
-### Sécurité
-
-- <https://permission.site> Tester les permissions du navigateur selon le protocole http/https
-- <https://blog.appcanary.com/2017/http-security-headers.html> Tout sur les en-têtes HTTP de sécurité
-- <https://movingtohttps.com/> Migrer vers HTTPS, techniques et outils
-- <https://wiki.mozilla.org/Security/Server_Side_TLS> la référence pour configurer
-- <https://www.privacytools.io/> Meilleurs outils de sécurité/confidentialité
-
-- Tests
-  - <https://observatory.mozilla.org/> Mozilla Observatory
-  - <https://securityheaders.io/> pour check
-  - <https://www.ssllabs.com/ssltest/> pour check
-
 ### CORS
 
 - <https://jakearchibald.com/2021/cors/> + <https://jakearchibald.com/2021/cors/playground/>

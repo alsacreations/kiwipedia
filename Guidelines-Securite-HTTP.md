@@ -8,16 +8,21 @@ Outils de test :
 * <https://securityheaders.com/>
 * <https://www.serpworx.com/check-security-headers/>
 * CSP : <https://csp-evaluator.withgoogle.com/>
-* SSL : <https://www.ssllabs.com/ssltest/analyze.html>
+* SSL : <https://www.ssllabs.com/ssltest/>
 * SSL : <https://badssl.com/>
 
 Ressources :
 
 * <https://www.ssi.gouv.fr/entreprise/guide/recommandations-pour-la-securisation-des-sites-web/>
 * <https://www.alsacreations.com/article/lire/1723-tour-horizon-https-et-en-tetes-de-securite.html>
-* <https://blog.appcanary.com/2017/http-security-headers.html>
 * <https://content-security-policy.com/>
 * <https://www.numerique.gouv.fr/publications/referentiel-general-de-securite/>
+* <https://hackropole.fr/fr/web/> S'entraîner
+* <https://permission.site> Tester les permissions du navigateur selon le protocole http/https
+* <https://blog.appcanary.com/2017/http-security-headers.html> Tout sur les en-têtes HTTP de sécurité
+* <https://movingtohttps.com/> Migrer vers HTTPS, techniques et outils
+* <https://wiki.mozilla.org/Security/Server_Side_TLS> Configurer TLS
+* <https://www.privacytools.io/> Meilleurs outils de sécurité/confidentialité
 
 **Définition** : La notion d'origine (ou _same-origin_) indique qu'il a correspondance du protocole (http, https), du port (80) et du nom de domaine complet (avec ses sous domaines).
 
