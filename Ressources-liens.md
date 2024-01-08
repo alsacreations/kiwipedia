@@ -54,15 +54,6 @@ Autres listes de ressources et checklists
 - Outil de test des résultats enrichis <https://search.google.com/test/rich-results>
 - <https://www.opensearch.org/> Opensearch
 
-#### Open Graph
-
-- <https://ogp.me/> Opengraph
-- <https://metatags.io> Génération des meta tags
-- <https://dev.twitter.com/cards/overview> Twitter Cards
-- <https://cards-dev.twitter.com/validator> Validateur Twitter Open Graph
-- <https://debug.iframely.com/> Comment les autres sites/apps voient le vôtre
-- <https://developers.facebook.com/tools/debug> Outil de test Open Graph de Facebook
-
 ---
 
 ## CSS

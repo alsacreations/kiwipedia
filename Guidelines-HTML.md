@@ -199,9 +199,7 @@ Les liens entre site web et les différents réseaux sociaux sont de plus en plu
 
 ### OpenGraph
 
-L’[OpenGraph](https://ogp.me/) permet de maîtriser davantage l'apparence des contenus partagés via URL sur les réseaux sociaux (Facebook, Twitter, LinkedIn, Pinterest entre autres). Le titre, l'image d'aperçu, la description, etc. peuvent être personnalisés. On peut tester l'implémentation à l'aide de <https://www.opengraph.xyz/>
-
-Parmi les valeurs de og: les plus utilisées on retrouve :
+L’[OpenGraph](https://ogp.me/) permet de maîtriser davantage l'apparence des contenus partagés via URL sur les réseaux sociaux (Facebook, Twitter, LinkedIn, Pinterest entre autres). Le titre, l'image d'aperçu, la description, etc. peuvent être personnalisés. On peut tester l'implémentation à l'aide de <https://www.opengraph.xyz/> ou <https://cards-dev.twitter.com/validator> ou <https://debug.iframely.com/> ou <https://developers.facebook.com/tools/debug> et générer à l'aide de <https://metatags.io>. Parmi les valeurs de og: les plus utilisées :
 
 ```html
 <meta property="og:title" content="Titre unique de la page - Nom du site" />
