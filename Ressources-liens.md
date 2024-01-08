@@ -12,6 +12,7 @@ Autres listes de ressources et checklists
 - <https://github.com/awesome-selfhosted/awesome-selfhosted> Awesome-Selfhosted : liste d'applications que l'on peut héberger soi-même
 - <https://github.com/kdeldycke/awesome-falsehood> Inventaire des fausses idées auxquelles on peut croire lorsqu'on fait du développement
 - <https://developers.google.com/search/blog/2023/08/where-art-thou-error?hl=fr> La Comédie des erreurs
+- <https://github.com/ossu/computer-science>
 
 ## Sites d'actualités, tutoriels
 
