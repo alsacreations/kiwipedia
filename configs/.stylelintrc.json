@@ -1,0 +1,25 @@
+{
+  "extends": [
+    "stylelint-config-standard"
+  ],
+  "rules": {
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "function",
+          "if",
+          "each",
+          "include",
+          "mixin",
+          "layer",
+          "extends",
+          "tailwind",
+          "apply",
+          "screen"
+        ]
+      }
+    ]
+  },
+  "declaration-no-important": true
+}
