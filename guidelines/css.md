@@ -16,8 +16,6 @@ Tous les détails et bonnes pratiques internes concernant ces technologies sont 
 
 ### Points généraux
 
-- Accessibilité
-  - Utiliser des unités fluides (`rem`) pour le texte, éviter les unités fixes (`px` ou `pt`) empêchant d’agrandir correctement : ([How browsers zoom text](https://www.matuzo.at/blog/2023/how-browsers-zoom-text)).
 - Maintenabilité
   - Privilégier systématiquement l'usage de sélecteurs de **class** plutôt que les sélecteurs d'éléments (`li`, `span`, `p`) et ne jamais cibler via un sélecteur `#id`.
   - Éviter les *sélecteurs composés* tels que `.modal span` ou `.modal .date` mais plutôt `.modal-date` pour conserver une spécificité minimale.
@@ -60,6 +58,29 @@ selecteur {
 ```
 
 **_Note : La démarche de réordonnement est manuelle, en se servant de cette liste comme référence.**
+
+## Unités
+
+La règle générale est : *"si la valeur doit pouvoir s'adapter à la taille de police de l'utilisateur, utiliser des `rem`, sinon utiliser des `px`"*. Consulter [l'article de Josh Comeau](https://www.joshwcomeau.com/css/surprising-truth-about-pixels-and-accessibility/) pour les détails et cas concrets.
+
+La seconde règle est : *"Éviter d'indiquer une taille à un élément, privilégier la fluidité (`1fr` dans Grid Layout, `flex-grow` dans Flexbox) lorsque cela est possible"*.
+
+La troisième règle est : *"Éviter systématiquement d'imposer une hauteur à un élément possédant du contenu tant que cela est possible"*.
+
+On privilégie le `rem` pour :
+
+- La taille de police (`1rem` est équivalent à `16px`)
+- Les Media Queries (`576px` = `36rem`, `992px` = `62rem`, `1400px` = `87.5rem`)
+
+On privilégie le `px` pour :
+
+- Les espacements verticaux et horizontaux entre les élements (gouttières, rythme vertical)
+- Les dimensions d'éléments non dépendants de la taille de contenu (images)
+
+Autres unités :
+
+- `dvh` pour la hauteur de page (`body`)
+- `pt` exclusivement en feuille de styles print
 
 ## Guidelines Sass / postCSS
 
