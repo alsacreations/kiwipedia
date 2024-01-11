@@ -122,7 +122,7 @@ Le nesting est particulièrement préconisé pour :
   &:hover, &:focus {}
   &::before, &::after {}
   
-  @media (width > 640px) {
+  @media (width > 36rem) {
     &::before {}
   }
 }
