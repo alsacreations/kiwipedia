@@ -8,12 +8,12 @@ Kiwipedia est une base de connaissance technique librement partagée et dont les
 
 💬 Le Web est un métier de plus en plus tentaculaire, comportant un vaste ensemble de thématiques qui vont avoir au final un impact sur le succès auprès de l'internaute&#8239;: **l'accessibilité, la qualité, l'ergonomie, la performance, le référencement (SEO), la maintenabilité**. Tous les critères ne seront pas toujours applicables et le seront bien souvent en fonction du temps alloué.
 
-Cette présente base de connaissances techniques est le fruit de note veille technologique quotidienne et se compose de&#8239;:
+Cette présente base de connaissances techniques est le fruit de notre veille technologique quotidienne et se compose de&#8239;:
 
 - **Guidelines** (bonnes pratiques internes concernant divers langages et technologies web)
 - **Ressources** (documentations diverses, checklists, cheatsheets)
 - **Starters** (tutoriels rapides pour initier des projets)
-- **Configs** (fichiers de configuration tels que `.editorconfig`, `stylelint.config.js`, `tsconfig.json`, `settings.json` pour VScode)
+- **Configs** (fichiers de configuration tels que `.editorconfig`, `stylelintrc.json`, `tsconfig.json`, `settings.json` pour VScode)
 
 ![](images/kiwipedia-illust.jpg)
 
