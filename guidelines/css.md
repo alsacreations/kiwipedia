@@ -99,95 +99,74 @@ Selon les projets, deux options sont envisagées pour bénéficier de ces foncti
 
 Quelle que soit la solution choisie, la méthode de compilation vers CSS dépend du type de projet (statique, Vue, Vite, Webpack, etc.).
 
-### Variables
+## Variables
 
-Les variables Sass sont généralement à éviter au profit des variables présentes dans la configuration du contructeur de classes utilitaires (ex. `font-size: theme('fontSize.18');` pour Tailwind).
-
-Le Constructeur de classes utilitaires propose un fichier de configuration contenant les "variables" de l'ensemble du projet (couleurs, tailles, breakpoints, etc.). Ces variables sont à utiliser en priorité (ex. `font-size: theme('fontSize.18');` pour Tailwind), et nous n'utilisons pas de variables Sass dans nos projets.
+Le Constructeur de classes utilitaires propose un fichier de configuration contenant les "variables" de l'ensemble du projet (couleurs, tailles, breakpoints, etc.). Ces variables sont à utiliser en priorité (ex. `font-size: theme('fontSize.18');` pour Tailwind), et **nous n'utilisons pas de variables Sass dans nos projets**.
 
 **Aucune valeur numérique ne devrait apparaître dans les styles de développement sans être associée à une variable.**
 
-### Breakpoints et Media Queries
+## Notation imbriquée (nesting)
 
-La liste de points de rupture (breakpoints) figure dans la configuration du contructeur de classes utilitaires (ex. `@screen valeur {}` pour Tailwind).
+Nous utilisons **la notation imbriquée (nesting) de CSS natif** car elle facilite la lecture et la maintenabilité du code en évitant de répéter les occurences de chaque sélecteur.
 
-Sauf contre-indication selon projet, les valeurs des breakpoints sont :
+Le nesting est particulièrement préconisé pour :
 
-- `sm: 576px`
-- `md: 992px`
-- `lg: 1400px`
-
-```scss
-// composant card sur écran "lg" ou plus
-@screen lg {
-  .card {
-    display: flex;
-  }
-}
-```
-
-### Notation imbriquée (nesting)
-
-La [Notation imbriquée](https://sass-lang.com/guide#topic-3) (nesting) de Sass ou de CSS natif facilite la lecture et la maintenabilité du code en évitant de répéter les occurences de chaque sélecteur.
-
-Le nesting est particulièrement préconisé :
-
-- Pour les événements tels que `&:hover`, `&:focus`, `&:active`.
-- Pour les pseudo-classes telles que `&:first-child`, `&:empty`, etc.
-- Pour les pseudo-éléments tels que `&::before`, `&::after`.
-- Pour les media queries `@media ()`.
-
-**À éviter** *(duplication du sélecteur .wrapper, rend difficile de trouver, renommer, déplacer, supprimer ces sélecteurs) :*
-
-```scss
-.wrapper {}
-
-.wrapper:hover,
-.wrapper:focus {}
-
-.wrapper::before, 
-.wrapper::after {}
-
-@media (width > 640px) {
-  .wrapper {}
-  .wrapper::before {}
-}
-```
+- Les événements tels que `&:hover`, `&:focus`, `&:active`.
+- Les pseudo-classes telles que `&:first-child`, `&:empty`, etc.
+- Les pseudo-éléments tels que `&::before`, `&::after`.
+- Les media queries `@media ()`.
 
 **À privilégier** *(le nesting permet de réduire les duplications de sélecteurs) :*
 
 ```scss
 .wrapper {
   
-  &:hover,
-  &:focus {}
-  
-  &::before,
-  &::after {}
+  &:hover, &:focus {}
+  &::before, &::after {}
   
   @media (width > 640px) {
-
     &::before {}
   }
 }
 ```
 
-L'inconvénient de la notation imbriquée (nesting) est qu'elle génère des sélecteurs CSS composés donc avec une spécificité qui augmente.
+L'inconvénient de la notation imbriquée est qu'elle génère des sélecteurs CSS composés donc avec une spécificité qui augmente. **Il est conseillé de limiter la syntaxe à un seul niveau d'imbrication.**
 
-**Il est conseillé d'éviter les sélecteurs imbriqués, ou au pire de limiter la syntaxe à un seul niveau d'imbrication.**
+📖 **Ressource complémentaire : ["When to nest?"](https://cloudfour.com/thinks/when-to-nest-css/)**
 
-**À conseiller si vraiment nécessaire** (un seul niveau d'imbrication génère des sélecteurs composés de 2 niveaux au maximum `.home .home-first { … }`) :
+## Breakpoints et Media Queries
 
-```scss
-.home {
-  & .home-first {
-  }
-  & .home-spotlights {
-  }
+La liste de points de rupture (breakpoints) figure dans la configuration du contructeur de classes utilitaires (ex. `@screen valeur {}` pour Tailwind).
+
+Sauf contre-indication selon projet, les valeurs des breakpoints sont :
+
+- `sm: 36rem` // 576px
+- `md: 62rem` // 992px
+- `lg: 87.5rem` // 1400px
+
+```css
+/* composant card sur écran "lg" ou plus, version Tailwind */
+.card {
+    display: flex;
+
+    @screen lg {
+        flex-direction: column;
+    }
 }
 ```
 
-📖 **Ressource complémentaire : ["When to nest?"](https://cloudfour.com/thinks/when-to-nest-css/)**
+Pour les projets sans Tailwind, nous utilisons la syntaxe "moderne" des Media Queries :
+
+```css
+/* composant card sur écran "lg" ou plus, version classique */
+.card {
+    display: flex;
+
+    @media (width >= 87.5rem) {
+        flex-direction: column;
+    }
+}
+```
 
 ## Transitions et animations
 
