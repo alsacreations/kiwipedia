@@ -6,11 +6,9 @@ Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacre
 
 De manière générale et sauf projets d'intégration spécifiques, nous privilégions les méthodologies, langages et outils suivants&nbsp;:
 
-- Méthodologie CSS : **Cube CSS**
-- Préprocesseur **Sass** (syntaxe `.scss`) *ou* Post-processeur (postCSS)
-- Constructeur de classes utilitaires : **Tailwind CSS**
-
-Tous les détails et bonnes pratiques internes concernant ces technologies sont détaillés au sein de ce présent document.
+- Méthodologie CSS : **[Cube CSS](cubecss.md)**
+- Constructeur de classes utilitaires : **[Tailwind CSS](tailwind.md)**
+- (optionnel mais recommandé) Préprocesseur **Sass** (syntaxe `.scss`) *ou* Post-processeur (**postCSS**)
 
 ## Bonnes pratiques CSS globales
 
@@ -23,7 +21,7 @@ Tous les détails et bonnes pratiques internes concernant ces technologies sont 
   - Éviter d’écraser une règle CSS par une autre.
   - La règle `!important` doit être éradiquée si possible du fait de son poids extrêmement important (certaines parties des styles peuvent toutefois exceptionnellement employer à juste titre `!important`).
 - Performances
-  - Durant la phase de développement l'intégration se fait sur plusieurs fichiers CSS (composants, layout, etc.) que l'on rassemble (via `@use` qui [remplace progressivement `@import` dans Sass](https://sass-lang.com/documentation/at-rules/import/)) dans un fichier unique.
+  - Durant la phase de développement l'intégration se fait sur plusieurs fichiers CSS (composants, layout, etc.) que l'on rassemble  dans un fichier unique (par exemple via `@use` qui [remplace progressivement `@import` dans Sass](https://sass-lang.com/documentation/at-rules/import/))
   - Les fichiers CSS doivent être minifiés pour économiser du poids de chargement.
 
 ### Ordre des déclarations
@@ -61,11 +59,11 @@ selecteur {
 
 ## Unités
 
-La règle générale est : *"si la valeur doit pouvoir s'adapter à la taille de police de l'utilisateur, utiliser des `rem`, sinon utiliser des `px`"*. Consulter [l'article de Josh Comeau](https://www.joshwcomeau.com/css/surprising-truth-about-pixels-and-accessibility/) pour les détails et cas concrets.
+La première règle est : *"si la valeur doit pouvoir s'adapter à la taille de police de l'utilisateur, utiliser des `rem`, sinon utiliser des `px`"*. Consulter [l'article de Josh Comeau](https://www.joshwcomeau.com/css/surprising-truth-about-pixels-and-accessibility/) pour les détails et cas concrets.
 
 La seconde règle est : *"Éviter d'indiquer une taille à un élément, privilégier la fluidité (`1fr` dans Grid Layout, `flex-grow` dans Flexbox) lorsque cela est possible"*.
 
-La troisième règle est : *"Éviter systématiquement d'imposer une hauteur à un élément possédant du contenu tant que cela est possible"*.
+La troisième règle est : *"Éviter d'imposer une hauteur à un élément possédant du contenu tant que cela est possible"*.
 
 On privilégie le `rem` pour :
 
@@ -84,7 +82,7 @@ Autres unités :
 
 ## Sass / postCSS
 
-Certaines fonctionnalités CSS indispensables ne sont actuellement pas réalisables en CSS natif&nbsp;:
+Certaines fonctionnalités CSS indispensables ne sont actuellement pas réalisables en natif&nbsp;:
 
 - Concaténation des fichiers lors d'un `@use` (successeur de `@import`)
 - Mixins
