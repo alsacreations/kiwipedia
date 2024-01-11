@@ -82,16 +82,15 @@ Autres unités :
 - `dvh` pour la hauteur de page (`body`)
 - `pt` exclusivement en feuille de styles print
 
-## Guidelines Sass / postCSS
+## Sass / postCSS
 
 Certaines fonctionnalités CSS indispensables ne sont actuellement pas réalisables en CSS natif&nbsp;:
 
 - Concaténation des fichiers lors d'un `@use` (successeur de `@import`)
-- Variables et constantes
 - Mixins
 - Custom Media (Media Queries contenant une variable)
-- (Imbrications de sélecteurs)
-- etc.
+- <del>Imbrications de sélecteurs</del>
+- <del>Variables et constantes</del>
 
 Selon les projets, deux options sont envisagées pour bénéficier de ces fonctionnalités&nbsp;:
 
