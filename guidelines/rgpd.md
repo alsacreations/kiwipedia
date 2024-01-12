@@ -1,4 +1,4 @@
-# Guidelines RGPD
+# Guidelines : RGPD
 
 Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/) concernant **"[Le règlement général sur la protection des données (CNIL)](https://www.cnil.fr/fr/reglement-europeen-protection-donnees) ou RGPD"**. Ces indications sont destinées à évoluer dans le temps et à s'adapter à chaque nouveau projet.
 

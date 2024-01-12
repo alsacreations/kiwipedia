@@ -1,4 +1,4 @@
-# Interopérabilité RGI
+# Guidelines : Interopérabilité RGI
 
 Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/) concernant **"l'Interopérabilité"**. Ces indications sont destinées à évoluer dans le temps et à s'adapter à chaque nouveau projet.
 

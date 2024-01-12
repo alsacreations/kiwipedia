@@ -1,4 +1,4 @@
-# Hébergement statique de Nuxt ou Vue sur S3
+# Ressource : Hébergement statique de Nuxt ou Vue sur S3
 
 1. Créer le bucket, et le nommer comme le host CNAME (l’adresse du site), par exemple "www.example.org"
 2. Dans les propriétés du bucket > _Website hosting_ > _Enabled_ (donner un _Index Document_ par défaut : index.html en général)

@@ -1,4 +1,4 @@
-# Guidelines TypeScript
+# Guidelines : TypeScript
 
 Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/) concernant **"TypeScript"**. Ces indications sont destinées à évoluer dans le temps et à s'adapter à chaque nouveau projet.
 

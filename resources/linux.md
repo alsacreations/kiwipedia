@@ -1,4 +1,4 @@
-# Cheatsheet Linux
+# Cheatsheet : Linux
 
 Commandes utiles pour un serveur de développement ou un serveur web/mail/ftp, notamment sous Ubuntu/Debian.
 

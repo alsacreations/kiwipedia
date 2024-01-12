@@ -1,4 +1,4 @@
-# Sécurité front-end (HTTP)
+# Guidelines : Sécurité front-end (HTTP)
 
 Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/) concernant **"la Sécurité HTTP"**. Ces indications sont destinées à évoluer dans le temps et à s'adapter à chaque nouveau projet.
 

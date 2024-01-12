@@ -1,4 +1,4 @@
-# Ecoconception
+# Guidelines : Ecoconception
 
 Actions mises en place par Alsacréations pour répondre au [Référentiel général d'écoconception de services numériques (RGESN)](https://ecoresponsable.numerique.gouv.fr/publications/referentiel-general-ecoconception/)
 

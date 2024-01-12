@@ -1,4 +1,4 @@
-# Commandes Git (cheatsheet)
+# Cheatsheet : Commandes Git
 
 🔖 Voir aussi
 

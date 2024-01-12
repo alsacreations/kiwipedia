@@ -1,4 +1,4 @@
-# Guidelines : Vue.js, Nuxt et Front-End en général
+# Guidelines : VueJS, Nuxt et Front-End en général
 
 Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/) concernant **"VueJS"**. Ces indications sont destinées à évoluer dans le temps et à s'adapter à chaque nouveau projet.
 

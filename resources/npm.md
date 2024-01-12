@@ -1,4 +1,4 @@
-# Cheatsheet NPM
+# Cheatsheet : NPM
 
 * [npm](https://www.npmjs.com/) embarqué par Node.
 * ou [pnpm](https://pnpm.io/)
