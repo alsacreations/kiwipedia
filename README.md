@@ -32,7 +32,7 @@ Les thématiques suivantes sont **au c&oelig;ur de notre activité** d'agence we
 
 Ces thématiques couvrent l'ensemble des domaines auxquels une agence web est confrontée. Les connaître doit faire partie de notre périmètre de compétences&#8239;:
 
-- [**Guidelines Performances**](guidelines/performance.md)
+- [**Guidelines Performances**](guidelines/performances.md)
 - [**Guidelines Interopérabilité**](guidelines/interoperabilite.md)
 - [**Guidelines RGPD**](guidelines/rgpd.md)
 - [**Guidelines Écoconception**](guidelines/ecoconception.md)
