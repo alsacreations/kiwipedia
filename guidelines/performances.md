@@ -232,102 +232,17 @@ img {
 
 ## Polices (fonts)
 
-Autant que possible, privilégier le chargement de polices légères et respectueuses des performances. Limiter le nombre de ces polices à 2, voire 3 grand maximum.
-
-### Recommandations générales
-
-- Privilégier la police système `system-ui` pour les textes de contenus (raison : performance + UX + Layout Shifts).
-- Privilégier le format `.woff2` (et `.woff` en alternative).
-- Limiter à 2 ou 3 fichiers de police au maximum (regular, bold, italic), sinon préférer une [Variable Font](https://v-fonts.com/) (voir la partie dédiée ci-dessous)
-- Utiliser la directive `<link rel="preload">` pour charger les polices de manière asynchrone.
-- Ajouter `font-display: swap;` au sein de la règle `@font-face` pour éviter les effets de FOIT. Si la police est pré-chargée, `font-display: optional;` est alors recommandé.
-- Héberger la police sur son propre serveur (voir l'outil "Google Webfont Helper").
-
-### Outils d'optimisation et de tests de polices
-
-- FontSquirrel webfont generator : <https://www.fontsquirrel.com/tools/webfont-generator>
-- Transfonter : <https://transfonter.org/>
-- Wakamai Fondue : <https://wakamaifondue.com/>
-- Glyphhanger (NPM) : <https://github.com/zachleat/glyphhanger>
-
-### Code recommandé pour les polices
-
-Voici un exemple de chargement de police conseillé (cas de deux fichiers de police regular et bold) :
-
-```html
-<!-- Dans le <head> après
-     la feuille de styles pour ne pas la bloquer -->
-<link rel="preload" as="font" href="kiwi.woff2" 
-      type="font/woff2" crossorigin="anonymous">
-```
-
-⚠️ Noter ci-dessous que le nom de la font-family est toujours le même ("kiwi") et qu'il ne faut pas confondre avec le nom du fichier.
-
-```css
-@font-­face {
-  font-­family: "kiwi";
-  src: url("kiwi.woff2") format("woff2"), 
-    url("kiwi.woff") format("woff"); /* dans cet ordre */
-  font-weight: normal;
-  font-style: normal;
-  font-display: optional; /* on évite les layout shifts */
-}
-@font-­face {
-  font-­family: "kiwi";
-  src: url("kiwi-bold.woff2") format("woff2"), 
-    url("kiwi-bold.woff") format("woff");
-  font-weight: bold;
-  font-style: normal;
-  font-display: optional;
-}
-```
-
-### Google Webfont Helper
-
-[Google Webfont Helper](https://gwfh.mranftl.com/fonts) génère le code CSS nécessaire, optimise finement les fichiers et permet de les héberger sans faire appel à Google en choisissant le bon subset (latin, latin-ext, etc.), les variantes (normal, bold, italic, etc.)
-
-### Cas des Variable Fonts
-
-Les variable fonts sont des familles de polices intégrant diverses variantes (dites "axis") au sein d'un même fichier. Il peut s'agir de graisses, italique, stretch voire de toute autre variante personnalisée par l'auteur de la fonte.
-
-Une variable font est systématiquement recommandée dès lors qu'un projet nécessite plus de 3 ou 4 variantes parmi celles-ci : regular, italic, light, semi-bold, bold, bold italic, etc. Cette fonctionnalité est aujourd'hui reconnue par plus de 95% des navigateurs.
-
-Comme pour les fontes classiques, le format `.woff2` ainsi que l'hébergement de la fonte sont préconisés (les fontes variables peuvent être trouvées sur [Google Fonts](https://fonts.google.com/?vfonly=true) en activant la case "show only variable fonts" puis téléchargées en `.ttf` via le bouton "Download family". Un convertisseur tel que [Cloud converter](https://cloudconvert.com/ttf-to-woff2) pourra produire la version `.woff2`.
-
-#### Code recommandé pour les variable fonts
-
-```css
-@font-face {
-  font-family: "variable";
-  src:
-    url("variable.woff2") format("woff2") tech("variations"),
-    url("variable.woff2") format("woff2-variations");
-  font-display: swap;
-  font-weight: 100 900;
-}
-```
-
-#### Modification des variantes (axis)
-
-Toutes les variantes d'une fonte variable sont modifiables via la propriété `font-variation-settings`. Certains de ces axis sont normalisés et disposent d'un équivalent en propriété CSS :
-
-| Axe      | Propriété CSS   |
-|---     |---             |
-| "wght"  | `font-weight`   |
-| "wdth" | `font-stretch`   |
-| "slnt"  | `font-style` oblique + angle   |
-| "ital"  | `font-style: italic`   |
-| "opsz"  | `font-optical-sizing`   |
-
-Ainsi, pour modifier la graisse d'une police, les deux syntaxes sont possibles : `font-variation-settings: 'wght' 625;` ou `font-weight: 625;`. Il est même possible de passer par une variable CSS ainsi `font-variation-settings: 'wght' var(--text-axis);`
+🔖 Voir [Guidelines CSS](css.md), partie "Fonts"
 
 ## JavaScript
+
+🔖 Voir [Guidelines JavaScript](javascript.md).
 
 🔖 Voir <https://www.julienpradet.fr/tutoriels/comment-alleger-son-javascript/>
 
 ## Icônes
 
-Voir [Guidelines Icônes](Guidelines-Icones.md).
+🔖 Voir [Guidelines Icônes](icons.md).
 
 ## Hébergement
 

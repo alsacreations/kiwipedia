@@ -256,9 +256,91 @@ Ainsi, un exemple de bouton qui s'adapte automatiquement aux modes light ou dark
 >Hey !</button>
 ```
 
-## Fonts, polices de caractère
+## Polices (fonts)
 
-On privilégie l'auto-hébergement des fichiers de police, sans passer par Google Fonts <https://gwfh.mranftl.com/fonts>
+### Recommandations générales
+
+- On privilégie la police système `system-ui` pour les textes de contenus (raison : performance + UX + Layout Shifts).
+- On privilégie le format `.woff2`.
+- On limite à 2 ou 3 fichiers de police au maximum (regular, bold, italic), sinon préférer une [Variable Font](https://v-fonts.com/) (voir la partie dédiée ci-dessous)
+- On utilise la directive `<link rel="preload">` pour charger les polices de manière asynchrone.
+- On applique `font-display: swap;` au sein de la règle `@font-face` pour éviter les effets de FOIT. Si la police est pré-chargée, `font-display: optional;` est alors recommandé.
+- On héberge la police sur son propre serveur (voir l'outil "Google Webfont Helper").
+- On utilise les valeurs chiffrées pour les graisses de police (`font-weight`) :
+  - `100` plutôt que `thin`
+  - `200` plutôt que `extralight`
+  - `300` plutôt que `light`
+  - `400` plutôt que `normal`
+  - `500` plutôt que `medium`
+  - `600` plutôt que `semibold`
+  - `700` plutôt que `bold`
+  - `800` plutôt que `extrabold`
+  - `900` plutôt que `black`
+
+### Outils d'optimisation et de tests de polices
+
+- FontSquirrel webfont generator : <https://www.fontsquirrel.com/tools/webfont-generator> (ou Transfonter : <https://transfonter.org/>)
+- Wakamai Fondue : <https://wakamaifondue.com/>
+- Glyphhanger (NPM) : <https://github.com/zachleat/glyphhanger>
+
+### Code recommandé pour les polices
+
+Voici un exemple de chargement de police conseillé (cas de deux fichiers de police regular et bold) :
+
+```html
+<!-- Dans le <head> après
+     la feuille de styles pour ne pas la bloquer -->
+<link rel="preload" as="font" href="kiwi.woff2" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" as="font" href="kiwi-bold.woff2" type="font/woff2" crossorigin="anonymous">
+```
+
+⚠️ Noter ci-dessous que le nom de la font-family est toujours le même ("kiwi") et qu'il ne faut pas confondre avec le nom du fichier.
+
+```css
+@font-­face {
+  font-­family: "kiwi";
+  src: url("kiwi.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; /* ou "optional" pour éviter les layout shifts */
+}
+@font-­face {
+  font-­family: "kiwi";
+  src: url("kiwi-bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+```
+
+### Google Webfont Helper
+
+[Google Webfont Helper](https://gwfh.mranftl.com/fonts) génère le code CSS nécessaire, optimise finement les fichiers et permet de les héberger sans faire appel à Google en choisissant le bon subset (latin, latin-ext, etc.), les variantes (normal, bold, italic, etc.)
+
+### Cas des Variable Fonts
+
+Une variable font est systématiquement recommandée dès lors qu'un projet nécessite plus de 3 ou 4 variantes parmi celles-ci : regular, italic, light, semi-bold, bold, bold italic, etc. Cette fonctionnalité est aujourd'hui reconnue par plus de 95% des navigateurs.
+
+Comme pour les fontes classiques, le format `.woff2` ainsi que l'hébergement de la fonte sont préconisés (les fontes variables peuvent être trouvées sur [Google Fonts](https://fonts.google.com/?vfonly=true) en activant la case "show only variable fonts" puis téléchargées en `.ttf` via le bouton "Download family". Un convertisseur tel que [Cloud converter](https://cloudconvert.com/ttf-to-woff2) pourra produire la version `.woff2`.
+
+#### Code recommandé pour les variable fonts
+
+```css
+@font-face {
+  font-family: "variable";
+  src:
+    url("variable.woff2") format("woff2") tech("variations"),
+    url("variable.woff2") format("woff2-variations");
+  font-display: swap;
+  font-weight: 100 900;
+}
+```
+
+#### Modification des variantes (axis)
+
+Toutes les variantes d'une fonte variable sont modifiables via la propriété `font-variation-settings`. Certains de ces axis sont normalisés et disposent d'un équivalent en propriété CSS.
+
+Ainsi, pour modifier la graisse d'une police, les deux syntaxes sont possibles : `font-variation-settings: 'wght' 625;` ou `font-weight: 625;`. Il est même possible de passer par une variable CSS ainsi `font-variation-settings: 'wght' var(--text-weight);`
 
 ## Bonus : Media print (impression)
 
