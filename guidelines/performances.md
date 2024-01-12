@@ -195,40 +195,7 @@ Quelques ressources :
 
 ## Images
 
-- Toujours indiquer les dimensions initiales de l'image (`width` et `height`) dans le HTML pour que le navigateur puisse calculer le **ratio** et éviter des Layout Shifts.
-- Utiliser des formats d'images modernes et plus légers (Webp, Avif) à condition que le processus d'encodage/décodage soit lui-même rapide.
-- `max-width: 100%` pour que l'image s'adapte en largeur à son conteneur (images fluides).
-- `height: auto` pour que le navigateur applique le ratio systématiquement.
-- `background-color` sur l'image pour indiquer visuellement l'espace qui sera occupé quand elle sera chargée (placeholder).
-
-### Code recommandé
-
-```html
-<!-- Dimensions initiales de l'image -->
-<img src="image.webp" alt="" width="2000" height="1000">
-```
-
-```css
-img {
-  max-width: 100%; /* largeur fluide */
-  height: auto; /* ratio préservé */
-  background: gray; /* placeholder en attendant */
-}
-```
-
-### Outils d'optimisation d'images
-
-- Universel en ligne : <https://squoosh.app/> avec aperçu avant/après, redimensionnement, autres options (PNG, JPEG, WEBP)
-- MacOS : <https://github.com/antonreshetov/image-optimizer> très facile par drag&drop et traitement par lot (PNG, JPEG, GIF, SVG) ou <https://imageoptim.com/fr>
-- SVG : <https://jakearchibald.github.io/svgomg/>
-- AVIF : <https://avif.io> en ligne ou <https://github.com/lovell/avif-cli> en ligne de commande
-- <https://sharp.pixelplumbing.com>
-- <https://www.smashingmagazine.com/2022/07/powerful-image-optimization-tools/>
-
-### Outils d'optimisation vidéo et audio
-
-- [Handbrake](https://handbrake.fr/)
-- [Audacity](https://www.audacityteam.org/)
+🔖 Voir [Guidelines HTML](html.md), partie "Images"
 
 ## Polices (fonts)
 

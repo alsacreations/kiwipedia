@@ -20,32 +20,32 @@ Sauf spécificités contraires :
 <!DOCTYPE html>
 <html lang="fr" class="no-js">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Titre unique de la page - Nom du site</title>
     <!-- Pas de ressources bloquantes avant le chargement des styles -->
-    <link rel="stylesheet" href="/assets/css/styles.css" />
-    <link rel="stylesheet" href="/assets/css/print.css" media="print" />
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/print.css" media="print">
 
-    <meta name="description" content="Description de la page" />
-    <meta property="og:title" content="Titre unique de la page - Nom du site" />
-    <meta property="og:description" content="Description de la page" />
-    <meta property="og:image" content="https://www.example.com/image.jpg" />
-    <meta property="og:image:alt" content="Description de l'image" />
-    <meta property="og:locale" content="fr_FR" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Nom du site" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta property="og:url" content="https://www.example.com/page" />
-    <link rel="canonical" href="https://www.example.com/page" />
+    <meta name="description" content="Description de la page">
+    <meta property="og:title" content="Titre unique de la page - Nom du site">
+    <meta property="og:description" content="Description de la page">
+    <meta property="og:image" content="https://www.example.com/image.jpg">
+    <meta property="og:image:alt" content="Description de l'image">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Nom du site">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:url" content="https://www.example.com/page">
+    <link rel="canonical" href="https://www.example.com/page">
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="alternate icon" href="/favicon.ico" />
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff8a01" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="alternate icon" href="/favicon.png">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff8a01">
 
-    <link rel="manifest" href="/site.webmanifest" />
-    <meta name="theme-color" content="#abc737" />
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#abc737">
   </head>
 
   <body>
@@ -87,7 +87,7 @@ La langue de la page est systématiquement renseignée via un attribut dans l’
 Les langues alternatives en cas de site multilingue sont indiquées par une balise link de type _alternate_.
 
 ```html
-<link rel="alternate" href="https://en.example.com/" hreflang="en" />
+<link rel="alternate" href="https://en.example.com/" hreflang="en">
 ```
 
 ### Encodage
@@ -95,7 +95,7 @@ Les langues alternatives en cas de site multilingue sont indiquées par une bali
 L’encodage du document (en UTF-8) est systématiquement renseigné via un élément meta dans le `<head>` :
 
 ```html
-<meta charset="UTF-8" />
+<meta charset="UTF-8">
 ```
 
 ### Titre de la page
@@ -111,12 +111,12 @@ Le titre de page, différent à chaque page, d'une longueur maximum de 55 caract
 Pour une adaptation du site web vers les terminaux mobiles, l’élément `<meta name="viewport">` est ajouté dans la partie `<head>`.
 
 ```html
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
 ```
 
 **_Note : Les syntaxes empêchant l’agrandissement des contenus par le visiteur seront proscrites (maximum-scale=1, user-scalable=no, etc.)._**
 
-Documentation : [https://www.alsacreations.com/article/lire/1490-comprendre-le-viewport-dans-le-web-mobile.html](https://www.alsacreations.com/article/lire/1490-comprendre-le-viewport-dans-le-web-mobile.html)
+🔖 Voir [https://www.alsacreations.com/article/lire/1490-comprendre-le-viewport-dans-le-web-mobile.html](https://www.alsacreations.com/article/lire/1490-comprendre-le-viewport-dans-le-web-mobile.html)
 
 ### Favicon
 
@@ -125,9 +125,9 @@ L’icône de favori (favicon) est utilisée de différentes manières par les n
 La syntaxe recommandée pour les navigateurs modernes est celle-ci :
 
 ```html
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="alternate icon" href="/favicon.ico" />
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff8a01" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate icon" href="/favicon.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff8a01">
 ```
 
 Les navigateurs ne supportant pas le format `svg` vont ignorer la première instruction.
@@ -162,7 +162,9 @@ Chaque page doit comprendre un élément de titre de premier niveau `<h1>` et la
 
 ## Accessibilité
 
-Une attention toute particulière sera apportée à l’accessibilité des documents afin que chaque utilisateur, quelle que soit sa défaillance, puisse avoir plein accès aux contenus proposés. Voir aussi [Guidelines Accessibilité](Guidelines-Accessibilite.md).
+Une attention toute particulière sera apportée à l’accessibilité des documents afin que chaque utilisateur, quelle que soit sa défaillance, puisse avoir plein accès aux contenus proposés.
+
+🔖 Voir [Guidelines Accessibilité](accessibility.md).
 
 ## Formulaires
 
@@ -171,13 +173,50 @@ Privilégier au maximum la conception propre et ergonomique de formulaires avec 
 - Les étiquettes `<label>` reliées à chaque `<input>`, `<textarea>`, etc. grâce aux attributs `for`/`id`.
 - L'attribut [autocomplete](https://web.dev/learn/forms/autofill/) pour faciliter la saisie.
 
+## Images
+
+- Toujours indiquer les dimensions initiales de l'image (`width` et `height`) dans le HTML pour que le navigateur puisse calculer le **ratio** et éviter des Layout Shifts.
+- Utiliser des formats d'images modernes et plus légers (Webp, Avif) à condition que le processus d'encodage/décodage soit lui-même rapide.
+- `max-width: 100%` pour que l'image s'adapte en largeur à son conteneur (images fluides).
+- `height: auto` pour que le navigateur applique le ratio systématiquement.
+- `background-color` sur l'image pour indiquer visuellement l'espace qui sera occupé quand elle sera chargée (placeholder).
+
+### Code recommandé
+
+```html
+<!-- Dimensions initiales de l'image -->
+<img src="image.webp" alt="" width="2000" height="1000">
+```
+
+```css
+img {
+  max-width: 100%; /* largeur fluide */
+  height: auto; /* ratio préservé */
+  background: gray; /* placeholder en attendant */
+}
+```
+
+### Outils d'optimisation d'images
+
+- Universel en ligne : <https://squoosh.app/> avec aperçu avant/après, redimensionnement, autres options (PNG, JPEG, WEBP)
+- MacOS : <https://github.com/antonreshetov/image-optimizer> très facile par drag&drop et traitement par lot (PNG, JPEG, GIF, SVG) ou <https://imageoptim.com/fr>
+- SVG : <https://jakearchibald.github.io/svgomg/>
+- AVIF : <https://avif.io> en ligne ou <https://github.com/lovell/avif-cli> en ligne de commande
+- <https://sharp.pixelplumbing.com>
+- <https://www.smashingmagazine.com/2022/07/powerful-image-optimization-tools/>
+
+### Outils d'optimisation vidéo et audio
+
+- [Handbrake](https://handbrake.fr/)
+- [Audacity](https://www.audacityteam.org/)
+
 ## Microdata
 
 Dans la mesure du possible, et selon le type de site, les microformats les plus courants seront ajoutés.
 
 Vocabulaire privilégié : [https://schema.org](https://schema.org) (promu et utilisé par Google, Yahoo, Bing, Yandex) avec toute la [hiérarchie](https://schema.org/docs/full.html) de types prévus.
 
-Documentation : [https://www.alsacreations.com/article/lire/1509-microdata-microformats-schema-semantique.html](https://www.alsacreations.com/article/lire/1509-microdata-microformats-schema-semantique.html)
+🔖 Documentation : [https://www.alsacreations.com/article/lire/1509-microdata-microformats-schema-semantique.html](https://www.alsacreations.com/article/lire/1509-microdata-microformats-schema-semantique.html)
 
 ## Classes et états
 
@@ -187,7 +226,9 @@ Documentation : [https://www.alsacreations.com/article/lire/1509-microdata-micro
 
 ## Liens target `\_blank`
 
-Dans la mesure du possible, éviter les liens ouvrant une nouvelle fenêtre/onglet, sans les signaler explicitement. Ils perturbent la navigation classique du visiteur et peuvent créer des failles de sécurité. Voir aussi [https://medium.com/@jitbit/target-blank-the-most-underestimated-vulnerability-ever-96e328301f4c](https://medium.com/@jitbit/target-blank-the-most-underestimated-vulnerability-ever-96e328301f4c).
+Dans la mesure du possible, éviter les liens ouvrant une nouvelle fenêtre/onglet, sans les signaler explicitement. Ils perturbent la navigation classique du visiteur et peuvent créer des failles de sécurité.
+
+🔖 Voir [https://medium.com/@jitbit/target-blank-the-most-underestimated-vulnerability-ever-96e328301f4c](https://medium.com/@jitbit/target-blank-the-most-underestimated-vulnerability-ever-96e328301f4c).
 
 **_Toujours utiliser `rel="noopener"` sur des liens `target="_blank"`_**
 
