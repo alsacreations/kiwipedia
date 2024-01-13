@@ -184,8 +184,17 @@ Privilégier au maximum la conception propre et ergonomique de formulaires avec 
 ### Code recommandé
 
 ```html
-<!-- Dimensions initiales de l'image -->
-<img src="image.webp" alt="" width="2000" height="1000">
+<!-- Format unique (webp), moins optimal -->
+<img src="kiwi.webp" alt="kiwi" decoding="async" loading="lazy" 
+       width="2000" height="1000">
+
+<!-- Formats avif + webp -->
+<picture>
+  <source type="image/avif" srcset="kiwi.avif">
+  <source type="image/webp" srcset="kiwi.webp">
+  <img src="kiwi.jpg" alt="kiwi" decoding="async" loading="lazy" 
+       width="2000" height="1000">
+</picture>
 ```
 
 ```css
