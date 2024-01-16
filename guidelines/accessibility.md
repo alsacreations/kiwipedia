@@ -797,7 +797,7 @@ Ajouter également `focusable="false"`pour éviter que la touche *Tab* ne navigu
 ```xml
 <svg role="img" focusable="false" aria-labelledby="title">
   <title id="title">Le nom accessible</title>
-  <use xlink:href="#svg-id-to-reference" aria-hidden="true" />
+  <use href="#id-du-svg" aria-hidden="true" />
   <!-- contenu du SVG -->
 </svg>
 ```
@@ -806,7 +806,7 @@ ou bien (si l'infobulle au survol n'est pas souhaitée) :
 
 ```xml
 <svg role="img" aria-label="Nom accessible" focusable="false">
-  <use xlink:href="#..." aria-hidden="true"></use>
+  <use href="#id-du-svg" aria-hidden="true"></use>
 </svg>
 ```
 
