@@ -833,22 +833,6 @@ Les images au format SVG qui sont décoratives doivent être correctement ignor�
 <img src="image.svg" alt="" aria-hidden="true">
 ```
 
-Dans le cas d'une image SVG à portée informative, l'élément `<svg>` doit avoir :
-
-- un attribut `role="img"`
-- un intitulé avec soit l'attribut `aria-label`, soit avec un élément `<title>` (lié avec l'attribut `aria-labelledby` qui reprend l'identifiant (`id`) de l'élément `<title>`.)
-- avoir un attribut `focusable="false"` pour éviter de naviguer au sein du SVG.
-
-```html
-<!-- Le SVG a un intitulé avec l'attribut aria-label -->
-<svg role="img" aria-label="Démarche en cours" focusable="false"></svg>
-
-<!-- Le SVG a un intitulé avec l'élément <title> -->
-<svg role="img" aria-labelledby="title-svg" focusable="false">
-  <title id="title-svg">Démarche en cours</title>
-</svg>
-```
-
 #### SVG dans lien ou dans un bouton
 
 La méthode `aria-label="Nom accessible"` est mal supportée par certaines assistances techniques lorsque le SVG est contenu dans un lien ou un bouton.
