@@ -780,83 +780,91 @@ Exemple d’une image de **décoration** :
 <img src="kiwiparty.png" alt="">
 ```
 
-### Images SVG et accessibilité
+### SVG et accessibilité
 
 Les exemples à suivre proviennent du [Design System du W3C](https://design-system.w3.org/styles/svg-icons.html) ainsi que de l'article [Contextually Marking up accessible images and SVGs](https://www.scottohara.me/blog/2019/05/22/contextual-images-svgs-and-a11y.html) et [Les images SVG sont de plus en plus utilisées sur le web mais qu’en est-il de leur accessibilité ?](https://a11y-guidelines.orange.com/fr/articles/svg-accessibles/).
 
 **Important :** Toujours commencer par nettoyer proprement les fichiers SVG (avec [SVGOMG](https://jakearchibald.github.io/svgomg/)) car les éditeurs graphiques ajoutent de nombreux éléments inutiles tels que des `<title>` de type "créé par Sketch".
 
-#### Image SVG porteuse d'information
+#### SVG inline et porteur d'information
 
-**Cas d'un SVG inline :**
-
-Ajouter l'attribut `role="img"` pour indiquer aux lecteurs d'écrans de la considérer comme une image et lui éviter de lire tous les nœuds HTML du SVG.
-Il faut ensuite ajouter un `<title>` (ou un `aria-label`) pour expliciter la fonction de l'image.
-Ajouter également `focusable="false"`pour éviter que la touche *Tab* ne navigue au sein du SVG.
+- Ajouter l'attribut `role="img"` pour indiquer aux lecteurs d'écrans de la considérer comme une image et lui éviter de lire tous les nœuds HTML du SVG.
+- Ajouter un `<title>` (ou un `aria-label`) pour expliciter la fonction de l'image.
+- `focusable="false"` était nécessaire pour éviter un bug Internet Explorer. Il est inutile aujourd'hui.
 
 ```xml
-<svg role="img" focusable="false" aria-labelledby="title">
+<svg role="img" aria-labelledby="title">
   <title id="title">Le nom accessible</title>
   <use href="#id-du-svg" aria-hidden="true" />
   <!-- contenu du SVG -->
 </svg>
 ```
 
-ou bien (si l'infobulle au survol n'est pas souhaitée) :
+ou bien (avec `aria-label` si l'infobulle au survol n'est pas souhaitée) :
 
 ```xml
-<svg role="img" aria-label="Nom accessible" focusable="false">
+<svg role="img" aria-label="Nom accessible">
   <use href="#id-du-svg" aria-hidden="true"></use>
 </svg>
 ```
 
-**Cas d'une image SVG :**
+#### SVG externe et porteur d'information
 
-Ajouter l'attribut `role="img"`.
+- Ajouter l'attribut `role="img"`.
+- Attribut `alt` contenant le nom accessible
 
-```xml
+```html
 <img src="image.svg" role="img" alt="Nom accessible">
 ```
 
-#### Image SVG décorative
-
-Les images au format SVG qui sont décoratives doivent être correctement ignorées. Pour cela, l'élément `<svg>` :
+#### SVG inline et décoratif
 
 - doit avoir l'attribut `aria-hidden="true"`
 - ne doit pas contenir d'éléments `<title>` ni `<desc>`
 - ne doit pas contenir d'attribut `title`, `aria-label`, `aria-labelledby`, `role="img"`
-- avoir un attribut `focusable="false"` pour éviter de naviguer au sein du SVG.
+- `focusable="false"` était nécessaire pour éviter un bug Internet Explorer. Il est inutile aujourd'hui.
+
+```xml
+<svg aria-hidden="true">
+  <!-- contenu du SVG -->
+</svg>
+```
+
+#### SVG externe et décoratif
+
+- doit avoir un attribut `alt` vide
+- doit avoir l'attribut `aria-hidden="true"`
 
 ```html
-<svg aria-hidden="true" focusable="false"><!-- contenu du SVG --></svg>
-<!-- ou -->
 <img src="image.svg" alt="" aria-hidden="true">
 ```
 
 #### SVG dans lien ou dans un bouton
 
-La méthode `aria-label="Nom accessible"` est mal supportée par certaines assistances techniques lorsque le SVG est contenu dans un lien ou un bouton.
+Deux méthodes sont possibles et accessibles :
 
-Il est préférable d'utiliser un `<span>` invisible pour le nom accessible s'il doit être masqué à l'écran, le texte sera alors retranscrit par les lecteurs d’écrans.
+- La méthode `aria-label="Nom accessible"` sur le lien ou le bouton.
+- Texte dans un `<span>` invisible pour le nom accessible s'il doit être masqué à l'écran, le texte sera alors retranscrit par les lecteurs d’écrans.
 
-**Cas d'un SVG inline :**
+**Méthode aria-label :**
 
 ```xml
-<a href="#">
-  <svg aria-hidden="true" focusable="false">
+<button aria-label="Nom accessible masqué à l'écran">
+  <svg aria-hidden="true">
     <!-- contenu du SVG -->
   </svg>
-  <span class="sr-only">Nom accessible masqué à l'écran</span>
-</a>
+</button>
 ```
 
-**Cas d'une image SVG :**
+**Méthode texte masqué :**
 
-```html
-<a href="#">
-  <img src="image.svg" alt="">
-  Nom accessible visible à l'écran
-</a>
+```xml
+<button>
+  <svg aria-hidden="true">
+    <!-- contenu du SVG -->
+  </svg>
+  <span class="visually-hidden">Nom accessible masqué à l'écran</span>
+</button>
 ```
 
 ### Image complexe
