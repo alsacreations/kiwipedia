@@ -27,7 +27,7 @@ Les dépendances fortement recommandées sont :
 - [pinia](https://pinia.vuejs.org/) (store)
 - [vue-router](https://router.vuejs.org/) (routage)
 - [vue-i18n](https://kazupon.github.io/vue-i18n/) (traduction) et [vue-i18n-loader](https://www.npmjs.com/package/@intlify/vue-i18n-loader)
-- [vueuse/head](<https://github.com/vueuse/head> : Balises meta, SEO.
+- [vueuse/head](https://github.com/vueuse/head) : Balises meta, SEO.
 - [vueuse](https://vueuse.org/): Utilités composition API (debounce, click-outside, etc.)
 
 👉 Avant l'ajout d’une dépendance au projet (`npm install`) vérifier le poids avec <https://bundlephobia.com/>.
