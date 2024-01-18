@@ -78,7 +78,7 @@ Attention : les composants doivent rester lisibles, il ne faut donc pas hésiter
   </button>
 </template>
 
-<style coped>
+<style scoped>
 button {
   color: hotpink;
 }
