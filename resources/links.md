@@ -555,6 +555,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 ### WebRTC, MediaCapture
 
+- <https://webrtcforthecurious.com/> WebRTC pour les curieux
 - <https://appr.tc/> Démo de chat vidéo en peer to peer avec HTML5
 
 ### Vidéo
