@@ -31,11 +31,17 @@ Les déclarations au sein d'une règle CSS sont ordonnées de façon à faire ap
 Voici dans quel ordre nous déclarons nos propriétés :
 
 1. Propriété **`display`** : tout ce qui affecte le rendu par défaut de l’élément
-2. **Positionnement** : tout ce qui détermine la position de l’élément
-3. **Modèle de boîte** : tout ce qui influe sur les dimensions de l’élément
+2. **Positionnement** : tout ce qui détermine la position de l’élément (`position`, `top`, `z-index`, , `overflow` etc.)
+3. **Modèle de boîte** : tout ce qui influe sur les dimensions de l’élément (`width`, `height`, `margin`, `padding`, etc.)
 4. **Transformations** et **transitions**
-5. **Typographie** : tout ce qui détermine les caractéristiques de la police de caractères
-6. **Décoration** : les propriétés purement ornementales
+5. **Typographie** : tout ce qui détermine les caractéristiques de la police de caractères (`color`, `font-size`, `line-height`, etc.)
+6. **Décoration** : les propriétés purement ornementales (`background-color`, `border`, `border-radius`, etc.)
+
+Règles additionnelles :
+
+- On sépare visuellement (ligne vide) les déclarations en trois groupes : display+positionnement+boîte, puis typographie, puis décorations.
+- Les media queries s'écrivent à la fin des règles sur l'élément, séparées par une ligne vide.
+- On écrit `margin` avant `padding`.
 
 Exemple :
 
@@ -44,14 +50,21 @@ selecteur {
   display: inline-block;
   position: relative;
   top: -1em;
-  z-index: 1337;
-  max-width: 50%;
-  margin: 1em;
+  z-index: var(--index-base);
+  margin: var(--spacing-1);
   padding: 0;
-  overflow: hidden;
+
+  color: var(--colors-hotpink);
   text-align: right;
-  font: bold 1.5em/1.3 arial, verdana, sans-serif;
+  font-family: system-ui, arial, sans-ferif;
+  font-weight: var(--font-900);
+
+  border: 1px solid pink;
   background: rgba(0, 0, 0, 0.5);
+
+  @media (width > 576px) {
+    display: block;
+  }
 }
 ```
 
