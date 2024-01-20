@@ -14,49 +14,52 @@ Ce document est divisé en trois parties :
 
 - Le code produit est valide et respecte les [standards W3C](https://www.w3.org/standards/).
 - [Utiliser les éléments HTML pour leur fonction/sémantique](#s%C3%A9mantique-html) et non pas pour leur forme.
-- Renseigner la langue avec l'attribut `lang` sur `<html>` (et dans le contenu le cas échéant).
+- Renseigner la langue par défaut de chaque page avec l'attribut `lang` sur `<html>`.
 - Indiquer avec l'attribut `lang` les changements de langue locaux dans les blocs d'une page.
 - Utiliser un [titre `<title>` pertinent](#titres-de-page) pour chaque page.
-- Respecter la hiérarchie des titres `<hX>`.
-- Utiliser les [landmarks ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/landmark_role) avec leur rôles explicites (ex: `<main role="main">`, demandé par RGAA)
-- Cacher correctement les contenus qui ne devraient *pas* être retranscrits par un lecteur d’écran (ex. `aria-hidden="true"`).
-- Prévoir au moins [un lien d'évitement](#liens-dévitement-skip-link) permettant d'accéder directement au contenu principal.
+- Respecter la hiérarchie des titres `<hX>`, dont au moins un `<h1>`.
+- Utiliser les [landmarks ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/landmark_role) avec leurs rôles explicites (ex: `<main role="main">`, encore demandé par RGAA 4.1)
+- Ignorer correctement les contenus qui ne devraient *pas* être retranscrits par un lecteur d’écran (ex. `aria-hidden="true"`).
+- Prévoir au moins [un lien d'accès rapide](#liens-dévitement-skip-link) ("lien d'évitement") permettant d'accéder directement au contenu principal.
 - Donner [un intitulé explicite à tous les liens](#liens).
 - Signaler lorsqu’un lien [s’ouvre dans une nouvelle fenêtre](#ouverture-dans-une-nouvelle-fenêtre-lien-externe).
 
 ### CSS
 
-- Ne pas fixer de hauteur sur les éléments afin que le contenu reste lisible lorsque le texte est zoomé.
-- Travailler avec des tailles de polices fluides `rem` ou `em` pour permettre l'agrandissement.
-- Ne pas supprimer l'outline autour des éléments cliquables/focusables (pas de `outline: none`) [ou utiliser `:focus-visible`](#outline-et-focus).
+- Ne pas fixer de hauteur sur les éléments afin que le contenu reste lisible lorsque le texte est zoomé. Les éléments décoratifs et l'attribut height `<img height="200">` ne sont pas concernés.
+- Ne pas supprimer l'outline autour des éléments cliquables/focusables (pas de `outline: none`) [ou utiliser `:focus-visible`](#outline-et-focus), ne pas dégrader l'outline par défaut des navigateurs.
 - Ne pas employer de contenu généré (`::before`, `::after`) pour [véhiculer des informations ou pour afficher des icônes](#css-generated-content).
-- Masquer correctement [les contenus qui devraient être lus par un lecteur d’écran](#contenu-lu-mais-masqué-à-lécran) (ex. `.visually-hidden` ou `.sr-only` au lieu de `display: none`).
+- Masquer correctement [les contenus qui doivent être lus par un lecteur d’écran](#contenu-lu-mais-masqué-à-lécran) (ex. `.visually-hidden` ou `.sr-only` au lieu de `display: none`).
 
 ### Formulaires
 
 - Vérifier l'accessibilité des formulaires notamment l'usage au clavier.
-- Indiquer clairement les champs obligatoires.
-- Toujours associer une étiquette `<label>` à son champ respectif (avec `for` et `id`).
-- Utiliser [l'élément `<fieldset>` associé à `<legend>`](#formulaires-et-champs) pour regrouper les champs par thématique.
+- Indiquer clairement les champs obligatoires (attribut `aria-required="true"`) avec dans l'étiquette la mention `" (obligatoire)"` sinon une étoile (dans ce cas avec une légende située en début de formulaire).
+- Toujours associer une étiquette `<label>` à son champ respectif (avec `for` et `id` sinon ARIA).
+- Utiliser [l'élément `<fieldset>` associé à `<legend>`](#formulaires-et-champs) pour regrouper les champs par thématique (ex : boutons radio, cases à cocher).
 - Indiquer les formats attendus lorsqu'il y en a ; ne pas utiliser l'attribut `placeholder` comme indication (privilégier `label`), il ne doit fournir qu'un exemple d'usage.
-- Associer correctement une erreur à son champ.
-- Associer [un `autocomplete`](#formulaires-et-champs) pour les champs demandant une donnée personnelle (nom, prénom, e-mail, adresse, etc.).
+- Associer correctement une erreur à son champ (via `aria-describedby` en général).
+- Associer un [`autocomplete`](#formulaires-et-champs) pour les champs demandant une donnée personnelle (nom, prénom, e-mail, adresse, etc.).
 
 ### Design
 
-- Les contrastes et tailles de texte/liens/boutons sont suffisants.
+- Les rapports de contraste du texte, des composants d'interface et éléments graphiques sont suffisants (seuils de `4,5:1` ou `3:1`).
 
 ### Médias
 
-- Toutes les images [doivent comporter un attribut `alt`](#image-porteuse-dinformation-ou-cliquable) ; il doit être vide `alt=""` pour les images décoratives et renseigné pour les images apportant du contenu.
-- Lorsqu'un lien renvoie vers un téléchargement de fichier, il faut indiquer : son intitulé, son poids, son format et l'ouverture dans une nouvelle fenêtre.
+- Toutes les images [doivent comporter un attribut `alt`](#image-porteuse-dinformation-ou-cliquable) ; il doit être vide (`alt=""` ou `alt`) pour les images décoratives et renseigné pour les images apportant du contenu.
+- Lorsqu'un lien renvoie vers un téléchargement de fichier, il faut indiquer : son intitulé, son poids, son format, éventuellement sa langue (si différente) et l'ouverture dans une nouvelle fenêtre.
 - [Rendre les fichiers SVG accessibles](#images-svg-et-accessibilité) : décoratifs ou non, inline ou non, dans un bouton / lien ou non.
 
 ## Checklist Niveau 2 (étendue) 🥈
 
-- Tester l'affichage des pages avec un niveau de zoom de 200%.
+- Tester l'affichage des pages avec un niveau de zoom jusqu'à 200%.
 - Utiliser un lecteur audio/vidéo accessible, par exemple les éléments HTML5 natifs.
-- Vérifier la cohérence de la tabulation et adapter si nécessaire avec `tabindex`.
+- Vérifier la cohérence de la tabulation et - en dernier recours - adapter si nécessaire avec `tabindex="0"` et `tabindex="-1"`.
+
+### CSS
+
+- Travailler avec des tailles de polices fluides `rem` ou `em` pour permettre l'agrandissement.
 
 ## Checklist Niveau 3 (demandes spécifiques) 🥇
 
@@ -65,7 +68,7 @@ Ce document est divisé en trois parties :
 - Fournir une alternative textuelle (une retranscription) aux formats audio.
 - Rendre les fichiers PDF accessibles ou fournir une alternative `HTML`, `.doc`, `.odt` structurée.
 - Utiliser l'attribut `aria-live` judicieusement sur les informations provenant de chargements AJAX ou dévoilées dynamiquement par JavaScript.
-- Ajouter une modale de personnalisation d'affichage telle que l'outil [AccessConfig](https://accessconfig.a11y.fr/) (ou autre).
+- Ajouter un *plugin* de personnalisation d'affichage : outils [AccessConfig](https://accessconfig.a11y.fr/) et [Orange Confort+](https://confort-plus.orange.com/).
 - Rendre chaque script compatible avec les technologies d'assistance.
 
 ---
