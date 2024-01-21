@@ -15,7 +15,7 @@ Voir aussi :
 
 * ✅ 36 critères réalisés : nous tenons compte de ces bonnes pratiques et savons conseiller.
 * 📄 25 critères "à la carte" : ils ont un impact sur le temps de réalisation, doivent être retenus et précisés en amont (notamment en phase Stratégie/Spécifications/Architecture). La _Méthodologie_ est le document définissant les démarches prévues pour répondre aux critères de réduction des impacts environnementaux dans les phases suivantes (UX/UI, Contenus, Frontend, Backend) ; complété par le cahier des charges s'il y a lieu, et les sessions de questions/réponses.
-* ⚖️ 4 critères "externes" : sur lequels nous n'avons que peu ou pas de contrôle.
+* ⚖️ 4 critères "externes" : sur lesquels nous n'avons que peu ou pas de contrôle.
 
 ---
 
@@ -31,7 +31,7 @@ Voir aussi :
 
 ### 1.7 Le service numérique a-t-il été conçu avec des technologies standard interopérables plutôt que des technologies spécifiques et fermées ?
 
-✅ Nous optons par défaut pour toutes les technologies en open-source, les standards du web et les [formats interopérables](Guidelines-Interoperabilite.md).
+✅ Nous optons par défaut pour toutes les technologies en _open source_, les standards du web et les [formats interopérables](Guidelines-Interoperabilite.md).
 
 ### 1.9 Le service numérique a-t-il identifié des indicateurs pour mesurer ses impacts environnementaux ?
 
@@ -55,13 +55,13 @@ Côté équipe : définis dans notre présentation "Green IT" associée.
 
 ### 2.1 – Le service numérique a-t-il été conçu avec une revue de conception et une revue de code en ayant pour un des objectifs de réduire les impacts environnementaux de chaque fonctionnalité ?
 
-📄 À définir en amont dans la _Méthodologie_ : nous réfléchissons/conseillons lors de la définition aux solutions ayant le moins d'impact environnemental et si elles sont retenues les mettons en oeuvre ; en cas de développement sur-mesure et d'ajout de code au projet, des revues de code poursuivent cet objectif.
+📄 À définir en amont dans la _Méthodologie_ : nous réfléchissons/conseillons lors de la définition aux solutions ayant le moins d'impact environnemental et si elles sont retenues, les mettons en oeuvre ; en cas de développement sur-mesure et d'ajout de code au projet, des revues de code poursuivent cet objectif.
 
 ### 2.2 – Le service numérique a-t-il prévu une stratégie de décommissionnement pour ses fonctionnalités, ses composants ou ses environnements non utilisés ?
 
 ✅ Nous ne mettons en production que les composants réellement utilisés et (si une prestation de suivi/maintenance est retenue) notre procédure prévoit de façon bimensuelle de supprimer d'éventuels modules qui ne seraient pas activés (par exemple les extensions du CMS WordPress).
 
-Avec les frameworks front-end (Vue, Nuxt, React), le code inutile est automatiquement retiré du projet par le [tree-shaking](https://webpack.js.org/guides/tree-shaking/). En back-end les environnements de recette sont désactivés 3 mois après la mise en production et les réactivons si nécessaire.
+Avec les frameworks front-end (Vue, Nuxt, React), le code inutile est automatiquement retiré du projet par le [tree-shaking](https://webpack.js.org/guides/tree-shaking/). En back-end les environnements de recette sont désactivés 3 mois après la mise en production et ne sont réactivés que si nécessaire.
 
 ### 2.3 – Le service numérique impose-t-il à ses fournisseurs de garantir une démarche de réduction de leurs impacts environnementaux ?
 
@@ -79,7 +79,7 @@ Avec les frameworks front-end (Vue, Nuxt, React), le code inutile est automatiqu
 
 ### 3.2 – Le service numérique fonctionne-t-il sur une architecture pouvant adapter la quantité de ressources utilisées en fonction de la consommation du service ?
 
-📄 Défini par l'architecture prévue au cahier des charges et dans la _Méthodologie_, nous privilégions notamment les hébergements mutualisés dont la puissance est ajustée au plus près du besoin, virtualisés qui se partagent des ressources, voire élastiques/serverless dont les ressources allouées s'adaptent à la demande.
+📄 Défini par l'architecture prévue au cahier des charges et dans la _Méthodologie_, nous privilégions notamment les hébergements mutualisés dont la puissance est ajustée au plus près du besoin, virtualisés qui se partagent des ressources, voire élastiques/_serverless_ dont les ressources allouées s'adaptent à la demande.
 
 ### 3.3 – Le service numérique a-t-il pris en compte l’évolution technique des protocoles ?
 
@@ -191,7 +191,7 @@ Avec les frameworks front-end (Vue, Nuxt, React), le code inutile est automatiqu
 
 ### 5.9 – Le service numérique a-t-il une stratégie d’archivage et de suppression, automatiques ou manuelles, des contenus obsolètes ou périmés ?
 
-📄 La stratégie dépend du CMS employé et/ou d'un script serveur régulièrement déclenché (CRON) et/ou de notifications de rappel. Elle est définie en amont pour être dévelopée sur-mesure.
+📄 La stratégie dépend du CMS employé et/ou d'un script serveur régulièrement déclenché (CRON) et/ou de notifications de rappel. Elle est définie en amont pour être développée sur-mesure.
 
 ## Frontend
 

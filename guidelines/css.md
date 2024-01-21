@@ -17,11 +17,11 @@ De manière générale et sauf projets d'intégration spécifiques, nous privil�
 - Maintenabilité
   - Privilégier systématiquement l'usage de sélecteurs de **class** plutôt que les sélecteurs d'éléments (`li`, `span`, `p`) et ne jamais cibler via un sélecteur `#id`.
   - Éviter les *sélecteurs composés* tels que `.modal span` ou `.modal .date` mais plutôt `.modal-date` pour conserver une spécificité minimale.
-  - Prévoir dès le départ un nom de classe pour chaque élément HTML (même anodin tels que `<span>`, `<p>` ou `<a>`) afin qu'il puisse être ciblés sans avoir à faire à sa hiérarchie.
+  - Prévoir dès le départ un nom de classe pour chaque élément HTML (même anodin tels que `<span>`, `<p>` ou `<a>`) afin qu'il puisse être ciblé sans avoir à tenir compte de sa hiérarchie.
   - Éviter d’écraser une règle CSS par une autre.
   - La règle `!important` doit être éradiquée si possible du fait de son poids extrêmement important (certaines parties des styles peuvent toutefois exceptionnellement employer à juste titre `!important`).
 - Performances
-  - Durant la phase de développement l'intégration se fait sur plusieurs fichiers CSS (composants, layout, etc.) que l'on rassemble  dans un fichier unique (par exemple via `@use` qui [remplace progressivement `@import` dans Sass](https://sass-lang.com/documentation/at-rules/import/))
+  - Durant la phase de développement l'intégration se fait sur plusieurs fichiers CSS (composants, layout, etc.) que l'on rassemble dans un fichier unique (par exemple via `@use` qui [remplace progressivement `@import` dans Sass](https://sass-lang.com/documentation/at-rules/import/))
   - Les fichiers CSS doivent être minifiés pour économiser du poids de chargement.
 
 ### Ordre des déclarations
@@ -40,7 +40,7 @@ Voici dans quel ordre nous déclarons nos propriétés :
 Règles additionnelles :
 
 - On sépare visuellement (ligne vide) les déclarations en trois groupes : display+positionnement+boîte, puis typographie, puis décorations.
-- Les media queries s'écrivent à la fin des règles sur l'élément, séparées par une ligne vide.
+- Les _media queries_ s'écrivent à la fin des règles sur l'élément, séparées par une ligne vide.
 - On écrit `margin` avant `padding`.
 
 Exemple :
@@ -68,7 +68,7 @@ selecteur {
 }
 ```
 
-**_Note : La démarche de réordonnement est manuelle, en se servant de cette liste comme référence.**
+**_Note : Réordonner se fait manuellement, en se servant de cette liste comme référence.**
 
 ## Unités
 
@@ -147,7 +147,7 @@ L'inconvénient de la notation imbriquée est qu'elle génère des sélecteurs C
 
 ## Breakpoints et Media Queries
 
-La liste de points de rupture (breakpoints) figure dans la configuration du contructeur de classes utilitaires (ex. `@screen valeur {}` pour Tailwind).
+La liste de points de rupture (_breakpoints_) figure dans la configuration du contructeur de classes utilitaires (ex. `@screen valeur {}` pour Tailwind).
 
 Sauf contre-indication selon projet, les valeurs des breakpoints sont :
 
@@ -192,7 +192,7 @@ Quelques précautions sont à prendre concernant les SVG :
 
 - Compresser le fichier à l'aide de SVGOMG
 - donner des noms de classe à chaque `path` qui doit être animé
-- appliquer les styles CSS suivants&hellip;
+- appliquer les styles CSS suivants&hellip;:<>
 
 ```css
 svg {
@@ -222,7 +222,7 @@ Nous privilégions **Flexbox et Grid Layout** de manière générale en tenant c
 - Place très précisément les éléments
 - Permet de cibler uniquement le parent
 - A peu de comportements contre-intuitifs
-- Les areas offrent une représentation visuelle idéale
+- Les _areas_ offrent une représentation visuelle idéale
 - Gère très bien le Responsive via Media Queries
 
 Les inconvénients majeurs de Grid Layout sont :

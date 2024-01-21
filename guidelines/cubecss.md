@@ -29,9 +29,9 @@ Tout projet Cube CSS nécessite en amont au minimum :
 
 ### Layouts (Compositions)
 
-**Les Layouts constituent l'un des principaux apports de la méthodologie CubeCSS&#8239;: il s'agit de zones d'affichages neutres et flexibles concues en Flexbox ou Grid Layout réutilisables un peu partout et destinées à recueillir les composants.**
+**Les Layouts constituent l'un des principaux apports de la méthodologie CubeCSS&#8239;: il s'agit de zones d'affichages neutres et flexibles, conçues en Flexbox ou Grid Layout, réutilisables un peu partout et destinées à recueillir les composants.**
 
-Toutes les pages web comportent l'un ou plusieurs de ces Layouts, souvent répétés. Il s'agit donc dans un premier temps de faire la liste des Layout nécessaires pour les maquettes.
+Toutes les pages web comportent l'un ou plusieurs de ces Layouts, souvent répétés. Il s'agit donc dans un premier temps de faire la liste des Layouts nécessaires pour les maquettes.
 
 ![galerie de Layouts visibles sur Bretzel](../images/layouts.png)
 
@@ -102,7 +102,7 @@ Les noms de classes sont regroupés par fonctions :
 
 1. Le **nom primaire** ("sémantique") du Block
 2. Les **noms des Layouts** si nécessaires
-3. Les **classes utilitaires** (core + design tokens)
+3. Les **classes utilitaires** (_core_ + _design tokens_)
 
 ```html
 <!-- exemple de nommage groupé -->
