@@ -50,10 +50,10 @@ L'organisation des dossiers et sous-dossiers est à la libre appréciation de ch
   - Ajouter `.gitignore` et  `.dockerignore`, contenant au moins les chemins vers `node_modules` et `dist`
   - Ajouter [les fichiers](../configs/.vscode) `.vscode/settings.json` et `.vscode/extensions.json`
   - On utilise le dossier [`public/`](https://vitejs.dev/guide/assets.html#the-public-directory) pour les ressources statiques (ex: images, svg, fonts...)
-  - TODO: launch.json ?
-  - TODO: prettier ? `pnpm install --save-dev prettier prettier-plugin-tailwindcss` + ajouter `prettier.config.cjs`
-  - TODO: apine.js ?
-  - TODO: Vue dans un composant ?
+- **En option**
+  - Ajouter [launch.json](https://code.visualstudio.com/docs/editor/debugging#_launch-configurations) au projet pour lancer le debugger.
+  - Ajouter Prettier `pnpm install --save-dev prettier prettier-plugin-tailwindcss` + ajouter un [fichier de configuration](https://prettier.io/docs/en/configuration.html) `prettier.config.cjs`
+  - Ajouter [alpine.js](https://alpinejs.dev/essentials/installation) avec `pnpm install --save alpinejs`
 - **Docker** si besoin de mise en recette ou pré-production
   - Ajouter `Dockerfile` et `docker-compose.yml` suivant les exemples et les adapter
 
