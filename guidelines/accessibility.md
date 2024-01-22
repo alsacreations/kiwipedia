@@ -954,6 +954,7 @@ Pour tous les composants de page agissant sur le contenu, de type swiper, slider
 - <https://www.w3.org/WAI/ARIA/apg/patterns/>
 - <https://la-cascade.io/articles/comprendre-wai-aria-un-guide-complet>
 - <https://addons.mozilla.org/fr/firefox/addon/visual-aria/> Extension pour "visualiser" ARIA
+- <https://addons.mozilla.org/fr/firefox/addon/aria-devtools/>
 
 ### ARIA live
 
