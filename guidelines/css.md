@@ -6,9 +6,13 @@ Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacre
 
 De manière générale et sauf projets d'intégration spécifiques, nous privilégions les méthodologies, langages et outils suivants&nbsp;:
 
-- Méthodologie CSS : **[Cube CSS](cubecss.md)**
-- Constructeur de classes utilitaires : **[Tailwind CSS](tailwind.md)**
-- (optionnel mais recommandé) Préprocesseur **Sass** (syntaxe `.scss`) *ou* Post-processeur (**postCSS**)
+- Un Reset CSS (et print) : **[Bretzel](https://github.com/alsacreations/bretzel/blob/main/public/bretzel-reset.css)**
+- Une Méthodologie CSS : **[Cube CSS](cubecss.md)**
+- Un Constructeur de classes utilitaires : **[Tailwind CSS](tailwind.md)** (sauf exceptions)
+
+Optionnel (mais encore recommandé) :
+
+- Un Préprocesseur **Sass** (syntaxe `.scss`) *ou* un Post-processeur (**postCSS**)
 
 ## Bonnes pratiques CSS globales
 
@@ -37,10 +41,12 @@ Voici dans quel ordre nous déclarons nos propriétés :
 5. **Typographie** : tout ce qui détermine les caractéristiques de la police de caractères (`color`, `font-size`, `line-height`, etc.)
 6. **Décoration** : les propriétés purement ornementales (`background-color`, `border`, `border-radius`, etc.)
 
+*Attention : en cas d'usage de classes utilitaires, les déclarations concernant les espacements (`margin`, `padding`, `gap`), la typographie et les couleurs sont à placer dans le HTML sous forme de classes utilitaires*
+
 Règles additionnelles :
 
 - On sépare visuellement (ligne vide) les déclarations en trois groupes : display+positionnement+boîte, puis typographie, puis décorations.
-- Les _media queries_ s'écrivent à la fin des règles sur l'élément, séparées par une ligne vide.
+- Les *media queries* s'écrivent à la fin des règles sur l'élément, séparées par une ligne vide.
 - On écrit `margin` avant `padding`.
 
 Exemple :
@@ -49,26 +55,29 @@ Exemple :
 selecteur {
   display: inline-block;
   position: relative;
-  top: -1em;
-  z-index: var(--index-base);
-  margin: var(--spacing-1);
+  top: theme('spacing.4');
+  z-index: theme('zIndex.100');
+  margin: theme('spacing.4');
   padding: 0;
 
-  color: var(--colors-hotpink);
+  color: theme('colors.pink.60');
   text-align: right;
+  font-size: theme('fontSize.18');
   font-family: system-ui, arial, sans-ferif;
-  font-weight: var(--font-900);
+  font-weight: theme('fontWeight.900');
 
-  border: 1px solid pink;
-  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid theme('colors.pink.60');
+  background: theme('colors.blue.10');
 
-  @media (width > 576px) {
+  @screen md {
     display: block;
   }
 }
 ```
 
-**_Note : Réordonner se fait manuellement, en se servant de cette liste comme référence.**
+*Attention : en cas d'usage de classes utilitaires, il ne s'agit que d'un exemple peu usité car la plupart des déclarations ici sont à placer dans le HTML sous forme de classes utilitaires*
+
+**Note : Réordonner se fait manuellement, en se servant de cette liste comme référence.**
 
 ## Unités
 
@@ -112,9 +121,16 @@ Quelle que soit la solution choisie, la méthode de compilation vers CSS dépend
 
 ## Variables
 
-Le Constructeur de classes utilitaires propose un fichier de configuration contenant les "variables" de l'ensemble du projet (couleurs, tailles, breakpoints, etc.). Ces variables sont à utiliser en priorité (ex. `font-size: theme('fontSize.18');` pour Tailwind), et **nous n'utilisons pas de variables Sass dans nos projets**.
+Dans le cas de nos projets habituels (avec Constructeur de classes utilitaires)&#8239;:
 
-**Aucune valeur numérique ne devrait apparaître dans les styles de développement sans être associée à une variable.**
+- Nous n'utilisons **pas** de variables Sass (ex. `$color-hotpink`).
+- Nous n'utilisons **pas** de custom properties CSS (ex. `--color-hotpink`).
+- Nous appliquons les classes utilitaires dans le HTML (ex. `<p class="text-hotpink"`) lorsqu'il s'agit de propriétés liées aux espacements (`margin`, `padding`, `gap`), à la typographie ou aux couleurs.
+- Ou nous appliquons les tokens liés au thème du Constructeur (ex. `z-index: theme('zIndex.10');`) lorsqu'il s'agit des autres propriétés plus structurelles.
+
+**Aucune valeur numérique ne devrait apparaître dans les styles sans être associée à une une classe utilitaire ou un token de thème.**
+
+Dans le cas de projets spécifiques (ex. web components), nous utilisons les custom properties CSS (ex. `--color-hotpink`) afin de pouvoir styliser le Shadow DOM.
 
 ## Notation imbriquée (nesting)
 
@@ -147,7 +163,7 @@ L'inconvénient de la notation imbriquée est qu'elle génère des sélecteurs C
 
 ## Breakpoints et Media Queries
 
-La liste de points de rupture (_breakpoints_) figure dans la configuration du contructeur de classes utilitaires (ex. `@screen valeur {}` pour Tailwind).
+La liste de points de rupture (*breakpoints*) figure dans la configuration du contructeur de classes utilitaires (ex. `@screen valeur {}` pour Tailwind).
 
 Sauf contre-indication selon projet, les valeurs des breakpoints sont :
 
@@ -156,7 +172,7 @@ Sauf contre-indication selon projet, les valeurs des breakpoints sont :
 - `lg: 87.5rem` // 1400px
 
 ```css
-/* composant card sur écran "lg" ou plus, version Tailwind */
+/* composant card sur écran "lg" ou plus, version avec Constructeur de classes utilitaires */
 .card {
     display: flex;
 
@@ -166,7 +182,7 @@ Sauf contre-indication selon projet, les valeurs des breakpoints sont :
 }
 ```
 
-Pour les projets sans Tailwind, nous utilisons la syntaxe "moderne" des Media Queries :
+Pour les projets sans Constructeur de classes utilitaires, nous utilisons la syntaxe "moderne" des Media Queries&#8239;:
 
 ```css
 /* composant card sur écran "lg" ou plus, version classique */
@@ -222,7 +238,7 @@ Nous privilégions **Flexbox et Grid Layout** de manière générale en tenant c
 - Place très précisément les éléments
 - Permet de cibler uniquement le parent
 - A peu de comportements contre-intuitifs
-- Les _areas_ offrent une représentation visuelle idéale
+- Les *areas* offrent une représentation visuelle idéale
 - Gère très bien le Responsive via Media Queries
 
 Les inconvénients majeurs de Grid Layout sont :
@@ -248,26 +264,35 @@ Les inconvénients majeurs de Flexbox sont :
 
 📖 **Ressource complémentaire : ["When to use Flexbox and when to use CSS Grid"](https://blog.logrocket.com/css-flexbox-vs-css-grid/)**
 
+### Autres positionnements
+
+- `position: absolute` : nécessaire pour placer un élément en "overlay" (par-dessus d'autres éléments). Le référent est le premier ancêtre lui-même *positionné*.
+- `position: relative` : utile principalement pour servir de référent à un descendant en `absolute`. Ne pas déplacer des éléments via cette position, privilégier systématiquement les transformations (`translate: x y;`)
+- `position: static` : valeur par défaut de `position`
+- `position: sticky` : permet de faire *coller* un élément aux bords de la fenêtre (ex. un header). Le référent est le Viewport. Nécessite un point d'ancrage (ex. `top: 0`).
+- `float` : permet à un élément de se placer à gauche ou droite et que le contenu suivant s'écoule autour. Uniquement utile pour "habiller" une image.
+
 ## Mode d'apparence (Light Mode, Dark Mode)
 
 Le mode d'apparence est un paramètre que l'utilisateur peut définir via ses réglages systèmes ainsi que via son navigateur.
 
-Les techniques CSS modernes permettent de gérer finement ces modes :
+Dans nos projets habituels, **le Constructeur de classes utilitaires gère les modes d'apparence** :
 
-- Couleurs système (ex. Canvas, CanvasText)
-- `@prefers-color-scheme` : Teste le Mode d'apparence utilisateur (système ou navigateur) et permet de s'y adapter
-- `color-scheme` : Force le navigateur à adapter l'UI à un Mode d'apparence (couleurs système, scrollbars, boutons,...)
-- `light-dark()` : Fonction permettant d'alterner deux couleurs selon le Mode d'apparence. Expérimental
+- Le dark mode est indiqué dans le fichier de config : `darkMode: 'class', // 'false' or 'media' or 'class'` (`class` = une classe est ajoutée sur `html`, `media` = c'est `@prefers-color-scheme` qui s'en charge).
+- On adapte les propriétés au darkmode en préfixant la classe utilitaire d'un `dark:`
 
-Dans nos projets, **les classes utilitaires de Tailwind sont idéales pour gèrer les modes d'apparence** à partir du moment où le dark mode est indiqué dans le fichier de config : `darkMode: 'class', // 'false' or 'media' or 'class'` (`class` = une classe est ajoutée sur `html`, `media` = c'est `@prefers-color-scheme` qui s'en charge).
-
-Ainsi, un exemple de bouton qui s'adapte automatiquement aux modes light ou dark pourrait s'écrire ainsi :
+Ainsi, un exemple de bouton qui s'adapte automatiquement aux modes light ou dark pourrait s'écrire ainsi&#8239;:
 
 ```html
 <button class="
   btn btn-icon | text-gray-90 dark:text-gray-10  bg-fairytale dark:bg-gray-90"
 >Hey !</button>
 ```
+
+Dans nos projets sans Constructeur de classe utilitaires, les techniques CSS modernes permettent de gérer finement ces modes&#8239;:
+
+- `@prefers-color-scheme` : Teste le Mode d'apparence utilisateur (système ou navigateur) et permet de s'y adapter
+- `color-scheme` : Force le navigateur à adapter l'UI à un Mode d'apparence (couleurs système, scrollbars, boutons,...). Ce réglage fait partie de notre Reset CSS, il est inutile de le modifier.
 
 ## Polices (fonts)
 

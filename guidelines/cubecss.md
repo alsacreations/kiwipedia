@@ -14,8 +14,8 @@ Cube CSS est la Méthodologie d'intégration CSS générale que nous appliquons 
 
 Tout projet Cube CSS nécessite en amont au minimum :
 
-- Un fichier **["Reset CSS"](https://github.com/alsacreations/bretzel/blob/main/public/bretzel-reset.css)** : ce fichier est maintenu en interne chez nous et mis à jour régulièrement.
-- [Tailwind CSS](https://tailwindcss.com) pour la partie utilitaire dans Cube.
+- Un fichier **["Reset CSS"](https://github.com/alsacreations/bretzel/blob/main/public/bretzel-reset.css)**&#8239;: ce fichier est maintenu en interne chez nous et mis à jour régulièrement.
+- Un Constructeur de classes utilitaires : **[Tailwind CSS](tailwind.md)** (sauf exceptions) pour la partie utilitaire dans Cube.
 
 ## Checklist
 
@@ -102,7 +102,7 @@ Les noms de classes sont regroupés par fonctions :
 
 1. Le **nom primaire** ("sémantique") du Block
 2. Les **noms des Layouts** si nécessaires
-3. Les **classes utilitaires** (_core_ + _design tokens_)
+3. Les **classes utilitaires** (*core* + *design tokens*)
 
 ```html
 <!-- exemple de nommage groupé -->
