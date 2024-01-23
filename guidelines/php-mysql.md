@@ -23,7 +23,7 @@ Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacre
 - Toujours penser à la sécurité !
 - [Limitez votre PHP : optimisations pour une meilleure gestion des ressources](https://bearstech.com/societe/blog/limitez-votre-php/)
 
-![faites simple](images/php01.png)
+![faites simple](../images/php01.png)
 
 Source : <https://xkcd.com/1319/> (Automation)
 

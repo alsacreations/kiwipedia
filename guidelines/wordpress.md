@@ -256,9 +256,9 @@ register_taxonomy($taxo_name, $cpt_name, $args_taxo);
 
 On utilise des CPT pour toute entité de données allant au-delà des Pages et Posts.
 
-👉 ACF permet de créer une structure de CPT via son interface visuelle, puis d'exporter le code PHP correspondant (ou import/export en JSON) via son onglet _Outils_ ce qui facilite les opérations.
+👉 ACF permet de créer des CPT et taxonomies depuis l'interface d'administration, puis d'exporter le code PHP correspondant (ou import/export en JSON) via son onglet _Outils_ ce qui facilite les opérations.
 
-![Ajout de CPT dans ACF](images/wordpress-acf-cpt.png)
+![Ajout de CPT dans ACF](../images/wordpress-acf-cpt.png)
 
 - Déclarer un Custom Post Type avec [register_post_type](https://developer.wordpress.org/reference/functions/register_post_type/)
 - [WordPress CPT Best Practices](https://salferrarello.com/cpt-best-practices/)

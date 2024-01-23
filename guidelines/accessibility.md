@@ -277,7 +277,7 @@ Tous les liens doivent avoir un **intitulé explicite**, un lien "vide" n’est 
 
 **Exemple :**
 
-![Liens vers les réseaux sociaux](images/accessibilite02.png)
+![Liens vers les réseaux sociaux](../images/accessibilite02.png)
 *Liens vers les réseaux sociaux*
 
 Ne pas faire :
@@ -714,7 +714,7 @@ Ne **jamais** utiliser `display: none` pour masquer visuellement du texte qui de
 
 **Exemple :**
 
-![Bouton "précédent" d’un slider](images/accessibilite01.png)
+![Bouton "précédent" d’un slider](../images/accessibilite01.png)
 *Bouton "précédent" d’un slider*
 
 Ne pas faire :
@@ -753,7 +753,7 @@ Une image **porteuse d’information ou cliquable** doit avoir une alternative t
 
 Exemple d’une image **cliquable** :
 
-![KNACSS](images/accessibilite03.png)
+![KNACSS](../images/accessibilite03.png)
 
 ```html
 <a href="www.knacss.com">
@@ -763,7 +763,7 @@ Exemple d’une image **cliquable** :
 
 Exemple d’une image **porteuse d’information** :
 
-![4,9 milliards € sont consacrés à la modernisation - 10 millions € - 700km](images/accessibilite04.png)
+![4,9 milliards € sont consacrés à la modernisation - 10 millions € - 700km](../images/accessibilite04.png)
 
 ```html
 <img src="banner.png" alt="4,9 milliards € sont consacrés à la modernisation […] - 10 millions € […] - 700km">
@@ -777,7 +777,7 @@ Une image décorative doit avoir un attribut `alt` vide afin que l’image ne so
 
 Exemple d’une image de **décoration** :
 
-![image alt text](images/accessibilite05.png)
+![image alt text](../images/accessibilite05.png)
 
 ```html
 <img src="kiwiparty.png" alt="">

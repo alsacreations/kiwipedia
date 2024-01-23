@@ -150,7 +150,7 @@ jQuery(document).ready(function($) {
 
 ## Classes suggérées
 
-![Nommage de classes](images/js-classes.png)
+![Nommage de classes](../images/js-classes.png)
 
 - `.is-active` pour un élément qui est tout le temps visible mais qui peut avoir un état actif/inactif (ex : élément de menu ou de sous-menu au focus/survol).
 - `.is-selected` pour un élément qui est tout le temps visible mais qui peut avoir un état sélectionné/désélectionné (ex : bouton/bloc radio/checkbox).
