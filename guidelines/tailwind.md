@@ -95,9 +95,12 @@ Il existe trois manières d'appliquer des styles CSS dans un projet Tailwind :
 
 **Usage pertinent de CSS "classique" :** Nous utilisons des styles CSS pour les données structurelles ou les Layout, les grilles de mise en forme ainsi que toutes les fonctionnalités spécifiques, complexes ou impossibles à reproduire via Tailwind&nbsp;:
 
-- Grid Layout complexes
-- Positions et z-index
+- Propriétés de layout de manière générale
+- Grilles complexes
+- `position`, `top`, `right`, `bottom`, `left` et `z-index`
 - Transitions / animations complexes
+- Pseudo-éléments (`::before` et `::after`)
+- Pseudo-classes (sauf `:hover` et `:focus`)
 - Dégradés
 - etc.
 
