@@ -14,7 +14,7 @@ Tailwind est un framework CSS qui adopte une approche "atomique" de CSS, compren
 
 ## Environnement de travail et outils recommandés
 
-Tailwind, pour plus de plaisir, nécessite d'être associé à un environnement de travail et un workflow adaptés. Nous utilisons Visual Studio Code et **[Tailwind CSS intellisense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)** offrant une auto-complétion ainsi qu'une _tooltip_ au survol des classes.
+Tailwind, pour plus de plaisir, gagne à être associé à un environnement de travail et un workflow adaptés. Nous utilisons Visual Studio Code et **[Tailwind CSS intellisense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)** offrant une auto-complétion ainsi qu'une _tooltip_ au survol des classes.
 
 ⚠️ Tailwind apporte son lot de directives sous forme de règles-at spécifiques (`@apply`, `@layer`, `@screen`, `@variants`, etc.) pouvant être pointées du doigt par les Linters CSS. Stylelint est notre formateur (unique) : les linters natifs CSS (css.validate) et scss (scss.validate) **doivent être désactivés** dans [.vscode/settings.json](assets/.vscode/settings.json). Nous configurons spécifiquement Stylelint (dans [`stylelint.config.js`](assets/stylelint.config.js)) pour ignorer les règles-at inconnues avec `at-rule-no-unknown`. De cette manière, nos Linters CSS ne déclenchent aucun avertissement ni erreur lorsqu'ils croisent les règles-at de Tailwind, et nous n'avons pas besoin d'utiliser [Tailwind Loves Sass](https://www.npmjs.com/package/tailwind-loves-sass).
 
@@ -36,6 +36,7 @@ Pour éviter la présence de centaines de valeurs inutiles (et hors charte graph
 - `colors` : Les couleurs de la charte graphique
 - `fontFamily` : Les familles de police et alternatives
 - `fontSize` : Les tailles de police
+- `fontWeight` : Les graisses de police
 - Le `content` (fichiers destinés à être [obervés par Tailwind](https://tailwindcss.com/docs/content-configuration))
 
 Ces aspects sont différents à chaque projet et sont donc nécessaires à configurer. Il en résultera un fichier CSS optimisé.
@@ -74,14 +75,11 @@ La liste de points de rupture (breakpoints) recommandée est proposée sous form
 
 ```scss
 screens: {
-  'small': { 'max': '575px' }, // => @media (max-width: 575)
-  'sm': '576px', // => @media (min-width: 576)
-  'md': '992px', // => @media (min-width: 992)
-  'lg': '1400px' // => @media (min-width: 1400)
+  'sm': '36rem', // => @media (min-width: 576px)
+  'md': '62rem', // => @media (min-width: 992px)
+  'lg': '87.5rem' // => @media (min-width: 1400px)
 },
 ```
-
-Conformément à la démarche "Mobile First", ces valeurs correspondent à des jalons minimum : `sm: '576px'` correspond au Media Query `@media (min-width: 576px) {...}`.
 
 ## Usage et bonnes pratiques
 
@@ -91,15 +89,16 @@ Il existe trois manières d'appliquer des styles CSS dans un projet Tailwind :
 2. Dans le (S)CSS via `@apply` _(Tailwind)_ (ex. `@apply sm:grid relative col-start-3 sm:grid-cols-2 gap-5 sm:gap-x-20 sm:gap-y-10 lg:gap-x-40;`)
 3. Dans le (S)CSS via... des propriétés CSS _(pas Tailwind)_
 
-**Usage pertinent de classes dans le HTML :** Les styles utilitaires (marges, couleurs, tailles de police). Par exemple : des paragraphes, des blocs à décaler, à modifier selon les contextes.
+**Usage pertinent de classes dans le HTML :** Nous utilisons les classes utilitaires lorsqu'il s'agit de propriétés liées aux espacements (`margin`, `padding`, `gap`), à la typographie ou aux couleurs. Par exemple : des paragraphes, des blocs à décaler, à modifier selon les contextes.
 
-**Usage pertinent de styles via `@apply` :** Les styles récurrents sur des éléments HTML de base (`body`, niveaux de titres, liens, etc.).
+**Usage pertinent de styles via `@apply` :** jamais ?
 
-**Usage pertinent de CSS "classique" :** Des parties de Layout, les grilles de mise en forme ainsi que toutes les fonctionnalités spécifiques, complexes ou impossibles à reproduire via Tailwind&nbsp;:
+**Usage pertinent de CSS "classique" :** Nous utilisons des styles CSS pour les données structurelles ou les Layout, les grilles de mise en forme ainsi que toutes les fonctionnalités spécifiques, complexes ou impossibles à reproduire via Tailwind&nbsp;:
 
 - Grid Layout complexes
-- transitions / animations complexes
-- dégradés
+- Positions et z-index
+- Transitions / animations complexes
+- Dégradés
 - etc.
 
 ## Dans le détail : un Composant
