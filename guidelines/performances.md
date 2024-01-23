@@ -218,6 +218,7 @@ Quelques ressources :
 ## Outils d'audit de performance
 
 - <https://pagespeed.web.dev/?hl=fr> PageSpeed Insights
+- <https://radar.cloudflare.com/scan/>
 - <https://gtmetrix.com/>
 - <https://www.webpagetest.org/>
 - <https://tools.pingdom.com/>
