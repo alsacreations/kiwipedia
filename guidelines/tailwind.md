@@ -37,7 +37,7 @@ Pour éviter la présence de centaines de valeurs inutiles (et hors charte graph
 - `fontFamily` : Les familles de police et alternatives
 - `fontSize` : Les tailles de police
 - `fontWeight` : Les graisses de police
-- Le `content` (fichiers destinés à être [obervés par Tailwind](https://tailwindcss.com/docs/content-configuration))
+- Le `content` (fichiers destinés à être [observés par Tailwind](https://tailwindcss.com/docs/content-configuration))
 
 Ces aspects sont différents à chaque projet et sont donc nécessaires à configurer. Il en résultera un fichier CSS optimisé.
 
