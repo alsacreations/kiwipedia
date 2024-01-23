@@ -272,20 +272,38 @@ Les inconvénients majeurs de Flexbox sont :
 - `position: sticky` : permet de faire *coller* un élément aux bords de la fenêtre (ex. un header). Le référent est le Viewport. Nécessite un point d'ancrage (ex. `top: 0`).
 - `float` : permet à un élément de se placer à gauche ou droite et que le contenu suivant s'écoule autour. Uniquement utile pour "habiller" une image.
 
-## Mode d'apparence (Light Mode, Dark Mode)
+## Pseudo-classes et pseudo-éléments
 
-Le mode d'apparence est un paramètre que l'utilisateur peut définir via ses réglages systèmes ainsi que via son navigateur.
+Les pseudo-classes s'écrivent avec `:`, les pseudo-éléments s'écrivent avec `::`.
+
+### Pseudo-éléments
+
+- Les pseudo-élements les plus courants sont `::before` et `::after`.
+- Ils nécessitent la propriété `content: "contenu"` pour être affichés.
+- Leur contenu n'est pas systématiquement restitué (lu) par les assistances techniques, il ne faut pas apporter des informations à l'aide de pseudo-éléments (ex. ne pas écrire ceci `content: "(lien externe)"` ni `content: "[↗]"`).
+- Nesting : Les pseudo-éléments sont de bons candidats à la syntaxe imbriquée telle que `&::before`, `&::after`.
+- Les pseudo-éléments sont à rédiger en CSS natif et non en classe utilitaire (éviter `class="before:content-['Hello_World']"`)
+
+### Pseudo-classes
+
+- Il existe une [60aine de pseudo-classes](https://developer.mozilla.org/fr/docs/Web/CSS/Pseudo-classes)
+- Nesting : Les pseudo-classes sont de bons candidats à la syntaxe imbriquée telle que `&:first-child`, `&:empty`, etc.
+- Les pseudo-classes sont à rédiger en CSS natif et non en classe utilitaire sauf `:hover`, `:focus` et `:active` qui sont parfaitement adaptées à cette syntaxe (ex. `class="bg-violet-500 hover:bg-violet-600 active:bg-violet-700`).
+
+## Dark Mode
+
+Le mode d'apparence (Light Mode, Dark Mode) est un paramètre que l'utilisateurice peut définir via ses réglages système ainsi que via son navigateur.
 
 Dans nos projets habituels, **le Constructeur de classes utilitaires gère les modes d'apparence** :
 
-- Le dark mode est indiqué dans le fichier de config : `darkMode: 'class', // 'false' or 'media' or 'class'` (`class` = une classe est ajoutée sur `html`, `media` = c'est `@prefers-color-scheme` qui s'en charge).
-- On adapte les propriétés au darkmode en préfixant la classe utilitaire d'un `dark:`
+- Dans Tailwind par exemple, Le dark mode est indiqué dans le fichier de config : `darkMode: 'class', // 'false' or 'media' or 'class'` (`class` = une classe est ajoutée sur `html`, `media` = c'est `@prefers-color-scheme` qui s'en charge).
+- On adapte les propriétés au dark mode en préfixant la classe utilitaire d'un `dark:`
 
 Ainsi, un exemple de bouton qui s'adapte automatiquement aux modes light ou dark pourrait s'écrire ainsi&#8239;:
 
 ```html
 <button class="
-  btn btn-icon | text-gray-90 dark:text-gray-10  bg-fairytale dark:bg-gray-90"
+  btn btn-icon | text-gray-90 dark:text-gray-10 bg-gray-20 dark:bg-gray-90"
 >Hey !</button>
 ```
 
