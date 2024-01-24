@@ -165,7 +165,7 @@ L'inconvénient de la notation imbriquée est qu'elle génère des sélecteurs C
 
 La liste de points de rupture (*breakpoints*) figure dans la configuration du contructeur de classes utilitaires (ex. `@screen valeur {}` pour Tailwind).
 
-Sauf contre-indication selon projet, les valeurs des breakpoints sont :
+Sauf contre-indication selon projet, les valeurs des breakpoints sont exprimées [en unité `rem`](https://www.joshwcomeau.com/css/surprising-truth-about-pixels-and-accessibility/#media-queries-7)&#8239;:
 
 - `sm: 36rem` // 576px
 - `md: 62rem` // 992px
