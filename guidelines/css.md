@@ -52,13 +52,16 @@ Règles additionnelles :
 Exemple :
 
 ```css
+/* La partie commentée est intégrée sous forme de classes utilitaires */
 selecteur {
   display: inline-block;
   position: relative;
   top: theme('spacing.4');
   z-index: theme('zIndex.100');
+  /*
   margin: theme('spacing.4');
   padding: 0;
+  gap: theme('spacing.4');
 
   color: theme('colors.pink.60');
   text-align: right;
@@ -68,6 +71,7 @@ selecteur {
 
   border: 1px solid theme('colors.pink.60');
   background: theme('colors.blue.10');
+  */
 
   @screen md {
     display: block;
@@ -151,7 +155,7 @@ Le nesting est particulièrement préconisé pour :
   &:hover, &:focus {}
   &::before, &::after {}
   
-  @media (width > 36rem) {
+  @media (width >= 40rem) {
     &::before {}
   }
 }
@@ -165,11 +169,13 @@ L'inconvénient de la notation imbriquée est qu'elle génère des sélecteurs C
 
 La liste de points de rupture (*breakpoints*) figure dans la configuration du contructeur de classes utilitaires (ex. `@screen valeur {}` pour Tailwind).
 
-Sauf contre-indication selon projet, les valeurs des breakpoints sont exprimées [en unité `rem`](https://www.joshwcomeau.com/css/surprising-truth-about-pixels-and-accessibility/#media-queries-7)&#8239;:
+Sauf contre-indication selon projet, les valeurs des breakpoints sont identiques à [celles proposées par Tailwind](https://tailwindcss.com/docs/screens) et sont exprimées [en unité `rem`](https://www.joshwcomeau.com/css/surprising-truth-about-pixels-and-accessibility/#media-queries-7)&#8239;:
 
-- `sm: 36rem` // 576px
-- `md: 62rem` // 992px
-- `lg: 87.5rem` // 1400px
+- `sm: 40rem` // 640px
+- `md: 48rem` // 768px
+- `lg: 64rem` // 1024px
+- `xl: 80rem` // 1280px
+- `2xl: 96rem` // 1536px
 
 ```css
 /* composant card sur écran "lg" ou plus, version avec Constructeur de classes utilitaires */
@@ -189,7 +195,7 @@ Pour les projets sans Constructeur de classes utilitaires, nous utilisons la syn
 .card {
     display: flex;
 
-    @media (width >= 87.5rem) {
+    @media (width >= 64rem) {
         flex-direction: column;
     }
 }

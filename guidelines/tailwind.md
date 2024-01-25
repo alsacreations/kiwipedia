@@ -75,9 +75,11 @@ La liste de points de rupture (breakpoints) recommandée est proposée sous form
 
 ```scss
 screens: {
-  'sm': '36rem', // => @media (min-width: 576px)
-  'md': '62rem', // => @media (min-width: 992px)
-  'lg': '87.5rem' // => @media (min-width: 1400px)
+  'sm': '40rem', // => @media (min-width: 640px)
+  'md': '48rem', // => @media (min-width: 768px)
+  'lg': '64rem' // => @media (min-width: 1024px)
+  'xl': '80rem' // => @media (min-width: 1280px)
+  '2xl': '96rem' // => @media (min-width: 1536px)
 },
 ```
 
@@ -151,7 +153,9 @@ En plus de `@apply`, Tailwind CSS propose plusieurs directives intéressantes.
 
 #### `@screen`
 
-La directive `@screen` simplifie significativement la lecture des media queries. Elle est vivement conseillée.
+La directive `@screen` simplifie significativement la lecture des media queries.
+
+**Elle est vivement conseillée.**
 
 Version via Media Query classique :
 
@@ -183,7 +187,7 @@ body {
 Pour ce faire, déclarer la valeur de breakpoint dans `tailwing.config.ts` (ici `small`)&nbsp;:
 
 ```yaml
-theme: { screens: { "small": { "max": "575px" } } }
+theme: { screens: { "small": { "max": "640px" } } }
 ```
 
 Puis utiliser `small` comme n'importe quelle autre valeur :
@@ -192,7 +196,7 @@ Puis utiliser `small` comme n'importe quelle autre valeur :
 body {
     @apply bg-white;
 
-    // => @media (max-width: 575)
+    // => @media (max-width:640)
     @screen small {
         @apply bg-pink;
     }
