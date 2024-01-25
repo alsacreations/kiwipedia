@@ -10,6 +10,7 @@ On utilise [Docker](https://www.docker.com/) avec une structure-type déjà épr
 - [WordPlate](https://github.com/wordplate/wordplate) qui fonctionne avec [Vite](https://github.com/vitejs/vite).
 - [Tailwind](https://tailwindcss.com/) en tant que framework CSS (optionnel).
 - [Timber](https://github.com/timber/timber) pour la syntaxe Twig dans les templates (optionnel).
+- [ACF](https://www.advancedcustomfields.com/) pour gérer les champs personnalisés, les CPT, les options.
 
 ## Environnement de développement
 
@@ -18,23 +19,22 @@ On utilise [Docker](https://www.docker.com/) avec une structure-type déjà épr
 
 ## Git
 
-On versionne les fichiers :
+On versionne les fichiers de structure et de configuration, tels que :
 
 - `.env.example`
-- `composer.lock`
-- `package.json`
+- `composer.lock` et `package.json`
 - le thème développé pour le projet
 - les extensions développées pour le projet
-- les fichiers de configuration
+- les fichiers de configuration (vite, eslint, prettier)
 - les fichiers de traduction du thème (dossier /languages) ou de l'extension (dossier de l'extension)
 
 On ne versionne **pas** (voir fichiers .gitignore) :
 
 - `.env` (sauf exception)
-- le dossier public/wordpress (car installé/mis à jour par composer)
+- le dossier `public/wordpress` et `vendor` (car installé/mis à jour par composer)
 - les extensions tierces (car installées/mises à jour par composer)
-- les dossiers public/uploads/ (stockés à part car binaires occupant beaucoup de place), public/upgrade/, vendor/
-- les thèmes installés "par défaut" (_Twenty*_)
+- les dossiers `public/uploads` (stockés à part car binaires occupant beaucoup de place), `public/upgrade`
+- les thèmes installés "par défaut" (_Twenty*_) qui doivent de toute façon être supprimés
 
 👉 Le fichier `README.md` à la racine du projet doit contenir toutes les informations pour prendre en main le développement et ré-installer le site rapidement en production.
 
@@ -60,7 +60,7 @@ Les extensions spécifiques WordPress / PHP recommandées sont :
 
 #### Automatisation
 
-Avec [Vite](https://github.com/vitejs/vite) (présent dans WordPlate) on compile CSS et JavaScript depuis le dossier `resources`, avec Hot Module Reloading durant la tâche de développement. Pour ajouter le support de Sass : `npm install sass --save-dev`.
+Avec [Vite](https://github.com/vitejs/vite) (présent dans WordPlate) on compile CSS et JavaScript depuis le dossier `resources`, avec HMR (_Hot Module Reloading_) durant la tâche de développement. Pour ajouter le support de Sass : `(p)npm install sass --save-dev`.
 
 #### Moteur de template (optionnel)
 
@@ -281,11 +281,7 @@ Pour filtrer des requêtes à l'aide de ces valeurs, on utilisera une [Meta Quer
 
 🔖 Voir [Tutoriel ACF : Advanced Custom Fields – Le guide complet](https://newslang.ch/blog/tutoriel-acf-advanced-custom-fields-le-guide-complet/), [Best Practices when Designing Custom Fields](https://www.advancedcustomfields.com/blog/best-practices-designing-custom-fields/) et [Tutoriel sur Advanced Custom Fields : Votre guide ultime](https://kinsta.com/fr/blog/advanced-custom-fields/)
 
-### Gutenberg / éditeur wysiwyg
-
-- Palette de couleurs <https://speckyboy.com/custom-color-palette-wordpress-gutenberg-editor/>
-
-#### Blocs sur-mesure
+### Blocs sur-mesure, Gutenberg
 
 Utiliser les [blocs ACF](https://www.advancedcustomfields.com/resources/blocks/) pour ne rendre modifiables que des champs spécifiques (champ texte, image, colorpicker, etc.) et avoir les fonctionnalités d'ACF (champ [relationnel](https://www.advancedcustomfields.com/resources/relationship/), [taxonomies](https://www.advancedcustomfields.com/resources/taxonomy/), etc.). Un bloc ACF est mis en place ainsi :
 
@@ -295,6 +291,12 @@ Utiliser les [blocs ACF](https://www.advancedcustomfields.com/resources/blocks/)
 - Usage dans l'éditeur Gutenberg : le bloc devrait apparaître dans le menu ➕
 
 Dans le cas où on utilise un thème acheté et que les fichiers PHP ne sont pas utilisables, on se tournera vers une [extension](https://fr.wordpress.org/plugins/blockmeister/) afin de générer des ["patterns" Gutenberg](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-patterns/) sur-mesure.
+
+🔖 Adapter la palette de couleurs <https://speckyboy.com/custom-color-palette-wordpress-gutenberg-editor/>.
+
+### Compositions de blocs
+
+TODO:
 
 ## Accessibilité
 
