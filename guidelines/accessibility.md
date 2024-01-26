@@ -789,7 +789,7 @@ Les exemples à suivre proviennent du [Design System du W3C](https://design-syst
 
 **Important :** Toujours commencer par nettoyer proprement les fichiers SVG (avec [SVGOMG](https://jakearchibald.github.io/svgomg/)) car les éditeurs graphiques ajoutent de nombreux éléments inutiles tels que des `<title>` de type "créé par Sketch".
 
-#### SVG inline et porteur d'information
+#### Image SVG inline et porteuse d'information
 
 - Ajouter l'attribut `role="img"` pour indiquer aux lecteurs d'écrans de la considérer comme une image et lui éviter de lire tous les nœuds HTML du SVG.
 - Ajouter un `<title>` (ou un `aria-label`) pour expliciter la fonction de l'image.
@@ -811,16 +811,15 @@ ou bien (avec `aria-label` si l'infobulle au survol n'est pas souhaitée) :
 </svg>
 ```
 
-#### SVG externe et porteur d'information
+#### Image SVG externe et porteuse d'information
 
-- Ajouter l'attribut `role="img"`.
 - Attribut `alt` contenant le nom accessible
 
 ```html
-<img src="image.svg" role="img" alt="Nom accessible">
+<img src="image.svg" alt="Nom accessible">
 ```
 
-#### SVG inline et décoratif
+#### Image SVG inline et décorative
 
 - doit avoir l'attribut `aria-hidden="true"`
 - ne doit pas contenir d'éléments `<title>` ni `<desc>`
@@ -833,33 +832,21 @@ ou bien (avec `aria-label` si l'infobulle au survol n'est pas souhaitée) :
 </svg>
 ```
 
-#### SVG externe et décoratif
+#### Image SVG externe et décorative
 
 - doit avoir un attribut `alt` vide
-- doit avoir l'attribut `aria-hidden="true"`
 
 ```html
-<img src="image.svg" alt="" aria-hidden="true">
+<img src="image.svg" alt="">
 ```
 
-#### SVG dans lien ou dans un bouton
+#### Icône SVG
 
-Deux méthodes sont possibles et accessibles :
+**Important :** Une icône est toujours considérée comme décorative. C'est l'environnement ou l'élément interactif (lien, bouton) dans lequel elle se trouve qui portera l'information.
 
-- La méthode `aria-label="Nom accessible"` sur le lien ou le bouton.
-- Texte dans un `<span>` invisible pour le nom accessible s'il doit être masqué à l'écran, le texte sera alors retranscrit par les lecteurs d’écrans.
+Si l'information ne doit pas être visible à l'écran, la transmettre via un texte dans un élément `<span>` invisible (`<span class="visually-hidden">`), le texte sera alors retranscrit par les lecteurs d’écrans.
 
-**Méthode aria-label :**
-
-```xml
-<button aria-label="Nom accessible masqué à l'écran">
-  <svg aria-hidden="true">
-    <!-- contenu du SVG -->
-  </svg>
-</button>
-```
-
-**Méthode texte masqué :**
+Exemple :
 
 ```xml
 <button>
