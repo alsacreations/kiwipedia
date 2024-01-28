@@ -711,6 +711,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://www.git-tower.com/learn/git/videos/>
 - <https://learngitbranching.js.org/?locale=fr_FR> Learn Git Branching : apprendre les branches
 - <https://github.blog/2015-06-08-how-to-undo-almost-anything-with-git/>
+- <https://mptc.io/content/04-content.html> Modern Plain Text Computing - Version Control
 
 ### Clients git
 
