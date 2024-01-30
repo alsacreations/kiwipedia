@@ -18,6 +18,7 @@ Voir aussi <https://www.alsacreations.com/tuto/lire/1836-Docker--decouverte-et-e
 * Copier un fichier dans un conteneur actif : `docker cp .\fichier.sql.gz 133713371337:/root` où 133713371337 est l'ID du conteneur obtenu par `docker container list` et `/root` le chemin de destination.
 * Redémarrer tous les conteneurs arrêtés : `docker restart $(docker ps -a -q)`
 * Renommer une image : `docker tag <old> <new>`
+* Mettre à jour une politique de redémarrage : `docker update --restart=unless-stopped <nomducontainer>`
 
 ### Ressources / espace disque / statistiques
 
