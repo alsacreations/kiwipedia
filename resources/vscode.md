@@ -42,9 +42,9 @@ Lister les extensions : `code --list-extensions`
 - [Project Manager](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager) (si vous jonglez entre plusieurs projets, c'est un must)
 - [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) (autocomplétion des classes Tailwind)
 - [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense) (autocomplétion des chemins)
+- [CSS var complete](https://marketplace.visualstudio.com/items?itemName=phoenisx.cssvar) (autocomplétion des variables CSS)
 - [Volar](https://marketplace.visualstudio.com/items?itemName=vue.volar) (extension indispensable pour tout projet pour Vuejs / Nuxt)
 - [HTML CSS Support](https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css) (autocomplétion et documentation des balises+attributs)
-- [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) (fonctions avancées Git dans VS Code)
 - [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph) (affichage de l'arbre de commits git)
 - [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) (affiche les erreurs des linters directement dans la fenêtre de code)
 - [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) (commandes Docker facilitées et sidebar affichant containers/images/volumes/networks...)
@@ -53,6 +53,7 @@ Lister les extensions : `code --list-extensions`
 ### Extensions suggérées 👍
 
 - [Todo Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree) (affichage des TODO et FIXME colorés et en arborescence)
+- [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) (fonctions avancées Git dans VS Code)
 - [DotENV](https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv) (support de la syntaxe des fichiers .env)
 - [Auto Close Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag) (fermeture automatiques des balises)
 - [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) (très pratique pour JS / React / Vue)
