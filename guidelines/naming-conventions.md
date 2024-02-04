@@ -121,8 +121,7 @@ Pour les URLs vers des domaines fictifs, on privilégie `https://example.org/` o
 
 Les règles de nommage particulières à chaque langage sont consignées dans leurs Guidelines respectives :
 
-- [Guidelines HTML](Guidelines-HTML.md)
-- [Guidelines CSS](Guidelines-CSS.md)
-- [Guidelines Développement PHP](Guidelines-Developpement-PHP.md)
-- [Guidelines JavaScript](Guidelines-JavaScript.md)
-- [Guidelines WordPress](Guidelines-WordPress.md)
+- [Guidelines HTML](html.md)
+- [Guidelines CSS](css.md)
+- [Guidelines JavaScript](javascript.md)
+- [Guidelines WordPress](wordPress.md)
