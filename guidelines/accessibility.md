@@ -955,7 +955,7 @@ Utiliser l'attribut `aria-live` sur les informations provenant de chargements as
 
 On pourra moduler avec `aria-atomic` et `aria-relevant` (`additions`, `removals`, `text`, `all`) selon qu'on ajoute le contenu au conteneur ou que c'est lui-même qui se voit inséré dans le corps de la page.
 
-🔖 <https://blog.atalan.fr/publications/live-regions/explications.html>
+🔖 <https://access42.net/live-regions-aria-live-analogues-alert-log-status/> et <https://blog.atalan.fr/publications/live-regions/explications.html>
 
 ### Autres composants
 
