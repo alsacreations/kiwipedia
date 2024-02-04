@@ -31,7 +31,7 @@
   "prettier.enable": true,
   "stylelint.enable": true,
   // Seulement si stylelint utilisé sur le projet,
-  // sans stylelint on perderait toute validation native
+  // sans stylelint on perdrait toute validation native
   // "css.validate": false,
   // "scss.validate": false,
   // "less.validate": false,
