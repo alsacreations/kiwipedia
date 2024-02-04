@@ -136,6 +136,31 @@ Les navigateurs ne supportant pas le format `svg` vont ignorer la première inst
 - Générateur de favicon SVG (avec dark thème) : [https://realfavicongenerator.net/svg-favicon/](https://realfavicongenerator.net/svg-favicon/)
 - [favicon-cheat-sheet](https://github.com/audreyfeldroy/favicon-cheat-sheet)
 
+## Conventions de nommage
+
+### Nommage des composants
+
+Chaque composant dispose d'un nom sous forme de classe HTML et/ou d'un nom de fichier propre, par exemple `class="slider"` au sein du fichier `slider.astro`.
+
+Le collectif du W3C **[Open UI](https://open-ui.org/)** a pour mission de spécifier les comportements attendus des composants classique. **Se réferer en priorité à cette ressource pour choisir le nom d'un composant**. Si le composant souhaité n'y figure pas, se reporter à la liste des composants proposés dans [Bootstrap](https://getbootstrap.com/docs/5.3/components).
+
+### Nommage des groupes de composants
+
+Les regroupements de composants sont nommés ainsi&#8239;:
+
+- `.wrapper` : destiné à contenir un élément unique
+- `.container` : destiné à contenir  plusieurs éléments
+- `*-inner` : désigne un enfant direct d'un wrapper ou container
+- `.group` : contient un ensemble d'éléments de même type (ex. `.card-group` qui contient des enfants `.card`)
+
+### Nommage des Layouts
+
+Les "Layouts" sont des zones d'affichages destinées à gérer la façon dont les composants vont s'afficher et interagir entre eux. Ils sont préfixés d'un `l-`.
+
+La liste actuelle des Layouts est : `l-flow`, `l-autogrid`, `l-switcher`, `l-cluster`, `l-repel`, `l-reel`, `l-media`, `l-breakout`, `l-layout-maxed`.
+
+Nos Layouts sont présentés dans [Bretzel](http://bretzel.alsacreations.com/#layouts) et [récupérables sur Github](https://github.com/alsacreations/bretzel/blob/main/public/bretzel-layouts.css).
+
 ## Sémantique globale
 
 Les éléments HTML5 `<header>`, `<article>`, `<main>`, `<footer>`, `<aside>`, `<section>` et `<nav>` sont privilégiés aux éléments neutres `<div>` si leur fonction s’y prête.
@@ -143,8 +168,6 @@ Les éléments HTML5 `<header>`, `<article>`, `<main>`, `<footer>`, `<aside>`, `
 La structure globale préconisée est celle-ci :
 
 - `<body>` : corps de page et du site web
-- `<div id="layout-page">` : sous-conteneur optionnel. Par exemple si body ne suffit pas
-- `<div class="layout-inner">` : sous-conteneur optionnel. Par exemple pour centrer plusieurs blocs de la même manière
 - `<main id="main" role="main">` : conteneur général du contenu principal, typiquement ce qui n'est pas dans header et footer
 - `<header id="header" role="banner">` : entête global, comportant souvent la navigation et des éléments qui se retrouvent en commun sur (quasiment) toutes les pages
 - `<footer id="footer" role="contentinfo">` : pied de page global comportant des éléments qui se retrouvent en commun sur (quasiment) toutes les pages
