@@ -89,16 +89,16 @@ Configurer le chemin vers l'exécutable PHP `php.validate.executablePath` dans l
 
 ## Configuration des extensions et linters
 
-Pour tous les types de projets, ajouter un dossier `.vscode/` à la racine, contenant :
+Pour tous les types de projets, prévoir à la racine :
 
-- un fichier [.vscode/extensions.json](assets/.vscode/extensions.json) listant les extensions recommandées pour le projet
-- un fichier [.vscode/settings.json](assets/.vscode/settings.json) contenant les réglages pour (dés)activer les linters
+- Un fichier de formattage global `.editorconfig`
+- Un fichier de configuration `.stylelintrc.json` si Stylelint est utilisé
+- Un fichier de formattage global `.tsconfig.json` si Typescript est utilisé
+- Un dossier `.vscode/` contenant :
+  - un fichier [.vscode/extensions.json](assets/.vscode/extensions.json) listant les extensions recommandées pour le projet
+  - un fichier [.vscode/settings.json](assets/.vscode/settings.json) contenant les réglages pour (dés)activer les linters
 
-Les détails de configuration des Extensions et Linters sont décrits dans les autres Guidelines :
-
-- [Guidelines Vue-Nuxt-Front-End](Guidelines-Vue-Nuxt-Front-End.md)
-- [Guidelines Vue-WordPress](Guidelines-Vue-WordPress.md)
-- [Guidelines WordPress](Guidelines-WordPress.md)
+Tous ces fichiers sont fournis en exemple [dans le dossier `configs`](https://github.com/alsacreations/kiwipedia/tree/main/configs) de nos guidelines.
 
 ## Astuces de configuration
 
