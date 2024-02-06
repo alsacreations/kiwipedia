@@ -5,6 +5,7 @@
 - Les _shorts_ de [DeliciousInsights](https://www.youtube.com/@DeliciousInsights/shorts)
 - <https://github.com/dictcp/awesome-git>
 - <https://jvns.ca/blog/2023/11/01/confusing-git-terminology/>
+- <https://jvns.ca/blog/2024/01/26/inside-git/>
 
 ## Init
 
