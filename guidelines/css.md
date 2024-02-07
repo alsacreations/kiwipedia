@@ -45,9 +45,10 @@ Voici dans quel ordre nous déclarons nos propriétés :
 
 Règles additionnelles :
 
-- On sépare visuellement (ligne vide) les déclarations en trois groupes : display+positionnement+boîte, puis typographie, puis décorations.
-- Les *media queries* s'écrivent à la fin des règles sur l'élément, séparées par une ligne vide.
 - On écrit `margin` avant `padding`.
+- Les *états* (survol, focus, active) s'écrivent à la fin des règles concernant l'élément, séparés par une ligne vide.
+- Les *media queries* s'écrivent à la fin des règles concernant l'élément et ses états, séparées par une ligne vide.
+- On réordonne automatiquement les propriétés CSS à l'aide de [`prettier-plugin-css-order`](https://www.npmjs.com/package/prettier-plugin-css-order)
 
 Exemple :
 
@@ -73,6 +74,11 @@ selecteur {
   background: theme('colors.blue.10');
   */
 
+  &:hover,
+  &:focus {
+    top: theme('spacing.8');
+  }
+
   @screen md {
     display: block;
   }
@@ -80,8 +86,6 @@ selecteur {
 ```
 
 *Attention : en cas d'usage de classes utilitaires, il ne s'agit que d'un exemple peu usité car la plupart des déclarations ici sont à placer dans le HTML sous forme de classes utilitaires*
-
-**Note : Réordonner se fait manuellement, en se servant de cette liste comme référence.**
 
 ## Unités
 
