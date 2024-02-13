@@ -72,6 +72,7 @@ Confort visuel :
 
 ### Extensions spécifiques
 
+- [Thunder Client](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client) : client API Rest (équivalent à Postman, Insomnia)
 - [Live Sass Compiler](https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass) : Surveille automatiquement les modifications de fichiers Sass dans le projet et les compile en CSS (ainsi qu'en version minifiée `.min.css`).
 - [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) : L'extension Live Server ouvre un serveur local dans une page du navigateur, rafraîchie automatiquement.
 - [i18n Ally](lokalise.i18n-ally) pour les projets Vue/Nuxt avec internationalisation
