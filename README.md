@@ -1,21 +1,13 @@
 # Kiwipedia, made by Alsacréations 🥝
 
-Kiwipedia est une base de connaissance technique librement partagée et dont les objectifs sont&#8239;:
+Kiwipedia est une base de connaissance technique librement partagée, fruit de notre veille technologique, et dont les objectifs sont&#8239;:
 
 - D'uniformiser et d’harmoniser les processus de conception de l’agence web [Alsacreations.fr](https://www.alsacreations.fr/).
 - De favoriser l’intervention de profils de compétences variés au sein d'une équipe.
 - De faciliter la maintenance des projets.
+- D'avoir un impact sur le succès auprès de l'internaute via **l'accessibilité, la qualité, l'ergonomie, la performance, le référencement**.
 
-💬 Le Web est un métier de plus en plus tentaculaire, comportant un vaste ensemble de thématiques qui vont avoir au final un impact sur le succès auprès de l'internaute&#8239;: **l'accessibilité, la qualité, l'ergonomie, la performance, le référencement (SEO), la maintenabilité**. Tous les critères ne seront pas toujours applicables et le seront bien souvent en fonction du temps alloué.
-
-Cette présente base de connaissances techniques est le fruit de notre veille technologique quotidienne et se compose de&#8239;:
-
-- **Guidelines** (bonnes pratiques internes concernant divers langages et technologies web)
-- **Ressources** (documentations diverses, checklists, cheatsheets)
-- **Starters** (tutoriels rapides pour initier des projets)
-- **Configs** (fichiers de configuration tels que `.editorconfig`, `stylelintrc.json`, `tsconfig.json`, `settings.json` pour VScode)
-
-![](images/kiwipedia-illust.jpg)
+![""](images/kiwipedia-illust.jpg)
 
 ## Socle de connaissances minimal
 
@@ -30,7 +22,7 @@ Les thématiques suivantes sont **au c&oelig;ur de notre activité** d'agence we
   
 ## Guidelines transversales
 
-Ces thématiques couvrent l'ensemble des domaines auxquels une agence web est confrontée. Les connaître doit faire partie de notre périmètre de compétences&#8239;:
+Ces bonnes pratiques couvrent l'ensemble des domaines auxquels une agence web est confrontée. Les connaître doit faire partie de notre périmètre de compétences&#8239;:
 
 - [**Guidelines Performances**](guidelines/performances.md)
 - [**Guidelines Interopérabilité**](guidelines/interoperabilite.md)
@@ -54,15 +46,18 @@ Ces thématiques traitent de technologies précises, qui varient selon les proje
 - [**Guidelines WordPress**](guidelines/wordpress.md)
 - [**Guidelines Développement PHP / MySql**](guidelines/php-mysql.md)
 
-**NOTE : Aucun de ces documents n'est figé, ils sont en constante amélioration et évolution.**
+## Starters
 
-## Architecture globale
+Tutoriels rapides pour démarrer des projets.
 
-Nous percevons ces guidelines comme faisant partie d'un ensemble organisé.
+- [**Initialisation de projet**](starters/project-init.md)
+- [**Projet avec Vite**](starters/vite.md)
 
-![Schéma global](images/schema-global.png)
+## Configurations
 
-## Ressources et pense-bêtes
+- [Fichiers de configuration utiles](https://github.com/alsacreations/kiwipedia/tree/main/configs) (lien GitHub)
+
+## Ressources et pense-bêtes (cheatsheets)
 
 - [**Pense-Bête Flexbox**](resources/flexbox-cheatsheet.png)
 - [**Pense-Bête Grid Layout**](resources/grid-cheatsheet.png)
@@ -72,7 +67,6 @@ Nous percevons ces guidelines comme faisant partie d'un ensemble organisé.
 - [**Cheatsheet git**](resources/git.md)
 - [**Cheatsheet NPM**](resources/npm.md)
 - [**Ressources et liens utiles**](resources/links.md)
-- [**Checklist**](resources/checklist.md)
 
 ## Licence
 
