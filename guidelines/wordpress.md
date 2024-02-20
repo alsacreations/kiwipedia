@@ -197,7 +197,6 @@ require_once 'includes/filters.php';
  * Parent theme overload
  */
 require_once 'includes/inc-pages-functions-updated.php';
-require_once 'includes/cnrs-functions.php';
 ```
 
 ### Personnalisation du thème
