@@ -96,13 +96,13 @@ La maquette doit comporter l’ensemble des éléments du wireframe (si l’él�
 
 - La page 404
 - Le bandeau Cookies (si concerné)
-- Les [liens d’évitement](Guidelines-Accessibilite.md#liens-dévitement-skip-link)
+- Les [liens d’évitement](/guidelines/accessibility.md)
 
 ### Mobile first
 
 La conception de nos maquettes est réalisée dans un esprit "Mobile First" (meilleures performances générales) c'est à dire que la priorité est donnée aux vues "Mobiles", puis déclinées en vues "Desktop", avec "adaptation au mieux" pour devices intermédiaires.
 
-Les maquettes conçues respectent les Points de Rupture (Breakpoints) recommandés dans nos [Guidelines CSS](Guidelines-CSS.md).
+Les maquettes conçues respectent les Points de Rupture (Breakpoints) recommandés dans nos [Guidelines CSS](/guidelines/css.md).
 
 Comme pour la phase de Wireframe, les pages concernées par les maquettes Mobiles ou Desktop dépendent du projet, mais "un nombre représentatif" sera proposé (à minima la page d'accueil, une page de contenu et la page de contact).
 
@@ -126,7 +126,7 @@ Attention : ne pas se fier au rendu des couleurs avec les pipettes des navigateu
 
 #### Éléments
 
-- Les éléments HTML “classiques” (titres, paragraphes, listes, liens, [liens externes](Guidelines-Accessibilite.md#ouverture-dans-une-nouvelle-fenêtre), boutons, formulaires, tableaux)
+- Les éléments HTML “classiques” (titres, paragraphes, listes, liens, liens externes, boutons, formulaires, tableaux)
 - Composants présents dans la maquette (boîtes/blocs, alertes, pagination, navigation, navigation mobile déployée, …)
 - Une barre de séparation horizontale `<hr>` (si présente)
 
@@ -142,7 +142,7 @@ Attention : ne pas se fier au rendu des couleurs avec les pipettes des navigateu
 #### Interactions utilisateur/trice
 
 - Les exemples de transitions ou animations (faire des liens vers des démos)
-- Les Liens d’évitement masqués au départ et déclenchés avec la touche Tab (cf. nos [Guidelines HTML](Guidelines-HTML.md))
+- Les Liens d’évitement masqués au départ et déclenchés avec la touche Tab (cf. nos [Guidelines HTML](/guidelines/html.md))
 
 #### Divers
 
@@ -177,14 +177,14 @@ Le choix de langue se fait à l'aide du mot désignant la langue et non pas d'un
 
 L'icône à fournir à l’intégrateur/trice est au format SVG et PNG à la taille 1024x1024px, si possible.
 
-L’intégration du favicon est à la charge de l’intégrateur/trice et est décrite dans nos [Guidelines HTML](Guidelines-HTML.md).
+L’intégration du favicon est à la charge de l’intégrateur/trice et est décrite dans nos [Guidelines HTML](/guidelines/html.md).
 
 ### Images et retina
 
 Afin d’optimiser la netteté des images Bitmap sur écrans Retina et Haute Définition (_hdpi_), lors de la livraison de la maquette, chaque image bitmap (photo, arrière-plan) est fournie en SD (x1) et HD (x2).
 
 - La compression et l’optimisation des SVG/fonts est à la charge de l’intégrateur/trice
-- La compression et l’optimisation des Bitmap (Jpeg, png, webp, avif) est à la charge du/de la webdesigneur/euse, voir [Guidelines Performance](Guidelines-Performances.md)
+- La compression et l’optimisation des Bitmap (Jpeg, png, webp, avif) est à la charge du/de la webdesigneur/euse, voir [Guidelines Performance](/guidelines/performances.md)
 
 Les formats privilégiés à transmettre à l'intégrateur/trice :
 
@@ -205,7 +205,7 @@ Les formats privilégiés à transmettre à l'intégrateur/trice :
 
 #### Couleurs
 
-- Respecter le [contraste de couleur](Guidelines-Accessibilite.md#contraste--webdesign) + gammes de couleurs
+- Respecter le contraste de couleur + gammes de couleurs
 - Ne pas indiquer une information uniquement par la couleur.
 
 #### Contenus
@@ -219,7 +219,7 @@ Les formats privilégiés à transmettre à l'intégrateur/trice :
 - Déclarer les citations.
 - Mettre en contexte les _Call To Action_.
 - Utiliser des boutons et liens explicites (pas de _cliquez ici_).
-- Indiquer [l’ouverture d’un lien dans une nouvelle fenêtre](Guidelines-Accessibilite.md#ouverture-dans-une-nouvelle-fenêtre)
+- Indiquer [l’ouverture d’un lien dans une nouvelle fenêtre](/guidelines/accessibility.md)
 - Limiter les informations à télécharger et préférer l’incorporation directement dans la page
 - Proposer différents moyens de contact (téléphone, e-mail).
 
