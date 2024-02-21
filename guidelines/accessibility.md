@@ -125,6 +125,14 @@ La balise `<footer>` peut être utilisée plusieurs fois dans la page mais l’a
 
 La balise `<main>` ne peut être utilisée qu’une seule fois dans la page ainsi que l’attribut `role="main"`.
 
+### Zone de recherche
+
+```html
+<search>[…]</search>
+```
+
+Regroupe des capacités de recherche et de filtrage grâce à l'aide de contrôles de formulaire, il peut y en exister un ou plusieurs sur un même document, dans le corps ou dans une section `<header>` s'il s'agit d'un module de recherche transversal présent durant toute la navigation. Le landmark implicite est role="search", il n'y a donc plus besoin de l'ajouter à `<form>`.
+
 ### Navigation
 
 Chaque ensemble de pages doit proposer au moins deux moyens de navigation différents parmi la liste suivante :
