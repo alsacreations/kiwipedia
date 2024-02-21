@@ -32,14 +32,14 @@ Lister les extensions : `code --list-extensions`
 
 - [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) (respect configuration tabs vs spaces à l'insertion, encodage, eol, etc)
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) (vérification syntaxe JavaScript, TypeScript et frameworks)
-- [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint) (vérifie la syntaxe CSS d'après un ensemble de règles, nécessite une installation de stylelint locale ou globale)
 - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) (formatage automatique des fichiers à la sauvegarde)
-- [SCSS Intellisense](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-scss) (autocomplétion SCSS : classes, variables, etc.)
 - [Markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) (vérification syntaxe Markdown)
 
 ### Extensions fortement recommandées ⭐
 
 - [Project Manager](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager) (si vous jonglez entre plusieurs projets, c'est un must)
+- [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint) (vérifie la syntaxe CSS d'après un ensemble de règles, nécessite une installation de stylelint locale ou globale)
+- [SCSS Intellisense](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-scss) (autocomplétion SCSS : classes, variables, etc.)
 - [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) (autocomplétion des classes Tailwind)
 - [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense) (autocomplétion des chemins)
 - [CSS var complete](https://marketplace.visualstudio.com/items?itemName=phoenisx.cssvar) (autocomplétion des variables CSS)
@@ -92,12 +92,13 @@ Configurer le chemin vers l'exécutable PHP `php.validate.executablePath` dans l
 
 Pour tous les types de projets, prévoir à la racine :
 
-- Un fichier de formattage global `.editorconfig`
+- Un fichier de configuration `.editorconfig`
+- Un fichier de configuration [Prettier](/configs/.prettierrc.mjs)
 - Un fichier de configuration `.stylelintrc.json` si Stylelint est utilisé
-- Un fichier de formattage global `.tsconfig.json` si Typescript est utilisé
+- Un fichier de configuration `.tsconfig.json` si Typescript est utilisé
 - Un dossier `.vscode/` contenant :
-  - un fichier [.vscode/extensions.json](assets/.vscode/extensions.json) listant les extensions recommandées pour le projet
-  - un fichier [.vscode/settings.json](assets/.vscode/settings.json) contenant les réglages pour (dés)activer les linters
+  - un fichier [.vscode/extensions.json](/configs/.vscode/extensions.json) listant les extensions recommandées pour le projet
+  - un fichier [.vscode/settings.json](/configs/.vscode/settings.json) contenant les réglages pour (dés)activer les linters
 
 Tous ces fichiers sont fournis en exemple [dans le dossier `configs`](https://github.com/alsacreations/kiwipedia/tree/main/configs) de nos guidelines.
 
