@@ -120,7 +120,11 @@ Pour une adaptation du site web vers les terminaux mobiles, l’élément `<meta
 
 ### Favicon
 
-L’icône de favori (favicon) est utilisée de différentes manières par les navigateurs (onglets, favoris), systèmes et moteurs de recherche (affichage dans les résultats). Le format ICO est ancien, le format PNG permet une meilleure définition (carré multiple de 48x48) avec un poids plus léger, et le [format SVG](https://css-tricks.com/svg-favicons-and-all-the-fun-things-we-can-do-with-them/) se voit [progressivement supporté](https://caniuse.com/link-icon-svg).
+L’icône de favori (favicon) est utilisée de différentes manières par les navigateurs (onglets, favoris), systèmes et moteurs de recherche (affichage dans les résultats).
+
+- Le format ICO est ancien,
+- le format PNG permet une meilleure définition (carré multiple de 48x48) avec un poids plus léger,
+- et le [format SVG](https://css-tricks.com/svg-favicons-and-all-the-fun-things-we-can-do-with-them/) se voit [progressivement supporté](https://caniuse.com/link-icon-svg).
 
 La syntaxe recommandée pour les navigateurs modernes est celle-ci :
 
