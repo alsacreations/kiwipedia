@@ -16,8 +16,6 @@ Tailwind est un framework CSS qui adopte une approche "atomique" de CSS, compren
 
 Tailwind, pour plus de plaisir, gagne à être associé à un environnement de travail et un workflow adaptés. Nous utilisons Visual Studio Code et **[Tailwind CSS intellisense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)** offrant une auto-complétion ainsi qu'une _tooltip_ au survol des classes.
 
-⚠️ Tailwind apporte son lot de directives sous forme de règles-at spécifiques (`@apply`, `@layer`, `@screen`, `@variants`, etc.) pouvant être pointées du doigt par les Linters CSS. Stylelint est notre formateur (unique) : les linters natifs CSS (css.validate) et scss (scss.validate) **doivent être désactivés** dans [.vscode/settings.json](assets/.vscode/settings.json). Nous configurons spécifiquement Stylelint (dans [`stylelint.config.js`](assets/stylelint.config.js)) pour ignorer les règles-at inconnues avec `at-rule-no-unknown`. De cette manière, nos Linters CSS ne déclenchent aucun avertissement ni erreur lorsqu'ils croisent les règles-at de Tailwind, et nous n'avons pas besoin d'utiliser [Tailwind Loves Sass](https://www.npmjs.com/package/tailwind-loves-sass).
-
 ### Ré-ordonner les classes dans le HTML
 
 Le plugin [prettier-plugin-tailwindcss](https://github.com/tailwindlabs/prettier-plugin-tailwindcss) permet d'ordonner les classes utilitaires de Tailwind dans un ordre précis.
@@ -32,7 +30,6 @@ Ce fichier contient toutes les centaines de déclarations de couleurs, de taille
 
 Pour éviter la présence de centaines de valeurs inutiles (et hors charte graphique), qui pollueront les outils d'auto-complétion, nous **écrasons** toujours la configuration de Tailwind pour les thématiques suivantes, dans cet ordre&nbsp;:
 
-- `screens` : points de rupture
 - `colors` : Les couleurs de la charte graphique
 - `fontFamily` : Les familles de police et alternatives
 - `fontSize` : Les tailles de police
@@ -43,21 +40,21 @@ Ces aspects sont différents à chaque projet et sont donc nécessaires à confi
 
 Concrètement, nous renseignons notre palette de couleurs ainsi :
 
-```js
-module.exports = {
+```ts
+export default {
     theme: {
         colors: {
             // Ici la palette de couleurs de notre projet
             yellow: "#e9c46a",
         },
     },
-};
+}
 ```
 
 Pour les styles qui doivent conserver l'existant de Tailwind et se contenter d'ajouter des règles/valeurs supplémentaires, nous **étendons** au sein de `theme.extend` :
 
 ```js
-module.exports = {
+export default {
     theme: {
         extend: {
             spacing: {
@@ -66,21 +63,7 @@ module.exports = {
             },
         },
     },
-};
-```
-
-### Remarque concernant les Breakpoints
-
-La liste de points de rupture (breakpoints) recommandée est proposée sous forme de couple "clé:valeur" et peut bien entendu être élargie&nbsp;:
-
-```scss
-screens: {
-  'sm': '40rem', // => @media (min-width: 640px)
-  'md': '48rem', // => @media (min-width: 768px)
-  'lg': '64rem' // => @media (min-width: 1024px)
-  'xl': '80rem' // => @media (min-width: 1280px)
-  '2xl': '96rem' // => @media (min-width: 1536px)
-},
+}
 ```
 
 ## Usage et bonnes pratiques
@@ -88,23 +71,11 @@ screens: {
 Il existe trois manières d'appliquer des styles CSS dans un projet Tailwind :
 
 1. Dans le Template HTML _(Tailwind)_ (ex. `<blockquote class="font-comic sm:text-20 md:text-24 md:text-center">`)
-2. Dans le (S)CSS via `@apply` _(Tailwind)_ (ex. `@apply sm:grid relative col-start-3 sm:grid-cols-2 gap-5 sm:gap-x-20 sm:gap-y-10 lg:gap-x-40;`)
-3. Dans le (S)CSS via... des propriétés CSS _(pas Tailwind)_
-
-**Usage pertinent de classes dans le HTML :** Nous utilisons les classes utilitaires lorsqu'il s'agit de propriétés liées aux espacements (`margin`, `padding`, `gap`), à la typographie ou aux couleurs. Par exemple : des paragraphes, des blocs à décaler, à modifier selon les contextes.
-
-**Usage pertinent de styles via `@apply` :** jamais ?
-
-**Usage pertinent de CSS "classique" :** Nous utilisons des styles CSS pour les données structurelles ou les Layout, les grilles de mise en forme ainsi que toutes les fonctionnalités spécifiques, complexes ou impossibles à reproduire via Tailwind&nbsp;:
-
-- Propriétés de layout de manière générale
-- Grilles complexes
-- `position`, `top`, `right`, `bottom`, `left` et `z-index`
-- Transitions / animations complexes
-- Pseudo-éléments (`::before` et `::after`)
-- Pseudo-classes (sauf `:hover` et `:focus`)
-- Dégradés
-- etc.
+    - Nous tentons au maximum de respecter cette pratique
+2. Dans le CSS via `@apply` _(Tailwind)_ (ex. `@apply sm:grid relative col-start-3 sm:grid-cols-2 gap-5 sm:gap-x-20 sm:gap-y-10 lg:gap-x-40;`)
+    - À éviter au maximum
+3. Dans le CSS via... des propriétés CSS _(pas Tailwind)_
+    - À éviter au maxium sauf en cas extrêmes
 
 ## Dans le détail : un Composant
 
@@ -147,58 +118,7 @@ Le fichier [alsa-TW-Reset](assets/vue-nuxt-front-end/alsa-tw-reset.scss) apporte
 @import "fonts.css";
 ```
 
-### Directives Tailwind
+## Directives Tailwind
 
-En plus de `@apply`, Tailwind CSS propose plusieurs directives intéressantes.
-
-#### `@screen`
-
-La directive `@screen` simplifie significativement la lecture des media queries.
-
-**Elle est vivement conseillée.**
-
-Version via Media Query classique :
-
-```css
-body {
-    @apply bg-white;
-
-    @media (max-width: theme("screens.lg")) {
-        @apply bg-pink;
-    }
-}
-```
-
-Version avec `@screen` :
-
-```css
-body {
-    @apply bg-white;
-
-    // => @media (min-width: "lg")
-    @screen lg {
-        @apply bg-pink;
-    }
-}
-```
-
-**Remarque :** Le mécanisme classique des Media Queries dans Taiwlind est "Mobile First", la détection est donc en mode `min-width:`, maisl il est également possible de cibler via `max-width:`.
-
-Pour ce faire, déclarer la valeur de breakpoint dans `tailwing.config.ts` (ici `small`)&nbsp;:
-
-```yaml
-theme: { screens: { "small": { "max": "640px" } } }
-```
-
-Puis utiliser `small` comme n'importe quelle autre valeur :
-
-```scss
-body {
-    @apply bg-white;
-
-    // => @media (max-width:640)
-    @screen small {
-        @apply bg-pink;
-    }
-}
-```
+Nous utilisons quand il est nécessaire, la directive `@screen`. Nous évitons au maximum l'usage de `@apply`, nous
+préférons écire les styles via les classes utilitaires dans le HTML.
