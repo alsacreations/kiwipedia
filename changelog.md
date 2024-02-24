@@ -1,5 +1,21 @@
 # Changelog
 
+## Samedi 24 février 2024
+
+### Général
+
+- Nos Guidelines "CSS+Cube+Tailwind" deviennent officiellement deux guidelines distinctes à choisir en début de projet : "CSS Vanilla" et "CSS Utilities"
+
+### Configs / starters
+
+- Stylelint devient optionnel lors d'un nouveau projet
+
+### CSS / Tailwind / CubeCSS
+
+- Grosse mise à jour des guidelines CSS "natif"
+- Supprime les guidelines CubeCSS officiellement abandonnée (même si certaines idées peuvent être conservées)
+- Sépare les recommendations Dark Mode en deux parties : "CSS Vanilla" et "CSS Utilities"
+
 ## Mercredi 7 février 2024
 
 ### Général
