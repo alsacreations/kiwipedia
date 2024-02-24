@@ -2,37 +2,42 @@
 
 Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/) concernant **"CSS"**. Ces indications sont destinées à évoluer dans le temps et à s'adapter à chaque nouveau projet.
 
-## Résumé
+## CSS natif ou utilitaire
 
-De manière générale et sauf projets d'intégration spécifiques, nous privilégions les méthodologies, langages et outils suivants&nbsp;:
+Ces guidelines CSS sont le fruit de plusieurs années d'expérience en méthodologies (OOCSS, BEM, CubeCSS) et frameworks (Bootstrap, Tailwind). À ce jour, deux méthodes d'intégration CSS ont démontré leurs avantages en production : "CSS natif" et "CSS utilitaire". **Nous optons pour l'une ou l'autre de ces méthodes en début de projet**, selon les contraintes et les affinités des personnes concernées.
 
-- Un Reset CSS (et print) : **[Bretzel](https://github.com/alsacreations/bretzel/blob/main/public/bretzel-reset.css)**
-- Une Méthodologie CSS : **[Cube CSS](cubecss.md)**
-- Un Constructeur de classes utilitaires : **[Tailwind CSS](tailwind.md)** (sauf exceptions)
+**Ce présent document s'applique exclusivement à la méthode "CSS natif".**
 
-Optionnel (mais encore recommandé) :
+### Qu'appelons-nous CSS natif ?
 
-- Un Préprocesseur **Sass** (syntaxe `.scss`) *ou* un Post-processeur (**postCSS**)
+Également appelé "Vanilla", l'intégration CSS native correspond à la méthode historique (fichiers CSS, nommage "sémantique", etc.).
+
+- Nous rédigeons les règles de styles dans une ou plusieurs feuilles de styles
+- Nous employons la convention de nommage décrite dans les [guidelines HTML](html.md),
+- Nous ne faisons pas usage de classes utilitaires sauf rares exceptions (par exemple pour distinguer un élément parmi d'autres semblables)
+- Toutes les valeurs des propriétés CSS sont renseignées au sein d'un fichier de configuration (design tokens) et appliquées sous forme de custom properties (ex. `font-weight: var(--font-weight-400)`)
+- De manière optionnelle (mais encore recommandée), nous utilisons un Préprocesseur **Sass** (syntaxe `.scss`) *ou* un Post-processeur (**postCSS**) pour diverses fonctions encore non réalisables en CSS natif.
+- Notre Reset CSS (et print) est appliqué sur chaque projet : **[Bretzel](https://github.com/alsacreations/bretzel/blob/main/public/bretzel-reset.css)**
 
 ## Bonnes pratiques CSS globales
 
 ### Points généraux
 
 - Maintenabilité
-  - Privilégier systématiquement l'usage de sélecteurs de **class** plutôt que les sélecteurs d'éléments (`li`, `span`, `p`) et ne jamais cibler via un sélecteur `#id`.
-  - Éviter les *sélecteurs composés* tels que `.modal span` ou `.modal .date` mais plutôt `.modal-date` pour conserver une spécificité minimale.
-  - Prévoir dès le départ un nom de classe pour chaque élément HTML (même anodin tels que `<span>`, `<p>` ou `<a>`) afin qu'il puisse être ciblé sans avoir à tenir compte de sa hiérarchie.
-  - Éviter d’écraser une règle CSS par une autre.
-  - La règle `!important` doit être éradiquée si possible du fait de son poids extrêmement important (certaines parties des styles peuvent toutefois exceptionnellement employer à juste titre `!important`).
+  - Nous privilégions systématiquement l'usage de sélecteurs de **class** plutôt que les sélecteurs d'éléments (`li`, `span`, `p`) et ne ciblons jamais via un sélecteur `#id`.
+  - Nous évitons tant que possible les *sélecteurs composés* tels que `.modal span` ou `.modal .date` mais plutôt `.modal-date` pour conserver une spécificité minimale.
+  - Nous prévoyons dès le départ un nom de classe pour chaque élément HTML (même anodin tels que `<span>`, `<p>` ou `<a>`) afin qu'il puisse être ciblé sans avoir à tenir compte de sa hiérarchie.
+  - Nous évitons d’écraser une règle CSS par une autre.
+  - Nous évitons tant que possible la règle `!important` du fait de sa spécificité extrême.
 - Performances
-  - Durant la phase de développement l'intégration se fait sur plusieurs fichiers CSS (composants, layout, etc.) que l'on rassemble dans un fichier unique (par exemple via `@use` qui [remplace progressivement `@import` dans Sass](https://sass-lang.com/documentation/at-rules/import/))
-  - Les fichiers CSS doivent être minifiés pour économiser du poids de chargement.
+  - Durant la phase de développement l'intégration se fait sur plusieurs fichiers CSS (composants, layout, etc.) que l'on rassemble dans un fichier unique.
+  - Les fichiers CSS sont minifiés en productio pour économiser du poids de chargement.
 
 ### Ordre des déclarations
 
 Les déclarations au sein d'une règle CSS sont ordonnées de façon à faire apparaître les propriétés importantes en tête de liste.
 
-Voici dans quel ordre nous déclarons nos propriétés :
+Voici dans quel ordre nous déclarons nos propriétés :
 
 1. Propriété **`display`** : tout ce qui affecte le rendu par défaut de l’élément
 2. **Positionnement** : tout ce qui détermine la position de l’élément (`position`, `top`, `z-index`, , `overflow` etc.)
@@ -41,73 +46,70 @@ Voici dans quel ordre nous déclarons nos propriétés :
 5. **Typographie** : tout ce qui détermine les caractéristiques de la police de caractères (`color`, `font-size`, `line-height`, etc.)
 6. **Décoration** : les propriétés purement ornementales (`background-color`, `border`, `border-radius`, etc.)
 
-*Attention : en cas d'usage de classes utilitaires, les déclarations concernant les espacements (`margin`, `padding`, `gap`), la typographie et les couleurs sont à placer dans le HTML sous forme de classes utilitaires*
-
 Règles additionnelles :
 
 - On écrit `margin` avant `padding`.
 - Les *états* (survol, focus, active) s'écrivent à la fin des règles concernant l'élément, séparés par une ligne vide.
 - Les *media queries* s'écrivent à la fin des règles concernant l'élément et ses états, séparées par une ligne vide.
-- On réordonne automatiquement les propriétés CSS à l'aide de [`prettier-plugin-css-order`](https://www.npmjs.com/package/prettier-plugin-css-order)
+- **On réordonne automatiquement les propriétés CSS à l'aide de [`prettier-plugin-css-order`](https://www.npmjs.com/package/prettier-plugin-css-order)**
 
 Exemple :
 
 ```css
-/* La partie commentée est intégrée sous forme de classes utilitaires */
-selecteur {
-  display: inline-block;
-  position: relative;
-  top: theme('spacing.4');
-  z-index: theme('zIndex.100');
-  /*
-  margin: theme('spacing.4');
-  padding: 0;
-  gap: theme('spacing.4');
+.selecteur {
+    display: inline-block;
+    z-index: var(--z-index-100);
+    position: relative;
+    top: var(--spacing-4);
+    margin: var(--spacing-4);
+    padding: 0;
+    border: 1px solid var(--colors-pink-60);
+    background: var(--colors-blue-10);
+    color: var(--colors-pink-60);
+    font-weight: var(--font-weight-700);
+    font-size: var(--font-size-18);
+    font-family: system-ui, arial, sans-ferif;
+    text-align: right;
 
-  color: theme('colors.pink.60');
-  text-align: right;
-  font-size: theme('fontSize.18');
-  font-family: system-ui, arial, sans-ferif;
-  font-weight: theme('fontWeight.900');
+    &:hover,
+    &:focus {
+        color: var(--colors-kiwigreen);
+    }
 
-  border: 1px solid theme('colors.pink.60');
-  background: theme('colors.blue.10');
-  */
+    @media (width >= 40rem) {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: var(--spacing-4);
+    }
 
-  &:hover,
-  &:focus {
-    top: theme('spacing.8');
-  }
-
-  @screen md {
-    display: block;
-  }
+    @media (prefers-color-scheme: dark) {
+        border-color: var(--colors-pink-10);
+        color: var(--colors-kiwigreen);
+    }
 }
 ```
 
-*Attention : en cas d'usage de classes utilitaires, il ne s'agit que d'un exemple peu usité car la plupart des déclarations ici sont à placer dans le HTML sous forme de classes utilitaires*
-
 ## Unités
 
-La première règle est : *"si la valeur doit pouvoir s'adapter à la taille de police de l'utilisateur, utiliser des `rem`, sinon utiliser des `px`"*. Consulter [l'article de Josh Comeau](https://www.joshwcomeau.com/css/surprising-truth-about-pixels-and-accessibility/) pour les détails et cas concrets.
+La première règle à observer est : *"si la valeur doit pouvoir s'adapter à la taille de police de l'utilisateur, utiliser des `rem`, sinon utiliser des `px`"*. Consulter [l'article de Josh Comeau](https://www.joshwcomeau.com/css/surprising-truth-about-pixels-and-accessibility/) pour les détails et cas concrets.
 
-La seconde règle est : *"Éviter d'indiquer une taille à un élément, privilégier la fluidité (`1fr` dans Grid Layout, `flex-grow` dans Flexbox) lorsque cela est possible"*.
+La seconde règle est : *"Éviter d'indiquer une taille à un élément, privilégier la fluidité (`1fr` dans Grid Layout, `flex-grow` dans Flexbox) lorsque cela est possible"*.
 
-La troisième règle est : *"Éviter d'imposer une hauteur à un élément possédant du contenu tant que cela est possible"*.
+La troisième règle est : *"Éviter d'imposer une hauteur à un élément possédant du contenu tant que cela est possible"*.
 
-On privilégie le `rem` pour :
+On privilégie le `rem` pour :
 
 - La taille de police (`1rem` est équivalent à `16px`)
 - Les Media Queries (`576px` = `36rem`, `992px` = `62rem`, `1400px` = `87.5rem`)
 
-On privilégie le `px` pour :
+On privilégie le `px` pour :
 
 - Les espacements verticaux et horizontaux entre les élements (gouttières, rythme vertical)
 - Les dimensions d'éléments non dépendants de la taille de contenu (images)
 
-Autres unités :
+Autres unités :
 
-- `dvh` pour la hauteur de page (`body`)
+- `dvh` pour la hauteur (minimum) de page (`body`)
 - `pt` exclusivement en feuille de styles print
 
 ## Sass / postCSS
@@ -127,18 +129,17 @@ Selon les projets, deux options sont envisagées pour bénéficier de ces foncti
 
 Quelle que soit la solution choisie, la méthode de compilation vers CSS dépend du type de projet (statique, Vue, Vite, Webpack, etc.).
 
-## Variables
+## Variables / Custom properties
 
-Dans le cas de nos projets habituels (avec Constructeur de classes utilitaires)&#8239;:
+Dans le cas de nos projets en CSS natif avec Constructeur de classes utilitaires&#8239;:
 
-- Nous n'utilisons **pas** de variables Sass (ex. `$color-hotpink`).
-- Nous n'utilisons **pas** de custom properties CSS (ex. `--color-hotpink`).
-- Nous appliquons les classes utilitaires dans le HTML (ex. `<p class="text-hotpink"`) lorsqu'il s'agit de propriétés liées aux espacements (`margin`, `padding`, `gap`), à la typographie ou aux couleurs.
-- Ou nous appliquons les tokens liés au thème du Constructeur (ex. `z-index: theme('zIndex.10');`) lorsqu'il s'agit des autres propriétés plus structurelles.
+- Nous utilisons **toujours** les custom properties CSS (ex. `--color-hotpink`).
+- Nous n'utilisons **pas** de variables Sass (ex. `$color-hotpink`) *même si Sass est intégré au projet*.
+- Nous n'appliquons pas de classes utilitaires dans le HTML (ex. `<p class="text-hotpink"`) sauf rares exceptions où le gain en temps et code est flagrant.
 
-**Aucune valeur numérique ne devrait apparaître dans les styles sans être associée à une une classe utilitaire ou un token de thème.**
+**Aucune valeur numérique (hors `0`) ne devrait apparaître dans les styles sans être associée à une custom property.**
 
-Dans le cas de projets spécifiques (ex. web components), nous utilisons les custom properties CSS (ex. `--color-hotpink`) afin de pouvoir styliser le Shadow DOM.
+Pour rappel, les custom properties s'appliquent au Shadow DOM et sont parfaites dans le cas de projets spécifiques avec web components.
 
 ## Notation imbriquée (nesting)
 
@@ -165,15 +166,29 @@ Le nesting est particulièrement préconisé pour :
 }
 ```
 
+**À éviter** *(le nesting peut conduire à augmenter la spécificité finale) :*
+
+```scss
+.wrapper {
+  
+  & .child {
+
+    & .subchild {
+
+    }
+  }
+}
+```
+
 L'inconvénient de la notation imbriquée est qu'elle génère des sélecteurs CSS composés donc avec une spécificité qui augmente. **Il est conseillé de limiter la syntaxe à un seul niveau d'imbrication.**
 
 📖 **Ressource complémentaire : ["When to nest?"](https://cloudfour.com/thinks/when-to-nest-css/)**
 
 ## Breakpoints et Media Queries
 
-La liste de points de rupture (*breakpoints*) figure dans la configuration du contructeur de classes utilitaires (ex. `@screen valeur {}` pour Tailwind).
+La liste de points de rupture (*breakpoints*) figure dans la configuration du contructeur de classes utilitaires.
 
-Sauf contre-indication selon projet, les valeurs des breakpoints sont identiques à [celles proposées par Tailwind](https://tailwindcss.com/docs/screens) et sont exprimées [en unité `rem`](https://www.joshwcomeau.com/css/surprising-truth-about-pixels-and-accessibility/#media-queries-7)&#8239;:
+Sauf contre-indication selon projet, les valeurs des breakpoints sont exprimées [en unité `rem`](https://www.joshwcomeau.com/css/surprising-truth-about-pixels-and-accessibility/#media-queries-7)&#8239;:
 
 - `sm: 40rem` // 640px
 - `md: 48rem` // 768px
@@ -195,11 +210,11 @@ Sauf contre-indication selon projet, les valeurs des breakpoints sont identiques
 Pour les projets sans Constructeur de classes utilitaires, nous utilisons la syntaxe "moderne" des Media Queries&#8239;:
 
 ```css
-/* composant card sur écran "lg" ou plus, version classique */
+/* composant card sur écran "640" ou plus */
 .card {
     display: flex;
 
-    @media (width >= 64rem) {
+    @media (width >= 40rem) {
         flex-direction: column;
     }
 }
@@ -304,20 +319,7 @@ Les pseudo-classes s'écrivent avec `:`, les pseudo-éléments s'écrivent avec 
 
 Le mode d'apparence (Light Mode, Dark Mode) est un paramètre que l'utilisateurice peut définir via ses réglages système ainsi que via son navigateur.
 
-Dans nos projets habituels, **le Constructeur de classes utilitaires gère les modes d'apparence** :
-
-- Dans Tailwind par exemple, Le dark mode est indiqué dans le fichier de config : `darkMode: 'class', // 'false' or 'media' or 'class'` (`class` = une classe est ajoutée sur `html`, `media` = c'est `@prefers-color-scheme` qui s'en charge).
-- On adapte les propriétés au dark mode en préfixant la classe utilitaire d'un `dark:`
-
-Ainsi, un exemple de bouton qui s'adapte automatiquement aux modes light ou dark pourrait s'écrire ainsi&#8239;:
-
-```html
-<button class="
-  btn btn-icon | text-gray-90 dark:text-gray-10 bg-gray-20 dark:bg-gray-90"
->Hey !</button>
-```
-
-Dans nos projets sans Constructeur de classe utilitaires, les techniques CSS modernes permettent de gérer finement ces modes&#8239;:
+Dans nos projets en CSS natif, les techniques modernes permettent de gérer finement ces modes&#8239;:
 
 - `@prefers-color-scheme` : Teste le Mode d'apparence utilisateur (système ou navigateur) et permet de s'y adapter
 - `color-scheme` : Force le navigateur à adapter l'UI à un Mode d'apparence (couleurs système, scrollbars, boutons,...). Ce réglage fait partie de notre Reset CSS, il est inutile de le modifier.
@@ -347,7 +349,7 @@ Dans nos projets sans Constructeur de classe utilitaires, les techniques CSS mod
 
 - FontSquirrel webfont generator : <https://www.fontsquirrel.com/tools/webfont-generator> (ou Transfonter : <https://transfonter.org/>)
 - Wakamai Fondue : <https://wakamaifondue.com/>
-- Glyphhanger (NPM) : <https://github.com/zachleat/glyphhanger>
+- Glyphhanger (via `npm`) : <https://github.com/zachleat/glyphhanger>
 
 ### Code recommandé pour les polices
 

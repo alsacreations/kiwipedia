@@ -122,3 +122,20 @@ Le fichier [alsa-TW-Reset](assets/vue-nuxt-front-end/alsa-tw-reset.scss) apporte
 
 Nous utilisons quand il est nécessaire, la directive `@screen`. Nous évitons au maximum l'usage de `@apply`, nous
 préférons écire les styles via les classes utilitaires dans le HTML.
+
+## Dark Mode
+
+Le mode d'apparence (Light Mode, Dark Mode) est un paramètre que l'utilisateurice peut définir via ses réglages système ainsi que via son navigateur.
+
+Dans nos projets avec classes utilitaires, **le Constructeur de classes utilitaires gère les modes d'apparence** :
+
+- Dans Tailwind par exemple, Le dark mode est indiqué dans le fichier de config : `darkMode: 'class', // 'false' or 'media' or 'class'` (`class` = une classe est ajoutée sur `html`, `media` = c'est `@prefers-color-scheme` qui s'en charge).
+- On adapte les propriétés au dark mode en préfixant la classe utilitaire d'un `dark:`
+
+Ainsi, un exemple de bouton qui s'adapte automatiquement aux modes light ou dark pourrait s'écrire ainsi&#8239;:
+
+```html
+<button class="
+  text-gray-90 dark:text-gray-10 bg-gray-20 dark:bg-gray-90"
+>Hey !</button>
+```
