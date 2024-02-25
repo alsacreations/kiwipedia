@@ -43,16 +43,16 @@ L'organisation des dossiers et sous-dossiers est à la libre appréciation de ch
   - Installer eslint `pnpm i --save-dev eslint-config-alsacreations @rushstack/eslint-patch eslint`
   - Ajouter [le fichier de configuration](https://github.com/alsacreations/eslint#configuration) et **adapter** les lignes tel qu'indiqué dans les commentaires
   - Ajouter [.editorconfig](../configs/.editorconfig) - l'extension [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) doit être installée
-  - Installer stylelint `pnpm install --save-dev stylelint`
-  - Ajouter [.stylelintrc.json](../configs/.stylelintrc.json) - l'extension [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint) doit être installée
+  - Ajouter Prettier `pnpm install --save-dev prettier prettier-plugin-tailwindcss` + ajouter un fichier de configuration `./configs/.prettierrc.mjs`
 - **Divers**
   - Ajouter `README.md` et penser à se reposer sur [Markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
   - Ajouter `.gitignore` et  `.dockerignore`, contenant au moins les chemins vers `node_modules` et `dist`
   - Ajouter [les fichiers](../configs/.vscode) `.vscode/settings.json` et `.vscode/extensions.json`
   - On utilise le dossier [`public/`](https://vitejs.dev/guide/assets.html#the-public-directory) pour les ressources statiques (ex: images, svg, fonts...)
 - **En option**
+  - Installer stylelint `pnpm install --save-dev stylelint`
+  - Ajouter [.stylelintrc.json](../configs/.stylelintrc.json) - l'extension [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint) doit être installée
   - Ajouter [launch.json](https://code.visualstudio.com/docs/editor/debugging#_launch-configurations) au projet pour lancer le debugger.
-  - Ajouter Prettier `pnpm install --save-dev prettier prettier-plugin-tailwindcss` + ajouter un [fichier de configuration](https://prettier.io/docs/en/configuration.html) `prettier.config.cjs`
   - Ajouter [alpine.js](https://alpinejs.dev/essentials/installation) avec `pnpm install --save alpinejs`
 - **Docker** si besoin de mise en recette ou pré-production
   - Ajouter `Dockerfile` et `docker-compose.yml` suivant les exemples et les adapter
