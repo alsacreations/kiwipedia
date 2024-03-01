@@ -239,5 +239,6 @@ Les formats privilégiés à transmettre à l'intégrateur/trice :
 
 ## Autres ressources et bonnes pratiques
 
+- [Checklist Design](https://www.checklist.design/)
 - [Visual design rules you can safely follow every time](https://anthonyhobday.com/sideprojects/saferules/)
 - [Building Better UI Designs With Layout Grids](https://www.smashingmagazine.com/2017/12/building-better-ui-designs-layout-grids/)
