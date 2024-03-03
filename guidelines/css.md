@@ -324,6 +324,44 @@ Dans nos projets en CSS natif, les techniques modernes permettent de gérer fine
 - `@prefers-color-scheme` : Teste le Mode d'apparence utilisateur (système ou navigateur) et permet de s'y adapter
 - `color-scheme` : Force le navigateur à adapter l'UI à un Mode d'apparence (couleurs système, scrollbars, boutons,...). Ce réglage fait partie de notre Reset CSS, il est inutile de le modifier.
 
+Concrètement, la mise en place du Dark Mode dépend de plusieurs approches dont la principale est de savoir si le projet est en "CSS vanilla" ou en "CSS utilitaire".
+
+Pour rappel, cette guideline ne traite que de CSS vanilla. Il s'agit à présent de distinguer comment le Dark Mode sera déclenché :
+
+### Dark Mode déclenché via les préférences utilisateur (système)
+
+Nous employons la Media Query `(prefers-color-scheme: dark)` imbriquée au sein des styles d'un composant afin d'en modifier les valeurs de manière automatique pour s'adapter aux préférences système.
+
+```css
+.button {
+  color: var(--color-black);
+  background-color: var(--color-white);
+  
+  @media (prefers-color-scheme: dark) {
+    color: var(--color-white);
+    background-color: var(--color-black);
+  }
+}
+```
+
+### Dark Mode déclenché selon un choix (switch)
+
+Dans les projets où le visiteur doit pouvoir décider de son mode d'apparence au cas par cas, il est nécessaire de proposer un bouton "switch" et de retenir le choix en local storage.
+
+L'[article de Salma Alam-Naylor](https://whitep4nth3r.com/blog/best-light-dark-mode-theme-toggle-javascript/) détaille comment mettre en oeuvre un bouton de choix light/dark accessible en JavaScript.
+
+Le principe est de suivre les étapes suivantes :
+
+1. Chercher si une valeur de mode est stockée en local storage
+2. Dans le cas contraire, se rabattre sur les préférences système
+3. Dans le cas contraire proposer du light mode
+
+Voir le résultat : <https://codepen.io/raphaelgoetter/pen/dyrxgbW>
+
+### Dark Mode déclenché via les préférences utilisateur et/ou selon un choix
+
+La solution précédente (bouton switch) répond également à ce cas de figure. Elle est à privilégier.
+
 ## Polices (fonts)
 
 ### Recommandations générales
