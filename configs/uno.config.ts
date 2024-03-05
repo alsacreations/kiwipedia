@@ -18,6 +18,7 @@ export default defineConfig({
     customProperties({
       writeFile: true,
       filePath: resolve(__dirname, "vars.css"),
+      theme: "user",
     }),
   ],
   theme: {
