@@ -1,23 +1,26 @@
-import { defineConfig } from "unocss"
-import { presetMini } from "unocss"
+import { defineConfig, presetMini } from "unocss"
 import customProperties from "unocss-custom-properties"
-import { resolve } from "node:path"
+
+/**
+ * presetMini : pour générer des classes utilitaires sur demande
+ * dark : darkmode activé si un ancêtre dispose de l'attribut `data-theme`
+ */
+const miniPreset = presetMini({
+  // dark: { dark: "[data-theme='dark']" },
+})
+
+// Pour supprimer les couleurs par défaut de Uno
+delete miniPreset.theme?.colors
 
 export default defineConfig({
   presets: [
-    /**
-     * presetMini : pour générer des classes utilitaires sur demande
-     * dark : darkmode activé si un ancêtre dispose de l'attribut `data-theme`
-     */
-    presetMini({
-      // dark: { dark: "[data-theme='dark']" },
-    }),
+    miniPreset,
     /**
      * Export des custom properties dans un fichier `vars.css`
      */
     customProperties({
       writeFile: true,
-      filePath: resolve(__dirname, "vars.css"),
+      filePath: './vars.css',
       theme: "user",
     }),
   ],
@@ -43,6 +46,7 @@ export default defineConfig({
         95: "#262527",
       },
     },
+    /* À ne renseigner que si l'on veut générer des custom properties */
     spacing: {
       0: "0",
       1: "1px",
