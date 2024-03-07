@@ -15,7 +15,7 @@ Cube CSS est la Méthodologie d'intégration CSS générale que nous appliquons 
 Tout projet Cube CSS nécessite en amont au minimum :
 
 - Un fichier **["Reset CSS"](https://github.com/alsacreations/bretzel/blob/main/public/bretzel-reset.css)**&#8239;: ce fichier est maintenu en interne chez nous et mis à jour régulièrement.
-- Un Constructeur de classes utilitaires : **[Tailwind CSS](tailwind.md)** (sauf exceptions) pour la partie utilitaire dans Cube.
+- Un Constructeur de classes utilitaires : **[Uno CSS](guidelines/utilities.md)** (sauf exceptions) pour la partie utilitaire dans Cube.
 
 ## Checklist
 

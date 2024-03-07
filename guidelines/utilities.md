@@ -28,8 +28,6 @@ Nous renseignons ici toutes les valeurs utiles au projet qui sont généralement
 
 Ces aspects sont différents à chaque projet et sont donc nécessaires à configurer. Il en résultera un fichier CSS optimisé.
 
-Concrètement, nous renseignons notre palette de couleurs ainsi :
-
 ## Usage et bonnes pratiques
 
 Il existe trois manières d'appliquer des styles CSS dans un projet Uno CSS :

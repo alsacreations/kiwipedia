@@ -71,9 +71,7 @@ Avec [Vite](https://github.com/vitejs/vite) (présent dans WordPlate) on compile
 On privilégie, dans cet ordre et **seulement s'il y en a besoin** (sinon Sass), les frameworks CSS suivants :
 
 - [Bretzel](http://bretzel.alsacreations.com/) pour développer _from scratch_ avec un _reset_.
-- [TailwindCSS](https://tailwindcss.com/) (couplé à un mini-fichier reset personnel “alsa-TW-Reset”) (pour la configuration voir [Guidelines Tailwind](Guidelines-Tailwind.md))
-  - <https://github.com/cjkoepke/wp-tailwind>
-  - <https://css-tricks.com/adding-tailwind-css-to-wordpress-themes/>
+- [Uno CSS](https://unocss.dev/)
 - [Bootstrap](https://getbootstrap.com/) (si besoin spécifique ou projet le nécessitant)
 - [KNACSS](https://www.knacss.com/) (si besoin spécifique) (voir [Guidelines CSS](Guidelines-CSS.md))
 

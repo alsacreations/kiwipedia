@@ -29,7 +29,7 @@ Ces bonnes pratiques couvrent l'ensemble des domaines auxquels une agence web es
 - [**Guidelines RGPD**](guidelines/rgpd.md)
 - [**Guidelines Écoconception**](guidelines/ecoconception.md)
 - [**Guidelines SEO**](guidelines/seo.md)
-- [**Guidelines Tailwind CSS**](guidelines/tailwind.md)
+- [**Guidelines classes utilitaires**](guidelines/utilities.md)
 - [**Guidelines TypeScript**](guidelines/typescript.md)
 - [**Guidelines Sécurité HTTP**](guidelines/http-security.md)
 - [**Guidelines Webdesign**](guidelines/webdesign.md)
