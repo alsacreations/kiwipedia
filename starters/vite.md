@@ -40,10 +40,8 @@ L'organisation des dossiers et sous-dossiers est à la libre appréciation de ch
   - Installer Sass (si besoin) : `pnpm install --save-dev sass`, renommer `style.css` en `style.scss` et adapter le chemin dans `main.js`
   - Ajouter le [reset CSS](https://github.com/alsacreations/bretzel/blob/main/public/bretzel-reset.css) et l'importer dans `main.js`
 - **Linters**
-  - Installer eslint `pnpm i --save-dev eslint-config-alsacreations @rushstack/eslint-patch eslint`
-  - Ajouter [le fichier de configuration](https://github.com/alsacreations/eslint#configuration) et **adapter** les lignes tel qu'indiqué dans les commentaires
+  - Installer ESLint et Prettier `pnpm dlx eslint-config-alsacreations@latest init`
   - Ajouter [.editorconfig](../configs/.editorconfig) - l'extension [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) doit être installée
-  - Ajouter Prettier `pnpm install --save-dev prettier prettier-plugin-tailwindcss` + ajouter un fichier de configuration `./configs/.prettierrc.mjs`
 - **Divers**
   - Ajouter `README.md` et penser à se reposer sur [Markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
   - Ajouter `.gitignore` et  `.dockerignore`, contenant au moins les chemins vers `node_modules` et `dist`
@@ -104,7 +102,7 @@ dist
 Dockerfile
 
 ```text
-FROM node:18-slim
+FROM node:20-slim
 
 WORKDIR /usr/src/app
 
@@ -122,7 +120,7 @@ CMD [ "pnpm", "preview", "--host" ]
 docker-compose.yml
 
 ```yaml
-version: '3'
+version: '3.9'
 
 services:
   web:
@@ -145,24 +143,6 @@ networks:
   web-network:
     external: true
     name: traefik-network
-```
-
-.eslintrc.cjs
-
-```js
-require('@rushstack/eslint-patch/modern-module-resolution')
-
-/* eslint-env node */
-module.exports = {
-  root: true,
-  extends: [
-    'eslint:recommended',
-    'alsacreations/javascript',
-  ],
-  parserOptions: {
-    ecmaVersion: 'latest',
-  }
-}
 ```
 
 package.json (exemple approximatif)
@@ -192,7 +172,6 @@ package.json (exemple approximatif)
 
 ```sh
 pnpm create astro@latest
-pnpm astro add tailwind
 ```
 
 ---
