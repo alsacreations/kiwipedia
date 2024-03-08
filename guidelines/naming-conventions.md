@@ -43,7 +43,7 @@ Exemple :
 function Book(title, author) {}
 ```
 
-Toujours configurer et appliquer les Linters et Formatters **editorconfig**, **ESlint** et **Stylelint** (voir détails dans les [Guidelines VSCode](Guidelines-VScode.md))
+Toujours configurer et appliquer les Linters et Formatters **editorconfig**, **ESlint** et **Stylelint** (voir détails dans la [ressource VSCode](/resources/vscode.md))
 
 ## Union de mots
 
