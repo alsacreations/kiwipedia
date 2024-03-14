@@ -241,6 +241,10 @@ img {
 - <https://sharp.pixelplumbing.com>
 - <https://www.smashingmagazine.com/2022/07/powerful-image-optimization-tools/>
 
+## Vidéo
+
+On privilégie la balise `<video>` avec au moins une source MP4 par défaut. Sur Safari (macOS, iOS) on observe les [recommandations d'Apple pour la vidéo](https://developer.apple.com/documentation/webkit/delivering_video_content_for_safari/), par exemple l'attribut `playsinline` pour ne pas bloquer la lecture automatique.
+
 ### Outils d'optimisation vidéo et audio
 
 - [Handbrake](https://handbrake.fr/)
