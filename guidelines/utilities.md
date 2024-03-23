@@ -2,12 +2,7 @@
 
 Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/) concernant l'utilisation de classes utilitaires. Ces indications sont destinées à évoluer dans le temps et à s'adapter à chaque nouveau projet.
 
-Nous utilisons [Uno CSS ](https://unocss.dev/) pour les génération des classes utilitaires.
-
-**Sommaire :**
-
-- [Usage et bonnes pratiques](#usage-et-bonnes-pratiques)
-- [Configuration avancée](#configuration-avancée)
+Nous utilisons [Uno CSS](https://unocss.dev/) pour les génération des classes utilitaires.
 
 ## Environnement de travail et outils recommandés
 
