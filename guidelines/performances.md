@@ -4,15 +4,15 @@ Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacre
 
 ## Checklist Niveau 1 (base) 🥉
 
-Minification, compression, réduction des ressources (ex : poids des images) et des requêtes.
+Minification, compression, réduction des ressources (ex : poids des images) et des requêtes (ex: concaténation).
 
 ## Checklist Niveau 2 (étendue) 🥈
 
-Mise en cache front, mise en cache back (dans le cas d'un CMS), headers HTTP, instructions preload/prefetch, formats d'images et optimisation SVG, [lazy-loading](#lazyloading) natif.
+Mise en cache front, mise en cache back (dans le cas d'un CMS), headers HTTP, instructions preload/prefetch en HTML, formats d'images et optimisation SVG, [lazy-loading](#lazyloading) natif HTML.
 
 ## Checklist Niveau 3 (demandes spécifiques) 🥇
 
-Lazy-loading via JavaScript, usage de CDN, HTTP/2 ou HTTP/3, *critical path*, analyse complète via outils de mesure, indicateurs [LCP, FID, CLS, INP](https://support.google.com/webmasters/answer/9205520?hl=fr)...
+Lazy-loading via JavaScript, usage de CDN, HTTP/2 ou HTTP/3, *critical path*, analyse complète via outils de mesure, indicateurs *Core Web Vitals*...
 
 ---
 
@@ -20,26 +20,24 @@ Lazy-loading via JavaScript, usage de CDN, HTTP/2 ou HTTP/3, *critical path*, an
 
 Valable pour HTTP/1.x, plus forcément pour HTTP/2 et HTTP/3 qui permettent le multiplexing et diverses optimisations natives.
 
-- Minifier les ressources texte (css, js, html)
-  - Vue/Nuxt/React : déjà optimisé de base
-  - WordPress : utiliser une extension
-- Compresser les ressources texte (css, js, html) par exemple avec gzip/deflate
-- Réduire le nombre de requêtes HTTP
+- Minifier les ressources texte (HTML, CSS, JavaScript, JSON).
+  - Vue/Nuxt/React : déjà relativement optimisé de base par la compilation avec WebPack ou Vite.
+  - WordPress : utiliser une extension ou intervenir sur le code directement.
+- Compresser les ressources texte (HTML, CSS, JavaScript, JSON) par exemple avec gzip/deflate.
+- Réduire le nombre de requêtes HTTP, concaténer différents fichiers en un seul.
 - Exploiter les en-têtes de cache (Cache-Control, Expires)
   - [Cache-Control for Civilians - CSS Wizardry](https://csswizardry.com/2019/03/cache-control-for-civilians/)
   - [Expires - Apache](https://httpd.apache.org/docs/current/fr/mod/mod_expires.html)
 
 ## Core Web Vitals
 
-Les [Core Web Vitals](https://web.dev/vitals/) regroupent des mesures de performance et d'expérience utilisateur. Google considère que ces indices sont essentiels pour la performance et l'expérience utilisateur et les intègre dans son algorithme de Ranking depuis 2021.
+Les [Core Web Vitals](https://web.dev/articles/vitals?hl=fr) regroupent des mesures de performance et d'expérience utilisateur. Google considère que ces indices sont essentiels pour la performance et l'expérience utilisateur et les intègre dans son algorithme de Ranking depuis 2021.
 
-Les métriques mesurées sont :
+- [Largest Contentful Paint (LCP)](https://web.dev/articles/lcp?hl=fr) : mesure la vitesse de chargement de page. L'indice porte sur le temps de chargement et d'affichage de la plus grande image ou du plus grand bloc de contenu visible dans le viewport. Le critère est "Good" lorsque ce temps est inférieur ou égal à 2.5 secondes.
+- [Interaction to Next Paint (INP)](https://web.dev/articles/inp?hl=fr) : mesure l'interactivité, réussie si le délai de réaction est inférieur à 200ms.
+- [Cumulative Layout Shift (CLS)](https://web.dev/articles/cls?hl=fr) : mesure la stabilité visuelle (l'ensemble des repositionnements, redimensionnements, décalages intempestifs des contenus pendant la durée de vie d'une page web). La métrique mesure la quantité de contenu qui se déplace, ainsi que la distance de déplacement. Le CLS doit être égal ou inférieur à 0.1.
 
-- **Largest Contentful Paint (LCP)** : mesure la vitesse de chargement de page. L'indice porte sur le temps de chargement et d'affichage de la plus grande image ou du plus grand bloc de contenu visible dans le viewport. Le critère est "Good" lorsque ce temps est inférieur ou égal à 2.5 secondes.
-- **First Input Delay (FID)** remplacé par **Interaction to Next Paint (INP)** en 2024 : mesure l'interactivité. Calcule le temps nécessaire au navigateur pour offrir une première interaction avec le visiteur (clic sur un lien, un bouton, interagir avec un formulaire) L'expérience est considérée réussie si ce délai est inférieur ou égal à 100 millisecondes.
-- **Cumulative Layout Shift (CLS)** : mesure la stabilité visuelle (l'ensemble des repositionnements, redimensionnements, décalages intempestifs des contenus pendant la durée de vie d'une page web). La métrique mesure la quantité de contenu qui se déplace, ainsi que la distance de déplacement. Le CLS doit être égal ou inférieur à 0.1.
-
-Voir aussi [Our top Core Web Vitals recommendations for 2023](https://web.dev/top-cwv-2023/)
+🔖 Voir aussi [Our top Core Web Vitals recommendations for 2023](https://web.dev/blog/top-cwv-2023?hl=fr)
 
 ## Bonnes pratiques générales
 
@@ -234,7 +232,7 @@ Quelques ressources :
 
 ## Performance côté serveur (back-end) et cache
 
-- WordPress : utiliser une extension de cache, voir [Guidelines WordPress](Guidelines-WordPress.md)
+- WordPress : utiliser une extension de cache, voir [Guidelines WordPress](wordpress.md)
 - PHP : [PHP Cache](https://www.php-cache.com/)
 - [Varnish](https://varnish-cache.org/)
 - [k6](https://k6.io/) pour les tests de charge
