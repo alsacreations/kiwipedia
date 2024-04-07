@@ -702,6 +702,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 - <https://sqlbolt.com/> Apprendre SQL de manière interactive
 - <https://dbdiagram.io/> Éditeur de modèles et diagrammes en ligne
+- <https://drawdb.vercel.app/editor> Éditeur de schéma en ligne
 
 ---
 
