@@ -379,7 +379,6 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://www.draw.io/>
 - <https://www.invisionapp.com/>
 - <https://bounceapp.com/>
-- <https://redpen.io/>
 - <https://uigenerator.org/> Générer des mockups PNG d'interfaces (desktop/mobile)
 
 ### Ardoises en ligne
@@ -699,6 +698,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://regex101.com/> Tester les regexp en live
 - <https://extendsclass.com/regex-tester.html> Tester les regexp en live
 - <https://ihateregex.io/> Visualiser les regexp en live
+- <https://phphub.net/regex/> Tester et visualiser les regexp en live
 
 ---
 
