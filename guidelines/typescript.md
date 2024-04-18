@@ -4,6 +4,9 @@ Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacre
 
 🕹️ Pour s'entraîner : <https://github.com/type-challenges/type-challenges>
 
+- <https://www.julienpradet.fr/tutoriels/typescript-bonnes-pratiques/>
+- <https://www.julienpradet.fr/tutoriels/typescript-types-avances/>
+
 ## Généralités
 
 Les règles des [guidelines JavaScript](Guidelines-JavaScript.md) s'appliquent également ici.
