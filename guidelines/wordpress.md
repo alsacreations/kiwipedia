@@ -278,7 +278,7 @@ Pour filtrer des requêtes à l'aide de ces valeurs, on utilisera une [Meta Quer
 
 👉 Le dossier `acf-json/` doit être présent à la racine du thème et autorisé en écriture permettant de versionner et synchroniser automatiquement les ajouts/modifications ACF par des fichiers JSON. On peut se servir de l'onglet _Sync_ ou utiliser la _Bulk action_ "Activer" après avoir coché toutes les cases pour forcer la génération de ces fichiers JSON. Voir <https://www.advancedcustomfields.com/resources/local-json/>.
 
-🔖 Voir [https://capitainewp.io/formations/acf/](Des champs administrables avec ACF par Capitaine WP), [Tutoriel ACF : Advanced Custom Fields – Le guide complet](https://newslang.ch/blog/tutoriel-acf-advanced-custom-fields-le-guide-complet/), [Best Practices when Designing Custom Fields](https://www.advancedcustomfields.com/blog/best-practices-designing-custom-fields/) et [Tutoriel sur Advanced Custom Fields : Votre guide ultime](https://kinsta.com/fr/blog/advanced-custom-fields/)
+🔖 Voir [Des champs administrables avec ACF par Capitaine WP](https://capitainewp.io/formations/acf/), [Tutoriel ACF : Advanced Custom Fields – Le guide complet](https://newslang.ch/blog/tutoriel-acf-advanced-custom-fields-le-guide-complet/), [Best Practices when Designing Custom Fields](https://www.advancedcustomfields.com/blog/best-practices-designing-custom-fields/) et [Tutoriel sur Advanced Custom Fields : Votre guide ultime](https://kinsta.com/fr/blog/advanced-custom-fields/)
 
 ### Blocs sur-mesure, Gutenberg
 
