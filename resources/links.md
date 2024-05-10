@@ -413,6 +413,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://ezgif.com/resize> Redimensionner/transformer gif animé
 - <https://pageweight.imgix.com/> Diagnostiquer le poids des images
 - <https://www.optimizeimages.com/>
+- <https://jpegcompressor.com/> outil d'optimisation d'image
 
 ### Icônes / SVG
 
