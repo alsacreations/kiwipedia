@@ -21,16 +21,16 @@ On utilise [Docker](https://www.docker.com/) avec une structure-type déjà épr
 
 On versionne les fichiers de structure et de configuration, tels que :
 
-- `.env.example`
-- `composer.lock` et `package.json`
 - le thème développé pour le projet
 - les extensions développées pour le projet
 - les fichiers de configuration (vite, eslint, prettier)
+- le fichier modèle d'environnement `.env.example`
+- les fichiers listant les dépendances `composer.lock` et `package.json`
 - les fichiers de traduction du thème (dossier /languages) ou de l'extension (dossier de l'extension)
 
 On ne versionne **pas** (voir fichiers .gitignore) :
 
-- `.env` (sauf exception)
+- `.env`
 - le dossier `public/wordpress` et `vendor` (car installé/mis à jour par composer)
 - les extensions tierces (car installées/mises à jour par composer)
 - les dossiers `public/uploads` (stockés à part car binaires occupant beaucoup de place), `public/upgrade`
