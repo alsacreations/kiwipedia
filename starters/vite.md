@@ -188,12 +188,13 @@ dotenv.config()
 
 export default defineConfig(({ command }) => ({
   // Chemin remplacé dans les ressources compilées
+  // (correspond au chemin public http vers le dossier contenant assetsDir)
   // base: command === 'build' ? `/themes/${process.env.WP_THEME}/assets/` : '/',
 
   // Dossier dans lequel on place les ressources statiques non compilées, qui seront copiées vers outDir
   publicDir: 'resources/static',
   build: {
-    assetsDir: '', // Sous-dossier dans lequel placer les assets (js, css) générés
+    assetsDir: '', // Sous-dossier dans lequel placer les assets (js, css) générés par Vite
     emptyOutDir: true, // Vide le dossier destination
     manifest: true, // Génère un manifeste
     outDir: `public/themes/${process.env.WP_THEME}/assets/dist`, // Dossier destination
