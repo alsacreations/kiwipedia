@@ -194,15 +194,15 @@ export default defineConfig(({ command }) => ({
   // Dossier dans lequel on place les ressources statiques non compilées, qui seront copiées vers outDir
   publicDir: 'resources/static',
   build: {
-    assetsDir: '', // Sous-dossier dans lequel placer les assets (js, css) générés par Vite
-    emptyOutDir: true, // Vide le dossier destination
-    manifest: true, // Génère un manifeste
-    outDir: `public/themes/${process.env.WP_THEME}/assets/dist`, // Dossier destination
+    outDir: `dist`, // Dossier destination du build
+    assetsDir: 'assets', // Sous-dossier dans lequel placer les assets (js, css) générés par Vite
+    emptyOutDir: true, // Vide le dossier destination à chaque build
+    manifest: true, // Génère un manifeste json listant les chemins vers les assets
     rollupOptions: {
       input: {
-        index: resolve(__dirname, 'index.html'),
-        // index: 'resources/scripts/main.js', // Point d'entrée JS
-        // custom: 'resources/static/burger-menu.js',
+        index: resolve(__dirname, 'index.html'), // Point d'entrée HTML
+        // index: 'main.js', // Point d'entrée JS, important les assets
+        // custom: 'resources/scripts/burger-menu.js',
       },
     },
     sourcemap: command === 'serve' ? 'inline' : false,
@@ -212,18 +212,13 @@ export default defineConfig(({ command }) => ({
   },
   server: {
     // origin: 'http://localhost:5173',
-  },
-  /*
-  plugins: [
-    {
-      name: 'php-twig-reload',
-      handleHotUpdate({ file, server }) {
-        if (file.endsWith('.php') || file.endsWith('.twig')) {
-          server.ws.send({ type: 'full-reload', path: '*' })
-        }
-      },
-    },
-  ],
-  */
+  }
 }))
+```
+
+Pour exploiter le mode `dev` de Vite et bénéficier du _hot module_reloading_, il conviendra d'injecter dans la page :
+
+```html
+<script src="http://localhost:5173/@vite/client" type="module"></script>
+<script src="http://localhost:5173/main.js" type="module"></script>
 ```
