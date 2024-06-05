@@ -986,6 +986,7 @@ Pour les menus déroulants et mega menus, [Accessible Mega Menu](https://adobe-a
 - [Modèles de conception accessibles](https://www.w3.org/WAI/ARIA/apg/)
 - [My accessibility toolbox](https://gitlab.com/accessfirst.fr/my-accessibility-toolbox)
 - [SmashingMag : Accessibilité dans les devtools de Chrome](https://www.smashingmagazine.com/2020/08/accessibility-chrome-devtools/)
+- [Accessibilité des QR Codes](https://axesslab.com/qr-codes/)
 
 ## Outils / tests
 
