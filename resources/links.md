@@ -656,6 +656,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://tools.keycdn.com/http2-test> Tester HTTP/2
 - <https://http3-explained.haxx.se/fr> HTTP/3
 - <https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP> Les bases de HTTP (MDN)
+- <https://everything.curl.dev/index.html> Tout sur curl
 
 ### CORS
 
