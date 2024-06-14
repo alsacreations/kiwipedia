@@ -26,7 +26,7 @@ Voir aussi <https://www.alsacreations.com/tuto/lire/1836-Docker--decouverte-et-e
 * Visualiser l'espace occupé `docker system df`
 * Ressources pour les processus/conteneurs `docker ps --size`
 * Nettoyer les images/volumes inutilisés `docker image prune` / `docker volume prune`
-* Nettoyer le _build cache_ `docker builder prune`
+* Nettoyer le _build cache_ `docker builder prune` / `docker buildx prune`
 * Nettoyer toutes les ressources système inutilisées `docker system prune`
 
 ### Lancer un shell minimaliste
