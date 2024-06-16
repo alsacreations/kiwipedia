@@ -124,4 +124,4 @@ Les règles de nommage particulières à chaque langage sont consignées dans le
 - [Guidelines HTML](html.md)
 - [Guidelines CSS](css.md)
 - [Guidelines JavaScript](javascript.md)
-- [Guidelines WordPress](wordPress.md)
+- [Guidelines WordPress](wordpress.md)
