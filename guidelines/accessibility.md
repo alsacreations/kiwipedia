@@ -50,7 +50,7 @@ Ce document est divisé en trois parties :
 
 - Toutes les images [doivent comporter un attribut `alt`](#image-porteuse-dinformation-ou-cliquable) ; il doit être vide (`alt=""` ou `alt`) pour les images décoratives et renseigné pour les images apportant du contenu.
 - Lorsqu'un lien renvoie vers un téléchargement de fichier, il faut indiquer : son intitulé, son poids, son format, éventuellement sa langue (si différente) et l'ouverture dans une nouvelle fenêtre.
-- [Rendre les fichiers SVG accessibles](#images-svg-et-accessibilité) : décoratifs ou non, inline ou non, dans un bouton / lien ou non.
+- [Rendre les fichiers SVG accessibles](#svg-et-accessibilité) : décoratifs ou non, inline ou non, dans un bouton / lien ou non.
 
 ## Checklist Niveau 2 (étendue) 🥈
 
