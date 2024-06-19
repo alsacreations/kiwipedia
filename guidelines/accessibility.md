@@ -27,6 +27,7 @@ Ce document est divisé en trois parties :
 ### CSS
 
 - Ne pas fixer de hauteur sur les éléments afin que le contenu reste lisible lorsque le texte est zoomé. Les éléments décoratifs et l'attribut height `<img height="200">` ne sont pas concernés.
+- Ne pas empêcher le zoom avec `user-scalable=0` pour le viewport, utiliser `<meta name="viewport" content="width=device-width, initial-scale=1">`.
 - Ne pas supprimer l'outline autour des éléments cliquables/focusables (pas de `outline: none`) [ou utiliser `:focus-visible`](#outline-et-focus), ne pas dégrader l'outline par défaut des navigateurs.
 - Ne pas employer de contenu généré (`::before`, `::after`) pour [véhiculer des informations ou pour afficher des icônes](#css-generated-content).
 - Masquer correctement [les contenus qui doivent être lus par un lecteur d’écran](#contenu-lu-mais-masqué-à-lécran) (ex. `.visually-hidden` ou `.sr-only` au lieu de `display: none`).
