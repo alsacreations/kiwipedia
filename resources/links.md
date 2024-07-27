@@ -23,14 +23,12 @@ Autres listes de ressources et checklists
 
 ## Documentations générales rapides
 
-- <https://devhints.io>
+- <https://html-now.github.io/> The web platform : toutes les API/spécifications
 - <https://devdocs.io/>
-- <https://wwwhere.io/>
-- <https://overapi.com/>
+- <https://devhints.io> cheatsheets
+- <https://overapi.com/> cheatsheets
 - <http://html5index.org/>
-- <https://platform.html5.org/>
-- <https://cssvalues.com/> dictionnaire des propriétés et valeurs
-- <https://caniuse.com/> (tableaux de support navigateurs)
+- <https://caniuse.com/> tableaux de support navigateurs
 
 ### Tests, émulation, devices
 
@@ -65,6 +63,7 @@ Autres listes de ressources et checklists
 
 ### Grids
 
+- <https://cssgridgarden.com/#fr> Apprendre Grid Layout de manière interactive
 - <https://learncssgrid.com/> Apprendre CSS Grid Layout
 - <https://ishadeed.com/article/learn-css-subgrid/> Apprendre Subgrid
 - <https://cssgrid-generator.netlify.com/> Générateur CSS Grid
@@ -131,7 +130,6 @@ Autres listes de ressources et checklists
 - <https://vuetifyjs.com/en/>
 - <https://vuestic.dev>
 - <https://www.naiveui.com/>
-- <https://vant-contrib.gitee.io/vant/>
 
 ### Générateurs d'UI / de pages intégrées
 
@@ -490,6 +488,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 ## SVG
 
+- <https://practical-svg.chriscoyier.net/> Practical SVG par Chris Coyier
 - <https://svgontheweb.com/> Guide ultime SVG sur le web
 - <https://svgpocketguide.com/book/> Pocket guide to writing SVG
 - <https://lynn.ru/examples/svg/en.html> + <https://css-tricks.com/svg-fallbacks/> + <https://css-tricks.com/scale-svg/> + <https://css-tricks.com/using-svg/> Intégration dans HTML
