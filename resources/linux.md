@@ -123,19 +123,19 @@ Afficher le contenu d'un fichier
 Lister les fichiers du dossier courant
 `ls`
 
-Lister les fichiers par dernière date de modification
-`ll -rt`
+Lister les fichiers du dossier courant, en incluant les fichiers cachés (a) au format long (l)
+`ls -al`
 
-Lister les fichiers par taille
-`ll -rSh`
+Lister les fichiers par ordre inversé (r) de dernière date de modification (t)
+`ls -lrt`
 
-Lister par extension
-`ll -X`
+Lister les fichiers par ordre inversé (r) de taille (S) en unités humaines (h)
+`ls -lrSh`
 
-Récursif dans les dossiers
-`ll -R`
+Lister les fichiers en mode récursif (R) dans les dossiers
+`ls -R`
 
-Espace occupé par le dossier
+Espace occupé par le dossier courant
 `du -skh`
 
 Espace occupé, groupé par dossiers
@@ -172,6 +172,9 @@ Trouver des fichiers et les supprimer
 
 Supprimer les fichiers vides
 `find -size 0 -print -exec rm {} \;`
+
+Par expression régulière en mode récursif
+`grep -r <pattern>`
 
 Supprimer les fichiers contenant une chaîne
 `grep -l "blablablabla" * | xargs rm`
