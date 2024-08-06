@@ -414,7 +414,9 @@ RewriteRule ^(.*)$ /public/$1 [L]
 
 ## Maintenance
 
-On peut utiliser [WP-CLI](https://www.smashingmagazine.com/2015/09/wordpress-management-with-wp-cli/) pour opérations pratiques en ligne de commande.
+On peut utiliser [WP-CLI](https://www.smashingmagazine.com/2015/09/wordpress-management-with-wp-cli/) pour opérations pratiques en ligne de commande, comme regénération des thumbnails ou gestion des extensions.
+
+🔖 [Méthodes d'installation de WP-CLI](https://make.wordpress.org/cli/handbook/guides/installing/) et [Usage de base de WP-CLI](https://make.wordpress.org/cli/handbook/guides/quick-start/). Avec Bedrock il faut que wp-cli.yml renseigne le bon chemin vers le dossier WordPress par exemple path: `www/wp`.
 
 Forcer la mise à jour par téléchargement direct dans wp-config.php `define('FS_METHOD' 'direct');`
 
