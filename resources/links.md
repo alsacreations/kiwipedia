@@ -43,7 +43,7 @@ Autres listes de ressources et checklists
 - <https://html.spec.whatwg.org/multipage/> Spécification HTML WhatWG
 - <https://w3c.github.io/html/> Spécification HTML5 W3C
 - <https://htmlparser.info/introduction/> Idiosyncrasies of the HTML parser (Simon Pieters)
-- <https://schnaps.it/> Templates HTML5 avec KNACSS
+- <https://www.schnaps.it/> Templates HTML5 avec KNACSS
 - <https://uisual.com/> Templates neutres pour startups
 
 ### Microdata et sémantique
@@ -378,6 +378,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://www.invisionapp.com/>
 - <https://bounceapp.com/>
 - <https://uigenerator.org/> Générer des mockups PNG d'interfaces (desktop/mobile)
+- <https://mockae.com/>
 
 ### Ardoises en ligne
 
