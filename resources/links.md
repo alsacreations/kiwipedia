@@ -66,6 +66,7 @@ Autres listes de ressources et checklists
 - <https://cssgridgarden.com/#fr> Apprendre Grid Layout de manière interactive
 - <https://learncssgrid.com/> Apprendre CSS Grid Layout
 - <https://ishadeed.com/article/learn-css-subgrid/> Apprendre Subgrid
+- <https://ishadeed.com/article/css-grid-area/> CSS Grid Areas
 - <https://cssgrid-generator.netlify.com/> Générateur CSS Grid
 - <https://mozilladevelopers.github.io/playground/>
 - <https://yoksel.github.io/grid-cheatsheet/> Cheatsheet CSS Grid
