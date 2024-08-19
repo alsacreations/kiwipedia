@@ -7,7 +7,7 @@ Guidelines pour respecter au mieux le [RGI](https://www.numerique.gouv.fr/public
 Nous privilégions quoiqu'il arrive par défaut les standards et formats ouverts conçus et promus par
 
 * La [DISIC](https://www.modernisation.gouv.fr/) (Direction Interministérielle des Systèmes d’Information et de Communication)
-* L'[ECMA](http://www.ecma-international.org/) (European association for standardizing information and communication systems)
+* L'[ECMA](https://ecma-international.org/) (European association for standardizing information and communication systems)
 * L'[IEEE](https://www.ieee.org/) (Institute of Electrical and Electronics Engineers)
 * L'[IETF](https://www.ietf.org/) (The Internet Engineering Task Force)
 * L'[ISO](https://www.iso.org/) (Organisation Internationale de Normalisation)

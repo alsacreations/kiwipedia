@@ -308,7 +308,6 @@ Autres listes de ressources et checklists
 - <https://wicky.nillia.ms/headroom.js/> (header disparaissant animé)
 - <https://inorganik.github.io/countUp.js/> (défilement de compteur/chiffres)
 - <https://draggabilly.desandro.com/> Drag&Drop multi-touch
-- <https://github.com/ryanve/verge> (Get viewport dimensions, detect elements in the viewport <http://verge.airve.com>)
 - <https://joaopereirawd.github.io/animatedModal.js/> Modales animées
 - <http://callmecavs.com/bricks.js/> Masonry performant
 - <https://github.com/jwagner/smartcrop.js> Smartcrop intelligent pour les images
@@ -464,14 +463,13 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://tinyfac.es/> Avatars
 - <https://uifaces.co/> Visages de remplissage
 - <https://picsum.photos/> Photos
-- <http://placekitten.com/> Chats
 - <https://www.populate.design/> Texte
 
 ### Vidéos libres/gratuites
 
 - <https://www.pexels.com/videos/>
 - <https://www.videvo.net/>
-- <http://www.cutestockfootage.com/>
+- <https://cutestockfootage.com/>
 - <https://pixabay.com/videos/>
 - <https://vimeo.com/groups/freehd/>
 - <https://www.coverr.co/>
@@ -574,10 +572,8 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://www.babylonjs.com/> WebGL
 - <http://paperjs.org/> 2D
 - <https://webgl2fundamentals.org> Fondamentaux de WebGL2
-- <http://www.createjs.com/easeljs>
-- <http://fabricjs.com/>
-- <https://visitmix.com/labs/ai2canvas/> Ai to Canvas
-- <http://www.professorcloud.com/svg-to-canvas/> SVG to Canvas
+- <https://createjs.com/easeljs>
+- <https://www.professorcloud.com/svg-to-canvas/> SVG to Canvas
 
 ### Progressive Web Apps (PWA)
 
@@ -604,8 +600,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://www.webpagetest.org/>
 - <https://requestmap.webperf.tools/> Request Map
 - <https://tools.pingdom.com/>
-- <https://browserdiet.com/>
-- <http://codepen.io/bradfrost/pen/EPQVBp/> Performance budget builder
+- <https://codepen.io/bradfrost/pen/EPQVBp/> Performance budget builder
 
 ### Compression des images
 
@@ -637,7 +632,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 ## Serveur
 
-- <http://net.tutsplus.com/tutorials/apache-2-basic-configuration-on-unix-like-systems/> Configuration Apache de base sous Linux (NetTuts)
+- <https://code.tutsplus.com/apache-2-basic-configuration-on-unix-like-systems--net-26607a> Configuration Apache de base sous Linux
 - <https://github.com/phanan/htaccess> snippets .htaccess
 - <https://htaccess.madewithlove.be> Tester/simuler les règles de réécriture
 - <https://serversforhackers.com/series>

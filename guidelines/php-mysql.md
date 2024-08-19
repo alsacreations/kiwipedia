@@ -9,8 +9,8 @@ Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacre
 
 - L’encodage des fichiers et des bases de données doit se faire en UTF-8 (sans BOM).
 - Les indentations se font à l’aide d'espaces.
-  Pour assurer une cohérence inter-projets, utiliser la convention [EditorConfig](http://editorconfig.org/).
-- La numérotation des versions suit [Semantic Versioning](http://semver.org/)
+  Pour assurer une cohérence inter-projets, utiliser la convention [EditorConfig](https://editorconfig.org/).
+- La numérotation des versions suit [Semantic Versioning](https://semver.org/)
 
 ## Garder à l’esprit
 
@@ -140,9 +140,9 @@ Quelques critères essentiels sont à observer (parmi d’autres, la liste est n
 - Suivre les recommandations de l'OWASP pour éviter les failles XSS (Cross Site Scripting) <https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet>
 - Utiliser les fonctions d’échappement et de filtre pour valider les données utilisateur, avant traitement ou insertion dans la base de données.
   - [filter_var](https://www.php.net/manual/fr/function.filter-var.php)
-  - MySQL : [mysql_real_escape_string](http://php.net/manual/fr/function.mysql-real-escape-string.php) pour les chaînes de texte.
-  - [preg_quote](http://php.net/manual/fr/function.preg-quote.php) pour les expressions régulières.
-  - MySQL : Utiliser les fonctions de PDO quand c’est possible pour [échapper](http://www.php.net/manual/fr/pdostatement.bindparam.php) ou [préparer une requête](http://www.php.net/manual/fr/pdo.prepare.php).
+  - MySQL : [mysql_real_escape_string](https://www.php.net/manual/fr/function.mysql-real-escape-string.php) pour les chaînes de texte.
+  - [preg_quote](https://www.php.net/manual/fr/function.preg-quote.php) pour les expressions régulières.
+  - MySQL : Utiliser les fonctions de PDO quand c’est possible pour [échapper](https://www.php.net/manual/fr/pdostatement.bindparam.php) ou [préparer une requête](https://www.php.net/manual/fr/pdo.prepare.php).
 - Vérifier toutes les variables trouvées dans `$_REQUEST`, `$_POST`, `$_GET` et `$_COOKIE` avant usage.
 - Vérifier précautionneusement les fichiers envoyés en upload s'il y a lieu (types MIME, extensions, noms, etc).
 - Eviter de manipuler des fichiers et des chemins d’accès au filesystem, ainsi que des fonctions d’exécution de code (`eval`, `system`, `exec`, etc).

@@ -11,14 +11,14 @@ Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacre
 
 ## Généralités
 
-- Dans la mesure du possible sur de petits scripts d'agrément (ex: visuel) JavaScript apporte une amélioration progressive, c’est-à-dire qu’il se produit une dégradation gracieuse lorsqu’il est désactivé (on peut toujours accéder au contenu). Ces scripts doivent être placés de préférence en fin de document, avant la balise `</body>` (ceci n’est plus extrêmement significatif suite aux optimisations des navigateurs mais permet d’éviter les écueils majeurs et de visualiser l’ordre de chargement au même endroit). Les attributs `defer` et `async` seront utilisés à bon escient pour réduire la latence (voir [Article](http://www.alsacreations.com/astuce/lire/1562-script-attribut-async-defer.html)).
+- Dans la mesure du possible sur de petits scripts d'agrément (ex: visuel) JavaScript apporte une amélioration progressive, c’est-à-dire qu’il se produit une dégradation gracieuse lorsqu’il est désactivé (on peut toujours accéder au contenu). Ces scripts doivent être placés de préférence en fin de document, avant la balise `</body>` (ceci n’est plus extrêmement significatif suite aux optimisations des navigateurs mais permet d’éviter les écueils majeurs et de visualiser l’ordre de chargement au même endroit). Les attributs `defer` et `async` seront utilisés à bon escient pour réduire la latence (voir [Article](https://www.alsacreations.com/astuce/lire/1562-script-attribut-async-defer.html)).
 - L’appel à une librairie ou à un framework (ex: jQuery, Vue, React) fait toujours apparaître le numéro de version et le suffixe `-min` si le fichier a été minifié.
 
 ### Syntaxe et nommage
 
 - L’encodage des fichiers et des bases de données doit se faire en UTF-8.
 - Valider le code avec [eslint](https://eslint.org/).
-- Les indentations se font à l’aide de deux espaces, idéalement définies par [EditorConfig](http://editorconfig.org/).
+- Les indentations se font à l’aide de deux espaces, idéalement définies par [EditorConfig](https://editorconfig.org/).
 - Utiliser la syntaxe _lowerCamelCase_ (voir <https://fr.wikipedia.org/wiki/CamelCase>) pour l'écriture des noms de variables, fonctions, objets, etc.
 - Utiliser le mot clé `let` ou `const` pour déclarer une variable/constante et maîtriser sa portée.
 - Terminer les instructions par un `;` sauf si la configuration eslint du projet le permet autrement.

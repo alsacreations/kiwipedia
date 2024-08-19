@@ -225,8 +225,6 @@ Pour les projets sans Constructeur de classes utilitaires, nous utilisons la syn
 - Éviter d’animer des propriétés autres que `transform` (`translate`, `rotate`, `scale`) ou `opacity` ou `filter` (ou alors ajouter la propriété `will-change` au cas par cas).
 - Toujours préciser quelle(s) propriété(s) doit être animée dans une transition ou animation. Par exemple `transition: 0.5s scale`.
 
-🔖 <https://animotion.dev/>
-
 ### Animer du SVG
 
 Quelques précautions sont à prendre concernant les SVG :

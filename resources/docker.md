@@ -110,7 +110,6 @@ Liste non exhaustive, voir <https://docs.docker.com/engine/reference/builder/>.
 * <https://github.com/FuriKuri/docker-best-practices>
 * <https://snyk.io/blog/10-docker-image-security-best-practices/>
 * <https://www.panoptica.app/research/7-ways-to-escape-a-container>
-* <http://docs.projectatomic.io/container-best-practices/>
 * <https://quickref.me/docker>
 * <https://enix.io/fr/blog/cherie-j-ai-retreci-docker-part1/>
 * <https://medium.com/@remyc/comprendre-docker-dockerfile-et-docker-compose-f21fe4ba22cb>

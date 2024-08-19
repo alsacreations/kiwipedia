@@ -3,7 +3,7 @@
 Commandes utiles pour un serveur de développement ou un serveur web/mail/ftp, notamment sous Ubuntu/Debian.
 
 - Voir aussi <https://explainshell.com/> et <https://www.shell.how/> pour expliquer les commandes shell entrées
-- Voir aussi <http://samrowe.com/wordpress/advancing-in-the-bash-shell/>
+- Voir aussi <https://samrowe.com/advancing-in-bash/>
 - Voir aussi <https://github.com/donnemartin/awesome-aws> pour AWS
 - MiniVim <https://github.com/sd65/MiniVim>
 - Apprendre Vim en jouant <https://vim-adventures.com/>
@@ -454,7 +454,7 @@ Lister les types de clés
 
 ## Maintenance et mises à jour avec apt
 
-Voir aussi <https://debian-handbook.info/browse/fr-FR/stable/sect.apt-get.html>
+🔖 Voir aussi <https://debian-handbook.info/browse/fr-FR/stable/sect.apt-get.html>
 
 Met à jour les paquets disponibles
 `apt-get update`
@@ -738,10 +738,7 @@ Ajouter une partition sdb1 au raid md0
 Mettre à jour le fichier de configuration pour le démarrage (attention, vérifier à la main, et il faut probablement aussi `update-initramfs -u` et `dpkg-reconfigure mdadm` après)
 `mdadm --examine --scan >>/etc/mdadm/mdadm.conf`
 
-Voir aussi
-
-- <http://www.ducea.com/2009/03/08/mdadm-cheat-sheet/>
-- <https://buzut.net/diagnostiquer-et-recuperer-une-defaillance-raid/>
+Voir aussi <https://www.ducea.com/2009/03/08/mdadm-cheat-sheet/> et <https://buzut.net/diagnostiquer-et-recuperer-une-defaillance-raid/>
 
 ### Smart
 
@@ -1000,13 +997,13 @@ endif
 Commande de base récupérant la page d'index
 
 ```sh
-wget http://www.perdu.com/
+wget https://www.perdu.com/
 ```
 
 Wget : aspirer une page en particulier et toutes ses dépendances
 
 ```sh
-wget -E -H -k -K -p http://www.perdu.com/
+wget -E -H -k -K -p https://www.perdu.com/
 ```
 
 Wget récursif, sans accepter les fichiers en gzip (sinon ça ne marche pas)
@@ -1063,7 +1060,7 @@ Backup SQL quotidien
 
 ## Scripts utiles et shell
 
-🔖 voir aussi <https://github.com/dylanaraps/pure-bash-bible>
+🔖 Voir aussi <https://github.com/dylanaraps/pure-bash-bible>
 
 Outil de production de scripts esthétiques <https://github.com/charmbracelet/gum>
 
