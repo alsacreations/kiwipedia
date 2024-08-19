@@ -11,7 +11,7 @@ Sauf spécificités contraires :
 - Les noms d'éléments et attributs HTML sont rédigés en minuscules, les attributs utilisent les double quotes (ex. `class="fruit"`). Les valeurs identiques aux attributs ne sont pas renseignées sauf nécessité (ex. en HTML5 pas de `checked="checked"`).
 - Les éléments disposants d’id (à limiter autant que possible) doivent disposer d’une classe dupliquée (pour CSS).
 - Les indentations se font à l’aide de deux espaces et non à l'aide de tabulations. Pour assurer une cohérence inter-projets, utiliser la convention [EditorConfig](https://editorconfig.org/), voire Prettier.
-- Séparer les noms des fichiers, des images des classes et id CSS par des tirets (`.slide-info`, `styles-ie.css`, `jquery-3.0.min.css`, etc).
+- Séparer les noms des fichiers, des images des classes et id CSS par des tirets (`.slide-info`, `styles-extra.css`, `jquery-3.0.min.css`, etc).
 - Exploiter le [Design System du W3C](https://design-system.w3.org/) pour les différents composants
 
 ## Modèle-type
@@ -145,6 +145,8 @@ Les navigateurs ne supportant pas le format `svg` vont ignorer la première inst
 ### Nommage des composants
 
 Chaque composant dispose d'un nom sous forme de classe HTML et/ou d'un nom de fichier propre, par exemple `class="slider"` au sein du fichier `slider.astro`.
+
+On privilégie l'anglais pour le nommage des éléments (attributs `class`, `id`...).
 
 Le collectif du W3C **[Open UI](https://open-ui.org/)** a pour mission de spécifier les comportements attendus des composants classique. **Se réferer en priorité à cette ressource pour choisir le nom d'un composant**. Si le composant souhaité n'y figure pas, se reporter à la liste des composants proposés dans [Bootstrap](https://getbootstrap.com/docs/5.3/components).
 

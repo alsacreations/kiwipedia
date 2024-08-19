@@ -133,13 +133,13 @@ Quelle que soit la solution choisie, la méthode de compilation vers CSS dépend
 
 Dans le cas de nos projets en CSS natif avec Constructeur de classes utilitaires&#8239;:
 
-- Nous utilisons **toujours** les custom properties CSS (ex. `--color-hotpink`).
+- Nous utilisons **toujours** les [custom properties CSS](https://developer.mozilla.org/fr/docs/Web/CSS/Using_CSS_custom_properties) (ex. `--color-hotpink`).
 - Nous n'utilisons **pas** de variables Sass (ex. `$color-hotpink`) *même si Sass est intégré au projet*.
 - Nous n'appliquons pas de classes utilitaires dans le HTML (ex. `<p class="text-hotpink"`) sauf rares exceptions où le gain en temps et code est flagrant.
 
 **Aucune valeur numérique (hors `0`) ne devrait apparaître dans les styles sans être associée à une custom property.**
 
-Pour rappel, les custom properties s'appliquent au Shadow DOM et sont parfaites dans le cas de projets spécifiques avec web components.
+Pour rappel, les *custom properties* s'appliquent au Shadow DOM et sont parfaites dans le cas de projets spécifiques avec web components.
 
 ## Notation imbriquée (nesting)
 
@@ -182,7 +182,7 @@ Le nesting est particulièrement préconisé pour :
 
 L'inconvénient de la notation imbriquée est qu'elle génère des sélecteurs CSS composés donc avec une spécificité qui augmente. **Il est conseillé de limiter la syntaxe à un seul niveau d'imbrication.**
 
-📖 **Ressource complémentaire : ["When to nest?"](https://cloudfour.com/thinks/when-to-nest-css/)**
+🔖 ["When to nest?"](https://cloudfour.com/thinks/when-to-nest-css/)
 
 ## Breakpoints et Media Queries
 
@@ -251,11 +251,11 @@ svg * {
 
 ## Méthodes de positionnement
 
-Nous privilégions **Flexbox et Grid Layout** de manière générale en tenant compte de certains points d'attention.
+Nous privilégions **Grid Layout** en priorité (aidé de *grid area* autant que possible), puis **Flexbox** en tenant compte de certains points d'attention.
 
 ### Grid Layout
 
-[Grid Layout](https://developer.mozilla.org/fr/docs/Web/CSS/CSS_grid_layout/Basic_concepts_of_grid_layout) sera choisi en priorité pour les avantages suivants :
+[Grid Layout](https://developer.mozilla.org/fr/docs/Web/CSS/CSS_grid_layout/Basic_concepts_of_grid_layout) est choisi en priorité pour les avantages suivants :
 
 - **Affichage vertical par défaut**
 - Gère parfaitement les deux axes à la fois
@@ -271,7 +271,7 @@ Les inconvénients majeurs de Grid Layout sont :
 
 ### Flexbox
 
-[Flexbox](https://developer.mozilla.org/fr/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox) sera choisi en priorité pour les avantages suivants :
+[Flexbox](https://developer.mozilla.org/fr/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox) est choisi en priorité pour les avantages suivants :
 
 - **Affichage horizontal par défaut**
 - Passage à la ligne (wrap) d'enfants de tailles différentes
@@ -285,15 +285,15 @@ Les inconvénients majeurs de Flexbox sont :
 - Ne gère pas bien les deux axes en même temps
 - De nombreux comportements contre-intuitifs (alignements, shrink, min-width)
 
-👉 **Lorsqu'aucune des deux méthodes ne sort clairement du lot, alors Grid Layout sera notre choix par défaut.**
+👉 **Lorsqu'aucune des deux méthodes ne sort clairement du lot, alors Grid Layout est notre choix par défaut.**
 
-📖 **Ressource complémentaire : ["When to use Flexbox and when to use CSS Grid"](https://blog.logrocket.com/css-flexbox-vs-css-grid/)**
+🔖 ["When to use Flexbox and when to use CSS Grid"](https://blog.logrocket.com/css-flexbox-vs-css-grid/)
 
 ### Autres positionnements
 
 - `position: absolute` : nécessaire pour placer un élément en "overlay" (par-dessus d'autres éléments). Le référent est le premier ancêtre lui-même *positionné*.
-- `position: relative` : utile principalement pour servir de référent à un descendant en `absolute`. Ne pas déplacer des éléments via cette position, privilégier systématiquement les transformations (`translate: x y;`)
-- `position: static` : valeur par défaut de `position`
+- `position: relative` : utile principalement pour servir de référent à un descendant en `absolute`. Ne pas déplacer des éléments via cette position, privilégier systématiquement les transformations (`translate: x y;`).
+- `position: static` : valeur par défaut de `position`.
 - `position: sticky` : permet de faire *coller* un élément aux bords de la fenêtre (ex. un header). Le référent est le Viewport. Nécessite un point d'ancrage (ex. `top: 0`).
 - `float` : permet à un élément de se placer à gauche ou droite et que le contenu suivant s'écoule autour. Uniquement utile pour "habiller" une image.
 
@@ -391,7 +391,7 @@ La solution précédente (bouton switch) répond également à ce cas de figure.
 
 ### Code recommandé pour les polices
 
-Voici un exemple de chargement de police conseillé (cas de deux fichiers de police regular et bold) :
+Voici un exemple de chargement de police conseillé (cas de deux fichiers de police *regular* et *bold*) :
 
 ```html
 <!-- Dans le <head> après

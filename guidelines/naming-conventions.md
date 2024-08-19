@@ -16,6 +16,7 @@ La langue anglaise demeure préconisée pour :
 - L’architecture et les dossiers du projet (_assets_, _layout_, _components_, _fonts_)
 - Le nom des fichiers (`single-something.html`, `ProductCard.vue`)
 - Les branches principales de versionning (`main`, `develop`), avec possibilités en français si besoin (`recette`)
+- Les composants, classes HTML, etc.
 
 ## Formatage
 
