@@ -48,13 +48,13 @@ On ne versionne **pas** (voir fichiers .gitignore) :
 
 🔖 Documentation officielle <https://developer.wordpress.org/themes/> et documentation des fonctions <https://codex.wordpress.org/Function_Reference>
 
-🔖 Voir aussi [https://capitainewp.io/formations/developper-theme-wordpress/](Développer un thème WordPress sur mesure)
+🔖 [Développer un thème WordPress sur mesure](https://capitainewp.io/formations/developper-theme-wordpress/)
 
 ### Intégration du thème
 
 #### Outils de vérification (linters)
 
-La liste des linters recommandés est décrite par les [guidelines Visual Studio Code](Guidelines-VScode.md), dont eslint pour JavaScript.
+La liste des linters recommandés est décrite par les [guidelines Visual Studio Code](../resources/vscode.md), dont eslint pour JavaScript.
 Les extensions spécifiques WordPress / PHP recommandées sont :  
 
 - [PHP Intelephense](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client)
@@ -66,7 +66,7 @@ Avec [Vite](https://github.com/vitejs/vite) (présent dans WordPlate) on compile
 
 #### Moteur de template (optionnel)
 
-🔖 [Timber](https://www.alsacreations.com/tuto/lire/1813-Timber-pourquoi-ecrire-du-Twig-dans-WordPress-.html) (optionnel, présent dans notre structure-type)
+🔖 [Timber : pourquoi écrire du Twig dans WordPress](https://www.alsacreations.com/tuto/lire/1813-Timber-pourquoi-ecrire-du-Twig-dans-WordPress-.html) (optionnel, présent dans notre structure-type)
 
 #### Framework CSS
 
@@ -75,11 +75,11 @@ On privilégie, dans cet ordre et **seulement s'il y en a besoin** (sinon Sass),
 - [Bretzel](http://bretzel.alsacreations.com/) pour développer _from scratch_ avec un _reset_.
 - [Uno CSS](https://unocss.dev/)
 - [Bootstrap](https://getbootstrap.com/) (si besoin spécifique ou projet le nécessitant)
-- [KNACSS](https://www.knacss.com/) (si besoin spécifique) (voir [Guidelines CSS](Guidelines-CSS.md))
+- [KNACSS](https://www.knacss.com/) (si besoin spécifique) (voir [Guidelines CSS](css.md))
 
 #### Nommage HTML, CSS, JavaScript et PHP
 
-Voir Guidelines [HTML](Guidelines-HTML.md), [CSS](Guidelines-CSS.md) et [JavaScript](Guidelines-JavaScript.md).
+➡️ Guidelines [HTML](html.md), [CSS](css.md) et [JavaScript](javascript.md).
 
 - Suivre les [PHP Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/php/) de WordPress.
 - ⚠️ Ne pas utiliser les classes CSS générées par WordPress qui sont spécifiques à une installation précise et ne sont pas réutilisables : classes spécifiques des _wrappers_ des menus du type `.menu-nom-de-mon-menu` et la majorité des classes générées par `body_class()` ou `post_class()`.
@@ -93,12 +93,10 @@ Voir Guidelines [HTML](Guidelines-HTML.md), [CSS](Guidelines-CSS.md) et [JavaScr
 
 👉 Utiliser l'auto-chargement des fichiers PHP du thème par WordPress (selon slug de la catégorie, du Custom Post Type, etc) en suivant la [hiérarchie de templates](https://developer.wordpress.org/themes/basics/template-hierarchy/) ([explications](https://wpshout.com/wordpress-template-hierarchy/)).
 
-🔖 Voir aussi :
-
-- [Vie d'une requête](https://roots.io/routing-wp-requests/)
-- [Cheatsheet template map](https://cdn.tutsplus.com/wp/uploads/legacy/090_WPCheatSheets/WP_CheatSheet_TemplateMap.pdf)
-- [Cheatsheet loop visual model](https://cdn.tutsplus.com/wp/uploads/legacy/090_WPCheatSheets/WP_CheatSheet_LoopVisualModel.pdf)
-- [A Detailed Guide To A Custom WordPress Page Templates](https://www.smashingmagazine.com/2015/06/wordpress-custom-page-templates/)
+- 🔖 [Vie d'une requête](https://roots.io/routing-wp-requests/)
+- 🔖 [Cheatsheet template map](https://cdn.tutsplus.com/wp/uploads/legacy/090_WPCheatSheets/WP_CheatSheet_TemplateMap.pdf)
+- 🔖 [Cheatsheet loop visual model](https://cdn.tutsplus.com/wp/uploads/legacy/090_WPCheatSheets/WP_CheatSheet_LoopVisualModel.pdf)
+- 🔖 [A Detailed Guide To A Custom WordPress Page Templates](https://www.smashingmagazine.com/2015/06/wordpress-custom-page-templates/)
 
 ### À prévoir dans le thème
 
@@ -156,28 +154,27 @@ add_filter( 'login_errors', 'no_wordpress_errors' );
 
 ### Traductions
 
-🔖 Voir <https://www.alsacreations.com/article/lire/1837-wordpress-theme-internationalisation.html>
+🔖 [Préparer un thème WordPress pour l'internationalisation](https://www.alsacreations.com/article/lire/1837-wordpress-theme-internationalisation.html)
 
 🪛 Convertir les fichiers .po en .mo en ligne : <https://po2mo.net/>
-
 
 ### .env et wp-config
 
 Notre fichier de base `.env`
 
-```
+```env
 WP_DEBUG=true
-WP_DEBUG_LOG=true
+WP_DEBUG_LOG=true # Alimente /wp-content/debug.log
 WP_DEFAULT_THEME= # Le nom du thème
 WP_ENVIRONMENT_TYPE=development
 
-DB_HOST= # Remplacer par le host `links` du fichier docker-compose.yml
-DB_NAME= # Remplacer par la base `MYSQL_DATABASE` du fichier docker-compose.yml
+DB_HOST= # Renseigner le nom d'hôte de la base (= nom du service dans le fichier docker-compose.yml si Docker)
+DB_NAME=
 DB_USER=
 DB_PASSWORD=
 DB_TABLE_PREFIX=monprefix_ # Remplacer par le préfix du projet avant de monter l'image docker et finir obligatoirement avec un '_'
 
-# https://wordplate.github.io/salt/
+# https://vinkla.github.io/salts/
 # https://api.wordpress.org/secret-key/1.1/salt/
 AUTH_KEY=
 SECURE_AUTH_KEY=
@@ -189,15 +186,17 @@ LOGGED_IN_SALT=
 NONCE_SALT=
 ```
 
-Pour les différents types d'environement possible `WP_ENVIRONMENT_TYPE`:
-- `development` pour le dev local permet de travailler avec le hot reload des assets
+Pour les différents types d'environement possibles `WP_ENVIRONMENT_TYPE` prend ces valeurs
+
+- `development` pour le développement local permet de travailler avec le hot reload des assets
 - `production` pour la recette / pre-prod ou prod permet de livrer les assets buildé
 
-Pour générer les `salt-key`, il y a deux possibilité :
+Pour générer les `salt-key`, il y a deux possibilités :
+
 - [WordPress](https://api.wordpress.org/secret-key/1.1/salt/)
 - [WordPlate](https://vinkla.github.io/salts/)
 
-[La documentation officielle](https://developer.wordpress.org/apis/wp-config-php/)
+[Documentation officielle de WordPress : wp-config.php](https://developer.wordpress.org/apis/wp-config-php/)
 
 ### functions.php
 
@@ -213,7 +212,7 @@ if ( ! function_exists( 'nomdutheme_nom_de_la_fonction' )  {
 add_filter('filter_name', 'nomdutheme_nom_de_la_fonction');
 ```
 
-👉 Idéalement le fichier `functions.php` du thème inclut d'autres scripts PHP dédiés pour organiser le code (ex : actions.php, filters.php, menu.php, theme-setup.php, etc). Exemple de fichier `functions.php` :
+👉 Le fichier `functions.php` du thème ne mélange pas tout mais inclut d'autres scripts PHP dédiés pour organiser le code (ex : actions.php, filters.php, menu.php, theme-setup.php, etc). Exemple :
 
 ```php
 /**
@@ -262,7 +261,7 @@ On se repose sur un [Bloc Navigation](https://fr.wordpress.org/support/article/n
 ou
 la fonctionnalité classique native de [menu éditable (dans Apparence > Menus)](https://wordpress.org/documentation/article/appearance-menus-screen/) en réservant un emplacement.
 
-🔖 Voir <https://wpmarmite.com/menu-wordpress/>
+🔖 [Comment gérer et optimiser les menus de WordPress](https://wpmarmite.com/menu-wordpress/)
 
 ### Requêtes et boucles
 
@@ -279,7 +278,7 @@ Les [hooks](https://developer.wordpress.org/plugins/hooks/) permettent de branch
 
 Un [shortcode](https://codex.wordpress.org/fr:Shortcode) est approprié pour insérer rapidement une portion de contenu simple dans tout éditeur, mais non éditable en détails directement, avec passage de quelques paramètres (ex: emplacement de formulaire de contact, carte géographique...).
 
-🔖 Voir <https://capitainewp.io/formations/developper-theme-wordpress/shortcode/> et <https://kinsta.com/fr/blog/shortcodes-wordpress/>
+🔖 <https://capitainewp.io/formations/developper-theme-wordpress/shortcode/> et <https://kinsta.com/fr/blog/shortcodes-wordpress/>
 
 ### Taxonomies
 
