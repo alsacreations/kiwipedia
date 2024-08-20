@@ -160,6 +160,45 @@ add_filter( 'login_errors', 'no_wordpress_errors' );
 
 🪛 Convertir les fichiers .po en .mo en ligne : <https://po2mo.net/>
 
+
+### .env et wp-config
+
+Notre fichier de base `.env`
+
+```
+WP_DEBUG=true
+WP_DEBUG_LOG=true
+WP_DEFAULT_THEME= # Le nom du thème
+WP_ENVIRONMENT_TYPE=development
+
+DB_HOST= # Remplacer par le host `links` du fichier docker-compose.yml
+DB_NAME= # Remplacer par la base `MYSQL_DATABASE` du fichier docker-compose.yml
+DB_USER=
+DB_PASSWORD=
+DB_TABLE_PREFIX=monprefix_ # Remplacer par le préfix du projet avant de monter l'image docker et finir obligatoirement avec un '_'
+
+# https://wordplate.github.io/salt/
+# https://api.wordpress.org/secret-key/1.1/salt/
+AUTH_KEY=
+SECURE_AUTH_KEY=
+LOGGED_IN_KEY=
+NONCE_KEY=
+AUTH_SALT=
+SECURE_AUTH_SALT=
+LOGGED_IN_SALT=
+NONCE_SALT=
+```
+
+Pour les différents types d'environement possible `WP_ENVIRONMENT_TYPE`:
+- `development` pour le dev local permet de travailler avec le hot reload des assets
+- `production` pour la recette / pre-prod ou prod permet de livrer les assets buildé
+
+Pour générer les `salt-key`, il y a deux possibilité :
+- [WordPress](https://api.wordpress.org/secret-key/1.1/salt/)
+- [WordPlate](https://vinkla.github.io/salts/)
+
+[La documentation officiel](https://developer.wordpress.org/apis/wp-config-php/)
+
 ### functions.php
 
 ⚠️ Le fichier `functions.php` fonctionne différemment des autres fichiers “template”, lors de la création d'un thème enfant par exemple, il n'est pas simplement écrasé, mais chargé avant le thème parent. Les deux fichiers déclarant des fonctions cohabitent, et il serait dommage de ne pas pouvoir écraser une fonctionnalité, ou de tomber sur une erreur PHP car une fonction est déclarée deux fois.
