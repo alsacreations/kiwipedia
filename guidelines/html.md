@@ -66,7 +66,7 @@ Peut être complété par (ou intégré dans un autre script s'il s'agit d'une a
 
 ## En-tête de document
 
-Tout ce que l'on peut y trouver : <https://github.com/joshbuchea/HEAD>
+Tout ce que l'on peut y trouver : <https://htmlhead.dev/> + <https://github.com/joshbuchea/HEAD>
 
 ### Doctype
 
