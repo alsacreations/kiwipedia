@@ -197,7 +197,7 @@ Pour générer les `salt-key`, il y a deux possibilité :
 - [WordPress](https://api.wordpress.org/secret-key/1.1/salt/)
 - [WordPlate](https://vinkla.github.io/salts/)
 
-[La documentation officiel](https://developer.wordpress.org/apis/wp-config-php/)
+[La documentation officielle](https://developer.wordpress.org/apis/wp-config-php/)
 
 ### functions.php
 
