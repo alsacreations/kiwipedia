@@ -337,7 +337,7 @@ Afficher une variable
 
 ## Screen
 
-Exécuter des processus sans les fermer à la fin de la connexion SSH.
+Exécuter des processus sans les fermer à la fin de la connexion SSH ; ou préférer [tmux](https://doc.ubuntu-fr.org/tmux)
 
 Initialisation
 `screen`
@@ -762,6 +762,9 @@ Liste users (espace utilisé, limites...)
 
 ## Réseau
 
+Connexions TCP (-t) à l'écoute (-l), ou UDP (-u), filtrer par IPv4 (-4) ou IPv6 (-6)
+`ss -lt`
+
 Connexions actives (serveurs et établies)
 `netstat -tap`
 
@@ -795,11 +798,17 @@ Ports référencés
 Traceroute
 `tracert`
 
+Mtr (combine traceroute et ping)
+`mtr <ip>`
+
 Nslookup
 `nslookup <ip>`
 
-Host
+Host (DNS lookup)
 `host <www.....com>`
+
+Dig (DNS lookup)
+`dig <domaine.com>` ou `dig mx <domaine.com` ou `dig -x <ip>` pour un reverse DNS lookup
 
 Ping
 `ping <ip>`
@@ -810,7 +819,7 @@ Trafic IP (si installé)
 Top du trafic réseau (utiliser `?` pour connaître les filtres et options)
 `iftop`
 
-Connaître la vitesse de connexion du lien Ethernet (adapter le nom de l'interface avec celui trouvé dans ifconfig)
+Connaître la vitesse de connexion du lien Ethernet (adapter le nom de l'interface avec celui trouvé dans ifconfig ou ip addr)
 `ethtool eth0 | grep -i speed`
 
 Capture de paquets réseau selon protocole/port
@@ -1023,6 +1032,9 @@ Télécharger récursivement un dossier FTP avec wget
 ```sh
 wget -r ftp://login:password@example.org:port/path/to/folder/
 ```
+
+Télécharger un fichier avec curl
+`curl http://test-debit.free.fr/1024.rnd -o fichier.rnd`
 
 Extraire toutes les urls d'une page avec [curl](https://everything.curl.dev/index.html)
 `curl "https://example.com/" | grep -oP '(https*://|www\.)[^ ]*'`
