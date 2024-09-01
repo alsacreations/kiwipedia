@@ -272,6 +272,10 @@ Autres listes de ressources et checklists
 - <https://beautifier.io/> Beautifier en ligne
 - <https://blog.scottlogic.com/2021/09/06/how-to-write-an-es-lint-rule-for-beginners.html> écrire ses propres règles eslint
 
+### Notions spécifiques
+
+- <https://domevents.dev/> Les événements DOM
+
 ### Libs et frameworks
 
 #### Autres bibliothèques JavaScript
