@@ -3,6 +3,8 @@
 ## Lundi 2 septembre 2024
 
 - Guidelines HTML : mise à jour des outils d'optimisation d'image
+- Guidelines CSS : mise à jour des règles essentielles, des media queries et du dark mode
+- Guidelines e-mailing : mise à jour des formats d'image supportés
 
 ## Samedi 24 février 2024
 

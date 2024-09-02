@@ -124,6 +124,7 @@ Voir [la démo sur Codepen](https://codepen.io/maizzle/pen/dgpxbB?editors=1000).
 
 ### Généralités
 
+- Les formats SVG, WebP et AVIF sont mal supportés à ce jour : <https://www.caniemail.com/features/image-webp/>
 - Microsoft Outlook n'applique pas de `margin` ou `padding` sur les images. Il faut contourner le problème à l'aide d'éléments supplémentaires (balises ou cellules de tableau par exemple).
 - Renseigner l'attribut `alt` pour l'accessibilité mais également pour être affiché sur les clients mails qui refusent d'afficher les images par défaut.
 
