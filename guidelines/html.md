@@ -204,8 +204,8 @@ Privilégier au maximum la conception propre et ergonomique de formulaires avec 
 
 ## Images
 
+- Utiliser des formats d'images modernes et plus légers (**AVIF en priorité**, WebP en alternative).
 - Toujours indiquer les dimensions initiales de l'image (`width` et `height`) dans le HTML pour que le navigateur puisse calculer le **ratio** et éviter des Layout Shifts.
-- Utiliser des formats d'images modernes et plus légers (Webp, Avif) à condition que le processus d'encodage/décodage soit lui-même rapide.
 - `max-width: 100%` pour que l'image s'adapte en largeur à son conteneur (images fluides).
 - `height: auto` pour que le navigateur applique le ratio systématiquement.
 - `background-color` sur l'image pour indiquer visuellement l'espace qui sera occupé quand elle sera chargée (placeholder).
@@ -213,16 +213,15 @@ Privilégier au maximum la conception propre et ergonomique de formulaires avec 
 ### Code recommandé
 
 ```html
-<!-- Format unique (webp), moins optimal -->
-<img src="kiwi.webp" alt="kiwi" decoding="async" loading="lazy" 
-       width="2000" height="1000">
+<!-- Format unique (avif) -->
+<img src="kiwi.avif" alt="kiwi" decoding="async" loading="lazy" 
+       width="1024" height="768">
 
-<!-- Formats avif + webp -->
+<!-- Formats avif + webp en alternative -->
 <picture>
   <source type="image/avif" srcset="kiwi.avif">
-  <source type="image/webp" srcset="kiwi.webp">
-  <img src="kiwi.jpg" alt="kiwi" decoding="async" loading="lazy" 
-       width="2000" height="1000">
+  <img src="kiwi.webp" alt="kiwi" decoding="async" loading="lazy" 
+       width="1024" height="768">
 </picture>
 ```
 
@@ -236,12 +235,13 @@ img {
 
 ### Outils d'optimisation d'images
 
-- Universel en ligne : <https://squoosh.app/> avec aperçu avant/après, redimensionnement, autres options (PNG, JPEG, WEBP)
-- MacOS : <https://github.com/antonreshetov/image-optimizer> très facile par drag&drop et traitement par lot (PNG, JPEG, GIF, SVG) ou <https://imageoptim.com/fr>
-- SVG : <https://jakearchibald.github.io/svgomg/>
-- AVIF : <https://avif.io> en ligne ou <https://github.com/lovell/avif-cli> en ligne de commande
-- <https://sharp.pixelplumbing.com>
-- <https://www.smashingmagazine.com/2022/07/powerful-image-optimization-tools/>
+- Multi-formats :
+  - En ligne, et recommandé en général : [Squoosh](https://squoosh.app/) avec aperçu avant/après, redimensionnement, autres options (PNG, JPEG, WebP, AVIF)
+  - En ligne de commande : [Sharp](https://sharp.pixelplumbing.com) (JPEG, PNG, WebP, GIF, AVIF)
+  - MacOS uniquement (opensource) : [Image Optimizer](<<https://github.com/antonreshetov/image-optimizer>) très facile par drag&drop et traitement par lot (PNG, JPEG, GIF, SVG) ou <https://imageoptim.com/fr>
+- SVG :[SVGOMG (conseillé)](https://jakearchibald.github.io/svgomg/)
+- AVIF :
+  - [Avif-CLI](https://github.com/lovell/avif-cli) en ligne de commande
 
 ## Vidéo
 
