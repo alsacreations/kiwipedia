@@ -1,5 +1,9 @@
 # Changelog
 
+## Lundi 2 septembre 2024
+
+- Guidelines HTML : mise à jour des outils d'optimisation d'image
+
 ## Samedi 24 février 2024
 
 ### Général

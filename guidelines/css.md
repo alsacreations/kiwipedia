@@ -4,9 +4,16 @@ Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacre
 
 ## CSS natif ou utilitaire
 
-Ces guidelines CSS sont le fruit de plusieurs années d'expérience en méthodologies (OOCSS, BEM, CubeCSS) et frameworks (Bootstrap, Tailwind). À ce jour, deux méthodes d'intégration CSS ont démontré leurs avantages en production : "CSS natif" et "CSS utilitaire". **Nous optons pour l'une ou l'autre de ces méthodes en début de projet**, selon les contraintes et les affinités des personnes concernées.
+Ces guidelines CSS sont le fruit de plusieurs années d'expérience en méthodologies (OOCSS, BEM, CubeCSS) et frameworks (Bootstrap, Tailwind).
 
-**Ce présent document s'applique exclusivement à la méthode "CSS natif".**
+À ce jour, deux méthodes d'intégration CSS ont démontré leurs avantages en production :
+
+- "CSS natif"
+- "CSS utilitaire"
+
+**Nous optons pour l'une ou l'autre de ces méthodes en début de projet**, selon les contraintes et les affinités des personnes concernées.
+
+**⚠️ Ce présent document s'applique exclusivement à la méthode "CSS natif".**
 
 ### Qu'appelons-nous CSS natif ?
 
@@ -21,17 +28,15 @@ Ces guidelines CSS sont le fruit de plusieurs années d'expérience en méthodol
 
 ## Bonnes pratiques CSS globales
 
-### Points généraux
+### Règles essentielles
 
-- Maintenabilité
-  - Nous privilégions systématiquement l'usage de sélecteurs de **class** plutôt que les sélecteurs d'éléments (`li`, `span`, `p`) et ne ciblons jamais via un sélecteur `#id`.
-  - Nous évitons tant que possible les *sélecteurs composés* tels que `.modal span` ou `.modal .date` mais plutôt `.modal-date` pour conserver une spécificité minimale.
-  - Nous prévoyons dès le départ un nom de classe pour chaque élément HTML (même anodin tels que `<span>`, `<p>` ou `<a>`) afin qu'il puisse être ciblé sans avoir à tenir compte de sa hiérarchie.
-  - Nous évitons d’écraser une règle CSS par une autre.
-  - Nous évitons tant que possible la règle `!important` du fait de sa spécificité extrême.
-- Performances
-  - Durant la phase de développement l'intégration se fait sur plusieurs fichiers CSS (composants, layout, etc.) que l'on rassemble dans un fichier unique.
-  - Les fichiers CSS sont minifiés en productio pour économiser du poids de chargement.
+- Nous employons les **variables CSS** (custom properties) plutôt que des valeurs "en dur" (ex. `gap: var(--spacing-20)` plutôt que `gap: 20px`)
+- Nous privilégions systématiquement l'usage de sélecteurs de **class** plutôt que les sélecteurs d'éléments (`li`, `span`, `p`) et ne ciblons jamais via un sélecteur `#id`.
+- Nous évitons tant que possible les **sélecteurs composés** tels que `.modal span` ou `.modal .date` mais plutôt `.modal-date` pour conserver une spécificité minimale.
+- Nous prévoyons dès le départ un **nom de classe pour chaque élément HTML** (même anodin tels que `<span>`, `<p>` ou `<a>`) afin qu'il puisse être ciblé sans avoir à tenir compte de sa hiérarchie.
+- Nous évitons tant que possible la règle **`!important`** du fait de sa spécificité extrême (privilégier dans ce cas `@layer()` voire `@scope()`)
+- Durant la phase de développement l'intégration se fait sur plusieurs fichiers CSS (composants, layout, etc.) que l'on rassemble dans un fichier unique.
+- Les fichiers CSS sont minifiés en production pour économiser du poids de chargement.
 
 ### Ordre des déclarations
 
@@ -190,24 +195,13 @@ La liste de points de rupture (*breakpoints*) figure dans la configuration du co
 
 Sauf contre-indication selon projet, les valeurs des breakpoints sont exprimées [en unité `rem`](https://www.joshwcomeau.com/css/surprising-truth-about-pixels-and-accessibility/#media-queries-7)&#8239;:
 
-- `sm: 40rem` // 640px
+- `sm: 40rem` // correspond à 640px
 - `md: 48rem` // 768px
 - `lg: 64rem` // 1024px
 - `xl: 80rem` // 1280px
 - `2xl: 96rem` // 1536px
 
-```css
-/* composant card sur écran "lg" ou plus, version avec Constructeur de classes utilitaires */
-.card {
-    display: flex;
-
-    @screen lg {
-        flex-direction: column;
-    }
-}
-```
-
-Pour les projets sans Constructeur de classes utilitaires, nous utilisons la syntaxe "moderne" des Media Queries&#8239;:
+Pour nos projets, nous utilisons la syntaxe "moderne" des Media Queries&#8239;:
 
 ```css
 /* composant card sur écran "640" ou plus */
@@ -229,9 +223,9 @@ Pour les projets sans Constructeur de classes utilitaires, nous utilisons la syn
 
 Quelques précautions sont à prendre concernant les SVG :
 
-- Compresser le fichier à l'aide de SVGOMG
-- donner des noms de classe à chaque `path` qui doit être animé
-- appliquer les styles CSS suivants&hellip;:<>
+- Toujours compresser le fichier à l'aide de SVGOMG
+- Donner des noms de classe à chaque `path` qui doit être animé
+- Appliquer les styles CSS suivants&hellip;:<>
 
 ```css
 svg {
@@ -348,19 +342,27 @@ Nous employons la Media Query `(prefers-color-scheme: dark)` imbriquée au sein 
 
 Dans les projets où le visiteur doit pouvoir décider de son mode d'apparence au cas par cas, il est nécessaire de proposer un bouton "switch" et de retenir le choix en local storage.
 
-L'[article de Salma Alam-Naylor](https://whitep4nth3r.com/blog/best-light-dark-mode-theme-toggle-javascript/) détaille comment mettre en oeuvre un bouton de choix light/dark accessible en JavaScript.
+**Voici un exemple de Switch accessible sur Codepen : <https://codepen.io/alsacreations/pen/ExBPExE>**
 
-Le principe est de suivre les étapes suivantes :
+Le déroulé des événements lors du clic/touch sur le bouton est celui-ci :
 
-1. Chercher si une valeur de mode est stockée en local storage
-2. Dans le cas contraire, se rabattre sur les préférences système
-3. Dans le cas contraire proposer du light mode
+1. On vérifie si le choix de thème était déjà mémorisé en localStorage.
+2. Sinon on vérifie les préférences utilisateur du système.
+3. Puis on crée ou modifie l'attribut data-theme-preference sur `<html>` (valeur "light" ou "dark").
+4. Et on mémorise le choix en localStorage.
+5. Enfin, on passe l'attribut aria-pressed du bouton à "pressed".
 
-Voir le résultat : <https://codepen.io/raphaelgoetter/pen/dyrxgbW>
+Le test pour connaître le choix de l'utilisateur porte sur l'attribut `data-theme-preference`, on s'en servira ainsi côté CSS en syntaxe imbriquée :
 
-### Dark Mode déclenché via les préférences utilisateur et/ou selon un choix
+```css
+.card {
+  color: pink;
 
-La solution précédente (bouton switch) répond également à ce cas de figure. Elle est à privilégier.
+  [data-theme-preference="dark"] & {
+    color: hotpink;
+  }
+}
+```
 
 ## Polices (fonts)
 
