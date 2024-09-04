@@ -999,7 +999,7 @@ Pour les menus déroulants et mega menus, [Accessible Mega Menu](https://adobe-a
 
 ### Contraste / Webdesign
 
-- [Contrastes de couleur vs déficiences visuelles](https://whocanuse.com/)
+- [Contrastes de couleur vs déficiences visuelles](https://www.whocanuse.com/)
 - [Tanaguru Contrast Finder](https://contrast-finder.tanaguru.com/) ou [Contrast Finder](https://app.contrast-finder.org) : outil en ligne, propose des couleurs proches
 - [Paciellogroup Color Contrast Checker](https://developer.paciellogroup.com/resources/contrastanalyser/) (Windows, MacOS)
 - [Contrast Grid](https://contrast-grid.eightshapes.com/) : grille comparant de multiples valeurs, ex. test d'une palette de couleur complète
