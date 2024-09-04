@@ -4,9 +4,9 @@
 
 ## Quand appliquer ce starter ?
 
-- Pour tous nos sites statiques
-- Pour les projets Vue/Nuxt : Vite y est déjà intégré, ce starter décrit nos adaptations spécifiques
-- Pas pour les projets WordPress : on utilise Vite dans notre workflow kiwiplate que l'on a configuré nous même, et on ne passe pas par le starter car kiwiplate en est déjà un
+- Pour tous nos sites statiques.
+- Pour les projets Vue/Nuxt : Vite y est déjà intégré, ce starter décrit nos adaptations spécifiques.
+- Pas pour les projets WordPress : on utilise déjà Vite dans notre workflow kiwiplate.
 
 ## Organisation des dossiers et fichiers
 
@@ -51,8 +51,8 @@ L'organisation des dossiers et sous-dossiers est à la libre appréciation de ch
 
 - Dans `vite.config.js` : `import UnoCSS from 'unocss/vite'`
 - Dans `vite.config.js` : `plugins: [ UnoCSS(), ],`
-- Renommer `style.css` en `style.scss` et adapter le chemin dans `main.js`
 - Installer Sass (uniquement si besoin) : `pnpm install --save-dev sass`,
+  - Renommer `style.css` en `style.scss` et adapter le chemin dans `main.js`
 
 ## Optionnel
 
@@ -107,7 +107,7 @@ dist
 
 Dockerfile
 
-```text
+```Dockerfile
 FROM node:20-slim
 
 WORKDIR /usr/src/app
@@ -126,8 +126,6 @@ CMD [ "pnpm", "preview", "--host" ]
 docker-compose.yml
 
 ```yaml
-version: '3.9'
-
 services:
   web:
     container_name: projet-web
@@ -174,7 +172,7 @@ package.json (exemple approximatif)
 }
 ```
 
-## Astro
+## Astro (optionnel)
 
 ```sh
 pnpm create astro@latest
