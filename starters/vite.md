@@ -1,5 +1,7 @@
 # Vite un projet statique minimaliste
 
+[Vite](https://vitejs.dev/guide/) est notre outil de compilation/bundler permettant de profiter du HMR (Hot Module Reloading), de Sass, d'une compilation, etc.
+
 ## Quand appliquer ce starter ?
 
 - Pour tous nos sites statiques
@@ -39,8 +41,6 @@ L'organisation des dossiers et sous-dossiers est à la libre appréciation de ch
 - Suivre les étapes décrites dans le fichier [`project-init`](project-init.md) concernant les configurations des fichiers linters, readme, gitignore, reset CSS, etc.
 
 ## Installation et configuration de Vite
-
-[Vite](https://vitejs.dev/guide/) est l'outil de compilation/bundler
 
 - Démarrer un dossier projet avec `pnpm create vite`, choisir _Vanilla_ + _JavaScript_
 - Se rendre dans le dossier créé (`cd <dossier>`)
