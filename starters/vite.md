@@ -1,10 +1,12 @@
 # Vite un projet statique minimaliste
 
-... avec des bonnes pratiques tout de même. On respecte nos guidelines [HTML](../guidelines/html.md) + [CSS](../guidelines/css.md) + [JavaScript](../guidelines/javascript.md) + [Visual Studio Code](../resources/vscode.md).
+## Quand appliquer ce starter ?
 
-On profite ainsi du HMR (Hot Module Reloading), de Sass, d'une compilation...
+- Pour tous nos sites statiques
+- Pour les projets Vue/Nuxt : Vite y est déjà intégré, ce starter décrit nos adaptations spécifiques
+- Pas pour les projets WordPress : on utilise Vite dans notre workflow kiwiplate que l'on a configuré nous même, et on ne passe pas par le starter car kiwiplate en est déjà un
 
-## Installation et configuration
+## Organisation des dossiers et fichiers
 
 L'organisation des dossiers et sous-dossiers est à la libre appréciation de chacun mais il est conseillé d'adopter cette structure :
 
@@ -30,28 +32,32 @@ L'organisation des dossiers et sous-dossiers est à la libre appréciation de ch
 └── README.md
 ```
 
-- On utilise [pnpm](https://pnpm.io/fr/installation), installation avec `npm install -g pnpm`
-- [Vite](https://vitejs.dev/guide/) est l'outil de compilation/bundler
-  - Démarrer un dossier projet avec `pnpm create vite`, choisir _Vanilla_ + _JavaScript_
-  - Se rendre dans le dossier créé (`cd <dossier>`)
-  - Installer les dépendances avec `pnpm i`
-  - Supprimer les fichiers d'exemple (counter.js, javascript.svg, public/vite.svg) ; nettoyer `style.css`, nettoyer `main.js` pour ne conserver que l'import CSS ; côté HTML ne pas oublier de changer `lang="fr"` et `<title>` puis supprimer `link rel="icon"`
-- **CSS**
-  - Installer Sass (si besoin) : `pnpm install --save-dev sass`, renommer `style.css` en `style.scss` et adapter le chemin dans `main.js`
-  - Ajouter le [reset CSS](https://github.com/alsacreations/bretzel/blob/main/public/bretzel-reset.css) et l'importer dans `main.js`
-- **Linters**
-  - Installer ESLint et Prettier `pnpm dlx eslint-config-alsacreations@latest init`
-  - Ajouter [.editorconfig](../configs/.editorconfig) - l'extension [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) doit être installée
-- **Divers**
-  - Ajouter `README.md` et penser à se reposer sur [Markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
-  - Ajouter `.gitignore` et  `.dockerignore`, contenant au moins les chemins vers `node_modules` et `dist`
-  - Ajouter [les fichiers](../configs/.vscode) `.vscode/settings.json` et `.vscode/extensions.json`
-  - On utilise le dossier [`public/`](https://vitejs.dev/guide/assets.html#the-public-directory) pour les ressources statiques (ex: images, svg, fonts...)
-- **En option**
-  - Installer stylelint `pnpm install --save-dev stylelint`
-  - Ajouter [.stylelintrc.json](../configs/.stylelintrc.json) - l'extension [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint) doit être installée
-  - Ajouter [launch.json](https://code.visualstudio.com/docs/editor/debugging#_launch-configurations) au projet pour lancer le debugger.
-  - Ajouter [alpine.js](https://alpinejs.dev/essentials/installation) avec `pnpm install --save alpinejs`
+- Utiliser le dossier [`public/`](https://vitejs.dev/guide/assets.html#the-public-directory) pour les ressources statiques (ex: images, svg, fonts...)
+
+## Initialisation de projet
+
+- Suivre les étapes décrites dans le fichier [`project-init`](project-init.md) concernant les configurations des fichiers linters, readme, gitignore, reset CSS, etc.
+
+## Installation et configuration de Vite
+
+[Vite](https://vitejs.dev/guide/) est l'outil de compilation/bundler
+
+- Démarrer un dossier projet avec `pnpm create vite`, choisir _Vanilla_ + _JavaScript_
+- Se rendre dans le dossier créé (`cd <dossier>`)
+- Installer les dépendances avec `pnpm i`
+- Supprimer les fichiers d'exemple (`counter.js`, `javascript.svg`, `public/vite.svg`); nettoyer `style.css`, nettoyer `main.js` pour ne conserver que l'import CSS; côté HTML ne pas oublier de changer `lang="fr"` et `<title>` puis supprimer `link rel="icon"`
+
+## Styles CSS
+
+- Dans `vite.config.js` : `import UnoCSS from 'unocss/vite'`
+- Dans `vite.config.js` : `plugins: [ UnoCSS(), ],`
+- Renommer `style.css` en `style.scss` et adapter le chemin dans `main.js`
+- Installer Sass (uniquement si besoin) : `pnpm install --save-dev sass`,
+
+## Optionnel
+
+- Ajouter [launch.json](https://code.visualstudio.com/docs/editor/debugging#_launch-configurations) au projet pour lancer le debugger.
+- Ajouter [alpine.js](https://alpinejs.dev/essentials/installation) avec `pnpm install --save alpinejs`
 - **Docker** si besoin de mise en recette ou pré-production
   - Ajouter `Dockerfile` et `docker-compose.yml` suivant les exemples et les adapter
 

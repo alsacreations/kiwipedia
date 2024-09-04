@@ -1,33 +1,32 @@
-import { defineConfig, presetMini } from "unocss"
+import { defineConfig } from "unocss"
+import { presetMini } from "unocss"
 import customProperties from "unocss-custom-properties"
-
-/**
- * presetMini : pour générer des classes utilitaires sur demande
- * dark : darkmode activé si un ancêtre dispose de l'attribut `data-theme`
- */
-const miniPreset = presetMini({
-  // dark: { dark: "[data-theme='dark']" },
-})
-
-// Pour supprimer les couleurs par défaut de Uno
-delete miniPreset.theme?.colors
+import { resolve } from "node:path"
 
 export default defineConfig({
   presets: [
-    miniPreset,
     /**
-     * Export des custom properties dans un fichier `vars.css`
+     * presetMini : activer pour générer des classes utilitaires sur demande
+     * dark : paramètre optionnel déclenchant le darkmode si un ancêtre dispose
+     * de l'attribut HTML `data-theme`
+     */
+    // presetMini({
+    //   dark: { dark: "[data-theme='dark']" },
+    // }),
+    /**
+     * Export des custom properties dans un fichier `vars.css`,
+     * nécessite le plugin `unocss-custom-properties`
      */
     customProperties({
       writeFile: true,
-      filePath: './vars.css',
+      filePath: resolve(__dirname, "vars.css"),
       theme: "user",
     }),
   ],
   theme: {
     /**
      * Configuration des valeurs du projet, utilisables en custom properties
-     * ou classes utilitaires
+     * ou en classes utilitaires selon les besoins
      */
     breakpoints: {
       sm: "40rem", // 640px
@@ -45,8 +44,22 @@ export default defineConfig({
         90: "#414042",
         95: "#262527",
       },
+      green: {
+        50: "#3C763D",
+        60: "#275C28",
+      },
+      orange: {
+        20: "#ECC984",
+        30: "#DCAA44",
+        50: "#C4851C",
+        60: "#8A6D3B",
+      },
+      pink: {
+        10: "#F4CEE1",
+        60: "#8E1D56",
+      },
+      hotpink: "#FF69B4",
     },
-    /* À ne renseigner que si l'on veut générer des custom properties */
     spacing: {
       0: "0",
       1: "1px",
@@ -65,11 +78,15 @@ export default defineConfig({
       48: "3rem",
       56: "3.5rem",
       64: "4rem",
+      "25p": "25%",
+      "50p": "50%",
+      "75p": "75%",
+      "100p": "100%",
       max: "1440px",
       auto: "auto",
     },
     fontFamily: {
-      system: "system-ui, sans-serif",
+      calendas: "calendas, georgia, serif",
     },
     fontSize: {
       10: "0.625rem",
@@ -183,18 +200,18 @@ export default defineConfig({
       /^liquid$/,
       (_, { rawSelector }) => /* css */ `
         :where(.${rawSelector}) {
+          --liquid-min-margin: 2rem;
+          --liquid-content: 840px;
+
           display: grid;
           grid-template-columns:
-            [layout-start]
-            minmax(var(--spacing-16, 1rem), 1fr)
-            [content-start]
-            minmax(auto, calc(var(--spacing-max, 1440px) / 2))
-            [half]
-            minmax(auto, calc(var(--spacing-max, 1440px) / 2))
-            [content-end]
-            minmax(var(--spacing-16, 1rem), 1fr)
-            [layout-end];
-          > * {
+          [liquid-start] minmax(var(--liquid-min-margin), 1fr)
+          [content-start] minmax(0, calc(var(--liquid-content) / 2))
+          [half] minmax(0, calc(var(--liquid-content) / 2))
+          [content-end] minmax(var(--liquid-min-margin), 1fr)
+          [liquid-end];
+
+          & > * {
             grid-column: content;
           }
         }
@@ -205,8 +222,8 @@ export default defineConfig({
       (_, { rawSelector }) => /* css */ `
         :where(.${rawSelector}) {
           display: grid;
-          grid-template-columns: inherit;
-          grid-column: layout;
+          grid-template-columns: subgrid;
+          grid-column: liquid;
           & > * {
             grid-column: content;
           }
