@@ -4,12 +4,10 @@ Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacre
 
 ## CSS natif ou utilitaire
 
-Ces guidelines CSS sont le fruit de plusieurs années d'expérience en méthodologies (OOCSS, BEM, CubeCSS) et frameworks (Bootstrap, Tailwind).
+Ces guidelines CSS sont le fruit de plusieurs années d'expérience en méthodologies (OOCSS, BEM, CubeCSS) et frameworks (Bootstrap, Tailwind). À ce jour, deux méthodes d'intégration CSS ont démontré leurs avantages en production :
 
-À ce jour, deux méthodes d'intégration CSS ont démontré leurs avantages en production :
-
-- "CSS natif"
-- "CSS utilitaire"
+- CSS natif sans classes utilitaires (sauf exception)
+- [CSS utilitaire](utilities.md) sans CSS vanilla (sauf exception par exemple pour des grilles)
 
 **Nous optons pour l'une ou l'autre de ces méthodes en début de projet**, selon les contraintes et les affinités des personnes concernées.
 
@@ -225,7 +223,7 @@ Quelques précautions sont à prendre concernant les SVG :
 
 - Toujours compresser le fichier à l'aide de SVGOMG
 - Donner des noms de classe à chaque `path` qui doit être animé
-- Appliquer les styles CSS suivants&hellip;:<>
+- Appliquer les styles CSS suivants&hellip;:<>d
 
 ```css
 svg {

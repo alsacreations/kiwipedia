@@ -32,7 +32,7 @@ Concerne toutes nos typologies de projets.
 Le Reset CSS employé dans nos projet est celui de Tailwind ([Preflight](https://tailwindcss.com/docs/preflight)) auquel nous ajoutons à la main quelques règles spécifiques à Alsacréations : `min-width: 0`, `prefers-reduced-motion`, `visually-hidden` et `Liquid/Splash`.
 
 - Installer `pnpm add @unocss/reset`
-- Dans la feuille de style globale : `import '@unocss/reset/tailwind.css'`
+- Dans la feuille de style globale : `import '@unocss/reset/tailwind.css'` même si on n'utilise pas Tailwind
 - Dans `uno.config.ts` : `preflights: [ ** ici les règles Reset à ajouter à la main ** ]`
 
 ### Si intégration en "CSS natif"

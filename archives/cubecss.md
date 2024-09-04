@@ -1,5 +1,7 @@
 # Guidelines : Cube CSS
 
+⚠️ Ce document est archivé et n'est plus d'actualité ⚠️
+
 Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/) concernant **"Cube CSS"**. Ces indications sont destinées à évoluer dans le temps et à s'adapter à chaque nouveau projet.
 
 Cube CSS est la Méthodologie d'intégration CSS générale que nous appliquons chez Alsacréations.

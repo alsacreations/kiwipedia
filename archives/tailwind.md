@@ -1,5 +1,7 @@
 # Guidelines : Tailwind CSS
 
+⚠️ Ce document est archivé et n'est plus d'actualité ⚠️
+
 Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/) concernant **"Tailwind"**. Ces indications sont destinées à évoluer dans le temps et à s'adapter à chaque nouveau projet.
 
 Tailwind est un framework CSS qui adopte une approche "atomique" de CSS, comprendre qu'à chaque classe correspond une action et une seule.
