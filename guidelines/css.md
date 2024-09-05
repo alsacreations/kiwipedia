@@ -6,8 +6,8 @@ Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacre
 
 Ces guidelines CSS sont le fruit de plusieurs années d'expérience en méthodologies (OOCSS, BEM, CubeCSS) et frameworks (Bootstrap, Tailwind). À ce jour, deux méthodes d'intégration CSS ont démontré leurs avantages en production :
 
-- CSS natif sans classes utilitaires (sauf exception)
-- [CSS utilitaire](utilities.md) sans CSS vanilla (sauf exception par exemple pour des grilles)
+- CSS natif sans classes utilitaires *(sauf exception)*
+- [CSS utilitaire](utilities.md) sans CSS vanilla (*sauf exception* par exemple pour des grilles)
 
 **Nous optons pour l'une ou l'autre de ces méthodes en début de projet**, selon les contraintes et les affinités des personnes concernées.
 

@@ -23,14 +23,11 @@ Cette routine consiste en une base commune à **toutes nos typologies de projets
 
 ## 3. Styles CSS
 
-**UnoCSS** est notre générateur principal de classes utilitaires et de custom properties CSS. Il est employé dans tous nos projets CSS (qu'ils soient vanilla ou utilitaires).
+**UnoCSS** est notre générateur principal de classes utilitaires et de custom properties CSS. **Il est employé dans tous nos projets CSS (qu'ils soient vanilla ou utilitaires).**
 
 - Installer et configurer [UnoCSS](https://unocss.dev/)
-- Ajouter et configurer [`uno.config.ts`](../configs/uno.config.ts) à la racine
-- Appliquer et adapter un Reset CSS :
-  - Installer `pnpm add @unocss/reset`
-  - Dans la feuille de style globale : `import '@unocss/reset/tailwind.css'` même si on n'utilise pas Tailwind
-  - Dans [`uno.config.ts`](../configs/uno.config.ts), vérifier la présence des règles reset/accessibilité personnalisées par Alsacréations (`min-width: 0`, `prefers-reduced-motion`, `visually-hidden` et `Liquid/Splash`)
+- Ajouter [`uno.config.ts`](../configs/uno.config.ts) à la racine
+- Ajouter [`uno-bretzel.ts`](../configs/uno-bretzel.ts) à la racine. Il s'agit de notre preset UnoCSS qui ajoute les règles spécifiques Alsacréations (reset CSS, .visually-hidden, layouts, etc.)
 
 ### Si intégration en "CSS natif"
 
