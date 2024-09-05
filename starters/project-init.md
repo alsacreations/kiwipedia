@@ -27,7 +27,7 @@ Cette routine consiste en une base commune à **toutes nos typologies de projets
 
 - Installer et configurer [UnoCSS](https://unocss.dev/)
 - Ajouter [`uno.config.ts`](../configs/uno.config.ts) à la racine
-- Ajouter [`uno-bretzel.ts`](../configs/uno-bretzel.ts) à la racine. Il s'agit de notre preset UnoCSS qui ajoute les règles spécifiques Alsacréations (reset CSS, .visually-hidden, layouts, etc.)
+- Ajouter [`uno-bretzel.ts`](../configs/uno-bretzel.ts) à la racine. Il s'agit de notre preset UnoCSS qui ajoute les éléments spécifiques Alsacréations (reset CSS, .visually-hidden, layouts, etc.)
 
 ### Si intégration en "CSS natif"
 

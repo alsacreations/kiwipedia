@@ -1,5 +1,9 @@
 # Changelog
 
+## Jeudi 5 septembre 2024
+
+- Ajout des fichiers de config `uno.config.ts` et `uno-bretzel.ts`
+
 ## Lundi 2 septembre 2024
 
 - Guidelines HTML : mise à jour des outils d'optimisation d'image

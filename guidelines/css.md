@@ -9,7 +9,7 @@ Ces guidelines CSS sont le fruit de plusieurs années d'expérience en méthodol
 - CSS natif sans classes utilitaires *(sauf exception)*
 - [CSS utilitaire](utilities.md) sans CSS vanilla (*sauf exception* par exemple pour des grilles)
 
-**Nous optons pour l'une ou l'autre de ces méthodes en début de projet**, selon les contraintes et les affinités des personnes concernées.
+**Nous optons pour l'une ou l'autre de ces méthodes en début de projet**, selon les contraintes et les affinités des personnes concernées. Dans les deux cas, nous utilisons [UnoCSS](../starters/project-init.md) pour nos intégrations CSS.
 
 **⚠️ Ce présent document s'applique exclusivement à la méthode "CSS natif".**
 
@@ -22,7 +22,7 @@ Ces guidelines CSS sont le fruit de plusieurs années d'expérience en méthodol
 - Nous ne faisons pas usage de classes utilitaires sauf rares exceptions (par exemple pour distinguer un élément parmi d'autres semblables)
 - Toutes les valeurs des propriétés CSS sont renseignées au sein d'un fichier de configuration (design tokens) et appliquées sous forme de custom properties (ex. `font-weight: var(--font-weight-400)`)
 - De manière optionnelle (mais encore recommandée), nous utilisons un Préprocesseur **Sass** (syntaxe `.scss`) *ou* un Post-processeur (**postCSS**) pour diverses fonctions encore non réalisables en CSS natif.
-- Notre Reset CSS (et print) est appliqué sur chaque projet : **[Bretzel](https://github.com/alsacreations/bretzel/blob/main/public/bretzel-reset.css)**
+- Notre Reset CSS (et print) est appliqué sur chaque projet (intégré dans notre configuration de UnoCSS)
 
 ## Bonnes pratiques CSS globales
 

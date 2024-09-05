@@ -1,8 +1,8 @@
-# Vite un projet statique minimaliste
+# Starter Vite
 
 [Vite](https://vitejs.dev/guide/) est notre outil de compilation/bundler permettant de profiter du HMR (Hot Module Reloading), de Sass, d'une compilation, etc.
 
-## Quand appliquer ce starter ?
+## Quand appliquer ce starter Vite ?
 
 - Pour tous nos sites statiques.
 - Pour les projets Vue/Nuxt : Vite y est déjà intégré, ce starter décrit nos adaptations spécifiques.
