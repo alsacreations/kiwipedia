@@ -30,7 +30,7 @@ Ce document est divisé en trois parties :
 - Ne pas empêcher le zoom avec `user-scalable=0` pour le viewport, utiliser `<meta name="viewport" content="width=device-width, initial-scale=1">`.
 - Ne pas supprimer l'outline autour des éléments cliquables/focusables (pas de `outline: none`) [ou utiliser `:focus-visible`](#outline-et-focus), ne pas dégrader l'outline par défaut des navigateurs.
 - Ne pas employer de contenu généré (`::before`, `::after`) pour [véhiculer des informations ou pour afficher des icônes](#css-generated-content).
-- Masquer correctement [les contenus qui doivent être lus par un lecteur d’écran](#contenu-lu-mais-masqué-à-lécran) (ex. `.visually-hidden` ou `.sr-only` au lieu de `display: none`).
+- Masquer correctement [les contenus qui doivent être lus par un lecteur d’écran](#contenu-lu-mais-masqué-à-lécran) (ex. `.visually-hidden` au lieu de `display: none`).
 
 ### Formulaires
 
@@ -193,7 +193,7 @@ Plus d’informations : <https://developer.mozilla.org/en-US/docs/Web/Accessibil
 Un lien d'évitement vers le contenu principal est nécessaire. D'autres liens d'évitement peuvent être ajoutés pour accéder rapidement à la navigation, à la recherche, au pied de page, etc.
 
 - Il doit être le premier lien de la page.
-- Il peut être masqué par défaut (classe Tailwind [`sr-only`](https://tailwindcss.com/docs/screen-readers)) mais doit devenir visible lors du focus.
+- Il peut être masqué par défaut (classe `visually-hidden`) mais doit devenir visible lors du focus.
 - Si le contenu principal est un élément non interactif il faut ajouter `tabindex="-1"` pour rendre cet élément *focusable* (ex. sur une balise `<main>`). Voir [la partie sur les tabindex.](#tabulation-et-tabindex)
 
 Voici le lien d'évitement employé au sein du [Design System du W3C](https://design-system.w3.org/) :
@@ -312,7 +312,7 @@ Même en ajoutant un attribut `title="Retrouvez-nous sur Facebook"` sur le lien,
 
 ```html
 <a href="#" class="link-facebook">
-  <span class="sr-only">Retrouvez-nous sur Facebook</span>
+  <span class="visually-hidden">Retrouvez-nous sur Facebook</span>
 </a>
 ```
 
@@ -339,7 +339,7 @@ Signaler lorsqu’un lien s’ouvre dans une nouvelle fenêtre :
 <a href="#" target="_blank" title="Lire l’article (nouvelle fenêtre)">Lire l’article 
     <img src="picto.svg" alt="nouvelle fenêtre">
     <!-- ou -->
-    <span class="sr-only">nouvelle fenêtre</span>
+    <span class="visually-hidden">nouvelle fenêtre</span>
 </a>
 ```
 
@@ -395,14 +395,14 @@ Lorsqu'un lien n'est composé que d'une image, c'est le texte alternatif de l'im
 
 Lorsqu'un lien n'est composé que d'une icône générée en CSS (les font-icon par exemple), il est important de :
 
-- Rendre explicite le lien avec un texte masqué (classe CSS `.sr-only`)
+- Rendre explicite le lien avec un texte masqué (classe CSS `.visually-hidden`)
 - Masquer l'icône aux lecteurs d'écran
 - (optionnel si l'icône n'est pas parlante) Ajouter un attribut `title` sur le lien.
 
 ```html
 <a href="#">
     <span class="icone" aria-hidden="true"></span>
-    <span class="sr-only">Retour à l'accueil</span>
+    <span class="visually-hidden">Retour à l'accueil</span>
 </a>
 ```
 
@@ -422,7 +422,7 @@ Dans le cas où l'image apporte une information, le texte alternatif peut être 
 <!-- Lien icône générée en CSS -->
 <a href="#">Statut :
     <span class="icone" aria-hidden="true"></span>
-    <span class="sr-only">En cours</span>
+    <span class="visually-hidden">En cours</span>
 </a>
 ```
 
@@ -705,10 +705,10 @@ Exemple :
 
 ### Contenu lu mais masqué à l’écran
 
-Ne **jamais** utiliser `display: none` pour masquer visuellement du texte qui devrait être retranscrit par un lecteur d’écran. Utiliser plutôt la classe `.sr-only`, présente dans [Tailwind](https://tailwindcss.com/docs/screen-readers) ou `.visually-hidden`, présente dans [Bootstrap](https://getbootstrap.com/docs/5.0/helpers/visually-hidden/). Cette astuce CSS permet de cacher visuellement du contenu texte mais tout en restant accessible aux lecteurs d’écrans. Lire aussi [Accessibilité Numérique Orange : Exemple masquage accessible et aria-hidden](https://a11y-guidelines.orange.com/fr/articles/masquage-accessible/).
+Ne **jamais** utiliser `display: none` pour masquer visuellement du texte qui devrait être retranscrit par un lecteur d’écran. Utiliser plutôt la classe `.visually-hidden`, présente dans [Tailwind](https://tailwindcss.com/docs/screen-readers) ou `.visually-hidden`, présente dans [Bootstrap](https://getbootstrap.com/docs/5.0/helpers/visually-hidden/). Cette astuce CSS permet de cacher visuellement du contenu texte mais tout en restant accessible aux lecteurs d’écrans. Lire aussi [Accessibilité Numérique Orange : Exemple masquage accessible et aria-hidden](https://a11y-guidelines.orange.com/fr/articles/masquage-accessible/).
 
 ```css
-.sr-only {
+.visually-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -746,7 +746,7 @@ Ne pas faire :
 ```html
 <button class="btn-icon swiper-button-prev">
   <i class="icon-arrow" aria-hidden="true"></i>
-  <span class="sr-only">Éléments précédents</span>
+  <span class="visually-hidden">Éléments précédents</span>
 </button>
 ```
 
