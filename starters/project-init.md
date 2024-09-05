@@ -2,6 +2,15 @@
 
 Cette routine consiste en une base commune à **toutes nos typologies de projets** (statique, Nuxt, WordPress).
 
+## Stack commune à tous les projets
+
+- **pnpm** : gestionnaire de paquets
+- **Vite** : outil de compilation/bundler
+- **Editorconfig** : configuration tabs vs spaces à l'insertion, encodage, eol, etc
+- **Prettier** : formatage automatique des fichiers à la sauvegarde
+- **ESlint** : vérification syntaxe JavaScript, TypeScript et frameworks
+- **UnoCSS** : génération de classes utilitaires, des variables CSS, de Reset CSS, des layouts et gestion des valeurs du "thème"
+
 ## 1. Fichiers de configuration
 
 - Installer [pnpm](https://pnpm.io/fr/installation) via `npm install -g pnpm`
@@ -21,13 +30,30 @@ Cette routine consiste en une base commune à **toutes nos typologies de projets
     - Installer [`prettier-plugin-css-order`](https://www.npmjs.com/package/prettier-plugin-css-order)
     - Rappel : bien suivre les étapes de configuration du preset Alsacréations `eslint-config-alsacreations`
 
-## 3. Styles CSS
+## 3. Vite
+
+- Démarrer un dossier projet avec `pnpm create vite`, choisir *Vanilla* + *JavaScript*
+- Se rendre dans le dossier créé (`cd <dossier>`)
+- Installer les dépendances avec `pnpm install`
+- Supprimer les fichiers d'exemple (`counter.js`, `javascript.svg`, `public/vite.svg`); nettoyer `style.css`, nettoyer `main.js` pour ne conserver que l'import CSS; côté HTML ne pas oublier de changer `lang="fr"` et `<title>` puis supprimer `link rel="icon"`
+- Utiliser le dossier [`public/`](https://vitejs.dev/guide/assets.html#the-public-directory) pour les ressources statiques (ex: images, svg, fonts…)
+
+Tâches Vite :
+
+- Développer : `pnpm dev`
+- Compiler : `pnpm build` et utiliser les fichiers produits dans `dist/`
+- Mise en production (optionnel) : `docker-compose up -d --build`
+
+## 4. Styles CSS
 
 **UnoCSS** est notre générateur principal de classes utilitaires et de custom properties CSS. **Il est employé dans tous nos projets CSS (qu'ils soient vanilla ou utilitaires).**
 
 - Installer et configurer [UnoCSS](https://unocss.dev/)
 - Ajouter [`uno.config.ts`](../configs/uno.config.ts) à la racine
 - Ajouter [`uno-bretzel.ts`](../configs/uno-bretzel.ts) à la racine. Il s'agit de notre preset UnoCSS qui ajoute les éléments spécifiques Alsacréations (reset CSS, .visually-hidden, layouts, etc.)
+- Dans `vite.config.js` : `import UnoCSS from 'unocss/vite'`
+- Dans `vite.config.js` : `plugins: [ UnoCSS(), ],`
+- Installer Sass (optionnel) : `pnpm install --save-dev sass` (renommer `style.css` en `style.scss` et adapter le chemin dans `main.js`)
 
 ### Si intégration en "CSS natif"
 
@@ -51,3 +77,7 @@ Le plugin `unocss-custom-properties` transforme toutes les valeurs de thème du 
 - Installer [Stylelint](https://stylelint.io/user-guide/get-started) *si prévu dans le projet* (sinon verifier que les linters CSS/SCSS natifs de VSCode sont activés)
   - `pnpm install -D stylelint`
   - Ajouter le fichier de configuration [`.stylelintrc.json`](../configs/.stylelintrc.json) à la racine.
+- Ajouter [launch.json](https://code.visualstudio.com/docs/editor/debugging#_launch-configurations) au projet pour lancer le debugger.
+- Ajouter [alpine.js](https://alpinejs.dev/essentials/installation) avec `pnpm install --save alpinejs`
+- **Docker** si besoin de mise en recette ou pré-production
+  - Ajouter `Dockerfile` et `docker-compose.yml` suivant les exemples et les adapter

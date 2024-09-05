@@ -34,38 +34,9 @@ L'organisation des dossiers et sous-dossiers est à la libre appréciation de ch
 └── README.md
 ```
 
-- Utiliser le dossier [`public/`](https://vitejs.dev/guide/assets.html#the-public-directory) pour les ressources statiques (ex: images, svg, fonts...)
-
 ## Initialisation de projet
 
 - Suivre les étapes décrites dans le fichier [`project-init`](project-init.md) concernant les configurations des fichiers linters, readme, gitignore, reset CSS, etc.
-
-## Installation et configuration de Vite
-
-- Démarrer un dossier projet avec `pnpm create vite`, choisir _Vanilla_ + _JavaScript_
-- Se rendre dans le dossier créé (`cd <dossier>`)
-- Installer les dépendances avec `pnpm i`
-- Supprimer les fichiers d'exemple (`counter.js`, `javascript.svg`, `public/vite.svg`); nettoyer `style.css`, nettoyer `main.js` pour ne conserver que l'import CSS; côté HTML ne pas oublier de changer `lang="fr"` et `<title>` puis supprimer `link rel="icon"`
-
-## Styles CSS
-
-- Dans `vite.config.js` : `import UnoCSS from 'unocss/vite'`
-- Dans `vite.config.js` : `plugins: [ UnoCSS(), ],`
-- Installer Sass (uniquement si besoin) : `pnpm install --save-dev sass`,
-  - Renommer `style.css` en `style.scss` et adapter le chemin dans `main.js`
-
-## Optionnel
-
-- Ajouter [launch.json](https://code.visualstudio.com/docs/editor/debugging#_launch-configurations) au projet pour lancer le debugger.
-- Ajouter [alpine.js](https://alpinejs.dev/essentials/installation) avec `pnpm install --save alpinejs`
-- **Docker** si besoin de mise en recette ou pré-production
-  - Ajouter `Dockerfile` et `docker-compose.yml` suivant les exemples et les adapter
-
-## Tâches
-
-- Développer : `pnpm dev`
-- Compiler : `pnpm build` et utiliser les fichiers produits dans `dist/`
-- Mise en production : `docker-compose up -d --build`
 
 ---
 
