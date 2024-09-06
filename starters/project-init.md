@@ -18,20 +18,24 @@ Cette routine consiste en une base commune à **toutes nos typologies de projets
 - Créer un fichier `package.json` via `pnpm init`
 - Ajouter un fichier [`.gitignore`](../configs/.gitignore) (et, optionnel, `.dockerignore`) s'ils ne sont pas fournis dans le projet
 - Ajouter un [`README.md`](../configs/README.md) conventionnel
-- Ajouter [`.editorconfig`](../configs/.editorconfig) à la racine (si ce n'est pas déjà fait, installer [l'extension VSCode](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig))
+- Ajouter [`.editorconfig`](../configs/.editorconfig) à la racine (si ce n'est pas déjà fait, installer [l'extension VSCode editorconfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig))
 - Créer un sous-dossier `.vscode` à la racine de `projet`
 - Ajouter [`.vscode/settings.json`](../configs/.vscode/settings.json), [`.vscode/extensions.json`](../configs/.vscode/extensions.json) dans le sous-dossier `.vscode`
 
 ## 2. Linter, formatters et correcteurs
 
-1. Installer [ESLint](https://eslint.org/docs/latest/user-guide/getting-started) (vérification et validation du code JavaScript et TypeScript) (si ce n'est pas déjà fait, installer [l'extension VSCode](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint))
-    - Bien suivre les étapes de configuration du preset Alsacréations [`eslint-config-alsacreations`](https://www.npmjs.com/package/eslint-config-alsacreations) spécifique pour ESLint ainsi que Prettier et *Prettier-plugin-CSS-order* (voir point suivant)
+1. Installer [ESLint](https://eslint.org/docs/latest/user-guide/getting-started) via `pnpm create @eslint/config@latest` (vérification et validation du code JavaScript et TypeScript) (si ce n'est pas déjà fait, installer [l'extension VSCode ESlint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint))
+    - Option 1 : Installer et configurer le preset Alsacréations [`eslint-config-alsacreations`](https://www.npmjs.com/package/eslint-config-alsacreations) spécifique pour ESLint
+    - Option 2 : Employer la config ESlint adaptée au projet
+      - Config de base fournie par dévaut
+      - Config spécifique VueJS : <https://eslint.vuejs.org/>
 
-2. Installer [Prettier](https://prettier.io/docs/en/install.html) (formatteur par défaut pour HTML, CSS, etc.)
-    - Installer [l'extension VSCode](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+2. Installer [Prettier](https://prettier.io/docs/en/install.html) via `pnpm add --save-dev --save-exact prettier` (formatteur par défaut pour HTML, CSS, etc.)
+    - Installer [l'extension VSCode Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
     - Ajouter [`.prettierrc.mjs`](../configs/.prettierrc.mjs) à la racine
     - Installer [`prettier-plugin-css-order`](https://www.npmjs.com/package/prettier-plugin-css-order) via `pnpm i prettier-plugin-css-order`
-    - Rappel : bien suivre les étapes de configuration du preset Alsacréations `eslint-config-alsacreations`
+
+- Relancer VS Code pour activer les linters (`cmd+maj+p -> reload window`)
 
 ## 3. Vite
 
@@ -45,7 +49,6 @@ Tâches Vite :
 
 - Développer : `pnpm dev`
 - Compiler : `pnpm build` et utiliser les fichiers produits dans `dist/`
-- Mise en production (optionnel) : `docker-compose up -d --build`
 
 ## 4. Styles CSS
 
@@ -85,3 +88,4 @@ Le plugin `unocss-custom-properties` transforme toutes les valeurs de thème du 
 - Ajouter [alpine.js](https://alpinejs.dev/essentials/installation) avec `pnpm install --save alpinejs`
 - **Docker** si besoin de mise en recette ou pré-production
   - Ajouter `Dockerfile` et `docker-compose.yml` suivant les exemples et les adapter
+  - Mise en production (optionnel) : `docker-compose up -d --build`
