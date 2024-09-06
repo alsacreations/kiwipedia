@@ -13,11 +13,14 @@ Cette routine consiste en une base commune à **toutes nos typologies de projets
 
 ## 1. Fichiers de configuration
 
-- Installer [pnpm](https://pnpm.io/fr/installation) via `npm install -g pnpm`
+- Créer un dossier racine (ex. `mkdir projet`) et s'y rendre (`cd projet`)
+- Si ce n'est pas déjà fait, installer [pnpm](https://pnpm.io/fr/installation) via `npm install -g pnpm`
+- Créer un fichier `package.json` via `pnpm init`
 - Ajouter un fichier [`.gitignore`](../configs/.gitignore) (et, optionnel, `.dockerignore`) s'ils ne sont pas fournis dans le projet
 - Ajouter un [`README.md`](../configs/README.md) conventionnel
-- Ajouter [`.editorconfig`](../configs/.editorconfig) à la racine (et installer [l'extension VSCode](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig))
-- Ajouter [`.vscode/settings.json`](../configs/.vscode/settings.json), [`.vscode/extensions.json`](../configs/.vscode/extensions.json) à la racine
+- Ajouter [`.editorconfig`](../configs/.editorconfig) à la racine (si ce n'est pas déjà fait, installer [l'extension VSCode](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig))
+- Créer un sous-dossier `.vscode` à la racine de `projet`
+- Ajouter [`.vscode/settings.json`](../configs/.vscode/settings.json), [`.vscode/extensions.json`](../configs/.vscode/extensions.json) dans le sous-dossier `.vscode`
 
 ## 2. Linter, formatters et correcteurs
 
@@ -27,13 +30,13 @@ Cette routine consiste en une base commune à **toutes nos typologies de projets
 2. Installer [Prettier](https://prettier.io/docs/en/install.html) (formatteur par défaut pour HTML, CSS, etc.)
     - Installer [l'extension VSCode](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
     - Ajouter [`.prettierrc.mjs`](../configs/.prettierrc.mjs) à la racine
-    - Installer [`prettier-plugin-css-order`](https://www.npmjs.com/package/prettier-plugin-css-order)
+    - Installer [`prettier-plugin-css-order`](https://www.npmjs.com/package/prettier-plugin-css-order) via `pnpm i prettier-plugin-css-order`
     - Rappel : bien suivre les étapes de configuration du preset Alsacréations `eslint-config-alsacreations`
 
 ## 3. Vite
 
-- Démarrer un dossier projet avec `pnpm create vite`, choisir *Vanilla* + *JavaScript*
-- Se rendre dans le dossier créé (`cd <dossier>`)
+- Se placer à la racine, démarrer un projet Vite avec `pnpm create vite`, choisir *Vanilla* + *JavaScript* (ou *TypeScript*)
+- Choisir le nom d'un sous-dossier (ex. `vite`) et s'y rendre (`cd <vite>`)
 - Installer les dépendances avec `pnpm install`
 - Supprimer les fichiers d'exemple (`counter.js`, `javascript.svg`, `public/vite.svg`); nettoyer `style.css`, nettoyer `main.js` pour ne conserver que l'import CSS; côté HTML ne pas oublier de changer `lang="fr"` et `<title>` puis supprimer `link rel="icon"`
 - Utiliser le dossier [`public/`](https://vitejs.dev/guide/assets.html#the-public-directory) pour les ressources statiques (ex: images, svg, fonts…)
