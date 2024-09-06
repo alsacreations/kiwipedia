@@ -29,6 +29,7 @@ Cette routine consiste en une base commune à **toutes nos typologies de projets
     - Option 2 : Employer la config ESlint adaptée au projet
       - Config de base fournie par dévaut
       - Config spécifique VueJS : <https://eslint.vuejs.org/>
+      - Config spécifique Nuxt : <https://nuxt.com/modules/eslint>
 
 2. Installer [Prettier](https://prettier.io/docs/en/install.html) via `pnpm add --save-dev --save-exact prettier` (formatteur par défaut pour HTML, CSS, etc.)
     - Installer [l'extension VSCode Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
@@ -40,8 +41,9 @@ Cette routine consiste en une base commune à **toutes nos typologies de projets
 ## 3. Vite
 
 - Se placer à la racine, démarrer un projet Vite avec `pnpm create vite`, choisir *Vanilla* + *JavaScript* (ou *TypeScript*)
-- Choisir le nom d'un sous-dossier (ex. `vite`) et s'y rendre (`cd <vite>`)
+- Choisir le nom d'un sous-dossier (ex. `vite-project`) et s'y rendre (`cd <vite-project>`)
 - Installer les dépendances avec `pnpm install`
+- Ajouter [`vite-config.js`](../configs/vite-config.js) dans le dossier Vite (ex. `vite-project`)
 - Supprimer les fichiers d'exemple (`counter.js`, `javascript.svg`, `public/vite.svg`); nettoyer `style.css`, nettoyer `main.js` pour ne conserver que l'import CSS; côté HTML ne pas oublier de changer `lang="fr"` et `<title>` puis supprimer `link rel="icon"`
 - Utiliser le dossier [`public/`](https://vitejs.dev/guide/assets.html#the-public-directory) pour les ressources statiques (ex: images, svg, fonts…)
 
@@ -56,8 +58,10 @@ Tâches Vite :
 
 - Se placer à la racine
 - Installer et configurer [UnoCSS](https://unocss.dev/) via `pnpm add -D unocss`
-- Ajouter [`uno.config.ts`](../configs/uno.config.ts) à la racine
-- Ajouter [`uno-bretzel.ts`](../configs/uno-bretzel.ts) à la racine. Il s'agit de notre preset UnoCSS qui ajoute les éléments spécifiques Alsacréations (reset CSS, .visually-hidden, layouts, etc.)
+- Installer le plugin `unocss-custom-properties` via `pnpm i -D unocss-custom-properties`
+- Ajouter [`uno.config.ts`](../configs/uno.config.ts) dans le projet Vite (ex. `vite-project`)
+- Ajouter [`uno-bretzel.ts`](../configs/uno-bretzel.ts) dans le projet Vite (ex. `vite-project`). Il s'agit de notre preset UnoCSS qui ajoute les éléments spécifiques Alsacréations (reset CSS, .visually-hidden, layouts, etc.)
+- Dans `main.js` : `import 'virtual:uno.css'`
 - Dans `vite.config.js` : `import UnoCSS from 'unocss/vite'`
 - Dans `vite.config.js` : `plugins: [ UnoCSS(), ],`
 - Installer Sass (optionnel) : `pnpm install --save-dev sass` (renommer `style.css` en `style.scss` et adapter le chemin dans `main.js`)
