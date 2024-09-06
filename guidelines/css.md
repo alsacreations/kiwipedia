@@ -383,6 +383,8 @@ Le test pour connaître le choix de l'utilisateur porte sur l'attribut `data-the
   - `800` plutôt que `extrabold`
   - `900` plutôt que `black`
 
+🔖 <https://www.debugbear.com/blog/website-font-performance>
+
 ### Outils d'optimisation et de tests de polices
 
 - FontSquirrel webfont generator : <https://www.fontsquirrel.com/tools/webfont-generator> (ou Transfonter : <https://transfonter.org/>)

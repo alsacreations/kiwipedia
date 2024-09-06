@@ -93,6 +93,7 @@ Autres listes de ressources et checklists
 - <https://www.fontsquirrel.com/tools/webfont-generator>
 - <https://fontcombiner.com/> Combiner des glyphes
 - <https://www.shapecatcher.com/> Devine des glyphes à partir d'un dessin
+- <https://www.debugbear.com/blog/website-font-performance> Guide complet de performance des fonts sur le web
 
 #### Font-icons
 
