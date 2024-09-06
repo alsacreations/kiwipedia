@@ -24,7 +24,7 @@ Cette routine consiste en une base commune à **toutes nos typologies de projets
 
 ## 2. Linter, formatters et correcteurs
 
-1. Installer [ESLint](https://eslint.org/docs/latest/user-guide/getting-started) (vérification et validation du code JavaScript et TypeScript)
+1. Installer [ESLint](https://eslint.org/docs/latest/user-guide/getting-started) (vérification et validation du code JavaScript et TypeScript) (si ce n'est pas déjà fait, installer [l'extension VSCode](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint))
     - Bien suivre les étapes de configuration du preset Alsacréations [`eslint-config-alsacreations`](https://www.npmjs.com/package/eslint-config-alsacreations) spécifique pour ESLint ainsi que Prettier et *Prettier-plugin-CSS-order* (voir point suivant)
 
 2. Installer [Prettier](https://prettier.io/docs/en/install.html) (formatteur par défaut pour HTML, CSS, etc.)
@@ -51,7 +51,8 @@ Tâches Vite :
 
 **UnoCSS** est notre générateur principal de classes utilitaires et de custom properties CSS. **Il est employé dans tous nos projets CSS (qu'ils soient vanilla ou utilitaires).**
 
-- Installer et configurer [UnoCSS](https://unocss.dev/)
+- Se placer à la racine
+- Installer et configurer [UnoCSS](https://unocss.dev/) via `pnpm add -D unocss`
 - Ajouter [`uno.config.ts`](../configs/uno.config.ts) à la racine
 - Ajouter [`uno-bretzel.ts`](../configs/uno-bretzel.ts) à la racine. Il s'agit de notre preset UnoCSS qui ajoute les éléments spécifiques Alsacréations (reset CSS, .visually-hidden, layouts, etc.)
 - Dans `vite.config.js` : `import UnoCSS from 'unocss/vite'`
