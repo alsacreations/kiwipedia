@@ -41,7 +41,7 @@ export default definePreset(() => {
               -webkit-text-size-adjust: none;
             }
 
-            /* Body prend toute la hauteur + styles divers */
+            /* On donne à body toute la hauteur + styles divers */
             :where(body) {
               min-height: 100dvh;
               margin: 0;
@@ -50,10 +50,13 @@ export default definePreset(() => {
               line-height: 1.5;
             }
 
-            /* On supprime les styles des listes ayant une class */
+            /* On supprime les styles des listes ayant une class (version accessible) */
             :where(ol, ul):where([class]) {
-              list-style: none;
               padding-left: 0;
+
+              & > li::marker {
+                content: "";
+              }
             }
 
             /* On évite les débordements d'éléments */
@@ -74,7 +77,7 @@ export default definePreset(() => {
               max-width: 100%;
             }
 
-            /* Réduction de la hauteur de ligne sur certains éléments */
+            /* On réduit de la hauteur de ligne sur certains éléments */
             :where(h1, h2, h3, h4, button, input, label) {
               line-height: 1.1;
             }
@@ -84,12 +87,12 @@ export default definePreset(() => {
               height: auto;
             }
 
-            /* Styles par défaut des liens */
+            /* On stylise par défaut des liens */
             :where(a:not([class])) {
               text-decoration-skip-ink: auto;
             }
 
-            /* Elements remplacés en block */
+            /* On change ces éléments en block */
             :where(img,
               svg,
               video,
@@ -102,12 +105,12 @@ export default definePreset(() => {
                 vertical-align: middle;
             }
 
-            /* Les SVG héritent de la couleur de texte courante */
+            /* On fait hériter aux SVG de la couleur de texte courante */
             :where(svg:not([fill])) {
               fill: currentColor;
             }
 
-            /* Correction des différences entre navigateurs */
+            /* On harmonise des différences entre navigateurs */
             :where(input, button, textarea, select) {
               margin: 0;
               background-color: transparent;
@@ -135,6 +138,9 @@ export default definePreset(() => {
               display: inline-block;
               cursor: pointer;
             }
+            :where(button) {
+              cursor: pointer;
+            }
             :where(textarea) {
               overflow: auto;
               vertical-align: top;
@@ -142,7 +148,7 @@ export default definePreset(() => {
               white-space: pre-wrap;
             }
 
-            /* Styles préformatés */
+            /* On stylise les éléments préformatés */
             :where(pre, code, kbd, samp) {
               font-family: monospace, monospace;
               font-size: 1em;
@@ -154,7 +160,7 @@ export default definePreset(() => {
               overflow: auto;
             }
 
-            /* Correction des styles ARIA */
+            /* On corrige des styles ARIA */
             :where([aria-busy="true"]) {
               cursor: progress;
             }
@@ -172,7 +178,7 @@ export default definePreset(() => {
               position: absolute;
             }
 
-            /* Suppression des animations selon préférences utilisateur */
+            /* On désactive les animations selon les préférences utilisateur */
             @media (prefers-reduced-motion: reduce) {
               *,
               ::before,
