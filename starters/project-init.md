@@ -49,7 +49,7 @@ Cette routine consiste en une base commune à **toutes nos typologies de projets
 
 Tâches Vite :
 
-- Se place dans le dossier Vite (ex. `vite-project`)
+- Se placer dans le dossier Vite (ex. `vite-project`)
 - Développer : `pnpm dev`
 - Compiler : `pnpm build` et utiliser les fichiers produits dans `dist/`
 
