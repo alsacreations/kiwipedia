@@ -57,11 +57,11 @@ Tâches Vite :
 
 **UnoCSS** est notre générateur principal de classes utilitaires et de custom properties CSS. **Il est employé dans tous nos projets CSS (qu'ils soient vanilla ou utilitaires).**
 
-- Se placer à la racine
+- Se placer dans le dossier Vite (ex. `vite-project`)
 - Installer et configurer [UnoCSS](https://unocss.dev/) via `pnpm add -D unocss`
 - Installer le plugin `unocss-custom-properties` via `pnpm i -D unocss-custom-properties`
-- Ajouter [`uno.config.ts`](../configs/uno.config.ts) dans le projet Vite (ex. `vite-project`)
-- Ajouter [`uno-bretzel.ts`](../configs/uno-bretzel.ts) dans le projet Vite (ex. `vite-project`). Il s'agit de notre preset UnoCSS qui ajoute les éléments spécifiques Alsacréations (reset CSS, .visually-hidden, layouts, etc.)
+- Ajouter [`uno.config.ts`](../configs/uno.config.ts) dans le dossier Vite
+- Ajouter [`uno-bretzel.ts`](../configs/uno-bretzel.ts) dans le dossier Vite. Il s'agit de notre preset UnoCSS qui ajoute les éléments spécifiques Alsacréations (reset CSS, .visually-hidden, layouts, etc.)
 - Dans `main.js` : `import 'virtual:uno.css'`
 - Dans `vite.config.js` : `import UnoCSS from 'unocss/vite'`
 - Dans `vite.config.js` : `plugins: [ UnoCSS(), ],`
