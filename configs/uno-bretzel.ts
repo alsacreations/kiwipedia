@@ -82,6 +82,14 @@ export default definePreset(() => {
               line-height: 1.1;
             }
 
+            /* On améliore la typographie */
+            :where(h1, h2, h3, h4, h5, h6) {
+              text-wrap: balance;
+            }
+            :where(p, li, figcaption) {
+              text-wrap: pretty;
+            }
+
             /* On préserve le ratio d'affichage */
             :where(iframe, img, input, select, textarea) {
               height: auto;
