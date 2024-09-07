@@ -114,6 +114,7 @@ Autres listes de ressources et checklists
 ### Composants UI intégrés (souvent Tailwind)
 
 - <https://hyperui.dev/>
+- <https://uiverse.io/>
 - <https://www.tailwind-kit.com/>
 - <https://headlessui.dev/> (React, Vue)
 - <https://tailwindui.com/> (React, Vue, HTML)
