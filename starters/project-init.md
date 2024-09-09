@@ -25,11 +25,11 @@ Cette routine consiste en une base commune à **toutes nos typologies de projets
 ## 2. Linter, formatters et correcteurs
 
 1. Installer [ESLint](https://eslint.org/docs/latest/user-guide/getting-started) via `pnpm create @eslint/config@latest` (vérification et validation du code JavaScript et TypeScript) (si ce n'est pas déjà fait, installer [l'extension VSCode ESlint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint))
-    - Option 1 : Installer et configurer le preset Alsacréations [`eslint-config-alsacreations`](https://www.npmjs.com/package/eslint-config-alsacreations) spécifique pour ESLint
-    - Option 2 : Employer la config ESlint adaptée au projet
-      - Config de base fournie par dévaut
+    - Option 1 : Employer la config ESlint adaptée au projet *(conseillée par défaut)*
+      - Config de base fournie par défaut
       - Config spécifique VueJS : <https://eslint.vuejs.org/>
       - Config spécifique Nuxt : <https://nuxt.com/modules/eslint>
+    - Option 2 : Installer et configurer le preset Alsacréations [`eslint-config-alsacreations`](https://www.npmjs.com/package/eslint-config-alsacreations) spécifique pour ESLint
 
 2. Installer [Prettier](https://prettier.io/docs/en/install.html) via `pnpm add --save-dev --save-exact prettier` (formatteur par défaut pour HTML, CSS, etc.)
     - Installer [l'extension VSCode Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
