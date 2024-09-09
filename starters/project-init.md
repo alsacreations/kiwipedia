@@ -43,7 +43,7 @@ Cette routine consiste en une base commune à **toutes nos typologies de projets
 - Se placer à la racine, démarrer un projet Vite avec `pnpm create vite`, choisir *Vanilla* + *JavaScript* (ou *TypeScript*)
 - Choisir le nom d'un sous-dossier (ex. `vite-project`) et s'y rendre (`cd <vite-project>`)
 - Installer les dépendances avec `pnpm install`
-- Ajouter [`vite-config.js`](../configs/vite-config.js) dans le dossier Vite (ex. `vite-project`)
+- Ajouter [`vite.config.ts`](../configs/vite-config.ts) dans le dossier Vite (ex. `vite-project`)
 - Supprimer les fichiers d'exemple (`counter.js`, `javascript.svg`, `public/vite.svg`); nettoyer `style.css`, nettoyer `main.js` pour ne conserver que l'import CSS; côté HTML ne pas oublier de changer `lang="fr"` et `<title>` puis supprimer `link rel="icon"`
 - Utiliser le dossier [`public/`](https://vitejs.dev/guide/assets.html#the-public-directory) pour les ressources statiques (ex: images, svg, fonts…)
 
@@ -63,8 +63,8 @@ Tâches Vite :
 - Ajouter [`uno.config.ts`](../configs/uno.config.ts) dans le dossier Vite
 - Ajouter [`uno-bretzel.ts`](../configs/uno-bretzel.ts) dans le dossier Vite. Il s'agit de notre preset UnoCSS qui ajoute les éléments spécifiques Alsacréations (reset CSS, .visually-hidden, layouts, etc.)
 - Dans `main.js` : `import 'virtual:uno.css'`
-- Dans `vite.config.js` : `import UnoCSS from 'unocss/vite'`
-- Dans `vite.config.js` : `plugins: [ UnoCSS(), ],`
+- Dans `vite.config.ts` : `import UnoCSS from 'unocss/vite'`
+- Dans `vite.config.ts` : `plugins: [ UnoCSS(), ],`
 - Installer Sass (optionnel) : `pnpm install --save-dev sass` (renommer `style.css` en `style.scss` et adapter le chemin dans `main.js`)
 
 ### Si intégration en "CSS natif"
