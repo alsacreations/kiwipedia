@@ -40,16 +40,15 @@ Cette routine consiste en une base commune à **toutes nos typologies de projets
 
 ## 3. Vite
 
-- Se placer à la racine, démarrer un projet Vite avec `pnpm create vite`, choisir *Vanilla* + *JavaScript* (ou *TypeScript*)
-- Choisir le nom d'un sous-dossier (ex. `vite-project`) et s'y rendre (`cd <vite-project>`)
-- Installer les dépendances avec `pnpm install`
+- Se placer à la racine, démarrer un projet Vite avec `pnpm create vite`, choisir le nom du projet, les options *Vanilla* + *JavaScript* (ou *TypeScript*)
+- Se rendre dans le dossier correspondant au nom du projet `cd <vite-project>`
+- Installer les dépendances `pnpm install`
 - Ajouter [`vite.config.ts`](../configs/vite.config.ts) dans le dossier Vite (ex. `vite-project`)
 - Supprimer les fichiers d'exemple (`counter.js`, `javascript.svg`, `public/vite.svg`); nettoyer `style.css`, nettoyer `main.js` pour ne conserver que l'import CSS; côté HTML ne pas oublier de changer `lang="fr"` et `<title>` puis supprimer `link rel="icon"`
 - Utiliser le dossier [`public/`](https://vitejs.dev/guide/assets.html#the-public-directory) pour les ressources statiques (ex: images, svg, fonts…)
 
 Tâches Vite :
 
-- Se placer dans le dossier Vite (ex. `vite-project`)
 - Développer : `pnpm dev`
 - Compiler : `pnpm build` et utiliser les fichiers produits dans `dist/`
 
@@ -57,15 +56,14 @@ Tâches Vite :
 
 **UnoCSS** est notre générateur principal de classes utilitaires et de custom properties CSS. **Il est employé dans tous nos projets CSS (qu'ils soient vanilla ou utilitaires).**
 
-- Se placer dans le dossier Vite (ex. `vite-project`)
-- Installer et configurer [UnoCSS](https://unocss.dev/) via `pnpm add -D unocss`
-- Installer le plugin `unocss-custom-properties` via `pnpm i -D unocss-custom-properties`
+- Se placer dans le dossier Vite (ex. `cd vite-project`)
+- Installer et configurer [UnoCSS](https://unocss.dev/) via `pnpm add --save-dev unocss`
+- Installer le plugin `unocss-custom-properties` via `pnpm i --save-dev unocss-custom-properties`
 - Ajouter [`uno.config.ts`](../configs/uno.config.ts) dans le dossier Vite
 - Ajouter [`uno-bretzel.ts`](../configs/uno-bretzel.ts) dans le dossier Vite. Il s'agit de notre preset UnoCSS qui ajoute les éléments spécifiques Alsacréations (reset CSS, .visually-hidden, layouts, etc.)
-- Dans `main.js` : `import 'virtual:uno.css'`
-- Dans `vite.config.ts` : `import UnoCSS from 'unocss/vite'`
-- Dans `vite.config.ts` : `plugins: [ UnoCSS(), ],`
-- Installer Sass (optionnel) : `pnpm install --save-dev sass` (renommer `style.css` en `style.scss` et adapter le chemin dans `main.js`)
+- Dans `main.js` ajouter `import 'virtual:uno.css'`
+- Dans `vite.config.ts` ajouter `import UnoCSS from 'unocss/vite'`
+- Dans `vite.config.ts` ajouter `plugins: [ UnoCSS(), ],`
 
 ### Si intégration en "CSS natif"
 
@@ -84,10 +82,11 @@ Le plugin `unocss-custom-properties` transforme toutes les valeurs de thème du 
 - Dans `uno.config.ts` : `import { presetMini } from 'unocss'`
 - Dans `uno.config.ts` : `presets: [ presetMini() ]`
 
-## 4. Optionnel (selon projets)
+## 5. Optionnel (selon projets)
 
+- Installer Sass (optionnel) : `pnpm install --save-dev sass` (renommer `style.css` en `style.scss` et adapter le chemin dans `main.js`)
 - Installer [Stylelint](https://stylelint.io/user-guide/get-started) *si prévu dans le projet* (sinon verifier que les linters CSS/SCSS natifs de VSCode sont activés)
-  - `pnpm install -D stylelint`
+  - `pnpm install --save-dev stylelint`
   - Ajouter le fichier de configuration [`.stylelintrc.json`](../configs/.stylelintrc.json) à la racine.
 - Ajouter [launch.json](https://code.visualstudio.com/docs/editor/debugging#_launch-configurations) au projet pour lancer le debugger.
 - Ajouter [alpine.js](https://alpinejs.dev/essentials/installation) avec `pnpm install --save alpinejs`
