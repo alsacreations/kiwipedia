@@ -43,7 +43,7 @@ Cette routine consiste en une base commune à **toutes nos typologies de projets
 - Se placer à la racine, démarrer un projet Vite avec `pnpm create vite`, choisir *Vanilla* + *JavaScript* (ou *TypeScript*)
 - Choisir le nom d'un sous-dossier (ex. `vite-project`) et s'y rendre (`cd <vite-project>`)
 - Installer les dépendances avec `pnpm install`
-- Ajouter [`vite.config.ts`](../configs/vite-config.ts) dans le dossier Vite (ex. `vite-project`)
+- Ajouter [`vite.config.ts`](../configs/vite.config.ts) dans le dossier Vite (ex. `vite-project`)
 - Supprimer les fichiers d'exemple (`counter.js`, `javascript.svg`, `public/vite.svg`); nettoyer `style.css`, nettoyer `main.js` pour ne conserver que l'import CSS; côté HTML ne pas oublier de changer `lang="fr"` et `<title>` puis supprimer `link rel="icon"`
 - Utiliser le dossier [`public/`](https://vitejs.dev/guide/assets.html#the-public-directory) pour les ressources statiques (ex: images, svg, fonts…)
 
