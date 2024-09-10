@@ -31,10 +31,10 @@ Cette routine consiste en une base commune à **toutes nos typologies de projets
       - Config spécifique Nuxt : <https://nuxt.com/modules/eslint>
     - Option 2 : Installer et configurer le preset Alsacréations [`eslint-config-alsacreations`](https://www.npmjs.com/package/eslint-config-alsacreations) spécifique pour ESLint
 
-2. Installer [Prettier](https://prettier.io/docs/en/install.html) via `pnpm add --save-dev --save-exact prettier` (formatteur par défaut pour HTML, CSS, etc.)
+2. Installer [Prettier](https://prettier.io/docs/en/install.html) via `pnpm install --save-dev prettier` (formatteur par défaut pour HTML, CSS, etc.)
     - Installer [l'extension VSCode Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
     - Ajouter [`.prettierrc.mjs`](../configs/.prettierrc.mjs) à la racine
-    - Installer [`prettier-plugin-css-order`](https://www.npmjs.com/package/prettier-plugin-css-order) via `pnpm i prettier-plugin-css-order`
+    - Installer [`prettier-plugin-css-order`](https://www.npmjs.com/package/prettier-plugin-css-order) via `pnpm install --save-dev prettier-plugin-css-order`
 
 - Relancer VS Code pour activer les linters (`cmd+maj+p -> reload window`)
 
@@ -44,7 +44,7 @@ Cette routine consiste en une base commune à **toutes nos typologies de projets
 - Se rendre dans le dossier correspondant au nom du projet `cd <vite-project>`
 - Installer les dépendances `pnpm install`
 - Ajouter [`vite.config.ts`](../configs/vite.config.ts) dans le dossier Vite (ex. `vite-project`)
-- Supprimer les fichiers d'exemple (`counter.js`, `javascript.svg`, `public/vite.svg`); nettoyer `style.css`, nettoyer `main.js` pour ne conserver que l'import CSS; côté HTML ne pas oublier de changer `lang="fr"` et `<title>` puis supprimer `link rel="icon"`
+- Supprimer les fichiers d'exemple (`counter.js`, `javascript.svg`, `public/vite.svg`); nettoyer `style.css` (et renommer en `styles.css`), nettoyer `main.js` pour ne conserver que l'import CSS; côté HTML ne pas oublier de changer `lang="fr"` et `<title>` puis supprimer `link rel="icon"`
 - Utiliser le dossier [`public/`](https://vitejs.dev/guide/assets.html#the-public-directory) pour les ressources statiques (ex: images, svg, fonts…)
 
 Tâches Vite :
@@ -57,13 +57,14 @@ Tâches Vite :
 **UnoCSS** est notre générateur principal de classes utilitaires et de custom properties CSS. **Il est employé dans tous nos projets CSS (qu'ils soient vanilla ou utilitaires).**
 
 - Se placer dans le dossier Vite (ex. `cd vite-project`)
-- Installer et configurer [UnoCSS](https://unocss.dev/) via `pnpm add --save-dev unocss`
-- Installer le plugin `unocss-custom-properties` via `pnpm i --save-dev unocss-custom-properties`
+- Installer et configurer [UnoCSS](https://unocss.dev/) via `pnpm install --save-dev unocss`
+- Installer le plugin `unocss-custom-properties` via `pnpm install --save-dev unocss-custom-properties`
+- Installer le plugin `@types/node` via `pnpm install --save @types/node`
 - Ajouter [`uno.config.ts`](../configs/uno.config.ts) dans le dossier Vite
 - Ajouter [`uno-bretzel.ts`](../configs/uno-bretzel.ts) dans le dossier Vite. Il s'agit de notre preset UnoCSS qui ajoute les éléments spécifiques Alsacréations (reset CSS, .visually-hidden, layouts, etc.)
 - Dans `main.js` ajouter `import 'virtual:uno.css'`
-- Dans `vite.config.ts` ajouter `import UnoCSS from 'unocss/vite'`
-- Dans `vite.config.ts` ajouter `plugins: [ UnoCSS(), ],`
+- Dans `vite.config.ts` vérifier que `import UnoCSS from 'unocss/vite'` est présent dans le fichier
+- Dans `vite.config.ts` vérifier que `plugins: [ UnoCSS(), ],` est présent dans le fichier
 
 ### Si intégration en "CSS natif"
 
