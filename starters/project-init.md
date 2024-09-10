@@ -85,8 +85,10 @@ Le plugin `unocss-custom-properties` transforme toutes les valeurs de thème du 
 
 ## 5. Optionnel (selon projets)
 
-- Installer Sass (optionnel) : `pnpm install --save-dev sass` (renommer `style.css` en `style.scss` et adapter le chemin dans `main.js`)
-- Installer [Stylelint](https://stylelint.io/user-guide/get-started) *si prévu dans le projet* (sinon verifier que les linters CSS/SCSS natifs de VSCode sont activés)
+Options à installer / configurer au cas par cas, uniquement si prévu dans le projet :
+
+- Installer Sass : `pnpm install --save-dev sass` (renommer `style.css` en `style.scss` et adapter le chemin dans `main.js`)
+- Installer [Stylelint](https://stylelint.io/user-guide/get-started) (sinon verifier que les linters CSS/SCSS natifs de VSCode sont activés)
   - `pnpm install --save-dev stylelint`
   - Ajouter le fichier de configuration [`.stylelintrc.json`](../configs/.stylelintrc.json) à la racine.
 - Ajouter [launch.json](https://code.visualstudio.com/docs/editor/debugging#_launch-configurations) au projet pour lancer le debugger.
