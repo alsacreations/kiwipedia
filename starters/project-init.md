@@ -87,7 +87,7 @@ Le plugin `unocss-custom-properties` transforme toutes les valeurs de thème du 
 
 Options à installer / configurer au cas par cas, uniquement si prévu dans le projet :
 
-- Installer Sass : `pnpm install --save-dev sass` (renommer `style.css` en `style.scss` et adapter le chemin dans `main.js`)
+- Installer Sass : `pnpm install --save-dev sass` (renommer `styles.css` en `styles.scss` et adapter le chemin dans `main.js`)
 - Installer [Stylelint](https://stylelint.io/user-guide/get-started) (sinon verifier que les linters CSS/SCSS natifs de VSCode sont activés)
   - `pnpm install --save-dev stylelint`
   - Ajouter le fichier de configuration [`.stylelintrc.json`](../configs/.stylelintrc.json) à la racine.
