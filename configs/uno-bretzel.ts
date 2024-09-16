@@ -110,7 +110,6 @@ export default definePreset(() => {
               embed,
               object) {
                 display: block;
-                vertical-align: middle;
             }
 
             /* On harmonise des différences entre navigateurs */
