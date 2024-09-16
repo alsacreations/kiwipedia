@@ -113,11 +113,6 @@ export default definePreset(() => {
                 vertical-align: middle;
             }
 
-            /* On fait hériter aux SVG de la couleur de texte courante */
-            :where(svg:not([fill])) {
-              fill: currentColor;
-            }
-
             /* On harmonise des différences entre navigateurs */
             :where(input, button, textarea, select) {
               margin: 0;
@@ -166,6 +161,20 @@ export default definePreset(() => {
               white-space: pre-wrap;
               line-height: normal;
               overflow: auto;
+            }
+
+            /* On stylise les SVG */
+            :where(svg:not([fill])) {
+              fill: currentColor;
+            }
+            :where(svg) {
+              overflow: visible;
+            }
+            :where(svg *) {
+              transform-box: fill-box;
+            }
+            :where(svg:has(symbol)) {
+              display: none;
             }
 
             /* On corrige des styles ARIA */
