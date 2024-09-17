@@ -56,6 +56,7 @@ export default definePreset(() => {
 
               & > li::marker {
                 content: "";
+                color: transparent;
               }
             }
 
