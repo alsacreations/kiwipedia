@@ -4,6 +4,7 @@
 
 - Renomme `utilities.md` en `css-utilities.md`
 - Ajoute précisions dans `project-init.md`
+- Ajoute `"checkJs": true` dans `tsconfig.json`
 
 ## Jeudi 5 septembre 2024
 
