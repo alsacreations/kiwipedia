@@ -13,6 +13,8 @@
     ],
     // Obligatoire pour le typage le plus précis
     "strict": true,
+    // Vérifie JavaScript vanilla également
+    "checkJs": true,
     // Pas obligatoire mais permet d'utiliser les libs qui utilisent le CommonJS
     "esModuleInterop": true,
     // https://www.typescriptlang.org/tsconfig#incremental

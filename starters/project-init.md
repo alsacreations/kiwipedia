@@ -22,23 +22,7 @@ Cette routine consiste en une base commune à **toutes nos typologies de projets
 - Créer un sous-dossier `.vscode` à la racine de `projet`
 - Ajouter [`.vscode/settings.json`](../configs/.vscode/settings.json), [`.vscode/extensions.json`](../configs/.vscode/extensions.json) dans le sous-dossier `.vscode`
 
-## 2. Linter, formatters et correcteurs
-
-1. Installer [ESLint](https://eslint.org/docs/latest/user-guide/getting-started) via `pnpm create @eslint/config@latest` (vérification et validation du code JavaScript et TypeScript) (si ce n'est pas déjà fait, installer [l'extension VSCode ESlint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint))
-    - Option 1 : Employer la config ESlint adaptée au projet *(conseillée par défaut)*
-      - Config de base fournie par défaut
-      - Config spécifique VueJS : <https://eslint.vuejs.org/>
-      - Config spécifique Nuxt : <https://nuxt.com/modules/eslint>
-    - Option 2 : Installer et configurer le preset Alsacréations [`eslint-config-alsacreations`](https://www.npmjs.com/package/eslint-config-alsacreations) spécifique pour ESLint
-
-2. Installer [Prettier](https://prettier.io/docs/en/install.html) via `pnpm install --save-dev prettier` (formatteur par défaut pour HTML, CSS, etc.)
-    - Installer [l'extension VSCode Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-    - Ajouter [`.prettierrc.mjs`](../configs/.prettierrc.mjs) à la racine
-    - Installer [`prettier-plugin-css-order`](https://www.npmjs.com/package/prettier-plugin-css-order) via `pnpm install --save-dev prettier-plugin-css-order`
-
-- Relancer VS Code pour activer les linters (`cmd+maj+p -> reload window`)
-
-## 3. Vite
+## 2. Vite
 
 - Se placer à la racine, démarrer un projet Vite avec `pnpm create vite`, choisir le nom du projet, les options *Vanilla* + *JavaScript* (ou *TypeScript*)
 - Se rendre dans le dossier correspondant au nom du projet `cd <vite-project>`
@@ -51,6 +35,21 @@ Tâches Vite :
 
 - Développer : `pnpm dev`
 - Compiler : `pnpm build` et utiliser les fichiers produits dans `dist/`
+
+## 3. Linter, formatters et correcteurs
+
+1. Installer [ESLint](https://eslint.org/docs/latest/user-guide/getting-started) via `pnpm create @eslint/config@latest` (vérification et validation du code JavaScript et TypeScript) (si ce n'est pas déjà fait, installer [l'extension VSCode ESlint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint))
+    - Employer la config ESlint adaptée au projet *(conseillée par défaut)*
+      - Config de base fournie par défaut
+      - Config spécifique VueJS *(si non proposée lors de l'install ESLint)* : <https://eslint.vuejs.org/>
+      - Config spécifique Nuxt *(si non proposée lors de l'install ESLint)* : <https://nuxt.com/modules/eslint>
+
+2. Installer [Prettier](https://prettier.io/docs/en/install.html) via `pnpm install --save-dev prettier` (formatteur par défaut pour HTML, CSS, etc.)
+    - Installer [l'extension VSCode Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+    - Ajouter [`.prettierrc.mjs`](../configs/.prettierrc.mjs) à la racine
+    - Installer [`prettier-plugin-css-order`](https://www.npmjs.com/package/prettier-plugin-css-order) via `pnpm install --save-dev prettier-plugin-css-order`
+
+- Relancer VS Code pour activer les linters (`cmd+maj+p -> reload window`)
 
 ## 4. Styles CSS
 

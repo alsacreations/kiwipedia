@@ -1,8 +1,13 @@
 # Changelog
 
+## Mercredi 18 seprembre 2024
+
+- Renomme `utilities.md` en `css-utilities.md`
+- Ajoute précisions dans `project-init.md`
+
 ## Jeudi 5 septembre 2024
 
-- Ajout des fichiers de config `uno.config.ts` et `uno-bretzel.ts`
+- Ajoute les fichiers de config `uno.config.ts` et `uno-bretzel.ts`
 
 ## Lundi 2 septembre 2024
 
