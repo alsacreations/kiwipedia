@@ -38,6 +38,8 @@ Tâches Vite :
 
 ## 3. Linter, formatters et correcteurs
 
+On part du principe qu'on installe les linters que si l'on a déjà configuré l'environnement avant (vanilla, Vue/Nuxt, WordPress).
+
 1. Installer [ESLint](https://eslint.org/docs/latest/user-guide/getting-started) via `pnpm create @eslint/config@latest` (vérification et validation du code JavaScript et TypeScript) (si ce n'est pas déjà fait, installer [l'extension VSCode ESlint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint))
     - Employer la config ESlint adaptée au projet *(conseillée par défaut)*
       - Config de base fournie par défaut
@@ -58,7 +60,7 @@ Tâches Vite :
 - Se placer dans le dossier Vite (ex. `cd vite-project`)
 - Installer et configurer [UnoCSS](https://unocss.dev/) via `pnpm install --save-dev unocss`
 - Installer le plugin `unocss-custom-properties` via `pnpm install --save-dev unocss-custom-properties`
-- Installer le plugin `@types/node` via `pnpm install --save @types/node`
+- Installer le plugin `@types/node` via `pnpm install --save-dev @types/node` (nécessaire si TypeScript)
 - Ajouter [`uno.config.ts`](../configs/uno.config.ts) dans le dossier Vite
 - Ajouter [`uno-bretzel.ts`](../configs/uno-bretzel.ts) dans le dossier Vite. Il s'agit de notre preset UnoCSS qui ajoute les éléments spécifiques Alsacréations (reset CSS, .visually-hidden, layouts, etc.)
 - Dans `main.js` ajouter `import 'virtual:uno.css'`
