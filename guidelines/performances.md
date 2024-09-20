@@ -236,3 +236,12 @@ Quelques ressources :
 - PHP : [PHP Cache](https://www.php-cache.com/)
 - [Varnish](https://varnish-cache.org/)
 - [k6](https://k6.io/) pour les tests de charge
+
+### Apache Bench
+
+Utiliser [Apache Bench](https://httpd.apache.org/docs/2.4/programs/ab.html) pour lancer des requêtes HTTP et mesurer le temps de réponse / taux de succès. Avec l'[image Docker ab](https://github.com/jig/docker-ab) correspondante c'est rapide et pratique, en jouant sur les paramètres `-n` nombre de requêtes et `-c` parallélisation de requêtes (concurrency) :
+
+```sh
+docker run --rm jordi/ab -n 20 -c 2 http://www.perdu.com/
+# Penser à bien terminer l'url par /
+```
