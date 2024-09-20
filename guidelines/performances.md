@@ -245,3 +245,11 @@ Utiliser [Apache Bench](https://httpd.apache.org/docs/2.4/programs/ab.html) pour
 docker run --rm jordi/ab -n 20 -c 2 http://www.perdu.com/
 # Penser à bien terminer l'url par /
 ```
+
+### Siege
+
+Permet le test de plusieurs adresses en parallèle contrairement à apachebench, avec `-c` concurrence, `-f` fichier contenant une liste d'adresses, `-r` le nombre de réponses attendues.
+
+```sh
+docker run -it --rm -v $(pwd):/app ecliptik/docker-siege -c 20 --reps=once -f /app/urls.txt
+```
