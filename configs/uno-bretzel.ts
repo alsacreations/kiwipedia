@@ -5,7 +5,7 @@
  * - classes utilitaires (.visually-hidden)
  * - classes Layouts (liquid/splash, autogrid, switcher, cluster, repel, reel, etc.)
  */
-import { Preset, definePreset } from "unocss"
+import { definePreset } from "unocss"
 
 export default definePreset(() => {
   return {
