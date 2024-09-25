@@ -165,3 +165,28 @@ Les volumes limitent les performances, notamment lors de développements WordPre
 * Installer Ubuntu ou autre distribution via le Microsoft Store intégré
 * Activer l'option dans Docker _Use the WSL 2 based engine_
 * Désormais `git clone` les projets "dans" la vm WSL et y accéder avec Visual Studio Code pour développer
+
+### Télécharger/installer
+
+`wsl --install`
+
+* <https://apps.microsoft.com/detail/9NBLGGH4MSV6?hl=fr-fr&gl=FR>
+
+### Commandes WSL
+
+* `wsl --list --online` to see all available distros
+* `wsl -l -v` to see all your currently installed distros
+
+### Configurer
+
+* <https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-11-with-gui-support>
+
+### Sur Windows
+
+Installer une distribution telle qu'Ubuntu via le Store
+
+![Store Ubuntu](../images/docker-ubuntu-store.png)
+
+Activer l'intégration WSL dans Docker.
+
+![Intégration WSL](../images/docker-integration.png)
