@@ -53,6 +53,9 @@ Affiche les différences dans le dossier de travail courant par rapport au derni
 ```sh
 git diff
 git diff --shortstat
+
+# Affiche la liste des fichiers modifiés entre deux commits
+git diff a6a3a3d9fc507ddf2aeee189b7b34daeb897652a 56c46aeec883c36389c69fc0f17197e48474af1f --name-only
 ```
 
 Ignorer les caractères espaces (whitespaces) : `git diff -w`
@@ -128,7 +131,10 @@ git revert HEAD
 
 ## Reset
 
-Ne pas confondre avec revert, réinitialise tout ou certains fichiers (attention on peut perdre des modifications non versionnées).
+Réinitialise tout ou certains fichiers.
+
+> [!CAUTION]
+> Ne pas confondre avec `revert` : attention on peut perdre des modifications non versionnées.
 
 ```sh
 git reset
@@ -137,7 +143,7 @@ git reset <commit>
 git reset HEAD
 git reset --hard
 git reset --hard origin/<labranche>
-git reset --soft HEAD~1 # quand on a foiré son dernier commit
+git reset --soft HEAD~1 # quand on a foiré son dernier commit 🎉
 ```
 
 ## Rm

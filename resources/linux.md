@@ -674,6 +674,9 @@ Monter un volume (déjà listé dans fstab)
 Monter un volume à la demande en spécifiant le type de système de fichiers
 `mount -t ext4 /dev/XXXX /mnt/path`
 
+> [!WARNING]
+> Attention certaines de ces commandes peuvent changer vos partitions et vous faire perdre vos données.
+
 Partitionner (p = afficher, d = supprimer, n = new)
 `fdisk /dev/XXXX`
 

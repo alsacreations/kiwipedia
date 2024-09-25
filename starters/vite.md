@@ -191,9 +191,10 @@ export default defineConfig(({ command }) => ({
 }))
 ```
 
-Pour exploiter le mode `dev` de Vite et bénéficier du _hot module_reloading_, il conviendra d'injecter dans la page :
-
-```html
-<script src="http://localhost:5173/@vite/client" type="module"></script>
-<script src="http://localhost:5173/main.js" type="module"></script>
-```
+> [!TIP]
+> Pour exploiter le mode `dev` de Vite et bénéficier du _hot module_reloading_, il conviendra d'injecter dans la page (par exemple dans un thème WordPress) :
+>
+> ```html
+> <script src="http://localhost:5173/@vite/client" type="module"></script>
+> <script src="http://localhost:5173/main.js" type="module"></script>
+> ```

@@ -443,12 +443,13 @@ TODO:
 - Vérifier que toutes les anciennes URLs de développement ont disparu de la base.
 - Activer le cache.
 
-Si l'hébergement est mutualisé et ne permet de pointer dans le dossier `/public`, activer la réécriture avec un fichier `.htaccess` à la racine :
-
-```htaccess
-RewriteEngine on
-RewriteRule ^(.*)$ /public/$1 [L]
-```
+> [!TIP]
+> Si l'hébergement est mutualisé et ne permet de pointer dans le dossier `/public`, activer la réécriture avec un fichier `.htaccess` à la racine :
+>
+> ```htaccess
+> RewriteEngine on
+> RewriteRule ^(.*)$ /public/$1 [L]
+> ```
 
 ## Maintenance
 

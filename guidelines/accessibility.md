@@ -655,8 +655,7 @@ Voici un exemple d'usage de l'attribut `aria-label` :
 <button aria-label="accéder au code Hypertext markup language">html</button>
 ```
 
-Cet exemple est issu d'un article des Guidelines Accessibilité de Orange nommé [Les attributs ARIA qui peuvent vous sauver !
-](https://a11y-guidelines.orange.com/fr/articles/attributs-aria-qui-peuvent-vous-sauver/) décrivant en détail les différences d'usage de `aria-label`, `aria-labelledby` et  `aria-describedby`.
+Cet exemple est issu de l'article [Les attributs ARIA qui peuvent vous sauver !](https://a11y-guidelines.orange.com/fr/articles/attributs-aria-qui-peuvent-vous-sauver/) décrivant en détail les différences d'usage de `aria-label`, `aria-labelledby` et  `aria-describedby`.
 
 ---
 

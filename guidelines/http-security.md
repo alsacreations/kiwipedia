@@ -24,7 +24,7 @@ Ressources :
 * <https://wiki.mozilla.org/Security/Server_Side_TLS> Configurer TLS
 * <https://www.privacytools.io/> Meilleurs outils de sécurité/confidentialité
 
-**Définition** : La notion d'origine (ou _same-origin_) indique qu'il a correspondance du protocole (http, https), du port (80) et du nom de domaine complet (avec ses sous domaines).
+> [!NOTE] La notion d'origine (ou _same-origin_) indique qu'il y a correspondance du protocole (http, https), du port (80) et du nom de domaine complet (avec ses sous domaines).
 
 ▶️ Les règles ci-dessous peuvent être renvoyées par n'importe quel serveur HTTP
 

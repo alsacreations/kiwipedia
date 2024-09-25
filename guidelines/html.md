@@ -114,7 +114,8 @@ Pour une adaptation du site web vers les terminaux mobiles, l’élément `<meta
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ```
 
-**_Note : Les syntaxes empêchant l’agrandissement des contenus par le visiteur seront proscrites (maximum-scale=1, user-scalable=no, etc.)._**
+> [!IMPORTANT]
+> Les syntaxes empêchant l’agrandissement des contenus par le visiteur seront proscrites (maximum-scale=1, user-scalable=no, etc.).
 
 🔖 Voir [https://www.alsacreations.com/article/lire/1490-comprendre-le-viewport-dans-le-web-mobile.html](https://www.alsacreations.com/article/lire/1490-comprendre-le-viewport-dans-le-web-mobile.html)
 
