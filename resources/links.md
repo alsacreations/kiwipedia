@@ -6,7 +6,7 @@ Autres listes de ressources et checklists
 - <https://github.com/sdmg15/Best-websites-a-programmer-should-visit/blob/master/README.md>
 - <https://github.com/mtdvio/every-programmer-should-know>
 - <https://github.com/dypsilon/frontend-dev-bookmarks>
-- <https://frontendmasters.com/books/front-end-handbook/2019/>
+- <https://frontendmasters.com/guides/front-end-handbook/2024/>
 - <https://free-for.dev/> Plein de ressources pour développeurs
 - <https://github.com/thedaviddias/Front-End-Checklist>
 - <https://github.com/thedaviddias/Front-End-Performance-Checklist>
@@ -30,6 +30,7 @@ Autres listes de ressources et checklists
 - <https://overapi.com/> cheatsheets
 - <http://html5index.org/>
 - <https://caniuse.com/> tableaux de support navigateurs
+- <https://webstatus.dev/> Web Platform Status
 
 ### Tests, émulation, devices
 
