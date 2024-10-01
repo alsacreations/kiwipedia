@@ -312,17 +312,17 @@ Autres listes de ressources et checklists
 - <https://github.com/Pikaday/Pikaday> (datepicker, aussi en plugin jQuery)
 - <https://robertwhurst.github.io/KeyboardJS/> (gestion clavier)
 - <https://pdfme.com/> Générateur de PDF en TypeScript (avec template)
-- <https://parall.ax/products/jspdf> (Générer PDF côté client)
-- <https://wicky.nillia.ms/headroom.js/> (header disparaissant animé)
-- <https://inorganik.github.io/countUp.js/> (défilement de compteur/chiffres)
-- <https://draggabilly.desandro.com/> Drag&Drop multi-touch
+- <https://parall.ax/products/jspdf> Générer PDF côté client
+- <https://inorganik.github.io/countUp.js/> Défilement de compteur/chiffres
 - <https://joaopereirawd.github.io/animatedModal.js/> Modales animées
 - <http://callmecavs.com/bricks.js/> Masonry performant
 - <https://github.com/jwagner/smartcrop.js> Smartcrop intelligent pour les images
 - <https://swiperjs.com/> Slideshow
 - <https://github.com/nolimits4web/Swiper> Swiper JS vanilla très extensible et flexible (fonctionne sous Windows Phone)
 - <https://deeptissuejs.com/> Abstraction pointer et touch
-- <https://interactjs.io/> drag and drop, resize, multi-touch
+- <https://draggabilly.desandro.com/> Drag and drop, multi-touch
+- <https://interactjs.io/> Drag and drop, resize, multi-touch, snapping
+- <https://swapy.tahazsh.com/> Drag and drop agnostique
 - <https://hammerjs.github.io/> Gestion du touch
 - <https://pressurejs.com/> Gestion de la pression
 
