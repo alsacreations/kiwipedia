@@ -274,6 +274,7 @@ Autres listes de ressources et checklists
 - <https://bevacqua.github.io/promisees/> Les promesses expliquées et visualisées en animations
 - <https://beautifier.io/> Beautifier en ligne
 - <https://blog.scottlogic.com/2021/09/06/how-to-write-an-es-lint-rule-for-beginners.html> écrire ses propres règles eslint
+- <https://warriorjs.com/> Apprendre en jouant
 
 ### Notions spécifiques
 
@@ -709,6 +710,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 ## SQL et MySQL
 
 - <https://sqlbolt.com/> Apprendre SQL de manière interactive
+- <https://mystery.knightlab.com/> Apprendre en résolvant un mystère
 - <https://dbdiagram.io/> Éditeur de modèles et diagrammes en ligne
 - <https://drawdb.vercel.app/editor> Éditeur de schéma en ligne
 
