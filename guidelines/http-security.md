@@ -4,7 +4,7 @@ Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacre
 
 Outils de test :
 
-* <https://observatory.mozilla.org/>
+* <https://developer.mozilla.org/fr/observatory>
 * <https://securityheaders.com/>
 * <https://www.serpworx.com/check-security-headers/>
 * CSP : <https://csp-evaluator.withgoogle.com/>
