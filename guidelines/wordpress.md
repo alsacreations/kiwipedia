@@ -394,6 +394,7 @@ TODO:
 
 ### Divers
 
+- [WP Maintenance](https://fr.wordpress.org/plugins/wp-maintenance/) : page de maintenance configurable.
 - [Photo gallery](https://fr.wordpress.org/plugins/photo-gallery/) (Galerie de médias, photos et vidéos) + riche en fonctionnalités que la galerie native (img s'ouvrent dans une popup, slider, bouton de téléchargement, création de groupes de galeries, etc…). N'est pas accessible : fenêtre modale qui ne prend pas le focus, pas d'attributs aria, bouton de fermeture non accessible.
 - [Job Manager](https://fr.wordpress.org/plugins/wp-job-manager/) : Offres d'emploi.
 - [Tarteaucitron](https://fr.wordpress.org/plugins/tarteaucitronjs/) || [Cookie Notice](https://fr.wordpress.org/plugins/cookie-notice/) : bannières cookies, code non accessible (boutons qui n'en sont pas, etc.).
