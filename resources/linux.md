@@ -251,7 +251,7 @@ Compter le nombre de lignes d'un fichier
 Afficher le contenu inversé
 `rev fichier.txt`
 
-Editer un fichier avec vi ou avec nano
+Editer un fichier avec vi ou avec nano (cheatsheet vi <https://vim.rtorr.com/>)
 `vi fichier.txt` ou `nano fichier.txt`
 
 Lire un fichier avec pagination (G = fin du fichier)

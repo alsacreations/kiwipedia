@@ -647,6 +647,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://serversforhackers.com/series>
 - <https://vim.is/> Apprendre Vim avec des exercices interactifs
 - <https://vim-adventures.com/> Apprendre Vim en jouant
+- <https://vim.rtorr.com/> Cheatsheet vim
 
 ### Applications web
 
