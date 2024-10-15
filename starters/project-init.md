@@ -2,6 +2,22 @@
 
 Cette routine consiste en une base commune à **toutes nos typologies de projets** (statique, Nuxt, WordPress).
 
+## Sommaire
+
+**Important !** Dans la majeure partie des projets "simples", l'étape 2 (fichiers de configuration) n'est pas nécessaire car les fichiers sont générés par le projet Vite.
+Il existe cependant des projets "multi" (que l'on appelle aussi "mono-repo") où l'on trouve une partie front (ex. Vite) et d'autres parties au sein du même projet. Pour ces projets, les instructions sont légèrement différentes : l'étape 2 (fichiers de configuration) est à réaliser au préalable avant l'étape 1 (Vite).
+
+- [Routine d'initialisation d'un projet](#routine-dinitialisation-dun-projet)
+  - [Sommaire](#sommaire)
+  - [Stack commune à tous les projets](#stack-commune-à-tous-les-projets)
+  - [1. Vite](#1-vite)
+  - [2. Fichiers de configuration](#2-fichiers-de-configuration)
+  - [3. Linter, formatters et correcteurs](#3-linter-formatters-et-correcteurs)
+  - [4. Styles CSS](#4-styles-css)
+    - [Si intégration en "CSS natif"](#si-intégration-en-css-natif)
+    - [Si intégration en "CSS utilitaire"](#si-intégration-en-css-utilitaire)
+  - [5. Optionnel (selon projets)](#5-optionnel-selon-projets)
+
 ## Stack commune à tous les projets
 
 - **pnpm** : gestionnaire de paquets
@@ -11,18 +27,7 @@ Cette routine consiste en une base commune à **toutes nos typologies de projets
 - **ESlint** : vérification syntaxe JavaScript, TypeScript et frameworks
 - **UnoCSS** : génération de classes utilitaires, des variables CSS, de Reset CSS, des layouts et gestion des valeurs du "thème"
 
-## 1. Fichiers de configuration
-
-- Créer un dossier racine (ex. `mkdir projet`) et s'y rendre (`cd projet`)
-- Si ce n'est pas déjà fait, installer [pnpm](https://pnpm.io/fr/installation) via `npm install -g pnpm`
-- Créer un fichier `package.json` via `pnpm init`
-- Ajouter un fichier [`.gitignore`](../configs/.gitignore) (et, optionnel, `.dockerignore`) s'ils ne sont pas fournis dans le projet
-- Ajouter un [`README.md`](../configs/README.md) conventionnel
-- Ajouter [`.editorconfig`](../configs/.editorconfig) à la racine (si ce n'est pas déjà fait, installer [l'extension VSCode editorconfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig))
-- Créer un sous-dossier `.vscode` à la racine de `projet`
-- Ajouter [`.vscode/settings.json`](../configs/.vscode/settings.json), [`.vscode/extensions.json`](../configs/.vscode/extensions.json) dans le sous-dossier `.vscode`
-
-## 2. Vite
+## 1. Vite
 
 - Se placer à la racine, démarrer un projet Vite avec `pnpm create vite`, choisir le nom du projet, les options *Vanilla* + *JavaScript* (ou *TypeScript*)
 - Se rendre dans le dossier correspondant au nom du projet `cd <vite-project>`
@@ -35,6 +40,19 @@ Tâches Vite :
 
 - Développer : `pnpm dev`
 - Compiler : `pnpm build` et utiliser les fichiers produits dans `dist/`
+
+## 2. Fichiers de configuration
+
+*Note : la plupart de ces fichiers sont générés automatiquement dans un projet Vite, vérifiez simplement qu'ils sont présents.*
+
+- Créer un dossier racine (ex. `mkdir projet`) et s'y rendre (`cd projet`)
+- Si ce n'est pas déjà fait, installer [pnpm](https://pnpm.io/fr/installation) via `npm install -g pnpm`
+- Créer un fichier `package.json` via `pnpm init`
+- Ajouter un fichier [`.gitignore`](../configs/.gitignore) (et, optionnel, `.dockerignore`) s'ils ne sont pas fournis dans le projet
+- Ajouter un [`README.md`](../configs/README.md) conventionnel
+- Ajouter [`.editorconfig`](../configs/.editorconfig) à la racine (si ce n'est pas déjà fait, installer [l'extension VSCode editorconfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig))
+- Créer un sous-dossier `.vscode` à la racine de `projet`
+- Ajouter [`.vscode/settings.json`](../configs/.vscode/settings.json), [`.vscode/extensions.json`](../configs/.vscode/extensions.json) dans le sous-dossier `.vscode`
 
 ## 3. Linter, formatters et correcteurs
 
