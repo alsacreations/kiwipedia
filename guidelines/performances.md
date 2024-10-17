@@ -224,6 +224,7 @@ Quelques ressources :
 
 ## Autres checklists et ressources
 
+- [Fixing your website's JavaScript performance](https://developer.mozilla.org/en-US/blog/fix-javascript-performance/)
 - [HTTP/3 expliqué](https://http3-explained.haxx.se/fr/)
 - <https://github.com/thedaviddias/Front-End-Performance-Checklist>
 - <https://www.smashingmagazine.com/2021/01/front-end-performance-2021-free-pdf-checklist/>
