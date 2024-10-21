@@ -136,6 +136,11 @@ Autres listes de ressources et checklists
 - <https://vuestic.dev>
 - <https://www.naiveui.com/>
 
+### Web Components
+
+- <https://learn-wcs.com/>
+- <https://developer.mozilla.org/fr/docs/Web/API/Web_components>
+
 ### Générateurs d'UI / de pages intégrées
 
 - <https://uigenerator.org/>
