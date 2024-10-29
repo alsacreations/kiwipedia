@@ -1,12 +1,19 @@
-# Spécification (modèle global)
+# Spécification composant Header
 
 ## Description 📝
 
-_Décrivez quel est ce rôle de cette étape, page ou composant, ce qui est attendu, y compris en mobile et desktop._
+Le header est la partie supérieure de la page et contient les composants suivants :
+
+- Logo
+- Top menu (subheader)
+- Menu de navigation principal
+- Champ de recherche
+
+### Description détaillée mobile
+
+### Description détaillée desktop
 
 ## Maquettes 📸
-
-_Image, schéma, maquette, capture d'écran_
 
 - Mobile : …
 - Desktop : …
@@ -23,7 +30,11 @@ _Description précise et concise de votre demande : contexte et user story assoc
 
 ## Infos techniques ⚙️
 
-… Complétez par les informations techniques (exemple : _adresse de l'API, des paramètres, valeurs maximales, messages d'erreur le cas échéant_).
+- Au scroll, le menu de navigation principal reste en sticky et prend toute la largeur du navigateur.
+- Le menu en mobile a-t-il une composition différente de celui en desktop ?
+- Dans la navigation, s'assurer que les liens ne soient pas des boutons mais des liens
+- Bien ajouter un accès rapide lors de la navigation au clavier
+- S'assurer que le champs Recherche est un label
 
 ## Estimation ⏳
 
@@ -34,4 +45,4 @@ _Description précise et concise de votre demande : contexte et user story assoc
 - Vérifier la conformité de l'intégration avec la maquette
 - Vérifier les interactions (dans la limite du scope de l'issue)
 - Vérifier le parcours au clavier
-- Vérifier la responsivité sur mobile
+- Vérifier la responsivité mobile/desktop

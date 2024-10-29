@@ -1,12 +1,14 @@
-# Spécification (modèle global)
+# Spécification composant Breadcrumb (fil d'Ariane)
 
 ## Description 📝
 
-_Décrivez quel est ce rôle de cette étape, page ou composant, ce qui est attendu, y compris en mobile et desktop._
+Le Breadcrumb (fil d'Ariane) est un système de navigation secondaire qui permet à l’utilisateur de se situer sur le site.
+
+### Description détaillée mobile
+
+### Description détaillée desktop
 
 ## Maquettes 📸
-
-_Image, schéma, maquette, capture d'écran_
 
 - Mobile : …
 - Desktop : …
@@ -23,7 +25,11 @@ _Description précise et concise de votre demande : contexte et user story assoc
 
 ## Infos techniques ⚙️
 
-… Complétez par les informations techniques (exemple : _adresse de l'API, des paramètres, valeurs maximales, messages d'erreur le cas échéant_).
+- Ce composant est présent sur toutes les pages.
+- L’ensemble de ses éléments doivent être cliquables, sauf la page consultée.
+- Le fil d’ariane ne doit jamais être superposé sur une image.
+- L’outline naturel du focus navigateur est conservé.
+- Le premier lien est toujours "Accueil" vers la racine du site.
 
 ## Estimation ⏳
 
@@ -34,4 +40,4 @@ _Description précise et concise de votre demande : contexte et user story assoc
 - Vérifier la conformité de l'intégration avec la maquette
 - Vérifier les interactions (dans la limite du scope de l'issue)
 - Vérifier le parcours au clavier
-- Vérifier la responsivité sur mobile
+- Vérifier la responsivité mobile/desktop

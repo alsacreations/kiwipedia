@@ -1,12 +1,24 @@
-# Spécification (modèle global)
+# Spécification page Home (Accueil)
 
 ## Description 📝
 
-_Décrivez quel est ce rôle de cette étape, page ou composant, ce qui est attendu, y compris en mobile et desktop._
+La page d'accueil est la page de destination initiale de l'utilisateur. Elle se compose des composants suivants :
+
+- Header
+- Breadcrumb
+- Navigation
+- Contenu
+  - Bloc "Design"
+  - Bloc "Intégration"
+  - Bloc "WordPress"
+  - Bloc "Applications web"
+- Footer
+
+### Description détaillée mobile
+
+### Description détaillée desktop
 
 ## Maquettes 📸
-
-_Image, schéma, maquette, capture d'écran_
 
 - Mobile : …
 - Desktop : …
@@ -23,7 +35,10 @@ _Description précise et concise de votre demande : contexte et user story assoc
 
 ## Infos techniques ⚙️
 
-… Complétez par les informations techniques (exemple : _adresse de l'API, des paramètres, valeurs maximales, messages d'erreur le cas échéant_).
+- Les spécifications des composants internes (header, blocs internes, footer, etc.) font l'objet d'une spécification dédiée.
+- Quelles sont les spécificités de la grille ?
+- Quel est le title de la page ?
+- Quelle est la meta description de la page ?
 
 ## Estimation ⏳
 
@@ -34,4 +49,4 @@ _Description précise et concise de votre demande : contexte et user story assoc
 - Vérifier la conformité de l'intégration avec la maquette
 - Vérifier les interactions (dans la limite du scope de l'issue)
 - Vérifier le parcours au clavier
-- Vérifier la responsivité sur mobile
+- Vérifier la responsivité mobile/desktop
