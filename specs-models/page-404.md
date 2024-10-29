@@ -1,18 +1,8 @@
-# Spécification page Home (Accueil)
+# Spécification page 404 (Erreur 404)
 
 ## Description 📝
 
-La page d'accueil est la page de destination initiale de l'utilisateur. Elle se compose des composants suivants :
-
-- Header
-- Breadcrumb
-- Navigation
-- Contenu
-  - Bloc "Design"
-  - Bloc "Intégration"
-  - Bloc "WordPress"
-  - Bloc "Applications web"
-- Footer
+Une page d'erreur 404 est la page web qui s'affiche lorsqu'une page ou ressource est inaccessible : elle n'existe pas ou plus, ou est indisponible.
 
 ### Description détaillée mobile
 
@@ -35,10 +25,8 @@ _Description précise et concise de votre demande : contexte et user story assoc
 
 ## Infos techniques ⚙️
 
-- Les spécifications des composants internes (header, blocs internes, footer, etc.) font l'objet d'une spécification dédiée.
-- Quelles sont les spécificités de la grille ?
-- Quel est le title de la page ?
-- Quelle est la meta description de la page ?
+- Inclure une barre de recherche
+- Rediriger vers la page d'accueil (ou la page la plus pertinente)
 
 ## Estimation ⏳
 

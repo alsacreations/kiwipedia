@@ -26,10 +26,11 @@ _Description précise et concise de votre demande : contexte et user story assoc
 ## Infos techniques ⚙️
 
 - Ce composant est présent sur toutes les pages.
-- L’ensemble de ses éléments doivent être cliquables, sauf la page consultée.
-- Le fil d’ariane ne doit jamais être superposé sur une image.
-- L’outline naturel du focus navigateur est conservé.
 - Le premier lien est toujours "Accueil" vers la racine du site.
+- L’ensemble de ses éléments doivent être cliquables (liens), sauf la page en cours.
+- Le fil d’ariane ne doit jamais être masqué par du contenu ou une image.
+- L’outline naturel du focus navigateur est conservé.
+- Les règles d'accessibilité sont définies dans le [Breadcrumb Pattern](https://www.w3.org/TR/wai-aria-practices/#breadcrumb) WAI-ARIA.
 
 ## Estimation ⏳
 

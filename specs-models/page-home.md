@@ -1,13 +1,18 @@
-# Spécification composant Header
+# Spécification page Home (Accueil)
 
 ## Description 📝
 
-Le header est la partie supérieure de la page et contient les composants suivants :
+La page d'accueil est la page de destination initiale de l'utilisateur. Elle se compose des composants suivants :
 
-- Logo
-- Top menu (subheader)
-- Menu de navigation principal
-- Champ de recherche
+- Header
+- Breadcrumb
+- Navigation
+- Contenu
+  - Bloc "Design"
+  - Bloc "Intégration"
+  - Bloc "WordPress"
+  - Bloc "Applications web"
+- Footer
 
 ### Description détaillée mobile
 
@@ -30,11 +35,11 @@ _Description précise et concise de votre demande : contexte et user story assoc
 
 ## Infos techniques ⚙️
 
-- Au scroll, le menu de navigation principal reste en sticky et prend toute la largeur du navigateur.
-- Le menu en mobile a-t-il une composition différente de celui en desktop ?
-- Dans la navigation, s'assurer que les liens ne soient pas des boutons mais des liens
-- Bien ajouter un accès rapide lors de la navigation au clavier
-- S'assurer que le champs Recherche est un label
+- Les spécifications des composants internes (header, blocs internes, footer, etc.) font l'objet d'une spécification dédiée.
+- Quelles sont les spécificités de la grille ?
+- Quel est le title de la page ?
+- Quelle est la meta description de la page ?
+- Bien ajouter un accès rapide (skip link) pour la navigation au clavier
 
 ## Estimation ⏳
 
