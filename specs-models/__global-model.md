@@ -1,25 +1,18 @@
 # Spécification (modèle global)
 
-## Description 📝
+## Description globale 📝
 
-_Décrivez quel est ce rôle de cette étape, page ou composant, ce qui est attendu, y compris en mobile et desktop._
+_Décrivez quel est ce rôle de cette étape, page, section ou composant, ce qui est attendu_
 
-## Maquettes 📸
+## Screenshot 📸
 
-_Image, schéma, maquette, capture d'écran_
+_Ici une image_
 
-- Mobile : …
-- Desktop : …
+## Maquettes 🎨
 
-## Définition du besoin _(Client)_
+- Mobile et Desktop (liens)
 
-_Description précise et concise de votre demande : contexte et user story associée (exemple : "En tant que (utilisateur/rôle métier), je souhaite (besoin), afin de (bénéfice attendu)")_
-
-- URL : … _(page où l'évolution doit être apportée)_
-
-## Liste des spécificités _(Client)_
-
-… Listez de manière exhaustive et détaillée, les besoins techniques attendus (exemple : "_on veut des filtres_" : lesquels ? sont-il cumulables ?)
+## Description détaillée (mobile et desktop)
 
 ## Infos techniques générales ⚙️
 

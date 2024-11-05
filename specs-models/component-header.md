@@ -1,6 +1,6 @@
 # Spécification composant Header
 
-## Description 📝
+## Description globale 📝
 
 Le header est la partie supérieure de la page et contient les composants suivants :
 
@@ -9,24 +9,15 @@ Le header est la partie supérieure de la page et contient les composants suivan
 - Menu de navigation principal
 - Champ de recherche
 
-### Description détaillée mobile
+## Screenshot 📸
 
-### Description détaillée desktop
+_Ici une image_
 
-## Maquettes 📸
+## Description détaillée (mobile et desktop)
 
-- Mobile : …
-- Desktop : …
+## Maquettes 🎨
 
-## Définition du besoin _(Client)_
-
-_Description précise et concise de votre demande : contexte et user story associée (exemple : "En tant que (utilisateur/rôle métier), je souhaite (besoin), afin de (bénéfice attendu)")_
-
-- URL : … _(page où l'évolution doit être apportée)_
-
-## Liste des spécificités _(Client)_
-
-… Listez de manière exhaustive et détaillée, les besoins techniques attendus (exemple : "_on veut des filtres_" : lesquels ? sont-il cumulables ?)
+- Mobile et Desktop (liens)
 
 ## Infos techniques générales ⚙️
 

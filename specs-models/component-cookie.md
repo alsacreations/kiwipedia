@@ -1,27 +1,18 @@
 # Spécification composant Cookie (Bannière Cookie)
 
-## Description 📝
+## Description globale 📝
 
 Une bannière Cookie est une fenêtre qui apparaît lorsque l'utilisateur arrive sur le site. Elle permet de communiquer les modalités d'utilisation des cookies.
 
-### Description détaillée mobile
+## Screenshot 📸
 
-### Description détaillée desktop
+_Ici une image_
 
-## Maquettes 📸
+## Description détaillée (mobile et desktop)
 
-- Mobile : …
-- Desktop : …
+## Maquettes 🎨
 
-## Définition du besoin _(Client)_
-
-_Description précise et concise de votre demande : contexte et user story associée (exemple : "En tant que (utilisateur/rôle métier), je souhaite (besoin), afin de (bénéfice attendu)")_
-
-- URL : … _(page où l'évolution doit être apportée)_
-
-## Liste des spécificités _(Client)_
-
-… Listez de manière exhaustive et détaillée, les besoins techniques attendus (exemple : "_on veut des filtres_" : lesquels ? sont-il cumulables ?)
+- Mobile et Desktop (liens)
 
 ## Infos techniques générales ⚙️
 
