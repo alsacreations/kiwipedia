@@ -23,7 +23,11 @@ _Description précise et concise de votre demande : contexte et user story assoc
 
 … Listez de manière exhaustive et détaillée, les besoins techniques attendus (exemple : "_on veut des filtres_" : lesquels ? sont-il cumulables ?)
 
-## Infos techniques ⚙️
+## Infos techniques générales ⚙️
+
+… Complétez par les informations techniques générales (exemple : _mobile first, valeur des breakpoints, CSS Vanilla ou non, etc._).
+
+## Infos techniques spécifiques ⚙️
 
 - Inclure une barre de recherche
 - Rediriger vers la page d'accueil (ou la page la plus pertinente)

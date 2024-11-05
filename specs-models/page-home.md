@@ -33,7 +33,13 @@ _Description précise et concise de votre demande : contexte et user story assoc
 
 … Listez de manière exhaustive et détaillée, les besoins techniques attendus (exemple : "_on veut des filtres_" : lesquels ? sont-il cumulables ?)
 
-## Infos techniques ⚙️
+## Infos techniques générale ⚙️
+
+- Intégrer en mobile first. Breakpoints : `width >= 48rem` (=768px), `width >= 80rem` (=1280px).
+- CSS Vanilla (pas de Tailwind si possible, un seul niveau de nesting si possible avec `&`).
+- Aucune valeur en dur, utiliser `var()` avec les variables dans `vars.css` générées par UnoCSS.
+
+## Infos techniques spécifiques ⚙️
 
 - Les spécifications des composants internes (header, blocs internes, footer, etc.) font l'objet d'une spécification dédiée.
 - Quelles sont les spécificités de la grille ?

@@ -23,7 +23,11 @@ _Description précise et concise de votre demande : contexte et user story assoc
 
 … Listez de manière exhaustive et détaillée, les besoins techniques attendus (exemple : "_on veut des filtres_" : lesquels ? sont-il cumulables ?)
 
-## Infos techniques ⚙️
+## Infos techniques générales ⚙️
+
+… Complétez par les informations techniques générales (exemple : _mobile first, valeur des breakpoints, CSS Vanilla ou non, etc._).
+
+## Infos techniques spécifiques ⚙️
 
 - Une bannière Cookie est présente sur toutes les pages tant que l'utilisateur n'a pas accepté ou refusé les cookies.
 - Ce composant doit pouvoir être fermé par l'utilisateur (bouton "Fermer" ou "X"), accepter les cookies (bouton "Accepter"), les refuser (bouton "Refuser") ou — en option — les gérer (bouton "Gérer").
