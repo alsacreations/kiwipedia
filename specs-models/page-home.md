@@ -33,7 +33,7 @@ _Description précise et concise de votre demande : contexte et user story assoc
 
 … Listez de manière exhaustive et détaillée, les besoins techniques attendus (exemple : "_on veut des filtres_" : lesquels ? sont-il cumulables ?)
 
-## Infos techniques générale ⚙️
+## Infos techniques générales ⚙️
 
 - Intégrer en mobile first. Breakpoints : `width >= 48rem` (=768px), `width >= 80rem` (=1280px).
 - CSS Vanilla (pas de Tailwind si possible, un seul niveau de nesting si possible avec `&`).
