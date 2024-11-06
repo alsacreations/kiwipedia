@@ -20,6 +20,7 @@
 * `npm outdated` liste les dépendances obsolètes
 * `npx npm-check -u` interface avancée pour procéder aux mises à jour
 * `npx npm-check-updates` [met à jour](https://www.npmjs.com/package/npm-check-updates) package.json vers les dernières versions (_latest_)
+* `npx taze major` (ou minor) met à jour les dépendances jusqu'à la dernière version stable (voir [taze](https://github.com/antfu-collective/taze))
 
 ## Divers
 
