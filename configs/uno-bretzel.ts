@@ -315,53 +315,41 @@ export default definePreset(() => {
       `,
       ],
       [
-        /^l-flow$/,
-        (_, { rawSelector }) => /* css */ `
-        :where(.${rawSelector}) {
-          .l-flow > * + * {
-            --flow-space: 1em; /* espace entre chaque enfant */
-
-            margin-block-start: var(--flow-space);
-          }
-        }
-      `,
-      ],
-      [
-        /^l-autogrid$/,
+        /^autogrid$/,
         (_, { rawSelector }) => /* css */ `
         :where(.${rawSelector}) {
           --autogrid-gutter: 1rem; /* gouttière */
-          --min-col-size: 20rem; /* taille mini de chaque colonne */
+          --col-min-size: 20rem; /* taille mini de chaque colonne */
           --grid-fill: auto-fit; /* mode de remplissage */
 
           display: grid;
-          grid-template-columns: repeat(var(--grid-fill), minmax(min(var(--min-col-size), 100%), 1fr));
+          grid-template-columns: repeat(var(--grid-fill), minmax(min(var(--col-min-size), 100%), 1fr));
           gap: var(--autogrid-gutter);
         }
       `,
       ],
       [
-        /^l-switcher$/,
+        /^switcher$/,
         (_, { rawSelector }) => /* css */ `
         :where(.${rawSelector}) {
-          --gutter: 1rem; /* gouttière */
+          --switcher-gutter: 1rem; /* gouttière */
           --vertical-alignment: flex-start; /* alignement vertical interne */
-          --container-size: 30rem;  /* largeur du conteneur, déterminant le "breakpoint" pour la disposition verticale ou horizontale de enfants */
+          --container-min-size: 30rem;  /* largeur du conteneur, déterminant le "breakpoint" */
 
           display: flex;
           flex-wrap: wrap;
-          gap: var(--gutter);
+          gap: var(--switcher-gutter);
           align-items: var(--vertical-alignment);
 
           & > * {
             flex-grow: 1;
-            flex-basis: calc( (var(--container-size) - 100%) * 999 );
+            flex-basis: calc( (var(--container-min-size) - 100%) * 999 );
           }
         }
       `,
       ],
       [
-        /^l-cluster$/,
+        /^cluster$/,
         (_, { rawSelector }) => /* css */ `
         :where(.${rawSelector}) {
           --cluster-gutter: 1rem; /* gouttière */
@@ -377,7 +365,7 @@ export default definePreset(() => {
       `,
       ],
       [
-        /^l-repel$/,
+        /^repel$/,
         (_, { rawSelector }) => /* css */ `
         :where(.${rawSelector}) {
           --repel-gutter: 1rem; /* gouttière */
@@ -392,41 +380,41 @@ export default definePreset(() => {
       `,
       ],
       [
-        /^l-media$/,
+        /^media$/,
         (_, { rawSelector }) => /* css */ `
         :where(.${rawSelector}) {
           --media-gutter: 1rem; /* gouttière */
-          --sidebar-size: 8rem; /* largeur (fixe) du 1er enfant */
-          --min-item-size: 300px; /* largeur (mini) du 2e enfant */
+          --sidebar-fixed-size: 8rem; /* largeur (fixe) du 1er enfant */
+          --item-min-size: 300px; /* largeur (mini) du 2e enfant */
 
           display: flex;
           flex-wrap: wrap;
           gap: var(--media-gutter);
 
           & > *:first-child {
-            flex-grow: 1;
-            flex-shrink: 0;
-            flex-basis: var(--sidebar-size);
+            flex: 1 0 var(--sidebar-fixed-size);
           }
 
           & > *:last-child {
-            flex-grow: 999;
-            flex-basis: 0;
-            min-width: var(--min-item-size);
+            flex: 999 0 min(var(--item-min-size), 100%);
           }
+
+          &[data-direction=rtl]>:last-child {
+            order: -1;
+         }
         }
       `,
       ],
       [
-        /^l-reel$/,
+        /^reel$/,
         (_, { rawSelector }) => /* css */ `
         :where(.${rawSelector}) {
-          --gutter: 1rem; /* gouttière */
+          --reel-gutter: 1rem; /* gouttière */
           --item-size: 35%; /* largeur des enfants (% du conteneur) */
 
           display: flex;
           height: auto;
-          gap: var(--gutter);
+          gap: var(--reel-gutter);
           scroll-snap-type: x mandatory; /* scroll-snap sur l'axe x */
           max-width: 100%;
           margin-inline: auto; /* reel est centré horizontalement */
