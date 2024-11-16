@@ -61,7 +61,16 @@ Autres listes de ressources et checklists
 - <https://www.smashingmagazine.com/2021/09/interactive-learning-tools-front-end-developers/> Jeux pour apprendre flexbox, grid
 - <https://web.dev/learn/css/>
 - <https://www.projectwallace.com/css-code-quality> Outil d'évaluation de la qualité du code CSS
+
+### Propriétés et valeurs
+
+- <https://www.quirksmode.org/blog/archives/2021/06/inherit_initial.html> Inherit, initial, unset, revert
+- <https://ishadeed.com/article/overflow-clip/> Overflow clip
 - <https://ishadeed.com/article/css-vars-101/> Variables CSS
+- <https://ishadeed.com/article/the-gap/> The gap
+- <https://ishadeed.com/article/display-contents/> Display contents
+- <https://ishadeed.com/article/understanding-z-index/> Comprendre z-index
+- <https://ishadeed.com/article/css-has-guide/> :has()
 
 ### Grids
 
@@ -182,10 +191,6 @@ Autres listes de ressources et checklists
 - <https://jonassebastianohlsson.com/specificity-graph/> CSS Specificity Graph Generator
 - <https://isellsoap.github.io/specificity-visualizer/>
 
-### Propriétés et valeurs
-
-- <https://www.quirksmode.org/blog/archives/2021/06/inherit_initial.html> Inherit, initial, unset, revert
-
 ---
 
 ## Accessibilité
@@ -255,6 +260,7 @@ Autres listes de ressources et checklists
 ### Divers
 
 - <https://matthiasott.com/notes/focus-visible-is-here> Gestion du focus avec :focus et :focus-visible
+- <https://medienbaecker.com/articles/focus-outlines> De beaux outlines au focus
 - <https://www.filamentgroup.com/lab/bulletproof_icon_fonts> L’accessibilité des font-icon
 - <https://www.traduction.cc/traduction/Creer-des-tableaux-de-donnees-accessibles-1.html> Créer des tableaux accessibles
 - <https://stevefaulkner.github.io/HTML5accessibility/>
