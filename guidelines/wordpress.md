@@ -50,6 +50,8 @@ On ne versionne **pas** (voir fichiers .gitignore) :
 
 🔖 [Développer un thème WordPress sur mesure](https://capitainewp.io/formations/developper-theme-wordpress/)
 
+🔖 [Concepts fondamentaux à comprendre dans le développement d’un thème WordPress](https://kinsta.com/fr/blog/concepts-fondamentaux-developpement-theme-wordpress/)
+
 ### Intégration du thème
 
 #### Outils de vérification (linters)
