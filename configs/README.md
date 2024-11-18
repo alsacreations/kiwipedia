@@ -1,5 +1,7 @@
 # Nom du projet
 
+Voir aussi <https://readme.so/fr> pour construire ce fichier.
+
 - Nom de Domaine
 - Prestation
 - Environnement

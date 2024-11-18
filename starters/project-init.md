@@ -49,7 +49,7 @@ Tâches Vite :
 - Si ce n'est pas déjà fait, installer [pnpm](https://pnpm.io/fr/installation) via `npm install -g pnpm`
 - Créer un fichier `package.json` via `pnpm init`
 - Ajouter un fichier [`.gitignore`](../configs/.gitignore) (et, optionnel, `.dockerignore`) s'ils ne sont pas fournis dans le projet
-- Ajouter un [`README.md`](../configs/README.md) conventionnel
+- Ajouter un fichier [`README.md`](../configs/README.md)
 - Ajouter [`.editorconfig`](../configs/.editorconfig) à la racine (si ce n'est pas déjà fait, installer [l'extension VSCode editorconfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig))
 - Créer un sous-dossier `.vscode` à la racine de `projet`
 - Ajouter [`.vscode/settings.json`](../configs/.vscode/settings.json), [`.vscode/extensions.json`](../configs/.vscode/extensions.json) dans le sous-dossier `.vscode`
