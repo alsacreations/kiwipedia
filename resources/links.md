@@ -104,6 +104,7 @@ Autres listes de ressources et checklists
 - <https://fontcombiner.com/> Combiner des glyphes
 - <https://www.shapecatcher.com/> Devine des glyphes à partir d'un dessin
 - <https://www.debugbear.com/blog/website-font-performance> Guide complet de performance des fonts sur le web
+- <https://fontdrop.info/> Analyser les caractères et features d'une font
 
 #### Font-icons
 
