@@ -17,15 +17,16 @@ export default definePreset(() => {
       {
         getCSS: () => {
           return /* css */ `
+          @layer reset {
             /* On adopte les couleurs système afin de s'adapter automatiquement en dark et light mode */
             :root {
               color-scheme: light dark;
             }
 
             /* On passe tout le monde en modèle border-box et on évite min-width: auto sur les flex- et grid-items */
-            :where(*,
+            *,
             *::before,
-            *::after) {
+            *::after {
               box-sizing: border-box;
               min-width: 0;
             }
@@ -36,13 +37,13 @@ export default definePreset(() => {
             }
 
             /* On évite les débordements de page et les zooms non désirés en landscape */
-            :where(html) {
+            html {
               overflow-wrap: break-word;
               -webkit-text-size-adjust: none;
             }
 
             /* On donne à body toute la hauteur + styles divers */
-            :where(body) {
+            body {
               min-height: 100dvh;
               margin: 0;
               font-family: system-ui, sans-serif;
@@ -51,70 +52,87 @@ export default definePreset(() => {
             }
 
             /* On supprime les styles des listes ayant une class (version accessible) */
-            :where(ol, ul):where([class]) {
+            :where(ol, ul)[class] {
               padding-left: 0;
 
               & > li::marker {
                 content: "";
-                color: transparent;
               }
             }
 
             /* On évite les débordements d'éléments */
-            :where(
-              img,
-              table,
-              td,
-              blockquote,
-              pre,
-              code,
-              input,
-              textarea,
-              select,
-              video,
-              svg,
-              iframe
-            ) {
+            img,
+            table,
+            td,
+            blockquote,
+            pre,
+            code,
+            input,
+            textarea,
+            select,
+            video,
+            svg,
+            iframe {
               max-width: 100%;
             }
 
             /* On réduit de la hauteur de ligne sur certains éléments */
-            :where(h1, h2, h3, h4, button, input, label) {
+            h1,
+            h2,
+            h3,
+            h4,
+            button,
+            input,
+            label {
               line-height: 1.1;
             }
 
             /* On améliore la typographie */
-            :where(h1, h2, h3, h4, h5, h6) {
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
               text-wrap: balance;
             }
-            :where(p, li, figcaption) {
+            p,
+            li,
+            figcaption {
               text-wrap: pretty;
             }
 
             /* On préserve le ratio d'affichage */
-            :where(iframe, img, input, select, textarea) {
+            iframe,
+            img,
+            input,
+            select,
+            textarea {
               height: auto;
             }
 
             /* On stylise par défaut des liens */
-            :where(a:not([class])) {
+            a:not([class]) {
               text-decoration-skip-ink: auto;
             }
 
             /* On change ces éléments en block */
-            :where(img,
-              svg,
-              video,
-              canvas,
-              audio,
-              iframe,
-              embed,
-              object) {
-                display: block;
+            img,
+            svg,
+            video,
+            canvas,
+            audio,
+            iframe,
+            embed,
+            object {
+              display: block;
             }
 
             /* On harmonise des différences entre navigateurs */
-            :where(input, button, textarea, select) {
+            input,
+            button,
+            textarea,
+            select {
               margin: 0;
               background-color: transparent;
               color: inherit;
@@ -124,27 +142,28 @@ export default definePreset(() => {
               letter-spacing: inherit;
               vertical-align: middle;
             }
-            :where(form, fieldset) {
+            form,
+            fieldset {
               border: none;
             }
-            :where(fieldset) {
+            fieldset {
               margin: 0;
               padding: 1em;
             }
-            :where(legend) {
+            legend {
               max-width: 100%;
               border: 0;
               color: inherit;
               white-space: normal;
             }
-            :where(label) {
+            label {
               display: inline-block;
               cursor: pointer;
             }
-            :where(button) {
+            button {
               cursor: pointer;
             }
-            :where(textarea) {
+            textarea {
               overflow: auto;
               vertical-align: top;
               resize: vertical;
@@ -152,11 +171,14 @@ export default definePreset(() => {
             }
 
             /* On stylise les éléments préformatés */
-            :where(pre, code, kbd, samp) {
+            pre,
+            code,
+            kbd,
+            samp {
               font-family: monospace, monospace;
               font-size: 1em;
             }
-            :where(pre) {
+            pre {
               tab-size: 2;
               white-space: pre-wrap;
               line-height: normal;
@@ -164,33 +186,34 @@ export default definePreset(() => {
             }
 
             /* On stylise les SVG */
-            :where(svg:not([fill])) {
+            svg:not([fill]) {
               fill: currentColor;
             }
-            :where(svg) {
+            svg {
               overflow: visible;
             }
-            :where(svg *) {
+            svg * {
               transform-box: fill-box;
             }
-            :where(svg:has(symbol)) {
+            svg:has(symbol) {
               display: none;
             }
 
             /* On corrige des styles ARIA */
-            :where([aria-busy="true"]) {
+            [aria-busy="true"] {
               cursor: progress;
             }
-            :where([aria-controls]) {
+            [aria-controls] {
               cursor: pointer;
             }
-            :where([aria-disabled="true"], [disabled]) {
+            [aria-disabled="true"],
+            [disabled] {
               cursor: not-allowed;
             }
-            :where([aria-hidden="false"][hidden]) {
+            [aria-hidden="false"][hidden] {
               display: revert;
             }
-            :where([aria-hidden="false"][hidden]:not(:focus)) {
+            [aria-hidden="false"][hidden]:not(:focus) {
               clip: rect(0, 0, 0, 0);
               position: absolute;
             }
@@ -209,6 +232,24 @@ export default definePreset(() => {
                 transition-delay: 0s !important;
               }
             }
+
+            /* On masque le contenu à l'écran tout en demeurant accessible aux assistances techniques.
+            * Le choix de nommage est .visually-hidden et non .sr-only car ce dernier n'est censé s'adresser qu'aux "screen readers", ce qui n'est pas forcément le cas.
+            * :focus et :active permettent au contenu d'être affiché lorsque les éléments reçoivent le focus (ex. skip-links)
+            * Auteur : James Edwards; Source : https://www.tpgi.com/the-anatomy-of-visually-hidden/
+            * Auteur : Gaël Poupard; Source : https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034
+            */
+
+            .visually-hidden:not(:focus):not(:active) {
+              position: absolute !important;
+              clip-path: inset(50%) !important;
+              width: 1px !important;
+              height: 1px !important;
+              margin: -1px !important;
+              overflow: hidden !important;
+              white-space: nowrap !important;
+            }
+          }
           `
         },
       },
