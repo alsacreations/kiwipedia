@@ -55,6 +55,7 @@ Tutoriels rapides pour démarrer des projets.
 ## Configurations
 
 - [Fichiers de configuration utiles](https://github.com/alsacreations/kiwipedia/tree/main/configs) (lien GitHub)
+- [Modèle de fichier readme](configs/README.md)
 
 ## Ressources et pense-bêtes (cheatsheets)
 

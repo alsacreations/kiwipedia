@@ -1,6 +1,6 @@
 # Nom du projet
 
-Voir aussi <https://readme.so/fr> pour construire ce fichier.
+👉 Voir aussi <https://readme.so/fr> pour construire ce fichier.
 
 - Nom de Domaine
 - Prestation
@@ -8,22 +8,38 @@ Voir aussi <https://readme.so/fr> pour construire ce fichier.
 
 ## Liens et environnements
 
-- URL de recette
-- URL de préproduction
-- URL de production
+| Environnement | Adresse |
+| --- | --- |
+| URL de recette | - |
+| URL de préproduction | - |
+| URL de production | - |
+
+### Domaines
+
+Points pris en compte pour la gestion des noms de domaine, DNS et politique e-mail/SMTP.
 
 ## Ressources
 
-- Cahier des charges
-- Méthodologie
-- Clickup partagé
-- Octopus/Whimsical/Figma partagé
-- Assets (images, fonts, icônes)
+| Ressource | Description |
+| --- | --- |
+| Cahier des charges | - |
+| Méthodologie | - |
+| Octopus | - |
+| Slack | - |
+| Figma | - |
+| Dossier assets (Drive) | - |
 
-## Ressources et services externes
+### Services externes
 
-- Liste des services externes (ex: fonts, js, api...)
-- Points pris en compte pour le respect du RGPD
+Liste des services externes (ex: API...)
+
+## RGPD
+
+Points pris en compte pour le respect du RGPD
+
+## Accessibilité
+
+Points pris en compte pour le respect de l'accessibilité
 
 ## Détails du workflow technique
 
@@ -36,4 +52,4 @@ Voir aussi <https://readme.so/fr> pour construire ce fichier.
 
 ## Maintenance
 
-Instructions pour opérations de maintenance moyen-long terme :
+Instructions pour opérations de maintenance moyen-long terme.
