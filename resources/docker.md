@@ -19,6 +19,7 @@ Voir aussi <https://www.alsacreations.com/tuto/lire/1836-Docker--decouverte-et-e
 * Redémarrer tous les conteneurs arrêtés : `docker restart $(docker ps -a -q)`
 * Renommer une image : `docker tag <old> <new>`
 * Mettre à jour une politique de redémarrage : `docker update --restart=unless-stopped <nomducontainer>`
+* Annuler le redémarrage auto sur tous les coneneurs : `docker update --restart=no $(docker ps -a -q)`
 
 ### Ressources / espace disque / statistiques
 
