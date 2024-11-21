@@ -421,23 +421,23 @@ export default definePreset(() => {
       `,
       ],
       [
-        /^media$/,
+        /^twopanes$/,
         (_, { rawSelector }) => /* css */ `
         :where(.${rawSelector}) {
-          --media-gutter: 1rem; /* gouttière */
-          --sidebar-fixed-size: 8rem; /* largeur (fixe) du 1er enfant */
-          --item-min-size: 300px; /* largeur (mini) du 2e enfant */
+          --twopanes-gutter: 1rem; /* gouttière */
+          --pane-fixed-size: 8rem; /* largeur (fixe) du 1er enfant */
+          --pane-min-size: 300px; /* largeur (mini) du 2e enfant */
 
           display: flex;
           flex-wrap: wrap;
-          gap: var(--media-gutter);
+          gap: var(--twopanes-gutter);
 
           & > *:first-child {
-            flex: 1 0 var(--sidebar-fixed-size);
+            flex: 1 0 var(--pane-fixed-size);
           }
 
           & > *:last-child {
-            flex: 999 0 min(var(--item-min-size), 100%);
+            flex: 999 0 min(var(--pane-min-size), 100%);
           }
 
           &[data-direction=rtl]>:last-child {
