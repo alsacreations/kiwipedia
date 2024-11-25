@@ -184,6 +184,7 @@ Autres listes de ressources et checklists
 
 ### Autres techniques et modules CSS
 
+- <https://anchoreum.com/> Apprendre anchor positioning par un jeu
 - <https://learnui.design/tools/gradient-generator.html> Générateur de beaux dégradés de couleur
 - <https://colorffy.com/gradients> Gradients generator
 
