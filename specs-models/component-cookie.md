@@ -2,7 +2,7 @@
 
 ## Description globale 📝
 
-Une bannière Cookie est une fenêtre qui apparaît lorsque l'utilisateur arrive sur le site. Elle permet de communiquer les modalités d'utilisation des cookies.
+Une bannière Cookie est une fenêtre qui apparaît lorsque l'utilisateur arrive sur le site. Elle permet de communiquer les modalités d'utilisation des cookies et d'obtenir le consentement (ou non) de l'internaute notamment pour satisfaire au [RGPD](../guidelines/rgpd.md).
 
 ## Screenshot 📸
 

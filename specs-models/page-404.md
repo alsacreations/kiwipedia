@@ -33,3 +33,4 @@ _Ici une image_
 - Vérifier les interactions (dans la limite du scope de l'issue)
 - Vérifier le parcours au clavier
 - Vérifier la responsivité mobile/desktop
+- Vérifier que le code retour HTTP est bien 404 (à l'aide des devtools)

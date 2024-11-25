@@ -11,3 +11,8 @@ _Ici une image_
 ## Description détaillée (mobile et desktop)
 
 TODO:
+
+## Comment tester ? 🧪
+
+- Vérifier le message de retour positif (confirmation)
+- Vérifier le message de retour négatif (erreur)
