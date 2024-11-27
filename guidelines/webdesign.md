@@ -205,7 +205,7 @@ Les formats privilégiés à transmettre à l'intégrateur/trice :
 
 #### Couleurs
 
-- Respecter le contraste de couleur + gammes de couleurs
+- Respecter le contraste de couleur + gammes de couleurs (seuils de `4,5:1` ou `3:1`).
 - Ne pas indiquer une information uniquement par la couleur.
 
 #### Contenus

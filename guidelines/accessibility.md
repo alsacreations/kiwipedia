@@ -8,14 +8,15 @@ Ce document est divisé en trois parties :
 2. Les [Explications techniques détaillées](#explications-techniques-détaillées) (s'y référer lorsqu'un point de la Checklist n'est pas clair)
 3. Les [Ressources d'accessibilité](#ressources-générales) (liens et outils)
 
-## Checklist Niveau 1 (base) 🥉
+## Checklist Niveau 1 (base) 🥈
+
+Ces règles visent à obtenir une conformité au moins partielle au RGAA (supérieure à 50%).
 
 ### HTML
 
 - Le code produit est valide et respecte les [standards W3C](https://www.w3.org/standards/).
 - [Utiliser les éléments HTML pour leur fonction/sémantique](#s%C3%A9mantique-html) et non pas pour leur forme.
-- Renseigner la langue par défaut de chaque page avec l'attribut `lang` sur `<html>`.
-- Indiquer avec l'attribut `lang` les changements de langue locaux dans les blocs d'une page.
+- Renseigner la [langue par défaut](#langue) de chaque page avec l'attribut `lang` sur `<html>` et indiquer les changements de langue locaux dans les blocs.
 - Utiliser un [titre `<title>` pertinent](#titres-de-page) pour chaque page.
 - Respecter la hiérarchie des titres `<hX>`, dont au moins un `<h1>`.
 - Utiliser les [landmarks ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/landmark_role) avec leurs rôles explicites (ex: `<main role="main">`, encore demandé par RGAA 4.1)
@@ -23,18 +24,21 @@ Ce document est divisé en trois parties :
 - Prévoir au moins [un lien d'accès rapide](#liens-dévitement-skip-link) ("lien d'évitement") permettant d'accéder directement au contenu principal.
 - Donner [un intitulé explicite à tous les liens](#liens).
 - Signaler lorsqu’un lien [s’ouvre dans une nouvelle fenêtre](#ouverture-dans-une-nouvelle-fenêtre-lien-externe).
+- Hors composant spécifique, s'assurer de la cohérence de la tabulation au clavier.
 
 ### CSS
 
+- Travailler avec des tailles de polices fluides `rem` ou `em` pour permettre l'agrandissement.
 - Ne pas fixer de hauteur sur les éléments afin que le contenu reste lisible lorsque le texte est zoomé. Les éléments décoratifs et l'attribut height `<img height="200">` ne sont pas concernés.
 - Ne pas empêcher le zoom avec `user-scalable=0` pour le viewport, utiliser `<meta name="viewport" content="width=device-width, initial-scale=1">`.
+- Permettre l'affichage des pages avec un niveau de zoom jusqu'à 200%.
 - Ne pas supprimer l'outline autour des éléments cliquables/focusables (pas de `outline: none`) [ou utiliser `:focus-visible`](#outline-et-focus), ne pas dégrader l'outline par défaut des navigateurs.
 - Ne pas employer de contenu généré (`::before`, `::after`) pour [véhiculer des informations ou pour afficher des icônes](#css-generated-content).
 - Masquer correctement [les contenus qui doivent être lus par un lecteur d’écran](#contenu-lu-mais-masqué-à-lécran) (ex. `.visually-hidden` au lieu de `display: none`).
 
 ### Formulaires
 
-- Vérifier l'accessibilité des formulaires notamment l'usage au clavier.
+- S'assurer de l'usage des formulaires au clavier.
 - Indiquer clairement les champs obligatoires (attribut `aria-required="true"`) avec dans l'étiquette la mention `" (obligatoire)"` sinon une étoile (dans ce cas avec une légende située en début de formulaire).
 - Toujours associer une étiquette `<label>` à son champ respectif (avec `for` et `id` sinon ARIA).
 - Utiliser [l'élément `<fieldset>` associé à `<legend>`](#formulaires-et-champs) pour regrouper les champs par thématique (ex : boutons radio, cases à cocher).
@@ -44,25 +48,18 @@ Ce document est divisé en trois parties :
 
 ### Design
 
-- Les rapports de contraste du texte, des composants d'interface et éléments graphiques sont suffisants (seuils de `4,5:1` ou `3:1`).
+- Respect des recommandations [webdesign](webdesign.md#checklist-accessibilité).
 
 ### Médias
 
-- Toutes les images [doivent comporter un attribut `alt`](#image-porteuse-dinformation-ou-cliquable) ; il doit être vide (`alt=""` ou `alt`) pour les images décoratives et renseigné pour les images apportant du contenu.
+- Les images [doivent comporter un attribut `alt`](#image-porteuse-dinformation-ou-cliquable) pertinent, sauf pour les images décoratives où il doit être vide (`alt=""` ou `alt`).
 - Lorsqu'un lien renvoie vers un téléchargement de fichier, il faut indiquer : son intitulé, son poids, son format, éventuellement sa langue (si différente) et l'ouverture dans une nouvelle fenêtre.
 - [Rendre les fichiers SVG accessibles](#svg-et-accessibilité) : décoratifs ou non, inline ou non, dans un bouton / lien ou non.
+- Utiliser un lecteur audio/vidéo accessible prêt-à-l'emploi (par exemple les éléments HTML5 natifs ou YouTube).
 
-## Checklist Niveau 2 (étendue) 🥈
+## Checklist Niveau 2 (demandes spécifiques) 🥇
 
-- Tester l'affichage des pages avec un niveau de zoom jusqu'à 200%.
-- Utiliser un lecteur audio/vidéo accessible, par exemple les éléments HTML5 natifs.
-- Vérifier la cohérence de la tabulation et - en dernier recours - adapter si nécessaire avec `tabindex="0"` et `tabindex="-1"`.
-
-### CSS
-
-- Travailler avec des tailles de polices fluides `rem` ou `em` pour permettre l'agrandissement.
-
-## Checklist Niveau 3 (demandes spécifiques) 🥇
+À la carte selon les besoins exprimés, permet une conformité RGAA partielle ou totale.
 
 - Tester avec un lecteur d'écran.
 - Fournir une piste de sous-titres avec le format webVTT et l'élément `<track>` pour les vidéos.
@@ -71,6 +68,8 @@ Ce document est divisé en trois parties :
 - Utiliser l'attribut `aria-live` judicieusement sur les informations provenant de chargements AJAX ou dévoilées dynamiquement par JavaScript.
 - Ajouter un *plugin* de personnalisation d'affichage : outils [AccessConfig](https://accessconfig.a11y.fr/) et [Orange Confort+](https://confort-plus.orange.com/).
 - Rendre chaque script compatible avec les technologies d'assistance.
+- Concevoir ou personnaliser des lecteurs audio/vidéo accessibles.
+- Permettre une tabulation cohérente entre les éléments qui doivent recevoir le focus (adapter si nécessaire avec `tabindex="0"` et `tabindex="-1"` y compris les modales et la navigation).
 
 ---
 
@@ -81,6 +80,8 @@ Ce document est divisé en trois parties :
 Chaque page doit être correctement structurée afin de définir des zones aussi appelées [regions](https://www.w3.org/WAI/tutorials/page-structure/regions/) (en-tête, pied de page, contenu principal, navigation et moteur de recherche).
 
 ## Sémantique HTML
+
+### Langue
 
 Chaque page doit avoir déclaré le type de document ainsi que la langue principale du contenu.
 
