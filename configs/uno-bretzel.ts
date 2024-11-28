@@ -294,23 +294,16 @@ export default definePreset(() => {
       `,
       ],
       [
-        /^splash$|^splash-start$|^splash-end$|^splash-half-start$|^splash-half-end$/,
+        /^splash$/,
         (_, { rawSelector }) => /* css */ `
         :where(.${rawSelector}) {
-          display: grid;
-          grid-template-columns: subgrid;
-          grid-column: layout;
 
           & > * {
             grid-column: content;
           }
-        }
-      `,
-      ],
-      [
-        /^splash$/,
-        (_, { rawSelector }) => /* css */ `
-        :where(.${rawSelector}) {
+
+          display: grid;
+          grid-template-columns: inherit;
           grid-column: liquid;
         }
       `,
@@ -319,6 +312,12 @@ export default definePreset(() => {
         /^splash-start$/,
         (_, { rawSelector }) => /* css */ `
         :where(.${rawSelector}) {
+          & > * {
+            grid-column: content;
+          }
+
+          display: grid;
+          grid-template-columns: subgrid;
           grid-column: liquid-start / content-end;
         }
       `,
@@ -327,6 +326,12 @@ export default definePreset(() => {
         /^splash-end$/,
         (_, { rawSelector }) => /* css */ `
         :where(.${rawSelector}) {
+          & > * {
+            grid-column: content;
+          }
+
+          display: grid;
+          grid-template-columns: subgrid;
           grid-column: content-start / liquid-end;
         }
       `,
@@ -335,11 +340,13 @@ export default definePreset(() => {
         /^splash-half-start$/,
         (_, { rawSelector }) => /* css */ `
         :where(.${rawSelector}) {
-          grid-column: liquid-start / half;
-
           & > * {
             grid-column: content-start / half;
           }
+
+          display: grid;
+          grid-template-columns: subgrid;
+          grid-column: liquid-start / half;
         }
       `,
       ],
@@ -347,11 +354,13 @@ export default definePreset(() => {
         /^splash-half-end$/,
         (_, { rawSelector }) => /* css */ `
         :where(.${rawSelector}) {
-          grid-column: half / liquid-end;
-
           & > * {
             grid-column: half / content-end;
           }
+          display: grid;
+          grid-template-columns: subgrid;
+          grid-column: half / liquid-end;
+
         }
       `,
       ],
