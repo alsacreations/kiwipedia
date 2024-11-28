@@ -232,24 +232,6 @@ export default definePreset(() => {
                 transition-delay: 0s !important;
               }
             }
-
-            /* On masque le contenu à l'écran tout en demeurant accessible aux assistances techniques.
-            * Le choix de nommage est .visually-hidden et non .sr-only car ce dernier n'est censé s'adresser qu'aux "screen readers", ce qui n'est pas forcément le cas.
-            * :focus et :active permettent au contenu d'être affiché lorsque les éléments reçoivent le focus (ex. skip-links)
-            * Auteur : James Edwards; Source : https://www.tpgi.com/the-anatomy-of-visually-hidden/
-            * Auteur : Gaël Poupard; Source : https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034
-            */
-
-            .visually-hidden:not(:focus):not(:active) {
-              position: absolute !important;
-              clip-path: inset(50%) !important;
-              width: 1px !important;
-              height: 1px !important;
-              margin: -1px !important;
-              overflow: hidden !important;
-              white-space: nowrap !important;
-            }
-          }
           `
         },
       },
