@@ -826,6 +826,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 ## Outils divers
 
+- <https://webvm.io/> Linux virtuel dans le navigateur en WebAssembly
 - <https://www.virtualbox.org/> Machines virtuelles VirtualBox (Oracle)
 - <https://speed.cloudflare.com/> Test de débit
 - <https://grahamhelton.com/blog/ssh-cheatsheet/> An Excruciatingly Detailed Guide To SSH
