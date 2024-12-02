@@ -134,6 +134,7 @@ Liste non exhaustive, voir <https://docs.docker.com/engine/reference/builder/>.
 * Mettre en pause `docker-compose pause <service>`
 * Reprendre `docker-compose unpause <service>`
 * Visualiser la conf intégrant les variables d'env `docker compose convert`
+* Lister tous les projets démarrés à partir de compose `docker compose ls`
 
 ---
 
