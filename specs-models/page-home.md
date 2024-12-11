@@ -36,7 +36,8 @@ _Ici une image_
 - Quelles sont les spécificités de la grille ?
 - Quel est le title de la page ?
 - Quelle est la meta description de la page ?
-- Bien ajouter un accès rapide (skip link) pour la navigation au clavier
+- Bien ajouter un accès rapide (_skip link_) pour la navigation au clavier
+- Définir quels sont les blocs modifiables, et par quel moyen ?
 
 ## Estimation ⏳
 
