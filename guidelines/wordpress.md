@@ -414,7 +414,7 @@ TODO:
 - [FooGallery](https://wordpress.org/plugins/foogallery/) : galeries et albums photos, configurable et propre côté administration sans trop de publicité intrusive.
 - [Photo gallery](https://fr.wordpress.org/plugins/photo-gallery/) (Galerie de médias, photos et vidéos) + riche en fonctionnalités que la galerie native (img s'ouvrent dans une popup, slider, bouton de téléchargement, création de groupes de galeries, etc…). N'est pas accessible : fenêtre modale qui ne prend pas le focus, pas d'attributs aria, bouton de fermeture non accessible.
 - [Job Manager](https://fr.wordpress.org/plugins/wp-job-manager/) : Offres d'emploi.
-- [Tarteaucitron](https://fr.wordpress.org/plugins/tarteaucitronjs/) || [Cookie Notice](https://fr.wordpress.org/plugins/cookie-notice/) : bannières cookies, code non accessible (boutons qui n'en sont pas, etc.).
+- [Tarteaucitron](https://tarteaucitron.io/fr/install/) || [Cookie Notice](https://fr.wordpress.org/plugins/cookie-notice/) : bannières cookies, code non accessible (boutons qui n'en sont pas, etc.).
 - [Relevanssi](https://wordpress.org/plugins/relevanssi/) : améliore les résultats de recherche par critères de pertinence.
 - [Multiple Domain Mapping on Single Site](https://fr.wordpress.org/plugins/multiple-domain-mapping-on-single-site/) pour faire correspondre différentes Pages (d'accueil) à plusieurs domaines ou sous-domaines.
 
