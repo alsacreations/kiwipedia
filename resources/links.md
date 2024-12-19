@@ -725,6 +725,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 ## SQL et MySQL
 
 - <https://sqlbolt.com/> Apprendre SQL de manière interactive
+- <https://sqlpd.com/> Apprendre SQL en jouant (une enquête)
 - <https://mystery.knightlab.com/> Apprendre en résolvant un mystère
 - <https://dbdiagram.io/> Éditeur de modèles et diagrammes en ligne
 - <https://drawdb.vercel.app/editor> Éditeur de schéma en ligne
