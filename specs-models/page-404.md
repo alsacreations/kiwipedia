@@ -6,7 +6,7 @@ Une page d'erreur 404 est la page web qui s'affiche lorsqu'une page ou ressource
 
 ## Screenshot 📸
 
-_Ici une image_
+...ici une image...
 
 ## Description détaillée (mobile et desktop)
 

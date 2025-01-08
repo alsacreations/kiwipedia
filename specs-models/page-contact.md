@@ -6,7 +6,7 @@ Une page Contact est une page web qui permet à l'utilisateur de contacter le si
 
 ## Screenshot 📸
 
-_Ici une image_
+...ici une image...
 
 ## Description détaillée (mobile et desktop)
 

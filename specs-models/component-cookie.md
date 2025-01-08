@@ -1,12 +1,12 @@
-# Spécification composant Cookie (Bannière Cookie)
+# Spécification composant Cookie (Bannière Cookie) ou CMP
 
 ## Description globale 📝
 
-Une bannière Cookie est une fenêtre qui apparaît lorsque l'utilisateur arrive sur le site. Elle permet de communiquer les modalités d'utilisation des cookies et d'obtenir le consentement (ou non) de l'internaute notamment pour satisfaire au [RGPD](../guidelines/rgpd.md).
+Une bannière Cookie ou [CMP](https://www.cnil.fr/fr/definition/consent-management-platform-cmp-ou-plateforme-de-gestion-du-consentement) est un composant qui apparaît lorsqu'un nouvel internaute arrive sur le site ou l'application. Elle permet de communiquer les modalités d'usage des cookies et d'obtenir le consentement (ou non) de l'internaute notamment pour satisfaire au [RGPD](../guidelines/rgpd.md).
 
 ## Screenshot 📸
 
-_Ici une image_
+...ici une image...
 
 ## Description détaillée (mobile et desktop)
 

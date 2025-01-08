@@ -16,7 +16,7 @@ La page d'accueil est la page de destination initiale de l'utilisateur. Elle se 
 
 ## Screenshot 📸
 
-_Ici une image_
+...ici une image...
 
 ## Description détaillée (mobile et desktop)
 

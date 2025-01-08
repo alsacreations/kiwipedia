@@ -6,7 +6,7 @@ Le Breadcrumb (fil d'Ariane) est un système de navigation secondaire qui permet
 
 ## Screenshot 📸
 
-_Ici une image_
+...ici une image...
 
 ## Description détaillée (mobile et desktop)
 

@@ -6,7 +6,7 @@ La section Resources (1 "s" en anglais) est un bloc classique qui switche de 1 �
 
 ## Screenshot 📸
 
-_Ici une image_
+...ici une image...
 
 ## Description détaillée (mobile et desktop)
 

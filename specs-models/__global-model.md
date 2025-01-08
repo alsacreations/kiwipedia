@@ -2,11 +2,11 @@
 
 ## Description globale 📝
 
-_Décrivez quel est ce rôle de cette étape, page, section ou composant, ce qui est attendu_
+… Décrivez quel est ce rôle de cette étape, page, section ou composant, ce qui est attendu.
 
 ## Screenshot 📸
 
-_Ici une image_
+...ici une image...
 
 ## Maquettes 🎨
 

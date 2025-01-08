@@ -11,7 +11,7 @@ Le header est la partie supérieure de la page et contient les composants suivan
 
 ## Screenshot 📸
 
-_Ici une image_
+...ici une image...
 
 ## Description détaillée (mobile et desktop)
 
