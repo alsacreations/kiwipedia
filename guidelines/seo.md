@@ -35,11 +35,15 @@ Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacre
 * Tutoriel : [Microdata et Schema.org, la sémantique chirurgicale](https://www.alsacreations.com/article/lire/1509-microdata-microformats-schema-semantique.html)
 * [Hiérarchie des types sur schema.org](https://schema.org/docs/full.html)
 * [Google pour développeurs : Comprendre le fonctionnement des données structurées](https://developers.google.com/search/docs/advanced/structured-data/intro-structured-data?hl=fr)
-* [Balisage de données structurées compatible avec la recherche Google](https://developers.google.com/search/docs/appearance/structured-data/search-gallery?hl=fr)
-* [Outil de test des résultats enrichis](https://search.google.com/test/rich-results?hl=fr)
-* [Validateur schema.org](https://validator.schema.org/)
+* [MDN : Microdonnées](https://developer.mozilla.org/fr/docs/Web/HTML/Microdata)
+* [Outil d'aide au balisage](https://www.google.com/webmasters/markup-helper/)
 
 Google se base sur schema.org mais indique qu'il faut d'abord se fier à [Google Search Central](https://developers.google.com/search)
+
+### Outils de tests
+
+* [Outil de test des résultats enrichis par Google](https://search.google.com/test/rich-results?hl=fr)
+* [Validateur schema.org](https://validator.schema.org/)
 
 ### Exemple HTML
 

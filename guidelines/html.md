@@ -253,13 +253,11 @@ On privilégie la balise `<video>` avec au moins une source MP4 par défaut. Sur
 - [Handbrake](https://handbrake.fr/)
 - [Audacity](https://www.audacityteam.org/)
 
-## Microdata
+## Microdata et données structurées
 
-Dans la mesure du possible, et selon le type de site, les microformats les plus courants seront ajoutés.
+Dans la mesure du possible, et selon le type de site, les microformats les plus courants seront ajoutés avec le vocabulaire privilégié : [https://schema.org](https://schema.org/docs/full.html) (promu et utilisé par Google, Yahoo, Bing, Yandex).
 
-Vocabulaire privilégié : [https://schema.org](https://schema.org) (promu et utilisé par Google, Yahoo, Bing, Yandex) avec toute la [hiérarchie](https://schema.org/docs/full.html) de types prévus.
-
-🔖 Documentation : [https://www.alsacreations.com/article/lire/1509-microdata-microformats-schema-semantique.html](https://www.alsacreations.com/article/lire/1509-microdata-microformats-schema-semantique.html)
+🔖 Voir [SEO : Microdonnées, données enrichies](seo.md#microdonnées-données-enrichies)
 
 ## Classes et états
 
