@@ -279,6 +279,7 @@ Autres listes de ressources et checklists
 - <https://github.com/naomihauret/js-stack-from-scratch/> JavaScript Stack from Scratch (traduction fr)
 - <https://github.com/denysdovhan/wtfjs/blob/master/README-fr-fr.md> Une liste d'exemples JavaScript drôles et délicats
 - <https://basarat.gitbook.io/typescript/> TypeScript Deep Dive (traduction fr : <https://github.com/HachemiH/typescript-book>)
+- <https://github.com/leonardomso/33-js-concepts> 33 concepts que chaque développeur JavaScript devrait connaître
 
 ### Bonnes pratiques et guides
 
