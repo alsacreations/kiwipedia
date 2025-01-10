@@ -71,6 +71,7 @@ Autres listes de ressources et checklists
 - <https://ishadeed.com/article/display-contents/> Display contents
 - <https://ishadeed.com/article/understanding-z-index/> Comprendre z-index
 - <https://ishadeed.com/article/css-has-guide/> :has()
+- <https://www.joshwcomeau.com/css/has/> :has()
 
 ### Grids
 
