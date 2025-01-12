@@ -72,6 +72,7 @@ Autres listes de ressources et checklists
 - <https://ishadeed.com/article/understanding-z-index/> Comprendre z-index
 - <https://ishadeed.com/article/css-has-guide/> :has()
 - <https://www.joshwcomeau.com/css/has/> :has()
+- <https://ishadeed.com/article/balancing-text-css/> text-wrap balance/pretty
 
 ### Grids
 
