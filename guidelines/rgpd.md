@@ -154,5 +154,4 @@ Attention, toutefois, le cadre juridique en France impose de conserver les pièc
 S'il y a fuite de données personnelles constituant un risque au regard de la vie privée, il faut
 
 * Prévenir les personnes concernées sous un délai de 72h
-* Avertir la [CNIL : Notification d'une violation de données personnelles
-](https://notifications.cnil.fr/notifications/index)
+* Avertir la [CNIL : Notification d'une violation de données personnelles](https://notifications.cnil.fr/notifications/index)
