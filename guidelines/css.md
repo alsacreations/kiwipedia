@@ -19,7 +19,7 @@ L'intégration CSS Vanilla correspond à la méthode *historique*&#8239;:
 
 ## Bonnes pratiques CSS globales
 
-### Règles essentielles&#8239
+### Règles essentielles
 
 - Nous employons les **variables CSS** (custom properties) plutôt que des valeurs "en dur" (ex&#8239;: `gap: var(--spacing-20)` plutôt que `gap: 20px`)
 - Nous privilégions systématiquement l'usage de sélecteurs de **class** plutôt que les sélecteurs d'éléments (`li`, `span`, `p`) et ne ciblons jamais via un sélecteur `#id`.
