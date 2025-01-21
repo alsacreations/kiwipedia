@@ -17,7 +17,7 @@ Ces règles visent à obtenir une conformité au moins partielle au RGAA (supér
 - Le code produit est valide et respecte les [standards W3C](https://www.w3.org/standards/).
 - [Utiliser les éléments HTML pour leur fonction/sémantique](#s%C3%A9mantique-html) et non pas pour leur forme.
 - Renseigner la [langue par défaut](#langue) de chaque page avec l'attribut `lang` sur `<html>` et indiquer les changements de langue locaux dans les blocs.
-- Utiliser un [titre `<title>` pertinent](#titres-de-page) pour chaque page.
+- Utiliser un [titre `<title>` pertinent/différent](#titres-de-page) pour chaque page.
 - Respecter la hiérarchie des titres `<hX>`, dont au moins un `<h1>`.
 - Utiliser les [landmarks ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/landmark_role) avec leurs rôles explicites (ex: `<main role="main">`, encore demandé par RGAA 4.1)
 - Ignorer correctement les contenus qui ne devraient *pas* être retranscrits par un lecteur d’écran (ex. `aria-hidden="true"`).
@@ -52,10 +52,11 @@ Ces règles visent à obtenir une conformité au moins partielle au RGAA (supér
 
 ### Médias
 
-- Les images [doivent comporter un attribut `alt`](#image-porteuse-dinformation-ou-cliquable) pertinent, sauf pour les images décoratives où il doit être vide (`alt=""` ou `alt`).
+- Les images [doivent comporter un attribut `alt`](#image-porteuse-dinformation-ou-cliquable) pertinent ; pour les images décoratives il doit être vide (`alt=""` ou `alt`).
 - Lorsqu'un lien renvoie vers un téléchargement de fichier, il faut indiquer : son intitulé, son poids, son format, éventuellement sa langue (si différente) et l'ouverture dans une nouvelle fenêtre.
 - [Rendre les fichiers SVG accessibles](#svg-et-accessibilité) : décoratifs ou non, inline ou non, dans un bouton / lien ou non.
 - Utiliser un lecteur audio/vidéo accessible prêt-à-l'emploi (par exemple les éléments HTML5 natifs ou YouTube).
+- Pas d'animation de plus de 5 secondes.
 
 ## Checklist Niveau 2 (demandes spécifiques) 🥇
 
