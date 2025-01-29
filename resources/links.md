@@ -826,6 +826,10 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://cpu.land/> Comment fonctionne un processeur, la mémoire, un ordinateur pour exécuter un programme
 - <https://www.da.vidbuchanan.co.uk/blog/hello-png.html> Le format d'image PNG
 
+### Développement
+
+- <https://www.youtube.com/watch?v=I2mWnh66Bkg> 12 Logging BEST Practices in 12 minutes
+
 ---
 
 ## Outils divers
