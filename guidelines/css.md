@@ -82,7 +82,6 @@ Les tokens sont des propriétés auxquelles des roles/fonctions ont été attibu
 - Un token fait référence à une **valeur primitive** : par exemple `--color-primary` fait référence à `--color-pink-300`.
 - Un token est **sémantique** : le but est de savoir à quoi *sert* `--color-primary` ou `--spacing-m` sans forcément connaître leurs style.
 - Un token est **agnostique** (décontextualisé) : `--color-primary` est OK en light ou dark mode, `--spacing-m` est OK en desktop ou mobile.
-- Un token est **réutilisable** : `--color-primary` peut être utilisé dans les boutons, les liens, les titres, etc.
 
 ```css
 /* fichier `app.css` */
