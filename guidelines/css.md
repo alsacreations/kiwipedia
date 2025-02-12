@@ -15,9 +15,9 @@ Cependant, un générateur de classes utilitaires (Tailwind ou [UnoCSS](../start
 L'intégration CSS Vanilla correspond à la méthode *historique*&#8239;:
 
 - Nos styles sont rédigés dans une ou plusieurs feuilles de styles CSS de manière générale.
-- Les styles spécifiques à un composant sont rédigés dans le fichier du composant au sein de l'élément `<style>`.
 - Nous ne faisons pas usage de classes utilitaires dans le HTML *sauf rares exceptions* (par exemple pour distinguer un élément parmi d'autres semblables).
-- Notre Reset "Bretzel CSS" (et print) est appliqué sur chaque projet (intégré dans notre configuration de UnoCSS ou Tailwind)
+- Notre Reset "Bretzel CSS" (et print) est appliqué sur chaque projet (voir dossier `/configs`).
+- Dans la cas d'un projet VueJS, les styles spécifiques à un composant sont rédigés dans le fichier du composant au sein de l'élément `<style>`.
 
 ## Variables du projet
 
@@ -30,6 +30,7 @@ Les variables CSS (custom properties) du projet s'articulent en trois étapes&#8
 ### Primitives
 
 Les valeurs *primitives* sont des valeurs de base issues de l'UI-Kit qui ne changent pas et qui sont utilisées pour définir les rôles (tokens) du projet.
+Un développeur n'est pas censé inventer de nouvelles primitives ni modifier ces valeurs. Si une valeur n'existe pas, il est nécessaire de la créer en concertation avec le designer.
 
 ```css
 /* fichier `theme.css` */
