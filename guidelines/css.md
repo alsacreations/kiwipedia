@@ -364,7 +364,7 @@ Il existe deux moyens pour un utilisateur de modifier le mode d'apparence des pa
 
 ### Dark Mode déclenché via les réglages système uniquement (non conseillé)
 
-La Media Query `(prefers-color-scheme: dark)` détecte les préférences système et permet de s'y adapter en CSS. Cependant, la syntaxe de la fonction `light-dark()` est plus intéressante et évite des imbrications inutiles.
+La Media Query `(prefers-color-scheme: dark)` détecte les préférences système et permet de s'y adapter en CSS, mais la syntaxe de la fonction `light-dark()` est plus intéressante et évite des imbrications inutiles.
 
 **À privilégier** *(`light-dark()`)&#8239;:*
 
@@ -396,7 +396,7 @@ La Media Query `(prefers-color-scheme: dark)` détecte les préférences systèm
 
 ### Dark Mode déclenché via un bouton "theme switcher" (conseillé)
 
-En plus de ses préférencces par défaut, il est conseillé de proposer au visiteur de pouvoir décider de son mode d'apparence au cas par cas à l'aide d'un "theme switcher".
+En plus de ses préférences par défaut, il est conseillé de proposer au visiteur de pouvoir décider de son mode d'apparence au cas par cas à l'aide d'un "theme switcher".
 
 **Voici un exemple de Switcher accessible sur Codepen&#8239;: <https://codepen.io/alsacreations/pen/ExBPExE>**
 
@@ -415,6 +415,8 @@ Le bouton de theme modifie l'attribut `data-theme` sur `html`, on s'en servira c
   }
 }
 ```
+
+**La fonction `light-dark()` vue dans la partie précédente sera parfaitement adaptée là aussi pour gérer dynamiquement les couleurs quel que soit le mode adopté (préférences système ou choix manuel utilisateur).**
 
 ## Polices (fonts)
 
