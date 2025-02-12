@@ -24,7 +24,7 @@ L'intégration CSS Vanilla correspond à la méthode *historique*&#8239;:
 Les variables CSS (custom properties) du projet s'articulent en trois étapes&#8239;:
 
 1. Les valeur primitives (ex. `--color-pink-300: #f9a8d4;`)
-2. Les tokens, ou roles (ex. `--color-primary: var(--color-pink-300);`)
+2. Les tokens, ou roles (ex. `--color-primary: var(--color-pink-300);`) *(voir section suivante)*
 3. L'usage des tokens dans les styles des composants (ex. `color: var(--color-primary);`)
 
 ### Primitives
@@ -59,11 +59,30 @@ Un développeur n'est pas censé inventer de nouvelles primitives ni modifier ce
 }
 ```
 
-### Tokens (roles)
+#### Règles de nommage des primitives
 
-Les tokens sont des propriétés auxquelles des roles/fonctions ont été attibués. Ils font référence aux primitives et peuvent s'adapter à tous les contextes (responsive, darkmode, etc.). Il n'est pas nécessaire d'attribuer un role à chaque primitive, seulement aux fonctionnalités les plus utilisées.
+Pour assurer un workflow fluide entre designer et développeur, les variables sont nommées de manière codifiée par les deux parties.
 
-Les tokens de couleurs (`surface`, `on-surface`, etc.) sont inspirés de [Material Design](https://m3.material.io/styles/color/roles)
+Les règles de nommage sont les suivantes (issues de la [documentation Tailwind 4](https://tailwindcss.com/docs/theme#theme-variable-namespaces))&#8239;:
+
+- Une couleur est préfixée par `--color-*` (ex. `--color-pink-300`)
+- Un espacement (marge, padding, gouttière) est préfixé par `--spacing-*` (ex. `--spacing-16`)
+- Une taille de police est préfixée par `--text-*` (ex. `--text-16`)
+- Une famille de police est préfixée par `--font-*` (ex. `--font-base`)
+- Une graisse de police est préfixée par `--font-weight-*` (ex. `--font-weight-regular`)
+- Une `line-height` est préfixée par `--leading-*` (ex. `--leading-28`)
+- Un arrondi est préfixé par `--radius-*` (ex. `--radius-lg`)
+- Une ombre est préfixée par `--shadow-*` (ex. `--shadow-md`)
+- Un z-index est préfixé par `--z-*` (ex. `--z-above-header-level`)
+
+### Tokens (=roles)
+
+Les tokens sont des propriétés auxquelles des roles/fonctions ont été attibués.
+
+- Un token fait référence à une **valeur primitive** : par exemple `--color-primary` fait référence à `--color-pink-300`.
+- Un token est **sémantique** : le but est de savoir à quoi *sert* `--color-primary` ou `--spacing-m` sans forcément connaître leurs style.
+- Un token est **agnostique** (décontextualisé) : `--color-primary` est OK en light ou dark mode, `--spacing-m` est OK en desktop ou mobile.
+- Un token est **réutilisable** : `--color-primary` peut être utilisé dans les boutons, les liens, les titres, etc.
 
 ```css
 /* fichier `app.css` */
@@ -83,21 +102,41 @@ Les tokens de couleurs (`surface`, `on-surface`, etc.) sont inspirés de [Materi
 }
 ```
 
-### Règles de nommage des variables
+#### Liste des rôles des tokens
 
-Pour assurer un workflow fluide entre designer et développeur, les variables sont nommées de manière codifiée par les deux parties.
+Cette liste est non exhaustive. Elle concerne les tokens les plus courants et dont la portée concerne l'ensemble du projet.
 
-Les règles de nommage sont les suivantes (issues de la [documentation Tailwind 4](https://tailwindcss.com/docs/theme#theme-variable-namespaces))&#8239;:
+Nos tokens de couleurs (`surface`, `on-surface`, etc.) sont inspirés de [Material Design](https://m3.material.io/styles/color/roles).
 
-- Une couleur est préfixée par `--color-*` (ex. `--color-pink-300`)
-- Un espacement (marge, padding, gouttière) est préfixé par `--spacing-*` (ex. `--spacing-16`)
-- Une taille de police est préfixée par `--text-*` (ex. `--text-16`)
-- Une famille de police est préfixée par `--font-*` (ex. `--font-base`)
-- Une graisse de police est préfixée par `--font-weight-*` (ex. `--font-weight-regular`)
-- Une `line-height` est préfixée par `--leading-*` (ex. `--leading-28`)
-- Un arrondi est préfixé par `--radius-*` (ex. `--radius-lg`)
-- Une ombre est préfixée par `--shadow-*` (ex. `--shadow-md`)
-- Un z-index est préfixé par `--z-*` (ex. `--z-above-header-level`)
+- `Primary` : couleur d'accent principale (boutons, états actifs,…)
+- `Secondary` : couleur d'accent secondaire
+- `Surface` : aplat de couleur principal (généralement celle de `body`)
+- `Surface Dim` : aplat de couleur secondaire (ici "obscurci")
+- `On Primary` : couleur de d'un élément posé sur `Primary` (peut être du texte, une icône, etc.)
+- `On Surface` : couleur d'un élément posé sur `Surface`
+- `Layer` aplat de couleur d'un bloc posé sur une surface
+- `Layer High` aplat de couleur d'un bloc posé sur un `Layer`
+- `On Layer` : couleur d'un élément posé sur `Layer`
+- `Link` : couleur des liens
+- `Link Hover` : couleur des liens au survol / focus
+- `Outline` : couleur des bordures (ex. inputs, textarea)
+- `Outline Hover` : couleur des bordures au survol / focus
+- `Error` : couleur des messages d'erreur
+- `Success` : couleur des messages de succès
+- `Shadow` : couleur de l'ombre portée
+- `Selection` : couleur de fond lors de la sélection de texte
+- `Text M` : taille de police "moyenne" (peut être variable)
+- `Text L` : taille de police pour titres moyens
+- `Text XL` : taille de police pour grosd titres
+
+En plus de cette liste commune à tous projets, il est conseillé d'appliquer des tokens spécifiques à chacun des composants. Par exemple un composant "Tabs" (onglets) pourrait bénéficier de tokens tels que&#8239;:
+
+- `Tab Surface` : aplat de couleur d'un onglets
+- `Tab On Surface` : couleur du contenu des onglets
+- `Tab Outline` : couleur de la bordure des onglets
+- `Tab Surface Active` : aplat de couleur de l'onglet actif
+- `Tab Layer`: aplat de couleur du contenu des onglets
+- etc.
 
 ## Bonnes pratiques CSS globales
 
