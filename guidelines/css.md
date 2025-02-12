@@ -84,7 +84,7 @@ Les tokens de couleurs (`surface`, `on-surface`, etc.) sont inspirés de [Materi
 
 ### Règles de nommage des variables
 
-Pour assurer workflow fluide entre designer et développeur, les variables sont nommées de manière codifiée par les deux parties.
+Pour assurer un workflow fluide entre designer et développeur, les variables sont nommées de manière codifiée par les deux parties.
 
 Les règles de nommage sont les suivantes (issues de la [documentation Tailwind 4](https://tailwindcss.com/docs/theme#theme-variable-namespaces))&#8239;:
 
