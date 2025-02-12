@@ -40,12 +40,10 @@ Sauf spécificités contraires :
     <meta property="og:url" content="https://www.example.com/page">
     <link rel="canonical" href="https://www.example.com/page">
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="alternate icon" href="/favicon.png">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff8a01">
-
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
-    <meta name="theme-color" content="#abc737">
   </head>
 
   <body>
@@ -130,16 +128,16 @@ L’icône de favori (favicon) est utilisée de différentes manières par les n
 La syntaxe recommandée pour les navigateurs modernes est celle-ci :
 
 ```html
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="alternate icon" href="/favicon.png">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff8a01">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<!-- Et dans le cas d'une web app : -->
+<link rel="manifest" href="/manifest.webmanifest">
 ```
 
 Les navigateurs ne supportant pas le format `svg` vont ignorer la première instruction.
 
-- [Google : favicon à afficher dans les résultats de recherche](https://developers.google.com/search/docs/appearance/favicon-in-search)
-- Générateur de favicon SVG (avec dark thème) : [https://realfavicongenerator.net/svg-favicon/](https://realfavicongenerator.net/svg-favicon/)
-- [favicon-cheat-sheet](https://github.com/audreyfeldroy/favicon-cheat-sheet)
+La ressource la plus à jour pour toute information et méthodologie pour la conception de favicon est <https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs>
 
 ## Conventions de nommage
 
