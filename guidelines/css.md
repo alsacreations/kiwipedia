@@ -33,6 +33,7 @@ Les valeurs *primitives* sont des valeurs de base issues de l'UI-Kit qui ne chan
 
 ```css
 /* fichier `theme.css` */
+/* valeurs issues de l'UI-Kit */
 :root {
   --color-pink-100: #fce7f3;
   --color-pink-300: #f9a8d4;
@@ -65,6 +66,7 @@ Les tokens de couleurs (`surface`, `on-surface`, etc.) sont inspirés de [Materi
 
 ```css
 /* fichier `app.css` */
+/* valeurs d'exemple à adapter au projet, évidemment */
 :root {
   --primary: var(--color-blue-500);
   --surface: light-dark(var(--color-white), var(--color-gray-900));
