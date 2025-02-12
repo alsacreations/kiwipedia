@@ -6,7 +6,9 @@ Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacre
 
 À ce jour, deux méthodes d'intégration CSS ont démontré leurs avantages en production&#8239;: CSS "vanilla" (natif) et CSS utilitaire (via Tailwind ou UnoCSS par exemple).
 
-**Sauf contre-indication (client, projet historique) nous intégrons nos projets en CSS Vanilla**. Cependant, un générateur de classes utilitaires (Tailwind ou [UnoCSS](../starters/project-init.md)) est incorporé dans nos projets afin de bénéficier de classes utilitaires lorsque nécessaire.
+**Sauf contre-indication (client, projet historique) nous intégrons nos projets en CSS Vanilla**.
+
+Cependant, un générateur de classes utilitaires (Tailwind ou [UnoCSS](../starters/project-init.md)) est incorporé dans nos projets afin de bénéficier de classes utilitaires lorsque nécessaire.
 
 ### Qu'appelons-nous CSS Vanilla&#8239;?
 
@@ -109,13 +111,11 @@ Quelle que soit la solution choisie, la méthode de compilation vers CSS dépend
 
 Dans le cas de nos projets en CSS vanilla avec Constructeur de classes utilitaires&#8239;:
 
-- Nous utilisons **toujours** les [custom properties CSS](https://developer.mozilla.org/fr/docs/Web/CSS/Using_CSS_custom_properties) (ex. `--color-hotpink`).
-- Nous n'utilisons **pas** de variables Sass (ex. `$color-hotpink`).
-- Nous n'appliquons pas de classes utilitaires dans le HTML (ex. `<p class="text-hotpink"`) sauf rares exceptions où le gain en temps et code est flagrant.
+- Nous utilisons **toujours** les [custom properties CSS](https://developer.mozilla.org/fr/docs/Web/CSS/Using_CSS_custom_properties) (ex. `--color-pink-400`).
+- Nous n'utilisons **pas** de variables Sass (ex. `$color-pink-400`).
+- Nous n'appliquons pas de classes utilitaires dans le HTML (ex. `<p class="text-pink-400"`) sauf rares exceptions où le gain en temps et code est flagrant.
 
 **Aucune valeur numérique (hors `0`) ne devrait apparaître dans les styles sans être associée à une custom property.**
-
-Pour rappel, les *custom properties* s'appliquent au Shadow DOM et sont parfaites dans le cas de projets spécifiques avec web components.
 
 ## Notation imbriquée (nesting)
 
@@ -164,11 +164,11 @@ La liste de points de rupture (*breakpoints*) figure dans la configuration du co
 
 Sauf contre-indication selon projet, les valeurs des breakpoints sont exprimées [en unité `rem`](https://www.joshwcomeau.com/css/surprising-truth-about-pixels-and-accessibility/#media-queries-7)&#8239;:
 
-- `sm: 40rem` // correspond à 640px
-- `md: 48rem` // 768px
-- `lg: 64rem` // 1024px
-- `xl: 80rem` // 1280px
-- `2xl: 96rem` // 1536px
+- `40rem` // correspond à 640px
+- `48rem` // 768px
+- `64rem` // 1024px
+- `80rem` // 1280px
+- `96rem` // 1536px
 
 Pour nos projets, nous utilisons la syntaxe "moderne" des Media Queries&#8239;:
 
@@ -280,47 +280,63 @@ Les pseudo-classes s'écrivent avec `:`, les pseudo-éléments s'écrivent avec 
 
 ## Dark Mode
 
-Le mode d'apparence (Light Mode, Dark Mode) est un paramètre que l'utilisateurice peut définir via ses réglages système ainsi que via son navigateur.
+Le mode d'apparence (Light Mode, Dark Mode) est un paramètre dont l'utilisateur doit pouvoir bénéficier pour ses préférences personnelles ou pour des besoins spécifiques.
 
-Dans nos projets en CSS natif, les techniques modernes permettent de gérer finement ces modes&#8239;:
+Il existe deux moyens pour un utilisateur de modifier le mode d'apparence des pages web&#8239;:
 
-- `@prefers-color-scheme`&#8239;: Teste le Mode d'apparence utilisateur (système ou navigateur) et permet de s'y adapter
-- `color-scheme`&#8239;: Force le navigateur à adapter l'UI à un Mode d'apparence (couleurs système, scrollbars, boutons,...). Ce réglage fait partie de notre Reset CSS, il est inutile de le modifier.
+1. Via ses réglages système (ou via son navigateur)
+2. Via un bouton "theme switcher" intégré au site web
 
-Concrètement, la mise en place du Dark Mode dépend de plusieurs approches dont la principale est de savoir si le projet est en "CSS vanilla" ou en "CSS utilitaire".
+### Dark Mode déclenché via les réglages système uniquement (non conseillé)
 
-Pour rappel, cette guideline ne traite que de CSS vanilla. Il s'agit à présent de distinguer comment le Dark Mode sera déclenché&#8239;:
+La Media Query `(prefers-color-scheme: dark)` détecte les préférences système et permet de s'y adapter en CSS. Cependant, la syntaxe de la fonction `light-dark()` est plus intéressante et évite des imbrications inutiles.
 
-### Dark Mode déclenché via les préférences utilisateur (système)
+**À privilégier** *(`light-dark()`)&#8239;:*
 
-Nous employons la Media Query `(prefers-color-scheme: dark)` imbriquée au sein des styles d'un composant afin d'en modifier les valeurs de manière automatique pour s'adapter aux préférences système.
-
-```css
-.button {
-  color: var(--color-black);
-  background-color: var(--color-white);
-  
-  @media (prefers-color-scheme: dark) {
-    color: var(--color-white);
-    background-color: var(--color-black);
-  }
+```scss
+:root {
+    color-scheme: light dark;
+    --color-burger: light-dark(var(--color-red-700), var(--color-red-300));
+}
+.burger-text {
+  fill: var(--color-burger);
 }
 ```
 
-### Dark Mode déclenché selon un choix (switch)
+**À éviter** *(`(prefers-color-scheme: dark)`)&#8239;:*
 
-Dans les projets où le visiteur doit pouvoir décider de son mode d'apparence au cas par cas, il est nécessaire de proposer un bouton "switch" et de retenir le choix en local storage.
+```scss
+:root {
+    color-scheme: light dark;
+    --color-burger: var(--color-red-700);
 
-**Voici un exemple de Switch accessible sur Codepen&#8239;: <https://codepen.io/alsacreations/pen/ExBPExE>**
+    @media (prefers-color-scheme: dark) {
+    --color-burger: var(--color-red-300);
+  }
+}
+.burger-text {
+  fill: var(--color-burger);
+}
+```
 
-Le test pour connaître le choix de l'utilisateur porte sur l'attribut `data-theme-preference`, on s'en servira ainsi côté CSS en syntaxe imbriquée&#8239;:
+### Dark Mode déclenché via un bouton "theme switcher" (conseillé)
+
+En plus de ses préférencces par défaut, il est conseillé de proposer au visiteur de pouvoir décider de son mode d'apparence au cas par cas à l'aide d'un "theme switcher".
+
+**Voici un exemple de Switcher accessible sur Codepen&#8239;: <https://codepen.io/alsacreations/pen/ExBPExE>**
+
+Le bouton de theme modifie l'attribut `data-theme` sur `html`, on s'en servira côté CSS pour forcer la valeur de `color-scheme`&#8239;:
 
 ```css
-.card {
-  color: pink;
+:root {
+  color-scheme: light dark;
 
-  [data-theme-preference="dark"] & {
-    color: hotpink;
+  &[data-theme="light"] {
+    color-scheme: light;
+  }
+
+  &[data-theme="dark"] {
+    color-scheme: dark;
   }
 }
 ```
