@@ -60,7 +60,7 @@ Les valeurs *primitives* sont des valeurs de base issues de l'UI-Kit qui ne chan
 
 ### Tokens (roles)
 
-Les tokens sont des propriétés auxquelles des roles/fonctions ont été attibués. Ils font référence aux primitives et sont utilisés pour définir les styles des composants. Il n'est pas nécessaire d'attribuer un role à chaque primitive, seulement aux fonctionnalités les plus utilisées.
+Les tokens sont des propriétés auxquelles des roles/fonctions ont été attibués. Ils font référence aux primitives et peuvent s'adapter à tous les contextes (responsive, darkmode, etc.). Il n'est pas nécessaire d'attribuer un role à chaque primitive, seulement aux fonctionnalités les plus utilisées.
 
 Les tokens de couleurs (`surface`, `on-surface`, etc.) sont inspirés de [Material Design](https://m3.material.io/styles/color/roles)
 
@@ -102,7 +102,7 @@ Les règles de nommage sont les suivantes (issues de la [documentation Tailwind 
 
 ### Règles essentielles
 
-- Nous employons les **variables CSS** plutôt que des valeurs "en dur" (ex.&#8239;: `gap: var(--spacing-m)` plutôt que `gap: 1rem`) et faisons référence aux tokens plutôt qu'au primitives si c'est possible (ex.&#8239;: `gap: var(--spacing-m)` plutôt que `gap: var(--spacing-16)`)
+- Nous employons les **variables CSS** plutôt que des valeurs "en dur" (ex.&#8239;: `gap: var(--spacing-m)` plutôt que `gap: 1rem`) et faisons référence aux tokens plutôt qu'au primitives **si c'est possible** (ex.&#8239;: `gap: var(--spacing-m)` plutôt que `gap: var(--spacing-16)`)
 - Nous privilégions systématiquement l'usage de sélecteurs de **class** plutôt que les sélecteurs d'éléments (`li`, `span`, `p`) et ne ciblons jamais via un sélecteur `#id`.
 - Nous évitons tant que possible les **sélecteurs composés** tels que `.modal span` ou `.modal .date` mais plutôt `.modal-date` pour conserver une spécificité minimale.
 
