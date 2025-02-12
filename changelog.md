@@ -1,5 +1,9 @@
 # Changelog
 
+## Mercredi 12 février 2025
+
+- Mise à jour globale CSS : darkmode + variables primitives et tokens
+
 ## Mercredi 18 seprembre 2024
 
 - Renomme `utilities.md` en `css-utilities.md`

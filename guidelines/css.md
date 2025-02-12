@@ -19,11 +19,72 @@ L'intégration CSS Vanilla correspond à la méthode *historique*&#8239;:
 - Nous ne faisons pas usage de classes utilitaires dans le HTML *sauf rares exceptions* (par exemple pour distinguer un élément parmi d'autres semblables).
 - Notre Reset "Bretzel CSS" (et print) est appliqué sur chaque projet (intégré dans notre configuration de UnoCSS ou Tailwind)
 
+## Variables du projet
+
+Les variables CSS (custom properties) du projet s'articulent en trois étapes&#8239;:
+
+1. Les valeur primitives (ex. `--color-pink-300: #f9a8d4;`)
+2. Les tokens, ou roles (ex. `--color-primary: var(--color-pink-300);`)
+3. L'usage des tokens dans les styles des composants (ex. `color: var(--color-primary);`)
+
+### Primitives
+
+Les valeurs *primitives* sont des valeurs de base issues de l'UI-Kit qui ne changent pas et qui sont utilisées pour définir les rôles (tokens) du projet.
+
+```css
+/* fichier `theme.css` */
+:root {
+  --color-pink-100: #fce7f3;
+  --color-pink-300: #f9a8d4;
+  --color-pink-500: #f1498f;
+  --color-pink-700: #be185d;
+  --spacing-0: 0;
+  --spacing-1: 1px;
+  --spacing-2: 0.125rem;
+  --spacing-4: 0.25rem;
+  --spacing-8: 0.5rem;
+  --spacing-16: 1rem;
+  --font-base: system-ui, sans-serif;
+  --font-poppins: poppins, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+  --text-16: 1rem;
+  --text-18: 1.125rem;
+  --text-20: 1.25rem;
+  --radius-none: 0;
+  --radius-lg: 0.5rem;
+  --radius-full: 9999px;
+}
+```
+
+### Tokens (roles)
+
+Les tokens sont des propriétés auxquelles des roles/fonctions ont été attibués. Ils font référence aux primitives et sont utilisés pour définir les styles des composants. Il n'est pas nécessaire d'attribuer un role à chaque primitive, seulement aux fonctionnalités les plus utilisées.
+
+Les tokens de couleurs (`surface`, `on-surface`, etc.) sont inspirés de [Material Design](https://m3.material.io/styles/color/roles)
+
+```css
+/* fichier `app.css` */
+:root {
+  --primary: var(--color-blue-500);
+  --surface: light-dark(var(--color-white), var(--color-gray-900));
+  --on-primary: var(--color-white);
+  --on-surface: light-dark(var(--color-gray-900), var(--color-white));
+  --spacing-m: clamp(var(--spacing-32), 1.5909rem + 1.8182vw, var(--spacing-48));
+  --spacing-l: clamp(var(--spacing-40), 1.4773rem + 4.5455vw, var(--spacing-80));
+  --text-m: clamp(var(--text-16), 0.9565rem + 0.2174vw, var(--text-18));
+  --text-2xl: clamp(var(--text-24), 1.3466rem + 0.6818vw, var(--text-30));
+  --link: light-dark(var(--color-blue-700), var(--color-blue-300));
+  --link-hover: light-dark(var(--color-blue-900), var(--color-blue-500));
+  --shadow: light-dark(#00000014, #ffffff14);
+}
+```
+
 ## Bonnes pratiques CSS globales
 
 ### Règles essentielles
 
-- Nous employons les **variables CSS** (custom properties) plutôt que des valeurs "en dur" (ex&#8239;: `gap: var(--spacing-20)` plutôt que `gap: 20px`)
+- Nous employons les **variables CSS** plutôt que des valeurs "en dur" (ex.&#8239;: `gap: var(--spacing-m)` plutôt que `gap: 1rem`) et faisons référence aux tokens plutôt qu'au primitives si c'est possible (ex.&#8239;: `gap: var(--spacing-m)` plutôt que `gap: var(--spacing-16)`)
 - Nous privilégions systématiquement l'usage de sélecteurs de **class** plutôt que les sélecteurs d'éléments (`li`, `span`, `p`) et ne ciblons jamais via un sélecteur `#id`.
 - Nous évitons tant que possible les **sélecteurs composés** tels que `.modal span` ou `.modal .date` mais plutôt `.modal-date` pour conserver une spécificité minimale.
 
@@ -38,33 +99,29 @@ Exemple&#8239;:
 ```css
 .selecteur {
     display: inline-block;
-    z-index: var(--z-index-100);
-    position: relative;
+    position: absolute;
     top: var(--spacing-4);
-    margin: var(--spacing-4);
+    z-index: var(--z-above-header-level);
+    margin: var(--spacing-16);
     padding: 0;
-    border: 1px solid var(--colors-pink-60);
-    background: var(--colors-blue-10);
-    color: var(--colors-pink-60);
-    font-weight: var(--font-weight-700);
-    font-size: var(--font-size-18);
-    font-family: system-ui, arial, sans-ferif;
-    text-align: right;
+    border: 1px solid var(--color-pink-600);
+    background: var(--surface);
+    color: var(--on-surface);
+    font-size: var(--text-m);
+    line-height: var(--leading-28);
+    font-family: var(--font-base);
+    font-weight: var(--font-weight-regular);
+    text-align: end;
 
     &:hover,
     &:focus {
-        color: var(--colors-kiwigreen);
+        color: var(--color-kiwi-400);
     }
 
     @media (width >= 40rem) {
         display: grid;
         grid-template-columns: 1fr auto;
         gap: var(--spacing-4);
-    }
-
-    @media (prefers-color-scheme: dark) {
-        border-color: var(--colors-pink-10);
-        color: var(--colors-kiwigreen);
     }
 }
 ```
