@@ -82,6 +82,22 @@ Les tokens de couleurs (`surface`, `on-surface`, etc.) sont inspirés de [Materi
 }
 ```
 
+### Règles de nommage des variables
+
+Pour assurer workflow fluide entre designer et développeur, les variables sont nommées de manière codifiée par les deux parties.
+
+Les règles de nommage sont les suivantes (issues de la [documentation Tailwind 4](https://tailwindcss.com/docs/theme#theme-variable-namespaces))&#8239;:
+
+- Une couleur est préfixée par `--color-*` (ex. `--color-pink-300`)
+- Un espacement (marge, padding, gouttière) est préfixé par `--spacing-*` (ex. `--spacing-16`)
+- Une taille de police est préfixée par `--text-*` (ex. `--text-16`)
+- Une famille de police est préfixée par `--font-*` (ex. `--font-base`)
+- Une graisse de police est préfixée par `--font-weight-*` (ex. `--font-weight-regular`)
+- Une `line-height` est préfixée par `--leading-*` (ex. `--leading-28`)
+- Un arrondi est préfixé par `--radius-*` (ex. `--radius-lg`)
+- Une ombre est préfixée par `--shadow-*` (ex. `--shadow-md`)
+- Un z-index est préfixé par `--z-*` (ex. `--z-above-header-level`)
+
 ## Bonnes pratiques CSS globales
 
 ### Règles essentielles
