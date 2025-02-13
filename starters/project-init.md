@@ -72,17 +72,7 @@ On part du principe qu'on installe les linters que si l'on a déjà configuré l
     - `pnpm install --save-dev stylelint stylelint-config-standard stylelint-config-html stylelint-order stylelint-config-property-sort-order-smacss` (cette commande installe Stylelint, les configs standard et HTML, l'ordre des propriétés et l'ordre des propriétés selon SMACSS)
     - Installer [l'extension VSCode Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
     - Ajouter [`stylelint.config.js`](../configs/stylelint.config.js) à la racine
-    - Dans les settings de VS Code (`cmd+,`), ajouter les langages HTML et Vue à la liste des fichiers à vérifier :
-
-```json
-  "stylelint.validate": [
-      ...,
-      // ↓ Add "html" language.
-      "html",
-      // ↓ Add "vue" language.
-      "vue"
-  ]
-```
+    - Dans les settings de VS Code (`cmd+,`), ajouter les langages HTML et Vue à la liste des fichiers à vérifier : `"stylelint.validate": ["css", "scss", "html", "vue"]`
 
 **Important :** Relancer VS Code pour activer les linters (`cmd+maj+p -> reload window`)
 
