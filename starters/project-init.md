@@ -67,9 +67,24 @@ On part du principe qu'on installe les linters que si l'on a déjà configuré l
 2. Installer [Prettier](https://prettier.io/docs/en/install.html) via `pnpm install --save-dev prettier` (formatteur par défaut pour HTML, CSS, etc.)
     - Installer [l'extension VSCode Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
     - Ajouter [`.prettierrc.mjs`](../configs/.prettierrc.mjs) à la racine
-    - Installer [`prettier-plugin-css-order`](https://www.npmjs.com/package/prettier-plugin-css-order) via `pnpm install --save-dev prettier-plugin-css-order`
 
-- Relancer VS Code pour activer les linters (`cmd+maj+p -> reload window`)
+3. Installer [Stylelint](https://stylelint.io/user-guide/get-started) (validation du code CSS)
+    - `pnpm install --save-dev stylelint stylelint-config-standard stylelint-config-html stylelint-order stylelint-config-property-sort-order-smacss` (cette commande installe Stylelint, les configs standard et HTML, l'ordre des propriétés et l'ordre des propriétés selon SMACSS)
+    - Installer [l'extension VSCode Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
+    - Ajouter [`stylelint.config.js`](../configs/stylelint.config.js) à la racine
+    - Dans les settings de VS Code (`cmd+,`), ajouter les langages HTML et Vue à la liste des fichiers à vérifier :
+
+```json
+  "stylelint.validate": [
+      ...,
+      // ↓ Add "html" language.
+      "html",
+      // ↓ Add "vue" language.
+      "vue"
+  ]
+```
+
+**Important :** Relancer VS Code pour activer les linters (`cmd+maj+p -> reload window`)
 
 ## 4. Styles CSS
 

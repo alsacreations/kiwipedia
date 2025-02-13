@@ -10,7 +10,6 @@ export default {
   singleAttributePerLine: true,
   printWidth: 80,
   jsxSingleQuote: true,
-  plugins: ["prettier-plugin-css-order"],
   cssDeclarationSorterOrder: "smacss",
   overrides: [
     {
@@ -26,4 +25,4 @@ export default {
       },
     },
   ],
-}
+};

@@ -1,5 +1,9 @@
 # Changelog
 
+## Jeudi 13 février 2025
+
+- Stylelint (re)devient nécessaire lors d'un nouveau projet
+
 ## Mercredi 12 février 2025
 
 - Mise à jour globale CSS : darkmode + variables primitives et tokens

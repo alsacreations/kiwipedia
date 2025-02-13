@@ -149,7 +149,7 @@ En plus de cette liste commune à tous projets, il est conseillé d'appliquer de
 
 Les déclarations au sein d'une règle CSS sont ordonnées de façon à faire apparaître les propriétés importantes en tête de liste.
 
-**Les déclarations sont automatiquement réordonnées à l'aide de `prettier-plugin-css-order` en suivant l'ordre `"smacss"`** (voir la configuration dans le fichier [`.prettierrc.mjs`](/configs/.prettierrc.mjs)).
+**Les déclarations sont automatiquement réordonnées à l'aide de `stylelint-order` en suivant l'ordre `"smacss"`** (voir la configuration dans le fichier [`stylelint.config.js`](../configs/stylelint.config.js)).
 
 Exemple&#8239;:
 
