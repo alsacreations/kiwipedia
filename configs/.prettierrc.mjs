@@ -10,7 +10,6 @@ export default {
   singleAttributePerLine: true,
   printWidth: 80,
   jsxSingleQuote: true,
-  cssDeclarationSorterOrder: "smacss",
   overrides: [
     {
       files: ["*.css", "*.scss"],

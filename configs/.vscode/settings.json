@@ -30,18 +30,12 @@
   },
   "prettier.enable": true,
   "stylelint.enable": true,
-  // Seulement si stylelint utilisé sur le projet,
-  // sans stylelint on perdrait toute validation native
-  // "css.validate": false,
-  // "scss.validate": false,
-  // "less.validate": false,
-  "stylelint.validate": [
-    "css",
-    "less",
-    "postcss",
-    "scss",
-    "sass"
-  ],
+  // ↓ Seulement si stylelint utilisé sur le projet,
+  "css.validate": false,
+  "scss.validate": false,
+  "less.validate": false,
+  // ↑ sans stylelint on perdrait toute validation native
+  "stylelint.validate": ["css", "less", "postcss", "scss", "sass", "html", "vue"],
   "css.lint.unknownAtRules": "ignore",
-  "scss.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore"
 }
