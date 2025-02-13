@@ -4,11 +4,11 @@ Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacre
 
 ## CSS vanilla ou CSS utilitaire&#8239;?
 
-À ce jour, deux méthodes d'intégration CSS ont démontré leurs avantages en production&#8239;: CSS "vanilla" (natif) et CSS utilitaire (via Tailwind ou UnoCSS par exemple).
+À ce jour, deux méthodes d'intégration CSS ont démontré leurs avantages en production&#8239;: CSS "vanilla" (natif) et CSS utilitaire (via Tailwind par exemple).
 
 **Sauf contre-indication (client, projet historique) nous intégrons nos projets en CSS Vanilla**.
 
-Cependant, un générateur de classes utilitaires (Tailwind ou [UnoCSS](../starters/project-init.md)) est incorporé dans nos projets afin de bénéficier de classes utilitaires lorsque nécessaire.
+Cependant, un générateur de classes utilitaires ([Tailwind](../starters/project-init.md)) est incorporé dans nos projets afin de bénéficier de classes utilitaires lorsque nécessaire.
 
 ### Qu'appelons-nous CSS Vanilla&#8239;?
 

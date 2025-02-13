@@ -4,12 +4,12 @@
  * Consignes : à placer dans un layer `reset`
  /* ------------------ */
 
-/* On s'adapte automatiquement en dark et light mode */
+/* On adopte les couleurs système afin de s'adapter automatiquement en dark et light mode */
 :root {
   color-scheme: light dark;
 }
 
-/* On passe en modèle border-box et on évite min-width: auto sur les flex- et grid-items */
+/* On passe tout le monde en modèle border-box et on évite min-width: auto sur les flex- et grid-items */
 *,
 *::before,
 *::after {
@@ -25,7 +25,7 @@
 /* On évite les débordements de page et les zooms non désirés en landscape */
 html {
   overflow-wrap: break-word;
-  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
 }
 
 /* On donne à body toute la hauteur + styles divers */
@@ -34,7 +34,7 @@ body {
   margin: 0;
   line-height: 1.5;
   font-family: system-ui, sans-serif;
-  text-rendering: optimizeSpeed;
+  text-rendering: optimizespeed;
 }
 
 /* On supprime les styles des listes ayant une class (version accessible) */
@@ -82,13 +82,11 @@ h5,
 h6 {
   text-wrap: balance;
 }
+
 p,
 li,
 figcaption {
   text-wrap: pretty;
-}
-p {
-  margin-block: 1lh;
 }
 
 /* On préserve le ratio d'affichage */
@@ -100,12 +98,9 @@ textarea {
   height: auto;
 }
 
-/* On stylise par défaut les liens */
+/* On stylise par défaut des liens */
 a:not([class]) {
   text-decoration-skip-ink: auto;
-}
-:any-link {
-  -webkit-tap-highlight-color: transparent;
 }
 
 /* On change ces éléments en block */
@@ -134,34 +129,38 @@ select {
   letter-spacing: inherit;
   vertical-align: middle;
 }
+
 form,
 fieldset {
   border: none;
 }
+
 fieldset {
   margin: 0;
   padding: 1em;
 }
+
 legend {
   max-width: 100%;
   border: 0;
   color: inherit;
   white-space: normal;
 }
+
 label {
   display: inline-block;
   cursor: pointer;
 }
+
 button {
   cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
 }
+
 textarea {
   overflow: auto;
   vertical-align: top;
   white-space: pre-wrap;
   resize: vertical;
-  field-sizing: content;
 }
 
 /* On stylise les éléments préformatés */
@@ -172,6 +171,7 @@ samp {
   font-size: 1em;
   font-family: monospace, monospace;
 }
+
 pre {
   overflow: auto;
   line-height: normal;
@@ -180,47 +180,44 @@ pre {
 }
 
 /* On stylise les SVG */
-svg:not([fill]) {
-  fill: currentColor;
-}
+
 svg {
   overflow: visible;
-}
-svg * {
-  transform-box: fill-box;
-}
-svg:has(symbol) {
-  display: none;
+
+  &:has(symbol) {
+    display: none;
+  }
+
+  &:not([fill]) {
+    fill: currentcolor;
+  }
+
+  & * {
+    transform-box: fill-box;
+  }
 }
 
 /* On corrige des styles ARIA */
 [aria-busy="true"] {
   cursor: progress;
 }
+
 [aria-controls] {
   cursor: pointer;
 }
+
 [aria-disabled="true"],
 [disabled] {
   cursor: not-allowed;
 }
+
 [aria-hidden="false"][hidden] {
   display: revert;
-}
-[aria-hidden="false"][hidden]:not(:focus) {
-  clip: rect(0, 0, 0, 0);
-  position: absolute;
-}
 
-/* On masque le contenu à l'écran tout en demeurant accessible aux assistances techniques. */
-.visually-hidden {
-  position: absolute !important;
-  clip-path: inset(50%) !important;
-  width: 1px !important;
-  height: 1px !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  white-space: nowrap !important;
+  &:not(:focus) {
+    clip: rect(0, 0, 0, 0);
+    position: absolute;
+  }
 }
 
 /* On désactive les animations selon les préférences utilisateur */

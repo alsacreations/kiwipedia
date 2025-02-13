@@ -24,8 +24,9 @@ Il existe cependant des projets "multi" (que l'on appelle aussi "mono-repo") où
 - **Vite** : outil de compilation/bundler
 - **Editorconfig** : configuration tabs vs spaces à l'insertion, encodage, eol, etc
 - **Prettier** : formatage automatique des fichiers à la sauvegarde
+- **Stylelint** : vérification syntaxe et bonnes pratiques CSS
 - **ESlint** : vérification syntaxe JavaScript, TypeScript et frameworks
-- **UnoCSS** : génération de classes utilitaires, des variables CSS, de Reset CSS, des layouts et gestion des valeurs du "thème"
+- **Tailwind** : génération de classes utilitaires, des variables CSS, de Reset CSS, des layouts et gestion des valeurs du "thème" (même dans nos projets CSS "vanilla")
 
 ## 1. Vite
 
@@ -78,17 +79,17 @@ On part du principe qu'on installe les linters que si l'on a déjà configuré l
 
 ## 4. Styles CSS
 
-**UnoCSS** est notre générateur principal de classes utilitaires et de custom properties CSS. **Il est employé dans tous nos projets CSS (qu'ils soient vanilla ou utilitaires).**
+**Tailwind CSS** est notre générateur principal de classes utilitaires et de custom properties CSS. **Il est employé dans tous nos projets CSS (même vanilla, car on peut toujours avoir besoin d'une classe utilitaire).**
 
 - Se placer dans le dossier Vite (ex. `cd vite-project`)
-- Installer et configurer [UnoCSS](https://unocss.dev/) via `pnpm install --save-dev unocss`
-- Installer le plugin `unocss-custom-properties` via `pnpm install --save-dev unocss-custom-properties`
-- Installer le plugin `@types/node` via `pnpm install --save-dev @types/node` (nécessaire si TypeScript)
-- Ajouter [`uno.config.ts`](../configs/uno.config.ts) dans le dossier Vite
-- Ajouter [`uno-bretzel.ts`](../configs/uno-bretzel.ts) dans le dossier Vite. Il s'agit de notre preset UnoCSS qui ajoute les éléments spécifiques Alsacréations (reset CSS, .visually-hidden, layouts, etc.)
-- Dans `main.js` ajouter `import 'virtual:uno.css'`
-- Dans `vite.config.ts` vérifier que `import UnoCSS from 'unocss/vite'` est présent dans le fichier
-- Dans `vite.config.ts` vérifier que `plugins: [ UnoCSS(), ],` est présent dans le fichier
+- Installer et configurer [Tailwind CSS](https://tailwindcss.com/docs/installation/using-vite) comme l'indique la procédure via Vite.
+
+Nous conseillons de faire en sorte que le fichier [`app.css`](../configs/app.css) soit le point d'entrée pour les styles. Il contiendra :
+
+- Tous les imports (Tailwind, Bretzel reset, etc.)
+- Le thème du site (couleurs, polices, etc.)
+- La feuille de styles globale (`global.css`)
+- Les classes utilitaires personnalisées (`visually-hidden`)
 
 ### Si intégration en "CSS natif"
 

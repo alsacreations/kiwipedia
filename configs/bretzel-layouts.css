@@ -8,6 +8,7 @@
 /* Layout-small */
 .layout-small {
   --spacing-xl: 96rem; /* largeur max du layout */
+
   width: 100%;
   max-width: var(--spacing-xl, 80rem);
   margin-inline: auto;
@@ -36,38 +37,47 @@
   display: grid;
   grid-template-columns: inherit;
   grid-column: liquid;
+
   :where(& > *) {
     grid-column: content;
   }
 }
+
 .splash-start {
   display: grid;
   grid-template-columns: subgrid;
   grid-column: liquid-start / content-end;
+
   :where(& > *) {
     grid-column: content;
   }
 }
+
 .splash-end {
   display: grid;
   grid-template-columns: subgrid;
   grid-column: content-start / liquid-end;
+
   :where(& > *) {
     grid-column: content;
   }
 }
+
 .splash-half-start {
   display: grid;
   grid-template-columns: subgrid;
   grid-column: liquid-start / half;
+
   :where(& > *) {
     grid-column: content-start / half;
   }
 }
+
 .splash-half-end {
   display: grid;
   grid-template-columns: subgrid;
   grid-column: half / liquid-end;
+
   :where(& > *) {
     grid-column: half / content-end;
   }
@@ -80,7 +90,10 @@
   --grid-fill: auto-fit; /* mode de remplissage */
 
   display: grid;
-  grid-template-columns: repeat(var(--grid-fill), minmax(min(var(--col-min-size), 100%), 1fr));
+  grid-template-columns: repeat(
+    var(--grid-fill),
+    minmax(min(var(--col-min-size), 100%), 1fr)
+  );
   gap: var(--autogrid-gutter);
 }
 
@@ -145,20 +158,25 @@
     flex-basis: var(--item-size);
   }
 }
+
 [data-scroll="start"] > * {
   scroll-snap-align: start; /* je cale à gauche */
 }
+
 [data-scroll="center"] > * {
   scroll-snap-align: center; /* je cale au centre */
 }
+
 [data-scroll="end"] > * {
   scroll-snap-align: end; /* je cale à droite */
 }
+
 [data-scrollbar="hidden"] {
   scrollbar-width: none; /* je masque l'ascenseur */
-}
-[data-scrollbar="hidden"]::-webkit-scrollbar {
-  display: none; /* je masque l'ascenseur sur webkit */
+
+  &::-webkit-scrollbar {
+    display: none; /* je masque l'ascenseur sur webkit */
+  }
 }
 
 /* TwoPanes */
@@ -174,9 +192,11 @@
   :where(& > :first-child) {
     flex: 1 0 var(--pane-fixed-size);
   }
+
   :where(& > :last-child) {
     flex: 999 0 min(var(--pane-min-size), 100%);
   }
+
   /* L'attribut data-direction="rtl" sur le parent inverse l'affichage des deux enfants */
   &[data-direction="rtl"] > :last-child {
     order: -1;

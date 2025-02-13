@@ -7,7 +7,7 @@
 @media print {
   /* Dimension et marges de page */
   @page {
-    size: A4 portrait;
+    size: a4 portrait;
     margin: 2cm 1.5cm;
   }
 
@@ -17,9 +17,11 @@
     box-sizing: border-box;
     display: revert;
   }
+
   img {
     max-width: 100%;
   }
+
   input,
   textarea,
   select {
@@ -38,6 +40,13 @@
     font-family: Georgia, serif;
   }
 
+  /* Pas de veuves ou orphelines (3 lignes minimum) */
+  p,
+  blockquote {
+    orphans: 3;
+    widows: 3;
+  }
+
   /* Espacements typographiques (15pt = 20px) */
   p,
   blockquote,
@@ -46,6 +55,7 @@
   ol {
     margin-block: 0 15pt;
   }
+
   p:last-child {
     margin-bottom: 0;
   }
@@ -57,17 +67,20 @@
     font-size: 18pt;
     line-height: 1.1;
   }
+
   h2 {
     margin-block: 0 18pt;
     font-weight: 700;
     font-size: 16pt;
     line-height: 1.1;
   }
+
   h3 {
     margin-block: 0 15pt;
     font-weight: 700;
     font-size: 14pt;
   }
+
   h4 {
     margin-block: 0 12pt;
     font-weight: 700;
@@ -78,15 +91,9 @@
   .print {
     display: revert;
   }
+
   .no-print {
     display: none;
-  }
-
-  /* Pas de veuves ou orphelines (3 lignes minimum) */
-  p,
-  blockquote {
-    orphans: 3;
-    widows: 3;
   }
 
   /* Pas de saut de page au sein de ces éléments */
@@ -120,8 +127,8 @@
   }
 
   /* On affiche l'URL des liens externes */
-  a[href^="http"]:after,
-  a[href^="https"]:after {
+  a[href^="http"]::after,
+  a[href^="https"]::after {
     content: " (" attr(href) ")";
   }
 

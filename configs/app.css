@@ -1,0 +1,120 @@
+@layer reset, theme, components, utilities;
+
+@import "~/assets/css/bretzel-reset.css" layer(reset);
+@import "~/assets/css/bretzel-print.css" layer(reset);
+@import "~/assets/css/bretzel-layouts.css" layer(reset);
+@import "tailwindcss/theme.css" layer(theme);
+@import "~/assets/css/app.css" layer(components);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+/* prettier-ignore */
+@theme {
+  --*: initial;
+  --breakpoint-md: 48rem; /* 768px */
+  --breakpoint-lg: 64rem; /* 1024px */
+  --breakpoint-xl: 80rem; /* 1280px */
+  --breakpoint-2xl: 96rem; /* 1536px */
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-black-alpha: #111827ee;
+  --color-white-alpha: #ffffffee;
+  --color-gray-100: #f3f4f6;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-700: #374151;
+  --color-gray-900: #111827;
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-300: #cbd5e1;
+  --color-slate-400: #9ca3af;
+  --color-slate-800: #1e293b;
+  --color-slate-900: #161f2c;
+  --color-green-100: #ecfccb;
+  --color-green-300: #d1e576;
+  --color-green-400: #b6d434;
+  --color-green-500: #89a121;
+  --color-green-900: #364106;
+  --color-blue-100: #dbeafe;
+  --color-blue-300: #93c5fd;
+  --color-blue-400: #5294ff;
+  --color-blue-500: #146af5;
+  --color-blue-700: #1d4ed8;
+  --color-blue-900: #1e3a8a;
+  --color-pink-100: #fce7f3;
+  --color-pink-300: #f9a8d4;
+  --color-pink-500: #f1498f;
+  --color-pink-700: #be185d;
+  --color-red-100: #fee2e2;
+  --color-red-300: #fca5a5;
+  --color-red-700: #b91c1c;
+  --color-yellow-100: #fef3c7;
+  --color-yellow-300: #fcd34d;
+  --color-yellow-500: #e7b924;
+  --color-orange: #e44d26;
+  --color-hotpink: #ff69b4;
+  --spacing-0: 0;
+  --spacing-1: 1px;
+  --spacing-2: 0.125rem;
+  --spacing-4: 0.25rem;
+  --spacing-8: 0.5rem;
+  --spacing-12: 0.75rem;
+  --spacing-16: 1rem;
+  --spacing-20: 1.25rem;
+  --spacing-24: 1.5rem;
+  --spacing-32: 2rem;
+  --spacing-40: 2.5rem;
+  --spacing-48: 3rem;
+  --spacing-56: 3.5rem;
+  --spacing-64: 4rem;
+  --spacing-80: 5rem;
+  --spacing-128: 8rem;
+  --spacing-160: 10rem;
+  --spacing-180: 11.25rem;
+  --spacing-260: 16.25rem;
+  --font-base: system-ui, sans-serif;
+  --font-poppins: poppins, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --text-14: 0.875rem;
+  --text-16: 1rem;
+  --text-18: 1.125rem;
+  --text-20: 1.25rem;
+  --text-24: 1.5rem;
+  --text-30: 1.875rem;
+  --text-36: 2.25rem;
+  --text-48: 3rem;
+  --text-60: 3.75rem;
+  --text-80: 5rem;
+  --leading-20: 1.25rem;
+  --leading-24: 1.5rem;
+  --leading-28: 1.75rem;
+  --leading-32: 2rem;
+  --leading-36: 2.25rem;
+  --leading-40: 2.5rem;
+  --leading-48: 3rem;
+  --leading-56: 3.5rem;
+  --leading-80: 5rem;
+  --leading-100: 6.25rem;
+  --radius-none: 0;
+  --radius-lg: 0.5rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
+  --transition-duration: 0.3s;
+  --z-under-page-level: -1;
+  --z-above-page-level: 1;
+  --z-header-level: 1000;
+  --z-above-header-level: 2000;
+  --z-above-all-level: 3000;
+}
+
+@utility visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  clip-path: inset(50%) !important;
+}
