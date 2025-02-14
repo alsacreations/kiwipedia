@@ -9,7 +9,6 @@ On utilise [Docker](https://www.docker.com/) avec une structure-type déjà épr
 - [Composer](https://getcomposer.org/) pour installer WordPress et ses extensions.
 - [WordPlate](https://github.com/wordplate/wordplate) qui fonctionne avec [Vite](https://github.com/vitejs/vite).
 - [Tailwind](https://tailwindcss.com/) en tant que framework CSS (optionnel).
-- [Timber](https://github.com/timber/timber) pour la syntaxe Twig dans les templates (optionnel).
 - [ACF](https://www.advancedcustomfields.com/) pour gérer les champs personnalisés, les CPT, les options.
 
 ## Environnement de développement
@@ -42,7 +41,7 @@ On ne versionne **pas** (voir fichiers .gitignore) :
 
 👉 On dévelope au maximum à l'aide de techniques natives WordPress (Posts, boucles, CPT, etc), voir <https://codex.wordpress.org/Theme_Development>.
 
-- On privilégie de démarrer avec un thème _starter_ épuré <https://underscores.me/> ou <https://github.com/timber/starter-theme> lorsque l'on utilise Timber.
+- On privilégie de démarrer avec un thème _starter_ épuré tel que <https://underscores.me/>.
 - On supprime les autres thèmes livrés par défaut.
 - On évite d'utiliser un thème acheté car cela implique qu'on ne pourra pas tout mettre en place dans ces guidelines et qu'on ne maîtrise pas son contenu (code, extensions, évolutions). Si toutefois cela arrive, utiliser le principe de [thème enfant](https://developer.wordpress.org/themes/advanced-topics/child-themes/) pour ne pas modifier le thème parent, qui pourrait être mis à jour par la suite.
 
@@ -162,43 +161,9 @@ add_filter( 'login_errors', 'no_wordpress_errors' );
 
 ### .env et wp-config
 
-Notre fichier de base `.env`
+Le fichier `.env` supporté par WordPlate définit les grandes constantes d'environnement qui viendront alimenter `wp-config.php`.
 
-```env
-WP_DEBUG=true
-WP_DEBUG_LOG=true # Alimente /wp-content/debug.log
-WP_DEFAULT_THEME= # Le nom du thème
-WP_ENVIRONMENT_TYPE=development
-
-DB_HOST= # Renseigner le nom d'hôte de la base (= nom du service dans le fichier docker-compose.yml si Docker)
-DB_NAME=
-DB_USER=
-DB_PASSWORD=
-DB_TABLE_PREFIX=monprefix_ # Remplacer par le préfix du projet avant de monter l'image docker et finir obligatoirement avec un '_'
-
-# https://vinkla.github.io/salts/
-# https://api.wordpress.org/secret-key/1.1/salt/
-AUTH_KEY=
-SECURE_AUTH_KEY=
-LOGGED_IN_KEY=
-NONCE_KEY=
-AUTH_SALT=
-SECURE_AUTH_SALT=
-LOGGED_IN_SALT=
-NONCE_SALT=
-```
-
-Pour les différents types d'environement possibles `WP_ENVIRONMENT_TYPE` prend ces valeurs
-
-- `development` pour le développement local permet de travailler avec le hot reload des assets
-- `production` pour la recette / pre-prod ou prod permet de livrer les assets buildé
-
-Pour générer les `salt-key`, il y a deux possibilités :
-
-- [WordPress](https://api.wordpress.org/secret-key/1.1/salt/)
-- [WordPlate](https://vinkla.github.io/salts/)
-
-[Documentation officielle de WordPress : wp-config.php](https://developer.wordpress.org/apis/wp-config-php/)
+🔖 [Documentation officielle de WordPress : wp-config.php](https://developer.wordpress.org/apis/wp-config-php/)
 
 ### functions.php
 
