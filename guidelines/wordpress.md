@@ -65,19 +65,6 @@ Les extensions spécifiques WordPress / PHP recommandées sont :
 
 Avec [Vite](https://github.com/vitejs/vite) (présent dans WordPlate) on compile CSS et JavaScript depuis le dossier `resources`, avec HMR (_Hot Module Reloading_) durant la tâche de développement. Pour ajouter le support de Sass : `(p)npm install sass --save-dev`.
 
-#### Moteur de template (optionnel)
-
-🔖 [Timber : pourquoi écrire du Twig dans WordPress](https://www.alsacreations.com/tuto/lire/1813-Timber-pourquoi-ecrire-du-Twig-dans-WordPress-.html) (optionnel, présent dans notre structure-type)
-
-#### Framework CSS
-
-On privilégie, dans cet ordre et **seulement s'il y en a besoin** (sinon Sass), les frameworks CSS suivants :
-
-- [Bretzel](http://bretzel.alsacreations.com/) pour développer _from scratch_ avec un _reset_.
-- [Uno CSS](https://unocss.dev/)
-- [Bootstrap](https://getbootstrap.com/) (si besoin spécifique ou projet le nécessitant)
-- [KNACSS](https://www.knacss.com/) (si besoin spécifique) (voir [Guidelines CSS](css.md))
-
 #### Nommage HTML, CSS, JavaScript et PHP
 
 ➡️ Guidelines [HTML](html.md), [CSS](css.md) et [JavaScript](javascript.md).
@@ -85,10 +72,19 @@ On privilégie, dans cet ordre et **seulement s'il y en a besoin** (sinon Sass),
 - Suivre les [PHP Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/php/) de WordPress.
 - ⚠️ Ne pas utiliser les classes CSS générées par WordPress qui sont spécifiques à une installation précise et ne sont pas réutilisables : classes spécifiques des _wrappers_ des menus du type `.menu-nom-de-mon-menu` et la majorité des classes générées par `body_class()` ou `post_class()`.
 - Placer `add_action()` et `add_filter()` après la fonction liée.
-- Toutes les chaînes de caractères d'un thème doivent pouvoir être traduites. Il faut donc les entourer dans la bonne fonction gettext ( `__()`, `_n()`, `_x()` ), couplées à un text-domain cohérent en fonction du contexte (thème, thème enfant, extension, ...).
 - Découper le thème de manière cohérente (boucles à part, etc.) pour pouvoir utiliser `get_template_part()` correctement.
 - Tout ce qui ne fait pas partie intégrante du thème et/ou optionnel doit être réalisé sous forme d'extension.
 - Utiliser les [conditional tags](https://developer.wordpress.org/themes/basics/conditional-tags/) pour ajouter des conditions/contextes (`is_category`, `is_single`, `has_tag`...).
+
+#### Traductions
+
+- Toutes les chaînes de caractères d'un thème doivent pouvoir être traduites : il faut les entourer par les bonnes fonctions couplées à un text-domain cohérent en fonction du contexte (thème, thème enfant, extension, ...) : [__](https://developer.wordpress.org/reference/functions/__/), [_e](https://developer.wordpress.org/reference/functions/_e/), [_n](https://developer.wordpress.org/reference/functions/_n/), [_x](https://developer.wordpress.org/reference/functions/_x/), [_ex](https://developer.wordpress.org/reference/functions/_ex/), [_nx](https://developer.wordpress.org/reference/functions/_nx/) ainsi que les variantes avec _esc_html_ et _esc_attr_.
+
+On utilise ensuite les commandes [WP cli i18n](https://developer.wordpress.org/cli/commands/i18n/) pour les opérations de traduction sur les fichiers .mo, .po.
+
+- 🔖 [Préparer un thème WordPress pour l'internationalisation](https://www.alsacreations.com/article/lire/1837-wordpress-theme-internationalisation.html)
+- 🔖 [Traduire vos extensions WordPress](https://www.alsacreations.com/tuto/lire/1840-traduire-extension-wordpress.html)
+- 🔖 [Traductions multilingues avec Timber](https://www.alsacreations.com/tuto/lire/1868-Traductions-multilingues-avec-Timber.html)
 
 ### Hiérarchie de fichiers et documentation
 
@@ -152,12 +148,6 @@ function no_wordpress_errors() {
 }
 add_filter( 'login_errors', 'no_wordpress_errors' );
 ```
-
-### Traductions
-
-🔖 [Préparer un thème WordPress pour l'internationalisation](https://www.alsacreations.com/article/lire/1837-wordpress-theme-internationalisation.html)
-
-🪛 Convertir les fichiers .po en .mo en ligne : <https://po2mo.net/>
 
 ### .env et wp-config
 
