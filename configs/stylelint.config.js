@@ -20,7 +20,7 @@ export default {
 
     // Unités
     "declaration-property-unit-allowed-list": {
-      "/^font|^font-size/": ["rem", "vw", "dvw"],
+      "/^font|^font-size/": ["rem", "%", "vw", "dvw"],
     },
 
     // Imports
