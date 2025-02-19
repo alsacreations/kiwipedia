@@ -1,3 +1,7 @@
+# Guidelines&#8239;: CSS
+
+Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/) concernant&#8239;: "CSS". Ces guidelines CSS sont le fruit de plusieurs années d'expérience en méthodologies (OOCSS, BEM, CubeCSS) et frameworks (Bootstrap, Tailwind, UnoCSS) et sont destinées à constamment évoluer dans le temps et à s'adapter à chaque nouveau projet.
+
 <!-- Sommaire -->
 <div id="toc">
   <strong>Sommaire</strong>
@@ -28,48 +32,6 @@
     <li><a href="#bonus-media-print">Bonus : Media print (impression)</a></li>
   </ul>
 </div>
-
-<style>
-  /* Styles basiques pour le sommaire */
-  *:has(>#toc) {
-    padding-right: 220px;
-  }
-  #toc {
-    position: fixed;
-    z-index: 1000;
-    top: 2rem;
-    right: 1rem;
-    width: 200px;
-    padding: 1rem;
-    background: light-dark(#eee, #333);
-    color: light-dark(#333, #eee);
-    border: 1px solid #ddd;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 6px;
-    font-family: system-ui, sans-serif;
-    font-size: 0.9rem;
-    line-height: 1.4;
-  }
-  #toc ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  #toc li {
-    margin-bottom: 0.5rem;
-  }
-  #toc a {
-    text-decoration: none;
-    color: #007acc;
-  }
-  #toc a:hover {
-    text-decoration: underline;
-  }
-</style>
-
-# Guidelines&#8239;: CSS
-
-Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/) concernant&#8239;: "CSS". Ces guidelines CSS sont le fruit de plusieurs années d'expérience en méthodologies (OOCSS, BEM, CubeCSS) et frameworks (Bootstrap, Tailwind, UnoCSS) et sont destinées à constamment évoluer dans le temps et à s'adapter à chaque nouveau projet.
 
 ## CSS vanilla ou CSS utilitaire&#8239;?
 
