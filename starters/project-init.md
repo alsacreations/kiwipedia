@@ -34,6 +34,8 @@ CSS :
 
 - **Tailwind** : génération de classes utilitaires, des variables CSS, de Reset CSS, des layouts et gestion des valeurs du "thème" (même dans nos projets CSS "vanilla")
 
+Les détails de configuration sont précisés ci-dessous. La plupart des fichiers de configuration sont disponibles dans le dossier [`configs/`](../configs/).
+
 ## 1. Vite
 
 - Se placer à la racine, démarrer un projet Vite avec `pnpm create vite`, choisir le nom du projet, les options *Vanilla* + *JavaScript* (ou *TypeScript*)
@@ -90,12 +92,14 @@ On part du principe qu'on installe les linters que si l'on a déjà configuré l
 - Se placer dans le dossier Vite (ex. `cd vite-project`)
 - Installer et configurer [Tailwind CSS](https://tailwindcss.com/docs/installation/using-vite) comme l'indique la procédure via Vite.
 
-Nous conseillons de faire en sorte que le fichier [`app.css`](../configs/app.css) soit le point d'entrée pour les styles. Il contiendra :
+Nous conseillons de faire en sorte que le fichier `app.css` soit le point d'entrée pour les styles. Il contiendra :
 
 - Tous les imports (Tailwind, Bretzel reset, etc.)
 - Le thème du site (couleurs, polices, etc.)
 - La feuille de styles globale (`global.css`)
 - Les classes utilitaires personnalisées (`visually-hidden`)
+
+Un exemple de fichier `app.css` est disponible dans [`/configs/app.css`](../configs/app.css).
 
 ## 5. Optionnel (selon projets)
 

@@ -30,18 +30,9 @@ Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacre
 
 Nous intégrons nos styles en **"CSS Vanilla"**, c'est à dire que ne faisons pas usage de classes utilitaires dans le HTML *sauf rares exceptions* (par exemple pour distinguer un élément parmi d'autres semblables).
 
-Pour ce faire, un générateur de classes utilitaires ([Tailwind](../starters/project-init.md)) est incorporé dans nos projets afin de bénéficier de classes utilitaires lorsque cela est nécessaire.
+Pour ce faire, un générateur de classes utilitaires **Tailwind** est incorporé dans nos projets afin de bénéficier de classes utilitaires lorsque cela est nécessaire.
 
-L'installation et la configuration de Tailwind est décrite [dans leur documentation](https://tailwindcss.com/docs/installation/using-vite).
-
-Le fichier `assets/css/app.css` est le point d'entrée pour les styles. Il contient :
-
-- Tous les imports (Tailwind, Bretzel)
-- Le thème du site (couleurs, polices, etc.)
-- La feuille de styles globale (`global.css`)
-- Les classes utilitaires personnalisées (`visually-hidden`)
-
-Un exemple de fichier `app.css` est disponible dans [`/configs/app.css`](/configs/app.css).
+L'installation et la configuration de Tailwind est décrite ([dans le fichier `project-init.md`](../starters/project-init.md))
 
 **PostCSS / Sass**
 
@@ -56,8 +47,7 @@ Quelle que soit la solution choisie, la méthode de compilation vers CSS dépend
 
 **Linters**
 
-- **Stylelint** (bonnes pratiques CSS, vérification, ordre des propriétés)
-- **Prettier** (formatage du code, indentation selon les règles editorconfig)
+Stylelint et Prettier sont utilisés pour vérifier la syntaxe et les bonnes pratiques CSS.
 
 La configuration de ces linters est détaillée dans le guide [`project-init.md`](/starters/project-init.md).
 
