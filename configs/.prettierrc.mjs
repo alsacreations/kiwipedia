@@ -2,7 +2,7 @@
 export default {
   arrowParens: "always",
   bracketSpacing: true,
-  bracketSameLine: true,
+  bracketSameLine: false,
   editorconfig: true,
   jsxSingleQuote: true,
   printWidth: 80,
