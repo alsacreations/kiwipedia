@@ -1,14 +1,68 @@
+<!-- Sommaire -->
+<div id="toc">
+  <strong>Sommaire</strong>
+  <ul id="toc-list"></ul>
+</div>
+
+<style>
+  /* Styles basiques pour le sommaire */
+  #toc {
+    position: fixed;
+    top: 2rem;
+    right: 1rem;
+    width: 200px;
+    padding: 1rem;
+    background: #fff;
+    border: 1px solid #ddd;
+    font-family: sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  #toc ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  #toc li {
+    margin-bottom: 0.5rem;
+  }
+  #toc a {
+    text-decoration: none;
+    color: #007acc;
+  }
+  #toc a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+<script>
+  // Générer le sommaire pour les titres h2 et h3
+  document.addEventListener("DOMContentLoaded", function() {
+    const tocList = document.getElementById("toc-list");
+    const headers = document.querySelectorAll("h2, h3");
+    headers.forEach(header => {
+      if(!header.id) {
+        header.id = header.textContent.trim().toLowerCase().replace(/\s+/g, "-");
+      }
+      const li = document.createElement("li");
+      li.style.marginLeft = header.tagName === "H3" ? "1em" : "0";
+      li.innerHTML = `<a href="#${header.id}">${header.textContent}</a>`;
+      tocList.appendChild(li);
+    });
+  });
+</script>
+
 # Guidelines&#8239;: CSS
 
 Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/) concernant&#8239;: "CSS". Ces guidelines CSS sont le fruit de plusieurs années d'expérience en méthodologies (OOCSS, BEM, CubeCSS) et frameworks (Bootstrap, Tailwind, UnoCSS) et sont destinées à constamment évoluer dans le temps et à s'adapter à chaque nouveau projet.
 
 ## CSS vanilla ou CSS utilitaire&#8239;?
 
-À ce jour, deux méthodes d'intégration CSS ont démontré leurs avantages en production&#8239;: CSS "vanilla" (natif) et CSS utilitaire (via Tailwind par exemple).
+À ce jour, deux méthodes d'intégration CSS ont démontré leurs avantages en production&#8239;: CSS "vanilla" (natif) et CSS utilitaire (via Tailwind ou UnoCSS par exemple).
 
 **Sauf contre-indication (client, projet historique) nous intégrons nos projets en CSS Vanilla**.
 
-Cependant, un générateur de classes utilitaires ([Tailwind](../starters/project-init.md)) est incorporé dans nos projets afin de bénéficier de classes utilitaires lorsque nécessaire.
+Cependant, un générateur de classes utilitaires (Tailwind ou [UnoCSS](../starters/project-init.md)) est incorporé dans nos projets afin de bénéficier de classes utilitaires lorsque nécessaire.
 
 ### Qu'appelons-nous CSS Vanilla&#8239;?
 
@@ -33,7 +87,7 @@ Les valeurs *primitives* sont des valeurs de base issues de l'UI-Kit qui ne chan
 Un développeur n'est pas censé inventer de nouvelles primitives ni modifier ces valeurs. Si une valeur n'existe pas, il est nécessaire de la créer en concertation avec le designer.
 
 ```css
-/* fichier `app.css` */
+/* fichier `theme.css` */
 /* valeurs issues de l'UI-Kit */
 :root {
   --color-pink-100: #fce7f3;
@@ -84,7 +138,7 @@ Les tokens sont des propriétés auxquelles des roles/fonctions ont été attibu
 - Un token est **agnostique** (décontextualisé) : `--color-primary` est OK en light ou dark mode, `--spacing-m` est OK en desktop ou mobile.
 
 ```css
-/* fichier `global.css` */
+/* fichier `app.css` */
 /* valeurs d'exemple à adapter au projet, évidemment */
 :root {
   --primary: var(--color-blue-500);
@@ -149,7 +203,7 @@ En plus de cette liste commune à tous projets, il est conseillé d'appliquer de
 
 Les déclarations au sein d'une règle CSS sont ordonnées de façon à faire apparaître les propriétés importantes en tête de liste.
 
-**Les déclarations sont automatiquement réordonnées à l'aide de `stylelint-order` en suivant l'ordre `"smacss"`** (voir la configuration dans le fichier [`stylelint.config.js`](../configs/stylelint.config.js)).
+**Les déclarations sont automatiquement réordonnées à l'aide de `prettier-plugin-css-order` en suivant l'ordre `"smacss"`** (voir la configuration dans le fichier [`.prettierrc.mjs`](/configs/.prettierrc.mjs)).
 
 Exemple&#8239;:
 
