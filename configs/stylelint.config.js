@@ -43,7 +43,7 @@ export default {
 
     // Unités
     "declaration-property-unit-allowed-list": {
-      "/^font|^font-size/": ["rem", "vw", "%", "dvw"], // on autorise uniquement les unités relatives pour les tailles de police
+      "/^font|^font-size/": ["rem", "em", "vw", "%", "dvw", "pt"], // on autorise uniquement les unités relatives pour les tailles de police
     },
 
     // Imports
@@ -54,6 +54,7 @@ export default {
 
     // Media Queries
     "media-feature-range-notation": "context", // on force la notation moderne
+    "media-feature-name-unit-allowed-list": { width: "rem" }, // on autorise uniquement les rem
 
     // Polices
     "font-family-no-duplicate-names": null,
