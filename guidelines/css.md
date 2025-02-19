@@ -2,16 +2,19 @@
 
 Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/) concernant&#8239;: "CSS". Ces guidelines CSS sont le fruit de plusieurs années d'expérience en méthodologies (OOCSS, BEM, CubeCSS) et frameworks (Bootstrap, Tailwind, UnoCSS) et sont destinées à constamment évoluer dans le temps et à s'adapter à chaque nouveau projet.
 
+À ce jour, deux méthodes d'intégration CSS ont démontré leurs avantages en production&#8239;: CSS "vanilla" (natif) et CSS utilitaire (via Tailwind ou UnoCSS par exemple).
+
+**Sauf contre-indication (client, projet historique) nous intégrons nos projets en CSS Vanilla**.
+
 ## Sommaire
 
 - [Guidelines : CSS](#guidelines-css)
   - [Sommaire](#sommaire)
-  - [CSS vanilla ou CSS utilitaire ?](#css-vanilla-ou-css-utilitaire)
-  - [Variables CSS (primitives et tokens)](#variables-css-primitives-et-tokens)
+  - [Configuration dans un projet](#configuration-dans-un-projet)
   - [Bonnes pratiques CSS globales](#bonnes-pratiques-css-globales)
+  - [Syntaxe](#syntaxe)
+  - [Variables CSS (primitives et tokens)](#variables-css-primitives-et-tokens)
   - [Unités](#unités)
-  - [Sass / postCSS](#sass--postcss)
-  - [Variables / Custom properties](#variables--custom-properties)
   - [Notation imbriquée (nesting)](#notation-imbriquée-nesting)
   - [Breakpoints et Media Queries](#breakpoints-et-media-queries)
   - [Transitions et animations](#transitions-et-animations)
@@ -21,22 +24,56 @@ Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacre
   - [Polices (fonts)](#polices-fonts)
   - [Media print (impression)](#media-print-impression)
 
-## CSS vanilla ou CSS utilitaire&#8239;?
+## Configuration dans un projet
 
-À ce jour, deux méthodes d'intégration CSS ont démontré leurs avantages en production&#8239;: CSS "vanilla" (natif) et CSS utilitaire (via Tailwind ou UnoCSS par exemple).
+**Tailwind**
 
-**Sauf contre-indication (client, projet historique) nous intégrons nos projets en CSS Vanilla**.
+Nous intégrons nos styles en **"CSS Vanilla"**, c'est à dire que ne faisons pas usage de classes utilitaires dans le HTML *sauf rares exceptions* (par exemple pour distinguer un élément parmi d'autres semblables).
 
-Cependant, un générateur de classes utilitaires (Tailwind ou [UnoCSS](../starters/project-init.md)) est incorporé dans nos projets afin de bénéficier de classes utilitaires lorsque nécessaire.
+Pour ce faire, un générateur de classes utilitaires ([Tailwind](../starters/project-init.md)) est incorporé dans nos projets afin de bénéficier de classes utilitaires lorsque cela est nécessaire.
 
-**Qu'appelons-nous CSS Vanilla&#8239;?**
+L'installation et la configuration de Tailwind est décrite [dans leur documentation](https://tailwindcss.com/docs/installation/using-vite).
 
-L'intégration CSS Vanilla correspond à la méthode *historique*&#8239;:
+Le fichier `assets/css/app.css` est le point d'entrée pour les styles. Il contient :
 
-- Nos styles sont rédigés dans une ou plusieurs feuilles de styles CSS de manière générale.
-- Nous ne faisons pas usage de classes utilitaires dans le HTML *sauf rares exceptions* (par exemple pour distinguer un élément parmi d'autres semblables).
-- Notre Reset "Bretzel CSS" (et print) est appliqué sur chaque projet (voir dossier `/configs`).
-- Dans la cas d'un projet VueJS, les styles spécifiques à un composant sont rédigés dans le fichier du composant au sein de l'élément `<style>`.
+- Tous les imports (Tailwind, Bretzel)
+- Le thème du site (couleurs, polices, etc.)
+- La feuille de styles globale (`global.css`)
+- Les classes utilitaires personnalisées (`visually-hidden`)
+
+Un exemple de fichier `app.css` est disponible dans [`/configs/app.css`](/configs/app.css).
+
+**PostCSS / Sass**
+
+Certaines fonctionnalités CSS indispensables ne sont actuellement pas réalisables en natif (Concaténation des fichiers, Mixins, Custom Media).
+
+Selon les projets, deux options sont envisagées pour bénéficier de ces fonctionnalités&nbsp;:
+
+- Le post-processeur [PostCSS](https://postcss.org/)
+- Le pré-processeur [Sass](https://sass-lang.com/) (syntaxe `.scss`) dans nos projets d'intégration (non conseillé)
+
+Quelle que soit la solution choisie, la méthode de compilation vers CSS dépend du type de projet (statique, Vue, Vite, Webpack, etc.).
+
+**Linters**
+
+- **Stylelint** (bonnes pratiques CSS, vérification, ordre des propriétés)
+- **Prettier** (formatage du code, indentation selon les règles editorconfig)
+
+La configuration de ces linters est détaillée dans le guide [`project-init.md`](/starters/project-init.md).
+
+## Bonnes pratiques CSS globales
+
+- Nous privilégions systématiquement l'usage de sélecteurs de **class** plutôt que les sélecteurs d'éléments (`li`, `span`, `p`) et ne ciblons jamais via un sélecteur `#id`.
+- Nous évitons tant que possible les **sélecteurs composés** tels que `.modal span` ou `.modal .date` mais plutôt `.modal-date` pour conserver une spécificité minimale.
+- Nous employons les **variables CSS** plutôt que des valeurs "en dur" (ex.&#8239;: `gap: var(--spacing-m)` plutôt que `gap: 1rem`) et faisons référence aux tokens plutôt qu'au primitives **si c'est possible** (ex.&#8239;: `gap: var(--spacing-m)` plutôt que `gap: var(--spacing-16)`)
+
+## Syntaxe
+
+**Ordre des déclarations**
+
+Les déclarations au sein d'une règle CSS sont ordonnées de façon à faire apparaître les propriétés importantes en tête de liste.
+
+**Les déclarations sont automatiquement réordonnées à l'aide de `stylelint-order` en suivant l'ordre `"smacss"`** (voir la configuration dans le guide [`project-init.md`](/starters/project-init.md)).
 
 ## Variables CSS (primitives et tokens)
 
@@ -156,52 +193,6 @@ En plus de cette liste commune à tous projets, il est conseillé d'appliquer de
 - `Tab Layer`: aplat de couleur du contenu des onglets
 - etc.
 
-## Bonnes pratiques CSS globales
-
-**Règles essentielles**
-
-- Nous employons les **variables CSS** plutôt que des valeurs "en dur" (ex.&#8239;: `gap: var(--spacing-m)` plutôt que `gap: 1rem`) et faisons référence aux tokens plutôt qu'au primitives **si c'est possible** (ex.&#8239;: `gap: var(--spacing-m)` plutôt que `gap: var(--spacing-16)`)
-- Nous privilégions systématiquement l'usage de sélecteurs de **class** plutôt que les sélecteurs d'éléments (`li`, `span`, `p`) et ne ciblons jamais via un sélecteur `#id`.
-- Nous évitons tant que possible les **sélecteurs composés** tels que `.modal span` ou `.modal .date` mais plutôt `.modal-date` pour conserver une spécificité minimale.
-
-**Ordre des déclarations**
-
-Les déclarations au sein d'une règle CSS sont ordonnées de façon à faire apparaître les propriétés importantes en tête de liste.
-
-**Les déclarations sont automatiquement réordonnées à l'aide de `prettier-plugin-css-order` en suivant l'ordre `"smacss"`** (voir la configuration dans le fichier [`.prettierrc.mjs`](/configs/.prettierrc.mjs)).
-
-Exemple&#8239;:
-
-```css
-.selecteur {
-    display: inline-block;
-    position: absolute;
-    top: var(--spacing-4);
-    z-index: var(--z-above-header-level);
-    margin: var(--spacing-16);
-    padding: 0;
-    border: 1px solid var(--color-pink-600);
-    background: var(--surface);
-    color: var(--on-surface);
-    font-size: var(--text-m);
-    line-height: var(--leading-28);
-    font-family: var(--font-base);
-    font-weight: var(--font-weight-regular);
-    text-align: end;
-
-    &:hover,
-    &:focus {
-        color: var(--color-kiwi-400);
-    }
-
-    @media (width >= 40rem) {
-        display: grid;
-        grid-template-columns: 1fr auto;
-        gap: var(--spacing-4);
-    }
-}
-```
-
 ## Unités
 
 - La première règle à observer est&#8239;: *"si la valeur doit pouvoir s'adapter à la taille de police de l'utilisateur, utiliser des `rem`, sinon utiliser des `px`"*. Consulter [l'article de Josh Comeau](https://www.joshwcomeau.com/css/surprising-truth-about-pixels-and-accessibility/) pour les détails et cas concrets.
@@ -222,33 +213,6 @@ Autres unités&#8239;:
 
 - `dvh` pour la hauteur (minimum) de page (`body`)
 - `pt` exclusivement en feuille de styles print
-
-## Sass / postCSS
-
-Certaines fonctionnalités CSS indispensables ne sont actuellement pas réalisables en natif&#8239;:
-
-- Concaténation des fichiers lors d'un `@use` (successeur de `@import`)
-- Mixins
-- Custom Media (Media Queries contenant une variable)
-- <del>Imbrications de sélecteurs</del>
-- <del>Variables et constantes</del>
-
-Selon les projets, deux options sont envisagées pour bénéficier de ces fonctionnalités&nbsp;:
-
-- Le pré-processeur [Sass](https://sass-lang.com/) (syntaxe `.scss`) dans nos projets d'intégration.
-- Le post-processeur [PostCSS](https://postcss.org/)
-
-Quelle que soit la solution choisie, la méthode de compilation vers CSS dépend du type de projet (statique, Vue, Vite, Webpack, etc.).
-
-## Variables / Custom properties
-
-Dans le cas de nos projets en CSS vanilla avec Constructeur de classes utilitaires&#8239;:
-
-- Nous utilisons **toujours** les [custom properties CSS](https://developer.mozilla.org/fr/docs/Web/CSS/Using_CSS_custom_properties) (ex. `--color-pink-400`).
-- Nous n'utilisons **pas** de variables Sass (ex. `$color-pink-400`).
-- Nous n'appliquons pas de classes utilitaires dans le HTML (ex. `<p class="text-pink-400"`) sauf rares exceptions où le gain en temps et code est flagrant.
-
-**Aucune valeur numérique (hors `0`) ne devrait apparaître dans les styles sans être associée à une custom property.**
 
 ## Notation imbriquée (nesting)
 
