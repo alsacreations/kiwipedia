@@ -14,18 +14,24 @@ Il existe cependant des projets "multi" (que l'on appelle aussi "mono-repo") où
   - [2. Fichiers de configuration](#2-fichiers-de-configuration)
   - [3. Linter, formatters et correcteurs](#3-linter-formatters-et-correcteurs)
   - [4. Styles CSS](#4-styles-css)
-    - [Si intégration en "CSS natif"](#si-intégration-en-css-natif)
-    - [Si intégration en "CSS utilitaire"](#si-intégration-en-css-utilitaire)
   - [5. Optionnel (selon projets)](#5-optionnel-selon-projets)
 
 ## Stack commune à tous les projets
 
+Environnement, compilation :
+
 - **pnpm** : gestionnaire de paquets
 - **Vite** : outil de compilation/bundler
+
+Linters :
+
 - **Editorconfig** : configuration tabs vs spaces à l'insertion, encodage, eol, etc
 - **Prettier** : formatage automatique des fichiers à la sauvegarde
 - **Stylelint** : vérification syntaxe et bonnes pratiques CSS
 - **ESlint** : vérification syntaxe JavaScript, TypeScript et frameworks
+
+CSS :
+
 - **Tailwind** : génération de classes utilitaires, des variables CSS, de Reset CSS, des layouts et gestion des valeurs du "thème" (même dans nos projets CSS "vanilla")
 
 ## 1. Vite
@@ -91,36 +97,11 @@ Nous conseillons de faire en sorte que le fichier [`app.css`](../configs/app.css
 - La feuille de styles globale (`global.css`)
 - Les classes utilitaires personnalisées (`visually-hidden`)
 
-### Si intégration en "CSS natif"
-
-*Rappel : en CSS natif (ou vanilla), nous écrivons les règles CSS dans les feuilles de styles et nous n'utilisons pas de classes utilitaires, sauf exceptions.*
-
-Le plugin `unocss-custom-properties` transforme toutes les valeurs de thème du fichier `uno.config.ts` en custom properties (ex. `font-weight: var(--font-weight-400)`) et génère un fichier virtuel `vars.css`.
-
-Vérifier que ces instructions sont présentes (et non commentées) :
-
-- Dans `uno.config.ts` : `import customProperties from 'unocss-custom-properties'`
-- Dans `uno.config.ts` : `import { resolve } from "node:path"`
-- Dans `uno.config.ts` : `presets: [ customProperties({ writeFile: true, filePath: resolve(__dirname, "vars.css"), }), ],`
-
-### Si intégration en "CSS utilitaire"
-
-*Rappel : en CSS utilitaire, nous écrivons les styles CSS dans le fichier HTML de chaque composant, sous forme de classes utilitaires. Nous n'écrivons pas de règles au sein d'un fichier CSS, sauf exceptions.*
-
-Vérifier que ces instructions sont présentes (et non commentées) :
-
-- Dans `uno.config.ts` : `import { presetMini } from 'unocss'`
-- Dans `uno.config.ts` : `presets: [ presetMini() ]`
-
 ## 5. Optionnel (selon projets)
 
 Options à installer / configurer au cas par cas, uniquement si prévu dans le projet :
 
 - Installer Sass : `pnpm install --save-dev sass` (renommer `styles.css` en `styles.scss` et adapter le chemin dans `main.js`)
-- Installer [Stylelint](https://stylelint.io/user-guide/get-started) (sinon verifier que les linters CSS/SCSS natifs de VSCode sont activés)
-  - `pnpm install --save-dev stylelint`
-  - Ajouter le fichier de configuration [`.stylelintrc.json`](../configs/.stylelintrc.json) à la racine.
-- Ajouter [launch.json](https://code.visualstudio.com/docs/editor/debugging#_launch-configurations) au projet pour lancer le debugger.
 - Ajouter [alpine.js](https://alpinejs.dev/essentials/installation) avec `pnpm install --save alpinejs`
 - **Docker** si besoin de mise en recette ou pré-production
   - Ajouter `Dockerfile` et `docker-compose.yml` suivant les exemples et les adapter
