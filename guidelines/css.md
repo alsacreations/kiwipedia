@@ -79,17 +79,12 @@ Les valeurs *primitives* sont des valeurs de base issues de l'UI-Kit qui ne chan
 Un développeur n'est pas censé inventer de nouvelles primitives ni modifier ces valeurs. Si une valeur n'existe pas, il est nécessaire de la créer en concertation avec le designer.
 
 ```css
-/* fichier `theme.css` */
-/* valeurs issues de l'UI-Kit */
+/* fichier `app.css` */
+/* valeurs d'exemple (toutes issues de l'UI-Kit) */
 :root {
   --color-pink-100: #fce7f3;
-  --color-pink-300: #f9a8d4;
   --color-pink-500: #f1498f;
-  --color-pink-700: #be185d;
-  --spacing-0: 0;
-  --spacing-1: 1px;
   --spacing-2: 0.125rem;
-  --spacing-4: 0.25rem;
   --spacing-8: 0.5rem;
   --spacing-16: 1rem;
   --font-base: system-ui, sans-serif;
@@ -100,7 +95,6 @@ Un développeur n'est pas censé inventer de nouvelles primitives ni modifier ce
   --text-18: 1.125rem;
   --text-20: 1.25rem;
   --radius-none: 0;
-  --radius-lg: 0.5rem;
   --radius-full: 9999px;
 }
 ```
@@ -130,7 +124,7 @@ Les tokens sont des propriétés auxquelles des roles/fonctions ont été attibu
 - Un token est **agnostique** (décontextualisé) : `--color-primary` est OK en light ou dark mode, `--spacing-m` est OK en desktop ou mobile.
 
 ```css
-/* fichier `app.css` */
+/* fichier `styles.css` */
 /* valeurs d'exemple à adapter au projet, évidemment */
 :root {
   --primary: var(--color-blue-500);

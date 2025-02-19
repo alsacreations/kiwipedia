@@ -96,7 +96,7 @@ Nous conseillons de faire en sorte que le fichier `app.css` soit le point d'entr
 
 - Tous les imports (Tailwind, Bretzel reset, etc.)
 - Le thème du site (couleurs, polices, etc.)
-- La feuille de styles globale (`global.css`)
+- La feuille de styles globale (`styles.css`) qui contiendra les styles du projet
 - Les classes utilitaires personnalisées (`visually-hidden`)
 
 Un exemple de fichier `app.css` est disponible dans [`/configs/app.css`](../configs/app.css).
