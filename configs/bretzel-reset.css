@@ -32,8 +32,8 @@ html {
 body {
   min-height: 100dvh;
   margin: 0;
-  line-height: 1.5;
   font-family: system-ui, sans-serif;
+  line-height: 1.5;
   text-rendering: optimizespeed;
 }
 
@@ -123,10 +123,10 @@ select {
   margin: 0;
   background-color: transparent;
   color: inherit;
-  font-size: inherit;
-  line-height: inherit;
   font-family: inherit;
+  font-size: inherit;
   letter-spacing: inherit;
+  line-height: inherit;
   vertical-align: middle;
 }
 
@@ -154,6 +154,7 @@ label {
 
 button {
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 textarea {
@@ -168,8 +169,8 @@ pre,
 code,
 kbd,
 samp {
-  font-size: 1em;
   font-family: monospace, monospace;
+  font-size: 1em;
 }
 
 pre {
@@ -180,21 +181,20 @@ pre {
 }
 
 /* On stylise les SVG */
+svg:not([fill]) {
+  fill: currentcolor;
+}
 
 svg {
   overflow: visible;
+}
 
-  &:has(symbol) {
-    display: none;
-  }
+svg * {
+  transform-box: fill-box;
+}
 
-  &:not([fill]) {
-    fill: currentcolor;
-  }
-
-  & * {
-    transform-box: fill-box;
-  }
+svg:has(symbol) {
+  display: none;
 }
 
 /* On corrige des styles ARIA */
@@ -213,11 +213,11 @@ svg {
 
 [aria-hidden="false"][hidden] {
   display: revert;
+}
 
-  &:not(:focus) {
-    clip: rect(0, 0, 0, 0);
-    position: absolute;
-  }
+[aria-hidden="false"][hidden]:not(:focus) {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
 }
 
 /* On désactive les animations selon les préférences utilisateur */
@@ -225,12 +225,12 @@ svg {
   *,
   ::before,
   ::after {
-    background-attachment: initial !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
     animation-duration: 1ms !important;
     animation-delay: -1ms !important;
     animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
     scroll-behavior: auto !important;
-    transition-delay: 0s !important;
-    transition-duration: 0s !important;
   }
 }

@@ -43,14 +43,14 @@ export default {
 
     // Unités
     "declaration-property-unit-allowed-list": {
-      "/^font|^font-size/": ["rem", "em", "vw", "%", "dvw", "pt"], // on autorise uniquement les unités relatives pour les tailles de police
+      "/^font|^font-size/": ["rem", "em", "vw", "%", "dvw", "pt"], // on autorise uniquement les unités relatives
     },
 
     // Imports
     "import-notation": "string", // pas de "url()" pour les imports
 
     // Nesting
-    "max-nesting-depth": 3, // on limite la profondeur de l'imbrication
+    "max-nesting-depth": 2, // on limite la profondeur de l'imbrication
 
     // Media Queries
     "media-feature-range-notation": "context", // on force la notation moderne

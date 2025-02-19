@@ -13,9 +13,9 @@
 
   /* Reset général */
   * {
-    all: unset;
-    box-sizing: border-box;
     display: revert;
+    box-sizing: border-box;
+    all: unset;
   }
 
   img {
@@ -34,17 +34,10 @@
     margin: 0;
     background-color: #ffffff !important;
     color: #000000 !important;
-    font-size: 12pt;
-    line-height: 1.5;
     font-family: serif;
     font-family: Georgia, serif;
-  }
-
-  /* Pas de veuves ou orphelines (3 lignes minimum) */
-  p,
-  blockquote {
-    orphans: 3;
-    widows: 3;
+    font-size: 12pt;
+    line-height: 1.5;
   }
 
   /* Espacements typographiques (15pt = 20px) */
@@ -63,28 +56,28 @@
   /* Titrages (24pt = 32px) */
   h1 {
     margin-block: 0 24pt;
-    font-weight: 700;
     font-size: 18pt;
+    font-weight: 700;
     line-height: 1.1;
   }
 
   h2 {
     margin-block: 0 18pt;
-    font-weight: 700;
     font-size: 16pt;
+    font-weight: 700;
     line-height: 1.1;
   }
 
   h3 {
     margin-block: 0 15pt;
-    font-weight: 700;
     font-size: 14pt;
+    font-weight: 700;
   }
 
   h4 {
     margin-block: 0 12pt;
-    font-weight: 700;
     font-size: 12pt;
+    font-weight: 700;
   }
 
   /* Classes dédiées print / no-print */
@@ -94,6 +87,13 @@
 
   .no-print {
     display: none;
+  }
+
+  /* Pas de veuves ou orphelines (3 lignes minimum) */
+  p,
+  blockquote {
+    orphans: 3;
+    widows: 3;
   }
 
   /* Pas de saut de page au sein de ces éléments */
