@@ -1,20 +1,52 @@
 <!-- Sommaire -->
 <div id="toc">
   <strong>Sommaire</strong>
-  <ul id="toc-list"></ul>
+  <ul id="toc-list">
+    <li><a href="#css-vanilla-ou-css-utilitaire">CSS vanilla ou CSS utilitaire</a>
+    </li>
+    <li><a href="#variables-du-projet">Variables du projet</a>
+    </li>
+    <li><a href="#tokens-roles">Tokens (=roles)</a>
+    </li>
+    <li><a href="#bonnes-pratiques-css-globales">Bonnes pratiques CSS globales</a>
+    </li>
+    <li><a href="#unites">Unités</a></li>
+    <li><a href="#sass-postcss">Sass / postCSS</a></li>
+    <li><a href="#variables-custom-properties">Variables / Custom properties</a></li>
+    <li><a href="#notation-imbriquee">Notation imbriquée (nesting)</a></li>
+    <li><a href="#breakpoints-et-media-queries">Breakpoints et Media Queries</a></li>
+    <li><a href="#transitions-et-animations">Transitions et animations</a>
+    </li>
+    <li><a href="#methodes-de-positionnement">Méthodes de positionnement</a>
+    </li>
+    <li><a href="#pseudo-classes-et-pseudo-elements">Pseudo-classes et pseudo-éléments</a>
+    </li>
+    <li><a href="#dark-mode">Dark Mode</a>
+    </li>
+    <li><a href="#polices-fonts">Polices (fonts)</a>
+    </li>
+    <li><a href="#bonus-media-print">Bonus : Media print (impression)</a></li>
+  </ul>
 </div>
 
 <style>
   /* Styles basiques pour le sommaire */
+  *:has(>#toc) {
+    padding-right: 220px;
+  }
   #toc {
     position: fixed;
+    z-index: 1000;
     top: 2rem;
     right: 1rem;
     width: 200px;
     padding: 1rem;
-    background: #fff;
+    background: light-dark(#eee, #333);
+    color: light-dark(#333, #eee);
     border: 1px solid #ddd;
-    font-family: sans-serif;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    font-family: system-ui, sans-serif;
     font-size: 0.9rem;
     line-height: 1.4;
   }
@@ -34,23 +66,6 @@
     text-decoration: underline;
   }
 </style>
-
-<script>
-  // Générer le sommaire pour les titres h2 et h3
-  document.addEventListener("DOMContentLoaded", function() {
-    const tocList = document.getElementById("toc-list");
-    const headers = document.querySelectorAll("h2, h3");
-    headers.forEach(header => {
-      if(!header.id) {
-        header.id = header.textContent.trim().toLowerCase().replace(/\s+/g, "-");
-      }
-      const li = document.createElement("li");
-      li.style.marginLeft = header.tagName === "H3" ? "1em" : "0";
-      li.innerHTML = `<a href="#${header.id}">${header.textContent}</a>`;
-      tocList.appendChild(li);
-    });
-  });
-</script>
 
 # Guidelines&#8239;: CSS
 
