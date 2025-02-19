@@ -33,6 +33,7 @@ export default {
           "box-decoration-break",
           "text-fill-color",
           "text-stroke",
+          "tap-highlight-color",
           "box-orient",
         ],
       },
@@ -42,8 +43,8 @@ export default {
     "declaration-block-no-redundant-longhand-properties": [true, { ignoreShorthands: ["grid-template"] }],
 
     // Unités
-    "declaration-property-unit-allowed-list": {
-      "/^font|^font-size/": ["rem", "em", "vw", "%", "dvw", "pt"], // on autorise uniquement les unités relatives
+    "declaration-property-unit-disallowed-list": {
+      "/^font|^font-size/": ["px"], // pas de pixels
     },
 
     // Imports
