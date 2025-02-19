@@ -1,15 +1,17 @@
 /** @type {import("prettier").Config} */
 export default {
-  semi: false,
-  singleQuote: true,
-  quoteProps: "as-needed",
-  trailingComma: "all",
-  bracketSpacing: true,
-  bracketSameLine: false,
   arrowParens: "always",
-  singleAttributePerLine: true,
-  printWidth: 80,
+  bracketSpacing: true,
+  bracketSameLine: true,
+  editorconfig: true,
   jsxSingleQuote: true,
+  printWidth: 80,
+  quoteProps: "as-needed",
+  semi: false,
+  singleAttributePerLine: true,
+  tabWidth: 2,
+  trailingComma: "all",
+  useTabs: false,
   overrides: [
     {
       files: ["*.css", "*.scss"],
