@@ -2,36 +2,24 @@
 
 Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/) concernant&#8239;: "CSS". Ces guidelines CSS sont le fruit de plusieurs années d'expérience en méthodologies (OOCSS, BEM, CubeCSS) et frameworks (Bootstrap, Tailwind, UnoCSS) et sont destinées à constamment évoluer dans le temps et à s'adapter à chaque nouveau projet.
 
-<!-- Sommaire -->
-<div id="toc">
-  <strong>Sommaire</strong>
-  <ul id="toc-list">
-    <li><a href="#css-vanilla-ou-css-utilitaire">CSS vanilla ou CSS utilitaire</a>
-    </li>
-    <li><a href="#variables-du-projet">Variables du projet</a>
-    </li>
-    <li><a href="#tokens-roles">Tokens (=roles)</a>
-    </li>
-    <li><a href="#bonnes-pratiques-css-globales">Bonnes pratiques CSS globales</a>
-    </li>
-    <li><a href="#unites">Unités</a></li>
-    <li><a href="#sass-postcss">Sass / postCSS</a></li>
-    <li><a href="#variables-custom-properties">Variables / Custom properties</a></li>
-    <li><a href="#notation-imbriquee">Notation imbriquée (nesting)</a></li>
-    <li><a href="#breakpoints-et-media-queries">Breakpoints et Media Queries</a></li>
-    <li><a href="#transitions-et-animations">Transitions et animations</a>
-    </li>
-    <li><a href="#methodes-de-positionnement">Méthodes de positionnement</a>
-    </li>
-    <li><a href="#pseudo-classes-et-pseudo-elements">Pseudo-classes et pseudo-éléments</a>
-    </li>
-    <li><a href="#dark-mode">Dark Mode</a>
-    </li>
-    <li><a href="#polices-fonts">Polices (fonts)</a>
-    </li>
-    <li><a href="#bonus-media-print">Bonus : Media print (impression)</a></li>
-  </ul>
-</div>
+## Sommaire
+
+- [Guidelines : CSS](#guidelines-css)
+  - [Sommaire](#sommaire)
+  - [CSS vanilla ou CSS utilitaire ?](#css-vanilla-ou-css-utilitaire)
+  - [Variables CSS (primitives et tokens)](#variables-css-primitives-et-tokens)
+  - [Bonnes pratiques CSS globales](#bonnes-pratiques-css-globales)
+  - [Unités](#unités)
+  - [Sass / postCSS](#sass--postcss)
+  - [Variables / Custom properties](#variables--custom-properties)
+  - [Notation imbriquée (nesting)](#notation-imbriquée-nesting)
+  - [Breakpoints et Media Queries](#breakpoints-et-media-queries)
+  - [Transitions et animations](#transitions-et-animations)
+  - [Méthodes de positionnement](#méthodes-de-positionnement)
+  - [Pseudo-classes et pseudo-éléments](#pseudo-classes-et-pseudo-éléments)
+  - [Dark Mode](#dark-mode)
+  - [Polices (fonts)](#polices-fonts)
+  - [Media print (impression)](#media-print-impression)
 
 ## CSS vanilla ou CSS utilitaire&#8239;?
 
@@ -41,7 +29,7 @@ Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacre
 
 Cependant, un générateur de classes utilitaires (Tailwind ou [UnoCSS](../starters/project-init.md)) est incorporé dans nos projets afin de bénéficier de classes utilitaires lorsque nécessaire.
 
-### Qu'appelons-nous CSS Vanilla&#8239;?
+**Qu'appelons-nous CSS Vanilla&#8239;?**
 
 L'intégration CSS Vanilla correspond à la méthode *historique*&#8239;:
 
@@ -50,7 +38,7 @@ L'intégration CSS Vanilla correspond à la méthode *historique*&#8239;:
 - Notre Reset "Bretzel CSS" (et print) est appliqué sur chaque projet (voir dossier `/configs`).
 - Dans la cas d'un projet VueJS, les styles spécifiques à un composant sont rédigés dans le fichier du composant au sein de l'élément `<style>`.
 
-## Variables du projet
+## Variables CSS (primitives et tokens)
 
 Les variables CSS (custom properties) du projet s'articulent en trois étapes&#8239;:
 
@@ -58,7 +46,7 @@ Les variables CSS (custom properties) du projet s'articulent en trois étapes&#8
 2. Les tokens, ou roles (ex. `--color-primary: var(--color-pink-300);`) *(voir section suivante)*
 3. L'usage des tokens dans les styles des composants (ex. `color: var(--color-primary);`)
 
-### Primitives
+**Primitives**
 
 Les valeurs *primitives* sont des valeurs de base issues de l'UI-Kit qui ne changent pas et qui sont utilisées pour définir les rôles (tokens) du projet.
 Un développeur n'est pas censé inventer de nouvelles primitives ni modifier ces valeurs. Si une valeur n'existe pas, il est nécessaire de la créer en concertation avec le designer.
@@ -90,7 +78,7 @@ Un développeur n'est pas censé inventer de nouvelles primitives ni modifier ce
 }
 ```
 
-#### Règles de nommage des primitives
+**Règles de nommage des primitives**
 
 Pour assurer un workflow fluide entre designer et développeur, les variables sont nommées de manière codifiée par les deux parties.
 
@@ -106,7 +94,7 @@ Les règles de nommage sont les suivantes (issues de la [documentation Tailwind 
 - Une ombre est préfixée par `--shadow-*` (ex. `--shadow-md`)
 - Un z-index est préfixé par `--z-*` (ex. `--z-above-header-level`)
 
-### Tokens (=roles)
+**Tokens (=roles)**
 
 Les tokens sont des propriétés auxquelles des roles/fonctions ont été attibués.
 
@@ -132,7 +120,7 @@ Les tokens sont des propriétés auxquelles des roles/fonctions ont été attibu
 }
 ```
 
-#### Liste des rôles des tokens
+**Liste des rôles des tokens**
 
 Cette liste est non exhaustive. Elle concerne les tokens les plus courants et dont la portée concerne l'ensemble du projet.
 
@@ -170,13 +158,13 @@ En plus de cette liste commune à tous projets, il est conseillé d'appliquer de
 
 ## Bonnes pratiques CSS globales
 
-### Règles essentielles
+**Règles essentielles**
 
 - Nous employons les **variables CSS** plutôt que des valeurs "en dur" (ex.&#8239;: `gap: var(--spacing-m)` plutôt que `gap: 1rem`) et faisons référence aux tokens plutôt qu'au primitives **si c'est possible** (ex.&#8239;: `gap: var(--spacing-m)` plutôt que `gap: var(--spacing-16)`)
 - Nous privilégions systématiquement l'usage de sélecteurs de **class** plutôt que les sélecteurs d'éléments (`li`, `span`, `p`) et ne ciblons jamais via un sélecteur `#id`.
 - Nous évitons tant que possible les **sélecteurs composés** tels que `.modal span` ou `.modal .date` mais plutôt `.modal-date` pour conserver une spécificité minimale.
 
-### Ordre des déclarations
+**Ordre des déclarations**
 
 Les déclarations au sein d'une règle CSS sont ordonnées de façon à faire apparaître les propriétés importantes en tête de liste.
 
@@ -333,7 +321,7 @@ Pour nos projets, nous utilisons la syntaxe "moderne" des Media Queries&#8239;:
 - Éviter d’animer des propriétés autres que `transform` (`translate`, `rotate`, `scale`) ou `opacity` ou `filter` (ou alors ajouter la propriété `will-change` au cas par cas).
 - Toujours préciser quelle(s) propriété(s) doit être animée dans une transition ou animation. Par exemple `transition: 0.5s scale`.
 
-### Animer du SVG
+**Animer du SVG**
 
 Quelques précautions sont à prendre concernant les SVG&#8239;:
 
@@ -361,7 +349,7 @@ svg * {
 
 Nous privilégions **Grid Layout** en priorité (aidé de *grid area* autant que possible), puis **Flexbox** en tenant compte de certains points d'attention.
 
-### Grid Layout
+**Grid Layout**
 
 [Grid Layout](https://developer.mozilla.org/fr/docs/Web/CSS/CSS_grid_layout/Basic_concepts_of_grid_layout) est choisi en priorité pour les avantages suivants&#8239;:
 
@@ -377,7 +365,7 @@ Les inconvénients majeurs de Grid Layout sont&#8239;:
 
 - Gère moins bien le Responsive via taille du contenu ou [Container Queries](https://www.alsacreations.com/article/lire/1915-Les-Container-Queries-en-CSS.html)
 
-### Flexbox
+**Flexbox**
 
 [Flexbox](https://developer.mozilla.org/fr/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox) est choisi en priorité pour les avantages suivants&#8239;:
 
@@ -397,7 +385,7 @@ Les inconvénients majeurs de Flexbox sont&#8239;:
 
 🔖 ["When to use Flexbox and when to use CSS Grid"](https://blog.logrocket.com/css-flexbox-vs-css-grid/)
 
-### Autres positionnements
+**Autres positionnements**
 
 - `position: absolute`&#8239;: nécessaire pour placer un élément en "overlay" (par-dessus d'autres éléments). Le référent est le premier ancêtre lui-même *positionné*.
 - `position: relative`&#8239;: utile principalement pour servir de référent à un descendant en `absolute`. Ne pas déplacer des éléments via cette position, privilégier systématiquement les transformations (`translate: x y;`).
@@ -409,7 +397,7 @@ Les inconvénients majeurs de Flexbox sont&#8239;:
 
 Les pseudo-classes s'écrivent avec `:`, les pseudo-éléments s'écrivent avec `::`.
 
-### Pseudo-éléments
+**Pseudo-éléments**
 
 - Les pseudo-élements les plus courants sont `::before` et `::after`.
 - Ils nécessitent la propriété `content: "contenu"` pour être affichés.
@@ -417,7 +405,7 @@ Les pseudo-classes s'écrivent avec `:`, les pseudo-éléments s'écrivent avec 
 - Nesting&#8239;: Les pseudo-éléments sont de bons candidats à la syntaxe imbriquée telle que `&::before`, `&::after`.
 - Les pseudo-éléments sont à rédiger en CSS vanilla et non en classe utilitaire (éviter `class="before:content-['Hello_World']"`)
 
-### Pseudo-classes
+**Pseudo-classes**
 
 - Il existe une [60aine de pseudo-classes](https://developer.mozilla.org/fr/docs/Web/CSS/Pseudo-classes)
 - Nesting&#8239;: Les pseudo-classes sont de bons candidats à la syntaxe imbriquée telle que `&:first-child`, `&:empty`, etc.
@@ -432,7 +420,7 @@ Il existe deux moyens pour un utilisateur de modifier le mode d'apparence des pa
 1. Via ses réglages système (ou via son navigateur)
 2. Via un bouton "theme switcher" intégré au site web
 
-### Dark Mode déclenché via les réglages système uniquement (non conseillé)
+**Dark Mode déclenché via les réglages système uniquement (non conseillé)**
 
 La Media Query `(prefers-color-scheme: dark)` détecte les préférences système et permet de s'y adapter en CSS, mais la syntaxe de la fonction `light-dark()` est plus intéressante et évite des imbrications inutiles.
 
@@ -464,7 +452,7 @@ La Media Query `(prefers-color-scheme: dark)` détecte les préférences systèm
 }
 ```
 
-### Dark Mode déclenché via un bouton "theme switcher" (conseillé)
+**Dark Mode déclenché via un bouton "theme switcher" (conseillé)**
 
 En plus de ses préférences par défaut, il est conseillé de proposer au visiteur de pouvoir décider de son mode d'apparence au cas par cas à l'aide d'un "theme switcher".
 
@@ -490,7 +478,7 @@ Le bouton de theme modifie l'attribut `data-theme` sur `html`, on s'en servira c
 
 ## Polices (fonts)
 
-### Recommandations générales
+**Recommandations générales**
 
 - On privilégie la police système `system-ui` pour les textes de contenus (raison&#8239;: performance + UX + Layout Shifts).
 - On privilégie le format `.woff2`.
@@ -511,13 +499,13 @@ Le bouton de theme modifie l'attribut `data-theme` sur `html`, on s'en servira c
 
 🔖 <https://www.debugbear.com/blog/website-font-performance>
 
-### Outils d'optimisation et de tests de polices
+**Outils d'optimisation et de tests de polices**
 
 - FontSquirrel webfont generator&#8239;: <https://www.fontsquirrel.com/tools/webfont-generator> (ou Transfonter&#8239;: <https://transfonter.org/>)
 - Wakamai Fondue&#8239;: <https://wakamaifondue.com/>
 - Glyphhanger (via `npm`)&#8239;: <https://github.com/zachleat/glyphhanger>
 
-### Code recommandé pour les polices
+**Code recommandé pour les polices**
 
 Voici un exemple de chargement de police conseillé (cas de deux fichiers de police *regular* et *bold*)&#8239;:
 
@@ -547,17 +535,17 @@ Voici un exemple de chargement de police conseillé (cas de deux fichiers de pol
 }
 ```
 
-### Google Webfont Helper
+**Google Webfont Helper**
 
 [Google Webfont Helper](https://gwfh.mranftl.com/fonts) génère le code CSS nécessaire, optimise finement les fichiers et permet de les héberger sans faire appel à Google en choisissant le bon subset (latin, latin-ext, etc.), les variantes (normal, bold, italic, etc.)
 
-### Cas des Variable Fonts
+**Cas des Variable Fonts**
 
 Une variable font est systématiquement recommandée dès lors qu'un projet nécessite plus de 3 ou 4 variantes parmi celles-ci&#8239;: regular, italic, light, semi-bold, bold, bold italic, etc. Cette fonctionnalité est aujourd'hui reconnue par plus de 95% des navigateurs.
 
 Comme pour les fontes classiques, le format `.woff2` ainsi que l'hébergement de la fonte sont préconisés (les fontes variables peuvent être trouvées sur [Google Fonts](https://fonts.google.com/?vfonly=true) en activant la case "show only variable fonts" puis téléchargées en `.ttf` via le bouton "Download family". Un convertisseur tel que [Cloud converter](https://cloudconvert.com/ttf-to-woff2) pourra produire la version `.woff2`.
 
-#### Code recommandé pour les variable fonts
+Code recommandé pour les variable fonts :
 
 ```css
 @font-face {
@@ -570,13 +558,13 @@ Comme pour les fontes classiques, le format `.woff2` ainsi que l'hébergement de
 }
 ```
 
-#### Modification des variantes (axis)
+**Modification des variantes (axis)**
 
 Toutes les variantes d'une fonte variable sont modifiables via la propriété `font-variation-settings`. Certains de ces axis sont normalisés et disposent d'un équivalent en propriété CSS.
 
 Ainsi, pour modifier la graisse d'une police, les deux syntaxes sont possibles&#8239;: `font-variation-settings: 'wght' 625;` ou `font-weight: 625;`. Il est même possible de passer par une variable CSS ainsi `font-variation-settings: 'wght' var(--text-weight);`
 
-## Bonus&#8239;: Media print (impression)
+## Media print (impression)
 
 Nous proposons une feuille de styles "Print" dans nos projets d'intégration web.
 
