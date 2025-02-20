@@ -15,7 +15,15 @@ export default {
     "at-rule-no-unknown": [true, { ignoreAtRules: ["theme", "utility"] }],
     "declaration-property-value-no-unknown": [
       true,
-      { ignoreProperties: { animation: "auto", "animation-duration": "auto" } },
+      {
+        ignoreProperties: {
+          "/^animation-/": "auto",
+          top: "/^anchor/",
+          right: "/^anchor/",
+          bottom: "/^anchor/",
+          left: "/^anchor/",
+        },
+      },
     ],
 
     // Prefixes
@@ -51,7 +59,7 @@ export default {
     "import-notation": "string", // pas de "url()" pour les imports
 
     // Nesting
-    "max-nesting-depth": 2, // on limite la profondeur de l'imbrication
+    "max-nesting-depth": 3, // on limite la profondeur de l'imbrication
 
     // Media Queries
     "media-feature-range-notation": "context", // on force la notation moderne
