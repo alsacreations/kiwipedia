@@ -2,6 +2,8 @@
 
 Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/) concernant **"Git"**. Ces indications sont destinées à évoluer dans le temps et à s'adapter à chaque nouveau projet.
 
+## Conventional Commits
+
 ▶️ Nous respectons les *Conventional Commits* <https://www.conventionalcommits.org/fr/v1.0.0/>
 
 - **build**: Changements relatifs au processus de *build* ou dépendances comme vite ou npm.
@@ -22,3 +24,42 @@ Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacre
 - **test**: Ajout ou modifications de tests unitaires, d'intégration et e2e.
 - **chore**: Quand le reste ne convient pas.
   - Exemple: modification du fichier de configuration eslint, prettier, tâches de maintenance interne, mise à jour des dépendances.
+
+## Git flow, branches
+
+| branche | rôle |
+| ------- | ---- |
+| main    | code en production (= en ligne sur le serveur d'hébergement) |
+| develop | développements en cours avant d’être fusionnés dans main |
+| feature/*nomfeature* | développement d'une fonctionnalité, à partir de develop |
+| fix/*nomfix* | correction de bug |
+
+Schéma :
+
+```mermaid
+%%{init: { 'logLevel': 'debug', 'theme': 'base', 'gitGraph': {'showCommitLabel': false}} }%%
+gitGraph
+   commit
+   branch develop
+   checkout develop
+   commit
+   commit
+   branch feature/something
+   checkout feature/something
+   commit
+   commit
+   checkout develop
+   merge feature/something
+   commit
+   branch fix/something
+   checkout fix/something
+   commit
+   checkout develop
+   merge fix/something
+   commit
+   checkout main
+   merge develop
+   commit
+```
+
+💡 Penser à reprendre les références (#issue ou #tâche) dans le nom de la branche / les messages de commit.
