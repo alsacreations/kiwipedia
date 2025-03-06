@@ -243,7 +243,7 @@ L'inconvénient de la notation imbriquée est qu'elle génère des sélecteurs C
 
 La liste de points de rupture (*breakpoints*) figure dans la configuration du contructeur de classes utilitaires.
 
-Sauf contre-indication selon projet, les valeurs des breakpoints sont exprimées [en unité `rem`](https://www.joshwcomeau.com/css/surprising-truth-about-pixels-and-accessibility/#media-queries-7)&#8239;:
+Sauf contre-indication selon projet, on privilégie la méthode **Mobile First** et les valeurs des breakpoints sont exprimées [en unité `rem`](https://www.joshwcomeau.com/css/surprising-truth-about-pixels-and-accessibility/#media-queries-7)&#8239;:
 
 - `40rem` // correspond à 640px
 - `48rem` // 768px
@@ -251,7 +251,7 @@ Sauf contre-indication selon projet, les valeurs des breakpoints sont exprimées
 - `80rem` // 1280px
 - `96rem` // 1536px
 
-Pour nos projets, nous utilisons la syntaxe "moderne" des Media Queries&#8239;:
+Nous utilisons de préférence la syntaxe "moderne" des Media Queries&#8239;:
 
 ```css
 /* composant card sur écran "640" ou plus */
@@ -263,6 +263,11 @@ Pour nos projets, nous utilisons la syntaxe "moderne" des Media Queries&#8239;:
     }
 }
 ```
+
+Pour éviter les collisions d'intervalles de media queries, notre convention est :
+
+1. En mobile first (conseillé) on inclut la valeur, donc "=" -> `@media (width >= 48rem)`
+2. En desktop first, on exclut la valeur, donc pas de "=" -> `@media (width < 48rem)`
 
 ## Transitions et animations
 
