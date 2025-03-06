@@ -37,15 +37,6 @@ body {
   text-rendering: optimizespeed;
 }
 
-/* On supprime les styles des listes ayant une class (version accessible) */
-:where(ol, ul)[class] {
-  padding-left: 0;
-
-  & > li::marker {
-    content: "";
-  }
-}
-
 /* On évite les débordements d'éléments */
 img,
 table,
@@ -154,7 +145,6 @@ label {
 
 button {
   cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
 }
 
 textarea {
@@ -181,20 +171,21 @@ pre {
 }
 
 /* On stylise les SVG */
-svg:not([fill]) {
-  fill: currentcolor;
-}
 
 svg {
   overflow: visible;
-}
 
-svg * {
-  transform-box: fill-box;
-}
+  &:has(symbol) {
+    display: none;
+  }
 
-svg:has(symbol) {
-  display: none;
+  &:not([fill]) {
+    fill: currentcolor;
+  }
+
+  & * {
+    transform-box: fill-box;
+  }
 }
 
 /* On corrige des styles ARIA */
@@ -213,11 +204,11 @@ svg:has(symbol) {
 
 [aria-hidden="false"][hidden] {
   display: revert;
-}
 
-[aria-hidden="false"][hidden]:not(:focus) {
-  position: absolute;
-  clip: rect(0, 0, 0, 0);
+  &:not(:focus) {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+  }
 }
 
 /* On désactive les animations selon les préférences utilisateur */
