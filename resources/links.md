@@ -728,6 +728,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 ## SQL et MySQL
 
 - <https://sqlbolt.com/> Apprendre SQL de manière interactive
+- <https://www.sqlnoir.com> Apprendre SQL par un jeu d'enquête
 - <https://sqlpd.com/> Apprendre SQL en jouant (une enquête)
 - <https://mystery.knightlab.com/> Apprendre en résolvant un mystère
 - <https://dbdiagram.io/> Éditeur de modèles et diagrammes en ligne
