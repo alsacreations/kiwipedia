@@ -463,6 +463,8 @@ Tous les champs doivent être correctement liés à leur étiquette associée (`
 </form>
 ```
 
+🔖 <https://access42.net/formulaires-etiquettes-label-accessibles/>
+
 #### Mention obligatoire
 
 Lorsqu'un champ est obligatoire, il doit être :
