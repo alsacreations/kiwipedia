@@ -31,7 +31,7 @@ Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacre
 | ------- | ---- |
 | main    | code en production (= en ligne sur le serveur d'hébergement) |
 | develop | développements en cours avant d’être fusionnés dans main |
-| feature/*nomfeature* | développement d'une fonctionnalité, à partir de develop |
+| feat/*nomfeature* | développement d'une fonctionnalité, à partir de develop |
 | fix/*nomfix* | correction de bug |
 
 Schéma :
@@ -44,12 +44,12 @@ gitGraph
    checkout develop
    commit
    commit
-   branch feature/something
-   checkout feature/something
+   branch feat/something
+   checkout feat/something
    commit
    commit
    checkout develop
-   merge feature/something
+   merge feat/something
    commit
    branch fix/something
    checkout fix/something
