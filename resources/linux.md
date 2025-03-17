@@ -653,6 +653,9 @@ Devices de bloc (disques durs) et leurs points de montage
 Avec arborescence et types de systèmes de fichiers
 `lsblk -f`
 
+Avec modèle, type de branchement
+`lsblk -o NAME,MODEL,TRAN,TYPE,MOUNTPOINT`
+
 Tous les UUID
 `blkid`
 
