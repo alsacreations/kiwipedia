@@ -304,7 +304,7 @@ Dans le cas où on utilise un thème acheté et que les fichiers PHP ne sont pas
 
 ### Compositions de blocs
 
-TODO:
+🔖 Voir [Les compositions de blocs](https://fr.wordpress.org/support/article/block-pattern/) et [Block patterns](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-patterns/)
 
 ## Accessibilité
 
