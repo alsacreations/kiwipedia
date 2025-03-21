@@ -103,15 +103,16 @@ Liste non exhaustive, voir <https://docs.docker.com/engine/reference/builder/>.
 
 ## Ressources et bonnes pratiques
 
-* [Recommandations de sécurité relatives au déploiement de conteneurs Docker | Agence nationale de la sécurité des systèmes d'information](https://www.ssi.gouv.fr/guide/recommandations-de-securite-relatives-au-deploiement-de-conteneurs-docker/)
+* [Recommandations de sécurité relatives au déploiement de conteneurs Docker | Agence nationale de la sécurité des systèmes d'information](https://cyber.gouv.fr/publications/recommandations-de-securite-relatives-au-deploiement-de-conteneurs-docker)
+* [Awesome Self-Host Docker](https://github.com/hotheadhacker/awesome-selfhost-docker) : liste de projets à déployer soi-même avec docker-compose.
+* OWASP cheatsheet <https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html>
+* Cheatsheet Quickref <https://quickref.me/docker>
 * <https://blog.gitguardian.com/how-to-improve-your-docker-containers-security-cheat-sheet/>
-* <https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html>
 * <https://www.viget.com/articles/local-docker-best-practices/>
-* <https://betterprogramming.pub/docker-best-practices-and-anti-patterns-e7cbccba4f19>
+* <https://medium.com/better-programming/docker-best-practices-and-anti-patterns-e7cbccba4f19>
 * <https://github.com/FuriKuri/docker-best-practices>
-* <https://snyk.io/blog/10-docker-image-security-best-practices/>
+* <https://snyk.io/fr/blog/10-docker-image-security-best-practices/>
 * <https://www.panoptica.app/research/7-ways-to-escape-a-container>
-* <https://quickref.me/docker>
 * <https://enix.io/fr/blog/cherie-j-ai-retreci-docker-part1/>
 * <https://medium.com/@remyc/comprendre-docker-dockerfile-et-docker-compose-f21fe4ba22cb>
 * <https://code.visualstudio.com/remote/advancedcontainers/develop-remote-host#_connect-using-docker-contexts> Développer en remote avec vscode dans un container (⚠️ vérifier que cela ne persiste pas pour les autres projets car sinon cela pourrait écraser des conteneurs sur le serveur)
