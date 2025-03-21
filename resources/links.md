@@ -456,10 +456,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 ### Images libres (ou pas)
 
 - <https://www.stickpng.com/> (PNG transparents)
-- <https://pngdb.com/> (PNG transparents)
-- <https://www.pinpng.com> (PNG transparents)
 - <https://www.stockio.com/>
-- <https://visualhunt.com/> (CC)
 - <https://stocksnap.io/> (CC0)
 - <https://www.pexels.com/>
 - <https://fr.freepik.com/> (vectoriel libre de droits / commercial avec mention)
@@ -467,11 +464,9 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://www.vecteezy.com/> (vectoriel)
 - <https://picography.co/>
 - <https://unsplash.com/>
-- <https://www.freelyphotos.com/>
 - <https://gratisography.com/>
 - <https://kaboompics.com/>
 - <https://pixabay.com/editors_choice/>
-- <https://realisticshots.com/>
 - <https://freenaturestock.com/>
 - <https://jaymantri.com/> (CC0 photographe)
 - <https://nos.twnsnd.co/> (vintage)
