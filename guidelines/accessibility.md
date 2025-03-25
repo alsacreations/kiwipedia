@@ -209,29 +209,28 @@ Voici le lien d'évitement employé au sein du [Design System du W3C](https://de
 
 ```css
 .skip-link {
-  background-color: #f9dc4a;
-  border: solid 3px #000;
-  color: #000;
   padding: 0.625em 0.9375em;
+  border: solid 3px #000000;
+  background-color: #f9dc4a;
+  color: #000000;
   text-decoration: none;
 }
-.skip-link:not(:focus):not(:active) {
-  border: 0;
-  clip: rect(0 0 0 0);
-  -webkit-clip-path: inset(100%);
-  clip-path: inset(100%);
-  height: 1px;
-  overflow: hidden;
-  padding: 0;
+
+.skip-link:not(:focus, :active) {
   position: absolute;
-  white-space: nowrap;
   width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  white-space: nowrap;
+  clip-path: inset(50%);
 }
+
 .skip-link:focus {
-  left: 0;
   position: absolute;
+  z-index: 9999;
   top: 0;
-  z-index: 999;
+  left: 0;
 }
 ```
 
