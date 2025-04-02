@@ -203,11 +203,18 @@ Privilégier au maximum la conception propre et ergonomique de formulaires avec 
 
 ## Images
 
-- Utiliser des formats d'images modernes et plus légers (**AVIF en priorité**, WebP en alternative).
-- Toujours indiquer les dimensions initiales de l'image (`width` et `height`) dans le HTML pour que le navigateur puisse calculer le **ratio** et éviter des Layout Shifts.
-- `max-width: 100%` pour que l'image s'adapte en largeur à son conteneur (images fluides).
-- `height: auto` pour que le navigateur applique le ratio systématiquement.
-- `background-color` sur l'image pour indiquer visuellement l'espace qui sera occupé quand elle sera chargée (placeholder).
+- SVG à optimiser via [SVGOMG](https://jakearchibald.github.io/svgomg/).
+- Bitmaps à compresser via [Squoosh](https://squoosh.app/)&#8239;:
+  - ✅ Format `.avif` préférentiellement (photos, captures d'écran riches)&#8239;: qualité AVIF recommandée : entre 60 et 85 (bien vérifier le rendu acceptable).
+  - ✅ Format `.webp` en mode "lossless" pour les schémas précis sans perte de qualité.
+  - ❌ Pas de `.jpg` ni `.png` sauf si l'ensemble poids/qualité est meilleur qu'en `avif` et qu'une re-compression dégraderait cette qualité.
+  - Largeur suggérée&#8239;:
+    - 2000px pour les images en pleine largeur de page,
+    - 1200px pour les images qui occupent la moitié de page,
+    - 800px pour les images en cards/zoom qui occupent le tiers de page.
+- Systématiquement ajouter les attributs `width` et `height` sur les images (avec leurs dimensions réelles) pour que le navigateur puisse calculer le **ratio** et éviter des Layout Shifts.
+- Option&#8239;: ajouter les attributs `loading="lazy"` si l'image est placée en milieu ou fin de page.
+- Option&#8239;: ajouter `decoding="async"` sur les formats `.avif` et `.webp`.
 
 ### Code recommandé
 
@@ -225,6 +232,7 @@ Privilégier au maximum la conception propre et ergonomique de formulaires avec 
 ```
 
 ```css
+/* dans un reset */
 img {
   max-width: 100%; /* largeur fluide */
   height: auto; /* ratio préservé */
