@@ -55,7 +55,8 @@ On ne versionne **pas** (voir fichiers .gitignore) :
 
 #### Outils de vérification (linters)
 
-La liste des linters recommandés est décrite par les [guidelines Visual Studio Code](../resources/vscode.md), dont eslint pour JavaScript.
+La liste des [linters globaux recommandés](https://github.com/alsacreations/kiwipedia/blob/main/starters/project-init.md#3-linter-formatters-et-correcteurs)
+
 Les extensions spécifiques WordPress / PHP recommandées sont :  
 
 - [PHP Intelephense](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client)
