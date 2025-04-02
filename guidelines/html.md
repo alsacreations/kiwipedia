@@ -203,24 +203,38 @@ Privilégier au maximum la conception propre et ergonomique de formulaires avec 
 
 ## Images
 
-- SVG à optimiser via [SVGOMG](https://jakearchibald.github.io/svgomg/).
-- Bitmaps à compresser via [Squoosh](https://squoosh.app/)&#8239;:
-  - ✅ **Format `.avif` préférentiellement** (photos, captures d'écran riches)&#8239;: qualité AVIF recommandée : entre 60 et 85 (bien vérifier le rendu acceptable).
-  - ✅ Format `.webp` en mode "lossless" pour les schémas précis sans perte de qualité.
-  - ❌ Pas de `.jpg` ni `.png` sauf si l'ensemble poids/qualité est meilleur qu'en `avif` et qu'une re-compression dégraderait cette qualité.
-  - Largeur suggérée&#8239;:
-    - 2000px pour les images en pleine largeur de page,
-    - 1200px pour les images qui occupent la moitié de page,
-    - 800px pour les images en cards/zoom qui occupent le tiers de page.
-- Systématiquement **ajouter les attributs `width` et `height`** sur les images (avec leurs dimensions réelles) pour que le navigateur puisse calculer le ratio et éviter des Layout Shifts.
+### SVG
+
+Les imgages au format SVG sont à optimiser via [SVGOMG](https://jakearchibald.github.io/svgomg/).
+
+### Bitmaps
+
+Les images bitmaps (non vectorielles) sont à compresser via [Squoosh](https://squoosh.app/).
+
+- ✅ **Format `.avif` préférentiellement** (photos, captures d'écran riches)&#8239;: qualité AVIF recommandée : entre 60 et 85 (bien vérifier le rendu acceptable).
+- ✅ Format `.webp` en mode "lossless" pour les schémas précis sans perte de qualité.
+- ❌ Pas de `.jpg` ni `.png` sauf si l'ensemble poids/qualité est meilleur qu'en `avif` et qu'une re-compression dégraderait cette qualité.
+- Largeur suggérée&#8239;:
+- 2000px pour les images en pleine largeur de page,
+- 1200px pour les images qui occupent la moitié de page,
+- 800px pour les images en cards/zoom qui occupent le tiers de page.
+
+👉 Systématiquement **ajouter les attributs `width` et `height`** sur les images (avec leurs dimensions réelles) pour que le navigateur puisse calculer le ratio et éviter des Layout Shifts.
+
 - Option&#8239;: ajouter les attributs `loading="lazy"` si l'image est placée en milieu ou fin de page.
 - Option&#8239;: ajouter `decoding="async"` sur les formats `.avif` et `.webp`.
+
+Autres outils d'optimisation :
+
+- En ligne de commande : [Sharp](https://sharp.pixelplumbing.com) (JPEG, PNG, WebP, GIF, AVIF)
+- MacOS uniquement (opensource) : [Image Optimizer](<<https://github.com/antonreshetov/image-optimizer>) très facile par drag&drop et traitement par lot (PNG, JPEG, GIF, SVG) ou <https://imageoptim.com/fr>
+- AVIF en ligne de commande : [Avif-CLI](https://github.com/lovell/avif-cli)
 
 ### Code recommandé
 
 ```html
 <!-- Format unique (avif) -->
-<img src="kiwi.avif" alt="kiwi" decoding="async" loading="lazy" 
+<img src="kiwi.avif" alt="Un kiwi en tutu" decoding="async" loading="lazy" 
        width="1024" height="768">
 
 <!-- Formats avif + webp en alternative -->
@@ -240,16 +254,6 @@ img {
 }
 ```
 
-### Outils d'optimisation d'images
-
-- Multi-formats :
-  - En ligne, et recommandé en général : [Squoosh](https://squoosh.app/) avec aperçu avant/après, redimensionnement, autres options (PNG, JPEG, WebP, AVIF)
-  - En ligne de commande : [Sharp](https://sharp.pixelplumbing.com) (JPEG, PNG, WebP, GIF, AVIF)
-  - MacOS uniquement (opensource) : [Image Optimizer](<<https://github.com/antonreshetov/image-optimizer>) très facile par drag&drop et traitement par lot (PNG, JPEG, GIF, SVG) ou <https://imageoptim.com/fr>
-- SVG :[SVGOMG (conseillé)](https://jakearchibald.github.io/svgomg/)
-- AVIF :
-  - [Avif-CLI](https://github.com/lovell/avif-cli) en ligne de commande
-
 ## Vidéo
 
 On privilégie la balise `<video>` avec au moins une source MP4 par défaut. Sur Safari (macOS, iOS) on observe les [recommandations d'Apple pour la vidéo](https://developer.apple.com/documentation/webkit/delivering_video_content_for_safari/), par exemple l'attribut `playsinline` pour ne pas bloquer la lecture automatique.
@@ -257,7 +261,7 @@ On privilégie la balise `<video>` avec au moins une source MP4 par défaut. Sur
 ### Outils d'optimisation vidéo et audio
 
 - [Handbrake](https://handbrake.fr/)
-- [Audacity](https://www.audacityteam.org/)
+- [Audacity](https://tenacityaudio.org/)
 
 ## Microdata et données structurées
 
