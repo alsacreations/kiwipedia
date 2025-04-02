@@ -205,14 +205,14 @@ Privilégier au maximum la conception propre et ergonomique de formulaires avec 
 
 - SVG à optimiser via [SVGOMG](https://jakearchibald.github.io/svgomg/).
 - Bitmaps à compresser via [Squoosh](https://squoosh.app/)&#8239;:
-  - ✅ Format `.avif` préférentiellement (photos, captures d'écran riches)&#8239;: qualité AVIF recommandée : entre 60 et 85 (bien vérifier le rendu acceptable).
+  - ✅ **Format `.avif` préférentiellement** (photos, captures d'écran riches)&#8239;: qualité AVIF recommandée : entre 60 et 85 (bien vérifier le rendu acceptable).
   - ✅ Format `.webp` en mode "lossless" pour les schémas précis sans perte de qualité.
   - ❌ Pas de `.jpg` ni `.png` sauf si l'ensemble poids/qualité est meilleur qu'en `avif` et qu'une re-compression dégraderait cette qualité.
   - Largeur suggérée&#8239;:
     - 2000px pour les images en pleine largeur de page,
     - 1200px pour les images qui occupent la moitié de page,
     - 800px pour les images en cards/zoom qui occupent le tiers de page.
-- Systématiquement ajouter les attributs `width` et `height` sur les images (avec leurs dimensions réelles) pour que le navigateur puisse calculer le **ratio** et éviter des Layout Shifts.
+- Systématiquement **ajouter les attributs `width` et `height`** sur les images (avec leurs dimensions réelles) pour que le navigateur puisse calculer le ratio et éviter des Layout Shifts.
 - Option&#8239;: ajouter les attributs `loading="lazy"` si l'image est placée en milieu ou fin de page.
 - Option&#8239;: ajouter `decoding="async"` sur les formats `.avif` et `.webp`.
 
