@@ -6,6 +6,8 @@ Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacre
 
 **Sauf contre-indication (client, projet historique) nous intégrons nos projets en CSS Vanilla**.
 
+<!-- markdownlint-disable MD036 -->
+
 ## Sommaire
 
 - [Guidelines : CSS](#guidelines-css)
@@ -428,6 +430,68 @@ Le bouton de theme modifie l'attribut `data-theme` sur `html`, on s'en servira c
 ```
 
 **La fonction `light-dark()` vue dans la partie précédente sera parfaitement adaptée là aussi pour gérer dynamiquement les couleurs quel que soit le mode adopté (préférences système ou choix manuel utilisateur).**
+
+**Dark Mode et SVG inline** :
+
+- De manière générale utiliser `currentcolor` pour les couleurs des `stroke` et `fill` des SVG inline. Cela permet de s'adapter automatiquement à la valeur de `color` du parent.
+- Utiliser `light-dark()` pour pour appliquer des couleurs spécifiques au SVG sans être dépendant de la couleur du parent. Ex. `fill: light-dark(var(--couleur-light), var(--couleur-dark));`
+
+**Dark Mode et SVG externe (on peut toucher au SVG)** :
+
+Ajouter un élément `<style>` dans le SVG pour appliquer les styles CSS suivants (ici la classe `.path` a été ajoutée à l'élément dont la couleur doit s'adapter)&#8239;:
+
+```xml
+<svg width="" height="" viewBox="" fill="none">
+  <style>
+    @media (prefers-color-scheme: dark) {
+      .path {
+        fill: white; /* valeur en dur ou currentcolor */
+      }
+    }
+    [data-theme="dark"] .path {
+      fill: white;
+    }
+  </style>
+  <path class="path" d="" fill="black" />
+</svg>
+```
+
+**Dark Mode et SVG externe (on ne peut pas toucher au SVG)** :
+
+Il est possible d'appliquer un masque CSS sur une image externe (le rendu final sera monochrome)&#8239;:
+
+```html
+<span class="icon"></span>
+```
+
+```css
+.icon {
+  --svg: url("images/burger.svg");
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  background-color: currentColor;
+  mask: var(--svg) no-repeat center;
+  mask-size: contain;
+}
+```
+
+**Dark Mode et `::selection`** :
+
+- Les custom properties CSS ne sont pas supportées dans `::selection` donc il faut définir les couleurs en dur.
+- `light-dark()` n'est pas supporté, il faut une media query ou un `[data-theme=dark]`.
+- L'imbrication (nesting) n'est pas supportée (on ne peut pas `[data-theme=dark] & {}`).
+
+Ce qui fonctionne :
+
+```css
+::selection {
+  background-color: pink;
+}
+[data-theme="dark"] ::selection {
+  background-color: hotpink;
+}
+```
 
 ## Polices (fonts)
 
