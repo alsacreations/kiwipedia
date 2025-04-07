@@ -461,7 +461,7 @@ Ajouter un élément `<style>` dans le SVG pour appliquer les styles CSS suivant
 Il est possible d'appliquer un masque CSS sur une image externe (le rendu final sera monochrome)&#8239;:
 
 ```html
-<span class="icon"></span>
+<span class="icon icon-cart"></span>
 ```
 
 ```css
