@@ -95,8 +95,12 @@ Imbrication de deux types
 
 * <https://backlinko.com/google-ranking-factors> Liste des facteurs de référencement
 * [Google Search Central](https://developers.google.com/search/docs?hl=fr)
-* [Google Search : robots.txt](https://developers.google.com/search/blog/2025/02/intro-robots-refresher?hl=fr)
 * [Google Search Essentials](https://developers.google.com/search/docs/essentials?hl=fr)
 * [Google : Mises à jour du classement dans les résultats de recherche](https://developers.google.com/search/updates/ranking)
 * [Google : Dynamic rendering](https://developers.google.com/search/docs/advanced/javascript/dynamic-rendering)
 * [IndexNow](https://www.indexnow.org/)
+
+### Robots.txt
+
+* [Google Search : robots.txt](https://developers.google.com/search/blog/2025/02/intro-robots-refresher?hl=fr)
+* [Google Search : Granularité au niveau de la page](https://developers.google.com/search/blog/2025/03/robots-refresher-page-level?hl=fr)
