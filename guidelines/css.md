@@ -466,13 +466,19 @@ Il est possible d'appliquer un masque CSS sur une image externe (le rendu final 
 
 ```css
 .icon {
-  --svg: url("images/burger.svg");
+  /* Dimension des icônes */
   display: inline-block;
   width: 200px;
   height: 200px;
+  /* Couleur des icônes */
   background-color: currentColor;
+  /* Masque SVG */
   mask: var(--svg) no-repeat center;
   mask-size: contain;
+}
+
+.icon-cart {
+  --svg: url("cart.svg");
 }
 ```
 
