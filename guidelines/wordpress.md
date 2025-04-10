@@ -391,6 +391,8 @@ Dans le cas où on utilise un thème acheté et que les fichiers PHP ne sont pas
 - Surveiller si le thème / les extensions utilisées font l'objet d'une faille sur [wpscan](https://wpscan.com/)
 - Ajouter le script pour enlever l'avertissement à la connexion qui permet d'indiquer que l'identifiant est le bon mais pas le mot de passe.
 
+🔖 [Prévenir les injections SQL](https://www.smashingmagazine.com/2025/03/how-prevent-wordpress-sql-injection-attacks/)
+
 ## Performance
 
 👉 Mettre en place une extension de cache/compression/minification (voir extensions).
