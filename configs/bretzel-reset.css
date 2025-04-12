@@ -37,6 +37,15 @@ body {
   text-rendering: optimizespeed;
 }
 
+/* On supprime les styles des listes ayant une class (version accessible) */
+:where(ol, ul)[class] {
+  padding-left: 0;
+
+  & > li::marker {
+    content: "";
+  }
+}
+
 /* On évite les débordements d'éléments */
 img,
 table,
@@ -94,6 +103,11 @@ a:not([class]) {
   text-decoration-skip-ink: auto;
 }
 
+/* On supprime les marges */
+figure {
+  margin: 0;
+}
+
 /* On change ces éléments en block */
 img,
 svg,
@@ -106,7 +120,7 @@ object {
   display: block;
 }
 
-/* On harmonise des différences entre navigateurs */
+/* On stylise les formulaires */
 input,
 button,
 textarea,
@@ -145,6 +159,7 @@ label {
 
 button {
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 textarea {
@@ -171,21 +186,20 @@ pre {
 }
 
 /* On stylise les SVG */
+svg:not([fill]) {
+  fill: currentcolor;
+}
 
 svg {
   overflow: visible;
+}
 
-  &:has(symbol) {
-    display: none;
-  }
+svg * {
+  transform-box: fill-box;
+}
 
-  &:not([fill]) {
-    fill: currentcolor;
-  }
-
-  & * {
-    transform-box: fill-box;
-  }
+svg:has(symbol) {
+  display: none;
 }
 
 /* On corrige des styles ARIA */
@@ -204,11 +218,11 @@ svg {
 
 [aria-hidden="false"][hidden] {
   display: revert;
+}
 
-  &:not(:focus) {
-    position: absolute;
-    clip: rect(0, 0, 0, 0);
-  }
+[aria-hidden="false"][hidden]:not(:focus) {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
 }
 
 /* On désactive les animations selon les préférences utilisateur */
