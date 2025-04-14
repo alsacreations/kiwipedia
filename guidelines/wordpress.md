@@ -373,7 +373,7 @@ Dans le cas où on utilise un thème acheté et que les fichiers PHP ne sont pas
 - [Relevanssi](https://wordpress.org/plugins/relevanssi/) : améliore les résultats de recherche par critères de pertinence.
 - [Multiple Domain Mapping on Single Site](https://fr.wordpress.org/plugins/multiple-domain-mapping-on-single-site/) pour faire correspondre différentes Pages (d'accueil) à plusieurs domaines ou sous-domaines.
 - [Advanced Editor Tools](https://wordpress.org/plugins/tinymce-advanced/) ajoute un bloc "paragraphe classique" à Gutenberg.
-- [Layout Grid Block](https://wordpress.org/plugins/layout-grid/) ajoute une grille de mise en page (en colonnes), avec gestion de breakpoints.
+- [Layout Grid Block](https://wordpress.org/plugins/layout-grid/) ajoute une grille de mise en page (en colonnes), avec gestion de breakpoints ; n'est plus maintenu suite au FSE.
 - [Mailpoet](https://wordpress.org/plugins/mailpoet/) solution de newsletter, campagne e-mailing, avec templates et support optionnel de WooCommerce.
 
 ### E-commerce
