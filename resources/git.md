@@ -104,6 +104,12 @@ L’option `--amend` permet de modifier le dernier message de commit, ensuite il
 git commit --amend
 ```
 
+## Stash
+
+Met "de côté" les fichiers en cours de modification pour les réappliquer plus tard.
+
+💡 Il y a _mieux_ avec `git worktree` : "I was wrong about git stash..." <https://youtu.be/ntM7utSjeVU>
+
 ## Push
 
 Envoie les derniers commits sur le dépôt distant s’il est configuré, dans la branche active
