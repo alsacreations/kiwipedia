@@ -616,6 +616,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://www.perf.rocks/> Plein de ressources
 - <https://www.smashingmagazine.com/2021/01/front-end-performance-2021-free-pdf-checklist/>
 - <https://csswizardry.com/2019/03/cache-control-for-civilians/> Maîtriser Cache-control
+- <https://www.youtube.com/watch?v=mSMb-aH6sUw> Caching demystified: Inspect, clear, and disable caches
 - <https://web.dev/measure>
 - <https://gtmetrix.com/>
 - <https://www.webpagetest.org/>
