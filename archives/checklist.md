@@ -1,4 +1,3 @@
-
 # Checklist
 
 Liste de bonnes pratiques et points à prendre en compte avant/durant/après l'élaboration d'un projet web.

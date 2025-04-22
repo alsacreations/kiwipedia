@@ -14,7 +14,7 @@ Kiwipedia est une base de connaissance technique librement partagée, fruit de n
 Les thématiques suivantes sont **au c&oelig;ur de notre activité** d'agence web spécialisée dans l'accessibilité, il est absolument indispensable de respecter les bonnes pratiques qui y sont préconisées et de s'y référer aussi souvent que possible&#8239;:
 
 - [**Conventions Générales de Nommage**](guidelines/naming-conventions.md)
-- [**Ressource Visual Studio Code**](resources/vscode.md)
+- [**Visual Studio Code**](guidelines/vscode.md)
 - [**Guidelines HTML**](guidelines/html.md)
 - [**Guidelines CSS**](guidelines/css.md)
 - [**Guidelines JavaScript**](guidelines/javascript.md)
@@ -34,7 +34,7 @@ Ces bonnes pratiques couvrent l'ensemble des domaines auxquels une agence web es
 - [**Guidelines Sécurité HTTP**](guidelines/http-security.md)
 - [**Guidelines Webdesign**](guidelines/webdesign.md)
 - [**Guidelines E-mailing**](guidelines/e-mailing.md)
-- [**Guidelines Icones**](guidelines/icons.md)
+- [**Guidelines Icônes**](guidelines/icons.md)
 - [**Guidelines Git**](guidelines/git.md)
 
 ## Selon typologie de projet
@@ -57,16 +57,19 @@ Tutoriels rapides pour démarrer des projets.
 - [Fichiers de configuration utiles](https://github.com/alsacreations/kiwipedia/tree/main/configs) (lien GitHub)
 - [Modèle de fichier readme](configs/README.md)
 
-## Ressources et pense-bêtes (cheatsheets)
+## Pense-bêtes (cheatsheets)
 
-- [**Pense-Bête Flexbox**](resources/flexbox-cheatsheet.png)
-- [**Pense-Bête Grid Layout**](resources/grid-cheatsheet.png)
-- [**Cheatsheet Linux**](resources/linux.md)
-- [**Cheatsheet Docker**](resources/docker.md)
-- [**Cheatsheet htaccess**](resources/htaccess.md)
-- [**Cheatsheet git**](resources/git.md)
-- [**Cheatsheet NPM**](resources/npm.md)
-- [**Ressources et liens utiles**](resources/links.md)
+- [**Cheatsheet Flexbox**](cheatsheets/flexbox-cheatsheet.png)
+- [**Cheatsheet Grid Layout**](cheatsheets/grid-cheatsheet.png)
+- [**Cheatsheet Linux**](cheatsheets/linux.md)
+- [**Cheatsheet Docker**](cheatsheets/docker.md)
+- [**Cheatsheet htaccess**](cheatsheets/htaccess.md)
+- [**Cheatsheet git**](cheatsheets/git.md)
+- [**Cheatsheet NPM**](cheatsheets/npm.md)
+
+## Divers
+
+- [**Ressources et liens utiles**](archives/links.md)
 
 ## Licence
 
