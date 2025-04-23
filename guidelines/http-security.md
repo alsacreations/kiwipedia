@@ -99,7 +99,7 @@ Pour tout bloquer : `no-referrer`. Autres valeurs possibles : `no-referrer-when-
 Header set Referrer-Policy "strict-origin-when-cross-origin"
 ```
 
-Voir aussi <https://developer.mozilla.org/fr/docs/Web/HTTP/Headers/Referrer-Policy>
+🔖 Voir aussi <https://developer.mozilla.org/fr/docs/Web/HTTP/Headers/Referrer-Policy>
 
 ### Permissions Policy
 
@@ -114,7 +114,7 @@ Remplace _Feature-Policy_, débloque/bloque les API avancées telles que la géo
 Header set Permissions-Policy "fullscreen=(*), geolocation=(self), autoplay=(self), display-capture=(self), accelerometer=(), battery=(), camera=(), web-share=()"
 ```
 
-Voir aussi <https://www.w3.org/TR/permissions-policy-1/> et <https://github.com/w3c/webappsec-permissions-policy/blob/main/permissions-policy-explainer.md>
+🔖 Voir aussi <https://www.w3.org/TR/permissions-policy-1/> et <https://github.com/w3c/webappsec-permissions-policy/blob/main/permissions-policy-explainer.md>
 
 ---
 
@@ -144,7 +144,7 @@ Définit quand envoyer (ou non) un cookie. Avec `SameSite=Strict` le cookie ne s
 Header always edit Set-Cookie (.*) "$1; SameSite=Lax"
 ```
 
-Voir aussi <https://developer.mozilla.org/fr/docs/Web/HTTP/Headers/Set-Cookie/SameSite> et <https://web.dev/samesite-cookies-explained/>
+🔖 Voir aussi <https://developer.mozilla.org/fr/docs/Web/HTTP/Headers/Set-Cookie/SameSite> et <https://web.dev/samesite-cookies-explained/>
 
 ---
 
@@ -161,13 +161,13 @@ Permet au navigateur de vérifier que le fichier externe chargé par `<script>` 
 * Attention à regénérer un hash et à le modifier dans l'attribut si le fichier est régulièrement compilé/minifié automatiquement.
 * Pour le calcul manuel on pourra s'aider de <https://www.srihash.org/> ou <https://zinoui.com/tools/sri-generator>
 
-Voir aussi <https://developer.mozilla.org/fr/docs/Web/Security/Subresource_Integrity>
+🔖 Voir aussi <https://developer.mozilla.org/fr/docs/Web/Security/Subresource_Integrity>
 
 ### CSP (Content-Security-Policy)
 
 Définit précisément quels contenus (images, styles, scripts, etc), peuvent être chargés ou exécutés sur la page en fonction de leur origine/destination. Il est recommandé de partir d'un ensemble restrictif et d'ouvrir aux exceptions.
 
-Voir aussi <https://developer.mozilla.org/fr/docs/Web/HTTP/Headers/Content-Security-Policy>.
+🔖 Voir aussi <https://developer.mozilla.org/fr/docs/Web/HTTP/Headers/Content-Security-Policy>.
 
 Exemple **à adapter absolument**
 
@@ -187,6 +187,8 @@ Header set Content-Security-Policy "default-src 'self' *.example.org; script-src
 * `base-uri 'none'` restreint les URL qui peuvent être utilisées comme valeur d'un élément `<base>`.
 * `form-action 'self'` ne permet la validation de formulaires (attribut `<form action="...">`) que sur l'origine elle-même.
 * Pour les images, `data:` autorise aussi les contenus _inline_ (ex : `src='data:image/jpeg;base64, ...`).
+
+L'extension Firefox [Laboratory Content Security Policy / CSP Toolkit](https://addons.mozilla.org/en-US/firefox/addon/laboratory-by-mozilla/) aide à générer des en-têtes CSP appropriés en enregistrant la navigation sur un site.
 
 #### Script nonce
 
@@ -211,7 +213,7 @@ Fait partie de Cross-origin Resource Sharing et indique quelle origine peut acc�
 * Soit toutes avec `*`.
 * Soit une seule origine précise (il n'est pas possible d'en indiquer plusieurs, ce qui peut être parfois problématique).
 
-Voir aussi <https://developer.mozilla.org/fr/docs/Web/HTTP/CORS> et <https://developer.mozilla.org/fr/docs/Web/HTTP/Headers/Access-Control-Allow-Origin>.
+🔖 Voir aussi <https://developer.mozilla.org/fr/docs/Web/HTTP/CORS> et <https://developer.mozilla.org/fr/docs/Web/HTTP/Headers/Access-Control-Allow-Origin>.
 
 Tout autoriser :
 
