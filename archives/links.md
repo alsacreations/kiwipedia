@@ -754,6 +754,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://kinopio.club> Brainstorming / mindmap
 - <https://www.markdowntutorial.com/fr/> Apprendre markdown
 - <https://mermaid.js.org/> Générer des graphiques/diagrammes divers à partir de markdown
+- <https://github.com/ztabs-official/markdown-to-slides> Markdown to slides
 
 ## Explication et relation client
 
