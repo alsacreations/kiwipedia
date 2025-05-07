@@ -174,10 +174,10 @@ Autres listes de ressources et checklists
 
 ### Container Queries
 
-- <https://www.joshwcomeau.com/css/container-queries-introduction/> Introduction aux container queries
+- <https://www.joshwcomeau.com/css/container-queries-introduction/> Introduction aux Container Queries
+- <https://www.joshwcomeau.com/css/container-queries-unleashed/> Container Queries unleashed
 - <https://ishadeed.com/article/css-container-query-guide/> Guide interactif aux Container Queries
 - <https://developer.mozilla.org/en-US/blog/getting-started-with-css-container-queries/> Container Queries par MDN
-- <https://github.com/GoogleChromeLabs/container-query-polyfill> Container Query Polyfill
 
 ### Retina et hdpi
 
