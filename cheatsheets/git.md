@@ -48,7 +48,7 @@ git checkout -b nomdelabranche origin/nomdelabranche
 
 ## Diff
 
-Affiche les différences dans le dossier de travail courant par rapport au dernier commit (ou d'autres commits).
+Affiche les différences dans le dossier de travail courant par rapport au dernier commit (ou d’autres commits).
 
 ```sh
 git diff
@@ -106,27 +106,64 @@ git commit --amend
 
 ## Push
 
-Envoie les derniers commits sur le dépôt distant s’il est configuré, dans la branche active
+Envoie les derniers commits sur le dépôt distant s’il est configuré, dans la branche active.
 
 ```sh
 git push
+
+# Forcer l'envoi (écrase l'historique distant, à utiliser avec prudence !)
+git push --force
+git push --force-with-lease # Alternative plus sûre à --force
+
+# Envoyer une nouvelle branche locale vers le dépôt distant et la lier
+git push --set-upstream origin nomdelabranche
+# Alias plus court
+git push -u origin nomdelabranche
 ```
 
 ## Pull
 
-Récupère les derniers commits du dépôt distant.
+Récupère les derniers commits du dépôt distant et fusionne (merge) ou rebase avec la branche locale.
 
 ```sh
-git pull
+git pull # Par défaut, utilise la stratégie de fusion configurée (merge ou rebase)
+
+# Récupère et rébase la branche courante sur la version distante
+# Cela maintient un historique plus linéaire
 git pull --rebase
+
+# On met automatiquement les modifications locales de côté (stash), puis on réapplique les modifications (stash apply).
+git pull --rebase --autostash
+```
+
+## Stash
+
+Met "de côté" (dans une pile) les fichiers en cours de modification (non commités) pour les retrouver/réappliquer par la suite. Utile avant de changer de branche, d'effectuer un pull, etc.
+
+```sh
+# Met de côté les modifications en cours
+git stash # ou avec un message descriptif avec -m "mon message de stash"
+
+# Réapplique le dernier stash (le plus récent) et le conserve dans la liste des stashs
+git stash apply
+
+# Supprime tous les stashs
+git stash clear
 ```
 
 ## Revert
 
-“Annule” un commit mais n’efface pas l’historique. Crée un nouveau commit résultant de l’annulation des changements introduits par le commit ancien que l’on souhaite annuler.
+“Annule” un commit spécifique en créant un nouveau commit qui inverse les changements introduits par le commit que l'on souhaite annuler. Cela n'efface pas l'historique, mais ajoute un nouveau commit.
 
 ```sh
+# Annule le dernier commit (HEAD)
 git revert HEAD
+
+# Annule un commit spécifique (remplacer <hash_du_commit> par le hash réel)
+git revert <hash_du_commit>
+
+# Annule le commit précédent HEAD (HEAD~1) sans ouvrir l'éditeur de message de commit immédiatement
+git revert --no-edit HEAD~1
 ```
 
 ## Reset

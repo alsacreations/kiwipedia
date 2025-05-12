@@ -108,7 +108,7 @@ git commit --amend
 
 Met "de côté" les fichiers en cours de modification pour les réappliquer plus tard.
 
-💡 Il y a _mieux_ avec `git worktree` : "I was wrong about git stash..." <https://youtu.be/ntM7utSjeVU>
+💡 Il y a _mieux_ avec `git worktree` : "I was wrong about git stash..." <https://youtu.be/ntM7utSjeVU>, "Stop using git stash" <https://www.youtube.com/shorts/otrVadWzM2Y>
 
 ## Push
 
