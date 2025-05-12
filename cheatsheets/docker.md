@@ -2,7 +2,7 @@
 
 Voir aussi <https://www.alsacreations.com/tuto/lire/1836-Docker--decouverte-et-environnement-LAMP-pour-WordPress.html> et <https://www.alsacreations.com/tuto/lire/1838-Docker-compose.html>
 
-## Commandes utiles
+## Commandes Docker utiles
 
 * Compiler un Dockerfile dans le dossier courant pour créer une image : `docker build -t <image:tag> .`
 * Compiler une image en conteneur et l'exécuter : `docker run --name <nomducontainer> <image:tag>` (+ voir autres options)
@@ -21,7 +21,26 @@ Voir aussi <https://www.alsacreations.com/tuto/lire/1836-Docker--decouverte-et-e
 * Mettre à jour une politique de redémarrage : `docker update --restart=unless-stopped <nomducontainer>`
 * Annuler le redémarrage auto sur tous les coneneurs : `docker update --restart=no $(docker ps -a -q)`
 
-### Ressources / espace disque / statistiques
+## Commandes Docker-compose utiles
+
+* Compiler et démarrer tous les conteneurs `docker compose -p <projet> up -d` (`-d` : "détache" en background pour rendre la main, `-p` : nom du projet sinon il utilise le nom du dossier courant)
+  * 🏗️ Ajouter `--build` pour forcer la recompilation de l'image d'après le fichier Dockerfile
+* Compiler sans démarrer les conteneurs `docker compose build` (en option ajouter le nom du service concerné, `--no-cache` pour éviter le cache)
+* Tout arrêter, supprimer les conteneurs, volumes et réseaux `docker compose -p <projet> down`
+* Stopper un service, le supprimer ainsi que ses volumes anonymes `docker compose rm -s -v <nom_du_service>`
+* Journaux `docker compose logs`
+* Statut des conteneurs `docker compose -p <projet> ps`
+* Liste des images utilisées `docker compose images`
+* Exécute une commande dans un conteneur `docker compose exec <service> <command>`
+* Arrêter et supprimer `docker compose rm --stop`
+* Arrêter `docker compose stop <service>`
+* Démarrer `docker compose start <service>`
+* Mettre en pause `docker compose pause <service>`
+* Reprendre `docker compose unpause <service>`
+* Visualiser la conf intégrant les variables d'env `docker compose convert`
+* Lister tous les projets démarrés à partir de compose `docker compose ls`
+
+## Ressources / espace disque / statistiques
 
 * Statistiques cpu/ram temps réel `docker stats`
 * Visualiser l'espace occupé `docker system df`
@@ -30,13 +49,9 @@ Voir aussi <https://www.alsacreations.com/tuto/lire/1836-Docker--decouverte-et-e
 * Nettoyer le _build cache_ `docker builder prune` / `docker buildx prune`
 * Nettoyer toutes les ressources système inutilisées `docker system prune`
 
-### Lancer un shell minimaliste
+## Lancer un shell minimaliste
 
-Télécharge et exécute immédiatement un shell dans un container "alpine" super-léger :
-
-```sh
-docker run -it alpine /bin/sh
-```
+Télécharge et exécute immédiatement un shell dans un container "alpine" super-léger : `docker run -it alpine /bin/sh`
 
 ### Inspection
 
@@ -117,26 +132,6 @@ Liste non exhaustive, voir <https://docs.docker.com/engine/reference/builder/>.
 * <https://enix.io/fr/blog/cherie-j-ai-retreci-docker-part1/>
 * <https://medium.com/@remyc/comprendre-docker-dockerfile-et-docker-compose-f21fe4ba22cb>
 * <https://code.visualstudio.com/remote/advancedcontainers/develop-remote-host#_connect-using-docker-contexts> Développer en remote avec vscode dans un container (⚠️ vérifier que cela ne persiste pas pour les autres projets car sinon cela pourrait écraser des conteneurs sur le serveur)
-
----
-
-## Docker-compose
-
-* Compiler et démarrer tous les conteneurs `docker-compose -p <projet> up -d` (`-d` : en background, `-p` : nom du projet sinon il utilise le nom du dossier courant)
-* Compiler sans démarrer les conteneurs `docker-compose build` (en option ajouter le nom du service concerné, `--no-cache` pour éviter le cache)
-* Tout arrêter, supprimer les conteneurs, volumes et réseaux `docker-compose -p <projet> down`
-* Stopper un service, le supprimer ainsi que ses volumes anonymes `docker-compose rm -s -v <nom_du_service>`
-* Journaux `docker-compose logs`
-* Statut des conteneurs `docker-compose -p <projet> ps`
-* Liste des images utilisées `docker-compose images`
-* Exécute une commande dans un conteneur `docker-compose exec <service> <command>`
-* Arrêter et supprimer `docker-compose rm --stop`
-* Arrêter `docker-compose stop <service>`
-* Démarrer `docker-compose start <service>`
-* Mettre en pause `docker-compose pause <service>`
-* Reprendre `docker-compose unpause <service>`
-* Visualiser la conf intégrant les variables d'env `docker compose convert`
-* Lister tous les projets démarrés à partir de compose `docker compose ls`
 
 ---
 
