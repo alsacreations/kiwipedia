@@ -203,13 +203,18 @@ Privilégier au maximum la conception propre et ergonomique de formulaires avec 
 
 ## Images
 
-### SVG
+👉 Systématiquement **ajouter les attributs `width` et `height`** sur les images (avec leurs dimensions réelles) pour que le navigateur puisse calculer le ratio et éviter des _Layout Shifts_.
+
+- Option&#8239;: ajouter les attributs `loading="lazy"` si l'image est placée en milieu ou fin de page.
+- Option&#8239;: ajouter `decoding="async"` sur les formats `.avif` et `.webp`.
+
+### Optimisation SVG
 
 Les imgages au format SVG sont à optimiser via [SVGOMG](https://jakearchibald.github.io/svgomg/).
 
-### Bitmaps
+### Optimisation Bitmaps
 
-Les images bitmaps (non vectorielles) sont à compresser via [Squoosh](https://squoosh.app/).
+Les images bitmaps (non vectorielles) sont systématiquement à optimiser/compresser. Si l'optimisation est manuelle, nous utilisons l'outil en ligne [Squoosh](https://squoosh.app/).
 
 - ✅ **Format `.avif` préférentiellement** (photos, captures d'écran riches)&#8239;: qualité AVIF recommandée : entre 60 et 85 (bien vérifier le rendu acceptable).
 - ✅ Format `.webp` en mode "lossless" pour les schémas précis sans perte de qualité.
@@ -219,19 +224,18 @@ Les images bitmaps (non vectorielles) sont à compresser via [Squoosh](https://s
 - 1200px pour les images qui occupent la moitié de page,
 - 800px pour les images en cards/zoom qui occupent le tiers de page.
 
-👉 Systématiquement **ajouter les attributs `width` et `height`** sur les images (avec leurs dimensions réelles) pour que le navigateur puisse calculer le ratio et éviter des Layout Shifts.
+Autres outils d'optimisation (automatisation et traitement par lot)&#8239;:
 
-- Option&#8239;: ajouter les attributs `loading="lazy"` si l'image est placée en milieu ou fin de page.
-- Option&#8239;: ajouter `decoding="async"` sur les formats `.avif` et `.webp`.
-
-Autres outils d'optimisation :
-
-- [Squoosh multiple export](https://squoosh-multiple-export.vercel.app/), un fork de Squoosh qui traite les images par lot (AVIF, WebP, JPEG, PNG, GIF).
-- En ligne de commande : [Sharp](https://sharp.pixelplumbing.com) (AVIF, WebP, JPEG, PNG, GIF).
-- MacOS uniquement (opensource) :
-  - [Image Optimizer](https://github.com/antonreshetov/image-optimizer) très facile par drag&drop et traitement par lot (WebP, PNG, JPEG, GIF, SVG)
+- Dans un projet Vite, via [Vite Image Optimizer](https://www.npmjs.com/package/vite-plugin-image-optimizer) (AVIF, WebP, JPEG, PNG, SVG)&#8239;: permet de compresser les images au moment de la compilation.
+- Dans le navigateur&#8239;:
+  - [Squoosh multiple export](https://squoosh-multiple-export.vercel.app/) (AVIF, WebP, JPEG, PNG, GIF)&#8239;: un fork de Squoosh pour multiples images.
+  - [Clever Compress](https://clevercompress.com/) (AVIF, WebP, JPEG)&#8239;: Gratuit, RGPD.
+- En ligne de commande&#8239;:
+  - [Sharp](https://sharp.pixelplumbing.com) (AVIF, WebP, JPEG, PNG, GIF).
+  - AVIF en ligne de commande : [Avif-CLI](https://github.com/lovell/avif-cli) (AVIF)
+- MacOS uniquement (opensource)&#8239;:
+  - [Image Optimizer](https://github.com/antonreshetov/image-optimizer) (WebP, PNG, JPEG, GIF, SVG)&#8239;: très facile par drag&drop et traitement par lot
   - [ImageOptim](https://imageoptim.com/fr) (PNG, JPEG, GIF, SVG)
-- AVIF en ligne de commande : [Avif-CLI](https://github.com/lovell/avif-cli) (AVIF)
 
 ### Code recommandé
 
@@ -243,7 +247,7 @@ Autres outils d'optimisation :
 <!-- Formats avif + webp en alternative -->
 <picture>
   <source type="image/avif" srcset="kiwi.avif">
-  <img src="kiwi.webp" alt="kiwi" decoding="async" loading="lazy" 
+  <img src="kiwi.webp" alt="kiwi en tutu" decoding="async" loading="lazy" 
        width="1024" height="768">
 </picture>
 ```
