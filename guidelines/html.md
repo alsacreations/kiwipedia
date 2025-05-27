@@ -226,7 +226,12 @@ Les images bitmaps (non vectorielles) sont systématiquement à optimiser/compre
 
 Autres outils d'optimisation (automatisation et traitement par lot)&#8239;:
 
-- Dans un projet Vite, via [Vite Image Optimizer](https://www.npmjs.com/package/vite-plugin-image-optimizer) (AVIF, WebP, JPEG, PNG, SVG)&#8239;: permet de compresser les images au moment de la compilation.
+- Dans un projet Vite, via [Vite Image Optimizer](https://www.npmjs.com/package/vite-plugin-image-optimizer) (AVIF, WebP, JPEG, PNG, SVG)&#8239;: permet de compresser les images au moment de la compilation. Réglages recommandés&#8239;:
+  - `avif: { quality: 70, lossless: false, }`
+  - `webp: { quality: 80, lossless: false, }`
+  - `jpg: { quality: 85, mozjpeg: true, }`
+  - `jpeg: { quality: 85, mozjpeg: true, }`
+  - `png: { quality: 85 }`
 - Dans le navigateur&#8239;:
   - [Squoosh multiple export](https://squoosh-multiple-export.vercel.app/) (AVIF, WebP, JPEG, PNG, GIF)&#8239;: un fork de Squoosh pour multiples images.
   - [Clever Compress](https://clevercompress.com/) (AVIF, WebP, JPEG)&#8239;: Gratuit, RGPD.
