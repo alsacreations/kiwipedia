@@ -226,9 +226,12 @@ Les images bitmaps (non vectorielles) sont à compresser via [Squoosh](https://s
 
 Autres outils d'optimisation :
 
-- En ligne de commande : [Sharp](https://sharp.pixelplumbing.com) (JPEG, PNG, WebP, GIF, AVIF)
-- MacOS uniquement (opensource) : [Image Optimizer](<<https://github.com/antonreshetov/image-optimizer>) très facile par drag&drop et traitement par lot (PNG, JPEG, GIF, SVG) ou <https://imageoptim.com/fr>
-- AVIF en ligne de commande : [Avif-CLI](https://github.com/lovell/avif-cli)
+- [Bulk Squoosh](https://bulk-squoosh.vercel.app/), un fork de Squoosh qui traite les images par lot (AVIF, WebP, JPEG, PNG, GIF).
+- En ligne de commande : [Sharp](https://sharp.pixelplumbing.com) (AVIF, WebP, JPEG, PNG, GIF).
+- MacOS uniquement (opensource) :
+  - [Image Optimizer](https://github.com/antonreshetov/image-optimizer) très facile par drag&drop et traitement par lot (WebP, PNG, JPEG, GIF, SVG)
+  - [ImageOptim](https://imageoptim.com/fr) (PNG, JPEG, GIF, SVG)
+- AVIF en ligne de commande : [Avif-CLI](https://github.com/lovell/avif-cli) (AVIF)
 
 ### Code recommandé
 
