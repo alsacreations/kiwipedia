@@ -226,7 +226,7 @@ Les images bitmaps (non vectorielles) sont à compresser via [Squoosh](https://s
 
 Autres outils d'optimisation :
 
-- [Bulk Squoosh](https://bulk-squoosh.vercel.app/), un fork de Squoosh qui traite les images par lot (AVIF, WebP, JPEG, PNG, GIF).
+- [Squoosh multiple export](https://squoosh-multiple-export.vercel.app/), un fork de Squoosh qui traite les images par lot (AVIF, WebP, JPEG, PNG, GIF).
 - En ligne de commande : [Sharp](https://sharp.pixelplumbing.com) (AVIF, WebP, JPEG, PNG, GIF).
 - MacOS uniquement (opensource) :
   - [Image Optimizer](https://github.com/antonreshetov/image-optimizer) très facile par drag&drop et traitement par lot (WebP, PNG, JPEG, GIF, SVG)
