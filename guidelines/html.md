@@ -210,7 +210,7 @@ Privilégier au maximum la conception propre et ergonomique de formulaires avec 
 
 ### Optimisation SVG
 
-Les imgages au format SVG sont à optimiser via [SVGOMG](https://jakearchibald.github.io/svgomg/).
+Les images au format SVG sont à optimiser via [SVGOMG](https://jakearchibald.github.io/svgomg/).
 
 ### Optimisation Bitmaps
 
