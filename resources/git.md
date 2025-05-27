@@ -6,6 +6,7 @@
 - <https://github.com/dictcp/awesome-git>
 - <https://jvns.ca/blog/2023/11/01/confusing-git-terminology/>
 - <https://jvns.ca/blog/2024/01/26/inside-git/>
+- <https://blog.gitbutler.com/how-git-core-devs-configure-git/>
 
 ## Init
 
