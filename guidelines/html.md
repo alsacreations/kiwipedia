@@ -242,13 +242,13 @@ Autres outils d'optimisation (automatisation et traitement par lot)&#8239;:
 ```html
 <!-- Format unique (avif) -->
 <img src="kiwi.avif" alt="Un kiwi en tutu" decoding="async" loading="lazy" 
-       width="1024" height="768">
+       width="1200" height="800">
 
 <!-- Formats avif + webp en alternative -->
 <picture>
   <source type="image/avif" srcset="kiwi.avif">
   <img src="kiwi.webp" alt="kiwi en tutu" decoding="async" loading="lazy" 
-       width="1024" height="768">
+       width="1200" height="800">
 </picture>
 ```
 
