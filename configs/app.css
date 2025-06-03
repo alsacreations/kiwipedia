@@ -6,6 +6,7 @@
 @import "tailwindcss/theme.css" layer(theme);
 @import "~/assets/css/styles.css" layer(components);
 @import "tailwindcss/utilities.css" layer(utilities);
+@import "~/assets/css/bretzel-utilities.css" layer(utilities);
 
 /* prettier-ignore */
 @theme {
