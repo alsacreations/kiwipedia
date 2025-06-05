@@ -157,9 +157,9 @@ Nos tokens de couleurs (`surface`, `on-surface`, etc.) sont inspirés de [Materi
 - `surface` : aplat de couleur principal (généralement celle de `body`)
 - `on-surface` : couleur d'un élément posé sur `surface` (ou sur un niveau de `layer`)
 - `on-surface-secondary` : variante de couleur d'un élément posé sur `surface` ou `layer`
-- `layer-1` aplat de couleur d'un bloc posé sur une surface
-- `layer-2` aplat de couleur d'un bloc posé sur une surface (variante)
-- `layer-3` aplat de couleur d'un bloc posé sur une surface (variante)
+- `layer-1` aplat de couleur (background en général)
+- `layer-2` aplat de couleur (background en général) (variante)
+- `layer-3` aplat de couleur (background en général) (variante)
 - `link` : couleur des liens
 - `link-hover` : couleur des liens au survol / focus
 - `border-light` : couleur éclaircie des bordures
