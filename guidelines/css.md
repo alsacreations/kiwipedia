@@ -129,17 +129,20 @@ Les tokens sont des propriétés auxquelles des roles/fonctions ont été attibu
 /* fichier `styles.css` */
 /* valeurs d'exemple à adapter au projet, évidemment */
 :root {
-  --primary: var(--color-blue-500);
-  --surface: light-dark(var(--color-white), var(--color-gray-900));
-  --on-primary: var(--color-white);
-  --on-surface: light-dark(var(--color-gray-900), var(--color-white));
-  --spacing-m: clamp(var(--spacing-32), 1.5909rem + 1.8182vw, var(--spacing-48));
-  --spacing-l: clamp(var(--spacing-40), 1.4773rem + 4.5455vw, var(--spacing-80));
-  --text-m: clamp(var(--text-16), 0.9565rem + 0.2174vw, var(--text-18));
-  --text-2xl: clamp(var(--text-24), 1.3466rem + 0.6818vw, var(--text-30));
-  --link: light-dark(var(--color-blue-700), var(--color-blue-300));
-  --link-hover: light-dark(var(--color-blue-900), var(--color-blue-500));
-  --shadow: light-dark(#00000014, #ffffff14);
+  --primary: light-dark(var(--color-blue-500), var(--color-blue-300));
+  --on-primary: light-dark(var(--color-white), var(--color-black));
+  --surface: light-dark(var(--color-white), var(--color-gray-800));
+  --on-surface: light-dark(var(--color-gray-900), var(--color-gray-100));
+  --on-surface-secondary: light-dark(var(--color-gray-600), var(--color-gray-300));
+  --layer-1: light-dark(var(--color-gray-50), var(--color-gray-900));
+  --layer-2: light-dark(var(--color-gray-100), var(--color-gray-700));
+  --layer-3: light-dark(var(--color-gray-200), var(--color-gray-600));
+  --link: light-dark(var(--color-green-500), var(--color-orange-300));
+  --link-hover: light-dark(var(--color-green-500),var(--color-orange-300));
+  --selection: light-dark(var(--color-orange-300), var(--color-orange-500));
+  --border-light: var(--color-gray-200);
+  --border-medium: var(--color-gray-400);
+  --border-dark: var(--color-gray-600);
 }
 ```
 
@@ -149,26 +152,26 @@ Cette liste est non exhaustive. Elle concerne les tokens les plus courants et do
 
 Nos tokens de couleurs (`surface`, `on-surface`, etc.) sont inspirés de [Material Design](https://m3.material.io/styles/color/roles).
 
-- `Primary` : couleur d'accent principale (boutons, états actifs,…)
-- `Secondary` : couleur d'accent secondaire
-- `Surface` : aplat de couleur principal (généralement celle de `body`)
-- `Surface Dim` : aplat de couleur secondaire (ici "obscurci")
-- `On Primary` : couleur de d'un élément posé sur `Primary` (peut être du texte, une icône, etc.)
-- `On Surface` : couleur d'un élément posé sur `Surface`
-- `Layer` aplat de couleur d'un bloc posé sur une surface
-- `Layer High` aplat de couleur d'un bloc posé sur un `Layer`
-- `On Layer` : couleur d'un élément posé sur `Layer`
-- `Link` : couleur des liens
-- `Link Hover` : couleur des liens au survol / focus
-- `Outline` : couleur des bordures (ex. inputs, textarea)
-- `Outline Hover` : couleur des bordures au survol / focus
-- `Error` : couleur des messages d'erreur
-- `Success` : couleur des messages de succès
-- `Shadow` : couleur de l'ombre portée
-- `Selection` : couleur de fond lors de la sélection de texte
-- `Text M` : taille de police "moyenne" (peut être variable)
-- `Text L` : taille de police pour titres moyens
-- `Text XL` : taille de police pour grosd titres
+- `primary` : couleur d'accent principale
+- `on-primary` : couleur de d'un élément posé sur `primary` (peut être du texte, une icône, etc.)
+- `surface` : aplat de couleur principal (généralement celle de `body`)
+- `on-surface` : couleur d'un élément posé sur `surface`
+- `on-surface-secondary` : autre couleur d'un élément posé sur `surface`
+- `layer-1` aplat de couleur d'un bloc posé sur une surface
+- `layer-2` aplat de couleur d'un bloc posé sur une surface (plus clair ou plus foncé)
+- `layer-3` aplat de couleur d'un bloc posé sur une surface (plus clair ou plus foncé)
+- `link` : couleur des liens
+- `link-hover` : couleur des liens au survol / focus
+- `border-light` : couleur éclaircie des bordures
+- `border-medium` : couleur de base des bordures (ex. inputs, textarea)
+- `border-dark` : couleur assombrie des bordures
+- `error` : couleur des messages d'erreur
+- `success` : couleur des messages de succès
+- `selection` : couleur de fond lors de la sélection de texte
+- `text-m` : taille de police "moyenne" (peut être variable)
+- `text-l` : taille de police pour textes plus grands
+- `text-xl` : taille de police pour gros textes
+- `spacing-m` : espacement "moyen" (peut être variable)
 
 En plus de cette liste commune à tous projets, il est conseillé d'appliquer des tokens spécifiques à chacun des composants. Par exemple un composant "Tabs" (onglets) pourrait bénéficier de tokens tels que&#8239;:
 
