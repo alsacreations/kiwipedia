@@ -71,9 +71,9 @@ Les déclarations au sein d'une règle CSS sont ordonnées de façon à faire ap
 
 Les variables CSS (custom properties) du projet s'articulent en trois étapes&#8239;:
 
-1. Les valeur primitives (ex. `--color-pink-300: #f9a8d4;`)
-2. Les tokens, ou roles (ex. `--color-primary: var(--color-pink-300);`) *(voir section suivante)*
-3. L'usage des tokens dans les styles des composants (ex. `color: var(--color-primary);`)
+1. Les valeur primitives (ex. `--color-pink-300: #f9a8d4;`) -> fichier `theme.css`
+2. Les tokens, ou roles (ex. `--color-primary: var(--color-pink-300);`) -> fichier `theme-tokens.css` *(voir section suivante)*
+3. L'usage des tokens dans les styles des composants (ex. `color: var(--color-primary);`) -> fichier `styles.css`
 
 **Primitives**
 
@@ -81,7 +81,7 @@ Les valeurs *primitives* sont des valeurs de base issues de l'UI-Kit qui ne chan
 Un développeur n'est pas censé inventer de nouvelles primitives ni modifier ces valeurs. Si une valeur n'existe pas, il est nécessaire de la créer en concertation avec le designer.
 
 ```css
-/* fichier `app.css` */
+/* fichier `theme.css` */
 /* valeurs d'exemple (toutes issues de l'UI-Kit) */
 :root {
   --color-pink-100: #fce7f3;
@@ -121,12 +121,12 @@ Les règles de nommage sont les suivantes (issues de la [documentation Tailwind 
 
 Les tokens sont des propriétés auxquelles des roles/fonctions ont été attibués.
 
-- Un token fait référence à une **valeur primitive** : par exemple `--color-primary` fait référence à `--color-pink-300`.
-- Un token est **sémantique** : le but est de savoir à quoi *sert* `--color-primary` ou `--spacing-m` sans forcément connaître leurs style.
-- Un token est **agnostique** (décontextualisé) : `--color-primary` est OK en light ou dark mode, `--spacing-m` est OK en desktop ou mobile.
+- Un token fait référence à une **valeur primitive** : par exemple `--primary` fait référence à `--color-pink-300`.
+- Un token est **sémantique** : le but est de savoir à quoi *sert* `--primary` ou `--spacing-m` sans forcément connaître leurs style.
+- Un token est **agnostique** (décontextualisé) : `--primary` est OK en light ou dark mode, `--spacing-m` est OK en desktop ou mobile.
 
 ```css
-/* fichier `styles.css` */
+/* fichier `theme-tokens.css` */
 /* valeurs d'exemple à adapter au projet, évidemment */
 :root {
   --primary: light-dark(var(--color-blue-500), var(--color-blue-300));
