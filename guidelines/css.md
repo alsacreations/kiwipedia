@@ -155,11 +155,11 @@ Nos tokens de couleurs (`surface`, `on-surface`, etc.) sont inspirés de [Materi
 - `primary` : couleur d'accent principale
 - `on-primary` : couleur de d'un élément posé sur `primary` (peut être du texte, une icône, etc.)
 - `surface` : aplat de couleur principal (généralement celle de `body`)
-- `on-surface` : couleur d'un élément posé sur `surface`
-- `on-surface-secondary` : autre couleur d'un élément posé sur `surface`
+- `on-surface` : couleur d'un élément posé sur `surface` (ou sur un niveau de `layer`)
+- `on-surface-secondary` : variante de couleur d'un élément posé sur `surface` ou `layer`
 - `layer-1` aplat de couleur d'un bloc posé sur une surface
-- `layer-2` aplat de couleur d'un bloc posé sur une surface (plus clair ou plus foncé)
-- `layer-3` aplat de couleur d'un bloc posé sur une surface (plus clair ou plus foncé)
+- `layer-2` aplat de couleur d'un bloc posé sur une surface (variante)
+- `layer-3` aplat de couleur d'un bloc posé sur une surface (variante)
 - `link` : couleur des liens
 - `link-hover` : couleur des liens au survol / focus
 - `border-light` : couleur éclaircie des bordures
