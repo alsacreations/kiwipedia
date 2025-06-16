@@ -211,7 +211,9 @@ L'[API Customize](https://developer.wordpress.org/themes/customize-api/) permet 
 - [Retirer l'accès aux pages inutiles](https://wpthinker.com/hide-wordpress-admin-menu-items/) selon le rôle.
 - [Afficher un message dans l'interface d'admin](https://developer.wordpress.org/reference/hooks/admin_notices/) par exemple avec `if (!class_exists('ACF'))`.
 
-Ajout d'un lien vers une documentation externe (ex: Wiki GitLab).
+#### Documentation intégrée à l'admin
+
+Ajoute un lien vers une documentation externe (ex: Wiki GitLab, GitHub).
 
 ```php
 /**
