@@ -43,13 +43,17 @@ On ne versionne **pas** (voir fichiers .gitignore) :
 
 - On privilégie de démarrer avec un thème _starter_ épuré tel que <https://underscores.me/>.
 - On supprime les autres thèmes livrés par défaut.
-- On évite d'utiliser un thème acheté car cela implique qu'on ne pourra pas tout mettre en place dans ces guidelines et qu'on ne maîtrise pas son contenu (code, extensions, évolutions). Si toutefois cela arrive, utiliser le principe de [thème enfant](https://developer.wordpress.org/themes/advanced-topics/child-themes/) pour ne pas modifier le thème parent, qui pourrait être mis à jour par la suite.
+- On évite d'utiliser un thème tiers, car cela implique qu'on ne pourra pas tout mettre en place dans ces guidelines et qu'on ne maîtrise pas son contenu (code, extensions, évolutions). Si toutefois cela arrive, utiliser le principe de [thème enfant](https://developer.wordpress.org/themes/advanced-topics/child-themes/) pour ne pas modifier le thème parent, qui pourrait être mis à jour par la suite.
 
-🔖 Documentation officielle <https://developer.wordpress.org/themes/> et documentation des fonctions <https://codex.wordpress.org/Function_Reference>
+- 🔖 Documentation officielle <https://developer.wordpress.org/themes/> et documentation des fonctions <https://codex.wordpress.org/Function_Reference>
+- 🔖 [Développer un thème WordPress sur mesure](https://capitainewp.io/formations/developper-theme-wordpress/)
+- 🔖 [Concepts fondamentaux à comprendre dans le développement d’un thème WordPress](https://kinsta.com/fr/blog/concepts-fondamentaux-developpement-theme-wordpress/)
 
-🔖 [Développer un thème WordPress sur mesure](https://capitainewp.io/formations/developper-theme-wordpress/)
+### FSE / Full Site Editing et blocs
 
-🔖 [Concepts fondamentaux à comprendre dans le développement d’un thème WordPress](https://kinsta.com/fr/blog/concepts-fondamentaux-developpement-theme-wordpress/)
+- 🔖 [Travailler avec des propriétés et des paires clé-valeur dans theme.json](https://kinsta.com/fr/blog/travailler-proprietes-paires-cle-valeur-theme-json/)
+- 🔖 [Comment construire un plugin Gutenberg pour ajouter des fonctionnalités à l’éditeur de blocs](https://kinsta.com/fr/blog/plugin-gutenberg/)
+- 🔖 [Comment étendre les blocs de base de WordPress avec l’API Blocks](https://kinsta.com/fr/blog/etendre-blocs-coeur-wp/)
 
 ### Intégration du thème
 
@@ -98,7 +102,7 @@ On utilise ensuite les commandes [WP cli i18n](https://developer.wordpress.org/c
 
 ### À prévoir dans le thème
 
-👉 On ne nomme/préfixe pas le thème ou ses classes/fonctions par alsa_ mais plutôt par le nom du projet.
+👉 On ne nomme/préfixe **pas** le thème ou ses classes/fonctions par alsa_ mais plutôt par le nom du projet.
 
 La [structure standard](https://developer.wordpress.org/themes/basics/organizing-theme-files/) est :
 
