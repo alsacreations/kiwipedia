@@ -6,16 +6,16 @@ Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacre
 
 La langue employée pour tout texte rédigé au cours d’un projet est le français :
 
-- les commentaires dans un fichier de code,
-- les titres de commit (_versionning_),
-- les instructions dans le fichier `readme.md`,
-- toute documentation explicative ou technique.
+- les commentaires dans un fichier de code source (ex: JavaScript, HTML, PHP, Vue)
+- les titres de commit git en suivant les [Conventional Commits](git.md)
+- les instructions dans le fichier `README.md`
+- toute documentation explicative ou technique (ex: Wiki)
 
 La langue anglaise demeure préconisée pour :
 
-- L’architecture et les dossiers du projet (_assets_, _layout_, _components_, _fonts_)
+- L’architecture et les dossiers du projet (ex: _assets_, _layout_, _components_, _fonts_)
 - Le nom des fichiers (`single-something.html`, `ProductCard.vue`)
-- Les branches principales de versionning (`main`, `develop`), avec possibilités en français si besoin (`recette`)
+- Les branches principales de versionning git (`main`, `develop`), avec exceptions en français si besoin (`recette`)
 - Les composants, classes HTML, etc.
 
 ## Formatage
@@ -26,11 +26,8 @@ Par exemple :
 
 - PHP suit la convention de styles [PSR-12 "Extended Coding Style"](https://www.php-fig.org/psr/psr-12/) qui stipule _“Code MUST use an indent of 4 spaces for each indent level, and MUST NOT use tabs for indenting.”_
 - WordPress suit la convention [PSR-5 "PHPDoc Standard"](https://www.php-fig.org/psr/)
-- Les Documentations techniques se réfèrent à PHPdoc, JSdoc, etc.
 
-On débute par `/**` dans VSCode qui auto-complète en optant pour un formatage conventionnel.
-
-JSDoc est [supporté nativement par VSCode](https://code.visualstudio.com/docs/languages/javascript#_jsdoc-support), mais peut être facilité par une [extension JSDoc](https://marketplace.visualstudio.com/items?itemName=stevencl.addDocComments).
+Les Documentations techniques se réfèrent à PHPdoc, JSdoc, etc : on débute par `/**` dans VSCode qui auto-complète en optant pour un formatage conventionnel. JSDoc est [supporté nativement par VSCode](https://code.visualstudio.com/docs/languages/javascript#_jsdoc-support).
 
 Exemple :
 
@@ -51,7 +48,7 @@ Toujours configurer et appliquer les Linters et Formatters **editorconfig**, **E
 Les conventions d’usage pour lier les mots sont :
 
 - under_score :
-  - Fonctions PHP
+  - Fonctions PHP (ex: `function display_breadcrumb()`)
 - kebab-case :
   - fichiers pouvant se retrouver dans les URLs (ex : `single-something.html`)
   - classes HTML/CSS
@@ -76,8 +73,11 @@ Exemple à ne **pas** reproduire (coexistence de _cancel_/_remove_/_delete_) :
 <button class="cancelProduct" onclick="removeProduct(1337)">
   <svg id="remove" ...>
 </button>
+```
+
+```js
 function removeProduct(id) {
-   axios.delete('/api/product', id)
+   api.delete('/api/product', id)
 }
 ```
 
