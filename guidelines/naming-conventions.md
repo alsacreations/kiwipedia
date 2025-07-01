@@ -118,6 +118,16 @@ L'extension **[Todo Tree](https://marketplace.visualstudio.com/items?itemName=Gr
 
 Pour les URLs vers des domaines fictifs, on privilégie `https://example.org/` ou `https://example.com/` qui sont réservés à cet usage.
 
+## Domaines
+
+Privilégier le même **motif cohérent** pour les environnements à des adresses différentes, par exemple
+
+- en local : `www.projet.test`
+- en préproduction : `www.projet.alsacreations.eu`
+- en production : `www.projet.com`
+
+⚠️ Éviter de mélanger les sous-domaines : par exemple inutile d'ajouter `preprod` si le TLD change déjà, il faut pouvoir passer de l'un à l'autre aisément (manuellement dans la barre de navigateur, ou lors de l'export/remplacement automatique de chaînes de texte).
+
 ## Convention pour Langages spécifiques et Frameworks
 
 Les règles de nommage particulières à chaque langage sont consignées dans leurs Guidelines respectives :
