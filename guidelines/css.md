@@ -143,6 +143,9 @@ Les tokens sont des propriétés auxquelles des roles/fonctions ont été attibu
   --border-light: var(--color-gray-200);
   --border-medium: var(--color-gray-400);
   --border-dark: var(--color-gray-600);
+  --gap-m: clamp(var(--spacing-16), 0.6087rem + 1.7391vw, var(--spacing-32));
+  --gap-l: clamp(var(--spacing-32), 1.7955rem + 0.9091vw, var(--spacing-40));
+  --gap-xl: clamp(var(--spacing-32), 0.7727rem + 5.4545vw, var(--spacing-80));
 }
 ```
 
@@ -172,15 +175,9 @@ Nos tokens de couleurs (`surface`, `on-surface`, etc.) sont inspirés de [Materi
 - `text-l` : taille de police pour textes plus grands
 - `text-xl` : taille de police pour gros textes
 - `spacing-m` : espacement "moyen" (peut être variable)
+- `gap-m` : gouttière "moyenne" (peut être variable)
 
-En plus de cette liste commune à tous projets, il est conseillé d'appliquer des tokens spécifiques à chacun des composants. Par exemple un composant "Tabs" (onglets) pourrait bénéficier de tokens tels que&#8239;:
-
-- `Tab Surface` : aplat de couleur d'un onglets
-- `Tab On Surface` : couleur du contenu des onglets
-- `Tab Outline` : couleur de la bordure des onglets
-- `Tab Surface Active` : aplat de couleur de l'onglet actif
-- `Tab Layer`: aplat de couleur du contenu des onglets
-- etc.
+En plus de cette liste commune à tous projets, il est envisageable d'appliquer des tokens spécifiques à chacun des composants.
 
 ## Unités
 
