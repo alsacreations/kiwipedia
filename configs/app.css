@@ -1,12 +1,19 @@
-@layer reset, theme, components, utilities;
+@layer config, base, components, utilities;
 
-@import "~/assets/css/bretzel-reset.css" layer(reset);
-@import "~/assets/css/bretzel-print.css" layer(reset);
-@import "~/assets/css/bretzel-layouts.css" layer(reset);
-@import "tailwindcss/theme.css" layer(theme);
-@import "~/assets/css/styles.css" layer(components);
+/* Config (reset, layouts, polices, themes) */
+@import "/assets/css/reset.css" layer(config);
+@import "tailwindcss/theme.css" layer(config);
+@import "assets/css/theme-tokens.css" layer(config);
+@import "/assets/css/layouts.css" layer(config);
+
+/* Base */
+@import "/assets/css/styles.css" layer(base);
+
+/* Components */
+@import "/assets/css/partials.css" layer(components);
+
+/* Utilities */
 @import "tailwindcss/utilities.css" layer(utilities);
-@import "~/assets/css/bretzel-utilities.css" layer(utilities);
 
 /* prettier-ignore */
 @theme {
@@ -108,14 +115,4 @@
   --z-header-level: 1000;
   --z-above-header-level: 2000;
   --z-above-all-level: 3000;
-}
-
-@utility visually-hidden {
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  white-space: nowrap !important;
-  clip-path: inset(50%) !important;
 }

@@ -106,6 +106,7 @@ Un exemple de fichier `app.css` est disponible dans [`/configs/app.css`](../conf
 Options à installer / configurer au cas par cas, uniquement si prévu dans le projet :
 
 - Installer Sass : `pnpm install --save-dev sass` (renommer `styles.css` en `styles.scss` et adapter le chemin dans `main.js`)
+- Installer le plugin [PostCSS Custom Media](https://www.npmjs.com/package/postcss-custom-media) pour bénéficier de Media Queries avec variables : `pnpm install --save-dev postcss-custom-media` (ajouter un fichier [`postcss.config.mjs`](../configs/postcss.config.mjs)). PostCSS est déjà installé par défaut dans Vite, il n'y a donc pas besoin de l'installer.
 - Ajouter [alpine.js](https://alpinejs.dev/essentials/installation) avec `pnpm install --save alpinejs`
 - **Docker** si besoin de mise en recette ou pré-production
   - Ajouter `Dockerfile` et `docker-compose.yml` suivant les exemples et les adapter
