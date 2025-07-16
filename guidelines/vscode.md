@@ -33,22 +33,23 @@ Lister les extensions : `code --list-extensions`
 - [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) (respect configuration tabs vs spaces à l'insertion, encodage, eol, etc)
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) (vérification syntaxe JavaScript, TypeScript et frameworks)
 - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) (formatage automatique des fichiers à la sauvegarde)
+- [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint) (vérifie la syntaxe CSS d'après un ensemble de règles, nécessite une installation de stylelint locale ou globale)
 - [Markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) (vérification syntaxe Markdown)
 
 ### Extensions fortement recommandées ⭐
 
 - [Project Manager](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager) (si vous jonglez entre plusieurs projets, c'est un must)
-- [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint) (vérifie la syntaxe CSS d'après un ensemble de règles, nécessite une installation de stylelint locale ou globale)
-- [SCSS Intellisense](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-scss) (autocomplétion SCSS : classes, variables, etc.)
-- [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) (autocomplétion des classes Tailwind)
+- [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph) (affichage de l'arbre de commits git)
+- [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) (affiche les erreurs des linters directement dans la fenêtre de code)
 - [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense) (autocomplétion des chemins)
 - [CSS var complete](https://marketplace.visualstudio.com/items?itemName=phoenisx.cssvar) (autocomplétion des variables CSS)
 - [Volar](https://marketplace.visualstudio.com/items?itemName=vue.volar) (extension indispensable pour tout projet pour Vuejs / Nuxt)
+- [SCSS Intellisense](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-scss) (autocomplétion SCSS : classes, variables, etc.)
+- [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) (autocomplétion des classes Tailwind)
 - [HTML CSS Support](https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css) (autocomplétion et documentation des balises+attributs)
-- [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph) (affichage de l'arbre de commits git)
-- [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) (affiche les erreurs des linters directement dans la fenêtre de code)
 - [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) (commandes Docker facilitées et sidebar affichant containers/images/volumes/networks...)
 - [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) (pour connexion SSH entre autres, contient déjà [Remote SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) et [Remote Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers))
+- [Bookmarks](https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks) (permet de marquer des lignes dans le code et de naviguer entre elles)
 
 ### Extensions suggérées 👍
 
