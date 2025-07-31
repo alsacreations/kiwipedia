@@ -74,12 +74,27 @@ Avec [Vite](https://github.com/vitejs/vite) (présent dans WordPlate) on compile
 
 ➡️ Guidelines [HTML](html.md), [CSS](css.md) et [JavaScript](javascript.md).
 
-- Suivre les [PHP Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/php/) de WordPress.
+Pour PHP suivre les [PHP Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/php/) de WordPress.  
+Utiliser les [conditional tags](https://developer.wordpress.org/themes/basics/conditional-tags/) pour ajouter des conditions/contextes (`is_category`, `is_single`, `has_tag`...).
+
+Quelques exemples :
+
+- Pour les fichiers : **kebab-case** : `get-user-type.php` (descriptif et explicite, pas d'abréviation)
+- Pour les fonctions : **snake_case** avec préfixe du thème : `kiwistore_get_user_type()` (avec préfixe évite les conflits)
+- Pour les classes : **PascalCase** avec préfixe : `Kiwistore_Product_Utils`
+- Pour les `add_action()` et `add_filter()` (avec préfixe du thème, descriptif, explicite et après la fonction liée)
+
+```php
+function kiwistore_init_custom_features() {
+    // Votre code d'initialisation
+}
+add_action('init', 'kiwistore_init_custom_features');
+```
+
 - ⚠️ Ne pas utiliser les classes CSS générées par WordPress qui sont spécifiques à une installation précise et ne sont pas réutilisables : classes spécifiques des _wrappers_ des menus du type `.menu-nom-de-mon-menu` et la majorité des classes générées par `body_class()` ou `post_class()`.
-- Placer `add_action()` et `add_filter()` après la fonction liée.
 - Découper le thème de manière cohérente (boucles à part, etc.) pour pouvoir utiliser `get_template_part()` correctement.
-- Tout ce qui ne fait pas partie intégrante du thème et/ou optionnel doit être réalisé sous forme d'extension.
-- Utiliser les [conditional tags](https://developer.wordpress.org/themes/basics/conditional-tags/) pour ajouter des conditions/contextes (`is_category`, `is_single`, `has_tag`...).
+- Tout ce qui ne fait pas partie intégrante du thème et/ou optionnel doit être réalisé sous forme d'extension (si possible et si néccessaire).
+
 
 #### Traductions
 
@@ -111,7 +126,8 @@ La [structure standard](https://developer.wordpress.org/themes/basics/organizing
 │   ├── css (dir)
 │   ├── images (dir)
 │   └── js (dir)
-├── inc (dir)
+├── includes (dir)
+├── utils (dir)
 ├── template-parts (dir)/
 │   ├── footer (dir)
 │   ├── header (dir)
@@ -180,23 +196,23 @@ add_filter('filter_name', 'nomdutheme_nom_de_la_fonction');
 /**
  * Menus/Sidebar/Theme options definitions
  */
-require_once 'includes/theme-setup.php';
+require_once __DIR__ . 'includes/theme-setup.php';
  
 /**
  * Filters used to alter front-end rendering
  */
-require_once 'includes/menu-filters.php';
+require_once __DIR__ . 'includes/menu-filters.php';
  
 /**
  * Actions & filters
  */
-require_once 'includes/actions.php';
-require_once 'includes/filters.php';
+require_once __DIR__ . 'includes/actions.php';
+require_once __DIR__ . 'includes/filters.php';
  
 /**
  * Parent theme overload
  */
-require_once 'includes/inc-pages-functions-updated.php';
+require_once __DIR__ . 'includes/inc-pages-functions-updated.php';
 ```
 
 ### Personnalisation du thème
