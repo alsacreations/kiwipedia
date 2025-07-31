@@ -432,6 +432,16 @@ Dans le cas où on utilise un thème acheté et que les fichiers PHP ne sont pas
 - Toujours utiliser [les nonces](https://css-tricks.com/wordpress-front-end-security-csrf-and-nonces/) pour éviter les [CSRF](https://fr.wikipedia.org/wiki/Cross-site_request_forgery), s'il faut développer des modules admin et/ou pour les utilisateurs identifiés sur le site.
 - Surveiller si le thème / les extensions utilisées font l'objet d'une faille sur [wpscan](https://wpscan.com/)
 - Ajouter le script pour enlever l'avertissement à la connexion qui permet d'indiquer que l'identifiant est le bon mais pas le mot de passe.
+- Dans tous les fichiers autres que `functions.php` et tous les fichiers de la template hierarchy (`index.php`, `page.php`, `single.php`, ...), on protège nos fichiers PHP contre l'accès direct
+
+  ```php
+  <?php
+  if (!defined('ABSPATH')) {
+      exit;
+  }
+    
+  // Votre code ici...
+  ```
 
 🔖 [Prévenir les injections SQL](https://www.smashingmagazine.com/2025/03/how-prevent-wordpress-sql-injection-attacks/)
 
