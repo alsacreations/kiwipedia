@@ -81,15 +81,32 @@ Quelques exemples :
 
 - Pour les fichiers : **kebab-case** : `get-user-type.php` (descriptif et explicite, pas d'abréviation)
 - Pour les fonctions : **snake_case** avec préfixe du thème : `kiwistore_get_user_type()` (avec préfixe évite les conflits)
+
+  ```php
+  // On utilise des fonctions de vérification
+  if (function_exists('kiwistore_get_user_type')) {
+      // Code
+  }
+  
+  ```
+  
 - Pour les classes : **PascalCase** avec préfixe : `Kiwistore_Product_Utils`
+
+    ```php
+    // On utilise des fonctions de vérification
+    if (class_exists('Kiwistore_Product_Utils')) {
+        // Code
+    }
+    ```
+    
 - Pour les `add_action()` et `add_filter()` (avec préfixe du thème, descriptif, explicite et après la fonction liée)
 
-```php
-function kiwistore_init_custom_features() {
-    // Votre code d'initialisation
-}
-add_action('init', 'kiwistore_init_custom_features');
-```
+    ```php
+    function kiwistore_init_custom_features() {
+        // Votre code d'initialisation
+    }
+    add_action('init', 'kiwistore_init_custom_features');
+    ```
 
 - ⚠️ Ne pas utiliser les classes CSS générées par WordPress qui sont spécifiques à une installation précise et ne sont pas réutilisables : classes spécifiques des _wrappers_ des menus du type `.menu-nom-de-mon-menu` et la majorité des classes générées par `body_class()` ou `post_class()`.
 - Découper le thème de manière cohérente (boucles à part, etc.) pour pouvoir utiliser `get_template_part()` correctement.
