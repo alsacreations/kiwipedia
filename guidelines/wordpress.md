@@ -329,7 +329,7 @@ Pour filtrer des requêtes à l'aide de ces valeurs, on utilisera une [Meta Quer
 
 🔖 Voir [Des champs administrables avec ACF par Capitaine WP](https://capitainewp.io/formations/acf/), [Tutoriel ACF : Advanced Custom Fields – Le guide complet](https://newslang.ch/blog/tutoriel-acf-advanced-custom-fields-le-guide-complet/), [Best Practices when Designing Custom Fields](https://www.advancedcustomfields.com/blog/best-practices-designing-custom-fields/) et [Tutoriel sur Advanced Custom Fields : Votre guide ultime](https://kinsta.com/fr/blog/advanced-custom-fields/)
 
-### Blocs sur-mesure, Gutenberg
+### Blocs sur-mesure, Gutenberg, theme.json
 
 Utiliser les [blocs ACF](https://www.advancedcustomfields.com/resources/blocks/) pour ne rendre modifiables que des champs spécifiques (champ texte, image, colorpicker, etc.) et avoir les fonctionnalités d'ACF (champ [relationnel](https://www.advancedcustomfields.com/resources/relationship/), [taxonomies](https://www.advancedcustomfields.com/resources/taxonomy/), etc.). Un bloc ACF est mis en place ainsi :
 
@@ -339,6 +339,8 @@ Utiliser les [blocs ACF](https://www.advancedcustomfields.com/resources/blocks/)
 - Usage dans l'éditeur Gutenberg : le bloc devrait apparaître dans le menu ➕
 
 Dans le cas où on utilise un thème acheté et que les fichiers PHP ne sont pas utilisables, on se tournera vers une [extension](https://fr.wordpress.org/plugins/blockmeister/) afin de générer des ["patterns" Gutenberg](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-patterns/) sur-mesure.
+
+TODO: theme.json
 
 🔖 Adapter la palette de couleurs <https://speckyboy.com/custom-color-palette-wordpress-gutenberg-editor/>.
 
