@@ -421,6 +421,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 - <https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs>
 - <https://realfavicongenerator.net/> outil ultime pour tout générer
+- <https://maskable.app/editor> Prévisualise et édite une version "maskable"
 - <https://favicon.io/> génère à partir de lettres
 - <http://lab.ejci.net/favico.js/> (badges en JS sur la favicon)
 
@@ -755,6 +756,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://kinopio.club> Brainstorming / mindmap
 - <https://www.markdowntutorial.com/fr/> Apprendre markdown
 - <https://mermaid.js.org/> Générer des graphiques/diagrammes divers à partir de markdown
+- <https://github.com/ztabs-official/markdown-to-slides> Markdown to slides ; en action sur <https://slidesmate.com/>
 
 ## Explication et relation client
 
