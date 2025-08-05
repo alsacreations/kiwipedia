@@ -102,25 +102,25 @@ Si l'usage de Tailwind est prévu dans le projet :
 
 Le fichier [`app.css`](../configs/app.css) (ou la version Tailwind [`app.css`](../configs/app-tailwind.css)) est le point d'entrée pour les styles.
 
-Il charge toutes les feuilles de styles dans l'ordre des layers CSS
+Il charge toutes les feuilles de styles dans l'ordre des layers CSS *(config, base, components, utilities)* :
 
-1. Layer config (reset, polices, themes, layouts) :
+1. **Layer config** (reset, polices, themes, layouts) :
 
 - [reset.css](https://reset.alsacreations.com/) : Reset CSS moderne (et reset print)
-- theme.css - Thème principal (valeurs primitives issues de Figma)
-- theme-tokens.css : Design tokens (cf. [Guidelines CSS](https://github.com/alsacreations/kiwipedia/blob/main/guidelines/css.md#variables-css-primitives-et-tokens))
+- theme.css - Thème principal (ex. `--color-pink-500: #f1498f`) (valeurs primitives issues de Figma)
+- theme-tokens.css : Design tokens (ex. `--primary: --color-pink-500;`) (cf. [Guidelines CSS](https://github.com/alsacreations/kiwipedia/blob/main/guidelines/css.md#variables-css-primitives-et-tokens))
 - [layouts.css](https://bretzel.alsacreations.com/) : Utilitaires de disposition des composants (Bretzel)
 - [natives.css](https://alsacreations.github.io/KNACSS) : Styles natifs des éléments HTML (radio, input, button, etc.)
 
-2. Layer base :
+2. **Layer base** :
 
 - styles.css : Styles globaux du projet (gabarits, typographie, etc.)
 
-3. Layer components :
+3. **Layer components** :
 
 - Les fichiers CSS des composants du projet
 
-4. Layer utilities :
+4. **Layer utilities** :
 
 - Fichier de classes utilitaires si nécessaire (Tailwind, ou classes utilitaires personnalisées)
 
