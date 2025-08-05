@@ -107,8 +107,8 @@ Il charge toutes les feuilles de styles dans l'ordre des layers CSS *(config, ba
 1. **Layer config** (reset, polices, themes, layouts) :
 
 - [reset.css](https://reset.alsacreations.com/) : Reset CSS moderne (et reset print)
-- theme.css - Thème principal (ex. `--color-pink-500: #f1498f`) (valeurs primitives issues de Figma)
-- theme-tokens.css : Design tokens (ex. `--primary: --color-pink-500;`) (cf. [Guidelines CSS](https://github.com/alsacreations/kiwipedia/blob/main/guidelines/css.md#variables-css-primitives-et-tokens))
+- theme.css - Thème principal (ex. `--color-pink-500: #f1498f`) (valeurs primitives issues de Figma) (voir [Guidelines CSS](https://github.com/alsacreations/kiwipedia/blob/main/guidelines/css.md#variables-css-primitives-et-tokens), partie "Primitives")
+- theme-tokens.css : Design tokens (ex. `--primary: --color-pink-500;`) (voir [Guidelines CSS](https://github.com/alsacreations/kiwipedia/blob/main/guidelines/css.md#variables-css-primitives-et-tokens), partie "Tokens (=roles)")
 - [layouts.css](https://bretzel.alsacreations.com/) : Utilitaires de disposition des composants (Bretzel)
 - [natives.css](https://alsacreations.github.io/KNACSS) : Styles natifs des éléments HTML (radio, input, button, etc.)
 
