@@ -253,11 +253,11 @@ Les tokens sont des propriétés auxquelles des roles/fonctions ont été attibu
   /* Spacing Tokens */
   --gap-s: clamp(var(--spacing-8), 0.2955rem + 0.9091vw, var(--spacing-16));
   --gap-m: clamp(var(--spacing-16), 0.5909rem + 1.8182vw, var(--spacing-32));
-  --gap-l: clamp(var(--spacing-28), 1.2386rem + 2.2727vw, var(--spacing-48));
+  --gap-l: clamp(var(--spacing-24), 0.8864rem + 2.7273vw, var(--spacing-48));
   --gap-xl: clamp(var(--spacing-32), 0.7727rem + 5.4545vw, var(--spacing-80));
   --spacing-s: clamp(var(--spacing-8), 0.2955rem + 0.9091vw, var(--spacing-16));
   --spacing-m: clamp(var(--spacing-16), 0.5909rem + 1.8182vw, var(--spacing-32));
-  --spacing-l: clamp(var(--spacing-28), 1.2386rem + 2.2727vw,var(--spacing-48));
+  --spacing-l: clamp(var(--spacing-24), 0.8864rem + 2.2727vw, var(--spacing-48));
   --spacing-xl: clamp(var(--spacing-32), 0.7727rem + 5.4545vw, var(--spacing-80));
 
   /* Forms Tokens */
