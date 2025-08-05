@@ -14,6 +14,8 @@ Il existe cependant des projets "multi" (que l'on appelle aussi "mono-repo") où
   - [2. Fichiers de configuration](#2-fichiers-de-configuration)
   - [3. Linter, formatters et correcteurs](#3-linter-formatters-et-correcteurs)
   - [4. Styles CSS](#4-styles-css)
+    - [Tailwind optionnel](#tailwind-optionnel)
+    - [`app.css`](#appcss)
   - [5. Optionnel (selon projets)](#5-optionnel-selon-projets)
 
 ## Stack commune à tous les projets
@@ -87,19 +89,40 @@ On part du principe qu'on installe les linters que si l'on a déjà configuré l
 
 ## 4. Styles CSS
 
-**Tailwind CSS** est notre générateur principal de classes utilitaires et de custom properties CSS. **Il est employé dans tous nos projets CSS (même vanilla, car on peut toujours avoir besoin d'une classe utilitaire).**
+### Tailwind optionnel
+
+**Tailwind CSS** est un générateur de classes utilitaires et de custom properties CSS. **Il est optionnel dans nos projets CSS même Vanilla (car on peut toujours avoir besoin d'une classe utilitaire).**
+
+Si l'usage de Tailwind est prévu dans le projet :
 
 - Se placer dans le dossier Vite (ex. `cd vite-project`)
 - Installer et configurer [Tailwind CSS](https://tailwindcss.com/docs/installation/using-vite) comme l'indique la procédure via Vite.
 
-Nous conseillons de faire en sorte que le fichier `app.css` soit le point d'entrée pour les styles. Il contiendra :
+### `app.css`
 
-- Tous les imports (Tailwind, Bretzel reset, etc.)
-- Le thème du site (couleurs, polices, etc.)
-- La feuille de styles globale (`styles.css`) qui contiendra les styles du projet
-- Les classes utilitaires personnalisées (`visually-hidden`)
+Le fichier [`app.css`](../configs/app.css) (ou la version Tailwind [`app.css`](../configs/app-tailwind.css)) est le point d'entrée pour les styles.
 
-Un exemple de fichier `app.css` est disponible dans [`/configs/app.css`](../configs/app.css).
+Il charge toutes les feuilles de styles dans l'ordre des layers CSS
+
+1. Layer config (reset, polices, themes, layouts) :
+
+- [reset.css](https://reset.alsacreations.com/) : Reset CSS moderne (et reset print)
+- theme.css - Thème principal (valeurs primitives issues de Figma)
+- theme-tokens.css : Design tokens (cf. [Guidelines CSS](https://github.com/alsacreations/kiwipedia/blob/main/guidelines/css.md#variables-css-primitives-et-tokens))
+- [layouts.css](https://bretzel.alsacreations.com/) : Utilitaires de disposition des composants (Bretzel)
+- [natives.css](https://alsacreations.github.io/KNACSS) : Styles natifs des éléments HTML (radio, input, button, etc.)
+
+2. Layer base :
+
+- styles.css : Styles globaux du projet (gabarits, typographie, etc.)
+
+3. Layer components :
+
+- Les fichiers CSS des composants du projet
+
+4. Layer utilities :
+
+- Fichier de classes utilitaires si nécessaire (Tailwind, ou classes utilitaires personnalisées)
 
 ## 5. Optionnel (selon projets)
 

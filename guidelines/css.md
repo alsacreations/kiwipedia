@@ -28,11 +28,11 @@ Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacre
 
 ## Configuration dans un projet
 
-**Tailwind**
+**Tailwind optionnel**
 
 Nous intégrons nos styles en **"CSS Vanilla"**, c'est à dire que ne faisons pas usage de classes utilitaires dans le HTML *sauf rares exceptions* (par exemple pour distinguer un élément parmi d'autres semblables).
 
-Pour ce faire, un générateur de classes utilitaires **Tailwind** est incorporé dans nos projets afin de bénéficier de classes utilitaires lorsque cela est nécessaire.
+Pour ce faire, un générateur de classes utilitaires **Tailwind** (version 4 minimum) peut être incorporé dans nos projets afin de bénéficier de classes utilitaires lorsque cela est nécessaire.
 
 L'installation et la configuration de Tailwind est décrite ([dans le fichier `project-init.md`](../starters/project-init.md))
 
@@ -127,7 +127,8 @@ Les tokens sont des propriétés auxquelles des roles/fonctions ont été attibu
 
 ```css
 /* fichier `theme-tokens.css` */
-/* valeurs d'exemple à adapter au projet, évidemment */
+/* Les noms des tokens sont à conserver à chaque projet */
+/* valeurs d'exemple sont à adapter, évidemment */
 :root {
   --primary: light-dark(var(--color-blue-500), var(--color-blue-300));
   --on-primary: light-dark(var(--color-white), var(--color-black));
@@ -137,15 +138,49 @@ Les tokens sont des propriétés auxquelles des roles/fonctions ont été attibu
   --layer-1: light-dark(var(--color-gray-50), var(--color-gray-900));
   --layer-2: light-dark(var(--color-gray-100), var(--color-gray-700));
   --layer-3: light-dark(var(--color-gray-200), var(--color-gray-600));
+  --accent: light-dark(var(--primary), var(--color-blue-300));
+  --accent-invert: light-dark(var(--color-blue-300), var(--primary));
+  --warning: light-dark(var(--color-orange-500), var(--color-orange-300));
+  --error: light-dark(var(--color-red-500), var(--color-red-300));
+  --success: light-dark(var(--color-green-300), var(--color-green-500));
+
   --link: light-dark(var(--color-green-500), var(--color-orange-300));
   --link-hover: light-dark(var(--color-green-500),var(--color-orange-300));
   --selection: light-dark(var(--color-orange-300), var(--color-orange-500));
-  --border-light: var(--color-gray-200);
-  --border-medium: var(--color-gray-400);
-  --border-dark: var(--color-gray-600);
-  --gap-m: clamp(var(--spacing-16), 0.6087rem + 1.7391vw, var(--spacing-32));
-  --gap-l: clamp(var(--spacing-32), 1.7955rem + 0.9091vw, var(--spacing-40));
+
+  /* Font size Tokens */
+  /* Source https://utopia.fyi/clamp/calculator/?a=360,1240 */
+  --text-s: clamp(var(--text-14), 0.8239rem + 0.2273vw, var(--text-16));
+  --text-m: clamp(var(--text-16), 0.9489rem + 0.2273vw, var(--text-18));
+  --text-l: clamp(var(--text-18), 1.0739rem + 0.2273vw, var(--text-20));
+  --text-xl: clamp(var(--text-20), 0.9943rem + 1.1364vw, var(--text-30));
+  --text-2xl: clamp(var(--text-24), 1.1932rem + 1.3636vw, var(--text-36));
+  --text-3xl: clamp(var(--text-30), 1.4148rem + 2.0455vw, var(--text-48));
+
+  /* Spacing Tokens */
+  --gap-s: clamp(var(--spacing-8), 0.2955rem + 0.9091vw, var(--spacing-16));
+  --gap-m: clamp(var(--spacing-16), 0.5909rem + 1.8182vw, var(--spacing-32));
+  --gap-l: clamp(var(--spacing-28), 1.2386rem + 2.2727vw, var(--spacing-48));
   --gap-xl: clamp(var(--spacing-32), 0.7727rem + 5.4545vw, var(--spacing-80));
+  --spacing-s: clamp(var(--spacing-8), 0.2955rem + 0.9091vw, var(--spacing-16));
+  --spacing-m: clamp(var(--spacing-16), 0.5909rem + 1.8182vw, var(--spacing-32));
+  --spacing-l: clamp(var(--spacing-28), 1.2386rem + 2.2727vw,var(--spacing-48));
+  --spacing-xl: clamp(var(--spacing-32), 0.7727rem + 5.4545vw, var(--spacing-80));
+
+  /* Forms Tokens */
+  --form-control-background: light-dark(var(--color-slate-200), var(--color-slate-700));
+  --on-form-control: light-dark(var(--color-gray-900), var(--color-gray-100));
+  --form-control-spacing: var(--spacing-12) var(--spacing-16);
+  --form-control-border-width: 1px;
+  --form-control-border-color: var(--color-gray-400);
+  --form-control-border-radius: var(--radius-md);
+  --checkables-border-color: var(--color-gray-400);
+  --checkable-size: 1.25em;
+
+  /* States Tokens */
+  --focus-ring-color: AccentColor;
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 2px;
 }
 ```
 
