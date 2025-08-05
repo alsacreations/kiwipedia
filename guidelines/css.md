@@ -98,6 +98,7 @@ Un développeur n'est pas censé inventer de nouvelles primitives ni modifier ce
   --text-20: 1.25rem;
   --radius-none: 0;
   --radius-full: 9999px;
+  etc.
 }
 ```
 
@@ -108,9 +109,10 @@ Pour assurer un workflow fluide entre designer et développeur, les variables so
 Les règles de nommage sont les suivantes (issues de la [documentation Tailwind 4](https://tailwindcss.com/docs/theme#theme-variable-namespaces))&#8239;:
 
 - Une couleur est préfixée par `--color-*` (ex. `--color-pink-300`)
-- Un espacement (marge, padding, gouttière) est préfixé par `--spacing-*` (ex. `--spacing-16`)
+- Un espacement (marge, padding) est préfixé par `--spacing-*` (ex. `--spacing-16`)
+- Une goutière est préfixée par `--gap-*` (ex. `--gap-16`)
 - Une taille de police est préfixée par `--text-*` (ex. `--text-16`)
-- Une famille de police est préfixée par `--font-*` (ex. `--font-base`)
+- Une famille de police est préfixée par `--font-*` (ex. `--font-poppins`)
 - Une graisse de police est préfixée par `--font-weight-*` (ex. `--font-weight-regular`)
 - Une `line-height` est préfixée par `--leading-*` (ex. `--leading-28`)
 - Un arrondi est préfixé par `--radius-*` (ex. `--radius-lg`)
@@ -127,8 +129,8 @@ Les tokens sont des propriétés auxquelles des roles/fonctions ont été attibu
 
 ```css
 /* fichier `theme-tokens.css` */
-/* Les noms des tokens sont à conserver à chaque projet */
-/* valeurs d'exemple sont à adapter, évidemment */
+/* ⚠️ Les noms des tokens sont à conserver à chaque projet */
+/* Les valeurs d'exemple sont à adapter, évidemment */
 :root {
   --primary: light-dark(var(--color-blue-500), var(--color-blue-300));
   --on-primary: light-dark(var(--color-white), var(--color-black));
