@@ -1,7 +1,10 @@
+/* L'ordre des layers définit la priorité des styles */
+/* Chaque layer écrase le précédent si conflit */
 @layer config, base, components, utilities;
 
 /* Config (reset, polices, themes, layouts) */
 @import "/assets/css/reset.css" layer(config);
+/* @import "/assets/css/fonts.css" layer(config); */
 @import "/assets/css/theme.css" layer(config);
 @import "/assets/css/theme-tokens.css" layer(config);
 @import "/assets/css/layouts.css" layer(config);
@@ -11,3 +14,4 @@
 @import "/assets/css/styles.css" layer(base);
 
 /* Components */
+/* Ici un @import dans le layer(components) */

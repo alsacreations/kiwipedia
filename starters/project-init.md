@@ -14,7 +14,7 @@ Il existe cependant des projets "multi" (que l'on appelle aussi "mono-repo") où
   - [2. Fichiers de configuration](#2-fichiers-de-configuration)
   - [3. Linter, formatters et correcteurs](#3-linter-formatters-et-correcteurs)
   - [4. Styles CSS](#4-styles-css)
-    - [Tailwind optionnel](#tailwind-optionnel)
+    - [Tailwind](#tailwind)
     - [`app.css`](#appcss)
   - [5. Optionnel (selon projets)](#5-optionnel-selon-projets)
 
@@ -89,18 +89,16 @@ On part du principe qu'on installe les linters que si l'on a déjà configuré l
 
 ## 4. Styles CSS
 
-### Tailwind optionnel
+### Tailwind
 
-**Tailwind CSS** est un générateur de classes utilitaires et de custom properties CSS. **Il est optionnel dans nos projets CSS même Vanilla (car on peut toujours avoir besoin d'une classe utilitaire).**
-
-Si l'usage de Tailwind est prévu dans le projet :
+**Tailwind CSS** est un générateur de classes utilitaires et de custom properties CSS. **Il est systématiquement incorporé dans nos projets CSS même Vanilla (car on peut toujours avoir besoin d'une classe utilitaire).**
 
 - Se placer dans le dossier Vite (ex. `cd vite-project`)
 - Installer et configurer [Tailwind CSS](https://tailwindcss.com/docs/installation/using-vite) comme l'indique la procédure via Vite.
 
 ### `app.css`
 
-Le fichier [`app.css`](../configs/app.css) (ou la version Tailwind [`app.css`](../configs/app-tailwind.css)) est le point d'entrée pour les styles.
+Le fichier [`app.css`](../configs/CSS/app.css) (ou la version Tailwind [`app.css`](../configs/CSS/app-tailwind.css)) est le point d'entrée pour les styles.
 
 Il charge toutes les feuilles de styles dans l'ordre des layers CSS *(config, base, components, utilities)* :
 

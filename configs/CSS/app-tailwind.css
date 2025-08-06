@@ -1,7 +1,10 @@
+/* L'ordre des layers définit la priorité des styles */
+/* Chaque layer écrase le précédent si conflit */
 @layer config, base, components, utilities;
 
 /* Config (reset, layouts, polices, themes) */
 @import "/assets/css/reset.css" layer(config);
+/* @import "/assets/css/fonts.css" layer(config); */
 @import "tailwindcss/theme.css" layer(config);
 @import "assets/css/theme-tokens.css" layer(config);
 @import "/assets/css/layouts.css" layer(config);
@@ -11,10 +14,12 @@
 @import "/assets/css/styles.css" layer(base);
 
 /* Components */
+/* Ici un @import dans le layer(components) */
 
 /* Utilities */
 @import "tailwindcss/utilities.css" layer(utilities);
 
+/* Uniquement si Tailwind */
 /* prettier-ignore */
 @theme {
   --*: initial; /* stylelint-disable-line */
@@ -22,45 +27,38 @@
   --breakpoint-lg: 64rem; /* 1024px */
   --breakpoint-xl: 80rem; /* 1280px */
   --breakpoint-2xl: 96rem; /* 1536px */
-  --color-black: #000000;
-  --color-white: #ffffff;
-  --color-black-alpha: #111827ee;
-  --color-white-alpha: #ffffffee;
-  --color-gray-100: #f3f4f6;
-  --color-gray-300: #d1d5db;
-  --color-gray-400: #9ca3af;
-  --color-gray-500: #6b7280;
-  --color-gray-700: #374151;
-  --color-gray-900: #111827;
-  --color-slate-100: #f1f5f9;
-  --color-slate-200: #e2e8f0;
-  --color-slate-300: #cbd5e1;
-  --color-slate-400: #9ca3af;
-  --color-slate-800: #1e293b;
-  --color-slate-900: #161f2c;
-  --color-green-100: #ecfccb;
-  --color-green-300: #d1e576;
-  --color-green-400: #b6d434;
-  --color-green-500: #89a121;
-  --color-green-900: #364106;
-  --color-blue-100: #dbeafe;
-  --color-blue-300: #93c5fd;
-  --color-blue-400: #5294ff;
-  --color-blue-500: #146af5;
-  --color-blue-700: #1d4ed8;
-  --color-blue-900: #1e3a8a;
-  --color-pink-100: #fce7f3;
-  --color-pink-300: #f9a8d4;
-  --color-pink-500: #f1498f;
-  --color-pink-700: #be185d;
-  --color-red-100: #fee2e2;
-  --color-red-300: #fca5a5;
-  --color-red-700: #b91c1c;
-  --color-yellow-100: #fef3c7;
-  --color-yellow-300: #fcd34d;
-  --color-yellow-500: #e7b924;
-  --color-orange: #e44d26;
-  --color-hotpink: #ff69b4;
+  --color-gray-50: oklch(97% 0 0);
+  --color-gray-100: oklch(92.2% 0 0);
+  --color-gray-200: oklch(87% 0 0);
+  --color-gray-300: oklch(70.8% 0 0);
+  --color-gray-400: oklch(55.6% 0 0);
+  --color-gray-500: oklch(43.9% 0 0);
+  --color-gray-600: oklch(37.1% 0 0);
+  --color-gray-700: oklch(26.9% 0 0);
+  --color-gray-800: oklch(20.5% 0 0);
+  --color-gray-900: oklch(14.5% 0 0);
+  --color-white: oklch(100% 0 0);
+  --color-black: oklch(0% 0 0);
+  --color-red-100: oklch(97% 0.1 27.52);
+  --color-red-300: oklch(70.54% 0.19 27.52);
+  --color-red-500: oklch(50.54% 0.19 27.52);
+  --color-red-700: oklch(35.54% 0.19 27.52);
+  --color-red-900: oklch(20.54% 0.11 27.52);
+  --color-green-100: oklch(97% 0.06 150.73);
+  --color-green-300: oklch(71.66% 0.13 150.73);
+  --color-green-500: oklch(51.66% 0.13 150.73);
+  --color-green-700: oklch(36.66% 0.13 150.73);
+  --color-green-900: oklch(21.66% 0.13 150.73);
+  --color-orange-100: oklch(97% 0.08 49.95);
+  --color-orange-300: oklch(83.15% 0.17 49.95);
+  --color-orange-500: oklch(63.15% 0.17 49.95);
+  --color-orange-700: oklch(48.15% 0.17 49.95);
+  --color-orange-900: oklch(33.15% 0.11 49.95);
+  --color-blue-100: oklch(97% 0.09 256.37);
+  --color-blue-300: oklch(71.33% 0.18 256.37);
+  --color-blue-500: oklch(51.33% 0.18 256.37);
+  --color-blue-700: oklch(36.33% 0.18 256.37);
+  --color-blue-900: oklch(21.33% 0.11 256.37);
   --spacing-0: 0;
   --spacing-1: 1px;
   --spacing-2: 0.125rem;
@@ -82,9 +80,12 @@
   --spacing-260: 16.25rem;
   --font-base: system-ui, sans-serif;
   --font-poppins: poppins, sans-serif;
+  --font-weight-light: 300;
   --font-weight-regular: 400;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
   --text-14: 0.875rem;
   --text-16: 1rem;
   --text-18: 1.125rem;
@@ -106,10 +107,11 @@
   --leading-80: 5rem;
   --leading-100: 6.25rem;
   --radius-none: 0;
+  --radius-md: 0.25rem;
   --radius-lg: 0.5rem;
   --radius-xl: 1.5rem;
   --radius-full: 9999px;
-  --transition-duration: 0.3s;
+  --transition-duration: 0.25s;
   --z-under-page-level: -1;
   --z-above-page-level: 1;
   --z-header-level: 1000;

@@ -16,6 +16,8 @@ Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacre
   - [Bonnes pratiques CSS globales](#bonnes-pratiques-css-globales)
   - [Syntaxe](#syntaxe)
   - [Variables CSS (primitives et tokens)](#variables-css-primitives-et-tokens)
+    - [Primitives : `theme.css`](#primitives--themecss)
+    - [Tokens (=roles) : `theme-tokens.css`](#tokens-roles--theme-tokenscss)
   - [Unités](#unités)
   - [Notation imbriquée (nesting)](#notation-imbriquée-nesting)
   - [Breakpoints et Media Queries](#breakpoints-et-media-queries)
@@ -28,17 +30,17 @@ Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacre
 
 ## Configuration dans un projet
 
-**Tailwind optionnel**
+**Tailwind**
 
 Nous intégrons nos styles en **"CSS Vanilla"**, c'est à dire que ne faisons pas usage de classes utilitaires dans le HTML *sauf rares exceptions* (par exemple pour distinguer un élément parmi d'autres semblables).
 
-Pour ce faire, un générateur de classes utilitaires **Tailwind** (version 4 minimum) peut être incorporé dans nos projets afin de bénéficier de classes utilitaires lorsque cela est nécessaire.
+Pour ce faire, le générateur de classes utilitaires **Tailwind** (version 4 minimum) est systématiquement incorporé dans nos projets afin de bénéficier de classes utilitaires lorsque cela est nécessaire. Seuls exceptions&#8239;: projets internes simples, projets historiques, projets en WordPress FSE.
 
 L'installation et la configuration de Tailwind est décrite ([dans le fichier `project-init.md`](../starters/project-init.md))
 
 **PostCSS / Sass**
 
-Certaines fonctionnalités CSS indispensables ne sont actuellement pas réalisables en natif (Concaténation des fichiers, Mixins, Custom Media).
+Certaines fonctionnalités indispensables ne sont actuellement pas réalisables en CSS natif (Concaténation des fichiers, Mixins, Custom Media).
 
 Selon les projets, deux options sont envisagées pour bénéficier de ces fonctionnalités&nbsp;:
 
@@ -75,123 +77,12 @@ Les variables CSS (custom properties) du projet s'articulent en trois étapes&#8
 2. Les tokens, ou roles (ex. `--color-primary: var(--color-pink-300);`) -> fichier `theme-tokens.css` *(voir section suivante)*
 3. L'usage des tokens dans les styles des composants (ex. `color: var(--color-primary);`) -> fichier `styles.css`
 
-**Primitives**
+### Primitives : `theme.css`
 
 Les valeurs *primitives* sont des valeurs de base issues de l'UI-Kit qui ne changent pas et qui sont utilisées pour définir les rôles (tokens) du projet.
 Un développeur n'est pas censé inventer de nouvelles primitives ni modifier ces valeurs. Si une valeur n'existe pas, il est nécessaire de la créer en concertation avec le designer.
 
-```css
-/* fichier `theme.css` */
-/* valeurs d'exemple (toutes issues de l'UI-Kit FIGMA) */
-:root {
-  /* Breakpoints (en dur) */
-  --breakpoint-md: 48rem; /* 768px */
-  --breakpoint-lg: 64rem; /* 1024px */
-
-  /* Espacements */
-  --spacing-0: 0;
-  --spacing-1: 1px;
-  --spacing-2: 0.125rem;
-  --spacing-4: 0.25rem;
-  --spacing-8: 0.5rem;
-  --spacing-12: 0.75rem;
-  --spacing-16: 1rem;
-  --spacing-20: 1.25rem;
-  --spacing-24: 1.5rem;
-  --spacing-32: 2rem;
-  --spacing-40: 2.5rem;
-  --spacing-48: 3rem;
-  --spacing-56: 3.5rem;
-  --spacing-64: 4rem;
-  --spacing-80: 5rem;
-  --spacing-128: 8rem;
-  --spacing-160: 10rem;
-  --spacing-180: 11.25rem;
-  --spacing-260: 16.25rem;
-
-  /* Typographie */
-  --font-base: system-ui, sans-serif;
-  --font-poppins: poppins, sans-serif;
-  --font-weight-light: 300;
-  --font-weight-regular: 400;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
-  --font-weight-extrabold: 800;
-  --font-weight-black: 900;
-  --text-14: 0.875rem;
-  --text-16: 1rem;
-  --text-18: 1.125rem;
-  --text-20: 1.25rem;
-  --text-24: 1.5rem;
-  --text-30: 1.875rem;
-  --text-36: 2.25rem;
-  --text-48: 3rem;
-  --text-60: 3.75rem;
-  --text-80: 5rem;
-  --leading-20: 1.25rem;
-  --leading-24: 1.5rem;
-  --leading-28: 1.75rem;
-  --leading-32: 2rem;
-  --leading-36: 2.25rem;
-  --leading-40: 2.5rem;
-  --leading-48: 3rem;
-  --leading-56: 3.5rem;
-  --leading-80: 5rem;
-  --leading-100: 6.25rem;
-
-  /* Border radius */
-  --radius-none: 0;
-  --radius-md: 0.25rem;
-  --radius-lg: 0.5rem;
-  --radius-xl: 1.5rem;
-  --radius-full: 9999px;
-
-  /* Divers */
-  --transition-duration: 0.25s;
-  --z-under-page-level: -1;
-  --z-above-page-level: 1;
-  --z-header-level: 1000;
-  --z-above-header-level: 2000;
-  --z-above-all-level: 3000;
-
-  /* Couleurs (globales) */
-  --color-gray-50: oklch(97% 0 0);
-  --color-gray-100: oklch(92.2% 0 0);
-  --color-gray-200: oklch(87% 0 0);
-  --color-gray-300: oklch(70.8% 0 0);
-  --color-gray-400: oklch(55.6% 0 0);
-  --color-gray-500: oklch(43.9% 0 0);
-  --color-gray-600: oklch(37.1% 0 0);
-  --color-gray-700: oklch(26.9% 0 0);
-  --color-gray-800: oklch(20.5% 0 0);
-  --color-gray-900: oklch(14.5% 0 0);
-  --color-white: oklch(100% 0 0);
-  --color-black: oklch(0% 0 0);
-  --color-red-100: oklch(97% 0.1 27.52);
-  --color-red-300: oklch(70.54% 0.19 27.52);
-  --color-red-500: oklch(50.54% 0.19 27.52);
-  --color-red-700: oklch(35.54% 0.19 27.52);
-  --color-red-900: oklch(20.54% 0.11 27.52);
-  --color-green-100: oklch(97% 0.06 150.73);
-  --color-green-300: oklch(71.66% 0.13 150.73);
-  --color-green-500: oklch(51.66% 0.13 150.73);
-  --color-green-700: oklch(36.66% 0.13 150.73);
-  --color-green-900: oklch(21.66% 0.13 150.73);
-  --color-orange-100: oklch(97% 0.08 49.95);
-  --color-orange-300: oklch(83.15% 0.17 49.95);
-  --color-orange-500: oklch(63.15% 0.17 49.95);
-  --color-orange-700: oklch(48.15% 0.17 49.95);
-  --color-orange-900: oklch(33.15% 0.11 49.95);
-  --color-blue-100: oklch(97% 0.09 256.37);
-  --color-blue-300: oklch(71.33% 0.18 256.37);
-  --color-blue-500: oklch(51.33% 0.18 256.37);
-  --color-blue-700: oklch(36.33% 0.18 256.37);
-  --color-blue-900: oklch(21.33% 0.11 256.37);
-
-  /* Couleurs (Theme) */
-  /* Ici les palettes spécifiques au projet */
-}
-```
+📄 Les valeurs primitives sont stockées dans le fichier [**`theme.css`**](../configs/CSS/theme.css).
 
 **Règles de nommage des primitives**
 
@@ -210,7 +101,7 @@ Les règles de nommage sont les suivantes (issues de la [documentation Tailwind 
 - Une ombre est préfixée par `--shadow-*` (ex. `--shadow-md`)
 - Un z-index est préfixé par `--z-*` (ex. `--z-above-header-level`)
 
-**Tokens (=roles)**
+### Tokens (=roles) : `theme-tokens.css`
 
 Les tokens sont des propriétés auxquelles des roles/fonctions ont été attibués.
 
@@ -218,64 +109,7 @@ Les tokens sont des propriétés auxquelles des roles/fonctions ont été attibu
 - Un token est **sémantique** : le but est de savoir à quoi *sert* `--primary` ou `--spacing-m` sans forcément connaître leurs style.
 - Un token est **agnostique** (décontextualisé) : `--primary` est OK en light ou dark mode, `--spacing-m` est OK en desktop ou mobile.
 
-```css
-/* fichier `theme-tokens.css` */
-/* ⚠️ Les noms des tokens sont à conserver à chaque projet */
-/* Les valeurs d'exemple sont à adapter, évidemment */
-:root {
-  --primary: light-dark(var(--color-blue-500), var(--color-blue-300));
-  --on-primary: light-dark(var(--color-white), var(--color-black));
-  --surface: light-dark(var(--color-white), var(--color-gray-800));
-  --on-surface: light-dark(var(--color-gray-900), var(--color-gray-100));
-  --on-surface-secondary: light-dark(var(--color-gray-600), var(--color-gray-300));
-  --layer-1: light-dark(var(--color-gray-50), var(--color-gray-900));
-  --layer-2: light-dark(var(--color-gray-100), var(--color-gray-700));
-  --layer-3: light-dark(var(--color-gray-200), var(--color-gray-600));
-  --accent: light-dark(var(--primary), var(--color-blue-300));
-  --accent-invert: light-dark(var(--color-blue-300), var(--primary));
-  --warning: light-dark(var(--color-orange-500), var(--color-orange-300));
-  --error: light-dark(var(--color-red-500), var(--color-red-300));
-  --success: light-dark(var(--color-green-300), var(--color-green-500));
-
-  --link: light-dark(var(--color-green-500), var(--color-orange-300));
-  --link-hover: light-dark(var(--color-green-500),var(--color-orange-300));
-  --selection: light-dark(var(--color-orange-300), var(--color-orange-500));
-
-  /* Font size Tokens */
-  /* Source https://utopia.fyi/clamp/calculator/?a=360,1240 */
-  --text-s: clamp(var(--text-14), 0.8239rem + 0.2273vw, var(--text-16));
-  --text-m: clamp(var(--text-16), 0.9489rem + 0.2273vw, var(--text-18));
-  --text-l: clamp(var(--text-18), 1.0739rem + 0.2273vw, var(--text-20));
-  --text-xl: clamp(var(--text-20), 0.9943rem + 1.1364vw, var(--text-30));
-  --text-2xl: clamp(var(--text-24), 1.1932rem + 1.3636vw, var(--text-36));
-  --text-3xl: clamp(var(--text-30), 1.4148rem + 2.0455vw, var(--text-48));
-
-  /* Spacing Tokens */
-  --gap-s: clamp(var(--spacing-8), 0.2955rem + 0.9091vw, var(--spacing-16));
-  --gap-m: clamp(var(--spacing-16), 0.5909rem + 1.8182vw, var(--spacing-32));
-  --gap-l: clamp(var(--spacing-24), 0.8864rem + 2.7273vw, var(--spacing-48));
-  --gap-xl: clamp(var(--spacing-32), 0.7727rem + 5.4545vw, var(--spacing-80));
-  --spacing-s: clamp(var(--spacing-8), 0.2955rem + 0.9091vw, var(--spacing-16));
-  --spacing-m: clamp(var(--spacing-16), 0.5909rem + 1.8182vw, var(--spacing-32));
-  --spacing-l: clamp(var(--spacing-24), 0.8864rem + 2.2727vw, var(--spacing-48));
-  --spacing-xl: clamp(var(--spacing-32), 0.7727rem + 5.4545vw, var(--spacing-80));
-
-  /* Forms Tokens */
-  --form-control-background: light-dark(var(--color-slate-200), var(--color-slate-700));
-  --on-form-control: light-dark(var(--color-gray-900), var(--color-gray-100));
-  --form-control-spacing: var(--spacing-12) var(--spacing-16);
-  --form-control-border-width: 1px;
-  --form-control-border-color: var(--color-gray-400);
-  --form-control-border-radius: var(--radius-md);
-  --checkables-border-color: var(--color-gray-400);
-  --checkable-size: 1.25em;
-
-  /* States Tokens */
-  --focus-ring-color: AccentColor;
-  --focus-ring-width: 2px;
-  --focus-ring-offset: 2px;
-}
-```
+📄 Les valeurs des tokens sont stockées dans le fichier [**`theme-tokens.css`**](../configs/CSS/theme-tokens.css).
 
 **Liste des rôles des tokens**
 
