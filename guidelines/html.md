@@ -64,7 +64,10 @@ Peut être complété par (ou intégré dans un autre script s'il s'agit d'une a
 
 ## En-tête de document
 
-Tout ce que l'on peut y trouver : <https://htmlhead.dev/> + <https://github.com/joshbuchea/HEAD>
+Tout ce que l'on peut trouver dans `<head>`
+
+- 🔖 <https://htmlhead.dev/>
+- 🔖 <https://github.com/joshbuchea/HEAD>
 
 ### Doctype
 
@@ -90,7 +93,7 @@ Les langues alternatives en cas de site multilingue sont indiquées par une bali
 
 ### Encodage
 
-L’encodage du document (en UTF-8) est systématiquement renseigné via un élément meta dans le `<head>` :
+L’encodage du document (en UTF-8) est systématiquement renseigné via un élément meta dans `<head>` :
 
 ```html
 <meta charset="UTF-8">
@@ -125,7 +128,7 @@ L’icône de favori (favicon) est utilisée de différentes manières par les n
 - le format PNG permet une meilleure définition (carré multiple de 48x48) avec un poids plus léger,
 - et le [format SVG](https://css-tricks.com/svg-favicons-and-all-the-fun-things-we-can-do-with-them/) se voit [progressivement supporté](https://caniuse.com/link-icon-svg).
 
-La syntaxe recommandée pour les navigateurs modernes est celle-ci :
+La syntaxe recommandée pour les navigateurs modernes :
 
 ```html
 <link rel="icon" href="/favicon.ico" sizes="32x32">
@@ -135,9 +138,7 @@ La syntaxe recommandée pour les navigateurs modernes est celle-ci :
 <link rel="manifest" href="/manifest.json">
 ```
 
-Les navigateurs ne supportant pas le format `svg` vont ignorer la première instruction.
-
-La ressource la plus à jour pour toute information et méthodologie pour la conception de favicon est <https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs>
+🔖 How to Favicon: Three files that fit most needs <https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs>
 
 ## Conventions de nommage
 
@@ -164,7 +165,7 @@ Les "Layouts" sont des zones d'affichages destinées à gérer la façon dont le
 
 La liste actuelle des Layouts est : `l-flow`, `l-autogrid`, `l-switcher`, `l-cluster`, `l-repel`, `l-reel`, `l-media`, `l-breakout`, `l-layout-maxed`.
 
-Nos Layouts sont présentés dans [Bretzel](http://bretzel.alsacreations.com/#layouts) et [récupérables sur Github](https://github.com/alsacreations/bretzel/blob/main/public/bretzel-layouts.css).
+🥨 Nos Layouts sont présentés dans [Bretzel](http://bretzel.alsacreations.com/#layouts) et [récupérables sur Github](https://github.com/alsacreations/bretzel/blob/main/public/layouts.css).
 
 ## Sémantique globale
 
@@ -247,13 +248,13 @@ Autres outils d'optimisation (automatisation et traitement par lot)&#8239;:
 ```html
 <!-- Format unique (avif) -->
 <img src="kiwi.avif" alt="Un kiwi en tutu" decoding="async" loading="lazy" 
-       width="1200" height="800">
+    width="1200" height="800">
 
 <!-- Formats avif + webp en alternative -->
 <picture>
   <source type="image/avif" srcset="kiwi.avif">
   <img src="kiwi.webp" alt="kiwi en tutu" decoding="async" loading="lazy" 
-       width="1200" height="800">
+    width="1200" height="800">
 </picture>
 ```
 
