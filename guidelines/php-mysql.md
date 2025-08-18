@@ -11,6 +11,7 @@ Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacre
 - Les indentations se font à l’aide d'espaces.
   Pour assurer une cohérence inter-projets, utiliser la convention [EditorConfig](https://editorconfig.org/).
 - La numérotation des versions suit [Semantic Versioning](https://semver.org/)
+- Activer le typage strict en tête de chaque fichier PHP: `declare(strict_types=1);`
 
 ## Garder à l’esprit
 
@@ -51,172 +52,244 @@ echo "Hello!";
 
 ### Variables, constantes et classes
 
-Les variables sont rédigées en minuscules, les termes séparés par underscore.
+- Respecter PSR-12 :
+  - Classes et interfaces en PascalCase.
+  - Méthodes, propriétés et variables en camelCase.
+  - Constantes en UPPER_SNAKE_CASE.
+  - Mots-clés/valeurs scalaires `true`, `false`, `null` en minuscules.
+- Utiliser des espaces et des accolades sur nouvelles lignes selon PSR-12.
+- Utiliser des namespaces et l’autoload PSR-4 (Composer).
 
 ```php
-$str
-$buffer
-$group_id
-$last_city
+declare(strict_types=1);
+
+namespace App\Service;
+
+final class FileStorage
+{
+    private string $basePath;
+
+    public function __construct(string $basePath = '/tmp')
+    {
+        $this->basePath = $basePath;
+    }
+
+    public function getFileProperties(string $filename): array
+    {
+        // ...
+        return [];
+    }
+}
 ```
 
-Les constantes sont rédigées exclusivement en majuscules ainsi que les mots-clés booléens
+### Typage et signatures
+
+- Taper systématiquement paramètres, propriétés et retours.
+- Privilégier `readonly`, promotions de propriétés, unions, `?Type`, valeurs par défaut en fin de signature.
+- Utiliser `iterable`, `array`, `string`, `int`, `float`, `bool`, `Closure`, `\DateTimeImmutable`, `\Stringable` quand pertinent.
 
 ```php
-PUBLIC_URL
-TRUE
-FALSE
-NULL
-```
+function kiwi(string $val1 = '', bool $val2 = false): string
+{
+    // ...
+    return $val1;
+}
 
-Les noms de classes doivent débuter par une majuscule. Les méthodes doivent être écrites en minuscules avec des termes séparés par underscore.
-
-```php
-class Super_class {
-  function __construct() {
-  }
-  function get_file_properties() {
-  }
+function kaki(string $val1, bool $val2 = false): void
+{
+    // ...
 }
 ```
 
 ### Commentaires
 
-Pour les brefs commentaires, le double slash est privilégié.
+- Pour les brefs commentaires, le double slash est privilégié.
+- Préférer du code auto-documenté; [DocBlocks](https://docs.phpdoc.org/guide/getting-started/what-is-a-docblock.html) pour API publiques, exceptions, invariants, ou quand le typage ne suffit pas.
+- Éviter les @param/@return redondants avec les types natifs; conserver pour préciser l’intention ou les formats.
 
 ```php
 // Une ligne de commentaire
-
 // Une deuxième ligne
-```
 
-Pour les descriptions de fonctions, le style DocBlock peut être utilisé.
-
-```php
 /**
-
- * Rôle de la fonction
- *
- * @access public
- * @param string
- * @return string
+ * Encode une chaîne au format XML.
+ * @throws \RuntimeException si l'encodage échoue
  */
-
-function xml_encode($str) {
+function xmlEncode(string $str): string
+{
+    // ...
 }
 ```
 
 ### Indentation et instructions
 
-L’indentation utilise les espaces, il n’y a pas plus d’une instruction par ligne.
+- Une seule instruction par ligne. Préférer les [guard clauses](https://en.wikipedia.org/wiki/Guard_(computer_science)) et [early return](https://www.faceaucode.com/post/le-patron-de-conception-early-return).
 
 ### Chaînes de texte
 
-Pour des raisons de performance, les chaînes de texte sont délimitées par des apostrophes simples, sauf exception possible pour éviter l’échappement dans les requêtes SQL nécessitant des guillemets internes simples.
+- Préférer les apostrophes simples `'` ; utiliser les guillemets `"` pour l'interpolation controlée.
+- Pour les blocs, utiliser [heredoc/nowdoc](https://www.php.net/manual/en/language.types.string.php). Éviter la concaténation dans les boucles.
 
 ```php
-'Mon texte'
-"SELECT * FROM table WHERE champ = 'valeur'"
+'Mon texte';
+"SELECT * FROM table WHERE champ = 'valeur'";
+"Bonjour $prenom";
 ```
 
-### Valeurs par défaut
+### Contrôle de flux et raccourcis utiles
 
-Spécifier des valeurs par défaut pour les arguments de fonction évite des appels incomplets et permet des solutions de repli rapides.
+- Utiliser `===`/`!==`, `??`, `?:`, `?->`, `match`, fonctions fléchées.
+- Préférer `match` aux `switch` quand approprié; `in_array($x, [...], true)` pour contrôles stricts.
 
-```php
-function kiwi($val1 = '', $val2 = FALSE)
-```
+### Erreurs, exceptions et journalisation
 
-En cas de gestion des erreurs avec des try/catch, toujours mettre en derniers les valeurs qui ont une value définie par défaut.
-
-```php
-function kaki($val1, $val2 = FALSE)
-```
+- Lever des exceptions, ne pas masquer les erreurs. `error_reporting(E_ALL)`.
+- En production: `display_errors=Off`, logs structurés avec [Monolog](https://github.com/Seldaek/monolog).
+- Utiliser `JSON_THROW_ON_ERROR` avec `json_encode/json_decode`.
+- Centraliser la gestion des erreurs et des réponses HTTP.
 
 ### Sécurité
 
-Quelques critères essentiels sont à observer (parmi d’autres, la liste est non exhaustive) :
+- Suivre l’OWASP (cheat sheets XSS, Injection, CSRF). Mettre en place CSP, CSRF tokens, SameSite cookies.
+- Valider les entrées (type/format) puis échapper à la sortie selon le contexte (HTML, attribut, JS, URL).
+- Authentification: `password_hash()`/`password_verify()` (Argon2id par défaut si disponible), salage et coût appropriés.
+- Sessions: `cookie_secure`, `cookie_httponly`, `cookie_samesite=Lax/Strict`, régénérer l’ID après login.
+- Base de données: toujours des requêtes préparées avec PDO (ou mysqli préparé). Éviter `mysql_*` obsolète.
+- Uploads: vérifier MIME via Fileinfo (`finfo_open`), taille, extension whitelist, nommage aléatoire, stocker hors webroot.
+- Éviter `eval`, `system`, `exec`. Si nécessaire, whitelists strictes et escapes appropriés.
+- Secrets et configuration via variables d’environnement; ne jamais les committer.
 
-- Suivre les recommandations de l'OWASP pour éviter les failles XSS (Cross Site Scripting) <https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet>
-- Utiliser les fonctions d’échappement et de filtre pour valider les données utilisateur, avant traitement ou insertion dans la base de données.
-  - [filter_var](https://www.php.net/manual/fr/function.filter-var.php)
-  - MySQL : [mysql_real_escape_string](https://www.php.net/manual/fr/function.mysql-real-escape-string.php) pour les chaînes de texte.
-  - [preg_quote](https://www.php.net/manual/fr/function.preg-quote.php) pour les expressions régulières.
-  - MySQL : Utiliser les fonctions de PDO quand c’est possible pour [échapper](https://www.php.net/manual/fr/pdostatement.bindparam.php) ou [préparer une requête](https://www.php.net/manual/fr/pdo.prepare.php).
-- Vérifier toutes les variables trouvées dans `$_REQUEST`, `$_POST`, `$_GET` et `$_COOKIE` avant usage.
-- Vérifier précautionneusement les fichiers envoyés en upload s'il y a lieu (types MIME, extensions, noms, etc).
-- Eviter de manipuler des fichiers et des chemins d’accès au filesystem, ainsi que des fonctions d’exécution de code (`eval`, `system`, `exec`, etc).
-- Utiliser un framework PHP tel que CodeIgniter qui sécurise par défaut quantité d’actions.
+```php
+$pdo = new PDO($dsn, $user, $pass, [
+    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+]);
+$stmt = $pdo->prepare('SELECT * FROM users WHERE email = :email');
+$stmt->execute(['email' => $email]);
+```
 
 ### Données
 
-- Tester et valider les expressions régulières (regexp) avec <https://regex101.com/> (entre autres).
+- Expressions régulières: tester sur <https://regex101.com/>.
+- JSON: `json_encode($data, JSON_THROW_ON_ERROR | JSON_UNESCAPED_UNICODE)`.
+- Dates: stocker UTC, manipuler avec `DateTimeImmutable` et `DateTimeZone`.
 
 ### Performance
 
+- Préférer les algorithmes simples (KISS), mesurer avant d’optimiser.
+- Déporter les tâches longues en jobs asynchrones.
+- Activer OPcache en production, voire Redis.
 - [Limitez votre PHP : optimisations pour une meilleure gestion des ressources](https://bearstech.com/societe/blog/limitez-votre-php/)
 
 ### Syntaxe et raccourcis syntaxiques
 
 - [Shorthand comparisons in PHP](https://stitcher.io/blog/shorthand-comparisons-in-php)
+- Utiliser `match`, `??`, `?->`, arguments nommés, trailing commas.
 
 ## Composer
 
 Utilisation de <https://getcomposer.org/> pour la gestion des dépendances PHP.
 
-- Fichier de configuration : `composer.json`
+- Fichier de configuration : `composer.json` (commit aussi `composer.lock`)
 - Initialiser de manière interactive le projet `composer init`
 - Installer un paquet et le sauvegarde dans le fichier de configuration `composer require [nom du paquet]`
 - Désinstalle la dépendance `composer remove [nom du paquet]`
 - Met à jour les dépendances `composer update`
+- Autoload PSR-4 dans `composer.json` (`"autoload": {"psr-4": {"App\\\": "src/"}}`) puis `composer dump-autoload`
+- Sécurité: `composer audit`, tenir à jour, utiliser contraintes de versions (caret `^`), `config.platform.php` pour fixer la version cible
+- Scripts utiles: `composer scripts`, hooks CI (lint, tests, stan, cs-fixer, phpstan)
 
 ## Visual Studio Code
 
-Lire <https://code.visualstudio.com/docs/languages/php>
+🔖 Lire <https://code.visualstudio.com/docs/languages/php>
 
 - Installer PHP sur la machine pour renseigner le chemin dans `php.validate.executablePath`. Sur macOS, utiliser [brew](https://brew.sh/).
 - Extension [PHP Intelephense](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client)
+- Intégrer PHPCS ou PHP-CS-Fixer, Xdebug pour le debug pas-à-pas, et PHPUnit.
+- Exemple de réglages:
+  - `"php.validate.executablePath": "/usr/local/bin/php"`
+  - `"editor.formatOnSave": true`
+  - `"php-cs-fixer.useCache": true`
+
+## Tests, qualité
+
+- Analyse statique: [PHPStan](https://phpstan.org/) (niveau 6+), voire Psalm si besoin.
+- Linting/format: PHP_CodeSniffer ou PHP-CS-Fixer avec PSR-12.
+- Mises à niveau: [Rector](https://github.com/rectorphp/rector).
+- Intégration continue (GitHub Actions/GitLab CI): lint, stan, tests, couverture, audit.
+- Tests unitaires et d’intégration avec PHPUnit.
 
 ## MySQL
 
 ### Nommage
 
-Les noms des tables doivent être explicites. Les noms des champs associés doivent être préfixés par le nom de la table pour faciliter la lecture et l'écriture de requêtes avec jointures, s'ils ne sont pas assortis du nom de table.
-
-Par exemple pour la table `users` on utilisera `user_id`, `user_email`, `user_email_archive`, `user_status`...
+Les noms des tables doivent être explicites. Éviter les abréviations. Préfixer les colonnes avec le nom de la table n’est pas obligatoire; préférer des noms clairs (et alias SQL) et s’appuyer sur des clés étrangères. Exemple: `users(id, email, status, created_at)`.
 
 ### Types de champs
 
+- Charset/collation: `utf8mb4` et `utf8mb4_0900_ai_ci` (ou équivalent) pour couvrir tous les emojis et caractères.
+- Moteur: InnoDB (permet les transactions, foreign keys...).
+- Éviter `ENUM` (maintenance difficile).
+- Utiliser `JSON` pour données semi-structurées (avec parcimonie).
+- Monétaire: `DECIMAL(precision, scale)` (pas de `FLOAT`/`DOUBLE`).
+- Dates: stocker en UTC, `DATETIME` pour large plage; `TIMESTAMP` si besoin d’auto-update/zone limitée.
+
 |Usage|Type à privilégier|
 |--- |--- |
-|Booléen|TINYINT|
+|Booléen|BOOLEAN/TINYINT(1)|
+|Clé primaire|INT/BIGINT AUTO_INCREMENT (selon volumétrie)|
 |Valeur numérique entière|TINYINT à BIGINT selon la taille prévue|
-|Chaîne de texte simple|CHAR(x)|
-|Choix limités|ENUM|
-|Valeur décimale|DECIMAL|
-|Année|YEAR|
-|Date et heure|DATETIME|
-|Timestamp Unix|INT|
-|Texte et contenu|TEXT|
+|Valeur décimale|DECIMAL(p,s)|
+|Chaîne courte|VARCHAR(x) (CHAR pour longueurs fixes)|
+|Choix limités|Table de référence + FK ou CHECK|
+|Date/heure|DATETIME (UTC)|
+|Timestamp Unix|INT UNSIGNED|
+|Texte long|TEXT/LONGTEXT|
+|Données semi-structurées|JSON|
+
+### Contraintes, transactions et intégrité
+
+- Utiliser des clés étrangères, `UNIQUE`, `CHECK`, `NOT NULL` pour l’intégrité.
+- Encapsuler les écritures liées dans des transactions; choisir un niveau d’isolation adapté.
+
+```sql
+START TRANSACTION;
+-- opérations
+COMMIT;
+```
 
 ### Index et performance
 
 Afin d’améliorer la performance :
 
 - Des index doivent être placés sur les champs servant dans les requêtes SELECT (au moins celles-là).
-- Examiner la performance de ces requêtes et l'usage des index avec l'instruction EXPLAIN <https://dev.mysql.com/doc/refman/5.7/en/execution-plan-information.html>
-- Dans le cas de jointures, les champs mis en relation (d’une table à l’autre) doivent être de même type (par exemple `INT` avec `INT` et non `INT` avec `MEDIUMINT`).
+- Préférer des index composites dans l’ordre des prédicats (sélectivité).
+- Couvrir les requêtes fréquentes (covering index), éviter `SELECT *`.
+- Examiner la performance et l'usage des index avec [EXPLAIN](https://dev.mysql.com/doc/refman/8.4/en/execution-plan-information.html) et le [slow query log](https://dev.mysql.com/doc/refman/8.4/en/slow-query-log.html).
+- Éviter les fonctions sur colonnes indexées dans les `WHERE` ; préférer des colonnes dérivées ou colonnes générées.
+- Pagination: éviter `OFFSET` élevés; préférer keyset pagination (`WHERE id > ? ORDER BY id LIMIT ?`).
+- Dans le cas de jointures, les champs mis en relation (d'une table à l’autre) doivent être de même type (par exemple `INT` avec `INT` et non `INT` avec `MEDIUMINT`).
 - Faire attention au type de table utilisé (MyISAM vs InnoDB).
 
 ### Requêtes SQL
 
-Tous les mots clés doivent être rédigés en majuscules, et les requêtes longues peuvent être décomposées en plusieurs lignes avec un retour avant chaque mot clé.
+- Mots-clés en MAJUSCULES, noms en snake_case cohérent.
+- Toujours utiliser des requêtes préparées côté application (PDO/mysqli).
 
 ```php
-$query = $this->db->query("
-SELECT foo, bar, foofoo, foobar AS raboof, foobaz
-FROM table
-WHERE foo != 'oof'
-ORDER BY foofoo
-LIMIT 5, 100");
+$query = $this->db->prepare("
+SELECT u.id, u.email, u.status
+FROM users u
+WHERE u.status = :status
+ORDER BY u.id
+LIMIT :limit OFFSET :offset
+");
+$query->bindValue('status', $status, PDO::PARAM_STR);
+$query->bindValue('limit', $limit, PDO::PARAM_INT);
+$query->bindValue('offset', $offset, PDO::PARAM_INT);
+$query->execute();
 ```
+
+### Migrations et déploiement
+
+- Versionner le schéma avec des migrations (Doctrine Migrations, Laravel Migrations).
