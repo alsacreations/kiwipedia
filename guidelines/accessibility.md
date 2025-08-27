@@ -78,7 +78,7 @@ Ces règles visent à obtenir une conformité au moins partielle au RGAA (supér
 
 ## Structure générale
 
-Chaque page doit être correctement structurée afin de définir des zones aussi appelées [regions](https://www.w3.org/WAI/tutorials/page-structure/regions/) (en-tête, pied de page, contenu principal, navigation et moteur de recherche).
+Chaque page doit être correctement structurée afin de définir des zones aussi appelées [regions](https://www.w3.org/WAI/tutorials/page-structure/regions/) (en-tête, pied de page, contenu principal, navigation et moteur de recherche) notamment grâce aux éléments HTML sémantiques tels que `main`, `header`, `footer`, `nav`, etc. ou aux attributs `role`.
 
 ## Sémantique HTML
 
@@ -93,6 +93,13 @@ Chaque page doit avoir déclaré le type de document ainsi que la langue princip
 </html>
 ```
 
+### Titres de page
+
+Le titre de la page doit être pertinent et de préférence unique pour chaque page. Dans `<title>`, éviter le caractère `|` (pipe) comme séparateur. Préférer `:` (deux-points).
+
+Pour une page de résultats de recherche, il faut indiquer dans le titre le mot recherché ainsi que la page actuelle si une pagination est présente :
+"Vous avez recherché le mot : xxx - page 2"
+
 ### Titres
 
 Chaque page doit être organisée selon une structure de titres et de sous-titres hiérarchisés. Chaque titre doit être balisé avec un élément HTML `<hx>` allant du niveau 1 (`<h1>`) au niveau 6 (`<h6>`), `<h1>` étant le niveau le plus important. Nous conseillons :
@@ -103,143 +110,6 @@ Chaque page doit être organisée selon une structure de titres et de sous-titre
 Voir aussi <https://access42.net/en-tetes-non-conformite-wcag-clarification-titre/>
 
 La hiérarchie peut être testée avec l'extension [Headings Map pour Chrome](https://chrome.google.com/webstore/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi) ou [Headings Map pour Firefox](https://addons.mozilla.org/fr/firefox/addon/headingsmap/).
-
-### Zone d’en-tête principale
-
-```html
-<header role="banner">[…]</header>
-```
-
-La balise `<header>` peut être utilisée plusieurs fois dans la page mais l’attribut `role="banner"` ne doit être utilisé qu’une seule fois.
-
-### Pied de page
-
-```html
-<footer role="contentinfo">[…]</footer>
-```
-
-La balise `<footer>` peut être utilisée plusieurs fois dans la page mais l’attribut `role="contentinfo"` ne doit être utilisé qu’une seule fois.
-
-### Zone de contenu principal
-
-```html
-<main role="main">[…]</main>
-```
-
-La balise `<main>` ne peut être utilisée qu’une seule fois dans la page ainsi que l’attribut `role="main"`.
-
-### Zone de recherche
-
-```html
-<search>[…]</search>
-```
-
-Regroupe des capacités de recherche et de filtrage grâce à l'aide de contrôles de formulaire, il peut y en exister un ou plusieurs sur un même document, dans le corps ou dans une section `<header>` s'il s'agit d'un module de recherche transversal présent durant toute la navigation. Le landmark implicite est role="search", il n'y a donc plus besoin de l'ajouter à `<form>`.
-
-### Navigation
-
-Chaque ensemble de pages doit proposer au moins deux moyens de navigation différents parmi la liste suivante :
-
-- Un menu de navigation
-- Un plan du site
-- Un moteur de recherche interne
-
-Le menu de navigation, les barres de navigation (fil d'ariane par exemple) et le moteur de recherche (si existant) doivent toujours être affichés et atteignables de la même manière y compris au clavier.
-
-Utiliser des combinaisons `<ul><li>` (liste non ordonnée) pour structurer les menus de navigation (principale ou secondaire) dans un élément `<nav role="navigation”>` :
-
-- Le menu principal du site (souvent affiché dans l’en-tête)
-- Un menu secondaire affiché dans certaines pages internes (parfois dans une barre latérale)
-- Un menu secondaire affiché dans le pied de page
-- Un fil d’ariane
-- Une pagination
-- Une table des matières
-
-La balise `<nav>` peut-être utilisée plusieurs fois, avec l'attribut `role="navigation"`. Dans le cas où plusieurs navigations sont utilisées au sein d'une page, elles doivent être différenciées en précisant un nom à chacune des zones avec l'attribut `aria-label`.
-
-**Exemple :**
-
-```html
-<nav role="navigation" aria-label="Menu principal">[…]</nav>
-```
-
-### Tabulation et tabindex
-
-L'attribut `tabindex` permet de capturer l’ordre du focus selon le nombre qu’on lui attribue (permettant de passer d'un élément *focusable* à l'autre avec la touche `tab`). Un ordre logique est "naturellement" créé en suivant les éléments interactifs du DOM (liens, boutons, champs...). Il comprend tous les nombres positifs à partir de 0.
-
-Il faut éviter de toucher aux valeurs positives de `tabindex` cela pourrait aller à l'encontre de l'ordre "naturel" dans le document.
-
-On peut utiliser :
-
-- `-1` : rend un élément *focusable* sans le rendre navigable au clavier ; s'il est ajouté sur un élément interactif, celui-ci perdra le focus.
-- `0` : l'élément peut capturer le focus et être atteint via la navigation au clavier.
-
-Les éléments pouvant recevoir le focus autres que nativement `<a>`, `<input>`, `<button>`, `<select>`, `<textarea>` (entre autres) pourront être équipés de `tabindex="0"`.
-
-Pour en savoir plus : [MDN : tabindex](https://developer.mozilla.org/fr/docs/Web/HTML/Global_attributes/tabindex)
-
-### Moteur de recherche
-
-Le rôle `role="search"` doit être ajouté à l'élément HTML englobant le formulaire de recherche. Dans le cas où plusieurs recherches se trouvent au sein d'une page, elles doivent être différenciées en précisant un nom à chacune des zones via l'attribut `aria-label`.
-
-```html
-<div role="search" aria-label="Moteur de recherche principal">
-  <form>[…]</form>
-</div>
-```
-
-Plus d’informations : <https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Search_role/>
-
-### Liens d’évitement ("skip link")
-
-Un lien d'évitement vers le contenu principal est nécessaire. D'autres liens d'évitement peuvent être ajoutés pour accéder rapidement à la navigation, à la recherche, au pied de page, etc.
-
-- Il doit être le premier lien de la page.
-- Il peut être masqué par défaut (classe `visually-hidden`) mais doit devenir visible lors du focus.
-- Si le contenu principal est un élément non interactif il faut ajouter `tabindex="-1"` pour rendre cet élément *focusable* (ex. sur une balise `<main>`). Voir [la partie sur les tabindex.](#tabulation-et-tabindex)
-
-Voici le lien d'évitement employé au sein du [Design System du W3C](https://design-system.w3.org/) :
-
-```html
-<body>
-  <a href="#main" class="skip-link">Skip to content</a>
-  […]
-  <main role="main" id="main" tabindex="-1">
-```
-
-```css
-.skip-link {
-  padding: 0.625em 0.9375em;
-  border: solid 3px #000000;
-  background-color: #f9dc4a;
-  color: #000000;
-  text-decoration: none;
-}
-
-.skip-link:not(:focus, :active) {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  white-space: nowrap;
-  clip-path: inset(50%);
-}
-
-.skip-link:focus {
-  position: absolute;
-  z-index: 9999;
-  top: 0;
-  left: 0;
-}
-```
-
-### Titres de page
-
-Le titre de la page doit être pertinent et de préférence unique pour chaque page. Dans `<title>`, éviter le caractère `|` (pipe) comme séparateur. Préférer `:` (deux-points).
-
-Pour une page de résultats de recherche, il faut indiquer dans le titre le mot recherché ainsi que la page actuelle si une pagination est présente :
-"Vous avez recherché le mot : xxx - page 2"
 
 ### Listes
 
@@ -277,6 +147,144 @@ Liste de définitions (ex : glossaire) :
 </dl>
 ```
 
+### Zone d’en-tête principale
+
+```html
+<header role="banner">[…]</header>
+```
+
+La balise `<header>` peut être utilisée plusieurs fois dans la page mais l’attribut `role="banner"` ne doit être utilisé qu’une seule fois.
+
+### Pied de page
+
+```html
+<footer role="contentinfo">[…]</footer>
+```
+
+La balise `<footer>` peut être utilisée plusieurs fois dans la page mais l’attribut `role="contentinfo"` ne doit être utilisé qu’une seule fois.
+
+### Zone de contenu principal
+
+```html
+<main role="main">[…]</main>
+```
+
+La balise `<main>` ne peut être utilisée qu’une seule fois dans la page ainsi que l’attribut `role="main"`.
+
+### Zone de recherche
+
+```html
+<search>[…]</search>
+```
+
+Regroupe des capacités de recherche et de filtrage grâce à l'aide de contrôles de formulaire, il peut y en exister un ou plusieurs sur un même document, dans le corps ou dans une section `<header>` s'il s'agit d'un module de recherche transversal présent durant toute la navigation. Le landmark implicite est `role="search"`, il n'y a donc plus besoin de l'ajouter à `<form>`.
+
+### Moteur de recherche
+
+Le rôle `role="search"` doit être ajouté à l'élément HTML englobant le formulaire de recherche. Dans le cas où plusieurs recherches se trouvent au sein d'une page, elles doivent être différenciées en précisant un nom à chacune des zones via l'attribut `aria-label`.
+
+```html
+<div role="search" aria-label="Moteur de recherche principal">
+  <form>[…]</form>
+</div>
+```
+
+Plus d’informations : <https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Search_role/>
+
+### Navigation
+
+#### Moyens de navigation
+
+Chaque ensemble de pages doit proposer au moins deux moyens de navigation différents parmi la liste suivante :
+
+- Un menu de navigation
+- Un plan du site
+- Un moteur de recherche interne
+
+Le menu de navigation, les barres de navigation (fil d'ariane par exemple) et le moteur de recherche (si existant) doivent toujours être affichés et atteignables de la même manière y compris au clavier.
+
+Utiliser des combinaisons `<ul><li>` (liste non ordonnée) pour structurer les menus de navigation (principale ou secondaire) dans un élément `<nav role="navigation”>` :
+
+- Le menu principal du site (souvent affiché dans l’en-tête)
+- Un menu secondaire affiché dans certaines pages internes (parfois dans une barre latérale)
+- Un menu secondaire affiché dans le pied de page
+- Un fil d’ariane
+- Une pagination
+- Une table des matières
+
+La balise `<nav>` peut-être utilisée plusieurs fois, avec l'attribut `role="navigation"`. Dans le cas où plusieurs navigations sont utilisées au sein d'une page, elles doivent être différenciées en précisant un nom à chacune des zones avec l'attribut `aria-label`.
+
+**Exemple :**
+
+```html
+<nav role="navigation" aria-label="Menu principal">[…]</nav>
+```
+
+#### Navigation au clavier, tabulation et tabindex
+
+La navigation au clavier se fait via la tabulation (touche *Tab* du clavier ; *Shift+Tab* en arrière) sur tous les éléments interactifs *focusables* : boutons, liens, champs de formulaire, sélecteur, etc. Ce *focus* est indiqué par un contour visuel (propriété `outline` en CSS qu'il est impératif de conserver, ou proposer une alternative avec `focus-visible`).
+
+- Le site doit être intégralement utilisable au clavier.
+- L'ordre de tabulation doit être cohérent.
+- Il ne doit pas y avoir de piège au clavier (si l'internaute ne peut atteindre ni l'élément *focusable* suivant, ni l'élément *focusable* précédent).
+
+L'attribut `tabindex` permet de capturer l’ordre du focus selon le nombre qu’on lui attribue (permettant de passer d'un élément *focusable* à l'autre avec la touche `tab`). Un ordre logique est "naturellement" créé en suivant les éléments interactifs du DOM (liens, boutons, champs...). Il comprend tous les nombres positifs à partir de 0.
+
+Il faut éviter de toucher aux valeurs positives de `tabindex` cela pourrait aller à l'encontre de l'ordre "naturel" dans le document.
+
+On peut utiliser :
+
+- `-1` : rend un élément *focusable* sans le rendre navigable au clavier ; s'il est ajouté sur un élément interactif, celui-ci perdra le focus.
+- `0` : l'élément peut capturer le focus et être atteint via la navigation au clavier.
+
+Les éléments pouvant recevoir le focus autres que nativement `<a>`, `<input>`, `<button>`, `<select>`, `<textarea>` (entre autres) pourront être équipés de `tabindex="0"`.
+
+Pour en savoir plus : [MDN : tabindex](https://developer.mozilla.org/fr/docs/Web/HTML/Global_attributes/tabindex)
+
+#### Liens d’évitement ("skip link")
+
+Un lien d'évitement vers le contenu principal est nécessaire. D'autres liens d'évitement peuvent être ajoutés pour accéder rapidement à la navigation, à la recherche, au pied de page, etc.
+
+- Il doit être le premier lien de la page.
+- Il peut être masqué par défaut (classe `visually-hidden`) mais doit devenir visible lors du focus.
+- Si le contenu principal est un élément non interactif il faut ajouter `tabindex="-1"` pour rendre cet élément *focusable* (ex. sur une balise `<main>`).
+
+Voici le lien d'évitement employé au sein du [Design System du W3C](https://design-system.w3.org/) :
+
+```html
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  […]
+  <main role="main" id="main" tabindex="-1">
+```
+
+```css
+.skip-link {
+  padding: 0.625em 0.9375em;
+  border: solid 3px #000000;
+  background-color: #f9dc4a;
+  color: #000000;
+  text-decoration: none;
+}
+
+.skip-link:not(:focus, :active) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+.skip-link:focus {
+  position: absolute;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+}
+```
+
 ### Liens
 
 Un lien `<a>` mène vers une nouvelle page, un nouveau contexte de navigation. À ne pas confondre avec un bouton `<button>` ou `<input type="button">` qui déclenche une action sans nécessairement changer de page (ex : déployer un menu, révéler un bloc).
@@ -290,7 +298,7 @@ Tous les liens doivent avoir un **intitulé explicite**, un lien "vide" n’est 
 ![Liens vers les réseaux sociaux](../images/accessibilite02.png)
 *Liens vers les réseaux sociaux*
 
-Ne pas faire :
+Ne pas faire 👎
 
 ```html
 <a href="#" class="link-facebook"></a>
@@ -305,11 +313,9 @@ Ne pas faire :
 }
 ```
 
-→ dans ce cas, le lecteur d’écran retranscrit l’intégralité de l’URL.
+⚠️ Dans ce cas, le lecteur d’écran retranscrit l’intégralité de l’URL. Même en ajoutant un attribut `title="Retrouvez-nous sur Facebook"` sur le lien, celui-ci reste considéré comme vide. De plus, il n’est pas sûr à 100% que l’attribut `title` soit correctement restitué par le lecteur d’écran (tout dépend de la configuration de l’utilisateur).
 
-Même en ajoutant un attribut `title="Retrouvez-nous sur Facebook"` sur le lien, celui-ci reste considéré comme vide. De plus, il n’est pas sûr à 100% que l’attribut `title` soit correctement restitué par le lecteur d’écran (tout dépend de la configuration de l’utilisateur).
-
-À faire :
+À faire 👍
 
 ```html
 <a href="#" class="link-facebook">
@@ -326,7 +332,7 @@ Même en ajoutant un attribut `title="Retrouvez-nous sur Facebook"` sur le lien,
 }
 ```
 
-→ dans ce cas, le lecteur d’écran retranscrit bien *"Retrouvez-nous sur Facebook"*.
+✅ Dans ce cas, le lecteur d’écran retranscrit bien *"Retrouvez-nous sur Facebook"*.
 
 #### Ouverture dans une nouvelle fenêtre (lien externe)
 
@@ -360,7 +366,6 @@ Un lien peut devenir explicite grâce à son contexte. Par exemple :
 - Le contenu de la cellule de donnée (balise `<td>`) dans laquelle le lien texte est présent.
 
 ```html
-
 <!-- Contexte du contenu de la phrase / paragraphe  -->
 <p>Le document RGAA 4.1 a été mis à jour. <a href="#">En savoir plus</a></p>
 
@@ -429,7 +434,11 @@ Dans le cas où l'image apporte une information, le texte alternatif peut être 
 
 ### Formulaires et champs
 
-Ne pas enlever les styles au focus pour toujours savoir quel est le champ actif.
+👉 Ne pas enlever les styles au focus pour toujours savoir quel est le champ actif. Vérifier l'usage au clavier, la cohérence de la tabulation et adapter si nécessaire avec `tabindex`.
+
+👉 L'intitulé de chaque bouton (et notamment de celui de validation du formulaire) doit être pertinent "Envoyer le message" est bien mieux que "OK" ou "Valider".
+
+#### Regroupement de champs (avec fieldset)
 
 Utiliser l'élément `<fieldset>` associé à `<legend>` pour regrouper les champs ayant trait à la même thématique. Exemple : coordonnées du visiteur lors d'une commande en ligne :
 
@@ -447,7 +456,7 @@ Utiliser l'élément `<fieldset>` associé à `<legend>` pour regrouper les cham
 </form>
 ```
 
-#### Lier correctement un champ à son étiquette
+#### Lier correctement un champ à son étiquette (label)
 
 Chaque champ d'entrée (`input`, `textarea`, etc) doit être correctement visuellement accolé à son étiquette.
 
@@ -512,11 +521,20 @@ L'indication doit être correctement lié à son champ, et peut être placée so
 
 Les *placeholders* (attribut `placeholder`) ne constituent pas une technique correcte pour nommer ou donner des précisions à un champ. Premièrement à cause d'un contraste souvent insuffisant et d'autre part car cette indication disparaît pendant la saisie puis une fois que le champ est renseigné.
 
-Associer un `autocomplete` pour les champs demandant une donnée personnelle (nom, prénom, e-mail, adresse, etc.). Voir [la liste complète des valeurs de `autocomplete`.](https://www.w3.org/TR/WCAG21/#input-purposes).
+💡 Associer un `autocomplete` pour les champs demandant une donnée personnelle (nom, prénom, e-mail, adresse, etc.). Voir [la liste complète des valeurs de `autocomplete`.](https://www.w3.org/TR/WCAG21/#input-purposes).
 
 ```html
 <label for="name">Nom</p>
 <input type="text" id="name" name="name" autocomplete="family-name">
+```
+
+Utiliser l'attribut `type` sur `<input>` pour définir le format attendu (email, number, tel, url, date, month, week, color, etc.) Compléter si besoin par les attributs `pattern`, `min`, `max`, etc.
+
+```html
+<form>
+    <label for="email">E-mail</label>
+    <input type="email" id="email" name="email">
+</form>
 ```
 
 #### Erreur de saisie
@@ -537,6 +555,28 @@ Le message d'erreur d'un champ doit être lié soit :
 ```
 
 Voir [WebAIM : Usable and Accessible Form Validation and Error Recovery](https://webaim.org/techniques/formvalidation/).
+
+### Contenu sémantique
+
+- Pour les citations, utiliser `<blockquote>` (bloc de citation, longue) ou `<q>` (citation courte).
+- Pour les abréviations et acronymes utiliser `<abbr title="...">`.
+- Pour les valeurs de temps, dates, utiliser `<time datetime="...">`.
+- Pour surligner, utiliser `<mark>`
+- Ne pas oublier `<datalist>`, `<progress>`, `<meter>`, `<output>`...
+
+### Modales (avec dialog)
+
+Pour créer des boîtes de dialogue modales utiliser `<dialog>`, correctement étiqueté avec un titre et un contenu, accessible au clavier.
+
+```html
+<dialog>
+  <form method="dialog">
+    <p>Êtes-vous sûr de vouloir supprimer cet élément ?</p>
+    <button>Annuler</button>
+    <button>Confirmer</button>
+  </form>
+</dialog>
+```
 
 ### Details et summary
 
@@ -615,6 +655,8 @@ L'attribut `lang` prend pour valeur le code langue selon la norme [ISO 693-1](ht
 <a href="#">Voir le document en allemand (<span lang="de">deutsch</span>)</a>
 ```
 
+💡 S'il y a un terme qui ne doit pas être traduit automatiquement par un outil tiers, on ajoute l'attribut `translate="no"`, ex : `<p>© Tous droits réservés <span translate="no">Banana Republic</span></p>`.
+
 ### Changement de sens de lecture
 
 Dans le cas où le sens de lecture change, il faut l'indiquer avec un attribut `dir` qui peut avoir 2 valeurs :
@@ -628,15 +670,11 @@ Dans le cas où le sens de lecture change, il faut l'indiquer avec un attribut `
 
 Sans indication, le sens de lecture est par défaut de gauche à droite (`ltr`).
 
+### Préserver l'ordre de lecture
+
+👉 Conserver un ordre "logique" dans le DOM parce que c'est ce qui est restitué avec un lecteur d'écran. Par exemple sur une carte d'actualité, le titre doit figurer en premier parce que c'est ce qui sera restitué en premier. L'ordre d'affichage peut ensuite être modifié en CSS (flex/grid/autre). ⚠️ La propriété CSS order modifie l'ordre visuel mais pas l'ordre de restitution qui reste celui du DOM. On ne peut donc pas se reposer uniquement sur cette technique.
+
 ---
-
-## Navigation au clavier
-
-La navigation au clavier se fait via la tabulation (touche *Tab* du clavier ; *Shift+Tab* en arrière) sur tous les éléments interactifs *focusables* : boutons, liens, champs de formulaire, sélecteur, etc. Ce *focus* est indiqué par un contour visuel (propriété `outline` en CSS qu'il est impératif de conserver, ou proposer une alternative avec `focus-visible`).
-
-- Le site doit être intégralement utilisable au clavier.
-- L'ordre de tabulation doit être cohérent.
-- Il ne doit pas y avoir de piège au clavier (si l'internaute ne peut atteindre ni l'élément *focusable* suivant, ni l'élément *focusable* précédent).
 
 ## Bonnes pratiques ARIA
 
@@ -756,7 +794,7 @@ Ne pas faire :
 
 ## Bonnes pratiques Images
 
-Dans tous les cas, les images (`<img>`) doivent obligatoirement posséder un attribut `alt`.
+Dans tous les cas, les images (`<img>`) doivent obligatoirement posséder un attribut `alt` ; sa valeur dépendra des cas suivants.
 
 ### Image porteuse d’information ou cliquable
 
@@ -910,11 +948,15 @@ Pour cela, il faut utiliser un attribut `longdesc` sur l'image (`<img>`) ayant p
 <img src="image.url" alt="Données numérique" longdesc="https://example.org/page-de-la-description-detaillee.html">
 ```
 
+### Figure et figcaption
+
+Une image accompagnée de sa légende peut être placée dans un élément `<figure>` et `<figcaption>` pour la légende. La légende n'est pas obligatoire. L'élément `<figure>` peut contenir autre chose qu'une image mais c'est son utilisation principale (pour un graphique par exemple).
+
 ---
 
 ## Bonnes pratiques design
 
-Voir [Guidelines Design : checklist accessibilité](Guidelines-Webdesign.md#checklist-accessibilité)
+Voir [Guidelines Design : checklist accessibilité](webdesign.md#checklist-accessibilité)
 
 ---
 
@@ -925,7 +967,7 @@ Les multimédias (vidéos, sons) nécessitent des précautions :
 - Chaque média doit être identifiable : un titre ou un paragraphe le précède afin de comprendre le contenu présenté.
 - Les médias ne doivent pas être déclenchés automatiquement.
 - Ils doivent être contrôlables :
-  - Au minimum dotés des boutons de pause, lecture et stop.
+  - Au minimum dotés des boutons de pause, lecture et stop (ce qui est le cas des éléments natifs `<audio>` et `<video>`).
   - Si le média est sonore, un contrôle pour activer / désactiver le son.
   - Si le média a des sous-titres, un contrôle pour activer / désactiver les sous-titres.
   - Si le média a une audiodescription, un contrôle pour activer / désactiver l'audiodescription.
@@ -935,16 +977,22 @@ Les multimédias (vidéos, sons) nécessitent des précautions :
   - soit des sous-titres synchronisés, si nécessaire, pour les médias synchronisés.
   - soit une transcription textuelle (adjacente ou disponible via un lien ou bouton adjacent) pour tous les types de médias.
 
+💡 Fournir une piste de sous-titres avec le [format webVTT](https://www.alsacreations.com/article/lire/1878-Le-sous-titrage-video-avec-WebVTT.html) et l'élément `<track>` pour les vidéos est aisé, le support est très bon y compris sur mobile. On peut même styler !
+
+👉 Les `<iframe>` doivent avoir un titre (attribut `title`) pertinent du point de vue du RGAA. Si elles font partie intégrante du même domaine et du périmètre d'action, elles devraient également être développées de manière accessible. Si elles dépendent d'une autre entité (ex: module externe) on ne peut pas aller plus loin, sauf bien sûr à encourager les personnes responsables de son contenu.
+
+📄 Les documents "bureautiques" téléchargeables doivent être rendus accessibles, notamment les fichiers PDF à l'aide de l'outil d'édition ; on peut aussi fournir une alternative dans un autre format .html, .doc, .odt, voire .txt correctement structurée.
+
 ---
 
-## Bonnes pratiques Javascript
+## Bonnes pratiques JavaScript
 
 ## ARIA
 
 Si WCAG concerne plutôt le contenu web "statique", [WAI-ARIA](https://developer.mozilla.org/fr/docs/Web/Accessibility/ARIA) est une technologie améliorant l'accessibilité supplémentaires par rapport aux comportements natifs déjà prévus par les navigateurs pour les éléments HTML de base. Trois caractéristiques principales sont définies dans la spécification :
 
 - les **attributs** `role` (landmarks), voir la [Matrice des rôles ARIA](https://whatsock.com/training/matrices/)
-- les **propriétés**, par exemple `aria-label` ou `aria-required`.
+- les **propriétés**, par exemple `aria-label`, `aria-required`, `aria-controls`, `aria-expanded`.
 - les **états**, par exemple `aria-disabled` souvent géré par JavaScript.
 
 Pour tous les composants de page agissant sur le contenu, de type swiper, slider, carrousel, slideshow, accordéon, pagination, onglets, menu déroulant, on privilégiera les scripts "accessibles", y compris ceux utilisant ARIA. Le but étant, entre autres, de ne pas gêner la navigation au clavier et de permettre la lecture de la page avec une synthèse vocale.
