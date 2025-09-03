@@ -80,7 +80,7 @@ Utiliser les [conditional tags](https://developer.wordpress.org/themes/basics/co
 Quelques exemples :
 
 - Pour les fichiers : **kebab-case** : `get-user-type.php` (descriptif et explicite, pas d'abréviation)
-- Pour les fonctions : **snake_case** avec préfixe du thème : `kiwistore_get_user_type()` (avec préfixe évite les conflits)
+- Pour les fonctions : **snake_case** avec préfixe du thème pour éviter les conflits : `kiwistore_get_user_type()`
 
   ```php
   if ( ! function_exists( 'kiwistore_get_user_type' )) {
@@ -112,16 +112,6 @@ Quelques exemples :
 - Découper le thème de manière cohérente (boucles à part, etc.) pour pouvoir utiliser `get_template_part()` correctement.
 - Tout ce qui ne fait pas partie intégrante du thème et/ou optionnel doit être réalisé sous forme d'extension (si possible et si néccessaire).
 
-#### Traductions
-
-- Toutes les chaînes de caractères d'un thème doivent pouvoir être traduites : il faut les entourer par les bonnes fonctions couplées à un text-domain cohérent en fonction du contexte (thème, thème enfant, extension, ...) : [__](https://developer.wordpress.org/reference/functions/__/), [_e](https://developer.wordpress.org/reference/functions/_e/), [_n](https://developer.wordpress.org/reference/functions/_n/), [_x](https://developer.wordpress.org/reference/functions/_x/), [_ex](https://developer.wordpress.org/reference/functions/_ex/), [_nx](https://developer.wordpress.org/reference/functions/_nx/) ainsi que les variantes avec _esc_html_ et _esc_attr_.
-
-On utilise ensuite les commandes [WP cli i18n](https://developer.wordpress.org/cli/commands/i18n/) pour les opérations de traduction sur les fichiers .mo, .po.
-
-- 🔖 [Préparer un thème WordPress pour l'internationalisation](https://www.alsacreations.com/article/lire/1837-wordpress-theme-internationalisation.html)
-- 🔖 [Traduire vos extensions WordPress](https://www.alsacreations.com/tuto/lire/1840-traduire-extension-wordpress.html)
-- 🔖 [Traductions multilingues avec Timber](https://www.alsacreations.com/tuto/lire/1868-Traductions-multilingues-avec-Timber.html)
-
 ### Hiérarchie de fichiers et documentation
 
 👉 Utiliser l'auto-chargement des fichiers PHP du thème par WordPress (selon slug de la catégorie, du Custom Post Type, etc) en suivant la [hiérarchie de templates](https://developer.wordpress.org/themes/basics/template-hierarchy/) ([explications](https://wpshout.com/wordpress-template-hierarchy/)).
@@ -131,9 +121,7 @@ On utilise ensuite les commandes [WP cli i18n](https://developer.wordpress.org/c
 - 🔖 [Cheatsheet loop visual model](https://cdn.tutsplus.com/wp/uploads/legacy/090_WPCheatSheets/WP_CheatSheet_LoopVisualModel.pdf)
 - 🔖 [A Detailed Guide To A Custom WordPress Page Templates](https://www.smashingmagazine.com/2015/06/wordpress-custom-page-templates/)
 
-### À prévoir dans le thème
-
-👉 On ne nomme/préfixe **pas** le thème ou ses classes/fonctions par alsa_ mais plutôt par le nom du projet.
+### Structure de fichiers à prévoir dans le thème
 
 La [structure standard](https://developer.wordpress.org/themes/basics/organizing-theme-files/) est :
 
@@ -177,14 +165,14 @@ On charge les ressources dans le thème avec [wp_enqueue_style()](https://develo
 
 Toutes les fonctions de base, sur lesquelles un non-administrateur ne doit pas avoir la main doivent passer par des extensions indispensables, ou _mu-plugins_ (mu = _must use_). Elles ne peuvent être désactivées par l'interface web. C'est le cas notamment du renommage de fichiers dès l'upload dans la bibliothèque de médias, mais également du retrait des indices lors des erreurs de connexion au back-office (admin).
 
-Quelques MU Plugins bien utiles : <https://gitlab.com/ArmandPhilippot/mu-plugins>
-
 ```php
 function no_wordpress_errors() {
     return __( 'Something is wrong !', 'text-domain' );
 }
 add_filter( 'login_errors', 'no_wordpress_errors' );
 ```
+
+🔖 Quelques MU Plugins bien utiles : <https://gitlab.com/ArmandPhilippot/mu-plugins>
 
 ### .env et wp-config
 
@@ -235,13 +223,66 @@ require_once __DIR__ . 'includes/inc-pages-functions-updated.php';
 
 L'[API Customize](https://developer.wordpress.org/themes/customize-api/) permet d'ajouter des options de personnalisation au thème, apparaissant dans l'interface d'administration, notamment avec le hook [customize_register](https://developer.wordpress.org/reference/hooks/customize_register/).
 
+### Traductions
+
+Toutes les chaînes de caractères d'un thème doivent pouvoir être traduites : il faut les entourer par les bonnes fonctions couplées à un text-domain cohérent en fonction du contexte (thème, thème enfant, extension, ...) : [__](https://developer.wordpress.org/reference/functions/__/), [_e](https://developer.wordpress.org/reference/functions/_e/), [_n](https://developer.wordpress.org/reference/functions/_n/), [_x](https://developer.wordpress.org/reference/functions/_x/), [_ex](https://developer.wordpress.org/reference/functions/_ex/), [_nx](https://developer.wordpress.org/reference/functions/_nx/) ainsi que les variantes avec _esc_html_ et _esc_attr_.
+
+Objectif: rendre disponibles les chaînes traduites (.mo) depuis le dossier /languages de votre thème.
+
+Pré-requis dans le fichier `style.css` du thème (en-tête):
+
+```text
+Text Domain: nom-du-projet
+Domain Path: /languages
+```
+
+Structure attendue:
+
+```text
+nom-du-theme/
+  languages/
+    nom-du-projet.pot
+    nom-du-projet-fr_FR.po
+    nom-du-projet-fr_FR.mo
+    nom-du-projet-en_GB.po
+    nom-du-projet-en_GB.mo
+```
+
+Hook d’initialisation (dans functions.php ou un fichier inclus) :
+
+```php
+add_action('after_setup_theme', function () {
+    load_theme_textdomain(
+        'nom-du-projet',
+        get_template_directory() . '/languages'
+    );
+});
+```
+
+Thème enfant: charger en plus le text-domain parent si nécessaire :
+
+```php
+add_action('after_setup_theme', function () {
+    load_child_theme_textdomain(
+        'nom-du-projet',
+        get_stylesheet_directory() . '/languages'
+    );
+});
+```
+
+On utilise ensuite les commandes [WP cli i18n](https://developer.wordpress.org/cli/commands/i18n/) pour les opérations de traduction sur les fichiers .mo, .po par exemple `wp i18n make-pot . languages/nom-du-projet.pot --domain=nom-du-projet`
+
+- 🔖 [Préparer un thème WordPress pour l'internationalisation](https://www.alsacreations.com/article/lire/1837-wordpress-theme-internationalisation.html)
+- 🔖 [Traduire vos extensions WordPress](https://www.alsacreations.com/tuto/lire/1840-traduire-extension-wordpress.html)
+- 🔖 [Traductions multilingues avec Timber](https://www.alsacreations.com/tuto/lire/1868-Traductions-multilingues-avec-Timber.html)
+
 ### Formulaires
 
 - Suivre les bonnes pratiques : [Best Practices](https://developer.wordpress.org/plugins/plugin-basics/best-practices/)
 - Valider les données avec les méthodes natives : [Validating Data](https://developer.wordpress.org/apis/security/data-validation/)
 - Un formulaire = un _nonce_ : [Nonces](https://developer.wordpress.org/apis/security/nonces/)
 
-### Admin
+### Personnalisation de l'admin
 
 - [Modifier le logo](https://wpmarmite.com/snippet/modifier-logo-connexion-wordpress/) sur la page de connexion admin.
 - [Retirer l'accès aux pages inutiles](https://wpthinker.com/hide-wordpress-admin-menu-items/) selon le rôle.
