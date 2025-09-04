@@ -273,8 +273,8 @@ graph TD
     A[1. Primitives] --> B[2. Tokens/Rôles]
     B --> C[3. Composants]
 
-    A1[--color-pink-300] --> B1[--color-primary]
-    B1 --> C1[.button primary]
+    A1[--color-pink-300] --> B1[--primary]
+    B1 --> C1[".btn-primary {<br/>  color: var(--primary);<br/>}"]
 ```
 
 ### Variables primitives (`theme.css`)
@@ -393,24 +393,41 @@ Les tokens assignent des rôles fonctionnels aux primitives, créant une couche 
 
 ## Mise en page et positionnement
 
-### Hiérarchie des méthodes
+> 🎯 **Règle** : Privilégier les styles utilitaires des Layouts "Bretzel" pour la plupart des dispositions "simples" et responsive. N'utiliser Grid Layout ou Flexbox que pour des affichages complexes ou spécifiques.
 
 | Priorité        | Méthode     | Cas d'usage principaux |
 | --------------- | ----------- | ---------------------- |
-| Priorité 1      | Grid Layout | Layout complexe        |
-| Priorité 2      | Flexbox     | Layout simple          |
+| Priorité 1      | Bretzel Layouts | Layout simple responsive        |
+| Priorité 2      | Grid Layout | Layout spécifique        |
+| Priorité 3      | Flexbox     | Layout spécifique          |
 | Cas spécifiques | Position    | Overlays               |
 
-### Grid Layout (Recommandé)
+### Bretzel Layouts
 
-#### Avantages de Grid Layout
+- ✅ Dispositions CSS utilitaires modernes réutilisables, légères et flexibles.
+- ✅ Adaptés à la plupart des cas d’usage simples.
+- ✅ Pilotés par un attribut HTML `data-layout` limitant les conflits avec des nommages de classes CSS.
+
+Cas d’usage :
+
+- Stack (`data-layout="stack"`) : disposition verticale d’éléments (sections, formulaires, listes d’articles).
+- Cluster (`data-layout="cluster"`) : disposition horizontale (groupes d’actions, listes d’étiquettes, navigation compacte avec alignements).
+- Autogrid (`data-layout="autogrid"`) : grille de cartes, galerie, liste de produits avec largeur minimale.
+- Switcher (`data-layout="switcher"`) : bascule ligne/colonne en fonction de la largeur disponible.
+- Duo (`data-layout="duo"`) : Layout pour aligner deux contenus côté à côte, avec un rapport de 1/2 1/2 par défaut.
+- Repel (`data-layout="repel"`) : Layout qui écarte les éléments aux extrémités avec un espacement minimal.
+- Reel (`data-layout="reel"`) : défilement horizontal (témoignages, logos) avec gestion des débordements.
+- Boxed (`data-layout="boxed"`) : Bloc de taille maximum centré dans son conteneur.
+
+> 📚  **Documentation** : [Layouts Bretzel](https://bretzel.alsacreations.com/), [Feuille de style](https://github.com/alsacreations/bretzel/blob/main/public/layouts.css).
+
+### Grid Layout
 
 - ✅ Contrôle bidimensionnel précis
 - ✅ Grid areas pour une représentation visuelle
 - ✅ Ciblage du parent uniquement
-- ✅ Excellent support des Media Queries
 
-#### Cas d'usage
+Cas d'usage de Grid Layout :
 
 - Layout principal avec areas
 - Grille responsive sur mesure
@@ -419,19 +436,15 @@ Les tokens assignent des rôles fonctionnels aux primitives, créant une couche 
 
 ### Flexbox
 
-#### Avantages de Flexbox
-
 - ✅ Affichage horizontal par défaut
 - ✅ Wrap automatique
 - ✅ Flexibilité des enfants (grow, shrink)
-- ✅ Peut se passer de Media Queries
 
-#### Cas d'usage
+Cas d'usage de Flexbox :
 
-- Navigation horizontale
+- Disposition horizontale
 - Alignement d'éléments
 - Distribution d'espace
-- Centrage simple
 
 ---
 
@@ -443,10 +456,10 @@ Les tokens assignent des rôles fonctionnels aux primitives, créant une couche 
 /* Base mobile */
 .component {
   display: grid;
-  padding: var(--spacing-m);
+  gap: var(--gap-m);
 
   @media (width >= 48rem) {
-    padding: var(--spacing-l);
+    grid-template-columns: 1fr 1fr;
   }
 }
 ```
@@ -458,7 +471,7 @@ Les tokens assignent des rôles fonctionnels aux primitives, créant une couche 
 | `md`  | `48rem` | 768px  | Mobiles          |
 | `lg`  | `64rem` | 1024px | Tablettes        |
 | `xl`  | `80rem` | 1280px | Desktop          |
-| `2xl` | `96rem` | 1536px | Très grand écran |
+| `xxl` | `96rem` | 1536px | Très grand écran |
 
 ---
 
@@ -645,4 +658,8 @@ Comme pour les fontes classiques, le format `.woff2` ainsi que l'hébergement de
   font-family: "Inter Variable";
   font-weight: 625; /* Valeur précise */
 }
+```
+
+}
+
 ```
