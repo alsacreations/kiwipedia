@@ -269,12 +269,15 @@ Les propriétés sont automatiquement réordonnées selon l'ordre SMACSS via `st
 ### Architecture à trois niveaux
 
 ```mermaid
+%%{init: {'flowchart': {'htmlLabels': true}} }%%
 graph TD
     A[1. Primitives] --> B[2. Tokens/Rôles]
     B --> C[3. Composants]
 
     A1[--color-pink-300] --> B1[--primary]
-    B1 --> C1[".btn-primary {<br/>  color: var(--primary);<br/>}"]
+    B1 --> C1["<div style='text-align:left;white-space:pre;line-height:1.3'>.btn-primary {<br/>  color: var(--primary);<br/>}</div>"]
+
+    style C1 text-align:left
 ```
 
 ### Variables primitives (`theme.css`)
@@ -659,7 +662,5 @@ Comme pour les fontes classiques, le format `.woff2` ainsi que l'hébergement de
   font-weight: 625; /* Valeur précise */
 }
 ```
-
-}
 
 ```
