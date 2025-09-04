@@ -522,9 +522,9 @@ Maquettes / story-boards / wireframes / mockups / zoning
 ### Outils pour produire/éditer du SVG
 
 - <https://inkscape.org/en/> éditeur SVG open-source
-- <https://design.tutsplus.com/tutorials/svg-files-from-illustrator-to-the-web--vector-20899> SVG Files: From Illustrator to the Web
 - <https://svgcrop.com/>
 - <https://svgco.de/> à partir d'une image bitmap (vectorisation)
+- <https://svgencoder.com/> Encoder pour CSS, par exemple pour utiliser en content: url()
 
 ### Générateurs SVG
 
