@@ -16,7 +16,8 @@ Il existe cependant des projets "multi" (que l'on appelle aussi "mono-repo") où
   - [4. Styles CSS](#4-styles-css)
     - [Tailwind](#tailwind)
     - [`app.css`](#appcss)
-  - [5. Optionnel (selon projets)](#5-optionnel-selon-projets)
+  - [5. Custom Media Queries (optionnel)](#5-custom-media-queries-optionnel)
+  - [6. Autres Options (selon projets)](#6-autres-options-selon-projets)
 
 ## Stack commune à tous les projets
 
@@ -122,12 +123,74 @@ Il charge toutes les feuilles de styles dans l'ordre des layers CSS *(config, ba
 
 - Fichier de classes utilitaires si nécessaire (Tailwind, ou classes utilitaires personnalisées)
 
-## 5. Optionnel (selon projets)
+## 5. Custom Media Queries (optionnel)
+
+Installer le plugin [PostCSS Custom Media](https://www.npmjs.com/package/postcss-custom-media) pour bénéficier de Media Queries avec variables : `pnpm add -D postcss-custom-media`. PostCSS est déjà installé par défaut dans Vite, il n'y a donc pas besoin de l'installer.
+
+Ajouter un fichier [`postcss.config.mjs`](../configs/postcss.config.mjs). Aucun réglage spécifique n’est requis par défaut.
+
+```js
+export default {
+  plugins: {
+    "postcss-custom-media": {
+      /* plugin options */
+    },
+  },
+}
+```
+
+Les breakpoints du projet sont déclarés via `@custom-media`.
+
+```css
+/* assets/css/theme.css */
+@custom-media --md (width >= 48rem); /* 768px */
+@custom-media --lg (width >= 64rem); /* 1024px */
+@custom-media --xl (width >= 80rem); /* 1280px */
+@custom-media --xxl (width >= 96rem); /* 1536px */
+```
+
+Référencer les custom media par leur nom dans les règles, en profitant de la syntaxe moderne des plages:
+
+```css
+.toc {
+  padding: var(--spacing-s);
+  border-radius: var(--radius-md);
+
+  @media (--lg) {
+    position: fixed;
+    top: var(--spacing-m);
+    left: var(--spacing-s);
+  }
+}
+```
+
+`postcss-custom-media` remplace automatiquement les références `@media (--sm)` par la requête sous-jacente. Par exemple:
+
+```css
+@media (--md) {
+  /* … */
+}
+```
+
+devient à la compilation:
+
+```css
+@media (width >= 48rem) {
+  /* … */
+}
+```
+
+Avantages:
+
+- Centralisation des seuils: changer la valeur d’un breakpoint se fait dans un seul fichier (`theme.css`).
+- Lisibilité: des noms explicites (`--sm`, `--lg`, `--xl`).
+- Cohérence: mêmes breakpoints partout dans le projet.
+
+## 6. Autres Options (selon projets)
 
 Options à installer / configurer au cas par cas, uniquement si prévu dans le projet :
 
 - Installer Sass : `pnpm install --save-dev sass` (renommer `styles.css` en `styles.scss` et adapter le chemin dans `main.js`)
-- Installer le plugin [PostCSS Custom Media](https://www.npmjs.com/package/postcss-custom-media) pour bénéficier de Media Queries avec variables : `pnpm install --save-dev postcss-custom-media` (ajouter un fichier [`postcss.config.mjs`](../configs/postcss.config.mjs)). PostCSS est déjà installé par défaut dans Vite, il n'y a donc pas besoin de l'installer.
 - Ajouter [alpine.js](https://alpinejs.dev/essentials/installation) avec `pnpm install --save alpinejs`
 - **Docker** si besoin de mise en recette ou pré-production
   - Ajouter `Dockerfile` et `docker-compose.yml` suivant les exemples et les adapter
