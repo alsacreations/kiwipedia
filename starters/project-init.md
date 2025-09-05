@@ -1,11 +1,14 @@
 # Routine d'initialisation d'un projet
 
-Cette routine consiste en une base commune à **toutes nos typologies de projets** (statique, Nuxt, WordPress).
+> 📋 À propos  
+> Cette routine constitue une base commune à toutes nos typologies de projets (statique, Nuxt, WordPress). Elle standardise l’environnement, les outils de qualité, la structure CSS et les options liées.
 
 ## Sommaire
 
-**Important !** Dans la majeure partie des projets "simples", l'étape 2 (fichiers de configuration) n'est pas nécessaire car les fichiers sont générés par le projet Vite.
-Il existe cependant des projets "multi" (que l'on appelle aussi "mono-repo") où l'on trouve une partie front (ex. Vite) et d'autres parties au sein du même projet. Pour ces projets, les instructions sont légèrement différentes : l'étape 2 (fichiers de configuration) est à réaliser au préalable avant l'étape 1 (Vite).
+> 💡 **Important :**
+>
+> - Dans la majorité des projets “simples”, l’étape 2 (fichiers de configuration) n’est pas nécessaire car Vite génère l’essentiel.  
+> - Cas des projets “multi” (mono-repo) avec une partie front (Vite) et d’autres parties au sein du même dépôt: réaliser l’étape 2 (fichiers de configuration) avant l’étape 1 (Vite).
 
 - [Routine d'initialisation d'un projet](#routine-dinitialisation-dun-projet)
   - [Sommaire](#sommaire)
@@ -19,115 +22,184 @@ Il existe cependant des projets "multi" (que l'on appelle aussi "mono-repo") où
   - [5. Custom Media Queries (optionnel)](#5-custom-media-queries-optionnel)
   - [6. Autres Options (selon projets)](#6-autres-options-selon-projets)
 
+---
+
 ## Stack commune à tous les projets
 
-Environnement, compilation :
+Environnement / compilation
 
-- **pnpm** : gestionnaire de paquets
-- **Vite** : outil de compilation/bundler
+- **pnpm :** gestionnaire de paquets
+- **Vite :** bundler/outil de compilation
 
-Linters :
+Linters / qualité
 
-- **Editorconfig** : configuration tabs vs spaces à l'insertion, encodage, eol, etc
-- **Prettier** : formatage automatique des fichiers à la sauvegarde
-- **Stylelint** : vérification syntaxe et bonnes pratiques CSS
-- **ESlint** : vérification syntaxe JavaScript, TypeScript et frameworks
+- **Editorconfig :** indentation, encodage, EOL
+- **Prettier :** formatage automatique
+- **Stylelint :** vérification CSS
+- **ESLint :** vérification JavaScript/TypeScript (+ frameworks)
 
-CSS :
+CSS
 
-- **Tailwind** : génération de classes utilitaires, des variables CSS, de Reset CSS, des layouts et gestion des valeurs du "thème" (même dans nos projets CSS "vanilla")
+- **Tailwind :** nous intégrons nos projets en CSS Vanilla avec Tailwind disponible pour les cas d'usage spécifiques.
 
-Les détails de configuration sont précisés ci-dessous. La plupart des fichiers de configuration sont disponibles dans le dossier [`configs/`](../configs/).
+> 📚 La plupart des fichiers de configuration sont disponibles dans [`configs/`](../configs/).
+
+---
 
 ## 1. Vite
 
-- Se placer à la racine, démarrer un projet Vite avec `pnpm create vite`, choisir le nom du projet, les options *Vanilla* + *JavaScript* (ou *TypeScript*)
-- Se rendre dans le dossier correspondant au nom du projet `cd <vite-project>`
-- Installer les dépendances `pnpm install`
-- Ajouter [`vite.config.ts`](../configs/vite.config.ts) dans le dossier Vite (ex. `vite-project`)
-- Supprimer les fichiers d'exemple (`counter.js`, `javascript.svg`, `public/vite.svg`); nettoyer `style.css` (et renommer en `styles.css`), nettoyer `main.js` pour ne conserver que l'import CSS; côté HTML ne pas oublier de changer `lang="fr"` et `<title>` puis supprimer `link rel="icon"`
-- Utiliser le dossier [`public/`](https://vitejs.dev/guide/assets.html#the-public-directory) pour les ressources statiques (ex: images, svg, fonts…)
+1) Se placer à la racine et créer un projet
 
-Tâches Vite :
+```bash
+pnpm create vite
+# choisir le nom du projet
+# sélectionner "Vanilla + JavaScript" (ou "TypeScript")
+cd <vite-project>
+pnpm install
+```
 
-- Développer : `pnpm dev`
-- Compiler : `pnpm build` et utiliser les fichiers produits dans `dist/`
+2) Ajouter la configuration Vite
+
+- Copier [`vite.config.ts`](../configs/vite.config.ts) dans le dossier du projet (ex. vite-project)
+
+3) Nettoyer les fichiers d’exemple
+
+- Supprimer: `counter.js`, `javascript.svg`, `public/vite.svg`
+- Renommer `style.css` en `styles.css`
+- Nettoyer `main.js` pour ne conserver que l’import CSS
+- Dans `index.html`: définir `lang="fr"`, ajuster `<title>`, supprimer le favicon `<link rel="icon">`
+
+4) Utiliser le dossier `public/` pour les assets statiques
+
+- Réf.: <https://vitejs.dev/guide/assets.html#the-public-directory>
+
+Tâches Vite
+
+```bash
+pnpm dev    # démarrer le serveur de développement
+pnpm build  # compiler la version de production (dossier dist/)
+```
+
+---
 
 ## 2. Fichiers de configuration
 
-*Note : la plupart de ces fichiers sont générés automatiquement dans un projet Vite, vérifiez simplement qu'ils sont présents.*
+Note: la plupart sont générés automatiquement par Vite. Vérifier leur présence.
 
-- Créer un dossier racine (ex. `mkdir projet`) et s'y rendre (`cd projet`)
-- Si ce n'est pas déjà fait, installer [pnpm](https://pnpm.io/fr/installation) via `npm install -g pnpm`
-- Créer un fichier `package.json` via `pnpm init`
-- Ajouter un fichier [`.gitignore`](../configs/.gitignore) (et, optionnel, `.dockerignore`) s'ils ne sont pas fournis dans le projet
-- Ajouter un fichier [`README.md`](../configs/README.md)
-- Ajouter [`.editorconfig`](../configs/.editorconfig) à la racine (si ce n'est pas déjà fait, installer [l'extension VSCode editorconfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig))
-- Créer un sous-dossier `.vscode` à la racine de `projet`
-- Ajouter [`.vscode/settings.json`](../configs/.vscode/settings.json), [`.vscode/extensions.json`](../configs/.vscode/extensions.json) dans le sous-dossier `.vscode`
+1) Pré-requis
+
+```bash
+# installer pnpm s'il n'est pas présent
+npm install -g pnpm
+# créer un dossier racine si besoin
+mkdir projet && cd projet
+# initialiser le package
+pnpm init
+```
+
+2) Fichiers racine
+
+- Ajouter [`.gitignore`](../configs/.gitignore) (et optionnellement `.dockerignore`)
+- Ajouter [`README.md`](../configs/README.md)
+- Ajouter [`.editorconfig`](../configs/.editorconfig) (installer l’extension VS Code “EditorConfig”)
+
+3) Dossier VS Code
+
+- Créer `.vscode/`
+- Ajouter [`settings.json`](../configs/.vscode/settings.json) et [`extensions.json`](../configs/.vscode/extensions.json)
+
+---
 
 ## 3. Linter, formatters et correcteurs
 
-On part du principe qu'on installe les linters que si l'on a déjà configuré l'environnement avant (vanilla, Vue/Nuxt, WordPress).
+On installe les linters après avoir choisi le type de projet (vanilla, Vue/Nuxt, WordPress).
 
-1. Installer [ESLint](https://eslint.org/docs/latest/user-guide/getting-started) via `pnpm create @eslint/config@latest` (vérification et validation du code JavaScript et TypeScript) (si ce n'est pas déjà fait, installer [l'extension VSCode ESlint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint))
-    - Employer la config ESlint adaptée au projet *(conseillée par défaut)*
-      - Config de base fournie par défaut
-      - Config spécifique VueJS *(si non proposée lors de l'install ESLint)* : <https://eslint.vuejs.org/>
-      - Config spécifique Nuxt *(si non proposée lors de l'install ESLint)* : <https://nuxt.com/modules/eslint>
+1) ESLint (JS/TS)
 
-2. Installer [Prettier](https://prettier.io/docs/en/install.html) via `pnpm install --save-dev prettier` (formatteur par défaut pour HTML, CSS, etc.)
-    - Installer [l'extension VSCode Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-    - Ajouter [`.prettierrc.mjs`](../configs/.prettierrc.mjs) à la racine
+```bash
+pnpm create @eslint/config@latest
+```
 
-3. Installer [Stylelint](https://stylelint.io/user-guide/get-started) (validation du code CSS)
-    - `pnpm install --save-dev stylelint stylelint-config-standard stylelint-config-html stylelint-order stylelint-config-property-sort-order-smacss` (cette commande installe Stylelint, les configs standard et HTML, l'ordre des propriétés et l'ordre des propriétés selon SMACSS)
-    - Installer [l'extension VSCode Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
-    - Ajouter [`stylelint.config.js`](../configs/stylelint.config.js) à la racine
-    - Dans les settings de VS Code (`cmd+,`), ajouter les langages HTML et Vue à la liste des fichiers à vérifier : `"stylelint.validate": ["css", "scss", "html", "vue"]`
+- Utiliser la configuration adaptée au projet
+  - Base par défaut
+  - Vue: <https://eslint.vuejs.org/>
+  - Nuxt: <https://nuxt.com/modules/eslint>
+- Extension VS Code: “ESLint”
 
-**Important :** Relancer VS Code pour activer les linters (`cmd+maj+p -> reload window`)
+2) Prettier (formatteur)
+
+```bash
+pnpm install --save-dev prettier
+```
+
+- Extension VS Code: “Prettier - Code formatter”
+- Ajouter [`.prettierrc.mjs`](../configs/.prettierrc.mjs) à la racine
+
+3) Stylelint (CSS)
+
+```bash
+pnpm install --save-dev stylelint stylelint-config-standard stylelint-config-html stylelint-order stylelint-config-property-sort-order-smacss
+```
+
+- Extension VS Code: “Stylelint”
+- Ajouter [`stylelint.config.js`](../configs/stylelint.config.js) à la racine
+- Dans VS Code (cmd+,), ajouter:
+
+```json
+"stylelint.validate": ["css", "scss", "html", "vue"]
+```
+
+> 💡 **Important :** Relancer VS Code pour activer les linters: cmd+maj+p → “Reload Window”
+
+---
 
 ## 4. Styles CSS
 
 ### Tailwind
 
-**Tailwind CSS** est un générateur de classes utilitaires et de custom properties CSS. **Il est systématiquement incorporé dans nos projets CSS même Vanilla (car on peut toujours avoir besoin d'une classe utilitaire).**
+Tailwind CSS est inclus systématiquement, même en projet “vanilla”, pour disposer au besoin de classes utilitaires.
 
-- Se placer dans le dossier Vite (ex. `cd vite-project`)
-- Installer et configurer [Tailwind CSS](https://tailwindcss.com/docs/installation/using-vite) comme l'indique la procédure via Vite.
+- Se placer dans le dossier Vite (`cd vite-project`)
+- Suivre l’installation via Vite: <https://tailwindcss.com/docs/installation/using-vite>
 
 ### `app.css`
 
-Le fichier [`app.css`](../configs/CSS/app.css) (ou la version Tailwind [`app.css`](../configs/CSS/app-tailwind.css)) est le point d'entrée pour les styles.
+Le fichier [`app.css`](../configs/CSS/app.css) (ou [`app.css`](../configs/CSS/app-tailwind.css) pour la variante Tailwind) est le point d’entrée.  
+Il charge les feuilles dans l’ordre des layers CSS: config, base, components, utilities.
 
-Il charge toutes les feuilles de styles dans l'ordre des layers CSS *(config, base, components, utilities)* :
+1) Layer config (reset, polices, thèmes, layouts)
 
-1. **Layer config** (reset, polices, themes, layouts) :
+- [`reset.css`](https://reset.alsacreations.com/): reset moderne + print
+- `theme.css`: primitives (ex. `--color-pink-500: #f1498f`) issues de Figma  
+  Voir “Primitives” dans les [Guidelines CSS](https://github.com/alsacreations/kiwipedia/blob/main/guidelines/css.md#variables-css-primitives-et-tokens)
+- `theme-tokens.css`: design tokens (ex. `--primary: --color-pink-500;`)  
+  Voir “Tokens (=roles)” dans les [Guidelines CSS](https://github.com/alsacreations/kiwipedia/blob/main/guidelines/css.md#variables-css-primitives-et-tokens)
+- [`layouts.css`](https://bretzel.alsacreations.com/): utilitaires de disposition (Bretzel)
+- [`natives.css`](https://alsacreations.github.io/KNACSS): styles natifs des éléments HTML
 
-- [`reset.css`](https://reset.alsacreations.com/) : Reset CSS moderne (et reset print)
-- `theme.css` - Thème principal (ex. `--color-pink-500: #f1498f`) (valeurs primitives issues de Figma) (voir [Guidelines CSS](https://github.com/alsacreations/kiwipedia/blob/main/guidelines/css.md#variables-css-primitives-et-tokens), partie "Primitives")
-- `theme-tokens.css` : Design tokens (ex. `--primary: --color-pink-500;`) (voir [Guidelines CSS](https://github.com/alsacreations/kiwipedia/blob/main/guidelines/css.md#variables-css-primitives-et-tokens), partie "Tokens (=roles)")
-- [`layouts.css`](https://bretzel.alsacreations.com/) : Utilitaires de disposition des composants (Bretzel)
-- [`natives.css`](https://alsacreations.github.io/KNACSS) : Styles natifs des éléments HTML (radio, input, button, etc.)
+2) Layer base
 
-2. **Layer base** :
+- `styles.css`: styles globaux du projet (gabarits, typo, liens, etc.)
 
-- `styles.css` : Styles globaux du projet (gabarits, typographie, etc.)
+3) Layer components
 
-3. **Layer components** :
+- Feuilles de styles des composants
 
-- Les fichiers CSS des composants du projet
+4) Layer utilities
 
-4. **Layer utilities** :
+- Tailwind et/ou utilitaires personnalisés
 
-- Fichier de classes utilitaires si nécessaire (Tailwind, ou classes utilitaires personnalisées)
+---
 
 ## 5. Custom Media Queries (optionnel)
 
-Installer le plugin [PostCSS Custom Media](https://www.npmjs.com/package/postcss-custom-media) pour bénéficier de Media Queries avec variables : `pnpm add -D postcss-custom-media`. PostCSS est déjà installé par défaut dans Vite, il n'y a donc pas besoin de l'installer.
+Installer le plugin PostCSS Custom Media:
 
-Ajouter un fichier [`postcss.config.mjs`](../configs/postcss.config.mjs). Aucun réglage spécifique n’est requis par défaut.
+```bash
+pnpm add -D postcss-custom-media
+```
+
+Ajouter [`postcss.config.mjs`](../configs/postcss.config.mjs):
 
 ```js
 export default {
@@ -139,7 +211,7 @@ export default {
 }
 ```
 
-Les breakpoints du projet sont déclarés via `@custom-media`.
+Déclarer les breakpoints du projet:
 
 ```css
 /* assets/css/theme.css */
@@ -149,7 +221,7 @@ Les breakpoints du projet sont déclarés via `@custom-media`.
 @custom-media --xxl (width >= 96rem); /* 1536px */
 ```
 
-Référencer les custom media par leur nom dans les règles, en profitant de la syntaxe moderne des plages:
+Utilisation dans les règles (syntaxe moderne des plages):
 
 ```css
 .toc {
@@ -164,34 +236,38 @@ Référencer les custom media par leur nom dans les règles, en profitant de la 
 }
 ```
 
-`postcss-custom-media` remplace automatiquement les références `@media (--sm)` par la requête sous-jacente. Par exemple:
+Remplacement effectué à la compilation:
 
 ```css
-@media (--md) {
-  /* … */
-}
+@media (--md) { /* … */ }
+/* devient */
+@media (width >= 48rem) { /* … */ }
 ```
 
-devient à la compilation:
+Avantages
 
-```css
-@media (width >= 48rem) {
-  /* … */
-}
-```
+- Centralisation des seuils (un seul fichier)
+- Lisibilité (noms explicites `--md`, `--lg`, `--xl`)
+- Cohérence (mêmes breakpoints partout)
 
-Avantages:
-
-- Centralisation des seuils: changer la valeur d’un breakpoint se fait dans un seul fichier (`theme.css`).
-- Lisibilité: des noms explicites (`--sm`, `--lg`, `--xl`).
-- Cohérence: mêmes breakpoints partout dans le projet.
+---
 
 ## 6. Autres Options (selon projets)
 
-Options à installer / configurer au cas par cas, uniquement si prévu dans le projet :
+- Sass
 
-- Installer Sass : `pnpm install --save-dev sass` (renommer `styles.css` en `styles.scss` et adapter le chemin dans `main.js`)
-- Ajouter [alpine.js](https://alpinejs.dev/essentials/installation) avec `pnpm install --save alpinejs`
-- **Docker** si besoin de mise en recette ou pré-production
-  - Ajouter `Dockerfile` et `docker-compose.yml` suivant les exemples et les adapter
-  - Mise en production (optionnel) : `docker-compose up -d --build`
+```bash
+pnpm install --save-dev sass
+# renommer styles.css -> styles.scss
+# adapter l'import dans main.js
+```
+
+- Alpine.js
+
+```bash
+pnpm install --save alpinejs
+```
+
+- Docker (recette / pré-production)
+  - Ajouter `Dockerfile` et `docker-compose.yml` depuis les exemples et les adapter
+  - Mise en production (optionnel): `docker-compose up -d --build`
