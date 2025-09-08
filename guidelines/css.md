@@ -421,6 +421,7 @@ Cas d’usage&#8239;:
 - Repel (`data-layout="repel"`) : Layout qui écarte les éléments aux extrémités (un au début, un à la fin) sur desktop.
 - Reel (`data-layout="reel"`) : défilement horizontal (témoignages, logos) avec gestion des débordements et attache à la grille (scroll-snap).
 - Boxed (`data-layout="boxed"`) : Bloc de taille maximum centré dans son conteneur.
+- Liquid (`data-layout="liquid"`) : Gabarit de page global, qui gère facilement des éléments qui s'étendent sur toute la largeur de la page (enfants avec attribut `data-layout="splash"`).
 
 Modificateurs globaux dans Bretzel&#8239;:
 
@@ -428,7 +429,7 @@ Modificateurs globaux dans Bretzel&#8239;:
 - `data-justify` : distribution horizontale (valeurs&#8239;: `start`, `end`, `center`, `space` → équivaut à `space-between`).
 - `data-align` : alignement vertical (valeurs&#8239;: `start`, `end`, `center`, `stretch`).
 
-> 📚  **Documentation**&#8239;: [Layouts Bretzel](https://bretzel.alsacreations.com/), [Feuille de style](https://github.com/alsacreations/bretzel/blob/main/public/layouts.css).
+> 📚  **Documentation**&#8239;: [Layouts Bretzel](https://bretzel.alsacreations.com/), [Liquid](https://liquid.alsacreations.com/), [Feuille de style globale](https://github.com/alsacreations/bretzel/blob/main/public/layouts.css).
 
 ### Grid Layout
 
