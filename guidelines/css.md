@@ -416,7 +416,7 @@ Cas d’usage&#8239;:
 - Stack (`data-layout="stack"`) : disposition verticale d’éléments (sections, formulaires, listes d’articles).
 - Cluster (`data-layout="cluster"`) : disposition horizontale (groupes d’actions, listes d’étiquettes, navigation compacte avec alignements).
 - Autogrid (`data-layout="autogrid"`) : grille de cartes, galerie, liste de produits avec largeur minimale. Le nombre de colonnes dépend de la largeur disponible.
-- Switcher (`data-layout="switcher"`) : X enfant. Le nombre de colonnes est égal à 1 sur mobile et au nombre d'enfants (X) sur desktop.
+- Switcher (`data-layout="switcher"`) : X enfants. Le nombre de colonnes est égal à 1 sur mobile et au nombre d'enfants (X) sur desktop.
 - Duo (`data-layout="duo"`) : Layout pour aligner deux contenus côté à côte, avec un rapport de 1/2 1/2 par défaut. Le nombre de colonnes (desktop) est toujours de 2. L'attribut `data-model=""` modifie les rapports d'affichage.
 - Repel (`data-layout="repel"`) : Layout qui écarte les éléments aux extrémités (un au début, un à la fin) sur desktop.
 - Reel (`data-layout="reel"`) : défilement horizontal (témoignages, logos) avec gestion des débordements et attache à la grille (scroll-snap).
