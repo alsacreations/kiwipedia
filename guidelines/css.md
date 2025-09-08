@@ -22,7 +22,7 @@
 
 ### Philosophie d'intégration
 
-Nous privilégions deux approches CSS selon le contexte du projet :
+Nous privilégions deux approches CSS selon le contexte du projet&#8239;:
 
 1. **CSS Vanilla (natif)** - Notre approche par défaut
 
@@ -35,7 +35,7 @@ Nous privilégions deux approches CSS selon le contexte du projet :
    - Projets nécessitant une grande flexibilité
    - Équipes familiarisées avec l'approche utilitaire
 
-> 💡 **Recommandation** : Sauf contre-indication (client, projet historique), nous intégrons nos projets en CSS Vanilla avec Tailwind disponible pour les cas d'usage spécifiques.
+> 💡 **Recommandation**&#8239;: Sauf contre-indication (client, projet historique), nous intégrons nos projets en CSS Vanilla avec Tailwind disponible pour les cas d'usage spécifiques.
 
 ---
 
@@ -47,7 +47,7 @@ Nous privilégions deux approches CSS selon le contexte du projet :
 
 Intégré généralement pour bénéficier de classes utilitaires ponctuelles.
 
-**Exceptions** :
+**Exceptions**&#8239;:
 
 - Projets internes simples
 - Projets historiques
@@ -57,7 +57,7 @@ Intégré généralement pour bénéficier de classes utilitaires ponctuelles.
 
 #### Post-processeurs et pré-processeurs
 
-Pour les fonctionnalités non natives (concaténation, mixins, custom media) :
+Pour les fonctionnalités non natives (concaténation, mixins, custom media)&#8239;:
 
 | Outil                      | Usage recommandé     | Avantages                                                               |
 | -------------------------- | -------------------- | ----------------------------------------------------------------------- |
@@ -179,7 +179,7 @@ article {
 
 ### Organisation des propriétés
 
-Les propriétés sont automatiquement réordonnées selon l'ordre SMACSS via `stylelint-order` :
+Les propriétés sont automatiquement réordonnées selon l'ordre SMACSS via `stylelint-order`&#8239;:
 
 ```css
 .element {
@@ -411,18 +411,24 @@ Les tokens assignent des rôles fonctionnels aux primitives, créant une couche 
 - ✅ Adaptés à la plupart des cas d’usage simples.
 - ✅ Pilotés par un attribut HTML `data-layout` limitant les conflits avec des nommages de classes CSS.
 
-Cas d’usage :
+Cas d’usage&#8239;:
 
 - Stack (`data-layout="stack"`) : disposition verticale d’éléments (sections, formulaires, listes d’articles).
 - Cluster (`data-layout="cluster"`) : disposition horizontale (groupes d’actions, listes d’étiquettes, navigation compacte avec alignements).
 - Autogrid (`data-layout="autogrid"`) : grille de cartes, galerie, liste de produits avec largeur minimale.
 - Switcher (`data-layout="switcher"`) : bascule ligne/colonne en fonction de la largeur disponible.
-- Duo (`data-layout="duo"`) : Layout pour aligner deux contenus côté à côte, avec un rapport de 1/2 1/2 par défaut.
+- Duo (`data-layout="duo"`) : Layout pour aligner deux contenus côté à côte, avec un rapport de 1/2 1/2 par défaut. L'attribut `data-model=""` modifie les rapports d'affichage.
 - Repel (`data-layout="repel"`) : Layout qui écarte les éléments aux extrémités avec un espacement minimal.
 - Reel (`data-layout="reel"`) : défilement horizontal (témoignages, logos) avec gestion des débordements.
 - Boxed (`data-layout="boxed"`) : Bloc de taille maximum centré dans son conteneur.
 
-> 📚  **Documentation** : [Layouts Bretzel](https://bretzel.alsacreations.com/), [Feuille de style](https://github.com/alsacreations/bretzel/blob/main/public/layouts.css).
+Modificateurs globaux dans Bretzel&#8239;:
+
+- `data-gap` : espacement entre éléments (valeurs&#8239;: `s`, `m`, `l`, `xl`, `none`).
+- `data-justify` : distribution horizontale (valeurs&#8239;: `start`, `end`, `center`, `space` → équivaut à `space-between`).
+- `data-align` : alignement vertical (valeurs&#8239;: `start`, `end`, `center`, `stretch`).
+
+> 📚  **Documentation**&#8239;: [Layouts Bretzel](https://bretzel.alsacreations.com/), [Feuille de style](https://github.com/alsacreations/bretzel/blob/main/public/layouts.css).
 
 ### Grid Layout
 
@@ -430,7 +436,7 @@ Cas d’usage :
 - ✅ Grid areas pour une représentation visuelle
 - ✅ Ciblage du parent uniquement
 
-Cas d'usage de Grid Layout :
+Cas d'usage de Grid Layout&#8239;:
 
 - Layout principal avec areas
 - Grille responsive sur mesure
@@ -443,7 +449,7 @@ Cas d'usage de Grid Layout :
 - ✅ Wrap automatique
 - ✅ Flexibilité des enfants (grow, shrink)
 
-Cas d'usage de Flexbox :
+Cas d'usage de Flexbox&#8239;:
 
 - Disposition horizontale
 - Alignement d'éléments
