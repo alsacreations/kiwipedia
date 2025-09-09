@@ -423,11 +423,35 @@ Cas d’usage&#8239;:
 - Boxed (`data-layout="boxed"`) : Bloc de taille maximum centré dans son conteneur.
 - Liquid (`data-layout="liquid"`) : Gabarit de page global, qui gère facilement des éléments qui s'étendent sur toute la largeur de la page (enfants avec attribut `data-layout="splash"`).
 
-Modificateurs globaux dans Bretzel&#8239;:
+### Tableau de décision Layouts Bretzel
 
-- `data-gap` : espacement entre éléments (valeurs&#8239;: `s`, `m`, `l`, `xl`, `none`).
-- `data-justify` : distribution horizontale (valeurs&#8239;: `start`, `end`, `center`, `space` → équivaut à `space-between`).
-- `data-align` : alignement vertical (valeurs&#8239;: `start`, `end`, `center`, `stretch`).
+> 💡 Utiliser ce tableau comme aide rapide : si un pattern correspond à une ligne, employer `data-layout="…"`, avant d’écrire un nouveau `display: flex` ou `display: grid`.  
+
+| Pattern concret | Quand l’utiliser | Layout | Attributs courants | Exceptions |
+| ----------------------------- | ---------------------------------------- | --------------- | --------------------------------------------------------------- | ------------------------ |
+| Empilement vertical de blocs (formulaire, liste, sections) | Empiler ≥2 éléments avec espacement régulier | `stack` | `data-gap="s,m,l,xl"` | Un seul enfant ou besoin d’un alignement non couvert |
+| Groupe d’actions / tags / boutons qui peut wrap | Rangée fluide d’items, retour à la ligne possible | `cluster` | `data-gap="s,m"`,`data-align="center,start"` | Distribution très spécifique par ligne |
+| Grille fluide de cartes responsive | Cartes dont le nombre de colonnes varie selon largeur | `autogrid` | `data-gap="m,l"` | Besoin de zones ou placements manuels complexes |
+| Passage 1 colonne → plusieurs (features) | Même ensemble qui s’étale après un seuil | `switcher` | `data-gap="m"` | Ratios très hétérogènes impossibles à standardiser |
+| Deux panneaux côte à côte (texte + image) | Toujours 2 colonnes sur viewport large | `duo` | `data-gap="l"` | Ratio spécifique 30/70 multi-breakpoints |
+| Barre avec un bloc extrême gauche et un bloc extrême droite | Séparer deux groupes principaux sur l’axe horizontal | `repel` | `data-align="center,start,end"` | Plus de 2 groupes principaux à répartir |
+| Liste horizontale scrollable (logos, témoignages) | Scroll horizontal + alignement/snap cohérents | `reel` | `data-gap="m"` | Carrousel avancé (pagination, autoplay…) |
+| Contenu centré largeur max (article, section) | Encapsuler du contenu avec largeur bornée | `boxed` | (souvent aucun) | Cas isolé unique non réutilisé |
+| Gabarit global page (sections full + sections centrées) | Page avec alternance pleine largeur / contenu contenu | `liquid` | Enfants spéciaux `data-layout="splash"` | Mise en page expérimentale hors scope |
+
+#### Heuristiques de détection
+
+- `flex-direction: column` + `gap` ⇒ suggérer `stack`
+- `flex-wrap: wrap` + `gap` ⇒ suggérer `cluster`
+- `repeat(auto-fit|minmax` dans une grille ⇒ `autogrid`
+- `justify-content: space-between` avec 2 enfants ⇒ `repel`
+- `overflow-x:auto` + `scroll-snap-type` ⇒ `reel`
+
+#### Modificateurs disponibles
+
+- `data-gap="s|m|l|xl|none"`
+- `data-justify="start|end|center|space"`
+- `data-align="start|end|center|stretch"`
 
 > 📚  **Documentation**&#8239;: [Layouts Bretzel](https://bretzel.alsacreations.com/), [Liquid](https://liquid.alsacreations.com/), [Feuille de style globale](https://github.com/alsacreations/bretzel/blob/main/public/layouts.css).
 
