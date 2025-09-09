@@ -411,33 +411,21 @@ Les tokens assignent des rôles fonctionnels aux primitives, créant une couche 
 - ✅ Adaptés à la plupart des cas d’usage simples.
 - ✅ Pilotés par un attribut HTML `data-layout` limitant les conflits avec des nommages de classes CSS.
 
-Cas d’usage&#8239;:
+#### Tableau de décision Layouts Bretzel
 
-- Stack (`data-layout="stack"`) : disposition verticale d’éléments (sections, formulaires, listes d’articles).
-- Cluster (`data-layout="cluster"`) : disposition horizontale (groupes d’actions, listes d’étiquettes, navigation compacte avec alignements).
-- Autogrid (`data-layout="autogrid"`) : grille de cartes, galerie, liste de produits avec largeur minimale. Le nombre de colonnes dépend de la largeur disponible.
-- Switcher (`data-layout="switcher"`) : X enfants. Le nombre de colonnes est égal à 1 sur mobile et au nombre d'enfants (X) sur desktop.
-- Duo (`data-layout="duo"`) : Layout pour aligner deux contenus côté à côte, avec un rapport de 1/2 1/2 par défaut. Le nombre de colonnes (desktop) est toujours de 2. L'attribut `data-model=""` modifie les rapports d'affichage.
-- Repel (`data-layout="repel"`) : Layout qui écarte les éléments aux extrémités (un au début, un à la fin) sur desktop.
-- Reel (`data-layout="reel"`) : défilement horizontal (témoignages, logos) avec gestion des débordements et attache à la grille (scroll-snap).
-- Boxed (`data-layout="boxed"`) : Bloc de taille maximum centré dans son conteneur.
-- Liquid (`data-layout="liquid"`) : Gabarit de page global, qui gère facilement des éléments qui s'étendent sur toute la largeur de la page (enfants avec attribut `data-layout="splash"`).
+> 💡 Utiliser ce tableau comme aide rapide : si un pattern correspond à une ligne, employer `data-layout="…"`, avant d’écrire un nouveau `display: grid` ou `display: flex`.
 
-### Tableau de décision Layouts Bretzel
-
-> 💡 Utiliser ce tableau comme aide rapide : si un pattern correspond à une ligne, employer `data-layout="…"`, avant d’écrire un nouveau `display: flex` ou `display: grid`.  
-
-| Pattern concret | Quand l’utiliser | Layout | Attributs courants | Exceptions |
+| Pattern concret | Quand l’utiliser | Layout | Attributs spécifiques | Exceptions |
 | ----------------------------- | ---------------------------------------- | --------------- | --------------------------------------------------------------- | ------------------------ |
-| Empilement vertical de blocs (formulaire, liste, sections) | Empiler ≥2 éléments avec espacement régulier | `stack` | `data-gap="s,m,l,xl"` | Un seul enfant ou besoin d’un alignement non couvert |
-| Groupe d’actions / tags / boutons qui peut wrap | Rangée fluide d’items, retour à la ligne possible | `cluster` | `data-gap="s,m"`,`data-align="center,start"` | Distribution très spécifique par ligne |
-| Grille fluide de cartes responsive | Cartes dont le nombre de colonnes varie selon largeur | `autogrid` | `data-gap="m,l"` | Besoin de zones ou placements manuels complexes |
-| Passage 1 colonne → plusieurs (features) | Même ensemble qui s’étale après un seuil | `switcher` | `data-gap="m"` | Ratios très hétérogènes impossibles à standardiser |
-| Deux panneaux côte à côte (texte + image) | Toujours 2 colonnes sur viewport large | `duo` | `data-gap="l"` | Ratio spécifique 30/70 multi-breakpoints |
-| Barre avec un bloc extrême gauche et un bloc extrême droite | Séparer deux groupes principaux sur l’axe horizontal | `repel` | `data-align="center,start,end"` | Plus de 2 groupes principaux à répartir |
-| Liste horizontale scrollable (logos, témoignages) | Scroll horizontal + alignement/snap cohérents | `reel` | `data-gap="m"` | Carrousel avancé (pagination, autoplay…) |
-| Contenu centré largeur max (article, section) | Encapsuler du contenu avec largeur bornée | `boxed` | (souvent aucun) | Cas isolé unique non réutilisé |
-| Gabarit global page (sections full + sections centrées) | Page avec alternance pleine largeur / contenu contenu | `liquid` | Enfants spéciaux `data-layout="splash"` | Mise en page expérimentale hors scope |
+| Empilement vertical de blocs (formulaire, liste, sections) | Empiler ≥2 éléments avec espacement régulier | <b>stack</b><br>`data-layout="stack"` | aucun | Un seul enfant ou besoin d’un alignement non couvert |
+| Groupe d’actions / tags / boutons qui peut wrap | Rangée fluide d’items, retour à la ligne possible | <b>cluster</b><br>`data-layout="cluster"` | aucun | Distribution très spécifique par ligne |
+| Grille fluide de cartes responsive | Cartes dont le nombre de colonnes varie selon largeur | <b>autogrid</b><br>`data-layout="autogrid"` | aucun | Besoin de zones ou placements manuels complexes |
+| Passage 1 colonne → plusieurs (features) | Même ensemble qui s’étale après un seuil | <b>switcher</b><br>`data-layout="switcher"` | aucun | Ratios très hétérogènes impossibles à standardiser |
+| Deux panneaux côte à côte (texte + image) | Toujours 2 colonnes sur viewport large | <b>duo</b><br>`data-layout="duo"` | `data-model="1-1,1-2,1-3,auto-1, etc."` | Ratio spécifique, multi-breakpoints |
+| Barre avec un bloc extrême gauche et un bloc extrême droite | Séparer deux groupes principaux sur l’axe horizontal | <b>repel</b><br>`data-layout="repel"` | aucun | Plus de 2 groupes principaux à répartir |
+| Liste horizontale scrollable (logos, témoignages) | Scroll horizontal + alignement/snap cohérents | <b>reel</b><br>`data-layout="reel"` | `data-scroll="start,end,center"`,`data-scrollbar="hidden"` | Carrousel avancé (pagination, autoplay…) |
+| Contenu centré largeur max (article, section) | Encapsuler du contenu avec largeur bornée | <b>boxed</b><br>`data-layout="boxed"` | `data-boxed="small"` | Cas isolé unique non réutilisé |
+| Gabarit global page (sections full + sections centrées) | Page avec alternance pleine largeur / contenu contenu | <b>liquid</b><br>`data-layout="liquid"` | Enfants spéciaux `data-layout="splash"`, `data-layout="splash-start"`, `data-layout="splash-end"` | Mise en page expérimentale hors scope |
 
 #### Heuristiques de détection
 
@@ -447,7 +435,7 @@ Cas d’usage&#8239;:
 - `justify-content: space-between` avec 2 enfants ⇒ `repel`
 - `overflow-x:auto` + `scroll-snap-type` ⇒ `reel`
 
-#### Modificateurs disponibles
+#### Modificateurs communs à tous les Layouts
 
 - `data-gap="s|m|l|xl|none"`
 - `data-justify="start|end|center|space"`
