@@ -226,11 +226,12 @@ Autres listes de ressources et checklists
 
 - <https://w3c.github.io/aria/> La spécification
 - <https://www.w3.org/WAI/ARIA/apg/patterns/> Patterns ARIA
-- <https://w3c.github.io/using-aria/>
+- <https://w3c.github.io/using-aria/> Using ARIA
 - <https://www.w3.org/TR/html-aria/> Rôles et états implicites des éléments HTML, et propriétés ARIA applicables selon les rôles
-- <https://bitsofco.de/rules-for-using-aria-in-html/>
+- <https://developer.mozilla.org/fr/docs/Web/Accessibility/ARIA> Documentation MDN sur ARIA
+- <https://www.smashingmagazine.com/2025/06/what-i-wish-someone-told-me-aria/> Ce que j'aurais aimé qu'on me dise sur ARIA
+- <https://bitsofco.de/rules-for-using-aria-in-html/> Rules for Using ARIA in HTML
 - <https://www.powermapper.com/tests/screen-readers/aria/> Support WAI-ARIA des lecteurs d'écran
-- <https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA>
 - <https://la-cascade.io/articles/comprendre-wai-aria-un-guide-complet> Comprendre WAI-ARIA, un guide complet
 
 ### Couleurs
