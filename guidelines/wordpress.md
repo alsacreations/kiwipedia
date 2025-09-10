@@ -494,6 +494,21 @@ TODO: theme.json
 - Identifier les requêtes lentes <https://css-tricks.com/finding-and-fixing-slow-wordpress-database-queries/>
 - [Query Monitor](https://wordpress.org/plugins/query-monitor/) affiche les requêtes SQL exécutées et leur performance ainsi que les fichiers templates utilisés.
 
+Éviter les requêtes SQL multiples pour charger des données ACF, par exemple récupérer les champs [par groupe](https://www.advancedcustomfields.com/resources/group/) ou par `get_fields`.
+
+```php
+// Au lieu de :
+$api_path = get_field('api_path', 'option'); // 1 requête
+$api_version = get_field('api_version', 'option'); // 1 requête
+$api_provider_id = get_field('api_provider_id', 'option'); // 1 requête
+
+// Mieux vaut :
+$acf_options = get_fields('option') ?: []; // 1 requête
+$api_path = $acf_options['api_path'] ?? null;
+$api_version = $acf_options['api_version'] ?? null;
+$api_provider_id = $acf_options['api_provider_id'] ?? null;
+```
+
 ## Recette
 
 👉 Utiliser [wp-migrate-db](https://fr.wordpress.org/plugins/wp-migrate-db/) pour exporter les contenus en adaptant correctement les URLs vers le nouveau domaine.
