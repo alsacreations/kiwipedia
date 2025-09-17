@@ -1,20 +1,54 @@
-# Guidelines : HTML
+# Guidelines HTML
 
-Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/) concernant **"HTML"**. Ces indications sont destinées à évoluer dans le temps et à s'adapter à chaque nouveau projet.
+> 📋 **À propos de ce document**  
+> Ce document rassemble les bonnes pratiques HTML appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/). Ces guidelines sont destinées à évoluer dans le temps et à s'adapter à chaque nouveau projet, en garantissant la validité, l'accessibilité et les performances.
 
-## Généralités
+## Table des matières
 
-Sauf spécificités contraires :
+1. [Généralités et conventions](#généralités-et-conventions)
+2. [Structure de document](#structure-de-document)
+3. [Sémantique et architecture](#sémantique-et-architecture)
+4. [Optimisation des médias](#optimisation-des-médias)
+5. [Formulaires et interactions](#formulaires-et-interactions)
+6. [Accessibilité](#accessibilité)
+7. [SEO et métadonnées](#seo-et-métadonnées)
 
-- Le code HTML est valide <https://whatwg.org/validator/>
-- L’encodage des fichiers et des bases de données doit se faire en `UTF-8` (sans `BOM`).
-- Les noms d'éléments et attributs HTML sont rédigés en minuscules, les attributs utilisent les double quotes (ex. `class="fruit"`). Les valeurs identiques aux attributs ne sont pas renseignées sauf nécessité (ex. en HTML5 pas de `checked="checked"`).
-- Les éléments disposants d’id (à limiter autant que possible) doivent disposer d’une classe dupliquée (pour CSS).
-- Les indentations se font à l’aide de deux espaces et non à l'aide de tabulations. Pour assurer une cohérence inter-projets, utiliser la convention [EditorConfig](https://editorconfig.org/), voire Prettier.
-- Séparer les noms des fichiers, des images des classes et id CSS par des tirets (`.slide-info`, `styles-extra.css`, `jquery-3.0.min.css`, etc).
-- Exploiter le [Design System du W3C](https://design-system.w3.org/) pour les différents composants
+---
 
-## Modèle-type
+## Généralités et conventions
+
+### Standards et validation
+
+- ✅ Le code HTML est valide selon les standards WHATWG : <https://whatwg.org/validator/>
+- ✅ Encodage UTF-8 (sans BOM) pour tous les fichiers et bases de données
+- ✅ Doctype HTML5 : `<!DOCTYPE html>`
+
+### Règles syntaxiques
+
+- **Casse** : Éléments et attributs en minuscules
+- **Quotes** : Toujours utiliser les guillemets doubles `"`
+- **Attributs booléens** : Pas de valeur redondante (ex. `required` et non `required="required"`)
+- **Indentation** : 2 espaces (configuration [EditorConfig](https://editorconfig.org/) + Prettier)
+
+### Nommage des fichiers et classes
+
+- **Séparateurs** : Utiliser des tirets pour les fichiers, classes et IDs
+  - Fichiers : `styles-extra.css`, `jquery-3.0.min.css`
+  - Classes : `.slide-info`, `.card-header`
+- **Langue** : Privilégier l'anglais pour les attributs `class` et `id`
+- **IDs** : Limiter leur usage et toujours doubler par une classe CSS
+
+### Ressources de référence
+
+- **[Design System W3C](https://design-system.w3.org/)** : composants standardisés
+- **[Open UI](https://open-ui.org/)** : spécifications comportements attendus
+- **[Bootstrap Components](https://getbootstrap.com/docs/5.3/components)** : nommage de fallback
+
+---
+
+## Structure de document
+
+### Modèle-type HTML5
 
 ```html
 <!DOCTYPE html>
@@ -24,10 +58,12 @@ Sauf spécificités contraires :
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Titre unique de la page - Nom du site</title>
-    <!-- Pas de ressources bloquantes avant le chargement des styles -->
+    
+    <!-- Styles critiques en priorité -->
     <link rel="stylesheet" href="/assets/css/styles.css">
     <link rel="stylesheet" href="/assets/css/print.css" media="print">
 
+    <!-- Métadonnées SEO et réseaux sociaux -->
     <meta name="description" content="Description de la page">
     <meta property="og:title" content="Titre unique de la page - Nom du site">
     <meta property="og:description" content="Description de la page">
@@ -40,6 +76,7 @@ Sauf spécificités contraires :
     <meta property="og:url" content="https://www.example.com/page">
     <link rel="canonical" href="https://www.example.com/page">
 
+    <!-- Favicon moderne -->
     <link rel="icon" href="/favicon.ico" sizes="32x32">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -47,13 +84,52 @@ Sauf spécificités contraires :
   </head>
 
   <body>
-    <!-- ... -->
+    <!-- Contenu principal -->
     <script src="/assets/js/global.js"></script>
   </body>
 </html>
 ```
 
-Peut être complété par (ou intégré dans un autre script s'il s'agit d'une application compilée)
+### Éléments critiques du `<head>`
+
+#### Viewport responsive
+
+> ⚠️ **Important** : Proscrire les syntaxes limitant l'agrandissement (`maximum-scale=1`, `user-scalable=no`)
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1">
+```
+
+#### Titre et description
+
+```html
+<!-- Max 55 caractères pour le SEO -->
+<title>Titre unique de la page - Nom du site</title>
+<meta name="description" content="Description concise et pertinente">
+```
+
+#### Langue et encodage
+
+```html
+<html lang="fr">
+<meta charset="UTF-8">
+
+<!-- Langues alternatives pour sites multilingues -->
+<link rel="alternate" href="https://en.example.com/" hreflang="en">
+```
+
+#### Favicon moderne
+
+```html
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+```
+
+> 📚 **Ressource** : [How to Favicon](https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs)
+
+### Detection JavaScript
 
 ```html
 <script>
@@ -62,258 +138,316 @@ Peut être complété par (ou intégré dans un autre script s'il s'agit d'une a
 </script>
 ```
 
-## En-tête de document
+---
 
-Tout ce que l'on peut trouver dans `<head>`
+## Sémantique et architecture
 
-- 🔖 <https://htmlhead.dev/>
-- 🔖 <https://github.com/joshbuchea/HEAD>
-
-### Doctype
-
-Le doctype HTML/HTML5 est :
+### Structure globale recommandée
 
 ```html
-<!DOCTYPE html>
+<body>
+  <header id="header" role="banner">
+    <!-- En-tête global, navigation -->
+  </header>
+
+  <main id="main" role="main">
+    <!-- Contenu principal -->
+  </main>
+
+  <aside class="aside" role="complementary">
+    <!-- Barre latérale (extractible sans impact) -->
+  </aside>
+
+  <footer id="footer" role="contentinfo">
+    <!-- Pied de page global -->
+  </footer>
+</body>
 ```
 
-### Langue
+### Éléments sémantiques privilégiés
 
-La langue de la page est systématiquement renseignée via un attribut dans l’élément `<html>` et un code [Code ISO 639-1](https://fr.wikipedia.org/wiki/Liste_des_codes_ISO_639-1) :
+Préférer les éléments HTML5 sémantiques aux `<div>` neutres :
+
+| Élément | Usage | Exemple |
+|---------|-------|---------|
+| `<header>` | En-tête de section ou page | Navigation principale |
+| `<main>` | Contenu principal unique | Zone centrale |
+| `<article>` | Contenu autonome | Article de blog |
+| `<section>` | Section thématique | Chapitre |
+| `<nav>` | Navigation | Menu principal |
+| `<aside>` | Contenu tangentiel | Barre latérale |
+| `<footer>` | Pied de section ou page | Copyright, liens |
+
+### Zones fonctionnelles spécialisées
 
 ```html
-<html lang="fr"></html>
+<nav id="navigation" role="navigation">
+  <!-- Navigation principale -->
+</nav>
+
+<form id="search" role="search">
+  <!-- Recherche principale -->
+</form>
 ```
 
-Les langues alternatives en cas de site multilingue sont indiquées par une balise link de type _alternate_.
+### Hiérarchie des titres
+
+> 🎯 **Règle** : Une seule balise `<h1>` par page, hiérarchie logique h1→h6
 
 ```html
-<link rel="alternate" href="https://en.example.com/" hreflang="en">
+<h1>Titre principal de la page</h1>
+  <h2>Section principale</h2>
+    <h3>Sous-section</h3>
+    <h3>Autre sous-section</h3>
+  <h2>Autre section principale</h2>
 ```
 
-### Encodage
+### Convention des noms de composants
 
-L’encodage du document (en UTF-8) est systématiquement renseigné via un élément meta dans `<head>` :
+#### Nommage de base
 
-```html
-<meta charset="UTF-8">
-```
+- Référence prioritaire : **[Open UI](https://open-ui.org/)** pour les noms standard
+- Référence secondaire : **[Bootstrap Components](https://getbootstrap.com/docs/5.3/components)** si non disponible
 
-### Titre de la page
+#### Groupes de composants
 
-Le titre de page, différent à chaque page, d'une longueur maximum de 55 caractères (SEO), est systématiquement renseigné via un élément `<title>` dans le `<head>` :
+| Pattern | Convention | Exemple |
+|---------|------------|---------|
+| Conteneur unique | `.wrapper` | `.modal-wrapper` |
+| Conteneur multiple | `.container` | `.cards-container` |
+| Enfant direct | `*-inner` | `.sidebar-inner` |
+| Groupe homogène | `.group` | `.button-group` |
 
-```html
-<title>Titre unique de la page - Nom du site</title>
-```
+#### Layouts et états
 
-### Meta "Viewport"
-
-Pour une adaptation du site web vers les terminaux mobiles, l’élément `<meta name="viewport">` est ajouté dans la partie `<head>`.
-
-```html
-<meta name="viewport" content="width=device-width, initial-scale=1">
-```
-
-> [!IMPORTANT]
-> Les syntaxes empêchant l’agrandissement des contenus par le visiteur seront proscrites (maximum-scale=1, user-scalable=no, etc.).
-
-🔖 Voir [https://www.alsacreations.com/article/lire/1490-comprendre-le-viewport-dans-le-web-mobile.html](https://www.alsacreations.com/article/lire/1490-comprendre-le-viewport-dans-le-web-mobile.html)
-
-### Favicon
-
-L’icône de favori (favicon) est utilisée de différentes manières par les navigateurs (onglets, favoris), systèmes et moteurs de recherche (affichage dans les résultats).
-
-- Le format ICO est ancien,
-- le format PNG permet une meilleure définition (carré multiple de 48x48) avec un poids plus léger,
-- et le [format SVG](https://css-tricks.com/svg-favicons-and-all-the-fun-things-we-can-do-with-them/) se voit [progressivement supporté](https://caniuse.com/link-icon-svg).
-
-La syntaxe recommandée pour les navigateurs modernes :
-
-```html
-<link rel="icon" href="/favicon.ico" sizes="32x32">
-<link rel="icon" href="/icon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<!-- Et dans le cas d'une web app : -->
-<link rel="manifest" href="/manifest.json">
-```
-
-🔖 How to Favicon: Three files that fit most needs <https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs>
-
-## Conventions de nommage
-
-### Nommage des composants
-
-Chaque composant dispose d'un nom sous forme de classe HTML et/ou d'un nom de fichier propre, par exemple `class="slider"` au sein du fichier `slider.astro`.
-
-On privilégie l'anglais pour le nommage des éléments (attributs `class`, `id`...).
-
-Le collectif du W3C **[Open UI](https://open-ui.org/)** a pour mission de spécifier les comportements attendus des composants classique. **Se réferer en priorité à cette ressource pour choisir le nom d'un composant**. Si le composant souhaité n'y figure pas, se reporter à la liste des composants proposés dans [Bootstrap](https://getbootstrap.com/docs/5.3/components).
-
-### Nommage des groupes de composants
-
-Les regroupements de composants sont nommés ainsi&#8239;:
-
-- `.wrapper` : destiné à contenir un élément unique
-- `.container` : destiné à contenir  plusieurs éléments
-- `*-inner` : désigne un enfant direct d'un wrapper ou container
-- `.group` : contient un ensemble d'éléments de même type (ex. `.card-group` qui contient des enfants `.card`)
-
-### Nommage des Layouts
-
-Les "Layouts" sont des zones d'affichages destinées à gérer la façon dont les composants vont s'afficher et interagir entre eux. Ils sont préfixés d'un `l-`.
-
-La liste actuelle des Layouts est : `l-flow`, `l-autogrid`, `l-switcher`, `l-cluster`, `l-repel`, `l-reel`, `l-media`, `l-breakout`, `l-layout-maxed`.
-
-🥨 Nos Layouts sont présentés dans [Bretzel](http://bretzel.alsacreations.com/#layouts) et [récupérables sur Github](https://github.com/alsacreations/bretzel/blob/main/public/layouts.css).
-
-## Sémantique globale
-
-Les éléments HTML5 `<header>`, `<article>`, `<main>`, `<footer>`, `<aside>`, `<section>` et `<nav>` sont privilégiés aux éléments neutres `<div>` si leur fonction s’y prête.
-
-La structure globale préconisée est celle-ci :
-
-- `<body>` : corps de page et du site web
-- `<main id="main" role="main">` : conteneur général du contenu principal, typiquement ce qui n'est pas dans header et footer
-- `<header id="header" role="banner">` : entête global, comportant souvent la navigation et des éléments qui se retrouvent en commun sur (quasiment) toutes les pages
-- `<footer id="footer" role="contentinfo">` : pied de page global comportant des éléments qui se retrouvent en commun sur (quasiment) toutes les pages
-- `<aside class="aside" role="complementary">` : barre latérale globale. Note : `<aside>` doit pouvoir être extrait de la page sans poser de problème, en clair ne pas y placer la navigation par exemple.
-- `<nav id="navigation" role="navigation">` : navigation principale
-- `<form id="search" role="search">` : recherche principale
+| Type | Règle | Exemples |
+|------|---------|----------|
+| Layouts | Utiliser [Bretzel](https://bretzel.alsacreations.com/) | `data-layout="switcher"`, `data-layout="duo"` |
+| États | `is-` | `.is-active`, `.is-loading` |
+| Capacités | `has-` | `.has-dropdown`, `.has-error` |
+| JavaScript | `js-` | `.js-toggle`, `.js-menu` |
 
 ### Traductibilité
 
-Utiliser l'attribut `translate="no"` sur toutes les portions de contenu qui **ne doivent pas** être traduites, par exemple noms propres de personnes et d'oeuvres, adresses.
+```html
+<!-- Contenu à ne pas traduire -->
+<span translate="no">Jean Dupont</span>
+<address translate="no">123 rue de la Paix, Paris</address>
+```
 
-### Niveaux de titres
+---
 
-Chaque page doit comprendre un élément de titre de premier niveau `<h1>` et la structure des autres niveaux doit suivre un ordre logique (h1 à h6).
+## Optimisation des médias
 
-## Accessibilité
+### Images : règles essentielles
 
-Une attention toute particulière sera apportée à l’accessibilité des documents afin que chaque utilisateur, quelle que soit sa défaillance, puisse avoir plein accès aux contenus proposés.
-
-🔖 Voir [Guidelines Accessibilité](accessibility.md).
-
-## Formulaires
-
-Privilégier au maximum la conception propre et ergonomique de formulaires avec les champs et éléments dédiés :
-
-- Les étiquettes `<label>` reliées à chaque `<input>`, `<textarea>`, etc. grâce aux attributs `for`/`id`.
-- L'attribut [autocomplete](https://web.dev/learn/forms/autofill/) pour faciliter la saisie.
-
-## Images
-
-👉 Systématiquement **ajouter les attributs `width` et `height`** sur les images (avec leurs dimensions réelles) pour que le navigateur puisse calculer le ratio et éviter des _Layout Shifts_.
-
-- Option&#8239;: ajouter les attributs `loading="lazy"` si l'image est placée en milieu ou fin de page.
-- Option&#8239;: ajouter `decoding="async"` sur les formats `.avif` et `.webp`.
-
-### Optimisation SVG
-
-Les images au format SVG sont à optimiser via [SVGOMG](https://jakearchibald.github.io/svgomg/).
-
-### Optimisation Bitmaps
-
-Les images bitmaps (non vectorielles) sont systématiquement à optimiser/compresser. Si l'optimisation est manuelle, nous utilisons l'outil en ligne [Squoosh](https://squoosh.app/).
-
-- ✅ **Format `.avif` préférentiellement** (photos, captures d'écran riches)&#8239;: qualité AVIF recommandée : entre 60 et 85 (bien vérifier le rendu acceptable).
-- ✅ Format `.webp` en mode "lossless" pour les schémas précis sans perte de qualité.
-- ❌ Pas de `.jpg` ni `.png` sauf si l'ensemble poids/qualité est meilleur qu'en `avif` et qu'une re-compression dégraderait cette qualité.
-- Largeur suggérée&#8239;:
-- 2000px pour les images en pleine largeur de page,
-- 1200px pour les images qui occupent la moitié de page,
-- 800px pour les images en cards/zoom qui occupent le tiers de page.
-
-Autres outils d'optimisation (automatisation et traitement par lot)&#8239;:
-
-- Dans un projet Vite, via [Vite Image Optimizer](https://www.npmjs.com/package/vite-plugin-image-optimizer) (AVIF, WebP, JPEG, PNG, SVG)&#8239;: permet de compresser les images au moment de la compilation. Réglages recommandés&#8239;:
-  - `avif: { quality: 70, lossless: false, }`
-  - `webp: { quality: 80, lossless: false, }`
-  - `jpg: { quality: 85, mozjpeg: true, }`
-  - `jpeg: { quality: 85, mozjpeg: true, }`
-  - `png: { quality: 85 }`
-- Dans le navigateur&#8239;:
-  - [Squoosh multiple export](https://squoosh-multiple-export.vercel.app/) (AVIF, WebP, JPEG, PNG, GIF)&#8239;: un fork de Squoosh pour multiples images.
-  - [Clever Compress](https://clevercompress.com/) (AVIF, WebP, JPEG)&#8239;: Gratuit, RGPD.
-- En ligne de commande&#8239;:
-  - [Sharp](https://sharp.pixelplumbing.com) (AVIF, WebP, JPEG, PNG, GIF).
-  - AVIF en ligne de commande : [Avif-CLI](https://github.com/lovell/avif-cli) (AVIF)
-- MacOS uniquement (opensource)&#8239;:
-  - [Image Optimizer](https://github.com/antonreshetov/image-optimizer) (WebP, PNG, JPEG, GIF, SVG)&#8239;: très facile par drag&drop et traitement par lot
-  - [ImageOptim](https://imageoptim.com/fr) (PNG, JPEG, GIF, SVG)
-
-### Code recommandé
+> 💡 **Règle critique** : Toujours ajouter `width` et `height` (dimensions réelles) pour éviter les Layout Shifts
 
 ```html
-<!-- Format unique (avif) -->
-<img src="kiwi.avif" alt="Un kiwi en tutu" decoding="async" loading="lazy" 
-    width="1200" height="800">
+<!-- Format moderne optimisé -->
+<img src="photo.avif" alt="Description précise" 
+     width="1200" height="800"
+     loading="lazy" decoding="async">
+```
 
-<!-- Formats avif + webp en alternative -->
+### Formats recommandés
+
+#### Hiérarchie des formats
+
+| Format | Usage principal | Qualité recommandée |
+|--------|-----------------|-------------------|
+| **AVIF** | Photos, captures complexes | 60-85 |
+| **WebP** | Schémas précis (lossless) | - |
+| **SVG** | Illustrations vectorielles | Optimisé SVGOMG |
+| JPG/PNG | Legacy uniquement | Éviter |
+
+#### Largeurs suggérées
+
+- **2000px** : images pleine largeur
+- **1200px** : images demi-page
+- **800px** : cards/vignettes
+
+### Code images responsive
+
+```html
+<!-- Format unique AVIF -->
+<img src="kiwi.avif" alt="Un kiwi en tutu" 
+     width="1200" height="800" 
+     loading="lazy" decoding="async">
+
+<!-- Fallback multi-formats -->
 <picture>
   <source type="image/avif" srcset="kiwi.avif">
-  <img src="kiwi.webp" alt="kiwi en tutu" decoding="async" loading="lazy" 
-    width="1200" height="800">
+  <img src="kiwi.webp" alt="Un kiwi en tutu" 
+       width="1200" height="800"
+       loading="lazy" decoding="async">
 </picture>
 ```
 
+### Reset CSS pour images
+
 ```css
-/* dans un reset */
 img {
-  max-width: 100%; /* largeur fluide */
-  height: auto; /* ratio préservé */
-  background: gray; /* placeholder en attendant */
+  max-width: 100%; /* Largeur fluide */
+  height: auto; /* Ratio préservé */
+  background: #f0f0f0; /* Placeholder */
 }
 ```
 
-## Vidéo
-
-On privilégie la balise `<video>` avec au moins une source MP4 par défaut. Sur Safari (macOS, iOS) on observe les [recommandations d'Apple pour la vidéo](https://developer.apple.com/documentation/webkit/delivering_video_content_for_safari/), par exemple l'attribut `playsinline` pour ne pas bloquer la lecture automatique.
-
-### Outils d'optimisation vidéo et audio
-
-- [Handbrake](https://handbrake.fr/)
-- [Audacity](https://tenacityaudio.org/)
-
-## Microdata et données structurées
-
-Dans la mesure du possible, et selon le type de site, les microformats les plus courants seront ajoutés avec le vocabulaire privilégié : [https://schema.org](https://schema.org/docs/full.html) (promu et utilisé par Google, Yahoo, Bing, Yandex).
-
-🔖 Voir [SEO : Microdonnées, données enrichies](seo.md#microdonnées-données-enrichies)
-
-## Classes et états
-
-- Le lien, l’onglet ou la page active est désigné par la classe `.is-current`
-- Tout état est préfixé par "is-". Ex : `.is-paused`, `.is-opened`, `.is-hidden`, `.has-*`
-- Tout élément manipulé par JavaScript est préfixé par "js-". Ex : `.js-nav-button`, `.js-menu`, `.js-is-hidden`
-
-## Liens target `\_blank`
-
-Dans la mesure du possible, éviter les liens ouvrant une nouvelle fenêtre/onglet, sans les signaler explicitement. Ils perturbent la navigation classique du visiteur et peuvent créer des failles de sécurité.
-
-🔖 Voir [https://medium.com/@jitbit/target-blank-the-most-underestimated-vulnerability-ever-96e328301f4c](https://medium.com/@jitbit/target-blank-the-most-underestimated-vulnerability-ever-96e328301f4c).
-
-**_Toujours utiliser `rel="noopener"` sur des liens `target="_blank"`_**
-
-## Meta spécifiques - SEO et réseaux sociaux
-
-Les liens entre site web et les différents réseaux sociaux sont de plus en plus forts. Certaines meta spécifiques permettent de faciliter ou d’améliorer ces liens, sans que l’on connaisse directement leur impact sur le référencement direct.
-
-### OpenGraph
-
-L’[OpenGraph](https://ogp.me/) permet de maîtriser davantage l'apparence des contenus partagés via URL sur les réseaux sociaux (Facebook, Twitter, LinkedIn, Pinterest entre autres). Le titre, l'image d'aperçu, la description, etc. peuvent être personnalisés. On peut tester l'implémentation à l'aide de <https://www.opengraph.xyz/> ou <https://cards-dev.twitter.com/validator> ou <https://debug.iframely.com/> ou <https://developers.facebook.com/tools/debug> et générer à l'aide de <https://metatags.io>. Parmi les valeurs de og: les plus utilisées :
+### Vidéo optimisée
 
 ```html
-<meta property="og:title" content="Titre unique de la page - Nom du site" />
-<meta property="og:url" content="https://www.example.com/page" />
-<meta property="og:locale" content="fr_FR" />
-<meta property="og:description" content="Description de la page" />
-<meta property="og:image" content="https://www.example.com/image.jpg" />
-<meta property="og:type" content="website" />
-<meta property="og:site_name" content="Nom du site" />
+<video width="800" height="450" controls playsinline>
+  <source src="video.mp4" type="video/mp4">
+  <p>Votre navigateur ne supporte pas la vidéo HTML5.</p>
+</video>
 ```
 
-### OpenSearch
+> 📚 [Recommandations Apple pour Safari](https://developer.apple.com/documentation/webkit/delivering_video_content_for_safari/)
 
-Si le projet comporte un moteur de recherche efficace et pertinent, il peut être doté d’[OpenSearch](https://www.opensearch.org/).
+### Outils d'optimisation
+
+#### Images
+
+- **Navigateur** : [Squoosh](https://squoosh.app/), [Clever Compress](https://clevercompress.com/)
+- **Vite** : [Vite Image Optimizer](https://www.npmjs.com/package/vite-plugin-image-optimizer)
+- **CLI** : [Sharp](https://sharp.pixelplumbing.com), [Avif-CLI](https://github.com/lovell/avif-cli)
+- **macOS** : [Image Optimizer](https://github.com/antonreshetov/image-optimizer), [ImageOptim](https://imageoptim.com/fr)
+
+#### Vidéo et audio
+
+- [Handbrake](https://handbrake.fr/) (vidéo)
+- [Audacity](https://tenacityaudio.org/) (audio)
+
+---
+
+## Formulaires et interactions
+
+### Structure accessible
+
+```html
+<form>
+  <div class="field">
+    <label for="email">Adresse e-mail *</label>
+    <input type="email" id="email" name="email" 
+           autocomplete="email" required
+           aria-describedby="email-help">
+    <small id="email-help">Format : nom@exemple.com</small>
+  </div>
+  
+  <div class="field">
+    <label for="message">Message</label>
+    <textarea id="message" name="message" 
+              autocomplete="off"></textarea>
+  </div>
+  
+  <button type="submit">Envoyer</button>
+</form>
+```
+
+### Attributs d'amélioration UX
+
+| Attribut | Fonction | Exemple |
+|----------|----------|---------|
+| `autocomplete` | Assistance saisie | `email`, `tel`, `name` |
+| `inputmode` | Clavier mobile | `numeric`, `tel` |
+| `pattern` | Validation côté client | `[0-9]{5}` |
+| `aria-describedby` | Aide contextuelle | Référence ID d'aide |
+
+### Liens externes sécurisés
+
+> ⚠️ **Sécurité** : Toujours utiliser `rel="noopener"` sur `target="_blank"`
+
+```html
+<!-- Lien externe sécurisé -->
+<a href="https://example.com" target="_blank" rel="noopener">
+  Site externe
+</a>
+
+<!-- Encore mieux : éviter target="_blank" -->
+<a href="https://example.com">Site externe</a>
+```
+
+---
+
+## Accessibilité
+
+> 📚 **Référence complète** : [Guidelines Accessibilité](accessibility.md)
+
+### Points critiques
+
+- **Contrastes** : Respecter WCAG AA (4.5:1 minimum)
+- **Navigation clavier** : Tous les éléments interactifs accessibles
+- **Alternatives** : `alt` sur images, transcriptions pour vidéos
+- **Structure** : Hiérarchie logique des titres
+
+### ARIA essentiel
+
+```html
+<!-- Landmarks -->
+<nav aria-label="Navigation principale">
+<main aria-label="Contenu principal">
+
+<!-- États dynamiques -->
+<button aria-expanded="false" aria-controls="menu">Menu</button>
+<div id="menu" aria-hidden="true">
+
+<!-- Descriptions -->
+<input aria-describedby="help-text">
+<div id="help-text">Texte d'aide</div>
+```
+
+---
+
+## SEO et métadonnées
+
+### OpenGraph (réseaux sociaux)
+
+```html
+<meta property="og:title" content="Titre unique - Nom du site">
+<meta property="og:url" content="https://www.example.com/page">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:description" content="Description de la page">
+<meta property="og:image" content="https://www.example.com/image.jpg">
+<meta property="og:image:alt" content="Description de l'image">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nom du site">
+<meta name="twitter:card" content="summary_large_image">
+```
+
+### Données structurées (Schema.org)
+
+```html
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Titre de l'article",
+  "author": {
+    "@type": "Person",
+    "name": "Nom de l'auteur"
+  },
+  "datePublished": "2024-01-15"
+}
+</script>
+```
+
+### Outils de validation
+
+- **OpenGraph** : [OpenGraph.xyz](https://www.opengraph.xyz/), [Meta Tags](https://metatags.io)
+- **Twitter Cards** : [Twitter Validator](https://cards-dev.twitter.com/validator)
+- **Données structurées** : [Google Rich Results Test](https://search.google.com/test/rich-results)
+
+### OpenSearch (moteur interne)
+
+```html
+<link rel="search" type="application/opensearchdescription+xml" 
+      title="Recherche sur le site" href="/opensearch.xml">
+```
+
+---
+
+> 📚 **Ressources complémentaires**
+>
+> - [HTMLHead.dev](https://htmlhead.dev/) : Référence complète pour `<head>`
+> - [Josh Buchea HEAD](https://github.com/joshbuchea/HEAD) : Collection métadonnées
