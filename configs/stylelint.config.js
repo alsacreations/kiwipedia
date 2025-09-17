@@ -3,21 +3,28 @@ export default {
   extends: ["stylelint-config-standard", "stylelint-config-html", "stylelint-config-property-sort-order-smacss"],
   plugins: ["stylelint-order"],
   rules: {
-    // Sélecteurs
+    // Sélecteurs (règles générales)
     "selector-max-id": 0, // on refuse les ID
     "selector-max-class": 3, // on limite le nombre de classes
     "selector-max-type": 3, // on limite le nombre de sélecteurs d'éléments
     "no-descending-specificity": null, // on désactive la règle de spécificité descendante
 
-    // Sélécteurs spécifiques
+    // Pseudo-classes inconnues
     "selector-pseudo-class-no-unknown": [true, { ignorePseudoClasses: ["deep", "global"] }],
+
+    // Pseudo-éléments inconnus
     "selector-pseudo-element-no-unknown": [true, { ignorePseudoElements: ["v-deep"] }],
+
+    // Règles @ inconnues
     "at-rule-no-unknown": [true, { ignoreAtRules: ["theme", "utility"] }],
+
+    // Valeurs inconnues
     "declaration-property-value-no-unknown": [
       true,
       {
         ignoreProperties: {
           "/^animation-/": "auto",
+          "/^container/": "/^scroll/",
           top: "/^anchor/",
           right: "/^anchor/",
           bottom: "/^anchor/",
@@ -26,9 +33,9 @@ export default {
       },
     ],
 
-    // Prefixes
+    // Prefixes vendeurs
     "property-no-vendor-prefix": [
-      true, // on refuse les préfixes vendeurs
+      true,
       {
         ignoreProperties: [
           "mask",
@@ -67,14 +74,14 @@ export default {
 
     // Polices
     "font-family-no-duplicate-names": null,
-    "font-weight-notation": "numeric", // on force la notation numérique pour les poids de police
+    "font-weight-notation": "numeric", // notation numérique pour les poids de police
 
     // Couleurs
-    "color-hex-length": "long", // on force la notation longue pour les couleurs hexadécimales
+    "color-hex-length": "long", // notation longue pour les couleurs hexadécimales
     "color-named": "never", // on refuse les couleurs nommées
-    "color-function-notation": "modern", // on force la notation moderne pour les fonctions de couleurs
-    "lightness-notation": "percentage", // on force la notation en pourcentage pour la luminosité
-    "alpha-value-notation": "percentage", // on force la notation en pourcentage pour l'alpha
+    "color-function-notation": "modern", // notation moderne pour les fonctions de couleurs
+    "lightness-notation": "percentage", // notation en pourcentage pour la luminosité
+    "alpha-value-notation": "percentage", // notation en pourcentage pour l'alpha
     "hue-degree-notation": "number",
   },
 };
