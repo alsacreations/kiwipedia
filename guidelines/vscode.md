@@ -1,112 +1,313 @@
-# Visual Studio Code
+# Guidelines Visual Studio Code
 
-L'Éditeur de code recommandé pour HTML, CSS, PHP, JS est [Visual Studio Code](https://code.visualstudio.com/). Il est libre (son noyau), gratuit et bénéficie de nombreuses mises à jour. Un package réellement libre est [VSCodium](https://vscodium.com/) (absence de la télémétrie Microsoft et utilisation d'un autre store d'extensions).
+> 📋 **À propos de ce document**  
+> Ce document rassemble les bonnes pratiques Visual Studio Code appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/). Ces guidelines standardisent l'environnement de développement pour garantir cohérence et qualité du code en équipe.
 
-Cette présente convention rassemble les bonnes pratiques VS Code en production appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/). Elle a pour but d'évoluer dans le temps et de s'adapter à chaque nouveau projet.
+## Table des matières
 
-## [Raccourcis incontournables](https://code.visualstudio.com/docs/getstarted/keybindings#_keyboard-shortcuts-reference)
+1. [Vue d'ensemble](#vue-densemble)
+2. [Configuration de base](#configuration-de-base)
+3. [Extensions essentielles](#extensions-essentielles)
+4. [Raccourcis et productivité](#raccourcis-et-productivité)
+5. [Langages spécifiques](#langages-spécifiques)
+6. [Optimisation et personnalisation](#optimisation-et-personnalisation)
 
-- `⌘⇧P` (`Ctrl+Shift+P` sur Windows) : Show Command Palette (permet de lancer une tâche d'un plugin)
-- `⌘P` (`Ctrl+P`) : _Quick Open_, _Go to File_ : recherche rapide de fichiers dans le projet
-- `⇧⌘L` (`Ctrl+Shift+L`) : _Select all occurrences of current selection_ : sélectionne toutes les occurences d'un mot
-- `⇧⌥↓` (`Shift+Alt + ↓`) : _Copy line down_ : duplique la ligne courante
-- `⌘⇧F` (`Ctrl+Shift+F`) : _Find_ : rechercher dans le projet
-- `⌥⌘F` (`Ctrl+H`) : _Replace_ : remplacer dans le projet
-- `⌘,` (`Ctrl+,`) : _Settings_ : paramètres
+---
 
-🔖 Autres astuces <https://developer.mozilla.org/en-US/blog/vs-code-tips-tricks/>
+## Vue d'ensemble
 
-## Extensions Visual Studio Code
+### Éditeur recommandé
 
-Des outils automatiques permettant de vérifier la qualité du code produit de manière continue sont nécessaires dans une équipe&nbsp;:
+**[Visual Studio Code](https://code.visualstudio.com/)** est notre éditeur de référence pour HTML, CSS, PHP, JavaScript et tous les frameworks associés.
 
-- Pour ne pas écrire de code obsolète et avoir à gérer des bugs ou de la dette technique par la suite
-- Pour connaître les bonnes pratiques dès le départ
-- Pour harmoniser la syntaxe lorsque plusieurs personnes agissent sur les mêmes documents
+#### Avantages
 
-Visual Studio Code dispose de vérificateurs de qualité (Linters) par défaut, au minimum dans les langages suivants&nbsp;: CSS, SCSS et PHP. La configuration par défaut de Visual Studio Code doit être préservée au maximum pour éviter les conflits sur des postes différents.
+- ✅ **Gratuit** et open-source (noyau libre)
+- ✅ **Performant** avec de nombreuses mises à jour
+- ✅ **Écosystème riche** d'extensions
+- ✅ **Support multiplateforme** (Windows, macOS, Linux)
 
-Lister les extensions : `code --list-extensions`
+#### Alternative libre
+
+**[VSCodium](https://vscodium.com/)** : version entièrement libre sans télémétrie Microsoft et avec un store d'extensions alternatif.
+
+### Objectifs des guidelines
+
+> 🎯 **Mission** : Harmoniser l'environnement de développement pour&#8239;:
+>
+> - Éviter le code obsolète et la dette technique
+> - Enseigner les bonnes pratiques dès le départ
+> - Uniformiser la syntaxe en équipe
+> - Automatiser la vérification qualité
+
+---
+
+## Configuration de base
+
+### Structure de projet type
+
+Chaque projet doit contenir à la racine&#8239;:
+
+```bash
+projet/
+├── .vscode/
+│   ├── extensions.json    # Extensions recommandées
+│   └── settings.json      # Configuration workspace
+├── .editorconfig          # Règles d'indentation/encodage
+├── .prettierrc.mjs        # Configuration Prettier
+└── stylelint.config.js    # Configuration Stylelint
+```
+
+> 📚 **Fichiers disponibles** : Tous les exemples sont fournis dans [`/configs`](../configs/)
+
+### Configuration essentielle VS Code
+
+#### Fichier `.vscode/settings.json`
+
+```json
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "stylelint.validate": ["css", "scss", "html", "vue"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
+  }
+}
+```
+
+#### Fichier `.vscode/extensions.json`
+
+```json
+{
+  "recommendations": [
+    "editorconfig.editorconfig",
+    "esbenp.prettier-vscode",
+    "stylelint.vscode-stylelint",
+    "dbaeumer.vscode-eslint"
+  ]
+}
+```
+
+### Principe de configuration
+
+> ⚠️ **Important** : Préserver la configuration par défaut de VS Code au maximum pour éviter les conflits entre postes différents.
+
+---
+
+## Extensions essentielles
 
 ### Extensions indispensables ❤️
 
-- [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) (respect configuration tabs vs spaces à l'insertion, encodage, eol, etc)
-- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) (vérification syntaxe JavaScript, TypeScript et frameworks)
-- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) (formatage automatique des fichiers à la sauvegarde)
-- [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint) (vérifie la syntaxe CSS d'après un ensemble de règles, nécessite une installation de stylelint locale ou globale)
-- [Markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) (vérification syntaxe Markdown)
+| Extension | Fonction | Pourquoi essentiel |
+|-----------|----------|-------------------|
+| **[EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)** | Normalisation indentation/encodage | Cohérence équipe |
+| **[ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)** | Vérification JS/TS/frameworks | Qualité code |
+| **[Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)** | Formatage automatique | Uniformité style |
+| **[Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)** | Vérification CSS/SCSS | Standards CSS |
+| **[Markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)** | Vérification Markdown | Documentation |
 
 ### Extensions fortement recommandées ⭐
 
-- [Project Manager](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager) (si vous jonglez entre plusieurs projets, c'est un must)
-- [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph) (affichage de l'arbre de commits git)
-- [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) (affiche les erreurs des linters directement dans la fenêtre de code)
-- [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense) (autocomplétion des chemins)
-- [CSS var complete](https://marketplace.visualstudio.com/items?itemName=phoenisx.cssvar) (autocomplétion des variables CSS)
-- [Volar](https://marketplace.visualstudio.com/items?itemName=vue.volar) (extension indispensable pour tout projet pour Vuejs / Nuxt)
-- [SCSS Intellisense](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-scss) (autocomplétion SCSS : classes, variables, etc.)
-- [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) (autocomplétion des classes Tailwind)
-- [HTML CSS Support](https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css) (autocomplétion et documentation des balises+attributs)
-- [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) (commandes Docker facilitées et sidebar affichant containers/images/volumes/networks...)
-- [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) (pour connexion SSH entre autres, contient déjà [Remote SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) et [Remote Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers))
-- [Bookmarks](https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks) (permet de marquer des lignes dans le code et de naviguer entre elles)
+#### Productivité
+
+- **[Project Manager](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager)** : Navigation entre projets
+- **[Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)** : Erreurs linters inline
+- **[Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)** : Autocomplétion chemins
+
+#### Git et versioning
+
+- **[Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)** : Visualisation commits
+- **[GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)** : Fonctions Git avancées
+- **[Git Blame](https://marketplace.visualstudio.com/items?itemName=waderyan.gitblame)** : Historique ligne par ligne
+
+#### Développement web
+
+- **[CSS var complete](https://marketplace.visualstudio.com/items?itemName=phoenisx.cssvar)** : Autocomplétion variables CSS
+- **[HTML CSS Support](https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css)** : Autocomplétion HTML/CSS
+- **[Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)** : Support Tailwind
+
+#### Frameworks
+
+- **[Volar](https://marketplace.visualstudio.com/items?itemName=vue.volar)** : Indispensable Vue.js/Nuxt
+- **[SCSS Intellisense](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-scss)** : Support SCSS avancé
 
 ### Extensions suggérées 👍
 
-- [Todo Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree) (affichage des TODO et FIXME colorés et en arborescence)
-- [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) (fonctions avancées Git)
-- [Git Blame](https://marketplace.visualstudio.com/items?itemName=waderyan.gitblame) (voir ligne par ligne, lien vers les détails)
-- [DotENV](https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv) (support de la syntaxe des fichiers .env)
-- [Auto Close Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag) (fermeture automatiques des balises)
-- [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) (très pratique pour JS / React / Vue)
-- [Debugger for Firefox](https://marketplace.visualstudio.com/items?itemName=firefox-devtools.vscode-firefox-debug)
-- ~~Auto rename tag~~ activer le paramètre natif (Ctrl+,) `linkedEditing` (modifie les balises ouvrantes/fermantes associées)
+#### Développement
 
-Confort visuel :
+- **[Todo Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree)** : Gestion TODO/FIXME
+- **[Thunder Client](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client)** : Client API Rest
+- **[Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)** : Support Docker
+- **[Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)** : Développement distant
 
-- [French Language Pack](https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-fr)
-- [Select highlight in minimap](https://marketplace.visualstudio.com/items?itemName=mde.select-highlight-minimap) (sélection visible dans la minimap)
-- [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme) (mieux visualiser les types de fichiers dans l'arborescence)
-- [Indent Rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow) (coloration des niveaux d'indentation)
-- [highlight-matching-tag](https://marketplace.visualstudio.com/items?itemName=vincaslt.highlight-matching-tag) (mise en avant de la balise fermante correspondante en HTML)
-- [Statusbar Error](https://marketplace.visualstudio.com/items?itemName=JoeBerria.statusbarerror) (affiche les erreurs des linters dans la barre basse et/ou dans la gouttière)
-- [Rainbow CSV](https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv) (visualisation et édition SQL-like fichiers CSV)
+#### Confort visuel
 
-### Extensions spécifiques
+- **[Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)** : Icônes fichiers
+- **[Indent Rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow)** : Niveaux indentation
+- **[Highlight Matching Tag](https://marketplace.visualstudio.com/items?itemName=vincaslt.highlight-matching-tag)** : Balises correspondantes
 
-- [Thunder Client](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client) : client API Rest (équivalent à Postman, Insomnia)
-- [Live Sass Compiler](https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass) : Surveille automatiquement les modifications de fichiers Sass dans le projet et les compile en CSS (ainsi qu'en version minifiée `.min.css`).
-- [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) : L'extension Live Server ouvre un serveur local dans une page du navigateur, rafraîchie automatiquement.
-- [i18n Ally](lokalise.i18n-ally) pour les projets Vue/Nuxt avec internationalisation
-- [Partial Diff](https://marketplace.visualstudio.com/items?itemName=ryu1kn.partial-diff)
-- [Git History](https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory)
+### Utilitaires spécialisés
+
+| Extension | Usage | Cas d'application |
+|-----------|-------|------------------|
+| **[Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)** | Serveur local + live reload | HTML statique |
+| **[Live Sass Compiler](https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass)** | Compilation Sass auto | Projets Sass legacy |
+| **[i18n Ally](https://marketplace.visualstudio.com/items?itemName=lokalise.i18n-ally)** | Internationalisation | Vue/Nuxt multilingue |
+| **[DotENV](https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv)** | Support .env | Variables environnement |
+
+### Gestion des extensions
+
+```bash
+# Lister les extensions installées
+code --list-extensions
+
+# Installer une extension via CLI
+code --install-extension esbenp.prettier-vscode
+```
+
+---
+
+## Raccourcis et productivité
+
+### Raccourcis incontournables
+
+| Raccourci | Windows/Linux | macOS | Fonction |
+|-----------|---------------|-------|----------|
+| **Command Palette** | `Ctrl+Shift+P` | `⌘⇧P` | Accès toutes commandes |
+| **Quick Open** | `Ctrl+P` | `⌘P` | Recherche rapide fichiers |
+| **Select All Occurrences** | `Ctrl+Shift+L` | `⇧⌘L` | Sélection multi-occurences |
+| **Copy Line Down** | `Shift+Alt+↓` | `⇧⌥↓` | Duplication ligne |
+| **Find in Files** | `Ctrl+Shift+F` | `⌘⇧F` | Recherche projet |
+| **Replace in Files** | `Ctrl+H` | `⌥⌘F` | Remplacement projet |
+| **Settings** | `Ctrl+,` | `⌘,` | Paramètres |
+
+### Fonctions natives activées
+
+- **Linked Editing** : Modification balises ouvrantes/fermantes simultanée (remplace Auto Rename Tag)
+- **Format on Save** : Formatage automatique à la sauvegarde
+
+> 📚 **Plus d'astuces** : [MDN VS Code Tips & Tricks](https://developer.mozilla.org/en-US/blog/vs-code-tips-tricks/)
+
+---
+
+## Langages spécifiques
 
 ### PHP
 
-Configurer le chemin vers l'exécutable PHP `php.validate.executablePath` dans les paramètres.
+#### Configuration requise
 
-- [PHP Debug](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug)
-- [PHP Intellisense](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-intellisense) ou [PHP Intelephense](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client)
-- [phpcs](https://marketplace.visualstudio.com/items?itemName=ikappas.phpcs)
-- [PHPDoc Comment](https://marketplace.visualstudio.com/items?itemName=rexshi.phpdoc-comment-vscode-plugin)
+Définir le chemin vers l'exécutable PHP dans les paramètres&#8239;:
 
-## Configuration des extensions et linters
+```json
+{
+  "php.validate.executablePath": "/usr/bin/php"
+}
+```
 
-Pour tous les types de projets, prévoir à la racine :
+#### Extensions PHP recommandées
 
-- Un fichier de configuration `.editorconfig`
-- Un fichier de configuration [Prettier](/configs/.prettierrc.mjs)
-- Un fichier de configuration `.stylelintrc.json` si Stylelint est utilisé
-- Un fichier de configuration `.tsconfig.json` si Typescript est utilisé
-- Un dossier `.vscode/` contenant :
-  - un fichier [.vscode/extensions.json](/configs/.vscode/extensions.json) listant les extensions recommandées pour le projet
-  - un fichier [.vscode/settings.json](/configs/.vscode/settings.json) contenant les réglages pour (dés)activer les linters
+- **[PHP Debug](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug)** : Débogage Xdebug
+- **[PHP Intelephense](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client)** : Autocomplétion avancée
+- **[phpcs](https://marketplace.visualstudio.com/items?itemName=ikappas.phpcs)** : Standards de codage
+- **[PHPDoc Comment](https://marketplace.visualstudio.com/items?itemName=rexshi.phpdoc-comment-vscode-plugin)** : Documentation automatique
 
-Tous ces fichiers sont fournis en exemple [dans le dossier `configs`](https://github.com/alsacreations/kiwipedia/tree/main/configs) de nos guidelines.
+### JavaScript/TypeScript
 
-## Astuces de configuration
+#### Configuration ESLint
 
-- `"editor.minimap.renderCharacters": false`, et la minimap devient plus belle
-- `"editor.renderWhitespace": "boundary"` n'affiche que les espaces pertinents
-- `"editor.cursorBlinking": "smooth"` tuning du clignotement du curseur
-- `"editor.cursorSmoothCaretAnimation": "on"` tuning des transitions du curseur
+```json
+{
+  "eslint.workingDirectories": ["./"],
+  "eslint.format.enable": true,
+  "eslint.validate": ["javascript", "typescript", "vue"]
+}
+```
+
+### CSS/SCSS
+
+#### Configuration Stylelint
+
+```json
+{
+  "stylelint.validate": ["css", "scss", "html", "vue"],
+  "css.validate": false,
+  "scss.validate": false
+}
+```
+
+---
+
+## Optimisation et personnalisation
+
+### Réglages de performance
+
+```json
+{
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/.git": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true
+  }
+}
+```
+
+### Amélioration visuelle
+
+```json
+{
+  "editor.minimap.renderCharacters": false,
+  "editor.renderWhitespace": "boundary",
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.fontLigatures": true,
+  "workbench.iconTheme": "material-icon-theme"
+}
+```
+
+### Configuration avancée
+
+#### Format on Save intelligent
+
+```json
+{
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "modificationsIfAvailable",
+  "[markdown]": {
+    "editor.formatOnSave": false
+  }
+}
+```
+
+#### Actions automatiques
+
+```json
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit",
+    "source.organizeImports": "explicit"
+  }
+}
+```
+
+### Workspace vs User Settings
+
+| Type | Portée | Usage recommandé |
+|------|--------|------------------|
+| **User Settings** | Global utilisateur | Préférences personnelles |
+| **Workspace Settings** | Projet spécifique | Configuration équipe |
+
+> 💡 **Conseil** : Privilégier Workspace Settings pour les règles d'équipe, User Settings pour le confort personnel.
+
+---
+
+> 📚 **Ressources complémentaires**
+>
+> - [VS Code Keyboard Shortcuts Reference](https://code.visualstudio.com/docs/getstarted/keybindings#_keyboard-shortcuts-reference)
+> - [Configuration EditorConfig](https://editorconfig.org/)
+> - [Marketplace Extensions](https://marketplace.visualstudio.com/vscode)
