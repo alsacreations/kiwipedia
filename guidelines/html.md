@@ -309,7 +309,7 @@ img {
 
 #### Images
 
-- **Navigateur** : [Squoosh](https://squoosh.app/), [Clever Compress](https://clevercompress.com/)
+- **Navigateur** : [Squoosh](https://squoosh.app/), [Quetsche (by Alsacréations)](http://quetsche.alsacreations.com/)
 - **Vite** : [Vite Image Optimizer](https://www.npmjs.com/package/vite-plugin-image-optimizer)
 - **CLI** : [Sharp](https://sharp.pixelplumbing.com), [Avif-CLI](https://github.com/lovell/avif-cli)
 - **macOS** : [Image Optimizer](https://github.com/antonreshetov/image-optimizer), [ImageOptim](https://imageoptim.com/fr)
