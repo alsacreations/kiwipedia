@@ -35,7 +35,7 @@ Nous privilégions deux approches CSS selon le contexte du projet&#8239;:
    - Projets nécessitant une grande flexibilité
    - Équipes familiarisées avec l'approche utilitaire
 
-> 💡 **Recommandation**&#8239;: Sauf contre-indication (client, projet historique), nous intégrons nos projets en CSS Vanilla avec Tailwind disponible pour les cas d'usage spécifiques.
+> 💡 **Recommandation**&#8239;: Sauf contre-indication (client, projet historique), nous intégrons nos projets en CSS Vanilla avec Tailwind optionnel mais disponible pour les cas d'usage spécifiques.
 
 ---
 
@@ -45,7 +45,7 @@ Nous privilégions deux approches CSS selon le contexte du projet&#8239;:
 
 #### Tailwind CSS (v4+)
 
-Intégré généralement pour bénéficier de classes utilitaires ponctuelles.
+Intégré de façon optionnelle généralement pour bénéficier de classes utilitaires ponctuelles.
 
 **Exceptions**&#8239;:
 
@@ -410,6 +410,7 @@ Les tokens assignent des rôles fonctionnels aux primitives, créant une couche 
 - ✅ Dispositions CSS utilitaires modernes réutilisables, légères et flexibles.
 - ✅ Adaptés à la plupart des cas d’usage simples.
 - ✅ Pilotés par un attribut HTML `data-layout` limitant les conflits avec des nommages de classes CSS.
+- ✅ Inutile d'ajouter du CSS ni de connaître la syntaxe CSS Grid ou Flexbox.
 
 #### Tableau de décision Layouts Bretzel
 
@@ -473,6 +474,8 @@ Cas d'usage de Flexbox&#8239;:
 ## Responsive Design
 
 ### Stratégie Mobile First
+
+> 🎯 **Règle** : Nous intégrons toujours en Mobile First (via `width >=`) avec des valeurs en `rem`.
 
 ```css
 /* Base mobile */
