@@ -422,11 +422,11 @@ Les tokens assignent des rôles fonctionnels aux primitives, créant une couche 
 | Groupe d’actions / tags / boutons qui peut wrap | Rangée fluide d’items, retour à la ligne possible | <b>cluster</b><br>`data-layout="cluster"` | aucun | Distribution très spécifique par ligne |
 | Grille fluide de cartes responsive | Cartes dont le nombre de colonnes varie selon largeur | <b>autogrid</b><br>`data-layout="autogrid"` | aucun | Besoin de zones ou placements manuels complexes |
 | Passage 1 colonne → plusieurs (features) | Même ensemble qui s’étale après un seuil | <b>switcher</b><br>`data-layout="switcher"` | aucun | Ratios très hétérogènes impossibles à standardiser |
-| Deux panneaux côte à côte (texte + image) | Toujours 2 colonnes sur viewport large | <b>duo</b><br>`data-layout="duo"` | `data-model="1-1,1-2,1-3,auto-1, etc."` | Ratio spécifique, multi-breakpoints |
+| Deux panneaux côte à côte (texte + image) | Toujours 2 colonnes sur viewport large | <b>duo</b><br>`data-layout="duo"` | `data-model="1-1,1-2,1-3,auto-1, …"`<br>`data-model="reverse"` | Ratio spécifique, multi-breakpoints |
 | Barre avec un bloc extrême gauche et un bloc extrême droite | Séparer deux groupes principaux sur l’axe horizontal | <b>repel</b><br>`data-layout="repel"` | aucun | Plus de 2 groupes principaux à répartir |
-| Liste horizontale scrollable (logos, témoignages) | Scroll horizontal + alignement/snap cohérents | <b>reel</b><br>`data-layout="reel"` | `data-scroll="start,end,center"`,`data-scrollbar="hidden"` | Carrousel avancé (pagination, autoplay…) |
+| Liste horizontale scrollable (logos, témoignages) | Scroll horizontal + alignement/snap cohérents | <b>reel</b><br>`data-layout="reel"` | `data-scroll="start,end,center"`,<br>`data-scrollbar="hidden"` | Carrousel avancé (pagination, autoplay…) |
 | Contenu centré largeur max (article, section) | Encapsuler du contenu avec largeur bornée | <b>boxed</b><br>`data-layout="boxed"` | `data-boxed="small"` | Cas isolé unique non réutilisé |
-| Gabarit global page (sections full + sections centrées) | Page avec alternance pleine largeur / contenu contenu | <b>liquid</b><br>`data-layout="liquid"` | Enfants spéciaux `data-layout="splash"`, `data-layout="splash-start"`, `data-layout="splash-end"` | Mise en page expérimentale hors scope |
+| Gabarit global page (sections full + sections centrées) | Page avec alternance pleine largeur / contenu contenu | <b>liquid</b><br>`data-layout="liquid"` | Enfants spéciaux `data-layout="splash"`, <br>`data-layout="splash-start"`, <br>`data-layout="splash-end"` | Mise en page expérimentale hors scope |
 
 #### Heuristiques de détection
 
