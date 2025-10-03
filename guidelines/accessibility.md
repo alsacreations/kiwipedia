@@ -997,10 +997,11 @@ Si WCAG concerne plutôt le contenu web "statique", [WAI-ARIA](https://developer
 
 Pour tous les composants de page agissant sur le contenu, de type swiper, slider, carrousel, slideshow, accordéon, pagination, onglets, menu déroulant, on privilégiera les scripts "accessibles", y compris ceux utilisant ARIA. Le but étant, entre autres, de ne pas gêner la navigation au clavier et de permettre la lecture de la page avec une synthèse vocale.
 
-- <https://www.w3.org/WAI/ARIA/apg/patterns/>
-- <https://la-cascade.io/articles/comprendre-wai-aria-un-guide-complet>
+- <https://www.smashingmagazine.com/2025/06/what-i-wish-someone-told-me-aria/> What I Wish Someone Told Me About ARIA
+- <https://www.w3.org/WAI/ARIA/apg/patterns/> WAI-ARIA Authoring Practices Guide
+- <https://la-cascade.io/articles/comprendre-wai-aria-un-guide-complet> Comprendre WAI-ARIA : un guide complet
 - <https://addons.mozilla.org/fr/firefox/addon/visual-aria/> Extension pour "visualiser" ARIA
-- <https://addons.mozilla.org/fr/firefox/addon/aria-devtools/>
+- <https://addons.mozilla.org/fr/firefox/addon/aria-devtools/> Extension pour auditer ARIA
 - <https://www.sarasoueidan.com/blog/css-carousels-accessibility/> Les carrousels CSS sont-ils accessibles ?
 
 ### ARIA live
