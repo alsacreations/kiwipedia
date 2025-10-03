@@ -123,6 +123,7 @@ Liste non exhaustive, voir <https://docs.docker.com/engine/reference/builder/>.
 * [Awesome Self-Host Docker](https://github.com/hotheadhacker/awesome-selfhost-docker) : liste de projets à déployer soi-même avec docker-compose.
 * OWASP cheatsheet <https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html>
 * Cheatsheet Quickref <https://quickref.me/docker>
+* From 1.2GB to 54MB: My Docker Image Went on a Diet <https://dev.to/hasan_ashab/from-12gb-to-54mb-my-docker-image-went-on-a-diet-apj>
 * <https://blog.gitguardian.com/how-to-improve-your-docker-containers-security-cheat-sheet/>
 * <https://www.viget.com/articles/local-docker-best-practices/>
 * <https://medium.com/better-programming/docker-best-practices-and-anti-patterns-e7cbccba4f19>
