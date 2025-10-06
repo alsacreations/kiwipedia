@@ -254,14 +254,11 @@ Autres listes de ressources et checklists
 ### JavaScript et composants
 
 - <https://smashingmagazine.com/2023/02/guide-building-accessible-carousels/> Construire des carousels accessibles
-- <https://github.com/alphagov/accessible-typeahead> Typeahead accessible
-- <https://frend.co/> Quelques composants JS avec ARIA
+- <https://github.com/alphagov/accessible-autocomplete> Typeahead accessible
 - <https://a11y.nicolas-hoffmann.net/> Quelques plugins jQuery accessibles
-- <https://www.humaan.com/modaal/> Modale accessible (vue sur css-tricks)
+- <https://github.com/humaan/Modaal> Modale accessible (vue sur css-tricks)
 - <https://allyjs.io/tutorials/accessible-dialog.html> dialog/modale accessible avec ally.js (bonnes idées)
 - <https://alertifyjs.com/> Alertes/modales
-- <https://files.paciellogroup.com/blogmisc/samples/aria/slider/> Sliders accessibles
-- <https://files.paciellogroup.com/training/commonsamples/tpglibsamples/aria/slider/index.html> Slider accessible
 
 ### Divers
 
@@ -287,37 +284,32 @@ Autres listes de ressources et checklists
 
 - <https://molily.de/robust-javascript/> Robust JavaScript
 - <https://github.com/rwaldron/idiomatic.js/tree/master/translations/fr_FR>
-- <https://jstherightway.org/>
 - <https://github.com/airbnb/javascript>
 - <https://bevacqua.github.io/promisees/> Les promesses expliquées et visualisées en animations
 - <https://beautifier.io/> Beautifier en ligne
 - <https://blog.scottlogic.com/2021/09/06/how-to-write-an-es-lint-rule-for-beginners.html> écrire ses propres règles eslint
 - <https://warriorjs.com/> Apprendre en jouant
-
-### Notions spécifiques
-
 - <https://domevents.dev/> Les événements DOM
 
 ### Libs et frameworks
 
 #### Autres bibliothèques JavaScript
 
-- <https://jquery.com/>
-- <https://svelte.dev/>
-- <https://alpinejs.dev/> - Permet d'ajouter de la réactivité et de simplifier l'utilisation de JS dans des projets sans frameworks, comme du Wordpress
-- <https://www.solidjs.com/> - Alternative à React sans Virtual DOM
-- <https://angularjs.org/>
-- <https://lodash.com/>
-- <https://radash-docs.vercel.app> - Alternative moderne de lodash qui n'inclu que ce qui n'existe pas nativement en JS
-- <https://github.com/developit/unfetch> - Polyfill pour `fetch` en 500 octets
-- <https://github.com/unjs/ofetch> - Wrapper autour de `fetch` qui facilite grandement son utilisation
-- <https://trpc.io/> - Création d'API complètement typées
-- <https://github.com/gvergnaud/ts-pattern> - Permet d'écrire des enchainements de `if` en étant sûr que l'on oubli aucun cas
-- <https://www.npmjs.com/package/tsx> - Permet d'executer du TypeScript comme si c'était nativement supporté par Node
-- <https://github.com/sindresorhus/type-fest> - Catalogue de types utilitaires bien pratiques, le Lodash pour TypeScript
-- <https://www.npmjs.com/package/fast-glob> - Pour écrire des globs
-- <https://www.npmjs.com/package/clsx> - Permet de fusionner des classes de la même manière que Vue
-- <https://www.prisma.io/> - ORM pour communiquer avec une base de données
+- <https://jquery.com/> jQuery
+- <https://svelte.dev/> Svelte
+- <https://astro.build/> Astro - Générateur de sites statiques avec composants JS
+- <https://alpinejs.dev/> Alpine.js
+- <https://www.solidjs.com/> Solid - Alternative à React sans Virtual DOM
+- <https://angularjs.org/> AngularJS
+- <https://lodash.com/> Lodash
+- <https://radash-docs.vercel.app> Alternative moderne de lodash qui n'inclut que ce qui n'existe pas nativement en JS
+- <https://trpc.io/> Création d'API complètement typées
+- <https://github.com/gvergnaud/ts-pattern> Permet d'écrire des enchainements de `if` en étant sûr que l'on oubli aucun cas
+- <https://www.npmjs.com/package/tsx> Permet d'executer du TypeScript comme si c'était nativement supporté par Node
+- <https://github.com/sindresorhus/type-fest> Catalogue de types utilitaires bien pratiques, le Lodash pour TypeScript
+- <https://www.npmjs.com/package/fast-glob> Pour écrire des globs
+- <https://www.npmjs.com/package/clsx> Permet de fusionner des classes de la même manière que Vue
+- <https://www.prisma.io/> ORM pour communiquer avec une base de données
 
 #### Scripts
 
