@@ -81,18 +81,14 @@ Pour les fonctionnalités non natives (concaténation, mixins, custom media)&#82
 
 ```bash
 css/
-├── config/
-│   ├── reset.css         # Reset
-│   ├── fonts.css         # @font-face
-│   ├── layouts.css       # Styles des Layouts (Bretzel)
-│   ├── natives.css       # Styles des éléments natifs (KNACSS)
-│   └── base.css          # Styles de base (body, typo, liens, etc.)
-├── theme/
-│   ├── theme.css         # Variables primitives
-│   ├── theme-tokens.css  # Tokens sémantiques
-├── components/
-├── utilities/
-└── app.css               # Point d'entrée principal
+├── reset.css         # Reset
+├── fonts.css         # @font-face
+├── layouts.css       # Styles des Layouts (Bretzel)
+├── natives.css       # Styles des éléments natifs (KNACSS)
+├── theme.css         # Variables primitives
+├── theme-tokens.css  # Tokens sémantiques
+├── styles.css          # Styles de base (body, typo, liens, etc.)
+└── app.css          # Point d'entrée principal
 ```
 
 ### Ordre d'importation
@@ -106,15 +102,14 @@ css/
 @layer config, base, components, utilities;
 
 /* Config (reset, polices, themes, layouts) */
-@import "/css/config/reset.css" layer(config);
-/* @import "/css/config/fonts.css" layer(config); */
-@import "/css/theme/theme.css" layer(config);
-@import "/css/theme/theme-tokens.css" layer(config);
-@import "/css/config/layouts.css" layer(config);
-@import "/css/config/natives.css" layer(config);
+@import "reset.css" layer(config);
+@import "theme.css" layer(config);
+@import "theme-tokens.css" layer(config);
+@import "layouts.css" layer(config);
+@import "natives.css" layer(config);
 
 /* Base */
-@import "/css/config/styles.css" layer(base);
+@import "styles.css" layer(base);
 
 /* Components */
 /* Ici un @import dans le layer(components) */
