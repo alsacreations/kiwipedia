@@ -118,6 +118,8 @@ css/
 /* Ici un @import dans le layer(utilities) */
 ```
 
+> 📚  **Outil**&#8239;: [Primary](https://primary.alsacreations.com/) est un configurateur CSS pour les projets Alsacréations. Il permet de générer des fichiers CSS conformes aux normes de l'équipe.
+
 ---
 
 ## Syntaxe et conventions
