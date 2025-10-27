@@ -164,7 +164,7 @@ Tailwind CSS est inclus systématiquement, même en projet “vanilla”, pour d
 
 ### `app.css`
 
-Le fichier [`app.css`](../configs/CSS/app.css) (ou [`app.css`](../configs/CSS/app-tailwind.css) pour la variante Tailwind) est le point d’entrée.  
+Le fichier [`app.css`](../configs/CSS/app.css) (ou [`app.css`](../configs/CSS/app-tailwind.css) pour la variante Tailwind) est le point d’entrée.
 Il charge les feuilles dans l’ordre des layers CSS: config, base, components, utilities.
 
 1) Layer config (reset, polices, thèmes, layouts)
@@ -175,7 +175,7 @@ Il charge les feuilles dans l’ordre des layers CSS: config, base, components, 
 - `theme-tokens.css`: design tokens (ex. `--primary: --color-pink-500;`)  
   Voir “Tokens (=roles)” dans les [Guidelines CSS](https://github.com/alsacreations/kiwipedia/blob/main/guidelines/css.md#variables-css-primitives-et-tokens)
 - [`layouts.css`](https://bretzel.alsacreations.com/): utilitaires de disposition (Bretzel)
-- [`natives.css`](https://alsacreations.github.io/KNACSS): styles natifs des éléments HTML
+- [`natives.css`](https://knacss.com/css/natives.css): styles natifs des éléments HTML
 
 2) Layer base
 
@@ -188,6 +188,8 @@ Il charge les feuilles dans l’ordre des layers CSS: config, base, components, 
 4) Layer utilities
 
 - Tailwind et/ou utilitaires personnalisés
+
+> 📚  **Outil**&#8239;: [Primary](https://primary.alsacreations.com/) est un configurateur CSS pour les projets Alsacréations. Il permet de générer des fichiers CSS conformes aux normes de l'équipe.
 
 ---
 
