@@ -157,7 +157,7 @@ pnpm install --save-dev stylelint stylelint-config-standard stylelint-config-htm
 
 ### Tailwind
 
-Tailwind CSS est inclus systématiquement, même en projet “vanilla”, pour disposer au besoin de classes utilitaires.
+Tailwind CSS n'est pas inclus systématiquement mais est conseillé, même en projet “vanilla”, pour disposer au besoin de classes utilitaires.
 
 - Se placer dans le dossier Vite (`cd vite-project`)
 - Suivre l’installation via Vite: <https://tailwindcss.com/docs/installation/using-vite>
