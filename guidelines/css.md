@@ -81,14 +81,13 @@ Pour les fonctionnalités non natives (concaténation, mixins, custom media)&#82
 
 ```bash
 css/
+├── app.css           # Point d'entrée principal
 ├── reset.css         # Reset
-├── fonts.css         # @font-face
-├── layouts.css       # Styles des Layouts (Bretzel)
-├── natives.css       # Styles des éléments natifs (KNACSS)
 ├── theme.css         # Variables primitives
 ├── theme-tokens.css  # Tokens sémantiques
-├── styles.css          # Styles de base (body, typo, liens, etc.)
-└── app.css          # Point d'entrée principal
+├── layouts.css       # Styles des Layouts (Bretzel)
+├── natives.css       # Styles des éléments natifs (KNACSS)
+└── styles.css        # Styles de base (body, typo, liens, etc.)
 ```
 
 ### Ordre d'importation
