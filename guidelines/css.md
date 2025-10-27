@@ -332,10 +332,10 @@ Les tokens assignent des rôles fonctionnels aux primitives, créant une couche 
   --border-dark: var(--color-gray-600);
 
   /* États */
-  --error: var(--color-red-500);
-  --success: var(--color-green-500);
-  --warning: var(--color-orange-500);
-  --info: var(--color-blue-500);
+  --error: var(--color-error-500);
+  --success: var(--color-success-500);
+  --warning: var(--color-warning-500);
+  --info: var(--color-info-500);
 
   /* Sélection */
   --selection: var(--color-primary-alpha-20);
