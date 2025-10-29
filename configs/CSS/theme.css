@@ -1,11 +1,26 @@
-/* Fichier `theme.css` */
-/* Les valeurs d'exemple sont celles de l'UI-Kit (FIGMA) */
+/* ----------------------------------
+ * Theme du projet (valeurs primitives)
+ * ----------------------------------
+ */
+
+/* stylelint-disable */
+/* Breakpoints custom (si compatibles) */
+@custom-media --md (width >= 48rem);
+@custom-media --lg (width >= 64rem);
+@custom-media --xl (width >= 80rem);
+@custom-media --xxl (width >= 96rem);
+@custom-media --until-md (width < 48rem);
+@custom-media --until-lg (width < 64rem);
+@custom-media --until-xl (width < 80rem);
+@custom-media --until-xxl (width < 96rem);
+/* stylelint-enable */
+
 :root {
   /* Breakpoints (en dur) */
-  --breakpoint-md: 48rem; /* 768px */
-  --breakpoint-lg: 64rem; /* 1024px */
-  --breakpoint-xl: 80rem; /* 1280px */
-  --breakpoint-xxl: 96rem; /* 1536px */
+  --md: 48rem; /* 768px */
+  --lg: 64rem; /* 1024px */
+  --xl: 80rem; /* 1280px */
+  --xxl: 96rem; /* 1536px */
 
   /* Espacements */
   --spacing-0: 0;
@@ -25,28 +40,41 @@
   --spacing-80: 5rem;
   --spacing-128: 8rem;
   --spacing-160: 10rem;
-  --spacing-180: 11.25rem;
-  --spacing-260: 16.25rem;
 
-  /* Typographie */
+  /* Familles de police */
   --font-base: system-ui, sans-serif;
+  --font-mono: ui-monospace, monospace;
   --font-poppins: poppins, sans-serif;
+
+  /* Graisses de police */
   --font-weight-light: 300;
   --font-weight-regular: 400;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
   --font-weight-extrabold: 800;
   --font-weight-black: 900;
+
+  /* Tailles de police */
+  --text-10: 0.625rem;
+  --text-11: 0.6875rem;
+  --text-12: 0.75rem;
+  --text-13: 0.8rem;
   --text-14: 0.875rem;
+  --text-15: 0.9375rem;
   --text-16: 1rem;
+  --text-17: 1.0625rem;
   --text-18: 1.125rem;
   --text-20: 1.25rem;
   --text-24: 1.5rem;
   --text-30: 1.875rem;
+  --text-32: 2rem;
   --text-36: 2.25rem;
+  --text-40: 2.5rem;
   --text-48: 3rem;
   --text-60: 3.75rem;
   --text-80: 5rem;
+
+  /* Interlignage (line-height) */
   --leading-20: 1.25rem;
   --leading-24: 1.5rem;
   --leading-28: 1.75rem;
@@ -60,13 +88,17 @@
 
   /* Border radius */
   --radius-none: 0;
-  --radius-md: 0.25rem;
-  --radius-lg: 0.5rem;
-  --radius-xl: 1.5rem;
+  --radius-s: 0.25rem;
+  --radius-m: 0.5rem;
+  --radius-l: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
   --radius-full: 9999px;
 
-  /* Divers */
+  /* Transitions et animations */
   --transition-duration: 0.25s;
+
+  /* Niveaux de z-index */
   --z-under-page-level: -1;
   --z-above-page-level: 1;
   --z-header-level: 1000;
@@ -86,27 +118,33 @@
   --color-gray-900: oklch(14.5% 0 0);
   --color-white: oklch(100% 0 0);
   --color-black: oklch(0% 0 0);
-  --color-red-100: oklch(97% 0.1 27.52);
-  --color-red-300: oklch(70.54% 0.19 27.52);
-  --color-red-500: oklch(50.54% 0.19 27.52);
-  --color-red-700: oklch(35.54% 0.19 27.52);
-  --color-red-900: oklch(20.54% 0.11 27.52);
-  --color-green-100: oklch(97% 0.06 150.73);
-  --color-green-300: oklch(71.66% 0.13 150.73);
-  --color-green-500: oklch(51.66% 0.13 150.73);
-  --color-green-700: oklch(36.66% 0.13 150.73);
-  --color-green-900: oklch(21.66% 0.13 150.73);
-  --color-orange-100: oklch(97% 0.08 49.95);
-  --color-orange-300: oklch(83.15% 0.17 49.95);
-  --color-orange-500: oklch(63.15% 0.17 49.95);
-  --color-orange-700: oklch(48.15% 0.17 49.95);
-  --color-orange-900: oklch(33.15% 0.11 49.95);
-  --color-blue-100: oklch(97% 0.09 256.37);
-  --color-blue-300: oklch(71.33% 0.18 256.37);
-  --color-blue-500: oklch(51.33% 0.18 256.37);
-  --color-blue-700: oklch(36.33% 0.18 256.37);
-  --color-blue-900: oklch(21.33% 0.11 256.37);
+  --color-error-100: oklch(97% 0.1 27.52);
+  --color-error-300: oklch(70.54% 0.19 27.52);
+  --color-error-500: oklch(50.54% 0.19 27.52);
+  --color-error-700: oklch(35.54% 0.19 27.52);
+  --color-error-900: oklch(20.54% 0.11 27.52);
+  --color-success-100: oklch(94.462% 0.13 150.685);
+  --color-success-300: oklch(71.66% 0.13 150.73);
+  --color-success-500: oklch(51.66% 0.13 150.73);
+  --color-success-700: oklch(36.66% 0.13 150.73);
+  --color-success-900: oklch(21.66% 0.13 150.73);
+  --color-warning-100: oklch(97% 0.08 49.95);
+  --color-warning-300: oklch(83.15% 0.17 49.95);
+  --color-warning-500: oklch(63.15% 0.17 49.95);
+  --color-warning-700: oklch(48.15% 0.17 49.95);
+  --color-warning-900: oklch(33.15% 0.11 49.95);
+  --color-info-100: oklch(97% 0.09 256.37);
+  --color-info-300: oklch(71.33% 0.18 256.37);
+  --color-info-500: oklch(51.33% 0.18 256.37);
+  --color-info-700: oklch(36.33% 0.18 256.37);
+  --color-info-900: oklch(21.33% 0.11 256.37);
 
-  /* Couleurs (Theme) */
-  /* Ici les palettes spécifiques au projet */
+  /* Placeholder raspberry (généré) */
+  --color-raspberry-100: oklch(98% 0.03 352);
+  --color-raspberry-200: oklch(94.5% 0.12 352);
+  --color-raspberry-300: oklch(84.5% 0.2 352);
+  --color-raspberry-400: oklch(72.8281% 0.1971 352.001);
+  --color-raspberry-500: oklch(64.5% 0.2 352);
+  --color-raspberry-600: oklch(54.5% 0.2 352);
+  --color-raspberry-700: oklch(44.5% 0.2 352);
 }

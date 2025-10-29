@@ -2,16 +2,18 @@
 /* Chaque layer écrase le précédent si conflit */
 @layer config, base, components, utilities;
 
-/* Config (reset, polices, themes, layouts) */
-@import "/assets/css/reset.css" layer(config);
-/* @import "/assets/css/fonts.css" layer(config); */
-@import "/assets/css/theme.css" layer(config);
-@import "/assets/css/theme-tokens.css" layer(config);
-@import "/assets/css/layouts.css" layer(config);
-@import "/assets/css/natives.css" layer(config);
+/* Config */
+@import "reset.css" layer(config);
+@import "theme.css" layer(config);
+@import "theme-tokens.css" layer(config);
+@import "layouts.css" layer(config);
+@import "natives.css" layer(config);
 
 /* Base */
-@import "/assets/css/styles.css" layer(base);
+@import "styles.css" layer(base);
 
 /* Components */
 /* Ici un @import dans le layer(components) */
+
+/* Utilities */
+/* Ici un @import dans le layer(utilities) */

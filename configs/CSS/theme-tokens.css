@@ -1,56 +1,81 @@
-/* fichier `theme-tokens.css` */
-/* ⚠️ Les noms des tokens sont à conserver à chaque projet */
-/* Les valeurs d'exemple sont à adapter, évidemment */
+/* ----------------------------------
+ * Theme-tokens, généré par primary.alsacreations.com
+ * Surcouche de theme.css
+ * Configuration :
+ * - Couleur primaire : raspberry
+ * - Theme : light uniquement
+ * - Typographie responsive : non
+ * - Espacements responsive : non
+ * ----------------------------------
+ */
 :root {
-  --primary: light-dark(var(--color-blue-500), var(--color-blue-300));
-  --on-primary: light-dark(var(--color-white), var(--color-black));
-  --surface: light-dark(var(--color-white), var(--color-gray-800));
-  --on-surface: light-dark(var(--color-gray-900), var(--color-gray-100));
-  --on-surface-secondary: light-dark(var(--color-gray-600), var(--color-gray-300));
-  --layer-1: light-dark(var(--color-gray-50), var(--color-gray-900));
-  --layer-2: light-dark(var(--color-gray-100), var(--color-gray-700));
-  --layer-3: light-dark(var(--color-gray-200), var(--color-gray-600));
-  --accent: light-dark(var(--primary), var(--color-blue-300));
-  --accent-invert: light-dark(var(--color-blue-300), var(--primary));
-  --warning: light-dark(var(--color-orange-500), var(--color-orange-300));
-  --error: light-dark(var(--color-red-500), var(--color-red-300));
-  --success: light-dark(var(--color-green-300), var(--color-green-500));
+  color-scheme: light;
 
-  --link: light-dark(var(--color-green-500), var(--color-orange-300));
-  --link-hover: light-dark(var(--color-green-500), var(--color-orange-300));
-  --selection: light-dark(var(--color-orange-300), var(--color-orange-500));
+  /* Couleur primaire */
+  --primary: var(--color-raspberry-500);
+  --on-primary: var(--color-white);
 
-  /* Font size Tokens */
-  /* Source https://utopia.fyi/clamp/calculator/?a=360,1240 */
-  --text-s: clamp(var(--text-14), 0.8239rem + 0.2273vw, var(--text-16));
-  --text-m: clamp(var(--text-16), 0.9489rem + 0.2273vw, var(--text-18));
-  --text-l: clamp(var(--text-18), 1.0739rem + 0.2273vw, var(--text-20));
-  --text-xl: clamp(var(--text-20), 0.9943rem + 1.1364vw, var(--text-30));
-  --text-2xl: clamp(var(--text-24), 1.1932rem + 1.3636vw, var(--text-36));
-  --text-3xl: clamp(var(--text-30), 1.4148rem + 2.0455vw, var(--text-48));
+  /* Couleur d'accent */
+  --accent: var(--primary);
+  --accent-invert: var(--color-raspberry-300);
 
-  /* Spacing Tokens */
-  --gap-s: clamp(var(--spacing-8), 0.2955rem + 0.9091vw, var(--spacing-16));
-  --gap-m: clamp(var(--spacing-16), 0.5909rem + 1.8182vw, var(--spacing-32));
-  --gap-l: clamp(var(--spacing-24), 0.8864rem + 2.7273vw, var(--spacing-48));
-  --gap-xl: clamp(var(--spacing-32), 0.7727rem + 5.4545vw, var(--spacing-80));
-  --spacing-s: clamp(var(--spacing-8), 0.2955rem + 0.9091vw, var(--spacing-16));
-  --spacing-m: clamp(var(--spacing-16), 0.5909rem + 1.8182vw, var(--spacing-32));
-  --spacing-l: clamp(var(--spacing-24), 0.8864rem + 2.2727vw, var(--spacing-48));
-  --spacing-xl: clamp(var(--spacing-32), 0.7727rem + 5.4545vw, var(--spacing-80));
+  /* Surface du document */
+  --surface: var(--color-white);
+  --on-surface: var(--color-gray-900);
 
-  /* Forms Tokens */
-  --form-control-background: light-dark(var(--color-slate-200), var(--color-slate-700));
-  --on-form-control: light-dark(var(--color-gray-900), var(--color-gray-100));
+  /* Niveaux de profondeur */
+  --layer-1: var(--color-gray-50);
+  --layer-2: var(--color-gray-100);
+  --layer-3: var(--color-gray-200);
+
+  /* Interactions */
+  --link: var(--primary);
+  --link-hover: var(--color-raspberry-700);
+
+  /* Couleur de sélection */
+  --selection: var(--color-raspberry-300);
+
+  /* États */
+  --warning: var(--color-warning-500);
+  --error: var(--color-error-500);
+  --success: var(--color-success-500);
+  --info: var(--color-info-500);
+
+  --border-light: var(--color-gray-100);
+  --border-medium: var(--color-gray-300);
+
+  /* Tailles de police */
+  --text-s: var(--text-14);
+  --text-m: var(--text-16);
+  --text-l: var(--text-18);
+  --text-xl: var(--text-20);
+  --text-2xl: var(--text-24);
+  --text-3xl: var(--text-30);
+  --text-4xl: var(--text-48);
+
+  /* Espacements */
+  --gap-xs: var(--spacing-4);
+  --gap-s: var(--spacing-8);
+  --gap-m: var(--spacing-16);
+  --gap-l: var(--spacing-24);
+  --gap-xl: var(--spacing-32);
+  --spacing-xs: var(--spacing-4);
+  --spacing-s: var(--spacing-8);
+  --spacing-m: var(--spacing-16);
+  --spacing-l: var(--spacing-24);
+  --spacing-xl: var(--spacing-32);
+
+  /* Formulaires */
+  --form-control-background: var(--color-gray-200);
+  --on-form-control: var(--color-gray-900);
   --form-control-spacing: var(--spacing-12) var(--spacing-16);
   --form-control-border-width: 1px;
   --form-control-border-color: var(--color-gray-400);
-  --form-control-border-radius: var(--radius-md);
+  --form-control-border-radius: var(--radius-m);
   --checkables-border-color: var(--color-gray-400);
   --checkable-size: 1.25em;
+}
 
-  /* States Tokens */
-  --focus-ring-color: AccentColor;
-  --focus-ring-width: 2px;
-  --focus-ring-offset: 2px;
+*::selection {
+  background: var(--color-raspberry-300);
 }
