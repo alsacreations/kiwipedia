@@ -139,7 +139,7 @@
   --color-info-700: oklch(36.33% 0.18 256.37);
   --color-info-900: oklch(21.33% 0.11 256.37);
 
-  /* Placeholder raspberry (généré) */
+  /* Couleur projet placeholder : raspberry */
   --color-raspberry-100: oklch(98% 0.03 352);
   --color-raspberry-200: oklch(94.5% 0.12 352);
   --color-raspberry-300: oklch(84.5% 0.2 352);
