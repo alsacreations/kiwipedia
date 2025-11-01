@@ -63,3 +63,29 @@ gitGraph
 ```
 
 💡 Penser à reprendre les références (#issue ou #tâche) dans le nom de la branche / les messages de commit.
+
+## Résoudre les conflits
+
+Lors d’un `git pull` ou d’un `git merge`, des conflits peuvent survenir si les mêmes lignes d’un même fichier ont été modifiées différemment dans les branches fusionnées.
+
+Pour résoudre ces conflits, Git marque les sections en conflit dans les fichiers concernés. Vous devez alors :
+
+1. Ouvrir les fichiers en conflit et rechercher les sections marquées par Git.
+2. Choisir quelle version des modifications conserver (celles de votre branche ou celles de la branche fusionnée).
+3. Supprimer les marqueurs de conflit (`<<<<<<<`, `=======`, `>>>>>>>`) et enregistrer les fichiers.
+4. Ajouter les fichiers résolus à l'index avec `git add <fichier>`.
+5. Finaliser la fusion avec `git commit`.
+
+```sh
+# Exemple de résolution de conflit
+git add <fichier_conflit>
+git commit
+```
+
+Pour éviter les conflits, il est recommandé de faire des `git pull` fréquents et de communiquer avec votre équipe sur les modifications apportées aux fichiers partagés.
+
+💡 Git dispose d'une fonctionnalité appelée "rerere" (_reuse recorded resolution_) qui peut aider à automatiser la résolution des conflits récurrents. Lorsque cette fonctionnalité est activée, Git enregistre les résolutions de conflits que vous effectuez et les réutilise automatiquement si les mêmes conflits se produisent à nouveau.
+
+```sh
+git config --global rerere.enabled true
+```
