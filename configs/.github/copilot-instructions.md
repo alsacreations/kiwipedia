@@ -70,7 +70,7 @@ Always use these prefixes for CSS custom properties:
 - Use `--font-` prefix for font families (e.g. `--font-sans`). Always define font family in lowercase.
 - Use `--text-` prefix for font sizes (e.g. `--text-m`).
 - Use `--font-weight-` prefix for font weights (e.g. `--font-weight-regular: 400`). Always define font weight in numeric value.
-- Use `--leading-` prefix for line heights (e.g. `--leading-32: 2rem`).
+- Use `--line-height-` prefix for line heights (e.g. `--line-height-32: 2rem`).
 - Use `--radius-` prefix for border-radius (e.g. `--radius-full: 9999px`)
 - Use `--breakpoint-` prefix for breakpoints (e.g. `--breakpoint-sm`).
 

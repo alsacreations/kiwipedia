@@ -75,16 +75,16 @@
   --text-80: 5rem;
 
   /* Interlignage (line-height) */
-  --leading-20: 1.25rem;
-  --leading-24: 1.5rem;
-  --leading-28: 1.75rem;
-  --leading-32: 2rem;
-  --leading-36: 2.25rem;
-  --leading-40: 2.5rem;
-  --leading-48: 3rem;
-  --leading-56: 3.5rem;
-  --leading-80: 5rem;
-  --leading-100: 6.25rem;
+  --line-height-20: 1.25rem;
+  --line-height-24: 1.5rem;
+  --line-height-28: 1.75rem;
+  --line-height-32: 2rem;
+  --line-height-36: 2.25rem;
+  --line-height-40: 2.5rem;
+  --line-height-48: 3rem;
+  --line-height-56: 3.5rem;
+  --line-height-80: 5rem;
+  --line-height-100: 6.25rem;
 
   /* Border radius */
   --radius-none: 0;

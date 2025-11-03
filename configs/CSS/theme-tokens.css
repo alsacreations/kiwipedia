@@ -54,11 +54,6 @@
   --text-4xl: var(--text-48);
 
   /* Espacements */
-  --gap-xs: var(--spacing-4);
-  --gap-s: var(--spacing-8);
-  --gap-m: var(--spacing-16);
-  --gap-l: var(--spacing-24);
-  --gap-xl: var(--spacing-32);
   --spacing-xs: var(--spacing-4);
   --spacing-s: var(--spacing-8);
   --spacing-m: var(--spacing-16);

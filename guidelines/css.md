@@ -288,12 +288,12 @@ Les primitives sont les valeurs de base issues de l'UI Kit, immuables et partag�
 | --------------- | ----------------- | ---------------------------- | ---------------------- |
 | **Couleurs**    | `--color-*`       | `--color-pink-300: #f9a8d4;` | Palette de base        |
 | **Espacements** | `--spacing-*`     | `--spacing-16: 1rem;`        | Marges, paddings       |
-| **Gouttières**  | `--gap-*`         | `--gap-16: 1rem;`            | Espaces entre éléments |
+| **Gouttières**  | `--spacing-*`     | `--spacing-16: 1rem;`        | Espaces entre éléments |
 | **Typographie** |                   |                              |                        |
 | - Tailles       | `--text-*`        | `--text-16: 1rem;`           | Tailles de police      |
 | - Familles      | `--font-*`        | `--font-poppins: 'Poppins';` | Familles de police     |
 | - Graisses      | `--font-weight-*` | `--font-weight-bold: 700;`   | Épaisseurs             |
-| - Hauteurs      | `--leading-*`     | `--leading-28: 1.75rem;`     | Interlignes            |
+| - Hauteurs      | `--line-height-*` | `--line-height-28: 1.75rem;` | Interlignes            |
 | **Arrondis**    | `--radius-*`      | `--radius-lg: 0.5rem;`       | Border-radius          |
 | **Ombres**      | `--shadow-*`      | `--shadow-md: 0 4px 6px...;` | Box-shadows            |
 | **Z-index**     | `--z-*`           | `--z-modal: 1000;`           | Niveaux d'empilement   |
@@ -356,10 +356,6 @@ Les tokens assignent des rôles fonctionnels aux primitives, créant une couche 
   --text-3xl: clamp(var(--text-30), 1.4148rem + 2.0455vw, var(--text-48));
 
   /* Espacements adaptatifs */
-  --gap-s: clamp(var(--spacing-8), 0.2955rem + 0.9091vw, var(--spacing-16));
-  --gap-m: clamp(var(--spacing-16), 0.5909rem + 1.8182vw, var(--spacing-32));
-  --gap-l: clamp(var(--spacing-24), 0.8864rem + 2.7273vw, var(--spacing-48));
-  --gap-xl: clamp(var(--spacing-32), 0.7727rem + 5.4545vw, var(--spacing-80));
   --spacing-s: clamp(var(--spacing-8), 0.2955rem + 0.9091vw, var(--spacing-16));
   --spacing-m: clamp(var(--spacing-16), 0.5909rem + 1.8182vw, var(--spacing-32));
   --spacing-l: clamp(var(--spacing-24), 0.8864rem + 2.2727vw, var(--spacing-48));
@@ -373,7 +369,7 @@ Les tokens assignent des rôles fonctionnels aux primitives, créant une couche 
 /* ✅ BIEN : Utilisation des tokens */
 .card {
   padding: var(--spacing-m);
-  gap: var(--gap-m);
+  gap: var(--spacing-m);
   background: var(--surface);
   color: var(--on-surface);
   border: 1px solid var(--border-light);
@@ -477,7 +473,7 @@ Cas d'usage de Flexbox&#8239;:
 /* Base mobile */
 .component {
   display: grid;
-  gap: var(--gap-m);
+  gap: var(--spacing-m);
 
   @media (width >= 48rem) {
     grid-template-columns: 1fr 1fr;
