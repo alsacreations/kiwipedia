@@ -80,7 +80,6 @@ export default {
     "color-hex-length": "long", // notation longue pour les couleurs hexadécimales
     "color-named": "never", // on refuse les couleurs nommées
     "color-function-notation": "modern", // notation moderne pour les fonctions de couleurs
-    "lightness-notation": "percentage", // notation en pourcentage pour la luminosité
     "alpha-value-notation": "percentage", // notation en pourcentage pour l'alpha
     "hue-degree-notation": "number",
   },
