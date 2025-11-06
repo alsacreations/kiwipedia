@@ -69,7 +69,7 @@ Tutoriels rapides pour démarrer des projets.
 
 ## Divers
 
-- [**Ressources et liens utiles**](archives/links.md)
+- [**Ressources et liens utiles**](resources/links.md)
 
 ## Licence
 
