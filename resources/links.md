@@ -161,7 +161,7 @@ Autres listes de ressources et checklists
 ### RWD Responsive Web Design
 
 - <https://mediaquery.style/> Cheatsheet Media Queries
-- <https://www.mydevice.io/> (made by Alsacréations)
+- <https://mydevice.alsacreations.com/>
 - <https://www.screensizemap.com/> dimensions de la plupart des écrans
 - <https://screensiz.es/> tableau comparatif de la plupart des écrans
 - <https://www.paintcodeapp.com/news/ultimate-guide-to-iphone-resolutions> Ultimate guide to iPhone resolutions
