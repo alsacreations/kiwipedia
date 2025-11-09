@@ -364,17 +364,21 @@ Autres listes de ressources et checklists
 
 ### Inspiration
 
-- <https://interfaces.pro/>
-- <https://www.mobile-patterns.com> Mobile patterns
+- <https://admiretheweb.com/> Admire the web
+- <https://saaslandingpage.com/> SaaS landing page examples
+- <https://www.landing.gallery/> Landing pages
+- <https://land-book.com/> Landing pages
+- <https://craftwork.design/curated/websites/> Curated websites
 - <https://www.logodesignlove.com/brand-identity-style-guides> (guides de styles)
-- <https://gerireid.com/forms.html> Conception de formulaires (ergo/accessibilité)
-- <https://dopeui.co/>
 
 ### UX
 
+- <https://theuxcookbook.com/>
+- <https://lawsofux.com/>
+- <https://uxmyths.com/>
 - <https://uxtools.co/> comparaison des outils
 - <https://goodui.org/>
-- <https://www.nickkolenda.com/user-experience/>
+- <https://www.kolenda.io/guides/user-experience>
 
 ### Design System
 
@@ -687,6 +691,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 ## Formats, encodage
 
+- <https://jsoncrack.com/> Visualiser des données JSON sous forme de graphiques
 - <https://www.writesoftwarewell.com/base64-encoding-explained/> base64 expliqué
 - <https://www.outofpluto.com/blog/nikita-prokopov-must-read-article-about-utf-8/> Le minimum à savoir à propos d'Unicode (traduction de [cet article](https://tonsky.me/blog/unicode/))
 
