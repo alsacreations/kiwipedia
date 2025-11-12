@@ -99,9 +99,9 @@ pnpm init
 
 2) Fichiers racine
 
-- Ajouter [`.gitignore`](../configs/.gitignore) (et optionnellement `.dockerignore`)
-- Ajouter [`README.md`](../configs/README.md)
-- Ajouter [`.editorconfig`](../configs/.editorconfig) (installer l’extension VS Code “EditorConfig”)
+- Ajouter `.gitignore` (et optionnellement `.dockerignore`)
+- Ajouter `README.md`
+- Ajouter `.editorconfig` (installer l’extension VS Code “EditorConfig”)
 
 3) Dossier VS Code
 
@@ -133,16 +133,16 @@ pnpm install --save-dev prettier
 ```
 
 - Extension VS Code: “Prettier - Code formatter”
-- Ajouter [`.prettierrc.mjs`](../configs/.prettierrc.mjs) à la racine
+- Ajouter `.prettierrc.mjs` à la racine
 
-3) Stylelint (CSS)
+1) Stylelint (CSS)
 
 ```bash
 pnpm install --save-dev stylelint stylelint-config-standard stylelint-config-html stylelint-order stylelint-config-property-sort-order-smacss
 ```
 
 - Extension VS Code: “Stylelint”
-- Ajouter [`stylelint.config.js`](../configs/stylelint.config.js) à la racine
+- Ajouter `stylelint.config.js` à la racine
 - Dans VS Code (cmd+,), ajouter:
 
 ```json
@@ -172,7 +172,7 @@ Il charge les feuilles dans l’ordre des layers CSS: config, base, components, 
 - [`reset.css`](https://reset.alsacreations.com/): reset moderne + print
 - `theme.css`: primitives (ex. `--color-pink-500: #f1498f`) issues de Figma  
   Voir “Primitives” dans les [Guidelines CSS](https://github.com/alsacreations/kiwipedia/blob/main/guidelines/css.md#variables-css-primitives-et-tokens)
-- `theme-tokens.css`: design tokens (ex. `--primary: --color-pink-500;`)  
+- `theme-tokens.css`: design tokens (ex. `--primary: var(--color-pink-500)`)  
   Voir “Tokens (=roles)” dans les [Guidelines CSS](https://github.com/alsacreations/kiwipedia/blob/main/guidelines/css.md#variables-css-primitives-et-tokens)
 - [`layouts.css`](https://bretzel.alsacreations.com/): utilitaires de disposition (Bretzel)
 - [`natives.css`](https://knacss.com/css/natives.css): styles natifs des éléments HTML
@@ -201,7 +201,7 @@ Installer le plugin PostCSS Custom Media:
 pnpm add -D postcss-custom-media
 ```
 
-Ajouter [`postcss.config.mjs`](../configs/postcss.config.mjs):
+Ajouter `postcss.config.mjs`:
 
 ```js
 export default {

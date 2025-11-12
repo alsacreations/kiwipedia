@@ -280,7 +280,7 @@ graph TD
 
 Les primitives sont les valeurs de base issues de l'UI Kit, immuables et partagées avec les designers.
 
-> 📚 Les variables primitives sont stockées dans le fichier [theme.css](../config/CSS/theme.css).
+> 📚 Les variables primitives sont stockées dans le fichier `theme.css`
 
 #### Conventions de nommage
 
@@ -302,7 +302,7 @@ Les primitives sont les valeurs de base issues de l'UI Kit, immuables et partag�
 
 Les tokens assignent des rôles fonctionnels aux primitives, créant une couche d'abstraction sémantique.
 
-> 📚 Les valeurs des tokens de design sont stockées dans le fichier [theme-tokens.css](../config/CSS/theme-tokens.css).
+> 📚 Les valeurs des tokens de design sont stockées dans le fichier `theme-tokens.css`
 
 #### Tokens de couleur (inspirés de Material Design)
 
