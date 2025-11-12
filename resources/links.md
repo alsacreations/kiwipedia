@@ -506,14 +506,16 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 ## SVG
 
+- <https://www.joshwcomeau.com/svg/friendly-introduction-to-svg/> Introduction amicale au SVG par Josh W. Comeau
 - <https://practical-svg.chriscoyier.net/> Practical SVG par Chris Coyier
 - <https://svgontheweb.com/> Guide ultime SVG sur le web
-- <https://svgpocketguide.com/book/> Pocket guide to writing SVG
-- <https://lynn.ru/examples/svg/en.html> + <https://css-tricks.com/svg-fallbacks/> + <https://css-tricks.com/scale-svg/> + <https://css-tricks.com/using-svg/> Intégration dans HTML
-- <https://sarasoueidan.com/blog/svg-tips-for-designers/> Guide de production SVG pour Illustrator & co
-- <https://sarasoueidan.com/blog/svg-coordinate-systems/> Système de coordonnées, viewbox, viewport, preserveAspectRatio
-- <https://sarasoueidan.com/demos/interactive-svg-coordinate-system/index.html> Cheatsheet Coordonnées
-- <https://la-cascade.io/comprendre-svg-viewbox-et-viewport/> Comprendre SVG viewBox et viewport
+- <https://svgpocketguide.com/> Pocket guide to writing SVG
+- <https://css-tricks.com/scale-svg/> Mise à l'échelle des SVG
+- <https://css-tricks.com/using-svg/> Intégration dans HTML
+- <https://www.sarasoueidan.com/blog/svg-tips-for-designers/> Guide de production SVG pour Illustrator & co
+- <https://www.sarasoueidan.com/blog/svg-coordinate-systems/> Système de coordonnées, viewbox, viewport, preserveAspectRatio
+- <https://www.sarasoueidan.com/demos/interactive-svg-coordinate-system/index.html> Cheatsheet Coordonnées
+- <https://la-cascade.io/articles/comprendre-svg-viewbox-et-viewport> Comprendre SVG viewBox et viewport
 - <https://www.w3.org/TR/SVG/propidx.html> Propriétés manipulables en CSS
 
 ### Outils pour produire/éditer du SVG
@@ -525,17 +527,14 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 ### Générateurs SVG
 
-- <https://www.blobmaker.app/>
-- <https://squircley.app/>
-- <https://getwaves.io/>
-- <https://www.outpan.com/app/9aaaf27303/svg-gradient-wave-generator>
+- <https://www.blobmaker.app/> Des blobs
+- <https://getwaves.io/> Des vagues
 
 ### Optimisation SVG et astuces
 
 - <https://github.com/svg/svgo> Optimisation
 - <https://jakearchibald.github.io/svgomg/> Optimisation en ligne
 - <https://css-tricks.com/understanding-and-manually-improving-svg-optimization/>
-- <https://thenewcode.com/1094/Using-JavaScript-in-SVG> Include du code JavaScript dans SVG
 
 ### Animations SVG
 
@@ -547,9 +546,9 @@ Maquettes / story-boards / wireframes / mockups / zoning
 ### Accessibilité des SVG
 
 - <https://www.accede-web.com/notices/html-et-css/images-et-icones/gerer-lalternative-des-svg-images-vectorielles/> Gérer l’alternative des SVG
-- <https://la-cascade.io/rendre-svg-accessible/> SVG accessible
+- <https://la-cascade.io/articles/rendre-svg-accessible> SVG accessible
 - <https://css-tricks.com/accessible-svgs/>
-- <https://www.paciellogroup.com/blog/2013/12/using-aria-enhance-svg-accessibility/>
+- <https://www.tpgi.com/using-aria-enhance-svg-accessibility/>
 - <https://www.sitepoint.com/tips-accessible-svg/> Rendre SVG accessible
 
 ---
