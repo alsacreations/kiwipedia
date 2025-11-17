@@ -7,7 +7,7 @@
 
 > 💡 **Important :**
 >
-> - Dans la majorité des projets “simples”, l’étape 2 (fichiers de configuration) n’est pas nécessaire car Vite génère l’essentiel.  
+> - Dans la majorité des projets “simples”, l’étape 2 (fichiers de configuration) n’est pas nécessaire car Vite génère l’essentiel.
 > - Cas des projets “multi” (mono-repo) avec une partie front (Vite) et d’autres parties au sein du même dépôt: réaliser l’étape 2 (fichiers de configuration) avant l’étape 1 (Vite).
 
 - [Routine d'initialisation d'un projet](#routine-dinitialisation-dun-projet)
@@ -17,7 +17,6 @@
   - [2. Fichiers de configuration](#2-fichiers-de-configuration)
   - [3. Linter, formatters et correcteurs](#3-linter-formatters-et-correcteurs)
   - [4. Styles CSS](#4-styles-css)
-    - [Tailwind](#tailwind)
     - [`app.css`](#appcss)
   - [5. Custom Media Queries (optionnel)](#5-custom-media-queries-optionnel)
   - [6. Autres Options (selon projets)](#6-autres-options-selon-projets)
@@ -37,12 +36,6 @@ Linters / qualité
 - **Prettier :** formatage automatique
 - **Stylelint :** vérification CSS
 - **ESLint :** vérification JavaScript/TypeScript (+ frameworks)
-
-CSS
-
-- **Tailwind :** nous intégrons nos projets en CSS Vanilla avec Tailwind disponible pour les cas d'usage spécifiques.
-
-> 📚 La plupart des fichiers de configuration sont disponibles dans [`configs/`](../configs/).
 
 ---
 
@@ -155,16 +148,9 @@ pnpm install --save-dev stylelint stylelint-config-standard stylelint-config-htm
 
 ## 4. Styles CSS
 
-### Tailwind
-
-Tailwind CSS n'est pas inclus systématiquement mais est conseillé, même en projet “vanilla”, pour disposer au besoin de classes utilitaires.
-
-- Se placer dans le dossier Vite (`cd vite-project`)
-- Suivre l’installation via Vite: <https://tailwindcss.com/docs/installation/using-vite>
-
 ### `app.css`
 
-Le fichier [`app.css`](../configs/CSS/app.css) (ou [`app.css`](../configs/CSS/app-tailwind.css) pour la variante Tailwind) est le point d’entrée.
+Le fichier `app.css` est le point d’entrée.
 Il charge les feuilles dans l’ordre des layers CSS: config, base, components, utilities.
 
 1) Layer config (reset, polices, thèmes, layouts)
@@ -255,6 +241,8 @@ Avantages
 ---
 
 ## 6. Autres Options (selon projets)
+
+- Tailwind : Se placer dans le dossier Vite (`cd vite-project`). Suivre l’installation via Vite: <https://tailwindcss.com/docs/installation/using-vite>
 
 - Sass
 

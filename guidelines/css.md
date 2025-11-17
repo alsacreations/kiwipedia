@@ -30,32 +30,18 @@ Nous privilégions deux approches CSS selon le contexte du projet&#8239;:
    - Syntaxe imbriquée native (nesting)
    - Évite la prolifération de classes dans le HTML
 
-2. **CSS Utilitaire** - Via Tailwind (ou UnoCSS)
+2. **CSS Utilitaire** - Via Tailwind (ou UnoCSS) uniquement si les contraintes du projet l'exigent
    - Pour des prototypes rapides
    - Projets nécessitant une grande flexibilité
    - Équipes familiarisées avec l'approche utilitaire
 
-> 💡 **Recommandation**&#8239;: Sauf contre-indication (client, projet historique), nous intégrons nos projets en CSS Vanilla avec Tailwind optionnel mais disponible pour les cas d'usage spécifiques.
+> 💡 **Recommandation**&#8239;: Sauf contre-indication (client, projet historique), nous intégrons nos projets en CSS Vanilla (Tailwind optionnel mais disponible pour les cas d'usage spécifiques).
 
 ---
 
 ## Configuration de projet
 
-### Stack technologique
-
-#### Tailwind CSS (v4+)
-
-Intégré de façon optionnelle généralement pour bénéficier de classes utilitaires ponctuelles.
-
-**Exceptions**&#8239;:
-
-- Projets internes simples
-- Projets historiques
-- Projets WordPress FSE
-
-> 📚 Voir [project-init.md](../starters/project-init.md) pour l'installation et la configuration détaillée de Tailwind.
-
-#### Post-processeurs et pré-processeurs
+### Post-processeurs et pré-processeurs
 
 Pour les fonctionnalités non natives (concaténation, mixins, custom media)&#8239;:
 
@@ -65,7 +51,7 @@ Pour les fonctionnalités non natives (concaténation, mixins, custom media)&#82
 | **`postcss-custom-media`** | ✅ Recommandé        | Media Queries personnalisés. [Voir config](../starters/project-init.md) |
 | **Sass (.scss)**           | ⚠️ Legacy uniquement | Mature, mais syntaxe propriétaire                                       |
 
-#### Outils de qualité
+### Outils de qualité
 
 | Outil                 | Rôle                                       | Configuration                              |
 | --------------------- | ------------------------------------------ | ------------------------------------------ |
@@ -92,7 +78,7 @@ css/
 
 ### Ordre d'importation
 
-> 📚 Le fichier [app.css](../config/CSS/app.css) (ou la version Tailwind [app.css](../config/CSS/app-tailwind.css)) est le point d'entrée pour les styles. Il charge toutes les feuilles de styles dans l'ordre des layers CSS _(config, base, components, utilities)_.
+> 📚 Le fichier `app.css` est le point d'entrée pour les styles. Il charge toutes les feuilles de styles dans l'ordre des layers CSS _(config, base, components, utilities)_.
 
 ```css
 /* css/app.css */
