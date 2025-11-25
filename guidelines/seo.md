@@ -90,6 +90,7 @@ Imbrication de deux types
 
 * [Google Search Console](https://search.google.com/search-console)
 * [Bing Webmaster Tools](https://www.bing.com/webmasters/)
+* [Check Robots](https://www.checkrobots.com/) Vérificateur d'indexabilité d'une page
 
 ## Références
 
