@@ -613,7 +613,7 @@ svg * {
 - On limite à 2 ou 3 fichiers de police au maximum (regular, bold, italic), sinon préférer une [Variable Font](https://v-fonts.com/) (voir la partie dédiée ci-dessous)
 - On utilise la directive `<link rel="preload">` pour charger les polices de manière asynchrone.
 - On applique `font-display: swap;` au sein de la règle `@font-face` pour éviter les effets de FOIT. Si la police est pré-chargée, `font-display: optional;` est alors recommandé.
-- On héberge la police sur son propre serveur (voir l'outil "Google Webfont Helper").
+- On héberge la police sur son propre serveur (outil [Google Webfont Helper](https://gwfh.mranftl.com/fonts)).
 - On utilise les valeurs chiffrées pour les graisses de police (`font-weight`).
 
 ### Structure `@font-face` optimisée
