@@ -126,7 +126,7 @@ pnpm install --save-dev prettier
 ```
 
 - Extension VS Code: “Prettier - Code formatter”
-- Ajouter `.prettierrc.mjs` à la racine
+- Ajouter `.prettier.config.mjs` à la racine
 
 1) Stylelint (CSS)
 
@@ -135,7 +135,7 @@ pnpm install --save-dev stylelint stylelint-config-standard stylelint-config-htm
 ```
 
 - Extension VS Code: “Stylelint”
-- Ajouter `stylelint.config.js` à la racine
+- Ajouter `stylelint.config.mjs` à la racine
 - Dans VS Code (cmd+,), ajouter:
 
 ```json
@@ -184,7 +184,7 @@ Il charge les feuilles dans l’ordre des layers CSS: config, base, components, 
 Installer le plugin PostCSS Custom Media:
 
 ```bash
-pnpm add -D postcss-custom-media
+pnpm add --save-dev postcss-custom-media
 ```
 
 Ajouter `postcss.config.mjs`:
