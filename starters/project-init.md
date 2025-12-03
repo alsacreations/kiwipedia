@@ -261,3 +261,42 @@ pnpm install --save alpinejs
 - Docker (recette / pré-production)
   - Ajouter `Dockerfile` et `docker-compose.yml` depuis les exemples et les adapter
   - Mise en production (optionnel): `docker-compose up -d --build`
+
+## Nuxt
+
+Cas spécifique de Nuxt, qui embarque déjà Vite.
+
+- On initialise avec la méthode classique : `pnpm create nuxt@latest <project-name>`.
+- On ajoute les dossiers dans `app/` : `assets`, `components`, `layouts`, `pages`.
+
+Le fichier `app/app.vue` :
+
+```html
+<template>
+  <NuxtRouteAnnouncer /> 
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
+</template>
+```
+
+Le fichier `app/layouts/default.vue` :
+
+```html
+<template>
+  <div>
+    (le header qui peut être un composant)
+    <NuxtPage />
+    (le footer qui peut être un composant)
+  </div>
+</template>
+```
+
+Ensuite on ajoute les pages dans `app/pages/` (par exemple `index.vue`) et les composants dans `app/components/`. Les styles sont ajoutés dans chaque composant ou dans `app/assets/styles/` et importés dans `nuxt.config.ts` :
+
+```ts
+export default defineNuxtConfig({
+  css: ['~/assets/styles/app.css'],
+  ...
+})
+```
