@@ -370,9 +370,13 @@ Autres listes de ressources et checklists
 - <https://land-book.com/> Landing pages
 - <https://craftwork.design/curated/websites/> Curated websites
 - <https://www.logodesignlove.com/brand-identity-style-guides> (guides de styles)
+- <https://www.rebrand.gallery/>
+- <https://mobbin.com/> mobile apps
+- <https://onepagelove.com/>
 
 ### UX
 
+- <https://www.uidesign.tips/>
 - <https://theuxcookbook.com/>
 - <https://lawsofux.com/>
 - <https://uxmyths.com/>
