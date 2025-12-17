@@ -651,10 +651,14 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 ## Serveur
 
-- <https://code.tutsplus.com/apache-2-basic-configuration-on-unix-like-systems--net-26607a> Configuration Apache de base sous Linux
 - <https://github.com/phanan/htaccess> snippets .htaccess
 - <https://htaccess.madewithlove.be> Tester/simuler les règles de réécriture
-- <https://serversforhackers.com/series>
+- <https://serversforhackers.com/series> Server Admin for Programmers
+- <https://github.com/louislam/uptime-kuma> Uptime Kuma : monitorer la disponibilité des sites/services
+- <https://checkmate.so/> Checkmate : Monitorer la disponibilité des sites/services
+
+### Ligne de commande
+
 - <https://vim-adventures.com/> Apprendre Vim en jouant
 - <https://vim.rtorr.com/> Cheatsheet vim
 
