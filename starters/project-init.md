@@ -53,7 +53,7 @@ pnpm install
 
 2) Ajouter la configuration Vite
 
-- Copier [`vite.config.ts`](../configs/vite.config.ts) dans le dossier du projet (ex. vite-project)
+- Ajouter `vite.config.ts` dans le dossier du projet (ex. vite-project)
 
 3) Nettoyer les fichiers d’exemple
 
@@ -99,7 +99,7 @@ pnpm init
 3) Dossier VS Code
 
 - Créer `.vscode/`
-- Ajouter [`settings.json`](../configs/.vscode/settings.json) et [`extensions.json`](../configs/.vscode/extensions.json)
+- Ajouter `settings.json` et `extensions.json`
 
 ---
 

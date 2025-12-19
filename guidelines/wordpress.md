@@ -35,7 +35,7 @@ On ne versionne **pas** (voir fichiers .gitignore) :
 - les dossiers `public/uploads` (stockés à part car binaires occupant beaucoup de place), `public/upgrade`
 - les thèmes installés "par défaut" (_Twenty*_) qui doivent de toute façon être supprimés
 
-👉 Le fichier [README.md](../configs/README.md) à la racine du projet doit contenir toutes les informations pour prendre en main le développement et ré-installer le site rapidement en production.
+👉 Le fichier `README.md` à la racine du projet doit contenir toutes les informations pour prendre en main le développement et ré-installer le site rapidement en production.
 
 ## Thème
 

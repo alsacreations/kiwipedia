@@ -48,15 +48,15 @@ Pour les fonctionnalités non natives (concaténation, mixins, custom media)&#82
 | Outil                      | Usage recommandé     | Avantages                                                               |
 | -------------------------- | -------------------- | ----------------------------------------------------------------------- |
 | **PostCSS**                | ✅ Recommandé        | Moderne, extensible, proche du CSS natif                                |
-| **`postcss-custom-media`** | ✅ Recommandé        | Media Queries personnalisés. [Voir config](../starters/project-init.md) |
+| **`postcss-custom-media`** | ✅ Recommandé        | Media Queries personnalisés. [Voir project-init](../starters/project-init.md) |
 | **Sass (.scss)**           | ⚠️ Legacy uniquement | Mature, mais syntaxe propriétaire                                       |
 
 ### Outils de qualité
 
 | Outil                 | Rôle                                       | Configuration                              |
 | --------------------- | ------------------------------------------ | ------------------------------------------ |
-| **Stylelint**         | Validation syntaxique et bonnes pratiques  | [Voir config](../starters/project-init.md) |
-| **Prettier**          | Formatage automatique                      | [Voir config](../starters/project-init.md) |
+| **Stylelint**         | Validation syntaxique et bonnes pratiques  | <https://primary.alsacreations.com/> |
+| **Prettier**          | Formatage automatique                      | <https://primary.alsacreations.com/> |
 | **`stylelint-order`** | Organisation des propriétés (ordre SMACSS) | Automatique via config                     |
 
 ---

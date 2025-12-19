@@ -24,7 +24,6 @@ Les thématiques suivantes sont **au c&oelig;ur de notre activité** d'agence we
 
 Ces bonnes pratiques couvrent l'ensemble des domaines auxquels une agence web est confrontée. Les connaître doit faire partie de notre périmètre de compétences&#8239;:
 
-- [**Guidelines classes CSS utilitaires**](guidelines/css-utilities.md)
 - [**Guidelines Performances**](guidelines/performances.md)
 - [**Guidelines Interopérabilité**](guidelines/interoperabilite.md)
 - [**Guidelines RGPD**](guidelines/rgpd.md)
@@ -44,6 +43,7 @@ Ces thématiques traitent de technologies précises, qui varient selon les proje
 - [**Guidelines VueJS**](guidelines/vue.md)
 - [**Guidelines WordPress**](guidelines/wordpress.md)
 - [**Guidelines Développement PHP / MySql**](guidelines/php-mysql.md)
+- [**Guidelines classes CSS utilitaires**](guidelines/css-utilities.md)
 
 ## Starters
 
@@ -51,10 +51,6 @@ Tutoriels rapides pour démarrer des projets.
 
 - [**Initialisation de projet**](starters/project-init.md)
 - [**Projet avec Vite**](starters/vite.md)
-
-## Configurations
-
-- [Fichiers de configuration utiles](https://github.com/alsacreations/kiwipedia/tree/main/configs) (lien GitHub)
 
 ## Pense-bêtes (cheatsheets)
 
