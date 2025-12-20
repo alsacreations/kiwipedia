@@ -181,7 +181,7 @@ Il charge les feuilles dans l’ordre des layers CSS: config, base, components, 
 
 ## 5. Custom Media Queries (optionnel)
 
-Installer le plugin PostCSS Custom Media:
+Installer le plugin PostCSS Custom Media (<https://www.npmjs.com/package/postcss-custom-media>):
 
 ```bash
 pnpm add --save-dev postcss-custom-media
