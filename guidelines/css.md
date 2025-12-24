@@ -613,7 +613,7 @@ svg * {
 - On limite à 2 ou 3 fichiers de police au maximum (regular, bold, italic), sinon préférer une [Variable Font](https://v-fonts.com/) (voir la partie dédiée ci-dessous)
 - On utilise la directive `<link rel="preload">` pour charger les polices de manière asynchrone.
 - On applique `font-display: swap;` au sein de la règle `@font-face` pour éviter les effets de FOIT. Si la police est pré-chargée, `font-display: optional;` est alors recommandé.
-- On héberge la police sur son propre serveur (outil [Google Webfont Helper](https://gwfh.mranftl.com/fonts)).
+- On héberge la police sur son propre serveur (outils [Fondue](https://fondue.alsacreations.com/) ou [Google Webfont Helper](https://gwfh.mranftl.com/fonts)).
 - On utilise les valeurs chiffrées pour les graisses de police (`font-weight`).
 
 ### Structure `@font-face` optimisée
@@ -646,7 +646,7 @@ svg * {
 
 Une variable font est systématiquement recommandée dès lors qu'un projet nécessite plus de 3 ou 4 variantes parmi celles-ci&#8239;: regular, italic, light, semi-bold, bold, bold italic, etc.
 
-Comme pour les fontes classiques, le format `.woff2` ainsi que l'hébergement de la fonte sont préconisés (les fontes variables peuvent être trouvées sur [Google Fonts](https://fonts.google.com/?vfonly=true) en activant la case "show only variable fonts" puis téléchargées en `.ttf` via le bouton "Download family"). Un convertisseur tel que [Cloud converter](https://cloudconvert.com/ttf-to-woff2) pourra produire la version `.woff2`.
+Comme pour les fontes classiques, le format `.woff2` ainsi que l'hébergement de la fonte sont préconisés (les fontes variables peuvent être trouvées sur [Google Fonts](https://fonts.google.com/) en activant le filtre "Variable fonts" puis téléchargées en `.ttf` via le bouton "Get font"). Un convertisseur tel que [Fondue](https://fondue.alsacreations.com/) pourra produire la version `.woff2`.
 
 ```css
 @font-face {
