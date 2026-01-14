@@ -690,10 +690,13 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://ngrok.com/>
 - <https://doc.traefik.io/traefik/>
 
-### DNS
+### DNS et noms de domaines
 
 - <https://messwithdns.net/> expérimenter en ligne
 - <https://howdns.works/> How DNS works
+- <https://www.dotcom.press/history-of-domains> Histoire des noms de domaine
+- <https://www.whatsmydns.net/> Vérifier la propagation DNS
+- <https://dnschecker.org/> Vérifier la propagation DNS
 
 ---
 
