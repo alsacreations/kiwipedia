@@ -69,8 +69,7 @@ Pour les fonctionnalités non natives (concaténation, mixins, custom media)&#82
 css/
 ├── app.css           # Point d'entrée principal
 ├── reset.css         # Reset
-├── theme.css         # Variables primitives
-├── theme-tokens.css  # Tokens sémantiques
+├── theme.css         # Variables Primitives et Tokens du projet
 ├── layouts.css       # Styles des Layouts (Bretzel)
 ├── natives.css       # Styles des éléments natifs (KNACSS)
 └── styles.css        # Styles de base (body, typo, liens, etc.)
@@ -89,7 +88,6 @@ css/
 /* Config */
 @import "reset.css" layer(config);
 @import "theme.css" layer(config);
-@import "theme-tokens.css" layer(config);
 @import "layouts.css" layer(config);
 @import "natives.css" layer(config);
 
@@ -284,11 +282,11 @@ Les primitives sont les valeurs de base issues de l'UI Kit, immuables et partag�
 | **Ombres**      | `--shadow-*`      | `--shadow-md: 0 4px 6px...;` | Box-shadows            |
 | **Z-index**     | `--z-*`           | `--z-modal: 1000;`           | Niveaux d'empilement   |
 
-### Tokens sémantiques (`theme-tokens.css`)
+### Tokens sémantiques (`theme.css`)
 
 Les tokens assignent des rôles fonctionnels aux primitives, créant une couche d'abstraction sémantique.
 
-> 📚 Les valeurs des tokens de design sont stockées dans le fichier `theme-tokens.css`
+> 📚 Les valeurs des tokens de design sont également stockées dans le fichier `theme.css`
 
 #### Tokens de couleur (inspirés de Material Design)
 
@@ -315,16 +313,12 @@ Les tokens assignent des rôles fonctionnels aux primitives, créant une couche 
   /* Bordures */
   --border-light: var(--color-gray-200);
   --border-medium: var(--color-gray-400);
-  --border-dark: var(--color-gray-600);
 
   /* États */
   --error: var(--color-error-500);
   --success: var(--color-success-500);
   --warning: var(--color-warning-500);
   --info: var(--color-info-500);
-
-  /* Sélection */
-  --selection: var(--color-primary-alpha-20);
 }
 ```
 
@@ -332,8 +326,8 @@ Les tokens assignent des rôles fonctionnels aux primitives, créant une couche 
 
 ```css
 :root {
-  /* Tailles de texte adaptatives */
-  /* Source https://utopia.fyi/clamp/calculator/?a=360,1240 */
+  /* Tailles de texte fluides */
+  /* Source elastic.alsacreations.com */
   --text-s: clamp(var(--text-14), 0.8239rem + 0.2273vw, var(--text-16));
   --text-m: clamp(var(--text-16), 0.9489rem + 0.2273vw, var(--text-18));
   --text-l: clamp(var(--text-18), 1.0739rem + 0.2273vw, var(--text-20));
@@ -341,7 +335,7 @@ Les tokens assignent des rôles fonctionnels aux primitives, créant une couche 
   --text-2xl: clamp(var(--text-24), 1.1932rem + 1.3636vw, var(--text-36));
   --text-3xl: clamp(var(--text-30), 1.4148rem + 2.0455vw, var(--text-48));
 
-  /* Espacements adaptatifs */
+  /* Espacements fluides */
   --spacing-s: clamp(var(--spacing-8), 0.2955rem + 0.9091vw, var(--spacing-16));
   --spacing-m: clamp(var(--spacing-16), 0.5909rem + 1.8182vw, var(--spacing-32));
   --spacing-l: clamp(var(--spacing-24), 0.8864rem + 2.2727vw, var(--spacing-48));

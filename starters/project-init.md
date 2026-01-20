@@ -51,18 +51,18 @@ cd <vite-project>
 pnpm install
 ```
 
-2) Ajouter la configuration Vite
+1) Ajouter la configuration Vite
 
 - Ajouter `vite.config.ts` dans le dossier du projet (ex. vite-project)
 
-3) Nettoyer les fichiers d’exemple
+1) Nettoyer les fichiers d’exemple
 
 - Supprimer: `counter.js`, `javascript.svg`, `public/vite.svg`
 - Renommer `style.css` en `styles.css`
 - Nettoyer `main.js` pour ne conserver que l’import CSS
 - Dans `index.html`: définir `lang="fr"`, ajuster `<title>`, supprimer le favicon `<link rel="icon">`
 
-4) Utiliser le dossier `public/` pour les assets statiques
+1) Utiliser le dossier `public/` pour les assets statiques
 
 - Réf.: <https://vitejs.dev/guide/assets.html#the-public-directory>
 
@@ -90,13 +90,13 @@ mkdir projet && cd projet
 pnpm init
 ```
 
-2) Fichiers racine
+1) Fichiers racine
 
 - Ajouter `.gitignore` (et optionnellement `.dockerignore`)
 - Ajouter `README.md`
 - Ajouter `.editorconfig` (installer l’extension VS Code “EditorConfig”)
 
-3) Dossier VS Code
+1) Dossier VS Code
 
 - Créer `.vscode/`
 - Ajouter `settings.json` et `extensions.json`
@@ -119,7 +119,7 @@ pnpm create @eslint/config@latest
   - Nuxt: <https://nuxt.com/modules/eslint>
 - Extension VS Code: “ESLint”
 
-2) Prettier (formatteur)
+1) Prettier (formatteur)
 
 ```bash
 pnpm install --save-dev prettier
@@ -156,22 +156,20 @@ Il charge les feuilles dans l’ordre des layers CSS: config, base, components, 
 1) Layer config (reset, polices, thèmes, layouts)
 
 - [`reset.css`](https://reset.alsacreations.com/): reset moderne + print
-- `theme.css`: primitives (ex. `--color-pink-500: #f1498f`) issues de Figma  
-  Voir “Primitives” dans les [Guidelines CSS](https://github.com/alsacreations/kiwipedia/blob/main/guidelines/css.md#variables-css-primitives-et-tokens)
-- `theme-tokens.css`: design tokens (ex. `--primary: var(--color-pink-500)`)  
-  Voir “Tokens (=roles)” dans les [Guidelines CSS](https://github.com/alsacreations/kiwipedia/blob/main/guidelines/css.md#variables-css-primitives-et-tokens)
+- `theme.css`: primitives et tokens issues de Figma  
+  Voir [Guidelines CSS](https://github.com/alsacreations/kiwipedia/blob/main/guidelines/css.md#variables-css-primitives-et-tokens)
 - [`layouts.css`](https://bretzel.alsacreations.com/): utilitaires de disposition (Bretzel)
 - [`natives.css`](https://knacss.com/css/natives.css): styles natifs des éléments HTML
 
-2) Layer base
+1) Layer base
 
 - `styles.css`: styles globaux du projet (gabarits, typo, liens, etc.)
 
-3) Layer components
+1) Layer components
 
 - Feuilles de styles des composants
 
-4) Layer utilities
+1) Layer utilities
 
 - Tailwind et/ou utilitaires personnalisés
 
