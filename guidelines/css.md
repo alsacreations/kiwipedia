@@ -69,9 +69,9 @@ Pour les fonctionnalités non natives (concaténation, mixins, custom media)&#82
 css/
 ├── app.css           # Point d'entrée principal
 ├── reset.css         # Reset
-├── theme.css         # Variables Primitives et Tokens du projet
-├── layouts.css       # Styles des Layouts (Bretzel)
 ├── natives.css       # Styles des éléments natifs (KNACSS)
+├── layouts.css       # Styles des Layouts (Bretzel)
+├── theme.css         # Variables Primitives et Tokens du projet
 └── styles.css        # Styles de base (body, typo, liens, etc.)
 ```
 
@@ -87,9 +87,9 @@ css/
 
 /* Config */
 @import "reset.css" layer(config);
-@import "theme.css" layer(config);
-@import "layouts.css" layer(config);
 @import "natives.css" layer(config);
+@import "layouts.css" layer(config);
+@import "theme.css" layer(config);
 
 /* Base */
 @import "styles.css" layer(base);

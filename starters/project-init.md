@@ -156,10 +156,10 @@ Il charge les feuilles dans l’ordre des layers CSS: config, base, components, 
 1) Layer config (reset, polices, thèmes, layouts)
 
 - [`reset.css`](https://reset.alsacreations.com/): reset moderne + print
+- [`natives.css`](https://knacss.com/css/natives.css): styles natifs des éléments HTML
+- [`layouts.css`](https://bretzel.alsacreations.com/): utilitaires de disposition (Bretzel)
 - `theme.css`: primitives et tokens issues de Figma  
   Voir [Guidelines CSS](https://github.com/alsacreations/kiwipedia/blob/main/guidelines/css.md#variables-css-primitives-et-tokens)
-- [`layouts.css`](https://bretzel.alsacreations.com/): utilitaires de disposition (Bretzel)
-- [`natives.css`](https://knacss.com/css/natives.css): styles natifs des éléments HTML
 
 1) Layer base
 
