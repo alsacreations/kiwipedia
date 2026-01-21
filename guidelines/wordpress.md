@@ -419,9 +419,24 @@ TODO: theme.json
 - [Contact Form 7 par Julie Moynat](https://github.com/juliemoynat/contact-form-7/releases), fork accessible de [Contact Form 7](https://fr.wordpress.org/plugins/contact-form-7/).
 - [hCaptcha](https://fr.wordpress.org/plugins/hcaptcha-for-forms-and-more/) s'intègre très bien à de nombreuses autres extensions (dont WooCommerce, WpForms, NinjaForms)
 
+### E-mails (SMTP)
+
+Pour fiabiliser l'envoi des e-mails sortants (notifications, formulaires, etc.) et éviter qu'ils ne soient considérés comme du spam, il est recommandé de ne pas utiliser la fonction `mail()` de PHP mais de configurer un envoi via SMTP, possible avec des extensions :
+
+- [WP Mail SMTP](https://fr.wordpress.org/plugins/wp-mail-smtp/) (payante pour certains services tiers tels que Microsoft)
+- [FluentSMTP](https://fr.wordpress.org/plugins/fluent-smtp/)
+
+> [!NOTE]
+> Sur certains hébergements managés (ex: Infomaniak), le port 465 peut être bloqué. Il faut alors utiliser le port 587.
+
+Ces extensions permettent de se connecter à un serveur SMTP ou à des services/API tiers spécialisés (Brevo, Postmark, SparkPost, etc.) dont certains proposent un niveau gratuit.
+
+> [!IMPORTANT]
+> Pour utiliser un service tiers, il est indispensable de configurer la zone DNS du domaine pour ajouter les enregistrements SPF, DKIM et DMARC nécessaires, autorisant ainsi le service à envoyer des e-mails au nom de votre domaine.
+
 ### Multilangue
 
-- [Polylang](https://fr.wordpress.org/plugins/polylang/) : traduction (remplace WPML).
+- [Polylang](https://fr.wordpress.org/plugins/polylang/) : traduction, gestion des liens dans les différentes langues, menu de choix de langue (remplace WPML).
 
 ### SEO
 
