@@ -125,7 +125,7 @@ pnpm create @eslint/config@latest
 pnpm install --save-dev prettier
 ```
 
-- Extension VS Code: “Prettier - Code formatter”
+- Extension VS Code: [“Prettier - Code formatter”](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) (⚠️ la bonne version de Prettier est `esbenp.prettier-vscode` et non `prettier.prettier-vscode`)
 - Ajouter `.prettier.config.mjs` à la racine
 
 1) Stylelint (CSS)

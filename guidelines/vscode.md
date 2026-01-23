@@ -67,7 +67,7 @@ projet/
 ```json
 {
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "prettier.prettier-vscode",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "stylelint.validate": ["css", "scss", "html", "vue"],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit",
@@ -82,7 +82,7 @@ projet/
 {
   "recommendations": [
     "editorconfig.editorconfig",
-    "prettier.prettier-vscode",
+    "esbenp.prettier-vscode",
     "stylelint.vscode-stylelint",
     "dbaeumer.vscode-eslint"
   ]
@@ -103,7 +103,7 @@ projet/
 |-----------|----------|-------------------|
 | **[EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)** | Normalisation indentation/encodage | Cohérence équipe |
 | **[ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)** | Vérification JS/TS/frameworks | Qualité code |
-| **[Prettier](https://marketplace.visualstudio.com/items?itemName=prettier.prettier-vscode)** | Formatage automatique | Uniformité style |
+| **[Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)** | Formatage automatique | Uniformité style |
 | **[Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)** | Vérification CSS/SCSS | Standards CSS |
 | **[Markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)** | Vérification Markdown | Documentation |
 
@@ -163,7 +163,7 @@ projet/
 code --list-extensions
 
 # Installer une extension via CLI
-code --install-extension prettier.prettier-vscode
+code --install-extension esbenp.prettier-vscode
 ```
 
 ---
