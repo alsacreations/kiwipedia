@@ -33,7 +33,7 @@ Ressources :
 * renvoyées par le langage back (ex : PHP avec la fonction [header](https://www.php.net/manual/fr/function.header.php))
 * par un CMS (ex : WordPress avec l'extension [GD Security Headers](https://wordpress.org/plugins/gd-security-headers/), mentionnée par l'ANSSI)
 
-## Niveau 1 (base) 🥇
+## Niveau 1 (base) 🥉
 
 ### Strict-Transport-Security
 
@@ -149,7 +149,7 @@ Header always edit Set-Cookie (.*) "$1; SameSite=Lax"
 
 ---
 
-## Niveau 3 🥉
+## Niveau 3 🥇
 
 ### Subresource Integrity
 
