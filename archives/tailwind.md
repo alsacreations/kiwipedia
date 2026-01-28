@@ -112,7 +112,7 @@ Les bonnes pratiques suivantes doivent cependant être respectées tant que poss
 
 Le fichier Tailwind se charge d'importer 3 fichiers principaux.
 
-Le fichier [alsa-TW-Reset](assets/vue-nuxt-front-end/alsa-tw-reset.scss) apporte des styles complémentaires (fix, accessibilité, print) que nous estimons nécessaires.
+Le fichier `alsa-tw-reset.scss` apporte des styles complémentaires (fix, accessibilité, print) que nous estimons nécessaires.
 
 ```css
 /* Fichier `app.css` */

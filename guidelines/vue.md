@@ -4,7 +4,7 @@ Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacre
 
 ## Extensions Visual Studio Code recommandées
 
-Pour les projets de type Vue et Nuxt, on ajoute `vue.volar` à [.vscode/extensions.json](assets/.vscode/extensions.json).
+Pour les projets de type Vue et Nuxt, on ajoute `vue.volar` à `.vscode/extensions.json`.
 
 ### Volar
 
