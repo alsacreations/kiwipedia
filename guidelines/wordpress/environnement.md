@@ -13,6 +13,7 @@ On utilise [Docker](https://www.docker.com/) avec une structure-type déjà épr
 
 - Utiliser `define('WP_ENVIRONMENT_TYPE','staging');` puis [wp_get_environment_type()](https://make.wordpress.org/core/2020/07/24/new-wp_get_environment_type-function-in-wordpress-5-5/)
 - Utiliser `define('WP_DEBUG',true);` pour activer le mode debug
+- Utiliser `define( 'WP_DEBUG_DISPLAY', true );` pour afficher les erreurs
 
 ## Git
 
