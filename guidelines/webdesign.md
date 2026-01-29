@@ -41,6 +41,54 @@ Les pages à ne pas oublier de faire apparaître dans l'arborescence sont :
   - Déclaration d'accessibilité (si concerné)
 - Page d'erreur 404 (voire d'erreur 500)
 
+## Contenus à prévoir site e-commerce
+
+### Arborescence
+
+- Page de catégorie
+  - Filtres (par prix, taille, couleur, marque, notes, etc.
+  - Tri des produits (pertinence, prix, popularité)
+  - Grille ou liste de produits (image + titre + prix + note + bouton "Ajouter au panier")
+  - Pagination
+  - Breadcrumbs (fil d’Ariane)
+- Page de fiche produit
+  - Galerie d’images
+  - Titre, prix (prix barré si promotion), disponibilité, stock, popularité 
+  - Description détaillée (caractéristiques, matériaux, dimensions)
+  - Avis clients (notes + commentaires)
+  - Bouton "Ajouter au panier" (visible sans scroll)
+  - Suggestions de produits similaires ou complémentaires
+- Panier
+  - Liste des produits (image, titre, quantité, prix unitaire, prix total)
+  - Options de modification (supprimer, changer la quantité)
+  - Résumé du panier (sous-total, frais de livraison, total)
+  - Boutons "Continuer mes achats" et "Passage à la caisse"
+- Tunnel de commande (Checkout)
+  - étape 1 : formulaire de connexion ou création de compte (option "Invité")
+  - étape 2 : adresse de livraison
+    - Formulaire d’adresse (champs pré-remplis si utilisateur connecté)
+    - Option "Livrer à une autre adresse"
+    - Sélection du mode de livraison
+  - étape 3 : mode de paiement
+  - étape 4 : récapitulatif et confirmation
+    - Récapitulatif de la commande (produits, adresse, livraison, paiement)
+    - Case à cocher pour accepter les CGV
+    - Bouton "Valider la commande"
+- Page de confirmation de commande
+  - Message de remerciement
+  - Numéro de commande et récapitulatif
+  - Détails de livraison (date estimée, adresse)
+  - Bouton "Suivre ma commande"
+  - Suggestions de produits complémentaires
+- Compte utilisateur (My Account)
+- Page de suivi de commande
+- Page de gestion des retours/remboursements
+- Maquettes pour les emails transactionnels
+  - Email de confirmation de commande
+  - Email d’expédition
+  - Email de livraison
+  - Email de relance de panier abandonné
+
 ### Wireframe
 
 Un Wireframe consiste en des tracés de type “fil-de-fer” avec textes et composants intégrés (par exemple une “zone emploi” avec 3 icônes et 2 emplacements de texte).
