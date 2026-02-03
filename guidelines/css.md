@@ -182,8 +182,7 @@ Au lieu d'utiliser `.card-title`, nous utilisons un sÃ©lecteur simple dans un pÃ
   }
 
   .media {
-    border-radius: var(--radius-m);
-    aspect-ratio: 16 / 9;
+    border-radius: var(--radius-16);
   }
 }
 ```
