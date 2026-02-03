@@ -45,18 +45,18 @@ Nous privilégions deux approches CSS selon le contexte du projet&#8239;:
 
 Pour les fonctionnalités non natives (concaténation, mixins, custom media)&#8239;:
 
-| Outil                      | Usage recommandé     | Avantages                                                               |
-| -------------------------- | -------------------- | ----------------------------------------------------------------------- |
-| **PostCSS**                | ✅ Recommandé        | Moderne, extensible, proche du CSS natif                                |
+| Outil                      | Usage recommandé     | Avantages                                                                     |
+| -------------------------- | -------------------- | ------------------------------------------------------------------------------|
+| **PostCSS**                | ✅ Recommandé        | Moderne, extensible, proche du CSS natif                                      |
 | **`postcss-custom-media`** | ✅ Recommandé        | Media Queries personnalisés. [Voir project-init](../starters/project-init.md) |
-| **Sass (.scss)**           | ⚠️ Legacy uniquement | Mature, mais syntaxe propriétaire                                       |
+| **Sass (.scss)**           | ⚠️ Legacy uniquement | Mature, mais syntaxe propriétaire                                             |
 
 ### Outils de qualité
 
 | Outil                 | Rôle                                       | Configuration                              |
 | --------------------- | ------------------------------------------ | ------------------------------------------ |
-| **Stylelint**         | Validation syntaxique et bonnes pratiques  | <https://primary.alsacreations.com/> |
-| **Prettier**          | Formatage automatique                      | <https://primary.alsacreations.com/> |
+| **Stylelint**         | Validation syntaxique et bonnes pratiques  | <https://primary.alsacreations.com/>       |
+| **Prettier**          | Formatage automatique                      | <https://primary.alsacreations.com/>       |
 | **`stylelint-order`** | Organisation des propriétés (ordre SMACSS) | Automatique via config                     |
 
 ---
@@ -154,6 +154,108 @@ article {
 .is-loading {
 }
 .has-error {
+}
+```
+
+#### Alternative Moderne à BEM : l'usage de `@scope ()`
+
+L'introduction de `@scope` dans nos projets vise à résoudre les problèmes de **proximité** et d'**isolation** que les classes BEM ou le nesting classique ne peuvent gérer nativement.
+
+| Problème | Solution BEM / Nesting | Avantage `@scope` |
+| --- | --- | --- |
+| **Fuites de style** | Noms de classes longs (`.card-title`) | **Isolation** : Le style s'arrête là où on le décide. |
+| **Collisions** | Discipline humaine rigoureuse | **Proximité DOM** : L'élément le plus proche gagne, peu importe l'ordre du CSS. |
+| **Spécificité** | Multiplication des classes | **Légèreté** : Utilisation de sélecteurs simples sans augmenter le poids. |
+
+**Cas d'usage : La Carte de Produit**
+
+Au lieu d'utiliser `.card-title`, nous utilisons un sélecteur simple dans un périmètre défini.
+
+```css
+/* ✅ @scope + classes sémantiques */
+@scope (.card) {
+
+  /* Cible .title uniquement s'il appartient à la structure de la carte */
+  .title {
+    font-size: var(--text-l);
+    color: var(--primary);
+  }
+
+  .media {
+    border-radius: var(--radius-m);
+    aspect-ratio: 16 / 9;
+  }
+}
+```
+
+Les avantages&#8239;:
+
+- Indépendance de la balise&#8239;: Si le développeur change le `h2` en `h3` pour respecter la hiérarchie de la page, le style `.title` continue de fonctionner.
+- Légèreté du HTML&#8239;: On évite les classes à rallonge type `.card-header-inner-title` tout en gardant une isolation parfaite.
+- Protection contre l'imbrication&#8239;: Il est possible de limiter le scope via la clause `to` (ex: `@scope (.card) to (.card-content)`), si un autre titre `.title` se trouve dans le texte riche de la carte, il ne sera pas affecté par les styles du scope de la carte.
+
+Pour les éléments hautement réutilisables comme les boutons, `@scope` permet de centraliser la logique interactive (hover, focus, active) en utilisant les **variables CSS**.
+
+```css
+@scope (.btn) {
+  :scope {
+    /* Variables par défaut */
+    --button-background-color: var(--form-background, Field);
+    --button-text-color: var(--on-form, ButtonText);
+    
+    background-color: var(--button-background-color);
+    color: var(--button-text-color);
+    transition: all var(--transition-duration);
+  }
+
+  /* Logique interactive unique pour toutes les variantes */
+  &:hover, &:focus-visible {
+    background-color: oklch(from var(--button-background-color) calc(l * 0.9) c h);
+  }
+
+  &:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+  }
+
+  /* Variantes : On ne change que les valeurs, pas la logique */
+  &.btn-primary {
+    --button-background-color: var(--primary);
+    --button-text-color: var(--on-primary);
+  }
+}
+```
+
+L'adoption de `@scope` implique trois changements majeurs dans le flux d'intégration&#8239;:
+
+1. **Simplification du HTML**&#8239;:
+
+- Moins de classes "Block-Element" (`.card-header-title`).
+
+- Utilisation de classes sémantiques simples (`.title`, `.media`, `.header`, `.content`) ou d'attributs `data-*` pour les éléments structurels.
+
+1. **Protection Systématique**&#8239;:
+
+- Tout composant capable d'accueillir du contenu externe **doit** définir une limite basse via la clause `to`.
+
+- Cela évite les effets de bord sur les composants injectés dynamiquement (ex: un bouton dans une carte ne doit pas hériter des marges spécifiques de la carte).
+
+1. **Priorité par Proximité**&#8239;:
+
+- Si un élément est en conflit entre deux styles, c'est le scope le plus "proche" dans l'arbre DOM qui l'emporte.
+
+- Plus besoin de surcharger la spécificité ou d'utiliser `!important` pour corriger des styles de composants imbriqués.
+
+> 🎯 **Règle d'or** : Utiliser `@scope` pour la **structure des composants** et `@layer` pour la **priorité des fichiers**. Les deux sont complémentaires : les scopes doivent idéalement résider dans le `@layer components`.
+
+```css
+/* css/app.css */
+@layer config, base, components, utilities;
+
+@layer components {
+  @scope (.card) {
+    /* Vos styles ici */
+  }
 }
 ```
 
