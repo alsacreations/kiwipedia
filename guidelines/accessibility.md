@@ -290,7 +290,7 @@ Voici un exemple de liens d'évitement&#8239;:
 
     &:focus-visible {
       position: absolute;
-      z-index: 9999;
+      z-index: calc(infinity);
       top: 8px;
       left: 8px;
       width: max-content;
