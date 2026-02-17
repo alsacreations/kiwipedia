@@ -265,6 +265,7 @@ Voici un exemple de liens d'évitement&#8239;:
 ```css
 @scope (.skip-links) {
   :scope {
+    position: absolute;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -272,8 +273,8 @@ Voici un exemple de liens d'évitement&#8239;:
 
   a {
     padding: 0.6rem 1rem;
-    background-color: mark;
     border: 3px solid currentcolor;
+    background-color: mark;
     color: marktext;
     text-decoration: none;
 
@@ -292,6 +293,7 @@ Voici un exemple de liens d'évitement&#8239;:
       z-index: 9999;
       top: 8px;
       left: 8px;
+      width: max-content;
     }
   }
 }
