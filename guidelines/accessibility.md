@@ -249,39 +249,51 @@ Un lien d'évitement vers le contenu principal est nécessaire. D'autres liens d
 - Il peut être masqué par défaut (classe `visually-hidden`) mais doit devenir visible lors du focus.
 - Si le contenu principal est un élément non interactif il faut ajouter `tabindex="-1"` pour rendre cet élément *focusable* (ex. sur une balise `<main>`).
 
-Voici le lien d'évitement employé au sein du [Design System du W3C](https://design-system.w3.org/) :
+Voici un exemple de liens d'évitement&#8239;:
 
 ```html
 <body>
-  <a href="#main" class="skip-link">Skip to content</a>
+  <ul class="skip-links">
+    <li><a href="#nav">Aller à la navigation</a></li>
+    <li><a href="#main">Aller au contenu</a></li>
+    <li><a href="#contact">Aller au formulaire de contact</a></li>
+  </ul>
   […]
   <main role="main" id="main" tabindex="-1">
 ```
 
 ```css
-.skip-link {
-  padding: 0.625em 0.9375em;
-  border: solid 3px #000000;
-  background-color: #f9dc4a;
-  color: #000000;
-  text-decoration: none;
-}
+@scope (.skip-links) {
+  :scope {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
 
-.skip-link:not(:focus, :active) {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  white-space: nowrap;
-  clip-path: inset(50%);
-}
+  a {
+    padding: 0.6rem 1rem;
+    background-color: mark;
+    border: 3px solid currentcolor;
+    color: marktext;
+    text-decoration: none;
 
-.skip-link:focus {
-  position: absolute;
-  z-index: 9999;
-  top: 0;
-  left: 0;
+    &:not(:focus, :active) {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      white-space: nowrap;
+      clip-path: inset(50%);
+    }
+
+    &:focus-visible {
+      position: absolute;
+      z-index: 9999;
+      top: 8px;
+      left: 8px;
+    }
+  }
 }
 ```
 
