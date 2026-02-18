@@ -4,7 +4,7 @@ Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacre
 
 - 📕 [Vue d'ensemble](global.md)
 - 📕 [Environnement de développement](environnement.md)
-- 📕 [Thème](themes.md)
+- 📕 [Thème](theme.md)
 - 📕 [Extensions](extensions.md)
 - 📕 [Accessibilité](accessibility.md)
 - 📕 [Sécurité](security.md)
