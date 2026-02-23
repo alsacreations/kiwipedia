@@ -9,10 +9,10 @@ Le routing de WordPress ne se définit pas dans un fichier de routes centralisé
 ```mermaid
 flowchart LR
     %% Définition des styles
-    classDef grey fill:#d1d5db,stroke:#9ca3af,stroke-width:1px,color:black;
-    classDef orange fill:#ffb366,stroke:#f59e0b,stroke-width:1px,color:black;
-    classDef blue fill:#60a5fa,stroke:#3b82f6,stroke-width:1px,color:black;
-    classDef indexStyle fill:#60a5fa,stroke:#3b82f6,stroke-width:2px,color:black;
+    classDef grey fill:#514d4c,stroke:#736f6e,stroke-width:1px,color:white;
+    classDef orange fill:#e3572c,stroke:#f6ccc0,stroke-width:1px,color:white;
+    classDef blue fill:#22084a,stroke:#998dab,stroke-width:1px,color:white;
+    classDef indexStyle fill:#22084a,stroke:#998dab,stroke-width:2px,color:white;
 
     %% Colonne 1 : Entrées (Gris)
     subgraph C1 [ ]
