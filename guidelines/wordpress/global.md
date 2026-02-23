@@ -78,15 +78,13 @@ Exemple de priorité (du plus spécifique au plus générique) pour une page :
 1. `page-$slug.php` (ex: `page-contact.php`) - le slug provenant de l'édition de la page elle-même (voir sidebar)
 2. `page-$id.php`
 3. `page.php`
-4. `singular.php`
-5. `index.php` (fallback ultime)
+4. `index.php` (fallback ultime)
 
 Pour les types de contenus personnalisés (CPT) :
 
 1. `single-$posttype.php` (ex: `single-movie.php`)
 2. `single.php`
-3. `singular.php`
-4. `index.php`
+3. `index.php`
 
 Ressources :
 
