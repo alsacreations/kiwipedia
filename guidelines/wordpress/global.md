@@ -33,6 +33,7 @@ flowchart LR
         P_slug[page-$slug.php]:::orange
         AR_type[archive-$posttype.php]:::orange
         C_slug[category-$slug.php]:::orange
+        S_type[single-$posttype.php]:::orange
     end
 
     %% Colonne 3 : Templates (Bleu)
@@ -59,7 +60,8 @@ flowchart LR
     P --> P_slug --> P_php
     AR --> AR_type --> AR_php
     C --> C_slug --> C_php
-    PO --> S_php
+    %% Correction ici : ajout de l'étape single-$posttype
+    PO --> S_type --> S_php
     R --> SEA_php
     E --> E_php
 
