@@ -30,7 +30,7 @@ Les dépendances fortement recommandées sont :
 - [vueuse/head](https://github.com/vueuse/head) : Balises meta, SEO.
 - [vueuse](https://vueuse.org/): Utilités composition API (debounce, click-outside, etc.)
 
-👉 Avant l'ajout d’une dépendance au projet (`npm install`) vérifier le poids avec <https://bundlephobia.com/>.
+👉 Avant l'ajout d’une dépendance au projet (`npm install`) vérifier le poids avec <https://bundlephobia.com/> ou inspecter avec <https://node-modules.dev/>.
 
 ## Composants : conventions et nommage
 
