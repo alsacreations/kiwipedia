@@ -86,6 +86,7 @@ Autres listes de ressources et checklists
 - <https://alialaa.github.io/css-grid-cheat-sheet/> Cheatsheet CSS Grid
 - <https://developer.mozilla.org/fr/docs/Learn/CSS/CSS_layout/Grids> Documentation MDN : Grilles avec CSS Grid Layout
 - <https://www.joshwcomeau.com/css/interactive-guide-to-grid/> Guide interactif à Grid
+- <https://webkit.org/blog/17660/introducing-css-grid-lanes/> CSS Grid Lanes
 
 ### Flexbox
 
