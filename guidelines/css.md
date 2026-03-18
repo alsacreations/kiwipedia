@@ -35,7 +35,7 @@ Nous privilégions deux approches CSS selon le contexte du projet&#8239;:
    - Projets nécessitant une grande flexibilité
    - Équipes familiarisées avec l'approche utilitaire
 
-> 💡 **Recommandation**&#8239;: Sauf contre-indication (client, projet historique), nous intégrons nos projets en CSS Vanilla (Tailwind optionnel mais disponible pour les cas d'usage spécifiques).
+> 💡 **Recommandation**&#8239;: Sauf contre-indication (client, projet historique), nous intégrons nos projets en CSS Vanilla sans framework (Sass, Tailwind). Un fichier de classes utilitaires minimales est disponible pour les cas d'usage spécifiques.
 
 ---
 
@@ -72,6 +72,7 @@ css/
 ├── natives.css       # Styles des éléments natifs (KNACSS)
 ├── layouts.css       # Styles des Layouts (Bretzel)
 ├── theme.css         # Variables Primitives et Tokens du projet
+├── utilities.css     # Classes utilitaires minimales
 └── styles.css        # Styles de base (body, typo, liens, etc.)
 ```
 
@@ -98,7 +99,7 @@ css/
 /* Ici un @import dans le layer(components) */
 
 /* Utilities */
-/* Ici un @import dans le layer(utilities) */
+@import "utilities.css" layer(utilities);
 ```
 
 > 📚  **Outil**&#8239;: [Primary](https://primary.alsacreations.com/) est un configurateur CSS pour les projets Alsacréations. Il permet de générer des fichiers CSS conformes aux normes de l'équipe.
