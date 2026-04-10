@@ -295,6 +295,18 @@ Définir le chemin vers l'exécutable PHP dans les paramètres&#8239;:
 }
 ```
 
+### Ouvrir SVG plutôt que les visualiser
+
+```json
+{
+  "workbench.editorAssociations": {
+    "*.svg": "default"
+  }
+}
+```
+
+Source : <https://dev.to/vrauuss_softwares/how-to-disable-svg-preview-mode-3ph5>
+
 ### Workspace vs User Settings
 
 | Type | Portée | Usage recommandé |
