@@ -247,8 +247,6 @@ Accéder à ses préférences utilisateur : `⌘,` ou `Ctrl+Maj+P` puis taper `P
 ```json
 {
   "files.exclude": {
-    "**/node_modules": true,
-    "**/dist": true,
     "**/.git": true
   },
   "search.exclude": {
