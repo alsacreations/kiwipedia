@@ -240,6 +240,8 @@ Définir le chemin vers l'exécutable PHP dans les paramètres&#8239;:
 
 ## Optimisation et personnalisation
 
+Accéder à ses préférences utilisateur : `⌘,` ou `Ctrl+Maj+P` puis taper `Preferences: Open User Settings (JSON)`
+
 ### Réglages de performance
 
 ```json
