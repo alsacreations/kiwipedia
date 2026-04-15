@@ -2,6 +2,15 @@
 
 Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/) concernant **"Git"**. Ces indications sont destinées à évoluer dans le temps et à s'adapter à chaque nouveau projet.
 
+## Résumé
+
+- Utilise le format des conventional commits : `type(scope): description`
+- Rédige à l’impératif : « Ajoute une fonctionnalité » et non « Fonctionnalité ajoutée »
+- Limite la ligne de sujet à 150 caractères maximum
+- Utilise les types suivants : feat (fonctionnalité), fix (correction), docs (documentation), style (style de texte, indentation), refactor (refactorisation), perf (performance), test (test), chore (tâches diverses), ci (intégration continue)
+- Ajoute une étendue si pertinent (ex. : api, ui, auth)
+- **Rédige le message de commit en français**
+
 ## Conventional Commits
 
 ▶️ Nous respectons les *Conventional Commits* <https://www.conventionalcommits.org/fr/v1.0.0/>
@@ -84,7 +93,7 @@ git commit
 
 Pour éviter les conflits, il est recommandé de faire des `git pull` fréquents et de communiquer avec votre équipe sur les modifications apportées aux fichiers partagés.
 
-💡 Git dispose d'une fonctionnalité appelée "rerere" (_reuse recorded resolution_) qui peut aider à automatiser la résolution des conflits récurrents. Lorsque cette fonctionnalité est activée, Git enregistre les résolutions de conflits que vous effectuez et les réutilise automatiquement si les mêmes conflits se produisent à nouveau.
+💡 Git dispose d'une fonctionnalité appelée "rerere" (*reuse recorded resolution*) qui peut aider à automatiser la résolution des conflits récurrents. Lorsque cette fonctionnalité est activée, Git enregistre les résolutions de conflits que vous effectuez et les réutilise automatiquement si les mêmes conflits se produisent à nouveau.
 
 ```sh
 git config --global rerere.enabled true
