@@ -130,37 +130,9 @@ article {
 }
 ```
 
-#### Convention BEM adaptée
+#### Convention de nommage avec `@scope ()`
 
-```css
-/* Block */
-.card {
-}
-
-/* Element */
-.card-title {
-}
-.card-content {
-}
-
-/* Modifier */
-.card--featured {
-}
-.card--disabled {
-}
-
-/* État */
-.is-active {
-}
-.is-loading {
-}
-.has-error {
-}
-```
-
-#### Alternative Moderne à BEM : l'usage de `@scope ()`
-
-L'introduction de `@scope` dans nos projets vise à résoudre les problèmes de **nommage**, de **proximité** et d'**isolation** que les classes BEM ou le nesting classique ne peuvent gérer nativement&#8239;:
+L'introduction de `@scope` dans nos projets vise à résoudre les problèmes de **nommage**, de **proximité** et d'**isolation** que les classes BEM ou le nesting classique ne peuvent pas gérer nativement&#8239;:
 
 - Nommage simple&#8239;: On évite les classes à rallonge type `.card-header-inner__title`, car `.title` fonctionne tout en gardant une isolation parfaite dans le scope de la carte.
 - Nommage réutilisable&#8239;: `.title`, `.media`, `.header`, `.footer`, `.content`, `.desc` sont des classes génériques qui peuvent être utilisées dans différents scopes sans conflit.
