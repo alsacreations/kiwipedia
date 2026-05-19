@@ -1,7 +1,6 @@
 # Routine d'initialisation d'un projet
 
-> 📋 À propos  
-> Cette routine constitue une base commune à toutes nos typologies de projets (statique, Nuxt, WordPress). Elle standardise l’environnement, les outils de qualité, la structure CSS et les options liées.
+Cette routine constitue une base commune à toutes nos typologies de projets (statique, Nuxt, WordPress). Elle standardise l’environnement, les outils de qualité, la structure CSS et les options liées.
 
 > [!IMPORTANT]
 > Notre outil [Primary](https://primary.alsacreations.com/) génère automatiquement les fichiers de configuration nécessaires (linter, formatters, etc.) pour la majorité des projets, ainsi que les fichiers CSS (`reset.css`, `natives.css`, `layouts.css`, `utilities.css`, `theme.css`).
