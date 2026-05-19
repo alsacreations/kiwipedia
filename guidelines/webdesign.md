@@ -1,6 +1,12 @@
-# Guidelines : Webdesign
+# Webdesign
 
-Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/) concernant **"le Webdesign"**. Ces indications sont destinées à évoluer dans le temps et à s'adapter à chaque nouveau projet.
+> Statut : stable · Niveau : tous
+
+**TL;DR** — Processus webdesign Alsacréations : arborescence, moodboard, wireframes, maquettes (Figma), design system, livrables et inspection en intégration.
+
+Ce document rassemble les bonnes pratiques appliquées par l'agence [Alsacreations.fr](https://www.alsacreations.fr/) concernant **le webdesign**. Il évolue dans le temps et s'adapte à chaque nouveau projet.
+
+---
 
 ## Définitions, outils, projets
 
@@ -203,7 +209,7 @@ Attention : ne pas se fier au rendu des couleurs avec les pipettes des navigateu
 
 Une grille de mise en forme est une aide précieuse pour le/la Designer (respect des alignements et des proportions). Le/la designer choisit son format de grille colonnes/tailles, l’applique uniformément à l’ensemble des maquettes et en informe l’intégrateur/trice.
 
-L’intégrateur/trice va raisonner en “composants” plutôt qu’en mise en page globale et s’adapte à la grille proposée par le/la Designer.
+L’intégrateur/trice va raisonner en “composants” plutôt qu’en mise en page globale et s'adapte à la grille proposée par le/la Designer.
 
 ### Polices de caractère
 
@@ -287,6 +293,15 @@ Les formats privilégiés à transmettre à l'intégrateur/trice :
 
 ## Autres ressources et bonnes pratiques
 
-- [Checklist Design](https://www.checklist.design/)
-- [Visual design rules you can safely follow every time](https://anthonyhobday.com/sideprojects/saferules/)
-- [Building Better UI Designs With Layout Grids](https://www.smashingmagazine.com/2017/12/building-better-ui-designs-layout-grids/)
+- 🔗 [Checklist Design](https://www.checklist.design/)
+- 🔗 [Visual design rules you can safely follow every time](https://anthonyhobday.com/sideprojects/saferules/)
+- 🔗 [Building Better UI Designs With Layout Grids](https://www.smashingmagazine.com/2017/12/building-better-ui-designs-layout-grids/)
+
+---
+
+## Voir aussi
+
+- [Accessibilité](accessibility.md) — Contrastes et lisibilité dès la conception.
+- [Icônes](icons.md) — Production graphique des pictogrammes.
+- [Écoconception](ecoconception.md) — Choix de design responsables.
+- [CSS](css.md) — Du design tokens au code.

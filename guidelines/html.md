@@ -1,7 +1,10 @@
-# Guidelines HTML
+# HTML
 
-> 📋 **À propos de ce document**  
-> Ce document rassemble les bonnes pratiques HTML appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/). Ces guidelines sont destinées à évoluer dans le temps et à s'adapter à chaque nouveau projet, en garantissant la validité, l'accessibilité et les performances.
+> Statut : stable · Niveau : avancé
+
+**TL;DR** — Sémantique, structure et métadonnées HTML pour des documents valides, accessibles et performants. Standards WHATWG, encodage UTF-8, doctype HTML5.
+
+Ce document rassemble les bonnes pratiques HTML appliquées par l'agence [Alsacreations.fr](https://www.alsacreations.fr/). Il évolue dans le temps et s'adapte à chaque nouveau projet.
 
 ## Table des matières
 
@@ -449,5 +452,14 @@ img {
 
 > 📚 **Ressources complémentaires**
 >
-> - [HTMLHead.dev](https://htmlhead.dev/) : Référence complète pour `<head>`
-> - [Josh Buchea HEAD](https://github.com/joshbuchea/HEAD) : Collection métadonnées
+> - 🔗 [HTMLHead.dev](https://htmlhead.dev/) — Référence complète pour `<head>`.
+> - 🔗 [Josh Buchea HEAD](https://github.com/joshbuchea/HEAD) — Collection métadonnées.
+
+---
+
+## Voir aussi
+
+- [CSS](css.md) — Architecture, variables, dark mode.
+- [Accessibilité](accessibility.md) — Sémantique et patterns ARIA.
+- [SEO](seo.md) — Métadonnées et référencement.
+- [Performances](performances.md) — Optimisation des médias et du chargement.

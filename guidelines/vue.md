@@ -1,6 +1,12 @@
-# Guidelines : VueJS, Nuxt et Front-End en général
+# Vue.js, Nuxt et Front-End
 
-Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/) concernant **"VueJS"**. Ces indications sont destinées à évoluer dans le temps et à s'adapter à chaque nouveau projet.
+> Statut : stable · Niveau : avancé
+
+**TL;DR** — Conventions Vue.js et Nuxt chez Alsacréations : extensions VS Code, installation, architecture des composants, conventions de nommage, modales et téléportations.
+
+Ce document rassemble les bonnes pratiques appliquées par l'agence [Alsacreations.fr](https://www.alsacreations.fr/) concernant **Vue.js**. Il évolue dans le temps et s'adapte à chaque nouveau projet.
+
+---
 
 ## Extensions Visual Studio Code recommandées
 
@@ -252,3 +258,12 @@ Gestion des modales avec [Teleport](https://vuejs.org/guide/built-ins/teleport.h
   </modal>
 </Teleport>
 ```
+
+---
+
+## Voir aussi
+
+- [JavaScript](javascript.md) — Idiomes et bonnes pratiques.
+- [TypeScript](typescript.md) — Typage des composants.
+- [Accessibilité](accessibility.md) — Patterns ARIA dans les composants.
+- [Visual Studio Code](vscode.md) — Configuration et extensions Vue/Volar.

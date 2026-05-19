@@ -1,12 +1,18 @@
-# Guidelines : Accessibilité
+# Accessibilité
 
-Bonnes pratiques d'accessibilité numérique appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/), évoluant dans le temps et adaptées à chaque nouveau projet.
+> Statut : stable · Niveau : avancé
+
+**TL;DR** — Référence complète d’accessibilité numérique chez Alsacréations : checklist progressive (niveaux 1, 2, 3), explications techniques, patterns ARIA et ressources. Aligné RGAA et WCAG.
+
+Bonnes pratiques d'accessibilité numérique appliquées par l'agence [Alsacreations.fr](https://www.alsacreations.fr/), évoluant dans le temps et adaptées à chaque nouveau projet.
 
 Ce document est divisé en trois parties :
 
 1. La [Checklist](#checklist-niveau-1-base-) (ensemble des points à respecter)
 2. Les [Explications techniques détaillées](#explications-techniques-détaillées) (s'y référer lorsqu'un point de la Checklist n'est pas clair)
 3. Les [Ressources d'accessibilité](#ressources-générales) (liens et outils)
+
+---
 
 ## Checklist Niveau 1 (base) 🥈
 
@@ -1123,3 +1129,13 @@ Bonnes pratiques à respecter lorsqu'on contribue au contenu, notamment à l'aid
 - Utiliser des contrastes de couleurs suffisants (entre le texte et le fond).
 - Ne pas véhiculer d'information uniquement par la couleur.
 - Ne pas faire référence à un élément en se basant sur sa position, sa couleur ou sa forme.
+
+---
+
+## Voir aussi
+
+- [HTML](html.md) — Sémantique et structure.
+- [CSS](css.md) — Focus visible, contrastes, prefers-reduced-motion.
+- [JavaScript](javascript.md) — Patterns ARIA et navigation clavier.
+- [Webdesign](webdesign.md) — Contrastes et lisibilité dès la conception.
+- [SEO](seo.md) — Recouvrement entre accessibilité et référencement.

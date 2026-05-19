@@ -1,6 +1,12 @@
-# Guidelines : RGPD
+# RGPD
 
-Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/) concernant **"[Le règlement général sur la protection des données (CNIL)](https://www.cnil.fr/fr/reglement-europeen-protection-donnees) ou RGPD"**. Ces indications sont destinées à évoluer dans le temps et à s'adapter à chaque nouveau projet.
+> Statut : stable · Niveau : avancé
+
+**TL;DR** — Conformité RGPD chez Alsacréations : droits des internautes, gestion du consentement, cookies, services tiers (reCAPTCHA, YouTube, Google Fonts), notifications de fuite.
+
+Ce document rassemble les bonnes pratiques appliquées par l'agence [Alsacreations.fr](https://www.alsacreations.fr/) concernant le [Règlement général sur la protection des données (RGPD)](https://www.cnil.fr/fr/reglement-europeen-protection-donnees). Il évolue dans le temps et s'adapte à chaque nouveau projet.
+
+---
 
 ## Ressources
 
@@ -155,3 +161,11 @@ S'il y a fuite de données personnelles constituant un risque au regard de la vi
 
 * Prévenir les personnes concernées sous un délai de 72h
 * Avertir la [CNIL : Notification d'une violation de données personnelles](https://notifications.cnil.fr/notifications/index)
+
+---
+
+## Voir aussi
+
+* [Sécurité HTTP](http-security.md) — Sécurisation côté serveur.
+* [Écoconception](ecoconception.md) — Démarche de sobriété et conformité.
+* [SEO](seo.md) — Cookies, Analytics et conformité.

@@ -1,8 +1,14 @@
-# Guidelines : Sécurité front-end (HTTP)
+# Sécurité front-end (HTTP)
 
-Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/) concernant **"la Sécurité HTTP"**. Ces indications sont destinées à évoluer dans le temps et à s'adapter à chaque nouveau projet.
+> Statut : stable · Niveau : avancé
 
-Outils de test :
+**TL;DR** — Sécurisation front d’Alsacréations : en-têtes HTTP, Content Security Policy, HSTS, CORS, SSL. Outils de test (Mozilla Observatory, securityheaders.com, csp-evaluator…).
+
+Ce document rassemble les bonnes pratiques appliquées par l'agence [Alsacreations.fr](https://www.alsacreations.fr/) concernant **la sécurité HTTP**. Il évolue dans le temps et s'adapte à chaque nouveau projet.
+
+---
+
+## Outils de test
 
 * <https://developer.mozilla.org/fr/observatory>
 * <https://cryptcheck.fr/>
@@ -235,3 +241,12 @@ SetEnvIf Origin "http(s)?://(.*.domaine.test)$" AccessControlAllowOrigin=$0
 SetEnvIf Origin "http(s)?://(.*.domaine.com)$" AccessControlAllowOrigin=$0
 Header set Access-Control-Allow-Origin %{AccessControlAllowOrigin}e env=AccessControlAllowOrigin
 ```
+
+---
+
+## Voir aussi
+
+* [RGPD](rgpd.md) — Conformité et sécurisation des données.
+* [PHP / MySQL](php-mysql.md) — Sécurité côté serveur.
+* [Cheatsheet htaccess](../cheatsheets/htaccess.md)
+* [Performances](performances.md) — Cache et en-têtes liés.

@@ -1,7 +1,10 @@
-# Guidelines Visual Studio Code
+# Visual Studio Code
 
-> 📋 **À propos de ce document**  
-> Ce document rassemble les bonnes pratiques Visual Studio Code appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/). Ces guidelines standardisent l'environnement de développement pour garantir cohérence et qualité du code en équipe.
+> Statut : stable · Niveau : tous
+
+**TL;DR** — Configuration de référence de VS Code pour les projets Alsacréations : extensions essentielles, raccourcis, settings d'équipe vs. utilisateur, langages.
+
+Ce document rassemble les bonnes pratiques Visual Studio Code appliquées par l'agence [Alsacreations.fr](https://www.alsacreations.fr/). Il standardise l'environnement de développement pour garantir cohérence et qualité du code en équipe.
 
 ## Table des matières
 
@@ -320,6 +323,14 @@ Source : <https://dev.to/vrauuss_softwares/how-to-disable-svg-preview-mode-3ph5>
 
 > 📚 **Ressources complémentaires**
 >
-> - [VS Code Keyboard Shortcuts Reference](https://code.visualstudio.com/docs/getstarted/keybindings#_keyboard-shortcuts-reference)
-> - [Configuration EditorConfig](https://editorconfig.org/)
-> - [Marketplace Extensions](https://marketplace.visualstudio.com/vscode)
+> - 🔗 [VS Code Keyboard Shortcuts Reference](https://code.visualstudio.com/docs/getstarted/keybindings#_keyboard-shortcuts-reference)
+> - 🔗 [Configuration EditorConfig](https://editorconfig.org/)
+> - 🔗 [Marketplace Extensions](https://marketplace.visualstudio.com/vscode)
+
+---
+
+## Voir aussi
+
+- [Initialisation de projet](../starters/project-init.md) — Bootstrap d’un nouveau projet.
+- [Workflow Git](git.md) — Conventions de commits.
+- [Conventions de nommage](naming-conventions.md) — Indentation, casse, langue.

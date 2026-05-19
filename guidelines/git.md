@@ -1,6 +1,12 @@
-# Guidelines : Git
+# Git
 
-Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/) concernant **"Git"**. Ces indications sont destinées à évoluer dans le temps et à s'adapter à chaque nouveau projet.
+> Statut : stable · Niveau : tous
+
+**TL;DR** — Conventions Git Alsacréations : Conventional Commits en français, types `feat`/`fix`/`docs`/`refactor`/…, scope optionnel, gestion des conflits, `rerere`.
+
+Ce document rassemble les bonnes pratiques appliquées par l'agence [Alsacreations.fr](https://www.alsacreations.fr/) concernant **Git**. Il évolue dans le temps et s'adapte à chaque nouveau projet.
+
+---
 
 ## Résumé
 
@@ -98,3 +104,10 @@ Pour éviter les conflits, il est recommandé de faire des `git pull` fréquents
 ```sh
 git config --global rerere.enabled true
 ```
+
+---
+
+## Voir aussi
+
+- [Cheatsheet Git](../cheatsheets/git.md) — Aide-mémoire des commandes courantes.
+- [Conventions de nommage](naming-conventions.md) — Langue et casse des branches.

@@ -1,6 +1,12 @@
-# Guidelines : WordPress
+# WordPress
 
-Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/) concernant **"WordPress"**.
+> Statut : stable · Niveau : avancé
+
+**TL;DR** — Index des fiches WordPress d’Alsacréations : vue d’ensemble, environnement, thème, extensions, accessibilité, sécurité, performance.
+
+Ces guidelines rassemblent les bonnes pratiques appliquées par l'agence [Alsacreations.fr](https://www.alsacreations.fr/) concernant **WordPress**. Elles évoluent dans le temps et s'adaptent à chaque nouveau projet.
+
+## Sommaire
 
 - 📕 [Vue d'ensemble](global.md)
 - 📕 [Environnement de développement](environnement.md)
@@ -9,5 +15,13 @@ Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacre
 - 📕 [Accessibilité](accessibility.md)
 - 📕 [Sécurité](security.md)
 - 📕 [Performance](performance.md)
+- 📕 [Recette & mise en production](recette-mep.md)
 
-Ces indications sont destinées à évoluer dans le temps et à s'adapter à chaque nouveau projet.
+---
+
+## Voir aussi
+
+- [PHP / MySQL](../php-mysql.md) — Stack sous-jacente.
+- [Accessibilité](../accessibility.md) — Référence générale.
+- [Sécurité HTTP](../http-security.md) — En-têtes et CSP.
+- [Performances](../performances.md) — Optimisation front et back.

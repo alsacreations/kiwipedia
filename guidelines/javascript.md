@@ -1,6 +1,12 @@
-# Guidelines : JavaScript
+# JavaScript
 
-Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/) concernant **"JavaScript"**. Ces indications sont destinées à évoluer dans le temps et à s'adapter à chaque nouveau projet.
+> Statut : stable · Niveau : intermédiaire
+
+**TL;DR** — Conventions JavaScript appliquées par Alsacréations : amélioration progressive, syntaxe, linting.
+
+Ce document rassemble les bonnes pratiques appliquées par l'agence [Alsacreations.fr](https://www.alsacreations.fr/) concernant **JavaScript**. Il évolue dans le temps et s'adapte à chaque nouveau projet.
+
+---
 
 ## Ressources
 
@@ -201,3 +207,12 @@ Voir aussi sur le dépôt Github [https://github.com/alsacreations/pepin](https:
 - Simplifier au maximum le code en découpant par actions simples.
 
 Ne pas hésiter à utiliser des plugins éprouvés mais toujours tester s’ils peuvent être multiples sur une même page.
+
+---
+
+## Voir aussi
+
+- [TypeScript](typescript.md) — Typage et configuration.
+- [Vue.js](vue.md) — Architecture et composants.
+- [Accessibilité](accessibility.md) — Patterns ARIA et clavier.
+- [Conventions de nommage](naming-conventions.md) — Casse et nommage des identifiants.

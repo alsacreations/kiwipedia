@@ -1,11 +1,17 @@
-# Guidelines : Icônes
+# Icônes
 
-Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/) concernant **"les Icônes"**. Ces indications sont destinées à évoluer dans le temps et à s'adapter à chaque nouveau projet.
+> Statut : stable · Niveau : intermédiaire
 
-Voir aussi
+**TL;DR** — Bonnes pratiques d'intégration et d'optimisation des icônes SVG chez Alsacréations : techniques d'intégration (img, inline, sprite), réduction de la syntaxe SVG via SVGOMG.
 
-- <https://css-tricks.com/tools-for-optimizing-svg/>
-- <https://uxdesign.cc/8-tricks-for-svg-optimization-c2c519c10c1e>
+Ce document rassemble les bonnes pratiques appliquées par l'agence [Alsacreations.fr](https://www.alsacreations.fr/) concernant **les icônes**. Il évolue dans le temps et s'adapte à chaque nouveau projet.
+
+## Ressources
+
+- 🔗 [Tools for Optimizing SVG — CSS-Tricks](https://css-tricks.com/tools-for-optimizing-svg/)
+- 🔗 [8 tricks for SVG optimization](https://uxdesign.cc/8-tricks-for-svg-optimization-c2c519c10c1e)
+
+---
 
 ## Optimisation
 
@@ -34,3 +40,12 @@ Diverses techniques complémentaires.
   - Simplifier encore ce que svgomg n'a pas pu remarquer, notamment doublons/imbrications de `<g>`.
 - Ouvrir dans un éditeur graphique tel que Figma
   - Supprimer les formes inutiles, recadrer, etc.
+
+---
+
+## Voir aussi
+
+- [HTML](html.md) — Sémantique des médias.
+- [CSS](css.md) — Stylisation des SVG via `currentColor`.
+- [Webdesign](webdesign.md) — Production graphique des pictogrammes.
+- [Performances](performances.md) — Réduire le poids des assets.

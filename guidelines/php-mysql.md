@@ -1,9 +1,17 @@
-# Guidelines : PHP / MySQL
+# PHP / MySQL
 
-Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/) concernant **"PHP / MySQL"**. Ces indications sont destinées à évoluer dans le temps et à s'adapter à chaque nouveau projet.
+> Statut : stable · Niveau : avancé
 
-- On suit [PSR-12: Extended Coding Style](https://www.php-fig.org/psr/psr-12/)
-- Voir aussi [https://phptherightway.com/](https://phptherightway.com/)
+**TL;DR** — Conventions PHP / MySQL d’Alsacréations : PSR-12, typage strict, PDO préparé, migrations versionnées, conventions de nommage et architecture.
+
+Ce document rassemble les bonnes pratiques appliquées par l'agence [Alsacreations.fr](https://www.alsacreations.fr/) concernant **PHP / MySQL**. Il évolue dans le temps et s'adapte à chaque nouveau projet.
+
+## Ressources
+
+- 🔗 [PSR-12: Extended Coding Style](https://www.php-fig.org/psr/psr-12/)
+- 🔗 [PHP The Right Way](https://phptherightway.com/)
+
+---
 
 ## Généralités
 
@@ -293,3 +301,12 @@ $query->execute();
 ### Migrations et déploiement
 
 - Versionner le schéma avec des migrations (Doctrine Migrations, Laravel Migrations).
+
+---
+
+## Voir aussi
+
+- [WordPress](wordpress/README.md) — Stack PHP/MySQL spécifique.
+- [Sécurité HTTP](http-security.md) — En-têtes, CSP, sécurisation côté serveur.
+- [Performances](performances.md) — Optimisations back-end.
+- [RGPD](rgpd.md) — Stockage et traitement des données personnelles.

@@ -1,6 +1,12 @@
 # Conventions Générales de Nommage
 
-Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/) concernant **"les Conventions de nommage"**. Ces indications sont destinées à évoluer dans le temps et à s'adapter à chaque nouveau projet.
+> Statut : stable · Niveau : tous
+
+**TL;DR** — Conventions transverses à appliquer à tout projet  choix de la langue, formatage, casse des fichiers, noms de variables, classes et composants.
+
+Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/) concernant **les conventions de nommage**. Ces indications sont destinées à évoluer dans le temps et à s'adapter à chaque nouveau projet.
+
+---
 
 ## Langue
 
@@ -132,7 +138,15 @@ Privilégier le même **motif cohérent** pour les environnements à des adresse
 
 Les règles de nommage particulières à chaque langage sont consignées dans leurs Guidelines respectives :
 
-- [Guidelines HTML](html.md)
-- [Guidelines CSS](css.md)
-- [Guidelines JavaScript](javascript.md)
-- [Guidelines WordPress](wordpress.md)
+- [HTML](html.md)
+- [CSS](css.md)
+- [JavaScript](javascript.md)
+- [WordPress](wordpress/README.md)
+
+---
+
+## Voir aussi
+
+- [Guide de style éditorial](../STYLE.md) — Conventions d’écriture des fiches Kiwipedia.
+- [Workflow Git](git.md) — Conventions de commits et de branches.
+- [Visual Studio Code](vscode.md) — Configuration de l’éditeur.

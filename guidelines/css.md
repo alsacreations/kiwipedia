@@ -1,7 +1,10 @@
-# Guidelines CSS
+# CSS
 
-> 📋 **À propos de ce document**  
-> Ce document rassemble les bonnes pratiques CSS appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/). Ces guidelines sont le fruit de plusieurs années d'expérience avec diverses méthodologies (OOCSS, BEM, CubeCSS) et frameworks (Bootstrap, Tailwind, UnoCSS). Elles évoluent constamment pour s'adapter à chaque nouveau projet.
+> Statut : stable · Niveau : avancé
+
+**TL;DR** — Architecture CSS moderne (CSS natif privilégié), custom properties, nesting, dark mode, design tokens et responsive. Fruit de l'expérience cumulée d'Alsacréations sur les frameworks et le code CSS natif.
+
+Ce document rassemble les bonnes pratiques CSS appliquées par l'agence [Alsacreations.fr](https://www.alsacreations.fr/). Il évolue constamment et s'adapte à chaque nouveau projet.
 
 ## Table des matières
 
@@ -703,3 +706,12 @@ Comme pour les fontes classiques, le format `.woff2` ainsi que l'hébergement de
   font-weight: 625; /* Valeur précise */
 }
 ```
+
+---
+
+## Voir aussi
+
+- [HTML](html.md) — Sémantique et structure de document.
+- [Accessibilité](accessibility.md) — Contrastes, focus visible, motion.
+- [Performances](performances.md) — Critical CSS, optimisations.
+- [Cheatsheet Flexbox](../cheatsheets/flexbox-cheatsheet.png) · [Cheatsheet Grid](../cheatsheets/grid-cheatsheet.png)

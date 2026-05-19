@@ -1,6 +1,12 @@
-# Guidelines : Performances web
+# Performances web
 
-Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/) concernant **"les Performances web"**. Ces indications sont destinées à évoluer dans le temps et à s'adapter à chaque nouveau projet.
+> Statut : stable · Niveau : avancé
+
+**TL;DR** — Checklist progressive (3 niveaux) des optimisations de performance : minification, cache, formats d’images, lazy-loading, Core Web Vitals, outils de mesure.
+
+Ce document rassemble les bonnes pratiques appliquées par l'agence [Alsacreations.fr](https://www.alsacreations.fr/) concernant **les performances web**. Il évolue dans le temps et s'adapte à chaque nouveau projet.
+
+---
 
 ## Checklist Niveau 1 (base) 🥉
 
@@ -254,3 +260,13 @@ Permet le test de plusieurs adresses en parallèle contrairement à apachebench,
 ```sh
 docker run -it --rm -v $(pwd):/app ecliptik/docker-siege -c 20 --reps=once -f /app/urls.txt
 ```
+
+---
+
+## Voir aussi
+
+- [HTML](html.md) — Optimisation des médias (images, vidéos).
+- [CSS](css.md) — Critical CSS, animations performantes.
+- [Écoconception](ecoconception.md) — Sobriété et performance vont de pair.
+- [SEO](seo.md) — Performance comme facteur de classement.
+- [Cheatsheet Docker](../cheatsheets/docker.md)

@@ -1,6 +1,10 @@
-# Guidelines : Interopérabilité RGI
+# Interopérabilité (RGI)
 
-Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/) concernant **"l'Interopérabilité"**. Ces indications sont destinées à évoluer dans le temps et à s'adapter à chaque nouveau projet.
+> Statut : stable · Niveau : intermédiaire
+
+**TL;DR** — Bonnes pratiques d'interopérabilité chez Alsacréations selon le RGI : standards ouverts (W3C, ECMA, IETF, ISO), formats privilégiés, REST/JSON, encodage UTF-8.
+
+Ce document rassemble les bonnes pratiques appliquées par l'agence [Alsacreations.fr](https://www.alsacreations.fr/) concernant **l'interopérabilité**. Il évolue dans le temps et s'adapte à chaque nouveau projet.
 
 Guidelines pour respecter au mieux le [RGI](https://www.numerique.gouv.fr/publications/interoperabilite/)
 
@@ -50,3 +54,11 @@ Pour les documents bureautiques : [OpenDocument](https://fr.wikipedia.org/wiki/O
 * Privilégier IPv6 par défaut.
 * Toujours encoder en [UTF-8](https://fr.wikipedia.org/wiki/UTF-8).
 * Pour les médias audio/vidéo, situation plus délicate car souvent soumis à des licences restrictives, nous privilégions le standard "de facto" et proposons des alternatives techniques le cas échéant.
+
+---
+
+## Voir aussi
+
+* [Écoconception](ecoconception.md) — Standards et durabilité.
+* [HTML](html.md) — Conformité aux standards W3C.
+* [Sécurité HTTP](http-security.md) — Protocoles et standards de sécurité.

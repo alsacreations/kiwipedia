@@ -1,6 +1,12 @@
-# Guidelines : E-mailing
+# E-mailing
 
-Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/) concernant **"E-mailing"**. Ces indications sont destinées à évoluer dans le temps et à s'adapter à chaque nouveau projet.
+> Statut : stable · Niveau : intermédiaire
+
+**TL;DR** — Bonnes pratiques pour des e-mails HTML compatibles avec la jungle des clients (Outlook, Gmail, Apple Mail…) : tableaux, styles inline, hacks Outlook, frameworks.
+
+Ce document rassemble les bonnes pratiques appliquées par l'agence [Alsacreations.fr](https://www.alsacreations.fr/) concernant **l’e-mailing**. Il évolue dans le temps et s'adapte à chaque nouveau projet.
+
+---
 
 ## Ressources et outils
 
@@ -297,3 +303,11 @@ Et voici une version sous forme de **Composant** :
   </tr>
 </table>
 ```
+
+---
+
+## Voir aussi
+
+- [HTML](html.md) — Sémantique de base.
+- [Accessibilité](accessibility.md) — Contrastes et lecteurs d’écran dans les mails.
+- [Webdesign](webdesign.md) — Maquettage adapté aux contraintes des clients mails.

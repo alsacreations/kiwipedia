@@ -1,6 +1,12 @@
-# Guidelines : SEO
+# SEO
 
-Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/) concernant **"le SEO"**. Ces indications sont destinées à évoluer dans le temps et à s'adapter à chaque nouveau projet.
+> Statut : stable · Niveau : intermédiaire
+
+**TL;DR** — Bonnes pratiques de référencement naturel chez Alsacréations : sémantique HTML, métadonnées, architecture, robots.txt, sitemap, données structurées.
+
+Ce document rassemble les bonnes pratiques appliquées par l'agence [Alsacreations.fr](https://www.alsacreations.fr/) concernant **le SEO**. Il évolue dans le temps et s'adapte à chaque nouveau projet.
+
+---
 
 ## Niveau 1 (base) 🥉
 
@@ -105,3 +111,11 @@ Imbrication de deux types
 
 * [Google Search : robots.txt](https://developers.google.com/search/blog/2025/02/intro-robots-refresher?hl=fr)
 * [Google Search : Granularité au niveau de la page](https://developers.google.com/search/blog/2025/03/robots-refresher-page-level?hl=fr)
+
+---
+
+## Voir aussi
+
+* [HTML](html.md) — Sémantique et métadonnées.
+* [Performances](performances.md) — Core Web Vitals et classement.
+* [Accessibilité](accessibility.md) — Recouvrement entre a11y et SEO.

@@ -1,11 +1,15 @@
-# Guidelines : Ecoconception
+# Écoconception
 
-Actions mises en place par Alsacréations pour répondre au [Référentiel général d'écoconception de services numériques (RGESN)](https://ecoresponsable.numerique.gouv.fr/publications/referentiel-general-ecoconception/)
+> Statut : stable · Niveau : avancé
 
-Voir aussi :
+**TL;DR** — Démarche d’écoconception chez Alsacréations alignée sur le RGESN : spécification, réalisation, finalisation. Synthèse, checklist, ressources.
 
-* [Les 115 bonnes pratiques](https://github.com/cnumr/best-practices)
-* Empreinte carbone des appareils <https://impactco2.fr/numerique> (ADEME)
+Actions mises en place par Alsacréations pour répondre au [Référentiel général d’écoconception de services numériques (RGESN)](https://ecoresponsable.numerique.gouv.fr/publications/referentiel-general-ecoconception/).
+
+## Ressources
+
+* 🔗 [Les 115 bonnes pratiques](https://github.com/cnumr/best-practices)
+* 🔗 [Empreinte carbone des appareils — ADEME](https://impactco2.fr/numerique)
 
 ---
 
@@ -25,7 +29,7 @@ Voir aussi :
 
 📄 Définis durant l'élaboration de la _Méthodologie_.
 
-### 1.4 + 1.5 + 1.6 Le service numérique a-t-il défini la liste des profils de matériel que les utilisateurs vont pouvoir employer pour y accéder ? Le service numérique est-il utilisable sur des terminaux âgés de 5 ans ou plus ? Le service numérique s’adapte-t-il à différents types de terminaux d’affichage ?
+### 1.4 + 1.5 + 1.6 Le service numérique a-t-il défini la liste des profils de matériel que les utilisateurs vont pouvoir employer pour y accéder ? Le service numérique est-il utilisable sur des terminaux âgés de 5 ans ou plus ? Le service numérique s'adapte-t-il à différents types de terminaux d’affichage ?
 
 📄 Critères techniques notamment de **support des navigateurs et smartphones** précisés en amont dans la _Méthodologie_.
 
@@ -286,3 +290,12 @@ Avec les frameworks front-end (Vue, Nuxt, React), le code inutile est automatiqu
 * Phase finalisation
   1. Publier la déclaration d'éco-conception.
   2. Optimiser et affiner, post-déploiement notamment côté hébergement.
+
+---
+
+## Voir aussi
+
+* [Performances](performances.md) — Optimisations qui réduisent l’empreinte.
+* [Accessibilité](accessibility.md) — Sobriété et accessibilité convergent.
+* [Webdesign](webdesign.md) — Choix de design responsables.
+* [Interopérabilité](interoperabilite.md) — Standards ouverts et durabilité.

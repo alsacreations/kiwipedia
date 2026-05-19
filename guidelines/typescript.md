@@ -1,15 +1,22 @@
-# Guidelines : TypeScript
+# TypeScript
 
-Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/) concernant **"TypeScript"**. Ces indications sont destinées à évoluer dans le temps et à s'adapter à chaque nouveau projet.
+> Statut : stable · Niveau : intermédiaire
 
-🕹️ Pour s'entraîner : <https://github.com/type-challenges/type-challenges>
+**TL;DR** — Bonnes pratiques TypeScript chez Alsacréations : typage strict, génériques, fonctions type-safe. Les règles JavaScript s'appliquent en plus.
 
-- <https://www.julienpradet.fr/tutoriels/typescript-bonnes-pratiques/>
-- <https://www.julienpradet.fr/tutoriels/typescript-types-avances/>
+Ce document rassemble les bonnes pratiques appliquées par l'agence [Alsacreations.fr](https://www.alsacreations.fr/) concernant **TypeScript**. Il évolue dans le temps et s'adapte à chaque nouveau projet.
+
+## Ressources
+
+- 🔗 [Type Challenges](https://github.com/type-challenges/type-challenges) — Pour s’entraîner.
+- 🔗 [Bonnes pratiques TypeScript — Julien Pradet](https://www.julienpradet.fr/tutoriels/typescript-bonnes-pratiques/)
+- 🔗 [Types avancés TypeScript — Julien Pradet](https://www.julienpradet.fr/tutoriels/typescript-types-avances/)
+
+---
 
 ## Généralités
 
-Les règles des [guidelines JavaScript](Guidelines-JavaScript.md) s'appliquent également ici.
+Les règles des [Guidelines JavaScript](javascript.md) s'appliquent également ici.
 
 ### Syntaxe et nommage
 
@@ -71,3 +78,11 @@ type ExampleFn = <
 ```
 
 De cette façon, il n'y a aucune marge d'erreur possible et `K` est obligé d'exister dans les clés de `T` (en plus de proposer une autocomplétion).
+
+---
+
+## Voir aussi
+
+- [JavaScript](javascript.md) — Règles applicables également à TypeScript.
+- [Vue.js](vue.md) — Typage des composants.
+- [Initialisation de projet](../starters/project-init.md) — Configuration `tsconfig.json`.
