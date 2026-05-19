@@ -3,9 +3,12 @@
 > 📋 À propos  
 > Cette routine constitue une base commune à toutes nos typologies de projets (statique, Nuxt, WordPress). Elle standardise l’environnement, les outils de qualité, la structure CSS et les options liées.
 
+> [!IMPORTANT]
+> Notre outil [Primary](https://primary.alsacreations.com/) génère automatiquement les fichiers de configuration nécessaires (linter, formatters, etc.) pour la majorité des projets, ainsi que les fichiers CSS (`reset.css`, `natives.css`, `layouts.css`, `utilities.css`, `theme.css`).
+
 ## Sommaire
 
-> 💡 **Important :**
+> 💡 **Note :**
 >
 > - Dans la majorité des projets “simples”, l’étape 2 (fichiers de configuration) n’est pas nécessaire car Vite génère l’essentiel.
 > - Cas des projets “multi” (mono-repo) avec une partie front (Vite) et d’autres parties au sein du même dépôt: réaliser l’étape 2 (fichiers de configuration) avant l’étape 1 (Vite).
