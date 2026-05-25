@@ -197,6 +197,10 @@ Autres listes de ressources et checklists
 - <https://jonassebastianohlsson.com/specificity-graph/> CSS Specificity Graph Generator
 - <https://isellsoap.github.io/specificity-visualizer/>
 
+### Transitions / animations
+
+- <https://www.joshwcomeau.com/animation/scroll-driven-animations/> Scroll-driven animations par Josh W. Comeau
+
 ---
 
 ## Accessibilité
@@ -407,6 +411,10 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://bounceapp.com/>
 - <https://uigenerator.org/> Générer des mockups PNG d'interfaces (desktop/mobile)
 
+#### Schémas et outils de dessin
+
+- <https://isodiagram.dev/> Diagrammes isométriques
+
 ### Ardoises en ligne
 
 - <https://excalidraw.com/>
@@ -548,6 +556,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://www.svgator.com/>
 - <https://maxwellito.github.io/vivus/> Animation SVG filaire
 - <https://css-tricks.com/animating-svg-css/> (animation via CSS)
+- <https://www.joshwcomeau.com/animation/squash-and-stretch/> Effets de squash/stretch
 
 ### Accessibilité des SVG
 
@@ -598,6 +607,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://webgl2fundamentals.org> Fondamentaux de WebGL2
 - <https://createjs.com/easeljs>
 - <https://www.professorcloud.com/svg-to-canvas/> SVG to Canvas
+- <https://radiant-shaders.com/gallery/all>
 
 ### Progressive Web Apps (PWA)
 
