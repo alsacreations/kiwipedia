@@ -190,3 +190,20 @@ Installer une distribution telle qu'Ubuntu via le Store
 Activer l'intégration WSL dans Docker.
 
 ![Intégration WSL](../images/docker-integration.png)
+
+---
+
+### Scripts utiles
+
+Volumes, espace occupé et conteneur lié.
+
+```sh
+docker ps -aq | xargs -I{} docker inspect {} \
+  --format '{{range .Mounts}}{{if eq .Type "volume"}}{{.Name}}{{end}}{{end}}:::{{.Name}}' \
+| awk -F':::' '{if($1!="") print $1, $2}' \
+| sort -u \
+| while read vol container; do
+    size=$(docker run --rm -v "$vol":/data alpine du -sh /data 2>/dev/null | cut -f1)
+    printf "%-40s %-15s %s\n" "$vol" "$size" "$container"
+  done
+```
