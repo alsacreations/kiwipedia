@@ -871,6 +871,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 ## Réseaux sociaux
 
 - <https://github.com/bradvin/social-share-urls> Liens de partage vers les différents réseaux sociaux
+- <https://www.submission.directory> Soumettre son site à différentes plateformes de partage et annuaires
 
 ---
 
