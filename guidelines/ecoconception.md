@@ -288,7 +288,7 @@ Avec les frameworks front-end (Vue, Nuxt, React), le code inutile est automatiqu
   2. Développement : Mettre en place les optimisations/revues de code pour réduire l'impact sur les ressources (puissance, réseau, techniques de performance web) et désactiver les composants/environnements non utilisés.
   3. Mettre en place les optimisations de cache, compression, expiration du stockage.
 * Phase finalisation
-  1. Publier la déclaration d'éco-conception.
+  1. Publier la déclaration d'éco-conception ([modèle ODT](https://ecoresponsable.numerique.gouv.fr/docs/2024/rgesn-mai2024/rgesn_2024_exemple_declaration_ecoconception.odt)).
   2. Optimiser et affiner, post-déploiement notamment côté hébergement.
 
 ---
