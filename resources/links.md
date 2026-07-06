@@ -649,7 +649,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://elijahmanor.com/byte/update-node-deps> Mise à jour des dépendances avec ncu (npm-check-updates)
 - <https://jsmates.com/blog/managing-secrets-and-env-variables-using-dotenv> Fichiers .env
 - <https://github.com/oncletom/nodebook/blob/master/book.adoc> Apprendre Node.js par la pratique (par Thomas Parisot)
-- <ttps://bundlephobia.com/> Analyser le poids d'une dépendance npm
+- <https://bundlephobia.com/> Analyser le poids d'une dépendance npm
 - <https://node-modules.dev/> Inspecter les modules Node.js
 
 ### Gulp
@@ -865,6 +865,13 @@ Maquettes / story-boards / wireframes / mockups / zoning
 - <https://speed.cloudflare.com/> Test de débit
 - <https://grahamhelton.com/blog/ssh-cheatsheet/> An Excruciatingly Detailed Guide To SSH
 - <https://github.com/Genymobile/scrcpy> Screen copy (miroir d'écran) des devices Android vers win/linux/macos
+
+---
+
+## Analyse
+
+- <https://whatcms.org/> Quel est le CMS utilisé par ce site ?
+- <https://web-check.xyz/> Toutes les informations devinées pour un domaine
 
 ---
 
