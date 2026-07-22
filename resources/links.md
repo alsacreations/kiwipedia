@@ -835,6 +835,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 ### Sécurité, qualité
 
 - <https://www.alexblackie.com/articles/email-authenticity-dkim-spf-dmarc/> DKIM, SPF, DMARC
+- <https://www.suped.com/learn> Guides sur la sécurité et l'authentification des e-mails.
 - <https://www.mail-tester.com/> indique le niveau de "qualité" d'un e-mail envoyé à une adresse
 
 ---
