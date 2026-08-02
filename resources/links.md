@@ -857,6 +857,11 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 - <https://www.youtube.com/watch?v=I2mWnh66Bkg> 12 Logging BEST Practices in 12 minutes
 
+### Infrastructure du réseau et histoire d'Internet
+
+- <https://www.submarinecablemap.com/>
+- <https://fazamhd.com/mental-models/networking/>
+
 ---
 
 ## Outils divers
