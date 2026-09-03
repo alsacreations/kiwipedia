@@ -1,0 +1,17 @@
+{
+  "name": "alsacreations-guidelines",
+  "owner": {
+    "name": "Alsacréations",
+    "email": "contact@alsacreations.fr"
+  },
+  "metadata": {
+    "description": "Marketplace publique Alsacréations pour le plugin Kiwipedia (guidelines techniques)."
+  },
+  "plugins": [
+    {
+      "name": "alsacreations-guidelines",
+      "source": ".",
+      "description": "Guidelines techniques Alsacréations (Kiwipedia) — HTML, CSS, JS, TS, Vue, WordPress, accessibilité, performance, SEO, etc., embarquées localement dans le plugin."
+    }
+  ]
+}

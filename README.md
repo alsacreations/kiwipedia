@@ -103,6 +103,17 @@ Chaque section ci-dessous correspond à une étape de ce cycle. Les fiches sont 
 
 ---
 
+## Utiliser Kiwipedia comme plugin Claude Code
+
+Ce dépôt est aussi un plugin Claude Code&#8239;: les fiches sont lues directement en local par Claude (`Read`), sans requête réseau.
+
+```
+/plugin marketplace add alsacreations/guidelines
+/plugin install alsacreations-guidelines@alsacreations-guidelines
+```
+
+Les fiches progressivement réécrites pour un usage direct par une IA (ex. CSS) sont signalées dans le [SKILL.md](skills/alsacreations-guidelines/SKILL.md) du plugin.
+
 ## Contribuer
 
 Kiwipedia évolue : chaque fiche peut être amendée, enrichie ou repensée.
