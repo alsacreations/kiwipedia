@@ -30,8 +30,22 @@ dans la liste ci-dessous, elle est encore au format initial (plus long,
 pédagogique, à destination d'un humain) : la lire avec la même rigueur, mais
 s'attendre à devoir filtrer davantage de contenu générique.
 
+- ✅ [Conventions de nommage](../../guidelines/naming-conventions.md) —
+  langue, casse, choix de verbe, `TODO`/`FIXME`, domaines factices.
+- ✅ [HTML](../../guidelines/html.md) — landmarks `role`+`id`, pattern
+  `no-js`/`js`, nommage des composants, formats d'images imposés.
 - ✅ [CSS](../../guidelines/css.md) — architecture, `@scope`, design tokens,
   Bretzel, dark mode, typographie.
+- ✅ [JavaScript](../../guidelines/javascript.md) — amélioration progressive,
+  convention `data-*`/classes, jQuery, plugin boilerplate maison.
+- ✅ [TypeScript](../../guidelines/typescript.md) — `type` plutôt
+  qu'`interface`, JSDoc sans typage redondant.
+- ✅ [Vue.js et Nuxt](../../guidelines/vue.md) — dépendances imposées,
+  conventions props/data/events, i18n, modales `Teleport`.
+- ✅ [PHP / MySQL](../../guidelines/php-mysql.md) — outillage imposé, style de
+  fichier, types MySQL, index/pagination.
+- ✅ [Icônes](../../guidelines/icons.md) — SVGOMG, nettoyage manuel
+  complémentaire.
 
 ## Méthode
 
