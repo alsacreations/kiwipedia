@@ -1,152 +1,92 @@
-# Conventions Générales de Nommage
+# Conventions de nommage
 
 > Statut : stable · Niveau : tous
 
-**TL;DR** — Conventions transverses à appliquer à tout projet  choix de la langue, formatage, casse des fichiers, noms de variables, classes et composants.
-
-Ce document rassemble les bonnes pratiques appliquées par l'agence web [Alsacreations.fr](https://www.alsacreations.fr/) concernant **les conventions de nommage**. Ces indications sont destinées à évoluer dans le temps et à s'adapter à chaque nouveau projet.
+Conventions **spécifiques à Alsacréations** pour le nommage. Les principes génériques (noms descriptifs, éviter les abréviations obscures, cohérence au sein d'un même fichier) ne sont **pas** repris ici&#8239;: seules les règles propres à l'agence — parfois à contre-courant d'un choix par défaut — sont documentées.
 
 ---
 
-## Langue
+## Langue&#8239;: français pour la prose, anglais pour le code
 
-La langue employée pour tout texte rédigé au cours d’un projet est le français :
+| Contenu | Langue |
+| --- | --- |
+| Commentaires de code, titres de commit, README | Français |
+| Dossiers/architecture (`assets`, `components`, `fonts`) | Anglais |
+| Noms de fichiers (`single-something.html`, `ProductCard.vue`) | Anglais |
+| Branches Git principales (`main`, `develop`) | Anglais (exception FR si besoin&#8239;: `recette`) |
+| Composants, classes HTML/CSS | Anglais |
 
-- les commentaires dans un fichier de code source (ex: JavaScript, HTML, PHP, Vue)
-- les titres de commit git en suivant les [Conventional Commits](git.md)
-- les instructions dans le fichier `README.md`
-- toute documentation explicative ou technique (ex: Wiki)
+> ⚠️ Ne pas étendre la préférence « répondre en français » au code lui-même — seule la prose (commentaires, commits, docs) est en français ; tous les identifiants restent en anglais.
 
-La langue anglaise demeure préconisée pour :
+## Casse selon le contexte
 
-- L’architecture et les dossiers du projet (ex: _assets_, _layout_, _components_, _fonts_)
-- Le nom des fichiers (`single-something.html`, `ProductCard.vue`)
-- Les branches principales de versionning git (`main`, `develop`), avec exceptions en français si besoin (`recette`)
-- Les composants, classes HTML, etc.
+| Convention | Contexte | Exemple |
+| --- | --- | --- |
+| `under_score` | Fonctions PHP | `function display_breadcrumb()` |
+| `kebab-case` | Fichiers exposés en URL, classes HTML/CSS | `single-something.html`, `.slide-info` |
+| `PascalCase` | Composants Vue/Nuxt, classes PHP | `ModalAccountMixins.js` |
+| `camelCase` | Variables/fonctions JavaScript, méthodes PHP | `dateFormat`, `getResellSwitchQty()` |
+| `ALL_CAPS` | Constantes | `MAX_RETRY_COUNT` |
+| `snake_case` | — | ❌ jamais utilisé |
 
-## Formatage
+> ⚠️ **Contre-intuitif** — Les fonctions PHP sont en `under_score` (`display_breadcrumb`), pas en camelCase malgré l'usage JS adjacent dans le même projet ; ne pas harmoniser les deux langages sur la même casse.
 
-La règle d’indentation appliquée par défaut est de **2 espaces** pour l’ensemble des langages. Les conventions spécifiques à certains langages ou technologies (PHP avec 4 espaces) sont prioritaires sur cette règle générale au cas par cas.
+Indentation&#8239;: 2 espaces par défaut, sauf **PHP** (4 espaces, [PSR-12](https://www.php-fig.org/psr/psr-12/)) et **WordPress** (docblocks [PSR-5](https://www.php-fig.org/psr/)) — ces conventions de langage priment sur la règle générale.
 
-Par exemple :
+## Documentation de fonctions
 
-- PHP suit la convention de styles [PSR-12 "Extended Coding Style"](https://www.php-fig.org/psr/psr-12/) qui stipule _“Code MUST use an indent of 4 spaces for each indent level, and MUST NOT use tabs for indenting.”_
-- WordPress suit la convention [PSR-5 "PHPDoc Standard"](https://www.php-fig.org/psr/)
-
-Les Documentations techniques se réfèrent à PHPdoc, JSdoc, etc : on débute par `/**` dans VSCode qui auto-complète en optant pour un formatage conventionnel. JSDoc est [supporté nativement par VSCode](https://code.visualstudio.com/docs/languages/javascript#_jsdoc-support).
-
-Exemple :
+JSDoc/PHPDoc pour les fonctions non triviales&#8239;: tags en anglais (`@param`, `@returns`), texte descriptif en français — cohérent avec la règle de langue ci-dessus.
 
 ```js
 /**
- * Represents a book.
+ * Représente un livre.
  * @constructor
- * @param {string} title - The title of the book.
- * @param {string} author - The author of the book.
+ * @param {string} title - Titre du livre.
+ * @param {string} author - Auteur du livre.
  */
 function Book(title, author) {}
 ```
 
-Toujours configurer et appliquer les Linters et Formatters **editorconfig**, **ESlint** et **Stylelint** (voir détails dans la [ressource VSCode](/resources/vscode.md))
+## Choix de verbe&#8239;: un seul par intention
 
-## Union de mots
+Ne jamais faire coexister plusieurs synonymes pour la même action (ex. `cancel`/`remove`/`delete` sur un même composant). Verbe imposé selon l'intention&#8239;:
 
-Les conventions d’usage pour lier les mots sont :
+| Intention | Verbe |
+| --- | --- |
+| Ajouter à une liste | `add` / `append` |
+| Suppression complète (correspond à `DELETE` REST) | `delete` |
+| Retirer un élément d'une liste | `remove` |
+| Annuler une action | `cancel` |
+| Ouvrir/fermer | `open` / `close` (ou `toggle`) |
+| Récupérer des données (correspond à `GET`) | `get` |
+| Remplacer entièrement des données | `set` |
+| Mettre à jour partiellement | `update` |
+| Réinitialiser à l'état initial | `reset` |
+| Callback/gestionnaire | `handle` (`handleClick`) |
+| Dénombrement | `count` (`pageCount`) |
+| État booléen | `is` / `has` (`isOpened`, `hasItems`) |
+| Précédent/suivant | `prev` / `next` |
 
-- under_score :
-  - Fonctions PHP (ex: `function display_breadcrumb()`)
-- kebab-case :
-  - fichiers pouvant se retrouver dans les URLs (ex : `single-something.html`)
-  - classes HTML/CSS
-- PascalCase :
-  - noms de composants dans Vue/Nuxt (ex : `ModalAccountMixins.js`)
-  - classes PHP
-- camelCase :
-  - variables et fonctions dans JavaScript (ex : `dateFormat`, `getResellSwitchQty()`)
-  - méthodes PHP
-- ALL_CAPS (SCREAMING_SNAKE_CASE) :
-  - constantes
-- snake_case :
-  - nope
+## Code en attente&#8239;: `TODO:` vs `FIXME:`
 
-## Synonymes
+Distinction stricte&#8239;: `TODO:` = partie non implémentée (`TODO: implémenter les données`) ; `FIXME:` = partie fonctionnelle à améliorer (`FIXME: refactoring`). Jamais `@TODO`.
 
-Si on privilégie l'anglais pour le code et malgré son apparente simplicité, il existe toujours des synonymes.
+> 🚨 **Règle de livraison** — Un projet ne doit **jamais** être livré avec un tag `TODO:` restant dans le code.
 
-Exemple à ne **pas** reproduire (coexistence de _cancel_/_remove_/_delete_) :
+## Domaines et données factices
 
-```html
-<button class="cancelProduct" onclick="removeProduct(1337)">
-  <svg id="remove" ...>
-</button>
-```
-
-```js
-function removeProduct(id) {
-   api.delete('/api/product', id)
-}
-```
-
-Suggestions et raisons :
-
-- Ajouter à une liste : `add` ou `append`
-- Suppression complète de données : `delete` (car les méthodes REST utilisent DELETE)
-- Retirer un élément d'une liste : `remove`
-- Annulation d'action : `cancel`
-- Ouverture/fermeture : `open`/`close` (alternativement : `toggle`)
-- Récupération de données : `get` (existe en tant que méthode HTTP)
-- Remplacement de données : `set` (écrase tout)
-- Mise à jour de données : `update` (similaire à patch, peut remplacer certaines clés d'un objet mais pas toutes)
-- Réinitialisation à l'état initial : `reset`
-- Callback/gestionnaire : `handle` (ex : _handleClick_)
-- Dénombrement : `count` (ex: _pageCount_)
-- États : `is` ou `has` (ex : _isOpened_, _hasItems_)
-- Précédent/suivant : `prev`/`next`
-
-🔖 Voir aussi :
-
-- [Coding like Shakespeare: Practical Function Naming Conventions](https://dmitripavlutin.com/coding-like-shakespeare-practical-function-naming-conventions/)
-- [Naming cheatsheet](https://github.com/kettanaito/naming-cheatsheet)
-- [Naming Things in Code](https://www.youtube.com/watch?v=-J3wNP6u5YU) (vidéo YouTube 7 minutes)
-
-## Nommage pour code en attente
-
-En phase de développement d'un projet, les notes de modifications et améliorations restant à réaliser dans le code (CSS, HTML, JavaScript) doivent être consignées et notées `TODO:` (et non ~~@TODO~~) ou `FIXME:` selon leur fonction&nbsp;:
-
-- `TODO:` Partie de code **non finalisée**, non mis en oeuvre (par exemple `TODO: implémenter les données`, `<a href="TODO:">`)
-- `FIXME:` Partie de code **à améliorer**, à modifier pour être plus performant, plus maintenable, etc. (par exemple : `FIXME: mieux gérer le responsive`, `FIXME: refactoring`)
-
-L'extension **[Todo Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree)** permet de mettre en exergue les tags `TODO`, `FIXME`, `HACK`... ainsi que les lister dans un arbre. On active les couleurs avec le paramètre `"todo-tree.highlights.useColourScheme": true`.
-
-**En fin de phase de développement, avant la livraison du projet, il est fondamental de vérifier la présence indésirable de ces tags au sein du code. L'idéal étant qu'un projet soit livré sans aucun tag `TODO:`.**
-
-### Remplissage et données d'exemple
-
-Pour les URLs vers des domaines fictifs, on privilégie `https://example.org/` ou `https://example.com/` qui sont réservés à cet usage.
-
-## Domaines
-
-Privilégier le même **motif cohérent** pour les environnements à des adresses différentes, par exemple
-
-- en local : `www.projet.test`
-- en préproduction : `www.projet.alsacreations.eu`
-- en production : `www.projet.com`
-
-⚠️ Éviter de mélanger les sous-domaines : par exemple inutile d'ajouter `preprod` si le TLD change déjà, il faut pouvoir passer de l'un à l'autre aisément (manuellement dans la barre de navigateur, ou lors de l'export/remplacement automatique de chaînes de texte).
-
-## Convention pour Langages spécifiques et Frameworks
-
-Les règles de nommage particulières à chaque langage sont consignées dans leurs Guidelines respectives :
-
-- [HTML](html.md)
-- [CSS](css.md)
-- [JavaScript](javascript.md)
-- [WordPress](wordpress/README.md)
+- URLs d'exemple&#8239;: toujours `example.com`/`example.org` (réservés à cet usage), jamais un domaine inventé.
+- Motif d'environnements cohérent entre local/préprod/prod, ex.&#8239;: `projet.test` (local) → `projet.alsacreations.eu` (préprod) → `projet.com` (prod).
+- ⚠️ Ne pas cumuler sous-domaine ET changement de TLD (éviter `preprod.projet.alsacreations.eu` si le TLD change déjà) — un seul élément doit changer pour passer d'un environnement à l'autre.
 
 ---
 
 ## Voir aussi
 
-- [Guide de style éditorial](../STYLE.md) — Conventions d’écriture des fiches Kiwipedia.
+- [HTML](html.md) — Nommage IDs/classes, conventions de composants.
+- [CSS](css.md) — Design tokens, `@scope`.
+- [JavaScript](javascript.md) — Conventions spécifiques JS/TS.
+- [WordPress](wordpress/README.md) — Conventions spécifiques PHP/WordPress.
+- [Visual Studio Code](vscode.md) — Configuration de l'éditeur.
 - [Workflow Git](git.md) — Conventions de commits et de branches.
-- [Visual Studio Code](vscode.md) — Configuration de l’éditeur.
+- [Guide de style éditorial](../STYLE.md) — Conventions d'écriture des fiches Kiwipedia.
