@@ -3,7 +3,7 @@
     "alsacreations-guidelines": {
       "source": {
         "source": "github",
-        "repo": "alsacreations/guidelines"
+        "repo": "alsacreations/kiwipedia"
       },
       "autoUpdate": true
     }

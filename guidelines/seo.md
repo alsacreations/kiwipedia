@@ -31,7 +31,7 @@ Ce document rassemble les bonnes pratiques appliquées par l'agence [Alsacreatio
 
 ## Niveau 2 (étendu) 🥈
 
-* Utiliser les [métadonnées pour les réseaux sociaux](https://github.com/alsacreations/guidelines/blob/master/Guidelines-HTML.md#meta-sp%C3%A9cifiques---seo-et-r%C3%A9seaux-sociaux)
+* Utiliser les [métadonnées pour les réseaux sociaux](https://github.com/alsacreations/kiwipedia/blob/master/Guidelines-HTML.md#meta-sp%C3%A9cifiques---seo-et-r%C3%A9seaux-sociaux)
 * CSS : S'assurer que le site est _mobile-friendly_ et l'auditer avec _Search Console_.
 * Performance : S'assurer que le site se charge rapidement (_devtools_, [lighthouse](https://chromewebstore.google.com/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=fr&pli=1), _webpagetest_)
 * Selon le framework/CMS, privilégier certains liens internes, voire pratiquer l'obfuscation des liens moins importants.

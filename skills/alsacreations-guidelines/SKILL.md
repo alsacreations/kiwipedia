@@ -6,7 +6,7 @@ description: Guidelines techniques et conventions internes d'Alsacréations (Kiw
 # Guidelines Alsacréations (Kiwipedia)
 
 Ce plugin **embarque directement** le contenu du dépôt
-[alsacreations/guidelines](https://github.com/alsacreations/guidelines)
+[alsacreations/kiwipedia](https://github.com/alsacreations/kiwipedia)
 (Kiwipedia) : toutes les fiches sont disponibles en local, aucun `WebFetch`
 n'est nécessaire. Lire le fichier concerné avec `Read`, chemin relatif à la
 racine de ce plugin.

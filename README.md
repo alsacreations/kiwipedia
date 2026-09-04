@@ -108,7 +108,7 @@ Chaque section ci-dessous correspond à une étape de ce cycle. Les fiches sont 
 Ce dépôt est aussi un plugin Claude Code&#8239;: les fiches sont lues directement en local par Claude (`Read`), sans requête réseau.
 
 ```
-/plugin marketplace add alsacreations/guidelines
+/plugin marketplace add alsacreations/kiwipedia
 /plugin install alsacreations-guidelines@alsacreations-guidelines
 ```
 
