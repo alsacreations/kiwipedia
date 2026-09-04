@@ -1,0 +1,14 @@
+{
+  "extraKnownMarketplaces": {
+    "alsacreations-guidelines": {
+      "source": {
+        "source": "github",
+        "repo": "alsacreations/guidelines"
+      },
+      "autoUpdate": true
+    }
+  },
+  "enabledPlugins": {
+    "alsacreations-guidelines@alsacreations-guidelines": true
+  }
+}
