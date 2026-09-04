@@ -2,87 +2,42 @@
 
 > Statut : stable · Niveau : intermédiaire
 
-**TL;DR** — Bonnes pratiques TypeScript chez Alsacréations : typage strict, génériques, fonctions type-safe. Les règles JavaScript s'appliquent en plus.
-
-Ce document rassemble les bonnes pratiques appliquées par l'agence [Alsacreations.fr](https://www.alsacreations.fr/) concernant **TypeScript**. Il évolue dans le temps et s'adapte à chaque nouveau projet.
-
-## Ressources
-
-- 🔗 [Type Challenges](https://github.com/type-challenges/type-challenges) — Pour s’entraîner.
-- 🔗 [Bonnes pratiques TypeScript — Julien Pradet](https://www.julienpradet.fr/tutoriels/typescript-bonnes-pratiques/)
-- 🔗 [Types avancés TypeScript — Julien Pradet](https://www.julienpradet.fr/tutoriels/typescript-types-avances/)
+Conventions **spécifiques à Alsacréations** pour TypeScript, en complément des [Guidelines JavaScript](javascript.md). Les bonnes pratiques génériques (typer systématiquement les paramètres et le retour des fonctions, génériques contraints via `keyof` pour l'autocomplétion, nommage des types en `PascalCase`…) ne sont **pas** reprises ici&#8239;: elles sont déjà appliquées par défaut. Ce document ne liste que ce qui distingue nos projets d'un projet TypeScript standard — à appliquer sans qu'il soit nécessaire de le redemander.
 
 ---
 
-## Généralités
+## Outillage imposé
 
-Les règles des [Guidelines JavaScript](javascript.md) s'appliquent également ici.
+> ✅ **Par défaut** — [ESLint](https://eslint.org/) + [typescript-eslint](https://typescript-eslint.io/) pour la validation.
 
-### Syntaxe et nommage
+## `type` plutôt que `interface`
 
-- Valider le code avec [eslint](https://eslint.org/) ainsi que [typescript-eslint](https://typescript-eslint.io/).
-
-## Types et interfaces
-
-Utiliser des types plutôt que des interfaces **quand cela est possible** pour réduire au maximum l'utilisation de deux mots clés différents, sachant que `type` est plus versatile.
-
-Commencer chaque type par une majuscule.
+Convention maison&#8239;: utiliser `type` plutôt que `interface` dès que c'est possible, pour ne pas faire cohabiter deux mots-clés différents pour la même chose — `type` est plus versatile (unions, intersections, utilitaires).
 
 ```ts
-type MaybeDate = Date | String
-
 type Post = {
-  title: string,
-  content: string,
-  published_on: MaybeDate
+  title: string
+  content: string
+  published_on: Date | string
 }
-
-type GetPost = () => Promise<Post>
 ```
 
-## Fonctions
+## JSDoc&#8239;: décrire, jamais typer
 
-Typer les paramètres d'une fonction, et au **maximum du possible** typer le retour des fonctions.
-
-Lire [TypeScript Function Types: A Beginner's Guide](https://dmitripavlutin.com/typescript-function-type/)
-
-Utiliser JSDoc pour expliquer le role de la fonction et de ses paramètres. Il ne faudra cependant pas indiquer les types avec JSDoc mais TS uniquement.
+JSDoc documente le *rôle* d'une fonction/d'un paramètre, jamais son type — celui-ci est déjà porté par TypeScript. Ne pas dupliquer l'information dans les tags JSDoc (`@param {string} id` est une redondance à éviter, contrairement à un contexte JS pur où JSDoc porte les types&#8239;: voir [Conventions de nommage](naming-conventions.md)).
 
 ```ts
 /**
- * Récupère un post
- *
+ * Récupère un post.
  * @param id L'id du post
  */
-const getPost = (id: string): Promise<Post>  => { ... }
-
-const obj = {
-  /**
-   * Récupère un post
-   *
-   * @param id L'id du post
-   */
-  getPost(id: string): Promise<Post> {
-    ...
-  }
-}
+const getPost = (id: string): Promise<Post> => { ... }
 ```
-
-Écrire les fonctions de manière à ce qu'elles soient le plus "type safe".
-
-```ts
-type ExampleFn = <
-  T extends Record<string, any>, // T doit étendre un objet
-  K extends keyof T // K étendra une des clés de T
->(obj: T, key: K) => T[K]
-```
-
-De cette façon, il n'y a aucune marge d'erreur possible et `K` est obligé d'exister dans les clés de `T` (en plus de proposer une autocomplétion).
 
 ---
 
 ## Voir aussi
 
 - [JavaScript](javascript.md) — Règles applicables également à TypeScript.
-- [Vue.js](vue.md) — Typage des composants.
+- [Vue.js et Nuxt](vue.md) — Typage des composants (props, emits).
 - [Initialisation de projet](../starters/project-init.md) — Configuration `tsconfig.json`.
