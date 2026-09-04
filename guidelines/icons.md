@@ -2,50 +2,34 @@
 
 > Statut : stable · Niveau : intermédiaire
 
-**TL;DR** — Bonnes pratiques d'intégration et d'optimisation des icônes SVG chez Alsacréations : techniques d'intégration (img, inline, sprite), réduction de la syntaxe SVG via SVGOMG.
-
-Ce document rassemble les bonnes pratiques appliquées par l'agence [Alsacreations.fr](https://www.alsacreations.fr/) concernant **les icônes**. Il évolue dans le temps et s'adapte à chaque nouveau projet.
-
-## Ressources
-
-- 🔗 [Tools for Optimizing SVG — CSS-Tricks](https://css-tricks.com/tools-for-optimizing-svg/)
-- 🔗 [8 tricks for SVG optimization](https://uxdesign.cc/8-tricks-for-svg-optimization-c2c519c10c1e)
+Conventions **spécifiques à Alsacréations** pour les icônes SVG. Les techniques d'intégration génériques (`<img>` vs SVG inline vs sprite `<use>`, styling via `currentColor`) ne sont **pas** détaillées ici&#8239;: elles sont déjà maîtrisées par défaut, et `currentColor` en dark mode est couvert dans [CSS](css.md). Ce document ne liste que l'outil et les étapes de nettoyage imposés au-delà de l'optimiseur automatique.
 
 ---
 
-## Optimisation
+## Outil imposé&#8239;: SVGOMG
 
-On cherchera à réduire le poids des ressources icônes (SVG) par
+> ✅ **Par défaut** — [SVGOMG](https://jakearchibald.github.io/svgomg/) sur toute icône avant intégration, jamais le SVG brut exporté par l'outil de design.
 
-- plusieurs techniques d'intégration dans le document
-- une réduction de la syntaxe SVG
+- Partir des options par défaut ; tester les paramètres additionnels au cas par cas.
+- Jouer sur le curseur **Precision** pour arrondir les valeurs numériques&#8239;: un niveau de 1 ou 2 est généralement atteignable — zoomer pour vérifier qu'aucun détail visuel n'est perdu avant de valider.
 
-### Intégration
+## Nettoyage manuel complémentaire
 
-Selon la façon dont l'icône est intégrée au document, la performance de chargement peut être affectée.
+SVGOMG ne détecte pas tout&#8239;: compléter systématiquement dans un éditeur de code source.
 
-- En image `<img src="/icones/kiwi.svg">` (mise en cache possible, code _inline_ réduit, requête HTTP supplémentaire au premier chargement, pas de style possible par CSS depuis le document)
-- Code inline `<svg>...</svg>` (pas de mise en cache, code _inline_, une seule requête HTTP, style possible via CSS du document et `currentColor` car fait partie de l'arborescence DOM)
-- Composants/sprites/[use](https://developer.mozilla.org/fr/docs/Web/SVG/Element/use) et divers
+- Repérer et supprimer les bitmaps embarqués (fréquent sur les ombrages/logos exportés) — remplacer par du vectoriel, jamais les laisser tels quels.
+- Simplifier les doublons/imbrications de `<g>` que SVGOMG n'a pas su remarquer.
 
-### Optimisations de la source SVG
+> 💡 Pour éditer directement le code source d'un SVG dans VS Code plutôt que son aperçu&#8239;: voir [Visual Studio Code](vscode.md).
 
-Diverses techniques complémentaires.
-
-- Utiliser [svgomg](https://jakearchibald.github.io/svgomg/)
-  - Utiliser les options par défaut, éventuellement tester en cochant les paramètres supplémentaires.
-  - Jouer sur la _Precision_ pour arrondir les valeurs numériques (un niveau de 1 ou 2 est atteignable, attention à zoomer pour vérifier les détails).
-- Ouvrir dans un éditeur de code source
-  - Supprimer les bitmaps éventuels dans le code (parfois le cas d'ombrages ou logos), remplacer par du vectoriel.
-  - Simplifier encore ce que svgomg n'a pas pu remarquer, notamment doublons/imbrications de `<g>`.
-- Ouvrir dans un éditeur graphique tel que Figma
-  - Supprimer les formes inutiles, recadrer, etc.
+Le nettoyage en amont côté maquette (formes inutiles, recadrage) relève de la livraison design&#8239;: voir [Webdesign](webdesign.md).
 
 ---
 
 ## Voir aussi
 
-- [HTML](html.md) — Sémantique des médias.
-- [CSS](css.md) — Stylisation des SVG via `currentColor`.
-- [Webdesign](webdesign.md) — Production graphique des pictogrammes.
+- [CSS](css.md) — Stylisation des SVG via `currentColor`, gestion du dark mode.
+- [Accessibilité](accessibility.md) — Patterns SVG inline/externe, décoratif/informatif.
+- [Webdesign](webdesign.md) — Format de livraison des icônes.
 - [Performances](performances.md) — Réduire le poids des assets.
+- [Visual Studio Code](vscode.md) — Ouvrir les SVG en code plutôt qu'en aperçu.
