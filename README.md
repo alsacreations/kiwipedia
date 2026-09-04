@@ -63,8 +63,8 @@ Chaque section ci-dessous correspond à une étape de ce cycle. Les fiches sont 
 - [**Vue.js**](guidelines/vue.md) — Architecture, composants, conventions.
 - [**WordPress**](guidelines/wordpress/README.md) — Thème, sécurité, performance, recette.
 - [**PHP / MySQL**](guidelines/php-mysql.md) — Développement back-end.
-- [**E-mailing**](guidelines/e-mailing.md) — Templates HTML compatibles.
 - [**CSS utilitaires** *(archivé)*](archives/css-utilities.md) — Approche Tailwind / utilitaires.
+- [**E-mailing** *(archivé)*](archives/e-mailing.md) — Templates HTML compatibles.
 
 ## ✅ Qualité & exigences non-fonctionnelles
 
