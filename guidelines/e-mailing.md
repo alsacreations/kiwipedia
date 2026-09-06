@@ -232,7 +232,7 @@ Voici comment réaliser un lien-bouton "simple" via Maizzle :
 
 ```html
 <a
-  href="TODO:"
+  href="#"
   class="inline-block py-16 px-24 text-sm leading-none no-underline text-white font-semibold rounded bg-indigo-500 hover:bg-indigo-600"
 >
   <outlook>
@@ -259,7 +259,7 @@ Pour un bouton plus complexe, nécessitant par exemple une hauteur précise ou u
 <table>
   <tr>
     <th class="bg-indigo-500 hover:bg-indigo-600 rounded" style="mso-padding-alt: 12px 48px;">
-      <a href="TODO:" class="block text-white text-sm leading-full py-12 px-48 no-underline">Button</a>
+      <a href="#" class="block text-white text-sm leading-full py-12 px-48 no-underline">Button</a>
     </th>
   </tr>
 </table>
@@ -272,7 +272,7 @@ Et voici une version sous forme de **Composant** :
 <component
   src="src/components/button.html"
   locals='{
-  "buttonURL": "TODO:",
+  "buttonURL": "#",
   "buttonBg": "bg-green",
   "buttonColor": "text-black",
   "buttonIcon": "picto-03.png",

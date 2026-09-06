@@ -315,7 +315,7 @@ On utilise ensuite les commandes [WP cli i18n](https://developer.wordpress.org/c
 - Valider les données avec les méthodes natives : [Validating Data](https://developer.wordpress.org/apis/security/data-validation/)
 - Un formulaire = un _nonce_ : [Nonces](https://developer.wordpress.org/apis/security/nonces/)
 
-## Développement des contenus éditables
+## Développement des contenus éditables et blocs
 
 ### Menus de navigation
 
@@ -608,6 +608,13 @@ echo $tel;
 ?>
 ```
 
+### Blocs Gutenberg
+
+- 🔖 [Comment hacker les blocs de Gutenberg avec les variations de style et les variations de bloc](https://kinsta.com/fr/blog/variations-style-bloc-gutenberg/)
+- 🔖 [Comment étendre les blocs de base de WordPress avec l’API Blocks](https://kinsta.com/fr/blog/etendre-blocs-coeur-wp/)
+- 🔖 [L’API WordPress Block Bindings : Qu’est-ce que c’est et comment l’utiliser pour construire des sites web dynamiques](https://kinsta.com/fr/blog/api-wordpress-block-bindings/)
+- 🔖 [Comment construire des blocs Gutenberg uniquement en PHP](https://kinsta.com/fr/blog/blocs-gutenberg-uniquement-php/)
+
 ### Bloc statique non éditable
 
 👉 Un bloc statique non éditable est un type de bloc Gutenberg qui affiche du contenu fixe que les utilisateurs ne peuvent pas modifier directement dans l'éditeur. Ce type de bloc est utile pour afficher des informations standardisées, des éléments de design ou des fonctionnalités spécifiques qui doivent rester cohérentes à travers le site, tout en empêchant les modifications accidentelles par les éditeurs.
@@ -778,7 +785,70 @@ function render_custom_gallery_block($block, $content = '', $is_preview = false,
 
 👉 Les blocs ACF peuvent afficher des contenus issus de [Custom Post Types (CPT)](#custom-post-types-cpt). Cela permet de réutiliser ces contenus structurés dans différents contextes, comme des listes de témoignages, des portfolios, ou des articles récents, tout en bénéficiant de la flexibilité des blocs.
 
-TODO: exemple, screenshot
+Exemple : un bloc "Recettes à la une" qui interroge le CPT `recette` (voir [Custom Post Types (CPT)](#custom-post-types-cpt)), avec deux champs ACF de configuration (nombre de recettes à afficher, filtre par catégorie de cuisine) créés depuis l'interface ACF et synchronisés via `acf-json/`.
+
+```php
+// Déclaration du bloc, dans register_acf_blocks()
+acf_register_block_type(array(
+    'name'              => 'recettes-a-la-une',
+    'title'             => __('Recettes à la une'),
+    'description'       => __('Affiche une sélection de recettes du CPT Recettes.'),
+    'render_template'   => 'template-parts/blocks/recettes-a-la-une/recettes-a-la-une.php',
+    'category'          => 'layout',
+    'icon'              => 'carrot',
+    'keywords'          => array('recette', 'cpt', 'cuisine'),
+    'supports'          => array(
+        'align' => array('wide', 'full'),
+    ),
+));
+```
+
+```php
+// template-parts/blocks/recettes-a-la-une/recettes-a-la-une.php
+<?php
+/**
+ * @param array $block The block settings and attributes.
+ */
+
+// Champs ACF du bloc (créés via l'interface ACF, cf. Champs personnalisés ACF)
+$nombre = get_field('nombre_recettes') ?: 3;
+$categorie = get_field('categorie_cuisine'); // terme de la taxonomie type_cuisine
+
+$args = array(
+    'post_type'      => 'recette',
+    'posts_per_page' => $nombre,
+    'post_status'    => 'publish',
+);
+
+if ($categorie) {
+    $args['tax_query'] = array(
+        array(
+            'taxonomy' => 'type_cuisine',
+            'field'    => 'term_id',
+            'terms'    => $categorie,
+        ),
+    );
+}
+
+$recettes = new WP_Query($args);
+?>
+
+<?php if ($recettes->have_posts()) : ?>
+    <div class="recettes-a-la-une">
+        <?php while ($recettes->have_posts()) : $recettes->the_post(); ?>
+            <article class="recette-card">
+                <?php if (has_post_thumbnail()) : ?>
+                    <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium'); ?></a>
+                <?php endif; ?>
+                <h3 class="recette-card-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+            </article>
+        <?php endwhile; ?>
+    </div>
+<?php else : ?>
+    <p><?php esc_html_e('Aucune recette à afficher.', 'textdomain'); ?></p>
+<?php endif;
+wp_reset_postdata();
+```
 
 ### Champs personnalisés ACF
 
@@ -786,7 +856,19 @@ Les champs personnalisés ACF (Advanced Custom Fields) permettent d'ajouter des 
 
 ![Exemple de champ ACF dans une Page](../../images/wordpress-champ-acf.png)
 
-TODO: via PHP ou via interface ACF (avec le dossier acf-json) ?
+👉 On privilégie la création des groupes de champs via l'**interface visuelle** d'ACF (back-office), couplée à la synchronisation [Local JSON](#acf-advanced-custom-fields) (dossier `acf-json/`). Cette approche combine les deux avantages : rapidité et confort de l'édition visuelle pour construire/ajuster les champs, et fichiers JSON générés automatiquement, versionnés dans Git et rejouables sur tous les environnements (dev, staging, prod) sans ressaisie manuelle.
+
+L'écriture en PHP pur (`acf_add_local_field_group()`) reste possible mais est réservée à des cas particuliers : génération dynamique de champs, distribution du groupe de champs dans un plugin indépendant du thème, ou besoin de conditionner la déclaration par du code. Pour l'usage courant d'un thème de projet, elle apporte plus de verbosité que de bénéfice face à l'interface + Local JSON.
+
+```php
+// Lecture d'un champ personnalisé ACF dans un template
+$sous_titre = get_field('sous_titre');
+$date_evenement = get_field('date_evenement');
+
+if ($sous_titre) : ?>
+    <p class="subtitle"><?php echo esc_html($sous_titre); ?></p>
+<?php endif; ?>
+```
 
 ### Custom Post Types (CPT)
 
