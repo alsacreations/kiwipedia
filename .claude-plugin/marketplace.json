@@ -11,7 +11,7 @@
     {
       "name": "alsacreations-guidelines",
       "source": ".",
-      "description": "Guidelines techniques Alsacréations (Kiwipedia) — HTML, CSS, JS, TS, Vue, WordPress, accessibilité, performance, SEO, etc., embarquées localement dans le plugin."
+      "description": "Guidelines techniques Alsacréations (Kiwipedia) — HTML, CSS, JS, TS, Vue, WordPress, accessibilité, performance, SEO, etc., et outils internes (Bretzel, Reset, Primary…), embarqués localement dans le plugin."
     }
   ]
 }

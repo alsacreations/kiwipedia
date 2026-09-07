@@ -114,6 +114,8 @@ Ce dépôt est aussi un plugin Claude Code&#8239;: les fiches sont lues directem
 
 Les fiches progressivement réécrites pour un usage direct par une IA (ex. CSS) sont signalées dans le [SKILL.md](skills/alsacreations-guidelines/SKILL.md) du plugin.
 
+Le plugin embarque aussi un second skill, [alsacreations-tools](skills/alsacreations-tools/SKILL.md), qui recense les outils open source internes (Bretzel, Reset, Primary, KNACSS…) à privilégier avant toute solution tierce.
+
 ## Contribuer
 
 Kiwipedia évolue : chaque fiche peut être amendée, enrichie ou repensée.
