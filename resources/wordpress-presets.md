@@ -166,22 +166,9 @@ Contrairement à `font-size`, WordPress ne calcule pas de `clamp()` automatique 
 
 ## 4. Convention de nommage des couleurs (slugs sémantiques)
 
-WordPress Core n'impose pas de noms de slugs à la racine (il fournit historiquement des couleurs comme `black`, `white`, `cyan-bluish-gray`...). Pour garantir la portabilité d'un thème à l'autre, une convention proposée par Rich Tabor et adoptée par l'équipe Gutenberg s'est imposée dans les thèmes de la génération _Twenty Twenty-Three / Twenty Twenty-Four_ :
+WordPress Core n'impose pas de noms de slugs à la racine (il fournit historiquement des couleurs comme `black`, `white`, `cyan-bluish-gray`...). On s'aligne sur la convention utilisée par **Twenty Twenty-Five**, le thème par défaut depuis WordPress 6.7 : un socle `base` / `contrast`, complété par une série d'accents numérotés, sans rôle fixe imposé.
 
-| Slug | Rôle | Variable générée |
-| --- | --- | --- |
-| `base` | Fond d'écran principal (généralement blanc ou noir). | `--wp--preset--color--base` |
-| `contrast` | Couleur du texte principal (doit contraster avec `base`). | `--wp--preset--color--contrast` |
-| `primary` | Couleur de marque principale (titres, boutons principaux). | `--wp--preset--color--primary` |
-| `secondary` | Couleur de soutien (sous-titres, boutons secondaires). | `--wp--preset--color--secondary` |
-| `tertiary` | Troisième nuance pour les éléments discrets (bordures, séparateurs). | `--wp--preset--color--tertiary` |
-| `accent` | Couleur vive pour les appels à l'action (CTA) ou les états survolés. | `--wp--preset--color--accent` |
-
-⚠️ Éviter le slug `background` : bien qu'utilisé par certains thèmes, il entre en confusion avec la propriété CSS native `background`. On lui préfère `base` pour le fond général du site.
-
-### Évolution récente : les accents numérotés (Twenty Twenty-Five)
-
-⚠️ **Twenty Twenty-Five** (thème par défaut depuis WordPress 6.7) abandonne `primary`, `secondary`, `tertiary` et `accent` au profit d'un socle réduit à `base` / `contrast`, complété par une série d'accents numérotés sans rôle fixe :
+⚠️ L'ancienne convention `primary` / `secondary` / `tertiary` / `accent` (proposée par Rich Tabor pour les thèmes de la génération _Twenty Twenty-Three / Twenty Twenty-Four_) est abandonnée : on ne l'utilise plus sur les nouveaux projets.
 
 ```json
 {
@@ -202,14 +189,15 @@ WordPress Core n'impose pas de noms de slugs à la racine (il fournit historique
 }
 ```
 
-L'idée : plutôt que d'imposer un rôle figé (`primary` = marque, `secondary` = soutien...), le thème fournit une réserve de couleurs neutres numérotées, librement assignées selon le design (l'une sert de couleur de lien, une autre de fond de badge, etc.). C'est plus flexible pour l'éditeur de blocs, mais moins portable d'un thème à l'autre : `accent-3` n'a pas de sens garanti hors du thème qui le déclare, contrairement à `primary`.
+| Slug | Rôle | Variable générée |
+| --- | --- | --- |
+| `base` | Fond d'écran principal (généralement blanc ou noir). | `--wp--preset--color--base` |
+| `contrast` | Couleur du texte principal (doit contraster avec `base`). | `--wp--preset--color--contrast` |
+| `accent-1` à `accent-N` | Couleurs libres, sans rôle imposé : à assigner selon le design (liens, fonds de badge, bordures, CTA...). On en déclare autant que nécessaire. | `--wp--preset--color--accent-1`, `--wp--preset--color--accent-2`... |
 
-👉 Sur un projet Alsacréations, choisir **une seule convention par thème** et s'y tenir :
+👉 Plutôt que d'imposer un rôle figé (`primary` = marque, `secondary` = soutien...), on fournit une réserve de couleurs neutres numérotées, librement assignées selon le design. C'est plus flexible pour l'éditeur de blocs et pour les designers qui ne raisonnent pas toujours en hiérarchie marque/soutien.
 
-- `primary` / `secondary` / `tertiary` / `accent` si l'équipe design raisonne en rôles (marque, soutien, CTA) ;
-- `accent-1` à `accent-N` si la palette est plus riche et destinée à rester flexible dans l'éditeur (cas de Twenty Twenty-Five).
-
-Dans les deux cas, `base` et `contrast` restent le socle commun, et les couleurs fonctionnelles ci-dessous (`success`, `warning`, `error`, `info`) s'ajoutent indépendamment du choix retenu.
+⚠️ Éviter le slug `background` : bien qu'utilisé par certains thèmes, il entre en confusion avec la propriété CSS native `background`. On lui préfère `base` pour le fond général du site.
 
 ### Presets complémentaires
 
@@ -220,15 +208,14 @@ Au-delà du socle ci-dessus, on complète souvent la palette avec des variantes 
 | `base-2` | Arrière-plan secondaire (sections alternées, cartes, encarts). | `--wp--preset--color--base-2` |
 | `contrast-muted` | Texte secondaire, moins appuyé que `contrast` (légendes, texte d'aide). | `--wp--preset--color--contrast-muted` |
 | `contrast-2` | Seconde nuance de contraste (variante de texte, ex. sur fond sombre). | `--wp--preset--color--contrast-2` |
-| `accent-2` | Seconde couleur d'accent (CTA secondaire, éviter la monotonie visuelle). | `--wp--preset--color--accent-2` |
 | `success` | Validation, succès (confirmation, état positif). | `--wp--preset--color--success` |
 | `warning` | Avertissement (état à surveiller, action à confirmer). | `--wp--preset--color--warning` |
 | `error` | Erreur, suppression (validation échouée, action destructive). | `--wp--preset--color--error` |
 | `info` | Information neutre (aide contextuelle, message informatif). | `--wp--preset--color--info` |
 
-👉 Pourquoi respecter une convention de nommage (quelle qu'elle soit) :
+👉 Pourquoi respecter cette convention :
 
-- **Portabilité des blocs** : un bloc coloré en `primary` (ou `accent-1`) reste cohérent si l'utilisateur change de thème, tant que le nouveau thème déclare le même slug. Un slug maison comme `bleu-turquoise` casserait le rendu au changement de thème.
+- **Portabilité des blocs** : un bloc coloré en `accent-1` reste cohérent si l'utilisateur change de thème, tant que le nouveau thème déclare le même slug. Un slug maison comme `bleu-turquoise` casserait le rendu au changement de thème.
 - **Éditeur de site (FSE)** : dans _Apparence > Éditeur > Styles > Couleurs_, l'interface mappe directement ses sélecteurs sur ces slugs.
 
 ## 5. Générer des couleurs dérivées avec `color-mix()`
