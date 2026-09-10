@@ -762,19 +762,11 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 ## Git
 
+- <https://gitimmersion.com/>
 - <https://www.atlassian.com/git/tutorials/setting-up-a-repository> Guide général sur Git
 - <https://www.git-tower.com/learn/git/videos/>
 - <https://learngitbranching.js.org/?locale=fr_FR> Learn Git Branching : apprendre les branches
-- <https://github.blog/2015-06-08-how-to-undo-almost-anything-with-git/>
-- <https://mptc.io/content/04-content.html> Modern Plain Text Computing - Version Control
-
-### Clients git
-
-- Git-fork <https://git-fork.com/>
-- Sourcetree <https://www.sourcetreeapp.com/>
-- GitKraken <https://www.gitkraken.com/>
-- Git-tower <https://www.git-tower.com/>
-- Smartgit <https://www.syntevo.com/smartgit/>
+- <https://github.blog/open-source/git/how-to-undo-almost-anything-with-git/>
 
 ---
 
