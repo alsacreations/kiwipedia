@@ -166,7 +166,7 @@ Contrairement à `font-size`, WordPress ne calcule pas de `clamp()` automatique 
 
 ## 4. Convention de nommage des couleurs (slugs sémantiques)
 
-WordPress Core n'impose pas de noms de slugs à la racine (il fournit historiquement des couleurs comme `black`, `white`, `cyan-bluish-gray`...). Mais pour garantir la portabilité d'un thème à l'autre, la quasi-totalité des thèmes modernes (thèmes officiels _Twenty Twenty-X_, Frost, Twentig...) suivent une convention commune, proposée par Rich Tabor et adoptée par l'équipe Gutenberg :
+WordPress Core n'impose pas de noms de slugs à la racine (il fournit historiquement des couleurs comme `black`, `white`, `cyan-bluish-gray`...). Pour garantir la portabilité d'un thème à l'autre, une convention proposée par Rich Tabor et adoptée par l'équipe Gutenberg s'est imposée dans les thèmes de la génération _Twenty Twenty-Three / Twenty Twenty-Four_ :
 
 | Slug | Rôle | Variable générée |
 | --- | --- | --- |
@@ -178,6 +178,38 @@ WordPress Core n'impose pas de noms de slugs à la racine (il fournit historique
 | `accent` | Couleur vive pour les appels à l'action (CTA) ou les états survolés. | `--wp--preset--color--accent` |
 
 ⚠️ Éviter le slug `background` : bien qu'utilisé par certains thèmes, il entre en confusion avec la propriété CSS native `background`. On lui préfère `base` pour le fond général du site.
+
+### Évolution récente : les accents numérotés (Twenty Twenty-Five)
+
+⚠️ **Twenty Twenty-Five** (thème par défaut depuis WordPress 6.7) abandonne `primary`, `secondary`, `tertiary` et `accent` au profit d'un socle réduit à `base` / `contrast`, complété par une série d'accents numérotés sans rôle fixe :
+
+```json
+{
+  "settings": {
+    "color": {
+      "palette": [
+        { "name": "Base", "slug": "base", "color": "#FFFFFF" },
+        { "name": "Contrast", "slug": "contrast", "color": "#111111" },
+        { "name": "Accent 1", "slug": "accent-1", "color": "#FFEE58" },
+        { "name": "Accent 2", "slug": "accent-2", "color": "#F6CFF4" },
+        { "name": "Accent 3", "slug": "accent-3", "color": "#503AA8" },
+        { "name": "Accent 4", "slug": "accent-4", "color": "#686868" },
+        { "name": "Accent 5", "slug": "accent-5", "color": "#FBFAF3" },
+        { "name": "Accent 6", "slug": "accent-6", "color": "color-mix(in srgb, currentColor 20%, transparent)" }
+      ]
+    }
+  }
+}
+```
+
+L'idée : plutôt que d'imposer un rôle figé (`primary` = marque, `secondary` = soutien...), le thème fournit une réserve de couleurs neutres numérotées, librement assignées selon le design (l'une sert de couleur de lien, une autre de fond de badge, etc.). C'est plus flexible pour l'éditeur de blocs, mais moins portable d'un thème à l'autre : `accent-3` n'a pas de sens garanti hors du thème qui le déclare, contrairement à `primary`.
+
+👉 Sur un projet Alsacréations, choisir **une seule convention par thème** et s'y tenir :
+
+- `primary` / `secondary` / `tertiary` / `accent` si l'équipe design raisonne en rôles (marque, soutien, CTA) ;
+- `accent-1` à `accent-N` si la palette est plus riche et destinée à rester flexible dans l'éditeur (cas de Twenty Twenty-Five).
+
+Dans les deux cas, `base` et `contrast` restent le socle commun, et les couleurs fonctionnelles ci-dessous (`success`, `warning`, `error`, `info`) s'ajoutent indépendamment du choix retenu.
 
 ### Presets complémentaires
 
@@ -194,12 +226,44 @@ Au-delà du socle ci-dessus, on complète souvent la palette avec des variantes 
 | `error` | Erreur, suppression (validation échouée, action destructive). | `--wp--preset--color--error` |
 | `info` | Information neutre (aide contextuelle, message informatif). | `--wp--preset--color--info` |
 
-👉 Pourquoi respecter cette convention :
+👉 Pourquoi respecter une convention de nommage (quelle qu'elle soit) :
 
-- **Portabilité des blocs** : un bloc coloré en `primary` reste cohérent si l'utilisateur change de thème (le nouveau thème fournit sa propre valeur pour `--wp--preset--color--primary`). Un slug maison comme `bleu-turquoise` casserait le rendu au changement de thème.
+- **Portabilité des blocs** : un bloc coloré en `primary` (ou `accent-1`) reste cohérent si l'utilisateur change de thème, tant que le nouveau thème déclare le même slug. Un slug maison comme `bleu-turquoise` casserait le rendu au changement de thème.
 - **Éditeur de site (FSE)** : dans _Apparence > Éditeur > Styles > Couleurs_, l'interface mappe directement ses sélecteurs sur ces slugs.
 
-## 5. Lister les presets actifs sur un site
+## 5. Générer des couleurs dérivées avec `color-mix()`
+
+Plutôt que d'ajouter un nouveau slug à la palette pour chaque variante (survol, focus, version atténuée, transparence...), on peut calculer la couleur dérivée à la volée avec la fonction CSS `color-mix()`, directement dans `theme.json`. Cela évite de faire gonfler la palette avec des slugs comme `accent-hover`, `accent-light` ou `primary-muted`.
+
+Syntaxe : `color-mix(in <espace-colorimétrique>, <couleur-1> <pourcentage>, <couleur-2>)`.
+
+- Éclaircir ou assombrir un preset existant pour un état `:hover`, sans créer de nouveau preset (exemple issu de Twenty Twenty-Five) :
+
+  ```json
+  {
+    "styles": {
+      "elements": {
+        "button": {
+          ":hover": {
+            "color": {
+              "background": "color-mix(in srgb, var(--wp--preset--color--contrast) 85%, transparent)"
+            }
+          }
+        }
+      }
+    }
+  }
+  ```
+
+- Déclarer un preset dont la valeur dépend du contexte (`currentColor`), pour une teinte discrète qui s'adapte automatiquement à la couleur héritée plutôt qu'une valeur figée :
+
+  ```json
+  { "name": "Accent 6", "slug": "accent-6", "color": "color-mix(in srgb, currentColor 20%, transparent)" }
+  ```
+
+👉 Un seul preset de base suffit alors à couvrir ses propres déclinaisons (survol, focus, fond atténué, bordure discrète...), au lieu de multiplier les entrées dans `settings.color.palette`. `color-mix()` est supporté par tous les navigateurs modernes (Baseline depuis 2023), utilisable sans fallback sur un projet récent.
+
+## 6. Lister les presets actifs sur un site
 
 Pour voir quelles variables sont actuellement actives sur un site (Core, thème et extensions confondus), sans code :
 
@@ -209,9 +273,10 @@ Pour voir quelles variables sont actuellement actives sur un site (Core, thème 
 4. Dans le panneau _Styles_, repérer le bloc de déclaration `:root`.
 5. Toutes les variables `--wp--preset--*` injectées dynamiquement par WordPress y apparaissent.
 
-## 6. Références
+## 7. Références
 
 - 🔖 [Documentation officielle du theme.json (référence complète des propriétés)](https://developer.wordpress.org/block-editor/reference-guides/theme-json-reference/theme-json-living/)
 - 🔖 [Global Settings & Styles (Block Editor Handbook)](https://developer.wordpress.org/block-editor/how-to-guides/themes/global-settings-and-styles/)
 - 🔖 [Using presets (var:preset syntax)](https://developer.wordpress.org/themes/global-settings-and-styles/styles/using-presets/)
 - 🔖 [Standardizing theme.json colors — Rich Tabor](https://richtabor.com/standardizing-theme-json-colors)
+- 🔖 [`color-mix()` — MDN](https://developer.mozilla.org/fr/docs/Web/CSS/color_value/color-mix)
