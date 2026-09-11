@@ -2,12 +2,9 @@
 
 Autres listes de ressources et checklists
 
+- <https://free-for.dev/> et <https://github.com/ripienaar/free-for-dev> Plein de ressources gratuites pour développeurs
 - <https://github.com/trimstray/the-book-of-secret-knowledge>
-- <https://github.com/sdmg15/Best-websites-a-programmer-should-visit/blob/master/README.md>
 - <https://github.com/mtdvio/every-programmer-should-know>
-- <https://github.com/dypsilon/frontend-dev-bookmarks>
-- <https://frontendmasters.com/guides/front-end-handbook/2024/>
-- <https://free-for.dev/> Plein de ressources pour développeurs
 - <https://github.com/thedaviddias/Front-End-Checklist>
 - <https://github.com/thedaviddias/Front-End-Performance-Checklist>
 - <https://github.com/awesome-selfhosted/awesome-selfhosted> Awesome-Selfhosted : liste d'applications que l'on peut héberger soi-même
@@ -25,7 +22,7 @@ Autres listes de ressources et checklists
 ## Documentations générales rapides
 
 - <https://html-now.github.io/> The web platform : toutes les API/spécifications
-- <https://devdocs.io/>
+- <https://devdocs.io/> API multiples de documentation
 - <https://devhints.io> cheatsheets
 - <https://overapi.com/> cheatsheets
 - <http://html5index.org/>
@@ -331,7 +328,6 @@ Autres listes de ressources et checklists
 - <https://parall.ax/products/jspdf> Générer PDF côté client
 - <https://inorganik.github.io/countUp.js/> Défilement de compteur/chiffres
 - <https://joaopereirawd.github.io/animatedModal.js/> Modales animées
-- <http://callmecavs.com/bricks.js/> Masonry performant
 - <https://github.com/jwagner/smartcrop.js> Smartcrop intelligent pour les images
 - <https://swiperjs.com/> Slideshow
 - <https://github.com/nolimits4web/Swiper> Swiper JS vanilla très extensible et flexible (fonctionne sous Windows Phone)
@@ -603,7 +599,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 - <https://threejs.org/> 2D et 3D
 - <https://www.babylonjs.com/> WebGL
-- <http://paperjs.org/> 2D
+- <https://paperjs.org/> 2D
 - <https://webgl2fundamentals.org> Fondamentaux de WebGL2
 - <https://createjs.com/easeljs>
 - <https://www.professorcloud.com/svg-to-canvas/> SVG to Canvas
