@@ -64,7 +64,7 @@ Convention maison&#8239;: `@scope` remplace BEM. Les classes restent courtes et 
   @scope (.card) {
     .title {
       font-size: var(--text-l);
-      color: var(--primary);
+      color: var(--accent-1);
     }
     .media {
       border-radius: var(--radius-16);
@@ -74,7 +74,7 @@ Convention maison&#8239;: `@scope` remplace BEM. Les classes restent courtes et 
   @scope (.btn) {
     :scope {
       --button-background-color: var(--form-background, Field);
-      --button-text-color: var(--on-form, ButtonText);
+      --button-text-color: var(--contrast, ButtonText);
       background-color: var(--button-background-color);
       color: var(--button-text-color);
     }
@@ -84,9 +84,9 @@ Convention maison&#8239;: `@scope` remplace BEM. Les classes restent courtes et 
     }
 
     /* Variantes : on ne change que les valeurs, pas la logique */
-    &.primary {
-      --button-background-color: var(--primary);
-      --button-text-color: var(--on-primary);
+    &.accent {
+      --button-background-color: var(--accent-1);
+      --button-text-color: var(--base);
     }
   }
 }
@@ -108,7 +108,19 @@ Primitives → Tokens sémantiques → Composants. Générés depuis l'UI Kit Fi
 | Ombre                    | `--shadow-*`      | `--shadow-md`        |
 | Z-index                  | `--z-*`           | `--z-modal`          |
 
-Tokens sémantiques (rôles, inspirés Material Design) à utiliser dans les composants, jamais une primitive ou une valeur en dur directement&#8239;: `--primary`/`--on-primary`, `--surface`/`--on-surface`, `--layer-1/2/3`, `--link`/`--link-hover`, `--border-light`/`--border-medium`, `--error`/`--success`/`--warning`/`--info`.
+Tokens sémantiques (rôles, inspirés de la convention **WordPress** popularisée par le thème Twenty Twenty-Five) à utiliser dans les composants, jamais une primitive ou une valeur en dur directement&#8239;:
+
+| Rôle | Token | Usage |
+| --- | --- | --- |
+| Socle | `--base` / `--contrast` | Fond principal / texte principal (doit contraster avec `--base`) |
+| Fond secondaire | `--base-2` | Sections alternées, cartes, encarts |
+| Texte secondaire | `--contrast-muted` / `--contrast-2` | Légendes, texte d'aide / variante de texte (ex. sur fond sombre) |
+| Accents libres | `--accent-1` à `--accent-N` | Sans rôle imposé&#8239;: liens, CTA, bordures, fonds de badge… selon le design |
+| Liens | `--link` / `--link-hover` | — |
+| Bordures | `--border-light` / `--border-medium` | — |
+| États | `--error` / `--success` / `--warning` / `--info` | Retours utilisateur (formulaires, notifications) |
+
+⚠️ **Abandonné** — L'ancienne convention `primary`/`secondary`/`tertiary`/`accent` (Material Design / Rich Tabor) n'est plus utilisée sur les nouveaux projets&#8239;: pas de rôle de marque figé, on assigne librement les `--accent-N` selon le design. Pas de token `--on-*` compagnon non plus&#8239;: contrairement à Material Design, il n'y a pas de couleur de texte garantie pour chaque fond&#8239;; choisir directement `--base` ou `--contrast` selon le contexte, ou dériver la nuance avec `color-mix()`. Voir [resources/wordpress-presets.md](../resources/wordpress-presets.md) pour le détail de la convention et sa transposition dans `theme.json`.
 
 > 💡 **Astuce** — Les tailles de texte et espacements fluides (`clamp(...)`) sont générés par [Elastic](https://elastic.alsacreations.com/)&#8239;: ne pas calculer ces `clamp()` à la main, régénérer via l'outil si une valeur doit changer.
 
