@@ -675,6 +675,7 @@ Maquettes / story-boards / wireframes / mockups / zoning
 
 - <https://vim-adventures.com/> Apprendre Vim en jouant
 - <https://vim.rtorr.com/> Cheatsheet vim
+- <https://s3onghyun.github.io/nvim-edu/> Entraînement interactif aux raccourcis Vim/Neovim et tmux (niveaux, exercices)
 
 ### Applications web
 
