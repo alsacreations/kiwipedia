@@ -2,306 +2,96 @@
 
 > Statut : stable · Niveau : tous
 
-**TL;DR** — Processus webdesign Alsacréations : arborescence, moodboard, wireframes, maquettes (Figma), design system, livrables et inspection en intégration.
-
-Ce document rassemble les bonnes pratiques appliquées par l'agence [Alsacreations.fr](https://www.alsacreations.fr/) concernant **le webdesign**. Il évolue dans le temps et s'adapte à chaque nouveau projet.
+Processus et exigences **spécifiques à Alsacréations** pour la conception graphique (arborescence → wireframes → maquettes → UI Kit) et la passation à l'intégration. Les principes généraux d'UX/UI (hiérarchie visuelle, alignements, cohérence, parcours e-commerce standards…) ne sont **pas** repris ici&#8239;: ils sont déjà appliqués par défaut. Ce document sert à produire ou vérifier des livrables de design, et à savoir ce que l'intégration peut attendre de la maquette.
 
 ---
 
-## Définitions, outils, projets
-
-Sont indiquées **en gras** les étapes prioritaires dans notre processus qui comprend une réalisation avec Figma, permettant la consultation et les commentaires par tous, puis l'inspection en phase d'intégration.
-
-| Étape                   | Nom                    | Définition                                                                                                                           | Outil préconisé                                         |
-| ----------------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------- |
-| Prospection / Démarrage | **Arborescence**       | Arborescence visuelle, voire zoning, qui permet d’identifier les différents modèles de pages                                         | [Octopus](https://octopus.do/), [miro](https://miro.com/) |
-| Design                  | Moodboard              | Planche de tendances. Type de collage qui peut être composé d'images, de texte et d'objets selon le choix de son créateur            | [Figma](https://figma.com/) ou [Whimsical](https://whimsical.com/)                     |
-| Design UX               | **Wireframes**         | Zonings fil-de-fer avec texte / composants intégrés (ex. zone emploi avec 3 icônes et 2 zones de texte), Aucun design associé        | [Figma](https://figma.com/)                             |
-| Design UX               | Prototypage, wireframes interactifs | Wireframes avec navigation, actions et animations possibles                                                                          | [Figma](https://figma.com/), [Flow](https://createwithflow.com/) |
-| Design UI               | **Maquettes**          | Design définitif et complet, d'après les wireframes, livrable pour intégration.                                                      | [Figma](https://figma.com/)                             |
-| Design / Intégration    | **UI Kit**             | Couleurs utilisées, polices, visuel des composants principaux, images et icônes utilisées. Étape préparatrice à l’intégration        | [Figma](https://figma.com/)                             |
-| Intégration             | Styleguide             | Liste des composants, avec code HTML / CSS / JS associés. Assure la consistance et la maintenance de l’intégration au cours du temps | [Storybook](https://storybook.js.org/)                  |
-| Toutes                  | Design System          | Ensemble des étapes précédentes + Guidelines (documentation et bonnes pratiques)                                                     |                                                         |
-
-## Contenus à prévoir
-
-### Arborescence
-
-Les pages à ne pas oublier de faire apparaître dans l'arborescence sont :
-
-- Pages principales et internes. Exemples :
-  - Accueil (home)
-  - À propos
-  - Contact
-  - Page de catégorie produit / service / article
-  - Page de présentation produit / service / article
-  - Landing pages pour télécharger un document, s’inscrire à un événement,…
-  - Page de remerciements suite à un téléchargement ou une inscription
-  - Page de résultats de recherche
-  - Page de confirmation (ex : envoi d’un e-mail automatique après une inscription à la newsletter ou à un événement, ou suite à un téléchargement)
-- Pages annexes
-  - Mentions légales
-  - Politique de confidentialité (pour satisfaire au [RGPD](https://www.cnil.fr/fr/reglement-europeen-protection-donnees))
-  - Politique d'écoconception (pour satisfaire au [RGESN](https://ecoresponsable.numerique.gouv.fr/publications/referentiel-general-ecoconception/))
-  - Conditions générales d’utilisation / de vente (si concerné)
-  - Déclaration d'accessibilité (si concerné)
-- Page d'erreur 404 (voire d'erreur 500)
-
-## Contenus à prévoir site e-commerce
-
-### Arborescence
-
-- Page de catégorie
-  - Filtres (par prix, taille, couleur, marque, notes, etc.
-  - Tri des produits (pertinence, prix, popularité)
-  - Grille ou liste de produits (image + titre + prix + note + bouton "Ajouter au panier")
-  - Pagination
-  - Breadcrumbs (fil d’Ariane)
-- Page de fiche produit
-  - Galerie d’images
-  - Titre, prix (prix barré si promotion), disponibilité, stock, popularité 
-  - Description détaillée (caractéristiques, matériaux, dimensions)
-  - Avis clients (notes + commentaires)
-  - Bouton "Ajouter au panier" (visible sans scroll)
-  - Suggestions de produits similaires ou complémentaires
-- Panier
-  - Liste des produits (image, titre, quantité, prix unitaire, prix total)
-  - Options de modification (supprimer, changer la quantité)
-  - Résumé du panier (sous-total, frais de livraison, total)
-  - Boutons "Continuer mes achats" et "Passage à la caisse"
-- Tunnel de commande (Checkout)
-  - étape 1 : formulaire de connexion ou création de compte (option "Invité")
-  - étape 2 : adresse de livraison
-    - Formulaire d’adresse (champs pré-remplis si utilisateur connecté)
-    - Option "Livrer à une autre adresse"
-    - Sélection du mode de livraison
-  - étape 3 : mode de paiement
-  - étape 4 : récapitulatif et confirmation
-    - Récapitulatif de la commande (produits, adresse, livraison, paiement)
-    - Case à cocher pour accepter les CGV
-    - Bouton "Valider la commande"
-- Page de confirmation de commande
-  - Message de remerciement
-  - Numéro de commande et récapitulatif
-  - Détails de livraison (date estimée, adresse)
-  - Bouton "Suivre ma commande"
-  - Suggestions de produits complémentaires
-- Compte utilisateur (My Account)
-- Page de suivi de commande
-- Page de gestion des retours/remboursements
-- Maquettes pour les emails transactionnels
-  - Email de confirmation de commande
-  - Email d’expédition
-  - Email de livraison
-  - Email de relance de panier abandonné
-
-### Wireframe
-
-Un Wireframe consiste en des tracés de type “fil-de-fer” avec textes et composants intégrés (par exemple une “zone emploi” avec 3 icônes et 2 emplacements de texte).
-
-Aucun design ni aucune couleur ne sont associés au Wireframe qui doit demeurer neutre pour se concentrer exclusivement sur les aspects fonctionnels et ergonomiques.
-
-Les pages concernées par les wireframes dépendent du projet, mais "un nombre représentatif" sera conçu (à minima la page d'accueil, une page de contenu et la page de contact).
-
-Idéalement, il faut utiliser un "vrai contenu" (textes, images, navigation) et s’il n’y en a pas, nous utilisons un texte de remplacement (ex. Schnapsum, Lorem Ipsum).
-
-Les éléments à ne pas oublier de faire apparaître dans les wireframes/maquettes sont :
-
-- Le•s logo•s
-- Navigation principale + secondaire (menu desktop, menu mobile)
-- Fil d’ariane
-- Modales (pop-in)
-- Header et Footer
-  - Navigation desktop et mobile
-  - Barre de recherche
-  - Informations de contact (formulaire, adresse, téléphone)
-  - Liens vers
-    - Plan du site
-    - Mentions légales
-    - Politique de confidentialité
-    - Politique d'écoconception
-    - Conditions générales (si concerné)
-    - Déclaration d'accessibilité (si concerné)
-  - Mention “alsacréations” (si concerné)
-  - Réseaux sociaux
-  - Choix de la langue (en toutes lettres, pas de drapeaux)
-  - Options d’accessibilité (couleurs, taille de texte)
-- Un CTA par page et/ou liens internes
-- Mentions et coche sous les formulaires
-  - RGPD + lien vers la Politique de confidentialité (obligatoire sous tous les formulaires sans exception)
-  - Si les informations saisies dans un formulaire peuvent être utilisées pour autre chose que l’objet principal de ce formulaire, il faut des opt-in par utilisation supplémentaire. Exemples :
-    - J'accepte de recevoir des offres commerciales
-    - J'accepte d’être informé•e des bons plans des partenaires de _NOM DU CLIENT_
-    - J'accepte de recevoir la newsletter mensuelle
-    - J'accepte les conditions générales d’utilisation (+ lien)
+## Processus et outils
 
-### Prototypage
+Les étapes **en gras** sont systématiques. Tout le design se fait dans **Figma** (consultation et commentaires par tous, inspection en phase d'intégration).
 
-Il peut être réalisé au stade des Wireframes ou des Maquettes, et permet de :
+| Étape | Livrable | Contenu | Outil |
+| --- | --- | --- | --- |
+| Démarrage | **Arborescence** | Arborescence visuelle, voire zoning, qui identifie les modèles de pages | [Octopus](https://octopus.do/), [Miro](https://miro.com/) |
+| Design | Moodboard | Planche de tendances | Figma, [Whimsical](https://whimsical.com/) |
+| UX | **Wireframes** | Zonings fil de fer avec textes et composants, sans design | Figma |
+| UX | Prototype | Wireframes ou maquettes avec navigation, états et animations | Figma, [Flow](https://createwithflow.com/) |
+| UI | **Maquettes** | Design définitif, livrable pour l'intégration | Figma |
+| Design → intégration | **UI Kit** | Valeurs, composants, assets (voir [UI Kit](#ui-kit)) | Figma |
+| Intégration | Styleguide | Composants avec leur code HTML/CSS/JS | [Storybook](https://storybook.js.org/) |
+| Toutes | Design system | Ensemble des livrables + documentation | — |
 
-- comprendre le parcours de l'internaute et tout le flux des liens pour savoir quel est le contenu ciblé.
-- visualiser les différents états (au survol d’un bouton par exemple), et les différentes animations.
+## Pages à prévoir dans l'arborescence
 
-### Maquette
+- Accueil, À propos, Contact, catégories et fiches (produit/service/article), landing pages, page de remerciement (après téléchargement ou inscription), page de confirmation (e-mail automatique), résultats de recherche.
+- Pages légales&#8239;: **mentions légales**, **politique de confidentialité** (RGPD), **politique d'écoconception** (RGESN), CGU/CGV si concernées, **déclaration d'accessibilité** si concernée.
+- Page **404** (voire 500).
+- **E-commerce**, en plus du parcours standard (catégorie avec filtres/tri/pagination, fiche produit, panier, tunnel de commande en 4 étapes avec option «&#8239;invité&#8239;», confirmation, compte, suivi, retours)&#8239;: bouton «&#8239;Ajouter au panier&#8239;» visible sans défilement sur la fiche produit, et **maquettes des e-mails transactionnels** (confirmation de commande, expédition, livraison, relance de panier abandonné).
 
-La Maquette est l’évolution logique du Wireframe en y ajoutant la couche graphique et design. Les maquettes constituent le livrable définitif pour intégration.
+## Wireframes
 
-La maquette doit comporter l’ensemble des éléments du wireframe (si l’élément est concerné) ainsi que :
+- Neutres&#8239;: aucune couleur, aucun design — uniquement le fonctionnel et l'ergonomie.
+- Un nombre représentatif de pages, **au minimum&#8239;: accueil, une page de contenu, contact**.
+- Vrai contenu de préférence, sinon texte de remplacement ([Schnapsum](https://schnaps.it/) ou Lorem Ipsum).
 
-- La page 404
-- Le bandeau Cookies (si concerné)
-- Les [liens d’évitement](/guidelines/accessibility.md)
+Éléments obligatoires dans les wireframes **et** les maquettes&#8239;:
 
-### Mobile first
+- logo(s)&#8239;; navigation principale et secondaire, en version desktop **et** mobile&#8239;; fil d'Ariane&#8239;; modales&#8239;;
+- en-tête et pied de page avec&#8239;: recherche, coordonnées (formulaire, adresse, téléphone), réseaux sociaux, liens vers le plan du site et les pages légales, mention «&#8239;Alsacréations&#8239;» si prévue&#8239;;
+- **choix de la langue en toutes lettres, jamais de drapeaux** ([pourquoi](https://www.flagsarenotlanguages.com/))&#8239;;
+- options d'accessibilité (couleurs, taille de texte) si prévues&#8239;;
+- un appel à l'action par page et/ou des liens internes&#8239;;
+- sous **chaque** formulaire, sans exception&#8239;: mention RGPD avec lien vers la politique de confidentialité, et **une case opt-in distincte par usage secondaire** des données (newsletter, offres commerciales, offres partenaires, acceptation des CGU…). Voir [RGPD](rgpd.md).
 
-La conception de nos maquettes est réalisée dans un esprit "Mobile First" (meilleures performances générales) c'est à dire que la priorité est donnée aux vues "Mobiles", puis déclinées en vues "Desktop", avec "adaptation au mieux" pour devices intermédiaires.
+## Maquettes
 
-Les maquettes conçues respectent les Points de Rupture (Breakpoints) recommandés dans nos [Guidelines CSS](/guidelines/css.md).
+- En plus des éléments des wireframes&#8239;: page **404**, bandeau cookies (si concerné), **liens d'évitement** (masqués, visibles au focus clavier — voir [Accessibilité](accessibility.md#liens-dévitement)).
+- **Mobile first**&#8239;: vues mobiles d'abord, puis desktop, avec adaptation au mieux pour les tailles intermédiaires. Points de rupture&#8239;: ceux de [CSS — Breakpoints nommés imposés](css.md#breakpoints-nommés-imposés).
+- Même minimum que pour les wireframes&#8239;: accueil, une page de contenu, contact.
+- Grille&#8239;: choisie par le ou la designer, appliquée uniformément à toutes les maquettes et communiquée à l'intégration (qui raisonne ensuite en composants).
+- Multilingue&#8239;: simuler les mots plus longs des autres langues dans la navigation, les boutons et les titres pour tester les retours à la ligne (traduction dans Figma possible avec [Smartcat](https://www.smartcat.com/figma/)).
 
-Comme pour la phase de Wireframe, les pages concernées par les maquettes Mobiles ou Desktop dépendent du projet, mais "un nombre représentatif" sera proposé (à minima la page d'accueil, une page de contenu et la page de contact).
+## UI Kit
 
-### UI Kit
+Passerelle entre design et intégration. Il doit contenir&#8239;:
 
-L’UI-Kit est un document servant de passerelle entre le designer et l’intégrateur/trice. Il s’agit d’une “planche anatomique” où sont détaillés les éléments indispensables pour l’intégration : les valeurs de couleurs, les polices, les visuels des composants principaux, images et icônes y sont représentés.
+- **Valeurs** (relevées dans Figma, jamais à la pipette du navigateur)&#8239;: couleurs de texte, fond et décoration, avec les états `hover`, `focus`, `active` et `visited`&#8239;; familles et variantes de polices avec lien de téléchargement&#8239;; tailles de police et hauteurs de ligne&#8239;; espacements&#8239;; rayons de bordure.
+- **Éléments HTML**&#8239;: titres, paragraphes, listes, liens, liens externes, boutons, tableaux, `<hr>` si présent.
+- **Composants** de la maquette&#8239;: blocs, alertes, pagination, navigation (dont la navigation mobile dépliée)…
+- **Formulaires**&#8239;: champs obligatoires, désactivés, états d'avertissement/erreur/info, messages d'erreur de validation, boutons primaire et secondaire (dont un bouton qui n'est pas un _submit_, ex. «&#8239;Annuler&#8239;»), cases à cocher et boutons radio dans tous leurs états.
+- **Interactions**&#8239;: transitions et animations (liens vers des démos), liens d'évitement.
+- **Assets**&#8239;: lien vers l'emplacement des images, icônes, favicon et polices&#8239;; liens vers les banques d'images utilisées. Icônes en SVG sauf exception.
 
-#### Valeurs
+## Polices
 
-Attention : ne pas se fier au rendu des couleurs avec les pipettes des navigateurs.
+- Titrages&#8239;: **2 familles maximum** et **3 à 4 variantes maximum** au total (ex. Merriweather bold, Roboto regular, bold, italic). Au-delà de 3 variantes d'une même famille, préférer une **police variable** (un seul fichier).
+- Texte courant&#8239;: [pile de polices système](https://systemfontstack.com/) par défaut.
 
-- Couleurs utilisées (textes, background, décorations), ainsi que couleurs d'interaction
-  - _hover_ (survol)
-  - _focus_ (pour les éléments pouvant recevoir le focus, liens, boutons, input)
-  - _active_ (pour les liens)
-  - _visited_ (pour les liens)
-- Familles de police (ainsi que variantes gras, semi-gras, italique, …) + lien de téléchargement
-- Tailles de polices et hauteurs de lignes utilisées
-- Valeurs des espacements utilisés (_padding_, _margin_)
-- Valeurs des coins arrondis (_border-radius_)
+## Images et favicon
 
-#### Éléments
+- Chaque image bitmap (photo, arrière-plan) est livrée en **x1 et x2** (écrans haute densité).
+- Formats à transmettre&#8239;: JPG, WebP ou AVIF pour les photos&#8239;; PNG ou WebP pour les images sans perte ou avec transparence&#8239;; SVG pour les icônes, schémas et illustrations vectorielles. Formats finaux à produire&#8239;: voir [HTML — Images](html.md).
+- Répartition des optimisations&#8239;: **bitmap compressés par le ou la webdesigner**&#8239;; SVG et polices optimisés par l'intégration.
+- Favicon&#8239;: fourni en **SVG et PNG 1024×1024 px** (si possible)&#8239;; son intégration est à la charge de l'intégration.
 
-- Les éléments HTML “classiques” (titres, paragraphes, listes, liens, liens externes, boutons, formulaires, tableaux)
-- Composants présents dans la maquette (boîtes/blocs, alertes, pagination, navigation, navigation mobile déployée, …)
-- Une barre de séparation horizontale `<hr>` (si présente)
+## Checklist accessibilité
 
-#### Composants de formulaires
+Exigences d'accessibilité à respecter dès la conception (le reste relève de l'intégration, voir [Accessibilité](accessibility.md))&#8239;:
 
-- Les états d’avertissement/[erreur](https://medium.com/nextux/forms-need-validation-2ecbccbacea1)/info sur certains éléments (si présents)
-- Les champs obligatoires des formulaires
-- Les champs désactivés (_disabled_) des formulaires
-- Les messages d’erreur de validation des formulaires
-- Les [boutons primaires et secondaires](https://uxplanet.org/primary-secondary-action-buttons-c16df9b36150) (un exemple de bouton qui n'est pas un _submit_, par exemple un "annuler")
-- Les cases à cocher button/checkbox (avec leurs différents états)
-
-#### Interactions utilisateur/trice
-
-- Les exemples de transitions ou animations (faire des liens vers des démos)
-- Les Liens d’évitement masqués au départ et déclenchés avec la touche Tab (cf. nos [Guidelines HTML](/guidelines/html.md))
-
-#### Divers
-
-- Une référence (lien) vers l’endroit où sont stockés tous les assets (images/icônes, favicon, polices, etc.). Le format SVG est privilégié pour les icônes, sauf cas exceptionnel
-- Liens vers les banques d’images utilisées
-
-## Points de vigilance
-
-### Grille
-
-Une grille de mise en forme est une aide précieuse pour le/la Designer (respect des alignements et des proportions). Le/la designer choisit son format de grille colonnes/tailles, l’applique uniformément à l’ensemble des maquettes et en informe l’intégrateur/trice.
-
-L’intégrateur/trice va raisonner en “composants” plutôt qu’en mise en page globale et s'adapte à la grille proposée par le/la Designer.
-
-### Polices de caractère
-
-Pour des raisons de performance, il est conseillé :
-
-- Titrages : se limiter à deux familles de police au maximum (ex. Merryweather et Roboto).
-- Titrages : se limiter à 3-4 variantes de police au maximum (ex. Merryweather bold, Roboto regular, Roboto bold, Roboto italic).
-- Labeur : privilégier la [stack system](https://systemfontstack.com/) par défaut.
-
-Si le nombre de variantes pour une police est supérieur à 3 alors une “Variable Font” devient plus intéressante en termes de poids/requêtes car un seul fichier pour toute la famille de police.
-
-### Multilangue
-
-Certains mots peuvent être plus longs dans d'autres langues, il faut les simuler, notamment dans la navigation, les boutons d'action, et dans les titres pour provoquer des retours à la ligne. [Smartcat](https://www.smartcat.com/figma/) permet de la traduction dans Figma.
-
-Le choix de langue se fait à l'aide du mot désignant la langue et non pas d'un drapeau (qui désigne un pays) <https://www.flagsarenotlanguages.com/>.
-
-### Favicon
-
-L'icône à fournir à l’intégrateur/trice est au format SVG et PNG à la taille 1024x1024px, si possible.
-
-L’intégration du favicon est à la charge de l’intégrateur/trice et est décrite dans nos [Guidelines HTML](/guidelines/html.md).
-
-### Images et retina
-
-Afin d’optimiser la netteté des images Bitmap sur écrans Retina et Haute Définition (_hdpi_), lors de la livraison de la maquette, chaque image bitmap (photo, arrière-plan) est fournie en SD (x1) et HD (x2).
-
-- La compression et l’optimisation des SVG/fonts est à la charge de l’intégrateur/trice
-- La compression et l’optimisation des Bitmap (Jpeg, png, webp, avif) est à la charge du/de la webdesigneur/euse, voir [Guidelines Performance](/guidelines/performances.md)
-
-Les formats privilégiés à transmettre à l'intégrateur/trice :
-
-- JPG, WebP, AVIF : photos et images bitmap en général.
-- PNG, WebP : images bitmap sans compression destructrice, pouvant nécessiter de la transparence.
-- SVG : icônes, schémas et images vectorielles.
-
-### Checklist accessibilité
-
-#### Généralités
-
-- Tailles des zones de touch en mobile + espacements suffisants entre les zones.
-- Présence d’un menu de liens rapides.
-- Indication visuelle de la page active.
-- Les liens et zones cliquables sont visuellement identifiés (ex. soulignement d'un lien).
-- Les éléments interactifs doivent toujours être perceptibles (ex. navigation clavier ou pointeur).
-- Exploiter les [préférences en CSS](https://www.smashingmagazine.com/2023/08/css-accessibility-inclusion-user-choice/) avec [CSS Media Features](https://developer.mozilla.org/en-US/docs/Web/CSS/@media#media_features) : `prefers-color-scheme`, `forced-colors`, `inverted-colors`, `prefers-contrast`, `prefers-reduced-transparency`, `prefers-reduced-motion`, `prefers-reduced-data`.
-
-#### Couleurs
-
-- Respecter le contraste de couleur + gammes de couleurs (seuils de `4,5:1` ou `3:1`).
-- Ne pas indiquer une information uniquement par la couleur.
-
-#### Contenus
-
-- Respecter une taille minimum de police pour la lisibilité.
-- Privilégier la clarté du/des textes/du langage.
-- Pas de texte justifié, et bon espacement des lignes.
-- Pas de textes trop longs (utiliser les titres, segmenter, aérer, intégrer des images…)
-- Conserver les accents sur les majuscules.
-- Expliciter les abréviations.
-- Déclarer les citations.
-- Mettre en contexte les _Call To Action_.
-- Utiliser des boutons et liens explicites (pas de _cliquez ici_).
-- Indiquer [l’ouverture d’un lien dans une nouvelle fenêtre](/guidelines/accessibility.md)
-- Limiter les informations à télécharger et préférer l’incorporation directement dans la page
-- Proposer différents moyens de contact (téléphone, e-mail).
-
-#### Formulaires
-
-- Indiquer clairement quels libellés correspondent à quels champs de formulaires.
-- Les libellés et les champs doivent être accolés.
-- Boutons radios/checkboxes : le champ de sélection doit être large et pas seulement sur la _box_.
-- Indication des champs obligatoires.
-- Indication des formats de saisie (numérique, …).
-- Validation et affichage des erreurs en temps réel des formulaires (sans actualisation).
-- Indiquer le format et la taille des fichiers en téléchargement.
-
-#### Médias
-
-- Icônes et/ou images accompagnées d’un texte/intitulé si nécessaire.
-
-## Autres ressources et bonnes pratiques
-
-- 🔗 [Checklist Design](https://www.checklist.design/)
-- 🔗 [Visual design rules you can safely follow every time](https://anthonyhobday.com/sideprojects/saferules/)
-- 🔗 [Building Better UI Designs With Layout Grids](https://www.smashingmagazine.com/2017/12/building-better-ui-designs-layout-grids/)
+- **Contrastes**&#8239;: 4,5:1 pour le texte courant, 3:1 pour le grand texte et les composants d'interface&#8239;; vérifier les gammes de couleurs complètes. Aucune information portée par la seule couleur.
+- **Interactions**&#8239;: zones tactiles assez grandes et assez espacées sur mobile&#8239;; liens et zones cliquables identifiables visuellement (ex. soulignement)&#8239;; focus toujours visible&#8239;; page active signalée&#8239;; liens d'évitement prévus.
+- **Textes**&#8239;: taille minimale lisible, interlignage confortable, pas de texte justifié, textes segmentés (titres, paragraphes courts), **accents conservés sur les majuscules**, abréviations explicitées, citations identifiées, liens et boutons explicites (jamais «&#8239;cliquez ici&#8239;»), ouverture en nouvelle fenêtre signalée, appels à l'action mis en contexte.
+- **Contenus**&#8239;: privilégier le contenu dans la page plutôt qu'en téléchargement&#8239;; format et poids indiqués pour les fichiers à télécharger&#8239;; plusieurs moyens de contact (téléphone, e-mail).
+- **Formulaires**&#8239;: libellés accolés à leur champ, zone cliquable des cases à cocher et boutons radio étendue au libellé, champs obligatoires et formats de saisie indiqués, erreurs affichées en temps réel sans rechargement.
+- **Médias**&#8239;: icônes et images accompagnées d'un intitulé si nécessaire.
+- **Préférences utilisateur** à prévoir dans le design&#8239;: thème sombre (`prefers-color-scheme`), mouvement réduit (`prefers-reduced-motion`), contraste élevé (`prefers-contrast`, `forced-colors`).
 
 ---
 
 ## Voir aussi
 
-- [Accessibilité](accessibility.md) — Contrastes et lisibilité dès la conception.
-- [Icônes](icons.md) — Production graphique des pictogrammes.
+- [Accessibilité](accessibility.md) — Exigences d'intégration.
+- [CSS](css.md) — Points de rupture, design tokens.
 - [Écoconception](ecoconception.md) — Choix de design responsables.
-- [CSS](css.md) — Du design tokens au code.
+- [Icônes](icons.md) — Production et optimisation des pictogrammes.
+- [RGPD](rgpd.md) — Consentement et mentions sous les formulaires.
