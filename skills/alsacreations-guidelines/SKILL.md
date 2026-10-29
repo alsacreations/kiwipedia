@@ -5,60 +5,100 @@ description: Guidelines techniques et conventions internes d'Alsacréations (Kiw
 
 # Guidelines Alsacréations (Kiwipedia)
 
-Ce plugin **embarque directement** le contenu du dépôt
-[alsacreations/kiwipedia](https://github.com/alsacreations/kiwipedia)
-(Kiwipedia) : toutes les fiches sont disponibles en local, aucun `WebFetch`
-n'est nécessaire. Lire le fichier concerné avec `Read`, chemin relatif à la
-racine de ce plugin.
-
-## Fiches disponibles
-
-L'index complet et à jour vit dans [`README.md`](../../README.md) à la
-racine du plugin — s'y référer pour la liste exhaustive et sa structure par
-étape de cycle de vie projet (démarrer, fondamentaux, stacks, qualité,
-design, aide-mémoire). Les chemins des fiches suivent le même schéma que
-dans le README : `guidelines/<sujet>.md`, `starters/<sujet>.md`,
-`cheatsheets/<sujet>.md`.
-
-## État de la migration « adapté IA »
-
-Chaque fiche est progressivement réécrite pour un usage direct par une IA
-(directives condensées, uniquement ce qui distingue les projets
-Alsacréations d'un projet standard — les bonnes pratiques génériques déjà
-connues d'une IA ne sont pas répétées). Tant qu'une fiche n'apparaît pas
-dans la liste ci-dessous, elle est encore au format initial (plus long,
-pédagogique, à destination d'un humain) : la lire avec la même rigueur, mais
-s'attendre à devoir filtrer davantage de contenu générique.
-
-- ✅ [Conventions de nommage](../../guidelines/naming-conventions.md) —
-  langue, casse, choix de verbe, `TODO`/`FIXME`, domaines factices.
-- ✅ [HTML](../../guidelines/html.md) — landmarks `role`+`id`, pattern
-  `no-js`/`js`, nommage des composants, formats d'images imposés.
-- ✅ [CSS](../../guidelines/css.md) — architecture, `@scope`, design tokens,
-  Bretzel, dark mode, typographie.
-- ✅ [JavaScript](../../guidelines/javascript.md) — amélioration progressive,
-  convention `data-*`/classes, jQuery, plugin boilerplate maison.
-- ✅ [TypeScript](../../guidelines/typescript.md) — `type` plutôt
-  qu'`interface`, JSDoc sans typage redondant.
-- ✅ [Vue.js et Nuxt](../../guidelines/vue.md) — dépendances imposées,
-  conventions props/data/events, i18n, modales `Teleport`.
-- ✅ [PHP / MySQL](../../guidelines/php-mysql.md) — outillage imposé, style de
-  fichier, types MySQL, index/pagination.
-- ✅ [Icônes](../../guidelines/icons.md) — SVGOMG, nettoyage manuel
-  complémentaire.
+La source de vérité est le dépôt GitHub
+[alsacreations/kiwipedia](https://github.com/alsacreations/kiwipedia),
+branche `main`. Les fiches ne sont pas embarquées dans ce skill : les
+récupérer à chaque usage depuis
+`https://raw.githubusercontent.com/alsacreations/kiwipedia/main/<chemin>`.
 
 ## Méthode
 
-1. Identifier le(s) sujet(s) de la question via le README ou la liste
-   ci-dessus.
-2. Lire directement le fichier avec `Read` (chemin relatif à la racine de
-   ce plugin) — pas de `WebFetch`, tout est déjà en local et à jour avec ce
-   qui est installé.
-3. Si le sujet touche plusieurs documents (ex. « accessibilité + HTML »),
-   lire chacun séparément plutôt que de deviner.
-4. Ne jamais présenter une convention « de mémoire » sans l'avoir vérifiée
-   dans le fichier source — Kiwipedia évolue.
-5. Pour les sujets d'outillage (Bretzel, Primary, Fondue, Elastic, Reset,
-   KNACSS…), une fiche renvoie généralement vers le site officiel de
-   l'outil plutôt que de le redocumenter — s'y référer directement pour
-   éviter toute divergence avec la doc source.
+1. Repérer la ou les fiches utiles dans la table ci-dessous. Si une question
+   couvre plusieurs sujets (ex. « accessibilité + HTML »), récupérer chaque
+   fiche.
+2. Récupérer le texte brut, de préférence avec le shell, dans un fichier
+   temporaire :
+   `curl -fsSL https://raw.githubusercontent.com/alsacreations/kiwipedia/main/<chemin> -o <tmp>/<fichier>.md`.
+   Sans shell, utiliser l'outil de lecture web en demandant le texte
+   intégral des sections utiles, pas un résumé.
+3. Fiche courte : la lire en entier. Fiche longue (plus de 15 Ko environ) :
+   lister les titres (`grep -n '^#'`), puis ne lire que les sections
+   pertinentes.
+4. Les fiches commençant par un en-tête `> Statut` suivi d'un **TL;DR**
+   pédagogique sont encore au format initial, destiné aux humains : en
+   extraire uniquement ce qui est propre à Alsacréations.
+5. Ne jamais présenter une convention « de mémoire » : la vérifier dans la
+   fiche récupérée.
+6. **Si le dépôt est inaccessible** (erreur réseau, 404, domaine bloqué) :
+   le dire clairement à l'utilisateur, préciser quelle fiche n'a pas pu être
+   lue, et ne pas combler avec des connaissances génériques présentées comme
+   des conventions maison.
+7. Si le sujet n'apparaît pas dans la table, ou si une fiche renvoie 404,
+   récupérer `README.md` à la racine du dépôt : c'est l'index à jour.
+8. Ignorer les images, le dossier `archives/` (ne pas appliquer sauf demande
+   explicite) et `STYLE.md` (guide de rédaction des fiches).
+9. Outils maison (Bretzel, Primary, Reset, KNACSS, Fondue, Elastic…) : le
+   skill `alsacreations-tools` les recense.
+
+## Table des fiches
+
+### Démarrer un projet
+
+| Chemin | Contenu |
+|---|---|
+| `starters/project-init.md` | Routine commune d'initialisation (statique, Nuxt, WordPress), Primary, outils qualité |
+| `starters/vite.md` | Starter Vite pour les sites statiques |
+| `starters/aws-s3.md` | Hébergement statique Nuxt/Vue sur S3 |
+
+### Fondamentaux et conventions
+
+| Chemin | Contenu |
+|---|---|
+| `guidelines/naming-conventions.md` | Langue, casse, verbes, `TODO`/`FIXME`, domaines factices |
+| `guidelines/html.md` | Landmarks `role`+`id`, `no-js`/`js`, nommage des composants, formats d'images |
+| `guidelines/css.md` | Architecture, `@scope`, design tokens, Bretzel, dark mode, typographie |
+| `guidelines/javascript.md` | Amélioration progressive, `data-*`/classes, jQuery, plugin boilerplate |
+| `guidelines/typescript.md` | `type` plutôt qu'`interface`, JSDoc sans typage redondant |
+| `guidelines/icons.md` | SVGOMG, nettoyage manuel |
+| `guidelines/git.md` | Conventional Commits en français, types, scope, conflits, `rerere` |
+| `guidelines/vscode.md` | Configuration VS Code spécifique à l'agence |
+
+### Stacks et frameworks
+
+| Chemin | Contenu |
+|---|---|
+| `guidelines/vue.md` | Vue.js/Nuxt : dépendances imposées, props/data/events, i18n, modales `Teleport` |
+| `guidelines/php-mysql.md` | Outillage imposé, style de fichier, types MySQL, index/pagination |
+| `guidelines/wordpress/global.md` | WordPress : vue d'ensemble, hooks, hiérarchie des templates |
+| `guidelines/wordpress/environnement.md` | Docker + Composer, structure de projet |
+| `guidelines/wordpress/theme.md` | Thème : starter, CPT, taxonomies, menus, ACF, blocs (fiche longue) |
+| `guidelines/wordpress/extensions.md` | Extensions via wpackagist, liste recommandée |
+| `guidelines/wordpress/security.md` | Sécurité WordPress avant/pendant/après développement |
+| `guidelines/wordpress/performance.md` | Cache, requêtes SQL |
+| `guidelines/wordpress/accessibility.md` | Ressources accessibilité WordPress |
+| `guidelines/wordpress/recette-mep.md` | Recette, mise en ligne, maintenance |
+| `resources/wordpress-presets.md` | Presets CSS générés par `theme.json` |
+
+### Qualité et exigences non fonctionnelles
+
+| Chemin | Contenu |
+|---|---|
+| `guidelines/accessibility.md` | Checklist 3 niveaux, patterns ARIA, RGAA/WCAG (fiche longue) |
+| `guidelines/performances.md` | Checklist 3 niveaux, cache, images, lazy-loading, Core Web Vitals |
+| `guidelines/ecoconception.md` | Démarche RGESN 2024, checklist (fiche longue) |
+| `guidelines/seo.md` | Sémantique, métadonnées, robots.txt, sitemap, données structurées |
+| `guidelines/rgpd.md` | Consentement, cookies, services tiers, fuites |
+| `guidelines/http-security.md` | En-têtes HTTP, CSP, HSTS, CORS, SSL, outils de test |
+| `guidelines/interoperabilite.md` | RGI : standards ouverts, REST/JSON, UTF-8 |
+
+### Design
+
+| Chemin | Contenu |
+|---|---|
+| `guidelines/webdesign.md` | Arborescence, moodboard, wireframes, maquettes Figma, design system, livrables |
+
+### Aide-mémoire
+
+| Chemin | Contenu |
+|---|---|
+| `cheatsheets/htaccess.md` | Règles `.htaccess` (redirections, blocages, réécriture) |
