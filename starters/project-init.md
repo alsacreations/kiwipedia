@@ -95,7 +95,7 @@ node /tmp/primary/scripts/figmatocss.js <json> /tmp/primary-out
 cp /tmp/primary-out/theme.css /tmp/primary-out/custom-media.css <dossier-css>/
 ```
 
-1. `styles.css` et `utilities.css` — copier `assets/templates/styles.css` et `assets/templates/utilities.css` du dépôt Primary.
+1. `styles.css` et `utilities.css` — copier `kit/styles.css` et `kit/utilities.css` du dépôt Primary.
 2. Fichiers externes, toujours dans leur dernière version. Les URL GitHub servent les mêmes fichiers que les sites et restent accessibles quand le réseau d'un agent est filtré&#8239;:
 
 | Fichier | Source (site) | Source (GitHub brut) |
@@ -176,7 +176,6 @@ Nuxt embarque Vite. Après `pnpm create nuxt@latest <nom>`&#8239;:
 ## Voir aussi
 
 - [CSS](../guidelines/css.md) — Architecture, layers, design tokens, Bretzel.
-- [Starter Vite](vite.md) — Configuration Vite détaillée.
 - [Visual Studio Code](../guidelines/vscode.md) — Réglages et extensions.
 - [Git](../guidelines/git.md) — Conventions de commit.
 - [WordPress — Environnement](../guidelines/wordpress/environnement.md) — Docker, Composer, WordPlate.
