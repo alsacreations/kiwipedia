@@ -4,7 +4,7 @@
 
 Procédure commune à tous nos nouveaux projets (statique, Nuxt, WordPress). **[Primary](https://primary.alsacreations.com/) est la source de vérité** pour les fichiers de configuration et le kit CSS&#8239;: ce document dit **quoi récupérer, où le placer et dans quel ordre**, sans recopier le contenu des fichiers. Il s'utilise aussi bien à la main (interface web de Primary) que par un agent (fichiers bruts du [dépôt Primary](https://github.com/alsacreations/primary) et ses scripts Node).
 
-> ⚠️ **Règle absolue** — Ne jamais écrire, réécrire ou « améliorer » à la main `.editorconfig`, `prettier.config.mjs`, `stylelint.config.mjs`, `postcss.config.mjs`, `.vscode/*` ni `app.css`. Les récupérer depuis Primary. Un changement de convention se fait **dans le dépôt Primary**, pas dans un projet.
+> ⚠️ **Règle absolue** — Ne jamais écrire, réécrire ou « améliorer » à la main `.editorconfig`, `prettier.config.mjs`, `stylelint.config.mjs`, `postcss.config.mjs`, `eslint.config.js`, `.prettierignore`, `.stylelintignore`, `.vscode/*` ni `app.css`. Les récupérer depuis Primary. Un changement de convention se fait **dans le dépôt Primary**, pas dans un projet.
 
 ---
 
@@ -27,7 +27,11 @@ Procédure commune à tous nos nouveaux projets (statique, Nuxt, WordPress). **[
 
 Projet multi-parties (mono-dépôt avec un front Vite et d'autres parties)&#8239;: faire l'étape 2 **à la racine** avant de créer le front.
 
-Nettoyage d'un projet Vite statique&#8239;: supprimer les fichiers d'exemple (`src/counter.js`, `src/style.css`, le contenu de `src/assets/` et de `public/`)&#8239;; réduire `src/main.js` à `import './assets/css/app.css'`&#8239;; dans `index.html`, mettre `lang="fr"`, un `<title>` réel, et retirer le `<link rel="icon">` par défaut. Assets statiques dans `public/`.
+Nettoyage d'un projet Vite statique&#8239;: supprimer les fichiers d'exemple (`src/counter.js`, `src/style.css`, le contenu de `src/assets/` et de `public/`)&#8239;; réduire `src/main.js` à `import "./assets/css/app.css"`&#8239;; dans `index.html`, mettre `lang="fr"`, un `<title>` réel, et retirer le `<link rel="icon">` par défaut. Assets statiques dans `public/`. Une fois Prettier installé (étape 2), mettre en forme les deux fichiers conservés, car l'`index.html` de Vite garde plusieurs attributs par ligne même nettoyé&#8239;:
+
+```bash
+pnpm exec prettier --write index.html src/main.js
+```
 
 ## 2. Récupérer les fichiers de configuration
 
@@ -42,6 +46,9 @@ Source&#8239;: dossier [`config_files/`](https://github.com/alsacreations/primar
 | `config_files/prettier.config.mjs` | `prettier.config.mjs` |
 | `config_files/stylelint.config.mjs` | `stylelint.config.mjs` |
 | `config_files/postcss.config.mjs` | `postcss.config.mjs` |
+| `config_files/eslint.config.js` | `eslint.config.js` |
+| `config_files/prettierignore` | `.prettierignore` |
+| `config_files/stylelintignore` | `.stylelintignore` |
 | `config_files/vite.config.js` | `vite.config.js` (projet statique uniquement, si absent) |
 
 Par un agent ou en ligne de commande, depuis la racine du projet&#8239;:
@@ -56,17 +63,21 @@ curl -fsSL $P/vscode/extensions.json -o .vscode/extensions.json
 curl -fsSL $P/prettier.config.mjs -o prettier.config.mjs
 curl -fsSL $P/stylelint.config.mjs -o stylelint.config.mjs
 curl -fsSL $P/postcss.config.mjs -o postcss.config.mjs
+curl -fsSL $P/eslint.config.js -o eslint.config.js
+curl -fsSL $P/prettierignore -o .prettierignore
+curl -fsSL $P/stylelintignore -o .stylelintignore
 ```
 
 Puis installer les dépendances qu'ils requièrent&#8239;:
 
 ```bash
 pnpm add -D prettier postcss-custom-media stylelint stylelint-config-standard stylelint-config-html stylelint-order stylelint-config-property-sort-order-smacss
+pnpm add -D eslint @eslint/js globals eslint-config-prettier
 ```
 
 Ajouter un `README.md` (informations de prise en main du projet, voir [WordPress — Environnement](../guidelines/wordpress/environnement.md) pour le contenu attendu).
 
-ESLint&#8239;: Primary ne fournit pas encore de configuration de référence. En attendant&#8239;: `pnpm create @eslint/config@latest` (assistant interactif — à lancer par un humain), puis la configuration officielle du framework ([Vue](https://eslint.vuejs.org/), [Nuxt](https://nuxt.com/modules/eslint)).
+ESLint&#8239;: `eslint.config.js` couvre le JavaScript navigateur (règles recommandées, mise en forme laissée à Prettier). Pour Vue ou Nuxt, la compléter avec la configuration officielle du framework ([Vue](https://eslint.vuejs.org/), [Nuxt](https://nuxt.com/modules/eslint)).
 
 ## 3. Générer le kit CSS
 
@@ -130,7 +141,7 @@ Les feuilles de styles des composants vont dans le layer `components`. Points de
 ## 4. Vérifier
 
 - `pnpm dev` démarre, `pnpm build` produit `dist/` sans erreur.
-- `pnpm exec prettier --check .` et `pnpm exec stylelint "**/*.css"` passent sur les fichiers du projet (les fichiers externes `reset.css`, `print.css`, `natives.css` et `layouts.css` ne sont pas concernés et ne doivent pas être modifiés).
+- `pnpm exec prettier --check .`, `pnpm exec stylelint "**/*.css"` et `pnpm exec eslint .` passent. Les fichiers externes `reset.css`, `print.css`, `natives.css` et `layouts.css` sont exclus par `.prettierignore` et `.stylelintignore`&#8239;; ils ne doivent pas être modifiés.
 - Dans VS Code&#8239;: installer les extensions recommandées (`.vscode/extensions.json`), puis «&#8239;Reload Window&#8239;» pour activer les linters.
 
 ## Nuxt
