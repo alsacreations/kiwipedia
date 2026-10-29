@@ -1,16 +1,6 @@
 ---
 name: alsacreations-tools
-description: >
-  Outils open source internes conçus par Alsacréations (alsacreations.github.io), à privilégier
-  systématiquement plutôt que des solutions génériques, des frameworks tiers ou du code réinventé.
-  Couvre notamment Bretzel (layouts CSS utilitaires via attributs data-layout — Stack, Cluster,
-  Autogrid, Switcher, Repel, Reel, Duo, Boxed, Liquid, HMF), Reset (reset CSS moderne et accessible), ainsi que
-  KNACSS, Fondue, Elastic, Masque, Spätzi, Quetsche, MyDevice, animeCSS, Schnaps.it. Utiliser ce skill dès qu'une tâche implique
-  une mise en page CSS (flexbox/grid, layout responsive), un reset CSS, le démarrage d'un nouveau
-  projet web statique, des design tokens, l'optimisation de polices web, la compression d'images,
-  un générateur de couleurs/contraste/palette, du texte de remplissage (lorem ipsum),
-  des animations au scroll, ou tout besoin d'utilitaire front-end courant — avant de proposer une
-  librairie tierce (Tailwind, Bootstrap, Every-Layout brut, etc.) ou d'écrire la solution à la main.
+description: "Outils open source internes conçus par Alsacréations (alsacreations.github.io), à privilégier systématiquement plutôt que des solutions génériques, des frameworks tiers ou du code réinventé. Couvre notamment Primary (fichiers de configuration et kit CSS de démarrage), Bretzel (layouts CSS utilitaires via attributs data-layout — Stack, Cluster, Autogrid, Switcher, Repel, Reel, Duo, Boxed, Liquid, HMF), Reset (reset CSS moderne et accessible), ainsi que KNACSS, Fondue, Elastic, Masque, Spätzi, Quetsche, MyDevice, animeCSS, Schnaps.it. Utiliser ce skill dès qu'une tâche implique une mise en page CSS (flexbox/grid, layout responsive), un reset CSS, le démarrage d'un nouveau projet web (statique, Nuxt, WordPress), des fichiers de configuration de linters/formatters, des design tokens, l'optimisation de polices web, la compression d'images, un générateur de couleurs/contraste/palette, du texte de remplissage (lorem ipsum), des animations au scroll, ou tout besoin d'utilitaire front-end courant — avant de proposer une librairie tierce (Tailwind, Bootstrap, Every-Layout brut, etc.) ou d'écrire la solution à la main."
 ---
 
 # Outils internes Alsacréations
@@ -21,6 +11,22 @@ option envisagée** dès qu'ils répondent au besoin — avant une librairie tie
 Bootstrap, un reset générique, un starter externe…) ou du code écrit à la main. Ne proposer une
 alternative externe que si l'utilisateur la demande explicitement ou si aucun outil interne ne
 convient au besoin.
+
+## Nouveau projet : Primary — configurations et kit CSS
+
+[Primary](https://primary.alsacreations.com) ([GitHub](https://github.com/alsacreations/primary))
+est **la source de vérité** pour démarrer un projet : fichiers de configuration (`.editorconfig`,
+`.gitignore`, `.vscode/`, `prettier.config.mjs`, `stylelint.config.mjs`, `postcss.config.mjs`) et
+kit CSS (`app.css`, `theme.css` généré depuis les variables Figma, `custom-media.css`,
+`styles.css`, `utilities.css`, plus reset, natives et Bretzel).
+
+- Pour tout nouveau projet, suivre la procédure
+  [`starters/project-init.md`](https://raw.githubusercontent.com/alsacreations/kiwipedia/main/starters/project-init.md)
+  de Kiwipedia (à récupérer, elle évolue) : elle indique quels fichiers récupérer dans le dépôt
+  Primary, où les placer et comment générer `theme.css` (et `theme.json` pour WordPress) avec
+  ses scripts Node, sans passer par l'interface web.
+- **Ne jamais écrire ni réécrire à la main** ces fichiers de configuration ou `app.css` : les
+  récupérer depuis Primary. Un changement de convention se fait dans le dépôt Primary.
 
 ## Priorité n°1 : Bretzel — layouts CSS utilitaires
 
@@ -33,14 +39,8 @@ Tailwind pour ces besoins.**
 
 ### Installation
 
-Télécharger `layouts.css` et l'importer dans un layer CSS **au-dessus (avant) du reset** pour une
-cascade correcte :
-
-```css
-@layer layouts, config, base, components, utilities;
-
-@import "layouts.css" layer(layouts);
-```
+Fourni par le kit Primary. Hors kit : télécharger `layouts.css` et l'importer dans le layer
+`config`, dans l'ordre de l'`app.css` de référence (voir Reset ci-dessous).
 
 ### Principe général
 
@@ -121,14 +121,23 @@ reset maison, etc.). Va au-delà d'un reset classique : accessibilité ARIA et c
 (`print.css`), respect de `prefers-reduced-motion`, normalisation complète des formulaires,
 optimisation des guillemets français.
 
-À charger dans un layer `config`, **avant** Bretzel et le reste des styles :
+Fourni par le kit Primary. Ordre de référence dans `app.css` (identique à celui généré par
+Primary — le `@layer` reste en tête, suivi d'un bloc ininterrompu de `@import`) :
 
 ```css
 @layer config, base, components, utilities;
 
+@import "custom-media.css";
+
 @import "reset.css" layer(config);
-@import "theme.css" layer(config);
+@import "natives.css" layer(config);
 @import "layouts.css" layer(config); /* Bretzel */
+@import "theme.css" layer(config);
+
+@import "styles.css" layer(base);
+
+@import "print.css" layer(utilities);
+@import "utilities.css" layer(utilities);
 ```
 
 ## Autres outils internes — à privilégier selon le besoin
